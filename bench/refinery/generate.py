@@ -180,7 +180,8 @@ def main() -> int:
             "wagner-whitin": "the lot-sizing recursion in rational arithmetic",
             "cross-check": "HiGHS and SCIP at a zero gap, one thread, agreeing within "
                            f"{CROSS_CHECK_TOLERANCE:g} relative; both values kept"},
-        "instances": dict(sorted(instances.items()))}, indent=2) + "\n", encoding="utf-8")
+        "instances": dict(sorted(instances.items()))}, indent=2) + "\n", encoding="utf-8",
+        newline="\n")
     print(f"wrote {MANIFEST}")
     return 0
 
