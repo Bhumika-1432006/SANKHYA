@@ -191,10 +191,20 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
     // count 1. Sweeping the buckets in increasing count finds those first, which is the
     // singleton/triangular pre-pass falling out of the general rule rather than being
     // special-cased alongside it.
-    for (Index count = 1; count <= m && examined < kCandidateBudget && best_cost > 0; ++count) {
+    //
+    // THE BUDGET COUNTS FROM THE FIRST ADMISSIBLE PIVOT (Suhl & Suhl 1990, sec. 3: the
+    // search over the count buckets stops a few candidates after it has one in hand, and
+    // keeps going while it has none). It used to stop after kCandidateBudget candidates
+    // whether or not any had passed the threshold test, and on a badly scaled basis the
+    // four sparsest rows and columns often hold nothing admissible; every such step then
+    // ran the exhaustive scan below over the whole active submatrix (issue #1006). On
+    // pilot87 that was 255 of the 1,987 steps of every factorization and 22 s of a 55 s
+    // solve. A step where the budget ran out with a pivot in hand takes the same pivot as
+    // before; the walk only continues where the exhaustive scan would have run.
+    const auto keep_looking = [&] { return best_row < 0 || examined < kCandidateBudget; };
+    for (Index count = 1; count <= m && keep_looking() && best_cost > 0; ++count) {
       // -- candidate columns of this count
-      for (Index j = col_lists.first(count); j >= 0 && examined < kCandidateBudget;
-           j = col_lists.after(j)) {
+      for (Index j = col_lists.first(count); j >= 0 && keep_looking(); j = col_lists.after(j)) {
         const auto uj = static_cast<std::size_t>(j);
         assert(w.col_active[uj] != 0 && w.col_count[uj] == count && "a stale list entry");
         ++examined;
@@ -222,8 +232,7 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
 
       // -- candidate rows of this count, which the column sweep can miss entirely when a
       //    row singleton sits in a dense column
-      for (Index i = row_lists.first(count); i >= 0 && examined < kCandidateBudget;
-           i = row_lists.after(i)) {
+      for (Index i = row_lists.first(count); i >= 0 && keep_looking(); i = row_lists.after(i)) {
         const auto ui = static_cast<std::size_t>(i);
         assert(w.row_active[ui] != 0 && w.row_count[ui] == count && "a stale list entry");
         ++examined;
@@ -287,6 +296,8 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
     // So before concluding anything, fall back to an EXHAUSTIVE scan of every active column
     // still standing, unbounded by the budget. If that finds an admissible pivot, the
     // budgeted search merely got unlucky with bucket order and this step proceeds normally.
+    // (Since the walk above continues until it has a pivot, this is reached only when no
+    // bucket held one - a stale list is the only way the scan can still find something.)
     // Only when the exhaustive scan ALSO finds nothing is the active submatrix genuinely
     // singular to working precision - every remaining entry is below pivot_tolerance or
     // below threshold * its column's max, which is the asserted condition below, not an
