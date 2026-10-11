@@ -934,14 +934,15 @@ const std::vector<OptionSpec>& Options::registry() {
                  {}});
     s.push_back({"certified_gap_resolve",
                  OptionType::Bool,
-                 true,
+                 false,
                  "LP (#763), stage 5 of certified_gap: when the float and exact duals of the "
                  "answer prove no bound within 1e-6, re-solve the LP from scratch with its "
                  "one-sided columns' costs moved by 1e-9 up to 1e-6, at most four times, all "
-                 "within exact_seconds and the time_limit left. It runs only when the stages "
-                 "before it prove nothing: an answer without a basis (the interior point when "
-                 "crossover fails, PDHG, the GPU) or a basis the exact repair cannot finish "
-                 "in its budget. Each try is a whole extra solve; off skips it.",
+                 "within exact_seconds and the time_limit left. Off by default: it is what "
+                 "is left for an answer without a basis (the interior point when crossover "
+                 "fails, PDHG, the GPU), and there each try is a whole extra solve; on "
+                 "Netlib it certifies maros-r7 at 3.1e-9 relative with one extra interior-"
+                 "point solve.",
                  0.0,
                  0.0,
                  {}});

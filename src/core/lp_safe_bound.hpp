@@ -16,7 +16,7 @@ namespace sankhya {
 /// Fill solution->safe_lower_bound, certified_gap, certified_relative_gap and
 /// safe_multipliers (model.hpp) when `model` is an LP and the solution is kOptimal with one
 /// dual per row and option certified_gap is on; leave them untouched otherwise. With option
-/// certified_gap_resolve on (the default), may re-solve a cost-perturbed copy of the model
+/// certified_gap_resolve on (off by default), may re-solve a cost-perturbed copy of the model
 /// once per perturbation size, within exact_seconds and the time left (lp_safe_bound.cpp,
 /// stage 5). With a `logger`, says what each stage proved or why it did not.
 void attach_safe_lower_bound(const Model& model, const Options& options, Solution* solution,
