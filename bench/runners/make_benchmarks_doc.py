@@ -45,6 +45,7 @@ import gpu_ab_doc  # 1g.8 and 1g.9, the device A/Bs of #508 and #478
 import gpu_doc  # 1g.1 and 1g.3 (#488)
 import gpu_plot  # the speedup-against-nonzeros figure of 1g.3 (#488)
 import head_to_head_doc  # section 4a, the five-solver head-to-head (#766)
+import refinery_doc  # section 4c, the refinery suite against HiGHS and SCIP (#1004)
 import pricing_ab_doc  # 1b.1, dual pricing: Devex against dual steepest edge (#411)
 from gpu_doc import gpu_datacenter_table, gpu_real_section, ipm_cudss_section, multi_gpu_section
 
@@ -2889,6 +2890,8 @@ def main() -> int:
     head_to_head_csvs = {suite: newest(f"head-to-head-{suite}-*.csv",
                                        prefix=f"head-to-head-{suite}")
                          for suite in ("netlib", "kennington", "maros-meszaros")}
+    # The refinery suite (#1004): the same naming rule as the head-to-head above.
+    refinery_suite_csv = newest("head-to-head-refinery-*.csv", prefix="head-to-head-refinery")
     robustness_csv = newest("robustness-*.csv")
     stress_csv = newest("stress-*.csv", prefix="stress")
     # The default run only; the per-engine runs carry `algorithm=` in solver_options, which
@@ -3482,6 +3485,23 @@ stated objective that differs from the one recomputed at the solver's own point 
 SANKHYA included.
 
 {head_to_head_doc.section(head_to_head_csvs, shifted_geometric_mean)}
+---
+
+## 4c. The refinery suite: ten models of known structure, against HiGHS and SCIP (#1004)
+
+The judges run a refinery. Every set above is someone else's; this one is built from the
+published formulations a refinery planner would recognise - crude and product blending,
+Haverly's pooling problem, Lee, Pinto, Grossmann and Park's crude unloading schedule, unit
+modes with turndown, a 30-day plan, a price-scenario plan, product distribution and cargo lot
+sizing - each cited in its file header and in `docs/PROVENANCE.md`, each at three sizes, and
+each with an optimum the file states and a solver cannot argue with. The grading is section
+4a's: `solved`, `matched` against the reference at the solver's own point, `verified` by
+`tools/verify_solution.py` (primal and dual for an LP with duals, primal and integral for a
+MIP or for SCIP), and a run that is not all three is charged the full 600 s limit in the
+shifted geometric mean. Produced by `python bench/runners/compare.py --suite refinery`
+(`bench/runners/compare_suite.py`, `bench/runners/rivals.py`, `bench/runners/refinery_doc.py`).
+
+{refinery_doc.section(refinery_suite_csv, shifted_geometric_mean)}
 ---
 
 ## 4b. Agreement against size-limited commercial editions (#533)

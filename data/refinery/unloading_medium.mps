@@ -1,0 +1,5628 @@
+NAME          UNLOADING_MEDIUM_S1
+* model 5: crude unloading and tank scheduling MILP
+* source: Lee, Pinto, Grossmann and Park, Ind. Eng. Chem. Res. 35 (1996) 1630-1641
+* 3 vessels, 3 storage tanks, 3 charging tanks, 2 distillation units, 12 periods
+* suite: bench/refinery/generate.py, seed 1
+* rows 1278  columns 876  nonzeros 3549  integer 228  semi-continuous 0
+ROWS
+ N  COST
+ E  START_0
+ E  CARGO_0
+ L  UNLOAD_0_3
+ L  FVS_0_0_3
+ L  FVS_0_1_3
+ L  FVS_0_2_3
+ L  UNLOAD_0_4
+ L  FVS_0_0_4
+ L  FVS_0_1_4
+ L  FVS_0_2_4
+ L  UNLOAD_0_5
+ L  FVS_0_0_5
+ L  FVS_0_1_5
+ L  FVS_0_2_5
+ L  UNLOAD_0_6
+ L  FVS_0_0_6
+ L  FVS_0_1_6
+ L  FVS_0_2_6
+ L  UNLOAD_0_7
+ L  FVS_0_0_7
+ L  FVS_0_1_7
+ L  FVS_0_2_7
+ L  UNLOAD_0_8
+ L  FVS_0_0_8
+ L  FVS_0_1_8
+ L  FVS_0_2_8
+ L  UNLOAD_0_9
+ L  FVS_0_0_9
+ L  FVS_0_1_9
+ L  FVS_0_2_9
+ L  UNLOAD_0_10
+ L  FVS_0_0_10
+ L  FVS_0_1_10
+ L  FVS_0_2_10
+ L  UNLOAD_0_11
+ L  FVS_0_0_11
+ L  FVS_0_1_11
+ L  FVS_0_2_11
+ E  START_1
+ E  CARGO_1
+ L  UNLOAD_1_3
+ L  FVS_1_0_3
+ L  FVS_1_1_3
+ L  FVS_1_2_3
+ L  UNLOAD_1_4
+ L  FVS_1_0_4
+ L  FVS_1_1_4
+ L  FVS_1_2_4
+ L  UNLOAD_1_5
+ L  FVS_1_0_5
+ L  FVS_1_1_5
+ L  FVS_1_2_5
+ L  UNLOAD_1_6
+ L  FVS_1_0_6
+ L  FVS_1_1_6
+ L  FVS_1_2_6
+ L  UNLOAD_1_7
+ L  FVS_1_0_7
+ L  FVS_1_1_7
+ L  FVS_1_2_7
+ L  UNLOAD_1_8
+ L  FVS_1_0_8
+ L  FVS_1_1_8
+ L  FVS_1_2_8
+ L  UNLOAD_1_9
+ L  FVS_1_0_9
+ L  FVS_1_1_9
+ L  FVS_1_2_9
+ L  UNLOAD_1_10
+ L  FVS_1_0_10
+ L  FVS_1_1_10
+ L  FVS_1_2_10
+ L  UNLOAD_1_11
+ L  FVS_1_0_11
+ L  FVS_1_1_11
+ L  FVS_1_2_11
+ E  START_2
+ E  CARGO_2
+ L  UNLOAD_2_6
+ L  FVS_2_0_6
+ L  FVS_2_1_6
+ L  FVS_2_2_6
+ L  UNLOAD_2_7
+ L  FVS_2_0_7
+ L  FVS_2_1_7
+ L  FVS_2_2_7
+ L  UNLOAD_2_8
+ L  FVS_2_0_8
+ L  FVS_2_1_8
+ L  FVS_2_2_8
+ L  UNLOAD_2_9
+ L  FVS_2_0_9
+ L  FVS_2_1_9
+ L  FVS_2_2_9
+ L  UNLOAD_2_10
+ L  FVS_2_0_10
+ L  FVS_2_1_10
+ L  FVS_2_2_10
+ L  UNLOAD_2_11
+ L  FVS_2_0_11
+ L  FVS_2_1_11
+ L  FVS_2_2_11
+ L  JETTY_0
+ E  VS_0_0
+ E  KS_0_0
+ G  KSLO_0_0
+ L  KSHI_0_0
+ L  FST_0_0_0
+ G  KSTLO_0_0_0
+ L  KSTHI_0_0_0
+ L  NOMIX_0_0_0_0
+ L  NOMIX_0_0_1_0
+ L  FST_0_1_0
+ G  KSTLO_0_1_0
+ L  KSTHI_0_1_0
+ L  NOMIX_0_1_0_0
+ L  NOMIX_0_1_1_0
+ L  FST_0_2_0
+ G  KSTLO_0_2_0
+ L  KSTHI_0_2_0
+ L  NOMIX_0_2_0_0
+ L  NOMIX_0_2_1_0
+ E  VS_1_0
+ E  KS_1_0
+ G  KSLO_1_0
+ L  KSHI_1_0
+ L  FST_1_0_0
+ G  KSTLO_1_0_0
+ L  KSTHI_1_0_0
+ L  NOMIX_1_0_0_0
+ L  NOMIX_1_0_1_0
+ L  FST_1_1_0
+ G  KSTLO_1_1_0
+ L  KSTHI_1_1_0
+ L  NOMIX_1_1_0_0
+ L  NOMIX_1_1_1_0
+ L  FST_1_2_0
+ G  KSTLO_1_2_0
+ L  KSTHI_1_2_0
+ L  NOMIX_1_2_0_0
+ L  NOMIX_1_2_1_0
+ E  VS_2_0
+ E  KS_2_0
+ G  KSLO_2_0
+ L  KSHI_2_0
+ L  FST_2_0_0
+ G  KSTLO_2_0_0
+ L  KSTHI_2_0_0
+ L  NOMIX_2_0_0_0
+ L  NOMIX_2_0_1_0
+ L  FST_2_1_0
+ G  KSTLO_2_1_0
+ L  KSTHI_2_1_0
+ L  NOMIX_2_1_0_0
+ L  NOMIX_2_1_1_0
+ L  FST_2_2_0
+ G  KSTLO_2_2_0
+ L  KSTHI_2_2_0
+ L  NOMIX_2_2_0_0
+ L  NOMIX_2_2_1_0
+ E  VC_0_0
+ E  KC_0_0
+ G  KCLO_0_0
+ L  KCHI_0_0
+ L  FTC_0_0_0
+ G  KTCLO_0_0_0
+ L  KTCHI_0_0_0
+ G  CH_0_0_0
+ L  FTC_0_1_0
+ G  KTCLO_0_1_0
+ L  KTCHI_0_1_0
+ G  CH_0_1_0
+ E  VC_1_0
+ E  KC_1_0
+ G  KCLO_1_0
+ L  KCHI_1_0
+ L  FTC_1_0_0
+ G  KTCLO_1_0_0
+ L  KTCHI_1_0_0
+ G  CH_1_0_0
+ L  FTC_1_1_0
+ G  KTCLO_1_1_0
+ L  KTCHI_1_1_0
+ G  CH_1_1_0
+ E  VC_2_0
+ E  KC_2_0
+ G  KCLO_2_0
+ L  KCHI_2_0
+ L  FTC_2_0_0
+ G  KTCLO_2_0_0
+ L  KTCHI_2_0_0
+ G  CH_2_0_0
+ L  FTC_2_1_0
+ G  KTCLO_2_1_0
+ L  KTCHI_2_1_0
+ G  CH_2_1_0
+ E  FEED_0_0
+ E  DEMAND_0_0
+ E  FEED_1_0
+ E  DEMAND_1_0
+ L  JETTY_1
+ E  VS_0_1
+ E  KS_0_1
+ G  KSLO_0_1
+ L  KSHI_0_1
+ L  FST_0_0_1
+ G  KSTLO_0_0_1
+ L  KSTHI_0_0_1
+ L  NOMIX_0_0_0_1
+ L  NOMIX_0_0_1_1
+ L  FST_0_1_1
+ G  KSTLO_0_1_1
+ L  KSTHI_0_1_1
+ L  NOMIX_0_1_0_1
+ L  NOMIX_0_1_1_1
+ L  FST_0_2_1
+ G  KSTLO_0_2_1
+ L  KSTHI_0_2_1
+ L  NOMIX_0_2_0_1
+ L  NOMIX_0_2_1_1
+ E  VS_1_1
+ E  KS_1_1
+ G  KSLO_1_1
+ L  KSHI_1_1
+ L  FST_1_0_1
+ G  KSTLO_1_0_1
+ L  KSTHI_1_0_1
+ L  NOMIX_1_0_0_1
+ L  NOMIX_1_0_1_1
+ L  FST_1_1_1
+ G  KSTLO_1_1_1
+ L  KSTHI_1_1_1
+ L  NOMIX_1_1_0_1
+ L  NOMIX_1_1_1_1
+ L  FST_1_2_1
+ G  KSTLO_1_2_1
+ L  KSTHI_1_2_1
+ L  NOMIX_1_2_0_1
+ L  NOMIX_1_2_1_1
+ E  VS_2_1
+ E  KS_2_1
+ G  KSLO_2_1
+ L  KSHI_2_1
+ L  FST_2_0_1
+ G  KSTLO_2_0_1
+ L  KSTHI_2_0_1
+ L  NOMIX_2_0_0_1
+ L  NOMIX_2_0_1_1
+ L  FST_2_1_1
+ G  KSTLO_2_1_1
+ L  KSTHI_2_1_1
+ L  NOMIX_2_1_0_1
+ L  NOMIX_2_1_1_1
+ L  FST_2_2_1
+ G  KSTLO_2_2_1
+ L  KSTHI_2_2_1
+ L  NOMIX_2_2_0_1
+ L  NOMIX_2_2_1_1
+ E  VC_0_1
+ E  KC_0_1
+ G  KCLO_0_1
+ L  KCHI_0_1
+ L  FTC_0_0_1
+ G  KTCLO_0_0_1
+ L  KTCHI_0_0_1
+ G  CH_0_0_1
+ L  FTC_0_1_1
+ G  KTCLO_0_1_1
+ L  KTCHI_0_1_1
+ G  CH_0_1_1
+ E  VC_1_1
+ E  KC_1_1
+ G  KCLO_1_1
+ L  KCHI_1_1
+ L  FTC_1_0_1
+ G  KTCLO_1_0_1
+ L  KTCHI_1_0_1
+ G  CH_1_0_1
+ L  FTC_1_1_1
+ G  KTCLO_1_1_1
+ L  KTCHI_1_1_1
+ G  CH_1_1_1
+ E  VC_2_1
+ E  KC_2_1
+ G  KCLO_2_1
+ L  KCHI_2_1
+ L  FTC_2_0_1
+ G  KTCLO_2_0_1
+ L  KTCHI_2_0_1
+ G  CH_2_0_1
+ L  FTC_2_1_1
+ G  KTCLO_2_1_1
+ L  KTCHI_2_1_1
+ G  CH_2_1_1
+ E  FEED_0_1
+ E  DEMAND_0_1
+ E  FEED_1_1
+ E  DEMAND_1_1
+ L  JETTY_2
+ E  VS_0_2
+ E  KS_0_2
+ G  KSLO_0_2
+ L  KSHI_0_2
+ L  FST_0_0_2
+ G  KSTLO_0_0_2
+ L  KSTHI_0_0_2
+ L  NOMIX_0_0_0_2
+ L  NOMIX_0_0_1_2
+ L  FST_0_1_2
+ G  KSTLO_0_1_2
+ L  KSTHI_0_1_2
+ L  NOMIX_0_1_0_2
+ L  NOMIX_0_1_1_2
+ L  FST_0_2_2
+ G  KSTLO_0_2_2
+ L  KSTHI_0_2_2
+ L  NOMIX_0_2_0_2
+ L  NOMIX_0_2_1_2
+ E  VS_1_2
+ E  KS_1_2
+ G  KSLO_1_2
+ L  KSHI_1_2
+ L  FST_1_0_2
+ G  KSTLO_1_0_2
+ L  KSTHI_1_0_2
+ L  NOMIX_1_0_0_2
+ L  NOMIX_1_0_1_2
+ L  FST_1_1_2
+ G  KSTLO_1_1_2
+ L  KSTHI_1_1_2
+ L  NOMIX_1_1_0_2
+ L  NOMIX_1_1_1_2
+ L  FST_1_2_2
+ G  KSTLO_1_2_2
+ L  KSTHI_1_2_2
+ L  NOMIX_1_2_0_2
+ L  NOMIX_1_2_1_2
+ E  VS_2_2
+ E  KS_2_2
+ G  KSLO_2_2
+ L  KSHI_2_2
+ L  FST_2_0_2
+ G  KSTLO_2_0_2
+ L  KSTHI_2_0_2
+ L  NOMIX_2_0_0_2
+ L  NOMIX_2_0_1_2
+ L  FST_2_1_2
+ G  KSTLO_2_1_2
+ L  KSTHI_2_1_2
+ L  NOMIX_2_1_0_2
+ L  NOMIX_2_1_1_2
+ L  FST_2_2_2
+ G  KSTLO_2_2_2
+ L  KSTHI_2_2_2
+ L  NOMIX_2_2_0_2
+ L  NOMIX_2_2_1_2
+ E  VC_0_2
+ E  KC_0_2
+ G  KCLO_0_2
+ L  KCHI_0_2
+ L  FTC_0_0_2
+ G  KTCLO_0_0_2
+ L  KTCHI_0_0_2
+ G  CH_0_0_2
+ L  FTC_0_1_2
+ G  KTCLO_0_1_2
+ L  KTCHI_0_1_2
+ G  CH_0_1_2
+ E  VC_1_2
+ E  KC_1_2
+ G  KCLO_1_2
+ L  KCHI_1_2
+ L  FTC_1_0_2
+ G  KTCLO_1_0_2
+ L  KTCHI_1_0_2
+ G  CH_1_0_2
+ L  FTC_1_1_2
+ G  KTCLO_1_1_2
+ L  KTCHI_1_1_2
+ G  CH_1_1_2
+ E  VC_2_2
+ E  KC_2_2
+ G  KCLO_2_2
+ L  KCHI_2_2
+ L  FTC_2_0_2
+ G  KTCLO_2_0_2
+ L  KTCHI_2_0_2
+ G  CH_2_0_2
+ L  FTC_2_1_2
+ G  KTCLO_2_1_2
+ L  KTCHI_2_1_2
+ G  CH_2_1_2
+ E  FEED_0_2
+ E  DEMAND_0_2
+ E  FEED_1_2
+ E  DEMAND_1_2
+ L  JETTY_3
+ E  VS_0_3
+ E  KS_0_3
+ G  KSLO_0_3
+ L  KSHI_0_3
+ L  FST_0_0_3
+ G  KSTLO_0_0_3
+ L  KSTHI_0_0_3
+ L  NOMIX_0_0_0_3
+ L  NOMIX_0_0_1_3
+ L  FST_0_1_3
+ G  KSTLO_0_1_3
+ L  KSTHI_0_1_3
+ L  NOMIX_0_1_0_3
+ L  NOMIX_0_1_1_3
+ L  FST_0_2_3
+ G  KSTLO_0_2_3
+ L  KSTHI_0_2_3
+ L  NOMIX_0_2_0_3
+ L  NOMIX_0_2_1_3
+ E  VS_1_3
+ E  KS_1_3
+ G  KSLO_1_3
+ L  KSHI_1_3
+ L  FST_1_0_3
+ G  KSTLO_1_0_3
+ L  KSTHI_1_0_3
+ L  NOMIX_1_0_0_3
+ L  NOMIX_1_0_1_3
+ L  FST_1_1_3
+ G  KSTLO_1_1_3
+ L  KSTHI_1_1_3
+ L  NOMIX_1_1_0_3
+ L  NOMIX_1_1_1_3
+ L  FST_1_2_3
+ G  KSTLO_1_2_3
+ L  KSTHI_1_2_3
+ L  NOMIX_1_2_0_3
+ L  NOMIX_1_2_1_3
+ E  VS_2_3
+ E  KS_2_3
+ G  KSLO_2_3
+ L  KSHI_2_3
+ L  FST_2_0_3
+ G  KSTLO_2_0_3
+ L  KSTHI_2_0_3
+ L  NOMIX_2_0_0_3
+ L  NOMIX_2_0_1_3
+ L  FST_2_1_3
+ G  KSTLO_2_1_3
+ L  KSTHI_2_1_3
+ L  NOMIX_2_1_0_3
+ L  NOMIX_2_1_1_3
+ L  FST_2_2_3
+ G  KSTLO_2_2_3
+ L  KSTHI_2_2_3
+ L  NOMIX_2_2_0_3
+ L  NOMIX_2_2_1_3
+ E  VC_0_3
+ E  KC_0_3
+ G  KCLO_0_3
+ L  KCHI_0_3
+ L  FTC_0_0_3
+ G  KTCLO_0_0_3
+ L  KTCHI_0_0_3
+ G  CH_0_0_3
+ L  FTC_0_1_3
+ G  KTCLO_0_1_3
+ L  KTCHI_0_1_3
+ G  CH_0_1_3
+ E  VC_1_3
+ E  KC_1_3
+ G  KCLO_1_3
+ L  KCHI_1_3
+ L  FTC_1_0_3
+ G  KTCLO_1_0_3
+ L  KTCHI_1_0_3
+ G  CH_1_0_3
+ L  FTC_1_1_3
+ G  KTCLO_1_1_3
+ L  KTCHI_1_1_3
+ G  CH_1_1_3
+ E  VC_2_3
+ E  KC_2_3
+ G  KCLO_2_3
+ L  KCHI_2_3
+ L  FTC_2_0_3
+ G  KTCLO_2_0_3
+ L  KTCHI_2_0_3
+ G  CH_2_0_3
+ L  FTC_2_1_3
+ G  KTCLO_2_1_3
+ L  KTCHI_2_1_3
+ G  CH_2_1_3
+ E  FEED_0_3
+ E  DEMAND_0_3
+ E  FEED_1_3
+ E  DEMAND_1_3
+ L  JETTY_4
+ E  VS_0_4
+ E  KS_0_4
+ G  KSLO_0_4
+ L  KSHI_0_4
+ L  FST_0_0_4
+ G  KSTLO_0_0_4
+ L  KSTHI_0_0_4
+ L  NOMIX_0_0_0_4
+ L  NOMIX_0_0_1_4
+ L  FST_0_1_4
+ G  KSTLO_0_1_4
+ L  KSTHI_0_1_4
+ L  NOMIX_0_1_0_4
+ L  NOMIX_0_1_1_4
+ L  FST_0_2_4
+ G  KSTLO_0_2_4
+ L  KSTHI_0_2_4
+ L  NOMIX_0_2_0_4
+ L  NOMIX_0_2_1_4
+ E  VS_1_4
+ E  KS_1_4
+ G  KSLO_1_4
+ L  KSHI_1_4
+ L  FST_1_0_4
+ G  KSTLO_1_0_4
+ L  KSTHI_1_0_4
+ L  NOMIX_1_0_0_4
+ L  NOMIX_1_0_1_4
+ L  FST_1_1_4
+ G  KSTLO_1_1_4
+ L  KSTHI_1_1_4
+ L  NOMIX_1_1_0_4
+ L  NOMIX_1_1_1_4
+ L  FST_1_2_4
+ G  KSTLO_1_2_4
+ L  KSTHI_1_2_4
+ L  NOMIX_1_2_0_4
+ L  NOMIX_1_2_1_4
+ E  VS_2_4
+ E  KS_2_4
+ G  KSLO_2_4
+ L  KSHI_2_4
+ L  FST_2_0_4
+ G  KSTLO_2_0_4
+ L  KSTHI_2_0_4
+ L  NOMIX_2_0_0_4
+ L  NOMIX_2_0_1_4
+ L  FST_2_1_4
+ G  KSTLO_2_1_4
+ L  KSTHI_2_1_4
+ L  NOMIX_2_1_0_4
+ L  NOMIX_2_1_1_4
+ L  FST_2_2_4
+ G  KSTLO_2_2_4
+ L  KSTHI_2_2_4
+ L  NOMIX_2_2_0_4
+ L  NOMIX_2_2_1_4
+ E  VC_0_4
+ E  KC_0_4
+ G  KCLO_0_4
+ L  KCHI_0_4
+ L  FTC_0_0_4
+ G  KTCLO_0_0_4
+ L  KTCHI_0_0_4
+ G  CH_0_0_4
+ L  FTC_0_1_4
+ G  KTCLO_0_1_4
+ L  KTCHI_0_1_4
+ G  CH_0_1_4
+ E  VC_1_4
+ E  KC_1_4
+ G  KCLO_1_4
+ L  KCHI_1_4
+ L  FTC_1_0_4
+ G  KTCLO_1_0_4
+ L  KTCHI_1_0_4
+ G  CH_1_0_4
+ L  FTC_1_1_4
+ G  KTCLO_1_1_4
+ L  KTCHI_1_1_4
+ G  CH_1_1_4
+ E  VC_2_4
+ E  KC_2_4
+ G  KCLO_2_4
+ L  KCHI_2_4
+ L  FTC_2_0_4
+ G  KTCLO_2_0_4
+ L  KTCHI_2_0_4
+ G  CH_2_0_4
+ L  FTC_2_1_4
+ G  KTCLO_2_1_4
+ L  KTCHI_2_1_4
+ G  CH_2_1_4
+ E  FEED_0_4
+ E  DEMAND_0_4
+ E  FEED_1_4
+ E  DEMAND_1_4
+ L  JETTY_5
+ E  VS_0_5
+ E  KS_0_5
+ G  KSLO_0_5
+ L  KSHI_0_5
+ L  FST_0_0_5
+ G  KSTLO_0_0_5
+ L  KSTHI_0_0_5
+ L  NOMIX_0_0_0_5
+ L  NOMIX_0_0_1_5
+ L  FST_0_1_5
+ G  KSTLO_0_1_5
+ L  KSTHI_0_1_5
+ L  NOMIX_0_1_0_5
+ L  NOMIX_0_1_1_5
+ L  FST_0_2_5
+ G  KSTLO_0_2_5
+ L  KSTHI_0_2_5
+ L  NOMIX_0_2_0_5
+ L  NOMIX_0_2_1_5
+ E  VS_1_5
+ E  KS_1_5
+ G  KSLO_1_5
+ L  KSHI_1_5
+ L  FST_1_0_5
+ G  KSTLO_1_0_5
+ L  KSTHI_1_0_5
+ L  NOMIX_1_0_0_5
+ L  NOMIX_1_0_1_5
+ L  FST_1_1_5
+ G  KSTLO_1_1_5
+ L  KSTHI_1_1_5
+ L  NOMIX_1_1_0_5
+ L  NOMIX_1_1_1_5
+ L  FST_1_2_5
+ G  KSTLO_1_2_5
+ L  KSTHI_1_2_5
+ L  NOMIX_1_2_0_5
+ L  NOMIX_1_2_1_5
+ E  VS_2_5
+ E  KS_2_5
+ G  KSLO_2_5
+ L  KSHI_2_5
+ L  FST_2_0_5
+ G  KSTLO_2_0_5
+ L  KSTHI_2_0_5
+ L  NOMIX_2_0_0_5
+ L  NOMIX_2_0_1_5
+ L  FST_2_1_5
+ G  KSTLO_2_1_5
+ L  KSTHI_2_1_5
+ L  NOMIX_2_1_0_5
+ L  NOMIX_2_1_1_5
+ L  FST_2_2_5
+ G  KSTLO_2_2_5
+ L  KSTHI_2_2_5
+ L  NOMIX_2_2_0_5
+ L  NOMIX_2_2_1_5
+ E  VC_0_5
+ E  KC_0_5
+ G  KCLO_0_5
+ L  KCHI_0_5
+ L  FTC_0_0_5
+ G  KTCLO_0_0_5
+ L  KTCHI_0_0_5
+ G  CH_0_0_5
+ L  FTC_0_1_5
+ G  KTCLO_0_1_5
+ L  KTCHI_0_1_5
+ G  CH_0_1_5
+ E  VC_1_5
+ E  KC_1_5
+ G  KCLO_1_5
+ L  KCHI_1_5
+ L  FTC_1_0_5
+ G  KTCLO_1_0_5
+ L  KTCHI_1_0_5
+ G  CH_1_0_5
+ L  FTC_1_1_5
+ G  KTCLO_1_1_5
+ L  KTCHI_1_1_5
+ G  CH_1_1_5
+ E  VC_2_5
+ E  KC_2_5
+ G  KCLO_2_5
+ L  KCHI_2_5
+ L  FTC_2_0_5
+ G  KTCLO_2_0_5
+ L  KTCHI_2_0_5
+ G  CH_2_0_5
+ L  FTC_2_1_5
+ G  KTCLO_2_1_5
+ L  KTCHI_2_1_5
+ G  CH_2_1_5
+ E  FEED_0_5
+ E  DEMAND_0_5
+ E  FEED_1_5
+ E  DEMAND_1_5
+ L  JETTY_6
+ E  VS_0_6
+ E  KS_0_6
+ G  KSLO_0_6
+ L  KSHI_0_6
+ L  FST_0_0_6
+ G  KSTLO_0_0_6
+ L  KSTHI_0_0_6
+ L  NOMIX_0_0_0_6
+ L  NOMIX_0_0_1_6
+ L  FST_0_1_6
+ G  KSTLO_0_1_6
+ L  KSTHI_0_1_6
+ L  NOMIX_0_1_0_6
+ L  NOMIX_0_1_1_6
+ L  FST_0_2_6
+ G  KSTLO_0_2_6
+ L  KSTHI_0_2_6
+ L  NOMIX_0_2_0_6
+ L  NOMIX_0_2_1_6
+ E  VS_1_6
+ E  KS_1_6
+ G  KSLO_1_6
+ L  KSHI_1_6
+ L  FST_1_0_6
+ G  KSTLO_1_0_6
+ L  KSTHI_1_0_6
+ L  NOMIX_1_0_0_6
+ L  NOMIX_1_0_1_6
+ L  FST_1_1_6
+ G  KSTLO_1_1_6
+ L  KSTHI_1_1_6
+ L  NOMIX_1_1_0_6
+ L  NOMIX_1_1_1_6
+ L  FST_1_2_6
+ G  KSTLO_1_2_6
+ L  KSTHI_1_2_6
+ L  NOMIX_1_2_0_6
+ L  NOMIX_1_2_1_6
+ E  VS_2_6
+ E  KS_2_6
+ G  KSLO_2_6
+ L  KSHI_2_6
+ L  FST_2_0_6
+ G  KSTLO_2_0_6
+ L  KSTHI_2_0_6
+ L  NOMIX_2_0_0_6
+ L  NOMIX_2_0_1_6
+ L  FST_2_1_6
+ G  KSTLO_2_1_6
+ L  KSTHI_2_1_6
+ L  NOMIX_2_1_0_6
+ L  NOMIX_2_1_1_6
+ L  FST_2_2_6
+ G  KSTLO_2_2_6
+ L  KSTHI_2_2_6
+ L  NOMIX_2_2_0_6
+ L  NOMIX_2_2_1_6
+ E  VC_0_6
+ E  KC_0_6
+ G  KCLO_0_6
+ L  KCHI_0_6
+ L  FTC_0_0_6
+ G  KTCLO_0_0_6
+ L  KTCHI_0_0_6
+ G  CH_0_0_6
+ L  FTC_0_1_6
+ G  KTCLO_0_1_6
+ L  KTCHI_0_1_6
+ G  CH_0_1_6
+ E  VC_1_6
+ E  KC_1_6
+ G  KCLO_1_6
+ L  KCHI_1_6
+ L  FTC_1_0_6
+ G  KTCLO_1_0_6
+ L  KTCHI_1_0_6
+ G  CH_1_0_6
+ L  FTC_1_1_6
+ G  KTCLO_1_1_6
+ L  KTCHI_1_1_6
+ G  CH_1_1_6
+ E  VC_2_6
+ E  KC_2_6
+ G  KCLO_2_6
+ L  KCHI_2_6
+ L  FTC_2_0_6
+ G  KTCLO_2_0_6
+ L  KTCHI_2_0_6
+ G  CH_2_0_6
+ L  FTC_2_1_6
+ G  KTCLO_2_1_6
+ L  KTCHI_2_1_6
+ G  CH_2_1_6
+ E  FEED_0_6
+ E  DEMAND_0_6
+ E  FEED_1_6
+ E  DEMAND_1_6
+ L  JETTY_7
+ E  VS_0_7
+ E  KS_0_7
+ G  KSLO_0_7
+ L  KSHI_0_7
+ L  FST_0_0_7
+ G  KSTLO_0_0_7
+ L  KSTHI_0_0_7
+ L  NOMIX_0_0_0_7
+ L  NOMIX_0_0_1_7
+ L  FST_0_1_7
+ G  KSTLO_0_1_7
+ L  KSTHI_0_1_7
+ L  NOMIX_0_1_0_7
+ L  NOMIX_0_1_1_7
+ L  FST_0_2_7
+ G  KSTLO_0_2_7
+ L  KSTHI_0_2_7
+ L  NOMIX_0_2_0_7
+ L  NOMIX_0_2_1_7
+ E  VS_1_7
+ E  KS_1_7
+ G  KSLO_1_7
+ L  KSHI_1_7
+ L  FST_1_0_7
+ G  KSTLO_1_0_7
+ L  KSTHI_1_0_7
+ L  NOMIX_1_0_0_7
+ L  NOMIX_1_0_1_7
+ L  FST_1_1_7
+ G  KSTLO_1_1_7
+ L  KSTHI_1_1_7
+ L  NOMIX_1_1_0_7
+ L  NOMIX_1_1_1_7
+ L  FST_1_2_7
+ G  KSTLO_1_2_7
+ L  KSTHI_1_2_7
+ L  NOMIX_1_2_0_7
+ L  NOMIX_1_2_1_7
+ E  VS_2_7
+ E  KS_2_7
+ G  KSLO_2_7
+ L  KSHI_2_7
+ L  FST_2_0_7
+ G  KSTLO_2_0_7
+ L  KSTHI_2_0_7
+ L  NOMIX_2_0_0_7
+ L  NOMIX_2_0_1_7
+ L  FST_2_1_7
+ G  KSTLO_2_1_7
+ L  KSTHI_2_1_7
+ L  NOMIX_2_1_0_7
+ L  NOMIX_2_1_1_7
+ L  FST_2_2_7
+ G  KSTLO_2_2_7
+ L  KSTHI_2_2_7
+ L  NOMIX_2_2_0_7
+ L  NOMIX_2_2_1_7
+ E  VC_0_7
+ E  KC_0_7
+ G  KCLO_0_7
+ L  KCHI_0_7
+ L  FTC_0_0_7
+ G  KTCLO_0_0_7
+ L  KTCHI_0_0_7
+ G  CH_0_0_7
+ L  FTC_0_1_7
+ G  KTCLO_0_1_7
+ L  KTCHI_0_1_7
+ G  CH_0_1_7
+ E  VC_1_7
+ E  KC_1_7
+ G  KCLO_1_7
+ L  KCHI_1_7
+ L  FTC_1_0_7
+ G  KTCLO_1_0_7
+ L  KTCHI_1_0_7
+ G  CH_1_0_7
+ L  FTC_1_1_7
+ G  KTCLO_1_1_7
+ L  KTCHI_1_1_7
+ G  CH_1_1_7
+ E  VC_2_7
+ E  KC_2_7
+ G  KCLO_2_7
+ L  KCHI_2_7
+ L  FTC_2_0_7
+ G  KTCLO_2_0_7
+ L  KTCHI_2_0_7
+ G  CH_2_0_7
+ L  FTC_2_1_7
+ G  KTCLO_2_1_7
+ L  KTCHI_2_1_7
+ G  CH_2_1_7
+ E  FEED_0_7
+ E  DEMAND_0_7
+ E  FEED_1_7
+ E  DEMAND_1_7
+ L  JETTY_8
+ E  VS_0_8
+ E  KS_0_8
+ G  KSLO_0_8
+ L  KSHI_0_8
+ L  FST_0_0_8
+ G  KSTLO_0_0_8
+ L  KSTHI_0_0_8
+ L  NOMIX_0_0_0_8
+ L  NOMIX_0_0_1_8
+ L  FST_0_1_8
+ G  KSTLO_0_1_8
+ L  KSTHI_0_1_8
+ L  NOMIX_0_1_0_8
+ L  NOMIX_0_1_1_8
+ L  FST_0_2_8
+ G  KSTLO_0_2_8
+ L  KSTHI_0_2_8
+ L  NOMIX_0_2_0_8
+ L  NOMIX_0_2_1_8
+ E  VS_1_8
+ E  KS_1_8
+ G  KSLO_1_8
+ L  KSHI_1_8
+ L  FST_1_0_8
+ G  KSTLO_1_0_8
+ L  KSTHI_1_0_8
+ L  NOMIX_1_0_0_8
+ L  NOMIX_1_0_1_8
+ L  FST_1_1_8
+ G  KSTLO_1_1_8
+ L  KSTHI_1_1_8
+ L  NOMIX_1_1_0_8
+ L  NOMIX_1_1_1_8
+ L  FST_1_2_8
+ G  KSTLO_1_2_8
+ L  KSTHI_1_2_8
+ L  NOMIX_1_2_0_8
+ L  NOMIX_1_2_1_8
+ E  VS_2_8
+ E  KS_2_8
+ G  KSLO_2_8
+ L  KSHI_2_8
+ L  FST_2_0_8
+ G  KSTLO_2_0_8
+ L  KSTHI_2_0_8
+ L  NOMIX_2_0_0_8
+ L  NOMIX_2_0_1_8
+ L  FST_2_1_8
+ G  KSTLO_2_1_8
+ L  KSTHI_2_1_8
+ L  NOMIX_2_1_0_8
+ L  NOMIX_2_1_1_8
+ L  FST_2_2_8
+ G  KSTLO_2_2_8
+ L  KSTHI_2_2_8
+ L  NOMIX_2_2_0_8
+ L  NOMIX_2_2_1_8
+ E  VC_0_8
+ E  KC_0_8
+ G  KCLO_0_8
+ L  KCHI_0_8
+ L  FTC_0_0_8
+ G  KTCLO_0_0_8
+ L  KTCHI_0_0_8
+ G  CH_0_0_8
+ L  FTC_0_1_8
+ G  KTCLO_0_1_8
+ L  KTCHI_0_1_8
+ G  CH_0_1_8
+ E  VC_1_8
+ E  KC_1_8
+ G  KCLO_1_8
+ L  KCHI_1_8
+ L  FTC_1_0_8
+ G  KTCLO_1_0_8
+ L  KTCHI_1_0_8
+ G  CH_1_0_8
+ L  FTC_1_1_8
+ G  KTCLO_1_1_8
+ L  KTCHI_1_1_8
+ G  CH_1_1_8
+ E  VC_2_8
+ E  KC_2_8
+ G  KCLO_2_8
+ L  KCHI_2_8
+ L  FTC_2_0_8
+ G  KTCLO_2_0_8
+ L  KTCHI_2_0_8
+ G  CH_2_0_8
+ L  FTC_2_1_8
+ G  KTCLO_2_1_8
+ L  KTCHI_2_1_8
+ G  CH_2_1_8
+ E  FEED_0_8
+ E  DEMAND_0_8
+ E  FEED_1_8
+ E  DEMAND_1_8
+ L  JETTY_9
+ E  VS_0_9
+ E  KS_0_9
+ G  KSLO_0_9
+ L  KSHI_0_9
+ L  FST_0_0_9
+ G  KSTLO_0_0_9
+ L  KSTHI_0_0_9
+ L  NOMIX_0_0_0_9
+ L  NOMIX_0_0_1_9
+ L  FST_0_1_9
+ G  KSTLO_0_1_9
+ L  KSTHI_0_1_9
+ L  NOMIX_0_1_0_9
+ L  NOMIX_0_1_1_9
+ L  FST_0_2_9
+ G  KSTLO_0_2_9
+ L  KSTHI_0_2_9
+ L  NOMIX_0_2_0_9
+ L  NOMIX_0_2_1_9
+ E  VS_1_9
+ E  KS_1_9
+ G  KSLO_1_9
+ L  KSHI_1_9
+ L  FST_1_0_9
+ G  KSTLO_1_0_9
+ L  KSTHI_1_0_9
+ L  NOMIX_1_0_0_9
+ L  NOMIX_1_0_1_9
+ L  FST_1_1_9
+ G  KSTLO_1_1_9
+ L  KSTHI_1_1_9
+ L  NOMIX_1_1_0_9
+ L  NOMIX_1_1_1_9
+ L  FST_1_2_9
+ G  KSTLO_1_2_9
+ L  KSTHI_1_2_9
+ L  NOMIX_1_2_0_9
+ L  NOMIX_1_2_1_9
+ E  VS_2_9
+ E  KS_2_9
+ G  KSLO_2_9
+ L  KSHI_2_9
+ L  FST_2_0_9
+ G  KSTLO_2_0_9
+ L  KSTHI_2_0_9
+ L  NOMIX_2_0_0_9
+ L  NOMIX_2_0_1_9
+ L  FST_2_1_9
+ G  KSTLO_2_1_9
+ L  KSTHI_2_1_9
+ L  NOMIX_2_1_0_9
+ L  NOMIX_2_1_1_9
+ L  FST_2_2_9
+ G  KSTLO_2_2_9
+ L  KSTHI_2_2_9
+ L  NOMIX_2_2_0_9
+ L  NOMIX_2_2_1_9
+ E  VC_0_9
+ E  KC_0_9
+ G  KCLO_0_9
+ L  KCHI_0_9
+ L  FTC_0_0_9
+ G  KTCLO_0_0_9
+ L  KTCHI_0_0_9
+ G  CH_0_0_9
+ L  FTC_0_1_9
+ G  KTCLO_0_1_9
+ L  KTCHI_0_1_9
+ G  CH_0_1_9
+ E  VC_1_9
+ E  KC_1_9
+ G  KCLO_1_9
+ L  KCHI_1_9
+ L  FTC_1_0_9
+ G  KTCLO_1_0_9
+ L  KTCHI_1_0_9
+ G  CH_1_0_9
+ L  FTC_1_1_9
+ G  KTCLO_1_1_9
+ L  KTCHI_1_1_9
+ G  CH_1_1_9
+ E  VC_2_9
+ E  KC_2_9
+ G  KCLO_2_9
+ L  KCHI_2_9
+ L  FTC_2_0_9
+ G  KTCLO_2_0_9
+ L  KTCHI_2_0_9
+ G  CH_2_0_9
+ L  FTC_2_1_9
+ G  KTCLO_2_1_9
+ L  KTCHI_2_1_9
+ G  CH_2_1_9
+ E  FEED_0_9
+ E  DEMAND_0_9
+ E  FEED_1_9
+ E  DEMAND_1_9
+ L  JETTY_10
+ E  VS_0_10
+ E  KS_0_10
+ G  KSLO_0_10
+ L  KSHI_0_10
+ L  FST_0_0_10
+ G  KSTLO_0_0_10
+ L  KSTHI_0_0_10
+ L  NOMIX_0_0_0_10
+ L  NOMIX_0_0_1_10
+ L  FST_0_1_10
+ G  KSTLO_0_1_10
+ L  KSTHI_0_1_10
+ L  NOMIX_0_1_0_10
+ L  NOMIX_0_1_1_10
+ L  FST_0_2_10
+ G  KSTLO_0_2_10
+ L  KSTHI_0_2_10
+ L  NOMIX_0_2_0_10
+ L  NOMIX_0_2_1_10
+ E  VS_1_10
+ E  KS_1_10
+ G  KSLO_1_10
+ L  KSHI_1_10
+ L  FST_1_0_10
+ G  KSTLO_1_0_10
+ L  KSTHI_1_0_10
+ L  NOMIX_1_0_0_10
+ L  NOMIX_1_0_1_10
+ L  FST_1_1_10
+ G  KSTLO_1_1_10
+ L  KSTHI_1_1_10
+ L  NOMIX_1_1_0_10
+ L  NOMIX_1_1_1_10
+ L  FST_1_2_10
+ G  KSTLO_1_2_10
+ L  KSTHI_1_2_10
+ L  NOMIX_1_2_0_10
+ L  NOMIX_1_2_1_10
+ E  VS_2_10
+ E  KS_2_10
+ G  KSLO_2_10
+ L  KSHI_2_10
+ L  FST_2_0_10
+ G  KSTLO_2_0_10
+ L  KSTHI_2_0_10
+ L  NOMIX_2_0_0_10
+ L  NOMIX_2_0_1_10
+ L  FST_2_1_10
+ G  KSTLO_2_1_10
+ L  KSTHI_2_1_10
+ L  NOMIX_2_1_0_10
+ L  NOMIX_2_1_1_10
+ L  FST_2_2_10
+ G  KSTLO_2_2_10
+ L  KSTHI_2_2_10
+ L  NOMIX_2_2_0_10
+ L  NOMIX_2_2_1_10
+ E  VC_0_10
+ E  KC_0_10
+ G  KCLO_0_10
+ L  KCHI_0_10
+ L  FTC_0_0_10
+ G  KTCLO_0_0_10
+ L  KTCHI_0_0_10
+ G  CH_0_0_10
+ L  FTC_0_1_10
+ G  KTCLO_0_1_10
+ L  KTCHI_0_1_10
+ G  CH_0_1_10
+ E  VC_1_10
+ E  KC_1_10
+ G  KCLO_1_10
+ L  KCHI_1_10
+ L  FTC_1_0_10
+ G  KTCLO_1_0_10
+ L  KTCHI_1_0_10
+ G  CH_1_0_10
+ L  FTC_1_1_10
+ G  KTCLO_1_1_10
+ L  KTCHI_1_1_10
+ G  CH_1_1_10
+ E  VC_2_10
+ E  KC_2_10
+ G  KCLO_2_10
+ L  KCHI_2_10
+ L  FTC_2_0_10
+ G  KTCLO_2_0_10
+ L  KTCHI_2_0_10
+ G  CH_2_0_10
+ L  FTC_2_1_10
+ G  KTCLO_2_1_10
+ L  KTCHI_2_1_10
+ G  CH_2_1_10
+ E  FEED_0_10
+ E  DEMAND_0_10
+ E  FEED_1_10
+ E  DEMAND_1_10
+ L  JETTY_11
+ E  VS_0_11
+ E  KS_0_11
+ G  KSLO_0_11
+ L  KSHI_0_11
+ L  FST_0_0_11
+ G  KSTLO_0_0_11
+ L  KSTHI_0_0_11
+ L  NOMIX_0_0_0_11
+ L  NOMIX_0_0_1_11
+ L  FST_0_1_11
+ G  KSTLO_0_1_11
+ L  KSTHI_0_1_11
+ L  NOMIX_0_1_0_11
+ L  NOMIX_0_1_1_11
+ L  FST_0_2_11
+ G  KSTLO_0_2_11
+ L  KSTHI_0_2_11
+ L  NOMIX_0_2_0_11
+ L  NOMIX_0_2_1_11
+ E  VS_1_11
+ E  KS_1_11
+ G  KSLO_1_11
+ L  KSHI_1_11
+ L  FST_1_0_11
+ G  KSTLO_1_0_11
+ L  KSTHI_1_0_11
+ L  NOMIX_1_0_0_11
+ L  NOMIX_1_0_1_11
+ L  FST_1_1_11
+ G  KSTLO_1_1_11
+ L  KSTHI_1_1_11
+ L  NOMIX_1_1_0_11
+ L  NOMIX_1_1_1_11
+ L  FST_1_2_11
+ G  KSTLO_1_2_11
+ L  KSTHI_1_2_11
+ L  NOMIX_1_2_0_11
+ L  NOMIX_1_2_1_11
+ E  VS_2_11
+ E  KS_2_11
+ G  KSLO_2_11
+ L  KSHI_2_11
+ L  FST_2_0_11
+ G  KSTLO_2_0_11
+ L  KSTHI_2_0_11
+ L  NOMIX_2_0_0_11
+ L  NOMIX_2_0_1_11
+ L  FST_2_1_11
+ G  KSTLO_2_1_11
+ L  KSTHI_2_1_11
+ L  NOMIX_2_1_0_11
+ L  NOMIX_2_1_1_11
+ L  FST_2_2_11
+ G  KSTLO_2_2_11
+ L  KSTHI_2_2_11
+ L  NOMIX_2_2_0_11
+ L  NOMIX_2_2_1_11
+ E  VC_0_11
+ E  KC_0_11
+ G  KCLO_0_11
+ L  KCHI_0_11
+ L  FTC_0_0_11
+ G  KTCLO_0_0_11
+ L  KTCHI_0_0_11
+ G  CH_0_0_11
+ L  FTC_0_1_11
+ G  KTCLO_0_1_11
+ L  KTCHI_0_1_11
+ G  CH_0_1_11
+ E  VC_1_11
+ E  KC_1_11
+ G  KCLO_1_11
+ L  KCHI_1_11
+ L  FTC_1_0_11
+ G  KTCLO_1_0_11
+ L  KTCHI_1_0_11
+ G  CH_1_0_11
+ L  FTC_1_1_11
+ G  KTCLO_1_1_11
+ L  KTCHI_1_1_11
+ G  CH_1_1_11
+ E  VC_2_11
+ E  KC_2_11
+ G  KCLO_2_11
+ L  KCHI_2_11
+ L  FTC_2_0_11
+ G  KTCLO_2_0_11
+ L  KTCHI_2_0_11
+ G  CH_2_0_11
+ L  FTC_2_1_11
+ G  KTCLO_2_1_11
+ L  KTCHI_2_1_11
+ G  CH_2_1_11
+ E  FEED_0_11
+ E  DEMAND_0_11
+ E  FEED_1_11
+ E  DEMAND_1_11
+COLUMNS
+    MARKER  'MARKER'  'INTORG'
+    XF_0_3  START_0  1
+    XF_0_3  UNLOAD_0_3  -1
+    XF_0_3  UNLOAD_0_4  -1
+    XF_0_3  UNLOAD_0_5  -1
+    XF_0_3  UNLOAD_0_6  -1
+    XF_0_3  UNLOAD_0_7  -1
+    XF_0_3  UNLOAD_0_8  -1
+    XF_0_3  UNLOAD_0_9  -1
+    XF_0_3  UNLOAD_0_10  -1
+    XF_0_3  UNLOAD_0_11  -1
+    XF_0_4  COST  5
+    XF_0_4  START_0  1
+    XF_0_4  UNLOAD_0_4  -1
+    XF_0_4  UNLOAD_0_5  -1
+    XF_0_4  UNLOAD_0_6  -1
+    XF_0_4  UNLOAD_0_7  -1
+    XF_0_4  UNLOAD_0_8  -1
+    XF_0_4  UNLOAD_0_9  -1
+    XF_0_4  UNLOAD_0_10  -1
+    XF_0_4  UNLOAD_0_11  -1
+    XF_0_5  COST  10
+    XF_0_5  START_0  1
+    XF_0_5  UNLOAD_0_5  -1
+    XF_0_5  UNLOAD_0_6  -1
+    XF_0_5  UNLOAD_0_7  -1
+    XF_0_5  UNLOAD_0_8  -1
+    XF_0_5  UNLOAD_0_9  -1
+    XF_0_5  UNLOAD_0_10  -1
+    XF_0_5  UNLOAD_0_11  -1
+    XF_0_6  COST  15
+    XF_0_6  START_0  1
+    XF_0_6  UNLOAD_0_6  -1
+    XF_0_6  UNLOAD_0_7  -1
+    XF_0_6  UNLOAD_0_8  -1
+    XF_0_6  UNLOAD_0_9  -1
+    XF_0_6  UNLOAD_0_10  -1
+    XF_0_6  UNLOAD_0_11  -1
+    XF_0_7  COST  20
+    XF_0_7  START_0  1
+    XF_0_7  UNLOAD_0_7  -1
+    XF_0_7  UNLOAD_0_8  -1
+    XF_0_7  UNLOAD_0_9  -1
+    XF_0_7  UNLOAD_0_10  -1
+    XF_0_7  UNLOAD_0_11  -1
+    XF_0_8  COST  25
+    XF_0_8  START_0  1
+    XF_0_8  UNLOAD_0_8  -1
+    XF_0_8  UNLOAD_0_9  -1
+    XF_0_8  UNLOAD_0_10  -1
+    XF_0_8  UNLOAD_0_11  -1
+    XF_0_9  COST  30
+    XF_0_9  START_0  1
+    XF_0_9  UNLOAD_0_9  -1
+    XF_0_9  UNLOAD_0_10  -1
+    XF_0_9  UNLOAD_0_11  -1
+    XF_0_10  COST  35
+    XF_0_10  START_0  1
+    XF_0_10  UNLOAD_0_10  -1
+    XF_0_10  UNLOAD_0_11  -1
+    XF_0_11  COST  40
+    XF_0_11  START_0  1
+    XF_0_11  UNLOAD_0_11  -1
+    XF_1_3  START_1  1
+    XF_1_3  UNLOAD_1_3  -1
+    XF_1_3  UNLOAD_1_4  -1
+    XF_1_3  UNLOAD_1_5  -1
+    XF_1_3  UNLOAD_1_6  -1
+    XF_1_3  UNLOAD_1_7  -1
+    XF_1_3  UNLOAD_1_8  -1
+    XF_1_3  UNLOAD_1_9  -1
+    XF_1_3  UNLOAD_1_10  -1
+    XF_1_3  UNLOAD_1_11  -1
+    XF_1_4  COST  5
+    XF_1_4  START_1  1
+    XF_1_4  UNLOAD_1_4  -1
+    XF_1_4  UNLOAD_1_5  -1
+    XF_1_4  UNLOAD_1_6  -1
+    XF_1_4  UNLOAD_1_7  -1
+    XF_1_4  UNLOAD_1_8  -1
+    XF_1_4  UNLOAD_1_9  -1
+    XF_1_4  UNLOAD_1_10  -1
+    XF_1_4  UNLOAD_1_11  -1
+    XF_1_5  COST  10
+    XF_1_5  START_1  1
+    XF_1_5  UNLOAD_1_5  -1
+    XF_1_5  UNLOAD_1_6  -1
+    XF_1_5  UNLOAD_1_7  -1
+    XF_1_5  UNLOAD_1_8  -1
+    XF_1_5  UNLOAD_1_9  -1
+    XF_1_5  UNLOAD_1_10  -1
+    XF_1_5  UNLOAD_1_11  -1
+    XF_1_6  COST  15
+    XF_1_6  START_1  1
+    XF_1_6  UNLOAD_1_6  -1
+    XF_1_6  UNLOAD_1_7  -1
+    XF_1_6  UNLOAD_1_8  -1
+    XF_1_6  UNLOAD_1_9  -1
+    XF_1_6  UNLOAD_1_10  -1
+    XF_1_6  UNLOAD_1_11  -1
+    XF_1_7  COST  20
+    XF_1_7  START_1  1
+    XF_1_7  UNLOAD_1_7  -1
+    XF_1_7  UNLOAD_1_8  -1
+    XF_1_7  UNLOAD_1_9  -1
+    XF_1_7  UNLOAD_1_10  -1
+    XF_1_7  UNLOAD_1_11  -1
+    XF_1_8  COST  25
+    XF_1_8  START_1  1
+    XF_1_8  UNLOAD_1_8  -1
+    XF_1_8  UNLOAD_1_9  -1
+    XF_1_8  UNLOAD_1_10  -1
+    XF_1_8  UNLOAD_1_11  -1
+    XF_1_9  COST  30
+    XF_1_9  START_1  1
+    XF_1_9  UNLOAD_1_9  -1
+    XF_1_9  UNLOAD_1_10  -1
+    XF_1_9  UNLOAD_1_11  -1
+    XF_1_10  COST  35
+    XF_1_10  START_1  1
+    XF_1_10  UNLOAD_1_10  -1
+    XF_1_10  UNLOAD_1_11  -1
+    XF_1_11  COST  40
+    XF_1_11  START_1  1
+    XF_1_11  UNLOAD_1_11  -1
+    XF_2_6  START_2  1
+    XF_2_6  UNLOAD_2_6  -1
+    XF_2_6  UNLOAD_2_7  -1
+    XF_2_6  UNLOAD_2_8  -1
+    XF_2_6  UNLOAD_2_9  -1
+    XF_2_6  UNLOAD_2_10  -1
+    XF_2_6  UNLOAD_2_11  -1
+    XF_2_7  COST  5
+    XF_2_7  START_2  1
+    XF_2_7  UNLOAD_2_7  -1
+    XF_2_7  UNLOAD_2_8  -1
+    XF_2_7  UNLOAD_2_9  -1
+    XF_2_7  UNLOAD_2_10  -1
+    XF_2_7  UNLOAD_2_11  -1
+    XF_2_8  COST  10
+    XF_2_8  START_2  1
+    XF_2_8  UNLOAD_2_8  -1
+    XF_2_8  UNLOAD_2_9  -1
+    XF_2_8  UNLOAD_2_10  -1
+    XF_2_8  UNLOAD_2_11  -1
+    XF_2_9  COST  15
+    XF_2_9  START_2  1
+    XF_2_9  UNLOAD_2_9  -1
+    XF_2_9  UNLOAD_2_10  -1
+    XF_2_9  UNLOAD_2_11  -1
+    XF_2_10  COST  20
+    XF_2_10  START_2  1
+    XF_2_10  UNLOAD_2_10  -1
+    XF_2_10  UNLOAD_2_11  -1
+    XF_2_11  COST  25
+    XF_2_11  START_2  1
+    XF_2_11  UNLOAD_2_11  -1
+    XW_0_3  COST  8
+    XW_0_3  UNLOAD_0_3  1
+    XW_0_3  FVS_0_0_3  -100
+    XW_0_3  FVS_0_1_3  -100
+    XW_0_3  FVS_0_2_3  -100
+    XW_0_3  JETTY_3  1
+    XW_0_4  COST  8
+    XW_0_4  UNLOAD_0_4  1
+    XW_0_4  FVS_0_0_4  -100
+    XW_0_4  FVS_0_1_4  -100
+    XW_0_4  FVS_0_2_4  -100
+    XW_0_4  JETTY_4  1
+    XW_0_5  COST  8
+    XW_0_5  UNLOAD_0_5  1
+    XW_0_5  FVS_0_0_5  -100
+    XW_0_5  FVS_0_1_5  -100
+    XW_0_5  FVS_0_2_5  -100
+    XW_0_5  JETTY_5  1
+    XW_0_6  COST  8
+    XW_0_6  UNLOAD_0_6  1
+    XW_0_6  FVS_0_0_6  -100
+    XW_0_6  FVS_0_1_6  -100
+    XW_0_6  FVS_0_2_6  -100
+    XW_0_6  JETTY_6  1
+    XW_0_7  COST  8
+    XW_0_7  UNLOAD_0_7  1
+    XW_0_7  FVS_0_0_7  -100
+    XW_0_7  FVS_0_1_7  -100
+    XW_0_7  FVS_0_2_7  -100
+    XW_0_7  JETTY_7  1
+    XW_0_8  COST  8
+    XW_0_8  UNLOAD_0_8  1
+    XW_0_8  FVS_0_0_8  -100
+    XW_0_8  FVS_0_1_8  -100
+    XW_0_8  FVS_0_2_8  -100
+    XW_0_8  JETTY_8  1
+    XW_0_9  COST  8
+    XW_0_9  UNLOAD_0_9  1
+    XW_0_9  FVS_0_0_9  -100
+    XW_0_9  FVS_0_1_9  -100
+    XW_0_9  FVS_0_2_9  -100
+    XW_0_9  JETTY_9  1
+    XW_0_10  COST  8
+    XW_0_10  UNLOAD_0_10  1
+    XW_0_10  FVS_0_0_10  -100
+    XW_0_10  FVS_0_1_10  -100
+    XW_0_10  FVS_0_2_10  -100
+    XW_0_10  JETTY_10  1
+    XW_0_11  COST  8
+    XW_0_11  UNLOAD_0_11  1
+    XW_0_11  FVS_0_0_11  -100
+    XW_0_11  FVS_0_1_11  -100
+    XW_0_11  FVS_0_2_11  -100
+    XW_0_11  JETTY_11  1
+    XW_1_3  COST  8
+    XW_1_3  UNLOAD_1_3  1
+    XW_1_3  FVS_1_0_3  -100
+    XW_1_3  FVS_1_1_3  -100
+    XW_1_3  FVS_1_2_3  -100
+    XW_1_3  JETTY_3  1
+    XW_1_4  COST  8
+    XW_1_4  UNLOAD_1_4  1
+    XW_1_4  FVS_1_0_4  -100
+    XW_1_4  FVS_1_1_4  -100
+    XW_1_4  FVS_1_2_4  -100
+    XW_1_4  JETTY_4  1
+    XW_1_5  COST  8
+    XW_1_5  UNLOAD_1_5  1
+    XW_1_5  FVS_1_0_5  -100
+    XW_1_5  FVS_1_1_5  -100
+    XW_1_5  FVS_1_2_5  -100
+    XW_1_5  JETTY_5  1
+    XW_1_6  COST  8
+    XW_1_6  UNLOAD_1_6  1
+    XW_1_6  FVS_1_0_6  -100
+    XW_1_6  FVS_1_1_6  -100
+    XW_1_6  FVS_1_2_6  -100
+    XW_1_6  JETTY_6  1
+    XW_1_7  COST  8
+    XW_1_7  UNLOAD_1_7  1
+    XW_1_7  FVS_1_0_7  -100
+    XW_1_7  FVS_1_1_7  -100
+    XW_1_7  FVS_1_2_7  -100
+    XW_1_7  JETTY_7  1
+    XW_1_8  COST  8
+    XW_1_8  UNLOAD_1_8  1
+    XW_1_8  FVS_1_0_8  -100
+    XW_1_8  FVS_1_1_8  -100
+    XW_1_8  FVS_1_2_8  -100
+    XW_1_8  JETTY_8  1
+    XW_1_9  COST  8
+    XW_1_9  UNLOAD_1_9  1
+    XW_1_9  FVS_1_0_9  -100
+    XW_1_9  FVS_1_1_9  -100
+    XW_1_9  FVS_1_2_9  -100
+    XW_1_9  JETTY_9  1
+    XW_1_10  COST  8
+    XW_1_10  UNLOAD_1_10  1
+    XW_1_10  FVS_1_0_10  -100
+    XW_1_10  FVS_1_1_10  -100
+    XW_1_10  FVS_1_2_10  -100
+    XW_1_10  JETTY_10  1
+    XW_1_11  COST  8
+    XW_1_11  UNLOAD_1_11  1
+    XW_1_11  FVS_1_0_11  -100
+    XW_1_11  FVS_1_1_11  -100
+    XW_1_11  FVS_1_2_11  -100
+    XW_1_11  JETTY_11  1
+    XW_2_6  COST  8
+    XW_2_6  UNLOAD_2_6  1
+    XW_2_6  FVS_2_0_6  -100
+    XW_2_6  FVS_2_1_6  -100
+    XW_2_6  FVS_2_2_6  -100
+    XW_2_6  JETTY_6  1
+    XW_2_7  COST  8
+    XW_2_7  UNLOAD_2_7  1
+    XW_2_7  FVS_2_0_7  -100
+    XW_2_7  FVS_2_1_7  -100
+    XW_2_7  FVS_2_2_7  -100
+    XW_2_7  JETTY_7  1
+    XW_2_8  COST  8
+    XW_2_8  UNLOAD_2_8  1
+    XW_2_8  FVS_2_0_8  -100
+    XW_2_8  FVS_2_1_8  -100
+    XW_2_8  FVS_2_2_8  -100
+    XW_2_8  JETTY_8  1
+    XW_2_9  COST  8
+    XW_2_9  UNLOAD_2_9  1
+    XW_2_9  FVS_2_0_9  -100
+    XW_2_9  FVS_2_1_9  -100
+    XW_2_9  FVS_2_2_9  -100
+    XW_2_9  JETTY_9  1
+    XW_2_10  COST  8
+    XW_2_10  UNLOAD_2_10  1
+    XW_2_10  FVS_2_0_10  -100
+    XW_2_10  FVS_2_1_10  -100
+    XW_2_10  FVS_2_2_10  -100
+    XW_2_10  JETTY_10  1
+    XW_2_11  COST  8
+    XW_2_11  UNLOAD_2_11  1
+    XW_2_11  FVS_2_0_11  -100
+    XW_2_11  FVS_2_1_11  -100
+    XW_2_11  FVS_2_2_11  -100
+    XW_2_11  JETTY_11  1
+    MARKER  'MARKER'  'INTEND'
+    FVS_0_0_3  CARGO_0  1
+    FVS_0_0_3  FVS_0_0_3  1
+    FVS_0_0_3  VS_0_3  -1
+    FVS_0_0_3  KS_0_3  -1.3
+    FVS_0_1_3  CARGO_0  1
+    FVS_0_1_3  FVS_0_1_3  1
+    FVS_0_1_3  VS_1_3  -1
+    FVS_0_1_3  KS_1_3  -1.3
+    FVS_0_2_3  CARGO_0  1
+    FVS_0_2_3  FVS_0_2_3  1
+    FVS_0_2_3  VS_2_3  -1
+    FVS_0_2_3  KS_2_3  -1.3
+    FVS_0_0_4  CARGO_0  1
+    FVS_0_0_4  FVS_0_0_4  1
+    FVS_0_0_4  VS_0_4  -1
+    FVS_0_0_4  KS_0_4  -1.3
+    FVS_0_1_4  CARGO_0  1
+    FVS_0_1_4  FVS_0_1_4  1
+    FVS_0_1_4  VS_1_4  -1
+    FVS_0_1_4  KS_1_4  -1.3
+    FVS_0_2_4  CARGO_0  1
+    FVS_0_2_4  FVS_0_2_4  1
+    FVS_0_2_4  VS_2_4  -1
+    FVS_0_2_4  KS_2_4  -1.3
+    FVS_0_0_5  CARGO_0  1
+    FVS_0_0_5  FVS_0_0_5  1
+    FVS_0_0_5  VS_0_5  -1
+    FVS_0_0_5  KS_0_5  -1.3
+    FVS_0_1_5  CARGO_0  1
+    FVS_0_1_5  FVS_0_1_5  1
+    FVS_0_1_5  VS_1_5  -1
+    FVS_0_1_5  KS_1_5  -1.3
+    FVS_0_2_5  CARGO_0  1
+    FVS_0_2_5  FVS_0_2_5  1
+    FVS_0_2_5  VS_2_5  -1
+    FVS_0_2_5  KS_2_5  -1.3
+    FVS_0_0_6  CARGO_0  1
+    FVS_0_0_6  FVS_0_0_6  1
+    FVS_0_0_6  VS_0_6  -1
+    FVS_0_0_6  KS_0_6  -1.3
+    FVS_0_1_6  CARGO_0  1
+    FVS_0_1_6  FVS_0_1_6  1
+    FVS_0_1_6  VS_1_6  -1
+    FVS_0_1_6  KS_1_6  -1.3
+    FVS_0_2_6  CARGO_0  1
+    FVS_0_2_6  FVS_0_2_6  1
+    FVS_0_2_6  VS_2_6  -1
+    FVS_0_2_6  KS_2_6  -1.3
+    FVS_0_0_7  CARGO_0  1
+    FVS_0_0_7  FVS_0_0_7  1
+    FVS_0_0_7  VS_0_7  -1
+    FVS_0_0_7  KS_0_7  -1.3
+    FVS_0_1_7  CARGO_0  1
+    FVS_0_1_7  FVS_0_1_7  1
+    FVS_0_1_7  VS_1_7  -1
+    FVS_0_1_7  KS_1_7  -1.3
+    FVS_0_2_7  CARGO_0  1
+    FVS_0_2_7  FVS_0_2_7  1
+    FVS_0_2_7  VS_2_7  -1
+    FVS_0_2_7  KS_2_7  -1.3
+    FVS_0_0_8  CARGO_0  1
+    FVS_0_0_8  FVS_0_0_8  1
+    FVS_0_0_8  VS_0_8  -1
+    FVS_0_0_8  KS_0_8  -1.3
+    FVS_0_1_8  CARGO_0  1
+    FVS_0_1_8  FVS_0_1_8  1
+    FVS_0_1_8  VS_1_8  -1
+    FVS_0_1_8  KS_1_8  -1.3
+    FVS_0_2_8  CARGO_0  1
+    FVS_0_2_8  FVS_0_2_8  1
+    FVS_0_2_8  VS_2_8  -1
+    FVS_0_2_8  KS_2_8  -1.3
+    FVS_0_0_9  CARGO_0  1
+    FVS_0_0_9  FVS_0_0_9  1
+    FVS_0_0_9  VS_0_9  -1
+    FVS_0_0_9  KS_0_9  -1.3
+    FVS_0_1_9  CARGO_0  1
+    FVS_0_1_9  FVS_0_1_9  1
+    FVS_0_1_9  VS_1_9  -1
+    FVS_0_1_9  KS_1_9  -1.3
+    FVS_0_2_9  CARGO_0  1
+    FVS_0_2_9  FVS_0_2_9  1
+    FVS_0_2_9  VS_2_9  -1
+    FVS_0_2_9  KS_2_9  -1.3
+    FVS_0_0_10  CARGO_0  1
+    FVS_0_0_10  FVS_0_0_10  1
+    FVS_0_0_10  VS_0_10  -1
+    FVS_0_0_10  KS_0_10  -1.3
+    FVS_0_1_10  CARGO_0  1
+    FVS_0_1_10  FVS_0_1_10  1
+    FVS_0_1_10  VS_1_10  -1
+    FVS_0_1_10  KS_1_10  -1.3
+    FVS_0_2_10  CARGO_0  1
+    FVS_0_2_10  FVS_0_2_10  1
+    FVS_0_2_10  VS_2_10  -1
+    FVS_0_2_10  KS_2_10  -1.3
+    FVS_0_0_11  CARGO_0  1
+    FVS_0_0_11  FVS_0_0_11  1
+    FVS_0_0_11  VS_0_11  -1
+    FVS_0_0_11  KS_0_11  -1.3
+    FVS_0_1_11  CARGO_0  1
+    FVS_0_1_11  FVS_0_1_11  1
+    FVS_0_1_11  VS_1_11  -1
+    FVS_0_1_11  KS_1_11  -1.3
+    FVS_0_2_11  CARGO_0  1
+    FVS_0_2_11  FVS_0_2_11  1
+    FVS_0_2_11  VS_2_11  -1
+    FVS_0_2_11  KS_2_11  -1.3
+    FVS_1_0_3  CARGO_1  1
+    FVS_1_0_3  FVS_1_0_3  1
+    FVS_1_0_3  VS_0_3  -1
+    FVS_1_0_3  KS_0_3  -0.8
+    FVS_1_1_3  CARGO_1  1
+    FVS_1_1_3  FVS_1_1_3  1
+    FVS_1_1_3  VS_1_3  -1
+    FVS_1_1_3  KS_1_3  -0.8
+    FVS_1_2_3  CARGO_1  1
+    FVS_1_2_3  FVS_1_2_3  1
+    FVS_1_2_3  VS_2_3  -1
+    FVS_1_2_3  KS_2_3  -0.8
+    FVS_1_0_4  CARGO_1  1
+    FVS_1_0_4  FVS_1_0_4  1
+    FVS_1_0_4  VS_0_4  -1
+    FVS_1_0_4  KS_0_4  -0.8
+    FVS_1_1_4  CARGO_1  1
+    FVS_1_1_4  FVS_1_1_4  1
+    FVS_1_1_4  VS_1_4  -1
+    FVS_1_1_4  KS_1_4  -0.8
+    FVS_1_2_4  CARGO_1  1
+    FVS_1_2_4  FVS_1_2_4  1
+    FVS_1_2_4  VS_2_4  -1
+    FVS_1_2_4  KS_2_4  -0.8
+    FVS_1_0_5  CARGO_1  1
+    FVS_1_0_5  FVS_1_0_5  1
+    FVS_1_0_5  VS_0_5  -1
+    FVS_1_0_5  KS_0_5  -0.8
+    FVS_1_1_5  CARGO_1  1
+    FVS_1_1_5  FVS_1_1_5  1
+    FVS_1_1_5  VS_1_5  -1
+    FVS_1_1_5  KS_1_5  -0.8
+    FVS_1_2_5  CARGO_1  1
+    FVS_1_2_5  FVS_1_2_5  1
+    FVS_1_2_5  VS_2_5  -1
+    FVS_1_2_5  KS_2_5  -0.8
+    FVS_1_0_6  CARGO_1  1
+    FVS_1_0_6  FVS_1_0_6  1
+    FVS_1_0_6  VS_0_6  -1
+    FVS_1_0_6  KS_0_6  -0.8
+    FVS_1_1_6  CARGO_1  1
+    FVS_1_1_6  FVS_1_1_6  1
+    FVS_1_1_6  VS_1_6  -1
+    FVS_1_1_6  KS_1_6  -0.8
+    FVS_1_2_6  CARGO_1  1
+    FVS_1_2_6  FVS_1_2_6  1
+    FVS_1_2_6  VS_2_6  -1
+    FVS_1_2_6  KS_2_6  -0.8
+    FVS_1_0_7  CARGO_1  1
+    FVS_1_0_7  FVS_1_0_7  1
+    FVS_1_0_7  VS_0_7  -1
+    FVS_1_0_7  KS_0_7  -0.8
+    FVS_1_1_7  CARGO_1  1
+    FVS_1_1_7  FVS_1_1_7  1
+    FVS_1_1_7  VS_1_7  -1
+    FVS_1_1_7  KS_1_7  -0.8
+    FVS_1_2_7  CARGO_1  1
+    FVS_1_2_7  FVS_1_2_7  1
+    FVS_1_2_7  VS_2_7  -1
+    FVS_1_2_7  KS_2_7  -0.8
+    FVS_1_0_8  CARGO_1  1
+    FVS_1_0_8  FVS_1_0_8  1
+    FVS_1_0_8  VS_0_8  -1
+    FVS_1_0_8  KS_0_8  -0.8
+    FVS_1_1_8  CARGO_1  1
+    FVS_1_1_8  FVS_1_1_8  1
+    FVS_1_1_8  VS_1_8  -1
+    FVS_1_1_8  KS_1_8  -0.8
+    FVS_1_2_8  CARGO_1  1
+    FVS_1_2_8  FVS_1_2_8  1
+    FVS_1_2_8  VS_2_8  -1
+    FVS_1_2_8  KS_2_8  -0.8
+    FVS_1_0_9  CARGO_1  1
+    FVS_1_0_9  FVS_1_0_9  1
+    FVS_1_0_9  VS_0_9  -1
+    FVS_1_0_9  KS_0_9  -0.8
+    FVS_1_1_9  CARGO_1  1
+    FVS_1_1_9  FVS_1_1_9  1
+    FVS_1_1_9  VS_1_9  -1
+    FVS_1_1_9  KS_1_9  -0.8
+    FVS_1_2_9  CARGO_1  1
+    FVS_1_2_9  FVS_1_2_9  1
+    FVS_1_2_9  VS_2_9  -1
+    FVS_1_2_9  KS_2_9  -0.8
+    FVS_1_0_10  CARGO_1  1
+    FVS_1_0_10  FVS_1_0_10  1
+    FVS_1_0_10  VS_0_10  -1
+    FVS_1_0_10  KS_0_10  -0.8
+    FVS_1_1_10  CARGO_1  1
+    FVS_1_1_10  FVS_1_1_10  1
+    FVS_1_1_10  VS_1_10  -1
+    FVS_1_1_10  KS_1_10  -0.8
+    FVS_1_2_10  CARGO_1  1
+    FVS_1_2_10  FVS_1_2_10  1
+    FVS_1_2_10  VS_2_10  -1
+    FVS_1_2_10  KS_2_10  -0.8
+    FVS_1_0_11  CARGO_1  1
+    FVS_1_0_11  FVS_1_0_11  1
+    FVS_1_0_11  VS_0_11  -1
+    FVS_1_0_11  KS_0_11  -0.8
+    FVS_1_1_11  CARGO_1  1
+    FVS_1_1_11  FVS_1_1_11  1
+    FVS_1_1_11  VS_1_11  -1
+    FVS_1_1_11  KS_1_11  -0.8
+    FVS_1_2_11  CARGO_1  1
+    FVS_1_2_11  FVS_1_2_11  1
+    FVS_1_2_11  VS_2_11  -1
+    FVS_1_2_11  KS_2_11  -0.8
+    FVS_2_0_6  CARGO_2  1
+    FVS_2_0_6  FVS_2_0_6  1
+    FVS_2_0_6  VS_0_6  -1
+    FVS_2_0_6  KS_0_6  -2
+    FVS_2_1_6  CARGO_2  1
+    FVS_2_1_6  FVS_2_1_6  1
+    FVS_2_1_6  VS_1_6  -1
+    FVS_2_1_6  KS_1_6  -2
+    FVS_2_2_6  CARGO_2  1
+    FVS_2_2_6  FVS_2_2_6  1
+    FVS_2_2_6  VS_2_6  -1
+    FVS_2_2_6  KS_2_6  -2
+    FVS_2_0_7  CARGO_2  1
+    FVS_2_0_7  FVS_2_0_7  1
+    FVS_2_0_7  VS_0_7  -1
+    FVS_2_0_7  KS_0_7  -2
+    FVS_2_1_7  CARGO_2  1
+    FVS_2_1_7  FVS_2_1_7  1
+    FVS_2_1_7  VS_1_7  -1
+    FVS_2_1_7  KS_1_7  -2
+    FVS_2_2_7  CARGO_2  1
+    FVS_2_2_7  FVS_2_2_7  1
+    FVS_2_2_7  VS_2_7  -1
+    FVS_2_2_7  KS_2_7  -2
+    FVS_2_0_8  CARGO_2  1
+    FVS_2_0_8  FVS_2_0_8  1
+    FVS_2_0_8  VS_0_8  -1
+    FVS_2_0_8  KS_0_8  -2
+    FVS_2_1_8  CARGO_2  1
+    FVS_2_1_8  FVS_2_1_8  1
+    FVS_2_1_8  VS_1_8  -1
+    FVS_2_1_8  KS_1_8  -2
+    FVS_2_2_8  CARGO_2  1
+    FVS_2_2_8  FVS_2_2_8  1
+    FVS_2_2_8  VS_2_8  -1
+    FVS_2_2_8  KS_2_8  -2
+    FVS_2_0_9  CARGO_2  1
+    FVS_2_0_9  FVS_2_0_9  1
+    FVS_2_0_9  VS_0_9  -1
+    FVS_2_0_9  KS_0_9  -2
+    FVS_2_1_9  CARGO_2  1
+    FVS_2_1_9  FVS_2_1_9  1
+    FVS_2_1_9  VS_1_9  -1
+    FVS_2_1_9  KS_1_9  -2
+    FVS_2_2_9  CARGO_2  1
+    FVS_2_2_9  FVS_2_2_9  1
+    FVS_2_2_9  VS_2_9  -1
+    FVS_2_2_9  KS_2_9  -2
+    FVS_2_0_10  CARGO_2  1
+    FVS_2_0_10  FVS_2_0_10  1
+    FVS_2_0_10  VS_0_10  -1
+    FVS_2_0_10  KS_0_10  -2
+    FVS_2_1_10  CARGO_2  1
+    FVS_2_1_10  FVS_2_1_10  1
+    FVS_2_1_10  VS_1_10  -1
+    FVS_2_1_10  KS_1_10  -2
+    FVS_2_2_10  CARGO_2  1
+    FVS_2_2_10  FVS_2_2_10  1
+    FVS_2_2_10  VS_2_10  -1
+    FVS_2_2_10  KS_2_10  -2
+    FVS_2_0_11  CARGO_2  1
+    FVS_2_0_11  FVS_2_0_11  1
+    FVS_2_0_11  VS_0_11  -1
+    FVS_2_0_11  KS_0_11  -2
+    FVS_2_1_11  CARGO_2  1
+    FVS_2_1_11  FVS_2_1_11  1
+    FVS_2_1_11  VS_1_11  -1
+    FVS_2_1_11  KS_1_11  -2
+    FVS_2_2_11  CARGO_2  1
+    FVS_2_2_11  FVS_2_2_11  1
+    FVS_2_2_11  VS_2_11  -1
+    FVS_2_2_11  KS_2_11  -2
+    MARKER  'MARKER'  'INTORG'
+    Z_0_0_0  FST_0_0_0  -100
+    Z_0_0_0  NOMIX_0_0_0_0  1
+    Z_0_0_0  NOMIX_0_0_1_0  1
+    Z_0_0_1  FST_0_0_1  -100
+    Z_0_0_1  NOMIX_0_0_0_1  1
+    Z_0_0_1  NOMIX_0_0_1_1  1
+    Z_0_0_2  FST_0_0_2  -100
+    Z_0_0_2  NOMIX_0_0_0_2  1
+    Z_0_0_2  NOMIX_0_0_1_2  1
+    Z_0_0_3  FST_0_0_3  -100
+    Z_0_0_3  NOMIX_0_0_0_3  1
+    Z_0_0_3  NOMIX_0_0_1_3  1
+    Z_0_0_4  FST_0_0_4  -100
+    Z_0_0_4  NOMIX_0_0_0_4  1
+    Z_0_0_4  NOMIX_0_0_1_4  1
+    Z_0_0_5  FST_0_0_5  -100
+    Z_0_0_5  NOMIX_0_0_0_5  1
+    Z_0_0_5  NOMIX_0_0_1_5  1
+    Z_0_0_6  FST_0_0_6  -100
+    Z_0_0_6  NOMIX_0_0_0_6  1
+    Z_0_0_6  NOMIX_0_0_1_6  1
+    Z_0_0_7  FST_0_0_7  -100
+    Z_0_0_7  NOMIX_0_0_0_7  1
+    Z_0_0_7  NOMIX_0_0_1_7  1
+    Z_0_0_8  FST_0_0_8  -100
+    Z_0_0_8  NOMIX_0_0_0_8  1
+    Z_0_0_8  NOMIX_0_0_1_8  1
+    Z_0_0_9  FST_0_0_9  -100
+    Z_0_0_9  NOMIX_0_0_0_9  1
+    Z_0_0_9  NOMIX_0_0_1_9  1
+    Z_0_0_10  FST_0_0_10  -100
+    Z_0_0_10  NOMIX_0_0_0_10  1
+    Z_0_0_10  NOMIX_0_0_1_10  1
+    Z_0_0_11  FST_0_0_11  -100
+    Z_0_0_11  NOMIX_0_0_0_11  1
+    Z_0_0_11  NOMIX_0_0_1_11  1
+    Z_0_1_0  FST_0_1_0  -100
+    Z_0_1_0  NOMIX_0_1_0_0  1
+    Z_0_1_0  NOMIX_0_1_1_0  1
+    Z_0_1_1  FST_0_1_1  -100
+    Z_0_1_1  NOMIX_0_1_0_1  1
+    Z_0_1_1  NOMIX_0_1_1_1  1
+    Z_0_1_2  FST_0_1_2  -100
+    Z_0_1_2  NOMIX_0_1_0_2  1
+    Z_0_1_2  NOMIX_0_1_1_2  1
+    Z_0_1_3  FST_0_1_3  -100
+    Z_0_1_3  NOMIX_0_1_0_3  1
+    Z_0_1_3  NOMIX_0_1_1_3  1
+    Z_0_1_4  FST_0_1_4  -100
+    Z_0_1_4  NOMIX_0_1_0_4  1
+    Z_0_1_4  NOMIX_0_1_1_4  1
+    Z_0_1_5  FST_0_1_5  -100
+    Z_0_1_5  NOMIX_0_1_0_5  1
+    Z_0_1_5  NOMIX_0_1_1_5  1
+    Z_0_1_6  FST_0_1_6  -100
+    Z_0_1_6  NOMIX_0_1_0_6  1
+    Z_0_1_6  NOMIX_0_1_1_6  1
+    Z_0_1_7  FST_0_1_7  -100
+    Z_0_1_7  NOMIX_0_1_0_7  1
+    Z_0_1_7  NOMIX_0_1_1_7  1
+    Z_0_1_8  FST_0_1_8  -100
+    Z_0_1_8  NOMIX_0_1_0_8  1
+    Z_0_1_8  NOMIX_0_1_1_8  1
+    Z_0_1_9  FST_0_1_9  -100
+    Z_0_1_9  NOMIX_0_1_0_9  1
+    Z_0_1_9  NOMIX_0_1_1_9  1
+    Z_0_1_10  FST_0_1_10  -100
+    Z_0_1_10  NOMIX_0_1_0_10  1
+    Z_0_1_10  NOMIX_0_1_1_10  1
+    Z_0_1_11  FST_0_1_11  -100
+    Z_0_1_11  NOMIX_0_1_0_11  1
+    Z_0_1_11  NOMIX_0_1_1_11  1
+    Z_0_2_0  FST_0_2_0  -100
+    Z_0_2_0  NOMIX_0_2_0_0  1
+    Z_0_2_0  NOMIX_0_2_1_0  1
+    Z_0_2_1  FST_0_2_1  -100
+    Z_0_2_1  NOMIX_0_2_0_1  1
+    Z_0_2_1  NOMIX_0_2_1_1  1
+    Z_0_2_2  FST_0_2_2  -100
+    Z_0_2_2  NOMIX_0_2_0_2  1
+    Z_0_2_2  NOMIX_0_2_1_2  1
+    Z_0_2_3  FST_0_2_3  -100
+    Z_0_2_3  NOMIX_0_2_0_3  1
+    Z_0_2_3  NOMIX_0_2_1_3  1
+    Z_0_2_4  FST_0_2_4  -100
+    Z_0_2_4  NOMIX_0_2_0_4  1
+    Z_0_2_4  NOMIX_0_2_1_4  1
+    Z_0_2_5  FST_0_2_5  -100
+    Z_0_2_5  NOMIX_0_2_0_5  1
+    Z_0_2_5  NOMIX_0_2_1_5  1
+    Z_0_2_6  FST_0_2_6  -100
+    Z_0_2_6  NOMIX_0_2_0_6  1
+    Z_0_2_6  NOMIX_0_2_1_6  1
+    Z_0_2_7  FST_0_2_7  -100
+    Z_0_2_7  NOMIX_0_2_0_7  1
+    Z_0_2_7  NOMIX_0_2_1_7  1
+    Z_0_2_8  FST_0_2_8  -100
+    Z_0_2_8  NOMIX_0_2_0_8  1
+    Z_0_2_8  NOMIX_0_2_1_8  1
+    Z_0_2_9  FST_0_2_9  -100
+    Z_0_2_9  NOMIX_0_2_0_9  1
+    Z_0_2_9  NOMIX_0_2_1_9  1
+    Z_0_2_10  FST_0_2_10  -100
+    Z_0_2_10  NOMIX_0_2_0_10  1
+    Z_0_2_10  NOMIX_0_2_1_10  1
+    Z_0_2_11  FST_0_2_11  -100
+    Z_0_2_11  NOMIX_0_2_0_11  1
+    Z_0_2_11  NOMIX_0_2_1_11  1
+    Z_1_0_0  FST_1_0_0  -100
+    Z_1_0_0  NOMIX_1_0_0_0  1
+    Z_1_0_0  NOMIX_1_0_1_0  1
+    Z_1_0_1  FST_1_0_1  -100
+    Z_1_0_1  NOMIX_1_0_0_1  1
+    Z_1_0_1  NOMIX_1_0_1_1  1
+    Z_1_0_2  FST_1_0_2  -100
+    Z_1_0_2  NOMIX_1_0_0_2  1
+    Z_1_0_2  NOMIX_1_0_1_2  1
+    Z_1_0_3  FST_1_0_3  -100
+    Z_1_0_3  NOMIX_1_0_0_3  1
+    Z_1_0_3  NOMIX_1_0_1_3  1
+    Z_1_0_4  FST_1_0_4  -100
+    Z_1_0_4  NOMIX_1_0_0_4  1
+    Z_1_0_4  NOMIX_1_0_1_4  1
+    Z_1_0_5  FST_1_0_5  -100
+    Z_1_0_5  NOMIX_1_0_0_5  1
+    Z_1_0_5  NOMIX_1_0_1_5  1
+    Z_1_0_6  FST_1_0_6  -100
+    Z_1_0_6  NOMIX_1_0_0_6  1
+    Z_1_0_6  NOMIX_1_0_1_6  1
+    Z_1_0_7  FST_1_0_7  -100
+    Z_1_0_7  NOMIX_1_0_0_7  1
+    Z_1_0_7  NOMIX_1_0_1_7  1
+    Z_1_0_8  FST_1_0_8  -100
+    Z_1_0_8  NOMIX_1_0_0_8  1
+    Z_1_0_8  NOMIX_1_0_1_8  1
+    Z_1_0_9  FST_1_0_9  -100
+    Z_1_0_9  NOMIX_1_0_0_9  1
+    Z_1_0_9  NOMIX_1_0_1_9  1
+    Z_1_0_10  FST_1_0_10  -100
+    Z_1_0_10  NOMIX_1_0_0_10  1
+    Z_1_0_10  NOMIX_1_0_1_10  1
+    Z_1_0_11  FST_1_0_11  -100
+    Z_1_0_11  NOMIX_1_0_0_11  1
+    Z_1_0_11  NOMIX_1_0_1_11  1
+    Z_1_1_0  FST_1_1_0  -100
+    Z_1_1_0  NOMIX_1_1_0_0  1
+    Z_1_1_0  NOMIX_1_1_1_0  1
+    Z_1_1_1  FST_1_1_1  -100
+    Z_1_1_1  NOMIX_1_1_0_1  1
+    Z_1_1_1  NOMIX_1_1_1_1  1
+    Z_1_1_2  FST_1_1_2  -100
+    Z_1_1_2  NOMIX_1_1_0_2  1
+    Z_1_1_2  NOMIX_1_1_1_2  1
+    Z_1_1_3  FST_1_1_3  -100
+    Z_1_1_3  NOMIX_1_1_0_3  1
+    Z_1_1_3  NOMIX_1_1_1_3  1
+    Z_1_1_4  FST_1_1_4  -100
+    Z_1_1_4  NOMIX_1_1_0_4  1
+    Z_1_1_4  NOMIX_1_1_1_4  1
+    Z_1_1_5  FST_1_1_5  -100
+    Z_1_1_5  NOMIX_1_1_0_5  1
+    Z_1_1_5  NOMIX_1_1_1_5  1
+    Z_1_1_6  FST_1_1_6  -100
+    Z_1_1_6  NOMIX_1_1_0_6  1
+    Z_1_1_6  NOMIX_1_1_1_6  1
+    Z_1_1_7  FST_1_1_7  -100
+    Z_1_1_7  NOMIX_1_1_0_7  1
+    Z_1_1_7  NOMIX_1_1_1_7  1
+    Z_1_1_8  FST_1_1_8  -100
+    Z_1_1_8  NOMIX_1_1_0_8  1
+    Z_1_1_8  NOMIX_1_1_1_8  1
+    Z_1_1_9  FST_1_1_9  -100
+    Z_1_1_9  NOMIX_1_1_0_9  1
+    Z_1_1_9  NOMIX_1_1_1_9  1
+    Z_1_1_10  FST_1_1_10  -100
+    Z_1_1_10  NOMIX_1_1_0_10  1
+    Z_1_1_10  NOMIX_1_1_1_10  1
+    Z_1_1_11  FST_1_1_11  -100
+    Z_1_1_11  NOMIX_1_1_0_11  1
+    Z_1_1_11  NOMIX_1_1_1_11  1
+    Z_1_2_0  FST_1_2_0  -100
+    Z_1_2_0  NOMIX_1_2_0_0  1
+    Z_1_2_0  NOMIX_1_2_1_0  1
+    Z_1_2_1  FST_1_2_1  -100
+    Z_1_2_1  NOMIX_1_2_0_1  1
+    Z_1_2_1  NOMIX_1_2_1_1  1
+    Z_1_2_2  FST_1_2_2  -100
+    Z_1_2_2  NOMIX_1_2_0_2  1
+    Z_1_2_2  NOMIX_1_2_1_2  1
+    Z_1_2_3  FST_1_2_3  -100
+    Z_1_2_3  NOMIX_1_2_0_3  1
+    Z_1_2_3  NOMIX_1_2_1_3  1
+    Z_1_2_4  FST_1_2_4  -100
+    Z_1_2_4  NOMIX_1_2_0_4  1
+    Z_1_2_4  NOMIX_1_2_1_4  1
+    Z_1_2_5  FST_1_2_5  -100
+    Z_1_2_5  NOMIX_1_2_0_5  1
+    Z_1_2_5  NOMIX_1_2_1_5  1
+    Z_1_2_6  FST_1_2_6  -100
+    Z_1_2_6  NOMIX_1_2_0_6  1
+    Z_1_2_6  NOMIX_1_2_1_6  1
+    Z_1_2_7  FST_1_2_7  -100
+    Z_1_2_7  NOMIX_1_2_0_7  1
+    Z_1_2_7  NOMIX_1_2_1_7  1
+    Z_1_2_8  FST_1_2_8  -100
+    Z_1_2_8  NOMIX_1_2_0_8  1
+    Z_1_2_8  NOMIX_1_2_1_8  1
+    Z_1_2_9  FST_1_2_9  -100
+    Z_1_2_9  NOMIX_1_2_0_9  1
+    Z_1_2_9  NOMIX_1_2_1_9  1
+    Z_1_2_10  FST_1_2_10  -100
+    Z_1_2_10  NOMIX_1_2_0_10  1
+    Z_1_2_10  NOMIX_1_2_1_10  1
+    Z_1_2_11  FST_1_2_11  -100
+    Z_1_2_11  NOMIX_1_2_0_11  1
+    Z_1_2_11  NOMIX_1_2_1_11  1
+    Z_2_0_0  FST_2_0_0  -100
+    Z_2_0_0  NOMIX_2_0_0_0  1
+    Z_2_0_0  NOMIX_2_0_1_0  1
+    Z_2_0_1  FST_2_0_1  -100
+    Z_2_0_1  NOMIX_2_0_0_1  1
+    Z_2_0_1  NOMIX_2_0_1_1  1
+    Z_2_0_2  FST_2_0_2  -100
+    Z_2_0_2  NOMIX_2_0_0_2  1
+    Z_2_0_2  NOMIX_2_0_1_2  1
+    Z_2_0_3  FST_2_0_3  -100
+    Z_2_0_3  NOMIX_2_0_0_3  1
+    Z_2_0_3  NOMIX_2_0_1_3  1
+    Z_2_0_4  FST_2_0_4  -100
+    Z_2_0_4  NOMIX_2_0_0_4  1
+    Z_2_0_4  NOMIX_2_0_1_4  1
+    Z_2_0_5  FST_2_0_5  -100
+    Z_2_0_5  NOMIX_2_0_0_5  1
+    Z_2_0_5  NOMIX_2_0_1_5  1
+    Z_2_0_6  FST_2_0_6  -100
+    Z_2_0_6  NOMIX_2_0_0_6  1
+    Z_2_0_6  NOMIX_2_0_1_6  1
+    Z_2_0_7  FST_2_0_7  -100
+    Z_2_0_7  NOMIX_2_0_0_7  1
+    Z_2_0_7  NOMIX_2_0_1_7  1
+    Z_2_0_8  FST_2_0_8  -100
+    Z_2_0_8  NOMIX_2_0_0_8  1
+    Z_2_0_8  NOMIX_2_0_1_8  1
+    Z_2_0_9  FST_2_0_9  -100
+    Z_2_0_9  NOMIX_2_0_0_9  1
+    Z_2_0_9  NOMIX_2_0_1_9  1
+    Z_2_0_10  FST_2_0_10  -100
+    Z_2_0_10  NOMIX_2_0_0_10  1
+    Z_2_0_10  NOMIX_2_0_1_10  1
+    Z_2_0_11  FST_2_0_11  -100
+    Z_2_0_11  NOMIX_2_0_0_11  1
+    Z_2_0_11  NOMIX_2_0_1_11  1
+    Z_2_1_0  FST_2_1_0  -100
+    Z_2_1_0  NOMIX_2_1_0_0  1
+    Z_2_1_0  NOMIX_2_1_1_0  1
+    Z_2_1_1  FST_2_1_1  -100
+    Z_2_1_1  NOMIX_2_1_0_1  1
+    Z_2_1_1  NOMIX_2_1_1_1  1
+    Z_2_1_2  FST_2_1_2  -100
+    Z_2_1_2  NOMIX_2_1_0_2  1
+    Z_2_1_2  NOMIX_2_1_1_2  1
+    Z_2_1_3  FST_2_1_3  -100
+    Z_2_1_3  NOMIX_2_1_0_3  1
+    Z_2_1_3  NOMIX_2_1_1_3  1
+    Z_2_1_4  FST_2_1_4  -100
+    Z_2_1_4  NOMIX_2_1_0_4  1
+    Z_2_1_4  NOMIX_2_1_1_4  1
+    Z_2_1_5  FST_2_1_5  -100
+    Z_2_1_5  NOMIX_2_1_0_5  1
+    Z_2_1_5  NOMIX_2_1_1_5  1
+    Z_2_1_6  FST_2_1_6  -100
+    Z_2_1_6  NOMIX_2_1_0_6  1
+    Z_2_1_6  NOMIX_2_1_1_6  1
+    Z_2_1_7  FST_2_1_7  -100
+    Z_2_1_7  NOMIX_2_1_0_7  1
+    Z_2_1_7  NOMIX_2_1_1_7  1
+    Z_2_1_8  FST_2_1_8  -100
+    Z_2_1_8  NOMIX_2_1_0_8  1
+    Z_2_1_8  NOMIX_2_1_1_8  1
+    Z_2_1_9  FST_2_1_9  -100
+    Z_2_1_9  NOMIX_2_1_0_9  1
+    Z_2_1_9  NOMIX_2_1_1_9  1
+    Z_2_1_10  FST_2_1_10  -100
+    Z_2_1_10  NOMIX_2_1_0_10  1
+    Z_2_1_10  NOMIX_2_1_1_10  1
+    Z_2_1_11  FST_2_1_11  -100
+    Z_2_1_11  NOMIX_2_1_0_11  1
+    Z_2_1_11  NOMIX_2_1_1_11  1
+    Z_2_2_0  FST_2_2_0  -100
+    Z_2_2_0  NOMIX_2_2_0_0  1
+    Z_2_2_0  NOMIX_2_2_1_0  1
+    Z_2_2_1  FST_2_2_1  -100
+    Z_2_2_1  NOMIX_2_2_0_1  1
+    Z_2_2_1  NOMIX_2_2_1_1  1
+    Z_2_2_2  FST_2_2_2  -100
+    Z_2_2_2  NOMIX_2_2_0_2  1
+    Z_2_2_2  NOMIX_2_2_1_2  1
+    Z_2_2_3  FST_2_2_3  -100
+    Z_2_2_3  NOMIX_2_2_0_3  1
+    Z_2_2_3  NOMIX_2_2_1_3  1
+    Z_2_2_4  FST_2_2_4  -100
+    Z_2_2_4  NOMIX_2_2_0_4  1
+    Z_2_2_4  NOMIX_2_2_1_4  1
+    Z_2_2_5  FST_2_2_5  -100
+    Z_2_2_5  NOMIX_2_2_0_5  1
+    Z_2_2_5  NOMIX_2_2_1_5  1
+    Z_2_2_6  FST_2_2_6  -100
+    Z_2_2_6  NOMIX_2_2_0_6  1
+    Z_2_2_6  NOMIX_2_2_1_6  1
+    Z_2_2_7  FST_2_2_7  -100
+    Z_2_2_7  NOMIX_2_2_0_7  1
+    Z_2_2_7  NOMIX_2_2_1_7  1
+    Z_2_2_8  FST_2_2_8  -100
+    Z_2_2_8  NOMIX_2_2_0_8  1
+    Z_2_2_8  NOMIX_2_2_1_8  1
+    Z_2_2_9  FST_2_2_9  -100
+    Z_2_2_9  NOMIX_2_2_0_9  1
+    Z_2_2_9  NOMIX_2_2_1_9  1
+    Z_2_2_10  FST_2_2_10  -100
+    Z_2_2_10  NOMIX_2_2_0_10  1
+    Z_2_2_10  NOMIX_2_2_1_10  1
+    Z_2_2_11  FST_2_2_11  -100
+    Z_2_2_11  NOMIX_2_2_0_11  1
+    Z_2_2_11  NOMIX_2_2_1_11  1
+    MARKER  'MARKER'  'INTEND'
+    FST_0_0_0  VS_0_0  1
+    FST_0_0_0  FST_0_0_0  1
+    FST_0_0_0  KSTLO_0_0_0  -0.8
+    FST_0_0_0  KSTHI_0_0_0  -2
+    FST_0_0_0  VC_0_0  -1
+    FST_0_0_1  VS_0_1  1
+    FST_0_0_1  FST_0_0_1  1
+    FST_0_0_1  KSTLO_0_0_1  -0.8
+    FST_0_0_1  KSTHI_0_0_1  -2
+    FST_0_0_1  VC_0_1  -1
+    FST_0_0_2  VS_0_2  1
+    FST_0_0_2  FST_0_0_2  1
+    FST_0_0_2  KSTLO_0_0_2  -0.8
+    FST_0_0_2  KSTHI_0_0_2  -2
+    FST_0_0_2  VC_0_2  -1
+    FST_0_0_3  VS_0_3  1
+    FST_0_0_3  FST_0_0_3  1
+    FST_0_0_3  KSTLO_0_0_3  -0.8
+    FST_0_0_3  KSTHI_0_0_3  -2
+    FST_0_0_3  VC_0_3  -1
+    FST_0_0_4  VS_0_4  1
+    FST_0_0_4  FST_0_0_4  1
+    FST_0_0_4  KSTLO_0_0_4  -0.8
+    FST_0_0_4  KSTHI_0_0_4  -2
+    FST_0_0_4  VC_0_4  -1
+    FST_0_0_5  VS_0_5  1
+    FST_0_0_5  FST_0_0_5  1
+    FST_0_0_5  KSTLO_0_0_5  -0.8
+    FST_0_0_5  KSTHI_0_0_5  -2
+    FST_0_0_5  VC_0_5  -1
+    FST_0_0_6  VS_0_6  1
+    FST_0_0_6  FST_0_0_6  1
+    FST_0_0_6  KSTLO_0_0_6  -0.8
+    FST_0_0_6  KSTHI_0_0_6  -2
+    FST_0_0_6  VC_0_6  -1
+    FST_0_0_7  VS_0_7  1
+    FST_0_0_7  FST_0_0_7  1
+    FST_0_0_7  KSTLO_0_0_7  -0.8
+    FST_0_0_7  KSTHI_0_0_7  -2
+    FST_0_0_7  VC_0_7  -1
+    FST_0_0_8  VS_0_8  1
+    FST_0_0_8  FST_0_0_8  1
+    FST_0_0_8  KSTLO_0_0_8  -0.8
+    FST_0_0_8  KSTHI_0_0_8  -2
+    FST_0_0_8  VC_0_8  -1
+    FST_0_0_9  VS_0_9  1
+    FST_0_0_9  FST_0_0_9  1
+    FST_0_0_9  KSTLO_0_0_9  -0.8
+    FST_0_0_9  KSTHI_0_0_9  -2
+    FST_0_0_9  VC_0_9  -1
+    FST_0_0_10  VS_0_10  1
+    FST_0_0_10  FST_0_0_10  1
+    FST_0_0_10  KSTLO_0_0_10  -0.8
+    FST_0_0_10  KSTHI_0_0_10  -2
+    FST_0_0_10  VC_0_10  -1
+    FST_0_0_11  VS_0_11  1
+    FST_0_0_11  FST_0_0_11  1
+    FST_0_0_11  KSTLO_0_0_11  -0.8
+    FST_0_0_11  KSTHI_0_0_11  -2
+    FST_0_0_11  VC_0_11  -1
+    FST_0_1_0  VS_0_0  1
+    FST_0_1_0  FST_0_1_0  1
+    FST_0_1_0  KSTLO_0_1_0  -0.8
+    FST_0_1_0  KSTHI_0_1_0  -2
+    FST_0_1_0  VC_1_0  -1
+    FST_0_1_1  VS_0_1  1
+    FST_0_1_1  FST_0_1_1  1
+    FST_0_1_1  KSTLO_0_1_1  -0.8
+    FST_0_1_1  KSTHI_0_1_1  -2
+    FST_0_1_1  VC_1_1  -1
+    FST_0_1_2  VS_0_2  1
+    FST_0_1_2  FST_0_1_2  1
+    FST_0_1_2  KSTLO_0_1_2  -0.8
+    FST_0_1_2  KSTHI_0_1_2  -2
+    FST_0_1_2  VC_1_2  -1
+    FST_0_1_3  VS_0_3  1
+    FST_0_1_3  FST_0_1_3  1
+    FST_0_1_3  KSTLO_0_1_3  -0.8
+    FST_0_1_3  KSTHI_0_1_3  -2
+    FST_0_1_3  VC_1_3  -1
+    FST_0_1_4  VS_0_4  1
+    FST_0_1_4  FST_0_1_4  1
+    FST_0_1_4  KSTLO_0_1_4  -0.8
+    FST_0_1_4  KSTHI_0_1_4  -2
+    FST_0_1_4  VC_1_4  -1
+    FST_0_1_5  VS_0_5  1
+    FST_0_1_5  FST_0_1_5  1
+    FST_0_1_5  KSTLO_0_1_5  -0.8
+    FST_0_1_5  KSTHI_0_1_5  -2
+    FST_0_1_5  VC_1_5  -1
+    FST_0_1_6  VS_0_6  1
+    FST_0_1_6  FST_0_1_6  1
+    FST_0_1_6  KSTLO_0_1_6  -0.8
+    FST_0_1_6  KSTHI_0_1_6  -2
+    FST_0_1_6  VC_1_6  -1
+    FST_0_1_7  VS_0_7  1
+    FST_0_1_7  FST_0_1_7  1
+    FST_0_1_7  KSTLO_0_1_7  -0.8
+    FST_0_1_7  KSTHI_0_1_7  -2
+    FST_0_1_7  VC_1_7  -1
+    FST_0_1_8  VS_0_8  1
+    FST_0_1_8  FST_0_1_8  1
+    FST_0_1_8  KSTLO_0_1_8  -0.8
+    FST_0_1_8  KSTHI_0_1_8  -2
+    FST_0_1_8  VC_1_8  -1
+    FST_0_1_9  VS_0_9  1
+    FST_0_1_9  FST_0_1_9  1
+    FST_0_1_9  KSTLO_0_1_9  -0.8
+    FST_0_1_9  KSTHI_0_1_9  -2
+    FST_0_1_9  VC_1_9  -1
+    FST_0_1_10  VS_0_10  1
+    FST_0_1_10  FST_0_1_10  1
+    FST_0_1_10  KSTLO_0_1_10  -0.8
+    FST_0_1_10  KSTHI_0_1_10  -2
+    FST_0_1_10  VC_1_10  -1
+    FST_0_1_11  VS_0_11  1
+    FST_0_1_11  FST_0_1_11  1
+    FST_0_1_11  KSTLO_0_1_11  -0.8
+    FST_0_1_11  KSTHI_0_1_11  -2
+    FST_0_1_11  VC_1_11  -1
+    FST_0_2_0  VS_0_0  1
+    FST_0_2_0  FST_0_2_0  1
+    FST_0_2_0  KSTLO_0_2_0  -0.8
+    FST_0_2_0  KSTHI_0_2_0  -2
+    FST_0_2_0  VC_2_0  -1
+    FST_0_2_1  VS_0_1  1
+    FST_0_2_1  FST_0_2_1  1
+    FST_0_2_1  KSTLO_0_2_1  -0.8
+    FST_0_2_1  KSTHI_0_2_1  -2
+    FST_0_2_1  VC_2_1  -1
+    FST_0_2_2  VS_0_2  1
+    FST_0_2_2  FST_0_2_2  1
+    FST_0_2_2  KSTLO_0_2_2  -0.8
+    FST_0_2_2  KSTHI_0_2_2  -2
+    FST_0_2_2  VC_2_2  -1
+    FST_0_2_3  VS_0_3  1
+    FST_0_2_3  FST_0_2_3  1
+    FST_0_2_3  KSTLO_0_2_3  -0.8
+    FST_0_2_3  KSTHI_0_2_3  -2
+    FST_0_2_3  VC_2_3  -1
+    FST_0_2_4  VS_0_4  1
+    FST_0_2_4  FST_0_2_4  1
+    FST_0_2_4  KSTLO_0_2_4  -0.8
+    FST_0_2_4  KSTHI_0_2_4  -2
+    FST_0_2_4  VC_2_4  -1
+    FST_0_2_5  VS_0_5  1
+    FST_0_2_5  FST_0_2_5  1
+    FST_0_2_5  KSTLO_0_2_5  -0.8
+    FST_0_2_5  KSTHI_0_2_5  -2
+    FST_0_2_5  VC_2_5  -1
+    FST_0_2_6  VS_0_6  1
+    FST_0_2_6  FST_0_2_6  1
+    FST_0_2_6  KSTLO_0_2_6  -0.8
+    FST_0_2_6  KSTHI_0_2_6  -2
+    FST_0_2_6  VC_2_6  -1
+    FST_0_2_7  VS_0_7  1
+    FST_0_2_7  FST_0_2_7  1
+    FST_0_2_7  KSTLO_0_2_7  -0.8
+    FST_0_2_7  KSTHI_0_2_7  -2
+    FST_0_2_7  VC_2_7  -1
+    FST_0_2_8  VS_0_8  1
+    FST_0_2_8  FST_0_2_8  1
+    FST_0_2_8  KSTLO_0_2_8  -0.8
+    FST_0_2_8  KSTHI_0_2_8  -2
+    FST_0_2_8  VC_2_8  -1
+    FST_0_2_9  VS_0_9  1
+    FST_0_2_9  FST_0_2_9  1
+    FST_0_2_9  KSTLO_0_2_9  -0.8
+    FST_0_2_9  KSTHI_0_2_9  -2
+    FST_0_2_9  VC_2_9  -1
+    FST_0_2_10  VS_0_10  1
+    FST_0_2_10  FST_0_2_10  1
+    FST_0_2_10  KSTLO_0_2_10  -0.8
+    FST_0_2_10  KSTHI_0_2_10  -2
+    FST_0_2_10  VC_2_10  -1
+    FST_0_2_11  VS_0_11  1
+    FST_0_2_11  FST_0_2_11  1
+    FST_0_2_11  KSTLO_0_2_11  -0.8
+    FST_0_2_11  KSTHI_0_2_11  -2
+    FST_0_2_11  VC_2_11  -1
+    FST_1_0_0  VS_1_0  1
+    FST_1_0_0  FST_1_0_0  1
+    FST_1_0_0  KSTLO_1_0_0  -0.8
+    FST_1_0_0  KSTHI_1_0_0  -2
+    FST_1_0_0  VC_0_0  -1
+    FST_1_0_1  VS_1_1  1
+    FST_1_0_1  FST_1_0_1  1
+    FST_1_0_1  KSTLO_1_0_1  -0.8
+    FST_1_0_1  KSTHI_1_0_1  -2
+    FST_1_0_1  VC_0_1  -1
+    FST_1_0_2  VS_1_2  1
+    FST_1_0_2  FST_1_0_2  1
+    FST_1_0_2  KSTLO_1_0_2  -0.8
+    FST_1_0_2  KSTHI_1_0_2  -2
+    FST_1_0_2  VC_0_2  -1
+    FST_1_0_3  VS_1_3  1
+    FST_1_0_3  FST_1_0_3  1
+    FST_1_0_3  KSTLO_1_0_3  -0.8
+    FST_1_0_3  KSTHI_1_0_3  -2
+    FST_1_0_3  VC_0_3  -1
+    FST_1_0_4  VS_1_4  1
+    FST_1_0_4  FST_1_0_4  1
+    FST_1_0_4  KSTLO_1_0_4  -0.8
+    FST_1_0_4  KSTHI_1_0_4  -2
+    FST_1_0_4  VC_0_4  -1
+    FST_1_0_5  VS_1_5  1
+    FST_1_0_5  FST_1_0_5  1
+    FST_1_0_5  KSTLO_1_0_5  -0.8
+    FST_1_0_5  KSTHI_1_0_5  -2
+    FST_1_0_5  VC_0_5  -1
+    FST_1_0_6  VS_1_6  1
+    FST_1_0_6  FST_1_0_6  1
+    FST_1_0_6  KSTLO_1_0_6  -0.8
+    FST_1_0_6  KSTHI_1_0_6  -2
+    FST_1_0_6  VC_0_6  -1
+    FST_1_0_7  VS_1_7  1
+    FST_1_0_7  FST_1_0_7  1
+    FST_1_0_7  KSTLO_1_0_7  -0.8
+    FST_1_0_7  KSTHI_1_0_7  -2
+    FST_1_0_7  VC_0_7  -1
+    FST_1_0_8  VS_1_8  1
+    FST_1_0_8  FST_1_0_8  1
+    FST_1_0_8  KSTLO_1_0_8  -0.8
+    FST_1_0_8  KSTHI_1_0_8  -2
+    FST_1_0_8  VC_0_8  -1
+    FST_1_0_9  VS_1_9  1
+    FST_1_0_9  FST_1_0_9  1
+    FST_1_0_9  KSTLO_1_0_9  -0.8
+    FST_1_0_9  KSTHI_1_0_9  -2
+    FST_1_0_9  VC_0_9  -1
+    FST_1_0_10  VS_1_10  1
+    FST_1_0_10  FST_1_0_10  1
+    FST_1_0_10  KSTLO_1_0_10  -0.8
+    FST_1_0_10  KSTHI_1_0_10  -2
+    FST_1_0_10  VC_0_10  -1
+    FST_1_0_11  VS_1_11  1
+    FST_1_0_11  FST_1_0_11  1
+    FST_1_0_11  KSTLO_1_0_11  -0.8
+    FST_1_0_11  KSTHI_1_0_11  -2
+    FST_1_0_11  VC_0_11  -1
+    FST_1_1_0  VS_1_0  1
+    FST_1_1_0  FST_1_1_0  1
+    FST_1_1_0  KSTLO_1_1_0  -0.8
+    FST_1_1_0  KSTHI_1_1_0  -2
+    FST_1_1_0  VC_1_0  -1
+    FST_1_1_1  VS_1_1  1
+    FST_1_1_1  FST_1_1_1  1
+    FST_1_1_1  KSTLO_1_1_1  -0.8
+    FST_1_1_1  KSTHI_1_1_1  -2
+    FST_1_1_1  VC_1_1  -1
+    FST_1_1_2  VS_1_2  1
+    FST_1_1_2  FST_1_1_2  1
+    FST_1_1_2  KSTLO_1_1_2  -0.8
+    FST_1_1_2  KSTHI_1_1_2  -2
+    FST_1_1_2  VC_1_2  -1
+    FST_1_1_3  VS_1_3  1
+    FST_1_1_3  FST_1_1_3  1
+    FST_1_1_3  KSTLO_1_1_3  -0.8
+    FST_1_1_3  KSTHI_1_1_3  -2
+    FST_1_1_3  VC_1_3  -1
+    FST_1_1_4  VS_1_4  1
+    FST_1_1_4  FST_1_1_4  1
+    FST_1_1_4  KSTLO_1_1_4  -0.8
+    FST_1_1_4  KSTHI_1_1_4  -2
+    FST_1_1_4  VC_1_4  -1
+    FST_1_1_5  VS_1_5  1
+    FST_1_1_5  FST_1_1_5  1
+    FST_1_1_5  KSTLO_1_1_5  -0.8
+    FST_1_1_5  KSTHI_1_1_5  -2
+    FST_1_1_5  VC_1_5  -1
+    FST_1_1_6  VS_1_6  1
+    FST_1_1_6  FST_1_1_6  1
+    FST_1_1_6  KSTLO_1_1_6  -0.8
+    FST_1_1_6  KSTHI_1_1_6  -2
+    FST_1_1_6  VC_1_6  -1
+    FST_1_1_7  VS_1_7  1
+    FST_1_1_7  FST_1_1_7  1
+    FST_1_1_7  KSTLO_1_1_7  -0.8
+    FST_1_1_7  KSTHI_1_1_7  -2
+    FST_1_1_7  VC_1_7  -1
+    FST_1_1_8  VS_1_8  1
+    FST_1_1_8  FST_1_1_8  1
+    FST_1_1_8  KSTLO_1_1_8  -0.8
+    FST_1_1_8  KSTHI_1_1_8  -2
+    FST_1_1_8  VC_1_8  -1
+    FST_1_1_9  VS_1_9  1
+    FST_1_1_9  FST_1_1_9  1
+    FST_1_1_9  KSTLO_1_1_9  -0.8
+    FST_1_1_9  KSTHI_1_1_9  -2
+    FST_1_1_9  VC_1_9  -1
+    FST_1_1_10  VS_1_10  1
+    FST_1_1_10  FST_1_1_10  1
+    FST_1_1_10  KSTLO_1_1_10  -0.8
+    FST_1_1_10  KSTHI_1_1_10  -2
+    FST_1_1_10  VC_1_10  -1
+    FST_1_1_11  VS_1_11  1
+    FST_1_1_11  FST_1_1_11  1
+    FST_1_1_11  KSTLO_1_1_11  -0.8
+    FST_1_1_11  KSTHI_1_1_11  -2
+    FST_1_1_11  VC_1_11  -1
+    FST_1_2_0  VS_1_0  1
+    FST_1_2_0  FST_1_2_0  1
+    FST_1_2_0  KSTLO_1_2_0  -0.8
+    FST_1_2_0  KSTHI_1_2_0  -2
+    FST_1_2_0  VC_2_0  -1
+    FST_1_2_1  VS_1_1  1
+    FST_1_2_1  FST_1_2_1  1
+    FST_1_2_1  KSTLO_1_2_1  -0.8
+    FST_1_2_1  KSTHI_1_2_1  -2
+    FST_1_2_1  VC_2_1  -1
+    FST_1_2_2  VS_1_2  1
+    FST_1_2_2  FST_1_2_2  1
+    FST_1_2_2  KSTLO_1_2_2  -0.8
+    FST_1_2_2  KSTHI_1_2_2  -2
+    FST_1_2_2  VC_2_2  -1
+    FST_1_2_3  VS_1_3  1
+    FST_1_2_3  FST_1_2_3  1
+    FST_1_2_3  KSTLO_1_2_3  -0.8
+    FST_1_2_3  KSTHI_1_2_3  -2
+    FST_1_2_3  VC_2_3  -1
+    FST_1_2_4  VS_1_4  1
+    FST_1_2_4  FST_1_2_4  1
+    FST_1_2_4  KSTLO_1_2_4  -0.8
+    FST_1_2_4  KSTHI_1_2_4  -2
+    FST_1_2_4  VC_2_4  -1
+    FST_1_2_5  VS_1_5  1
+    FST_1_2_5  FST_1_2_5  1
+    FST_1_2_5  KSTLO_1_2_5  -0.8
+    FST_1_2_5  KSTHI_1_2_5  -2
+    FST_1_2_5  VC_2_5  -1
+    FST_1_2_6  VS_1_6  1
+    FST_1_2_6  FST_1_2_6  1
+    FST_1_2_6  KSTLO_1_2_6  -0.8
+    FST_1_2_6  KSTHI_1_2_6  -2
+    FST_1_2_6  VC_2_6  -1
+    FST_1_2_7  VS_1_7  1
+    FST_1_2_7  FST_1_2_7  1
+    FST_1_2_7  KSTLO_1_2_7  -0.8
+    FST_1_2_7  KSTHI_1_2_7  -2
+    FST_1_2_7  VC_2_7  -1
+    FST_1_2_8  VS_1_8  1
+    FST_1_2_8  FST_1_2_8  1
+    FST_1_2_8  KSTLO_1_2_8  -0.8
+    FST_1_2_8  KSTHI_1_2_8  -2
+    FST_1_2_8  VC_2_8  -1
+    FST_1_2_9  VS_1_9  1
+    FST_1_2_9  FST_1_2_9  1
+    FST_1_2_9  KSTLO_1_2_9  -0.8
+    FST_1_2_9  KSTHI_1_2_9  -2
+    FST_1_2_9  VC_2_9  -1
+    FST_1_2_10  VS_1_10  1
+    FST_1_2_10  FST_1_2_10  1
+    FST_1_2_10  KSTLO_1_2_10  -0.8
+    FST_1_2_10  KSTHI_1_2_10  -2
+    FST_1_2_10  VC_2_10  -1
+    FST_1_2_11  VS_1_11  1
+    FST_1_2_11  FST_1_2_11  1
+    FST_1_2_11  KSTLO_1_2_11  -0.8
+    FST_1_2_11  KSTHI_1_2_11  -2
+    FST_1_2_11  VC_2_11  -1
+    FST_2_0_0  VS_2_0  1
+    FST_2_0_0  FST_2_0_0  1
+    FST_2_0_0  KSTLO_2_0_0  -0.8
+    FST_2_0_0  KSTHI_2_0_0  -2
+    FST_2_0_0  VC_0_0  -1
+    FST_2_0_1  VS_2_1  1
+    FST_2_0_1  FST_2_0_1  1
+    FST_2_0_1  KSTLO_2_0_1  -0.8
+    FST_2_0_1  KSTHI_2_0_1  -2
+    FST_2_0_1  VC_0_1  -1
+    FST_2_0_2  VS_2_2  1
+    FST_2_0_2  FST_2_0_2  1
+    FST_2_0_2  KSTLO_2_0_2  -0.8
+    FST_2_0_2  KSTHI_2_0_2  -2
+    FST_2_0_2  VC_0_2  -1
+    FST_2_0_3  VS_2_3  1
+    FST_2_0_3  FST_2_0_3  1
+    FST_2_0_3  KSTLO_2_0_3  -0.8
+    FST_2_0_3  KSTHI_2_0_3  -2
+    FST_2_0_3  VC_0_3  -1
+    FST_2_0_4  VS_2_4  1
+    FST_2_0_4  FST_2_0_4  1
+    FST_2_0_4  KSTLO_2_0_4  -0.8
+    FST_2_0_4  KSTHI_2_0_4  -2
+    FST_2_0_4  VC_0_4  -1
+    FST_2_0_5  VS_2_5  1
+    FST_2_0_5  FST_2_0_5  1
+    FST_2_0_5  KSTLO_2_0_5  -0.8
+    FST_2_0_5  KSTHI_2_0_5  -2
+    FST_2_0_5  VC_0_5  -1
+    FST_2_0_6  VS_2_6  1
+    FST_2_0_6  FST_2_0_6  1
+    FST_2_0_6  KSTLO_2_0_6  -0.8
+    FST_2_0_6  KSTHI_2_0_6  -2
+    FST_2_0_6  VC_0_6  -1
+    FST_2_0_7  VS_2_7  1
+    FST_2_0_7  FST_2_0_7  1
+    FST_2_0_7  KSTLO_2_0_7  -0.8
+    FST_2_0_7  KSTHI_2_0_7  -2
+    FST_2_0_7  VC_0_7  -1
+    FST_2_0_8  VS_2_8  1
+    FST_2_0_8  FST_2_0_8  1
+    FST_2_0_8  KSTLO_2_0_8  -0.8
+    FST_2_0_8  KSTHI_2_0_8  -2
+    FST_2_0_8  VC_0_8  -1
+    FST_2_0_9  VS_2_9  1
+    FST_2_0_9  FST_2_0_9  1
+    FST_2_0_9  KSTLO_2_0_9  -0.8
+    FST_2_0_9  KSTHI_2_0_9  -2
+    FST_2_0_9  VC_0_9  -1
+    FST_2_0_10  VS_2_10  1
+    FST_2_0_10  FST_2_0_10  1
+    FST_2_0_10  KSTLO_2_0_10  -0.8
+    FST_2_0_10  KSTHI_2_0_10  -2
+    FST_2_0_10  VC_0_10  -1
+    FST_2_0_11  VS_2_11  1
+    FST_2_0_11  FST_2_0_11  1
+    FST_2_0_11  KSTLO_2_0_11  -0.8
+    FST_2_0_11  KSTHI_2_0_11  -2
+    FST_2_0_11  VC_0_11  -1
+    FST_2_1_0  VS_2_0  1
+    FST_2_1_0  FST_2_1_0  1
+    FST_2_1_0  KSTLO_2_1_0  -0.8
+    FST_2_1_0  KSTHI_2_1_0  -2
+    FST_2_1_0  VC_1_0  -1
+    FST_2_1_1  VS_2_1  1
+    FST_2_1_1  FST_2_1_1  1
+    FST_2_1_1  KSTLO_2_1_1  -0.8
+    FST_2_1_1  KSTHI_2_1_1  -2
+    FST_2_1_1  VC_1_1  -1
+    FST_2_1_2  VS_2_2  1
+    FST_2_1_2  FST_2_1_2  1
+    FST_2_1_2  KSTLO_2_1_2  -0.8
+    FST_2_1_2  KSTHI_2_1_2  -2
+    FST_2_1_2  VC_1_2  -1
+    FST_2_1_3  VS_2_3  1
+    FST_2_1_3  FST_2_1_3  1
+    FST_2_1_3  KSTLO_2_1_3  -0.8
+    FST_2_1_3  KSTHI_2_1_3  -2
+    FST_2_1_3  VC_1_3  -1
+    FST_2_1_4  VS_2_4  1
+    FST_2_1_4  FST_2_1_4  1
+    FST_2_1_4  KSTLO_2_1_4  -0.8
+    FST_2_1_4  KSTHI_2_1_4  -2
+    FST_2_1_4  VC_1_4  -1
+    FST_2_1_5  VS_2_5  1
+    FST_2_1_5  FST_2_1_5  1
+    FST_2_1_5  KSTLO_2_1_5  -0.8
+    FST_2_1_5  KSTHI_2_1_5  -2
+    FST_2_1_5  VC_1_5  -1
+    FST_2_1_6  VS_2_6  1
+    FST_2_1_6  FST_2_1_6  1
+    FST_2_1_6  KSTLO_2_1_6  -0.8
+    FST_2_1_6  KSTHI_2_1_6  -2
+    FST_2_1_6  VC_1_6  -1
+    FST_2_1_7  VS_2_7  1
+    FST_2_1_7  FST_2_1_7  1
+    FST_2_1_7  KSTLO_2_1_7  -0.8
+    FST_2_1_7  KSTHI_2_1_7  -2
+    FST_2_1_7  VC_1_7  -1
+    FST_2_1_8  VS_2_8  1
+    FST_2_1_8  FST_2_1_8  1
+    FST_2_1_8  KSTLO_2_1_8  -0.8
+    FST_2_1_8  KSTHI_2_1_8  -2
+    FST_2_1_8  VC_1_8  -1
+    FST_2_1_9  VS_2_9  1
+    FST_2_1_9  FST_2_1_9  1
+    FST_2_1_9  KSTLO_2_1_9  -0.8
+    FST_2_1_9  KSTHI_2_1_9  -2
+    FST_2_1_9  VC_1_9  -1
+    FST_2_1_10  VS_2_10  1
+    FST_2_1_10  FST_2_1_10  1
+    FST_2_1_10  KSTLO_2_1_10  -0.8
+    FST_2_1_10  KSTHI_2_1_10  -2
+    FST_2_1_10  VC_1_10  -1
+    FST_2_1_11  VS_2_11  1
+    FST_2_1_11  FST_2_1_11  1
+    FST_2_1_11  KSTLO_2_1_11  -0.8
+    FST_2_1_11  KSTHI_2_1_11  -2
+    FST_2_1_11  VC_1_11  -1
+    FST_2_2_0  VS_2_0  1
+    FST_2_2_0  FST_2_2_0  1
+    FST_2_2_0  KSTLO_2_2_0  -0.8
+    FST_2_2_0  KSTHI_2_2_0  -2
+    FST_2_2_0  VC_2_0  -1
+    FST_2_2_1  VS_2_1  1
+    FST_2_2_1  FST_2_2_1  1
+    FST_2_2_1  KSTLO_2_2_1  -0.8
+    FST_2_2_1  KSTHI_2_2_1  -2
+    FST_2_2_1  VC_2_1  -1
+    FST_2_2_2  VS_2_2  1
+    FST_2_2_2  FST_2_2_2  1
+    FST_2_2_2  KSTLO_2_2_2  -0.8
+    FST_2_2_2  KSTHI_2_2_2  -2
+    FST_2_2_2  VC_2_2  -1
+    FST_2_2_3  VS_2_3  1
+    FST_2_2_3  FST_2_2_3  1
+    FST_2_2_3  KSTLO_2_2_3  -0.8
+    FST_2_2_3  KSTHI_2_2_3  -2
+    FST_2_2_3  VC_2_3  -1
+    FST_2_2_4  VS_2_4  1
+    FST_2_2_4  FST_2_2_4  1
+    FST_2_2_4  KSTLO_2_2_4  -0.8
+    FST_2_2_4  KSTHI_2_2_4  -2
+    FST_2_2_4  VC_2_4  -1
+    FST_2_2_5  VS_2_5  1
+    FST_2_2_5  FST_2_2_5  1
+    FST_2_2_5  KSTLO_2_2_5  -0.8
+    FST_2_2_5  KSTHI_2_2_5  -2
+    FST_2_2_5  VC_2_5  -1
+    FST_2_2_6  VS_2_6  1
+    FST_2_2_6  FST_2_2_6  1
+    FST_2_2_6  KSTLO_2_2_6  -0.8
+    FST_2_2_6  KSTHI_2_2_6  -2
+    FST_2_2_6  VC_2_6  -1
+    FST_2_2_7  VS_2_7  1
+    FST_2_2_7  FST_2_2_7  1
+    FST_2_2_7  KSTLO_2_2_7  -0.8
+    FST_2_2_7  KSTHI_2_2_7  -2
+    FST_2_2_7  VC_2_7  -1
+    FST_2_2_8  VS_2_8  1
+    FST_2_2_8  FST_2_2_8  1
+    FST_2_2_8  KSTLO_2_2_8  -0.8
+    FST_2_2_8  KSTHI_2_2_8  -2
+    FST_2_2_8  VC_2_8  -1
+    FST_2_2_9  VS_2_9  1
+    FST_2_2_9  FST_2_2_9  1
+    FST_2_2_9  KSTLO_2_2_9  -0.8
+    FST_2_2_9  KSTHI_2_2_9  -2
+    FST_2_2_9  VC_2_9  -1
+    FST_2_2_10  VS_2_10  1
+    FST_2_2_10  FST_2_2_10  1
+    FST_2_2_10  KSTLO_2_2_10  -0.8
+    FST_2_2_10  KSTHI_2_2_10  -2
+    FST_2_2_10  VC_2_10  -1
+    FST_2_2_11  VS_2_11  1
+    FST_2_2_11  FST_2_2_11  1
+    FST_2_2_11  KSTLO_2_2_11  -0.8
+    FST_2_2_11  KSTHI_2_2_11  -2
+    FST_2_2_11  VC_2_11  -1
+    KST_0_0_0  KS_0_0  1
+    KST_0_0_0  KSTLO_0_0_0  1
+    KST_0_0_0  KSTHI_0_0_0  1
+    KST_0_0_0  KC_0_0  -1
+    KST_0_0_1  KS_0_1  1
+    KST_0_0_1  KSTLO_0_0_1  1
+    KST_0_0_1  KSTHI_0_0_1  1
+    KST_0_0_1  KC_0_1  -1
+    KST_0_0_2  KS_0_2  1
+    KST_0_0_2  KSTLO_0_0_2  1
+    KST_0_0_2  KSTHI_0_0_2  1
+    KST_0_0_2  KC_0_2  -1
+    KST_0_0_3  KS_0_3  1
+    KST_0_0_3  KSTLO_0_0_3  1
+    KST_0_0_3  KSTHI_0_0_3  1
+    KST_0_0_3  KC_0_3  -1
+    KST_0_0_4  KS_0_4  1
+    KST_0_0_4  KSTLO_0_0_4  1
+    KST_0_0_4  KSTHI_0_0_4  1
+    KST_0_0_4  KC_0_4  -1
+    KST_0_0_5  KS_0_5  1
+    KST_0_0_5  KSTLO_0_0_5  1
+    KST_0_0_5  KSTHI_0_0_5  1
+    KST_0_0_5  KC_0_5  -1
+    KST_0_0_6  KS_0_6  1
+    KST_0_0_6  KSTLO_0_0_6  1
+    KST_0_0_6  KSTHI_0_0_6  1
+    KST_0_0_6  KC_0_6  -1
+    KST_0_0_7  KS_0_7  1
+    KST_0_0_7  KSTLO_0_0_7  1
+    KST_0_0_7  KSTHI_0_0_7  1
+    KST_0_0_7  KC_0_7  -1
+    KST_0_0_8  KS_0_8  1
+    KST_0_0_8  KSTLO_0_0_8  1
+    KST_0_0_8  KSTHI_0_0_8  1
+    KST_0_0_8  KC_0_8  -1
+    KST_0_0_9  KS_0_9  1
+    KST_0_0_9  KSTLO_0_0_9  1
+    KST_0_0_9  KSTHI_0_0_9  1
+    KST_0_0_9  KC_0_9  -1
+    KST_0_0_10  KS_0_10  1
+    KST_0_0_10  KSTLO_0_0_10  1
+    KST_0_0_10  KSTHI_0_0_10  1
+    KST_0_0_10  KC_0_10  -1
+    KST_0_0_11  KS_0_11  1
+    KST_0_0_11  KSTLO_0_0_11  1
+    KST_0_0_11  KSTHI_0_0_11  1
+    KST_0_0_11  KC_0_11  -1
+    KST_0_1_0  KS_0_0  1
+    KST_0_1_0  KSTLO_0_1_0  1
+    KST_0_1_0  KSTHI_0_1_0  1
+    KST_0_1_0  KC_1_0  -1
+    KST_0_1_1  KS_0_1  1
+    KST_0_1_1  KSTLO_0_1_1  1
+    KST_0_1_1  KSTHI_0_1_1  1
+    KST_0_1_1  KC_1_1  -1
+    KST_0_1_2  KS_0_2  1
+    KST_0_1_2  KSTLO_0_1_2  1
+    KST_0_1_2  KSTHI_0_1_2  1
+    KST_0_1_2  KC_1_2  -1
+    KST_0_1_3  KS_0_3  1
+    KST_0_1_3  KSTLO_0_1_3  1
+    KST_0_1_3  KSTHI_0_1_3  1
+    KST_0_1_3  KC_1_3  -1
+    KST_0_1_4  KS_0_4  1
+    KST_0_1_4  KSTLO_0_1_4  1
+    KST_0_1_4  KSTHI_0_1_4  1
+    KST_0_1_4  KC_1_4  -1
+    KST_0_1_5  KS_0_5  1
+    KST_0_1_5  KSTLO_0_1_5  1
+    KST_0_1_5  KSTHI_0_1_5  1
+    KST_0_1_5  KC_1_5  -1
+    KST_0_1_6  KS_0_6  1
+    KST_0_1_6  KSTLO_0_1_6  1
+    KST_0_1_6  KSTHI_0_1_6  1
+    KST_0_1_6  KC_1_6  -1
+    KST_0_1_7  KS_0_7  1
+    KST_0_1_7  KSTLO_0_1_7  1
+    KST_0_1_7  KSTHI_0_1_7  1
+    KST_0_1_7  KC_1_7  -1
+    KST_0_1_8  KS_0_8  1
+    KST_0_1_8  KSTLO_0_1_8  1
+    KST_0_1_8  KSTHI_0_1_8  1
+    KST_0_1_8  KC_1_8  -1
+    KST_0_1_9  KS_0_9  1
+    KST_0_1_9  KSTLO_0_1_9  1
+    KST_0_1_9  KSTHI_0_1_9  1
+    KST_0_1_9  KC_1_9  -1
+    KST_0_1_10  KS_0_10  1
+    KST_0_1_10  KSTLO_0_1_10  1
+    KST_0_1_10  KSTHI_0_1_10  1
+    KST_0_1_10  KC_1_10  -1
+    KST_0_1_11  KS_0_11  1
+    KST_0_1_11  KSTLO_0_1_11  1
+    KST_0_1_11  KSTHI_0_1_11  1
+    KST_0_1_11  KC_1_11  -1
+    KST_0_2_0  KS_0_0  1
+    KST_0_2_0  KSTLO_0_2_0  1
+    KST_0_2_0  KSTHI_0_2_0  1
+    KST_0_2_0  KC_2_0  -1
+    KST_0_2_1  KS_0_1  1
+    KST_0_2_1  KSTLO_0_2_1  1
+    KST_0_2_1  KSTHI_0_2_1  1
+    KST_0_2_1  KC_2_1  -1
+    KST_0_2_2  KS_0_2  1
+    KST_0_2_2  KSTLO_0_2_2  1
+    KST_0_2_2  KSTHI_0_2_2  1
+    KST_0_2_2  KC_2_2  -1
+    KST_0_2_3  KS_0_3  1
+    KST_0_2_3  KSTLO_0_2_3  1
+    KST_0_2_3  KSTHI_0_2_3  1
+    KST_0_2_3  KC_2_3  -1
+    KST_0_2_4  KS_0_4  1
+    KST_0_2_4  KSTLO_0_2_4  1
+    KST_0_2_4  KSTHI_0_2_4  1
+    KST_0_2_4  KC_2_4  -1
+    KST_0_2_5  KS_0_5  1
+    KST_0_2_5  KSTLO_0_2_5  1
+    KST_0_2_5  KSTHI_0_2_5  1
+    KST_0_2_5  KC_2_5  -1
+    KST_0_2_6  KS_0_6  1
+    KST_0_2_6  KSTLO_0_2_6  1
+    KST_0_2_6  KSTHI_0_2_6  1
+    KST_0_2_6  KC_2_6  -1
+    KST_0_2_7  KS_0_7  1
+    KST_0_2_7  KSTLO_0_2_7  1
+    KST_0_2_7  KSTHI_0_2_7  1
+    KST_0_2_7  KC_2_7  -1
+    KST_0_2_8  KS_0_8  1
+    KST_0_2_8  KSTLO_0_2_8  1
+    KST_0_2_8  KSTHI_0_2_8  1
+    KST_0_2_8  KC_2_8  -1
+    KST_0_2_9  KS_0_9  1
+    KST_0_2_9  KSTLO_0_2_9  1
+    KST_0_2_9  KSTHI_0_2_9  1
+    KST_0_2_9  KC_2_9  -1
+    KST_0_2_10  KS_0_10  1
+    KST_0_2_10  KSTLO_0_2_10  1
+    KST_0_2_10  KSTHI_0_2_10  1
+    KST_0_2_10  KC_2_10  -1
+    KST_0_2_11  KS_0_11  1
+    KST_0_2_11  KSTLO_0_2_11  1
+    KST_0_2_11  KSTHI_0_2_11  1
+    KST_0_2_11  KC_2_11  -1
+    KST_1_0_0  KS_1_0  1
+    KST_1_0_0  KSTLO_1_0_0  1
+    KST_1_0_0  KSTHI_1_0_0  1
+    KST_1_0_0  KC_0_0  -1
+    KST_1_0_1  KS_1_1  1
+    KST_1_0_1  KSTLO_1_0_1  1
+    KST_1_0_1  KSTHI_1_0_1  1
+    KST_1_0_1  KC_0_1  -1
+    KST_1_0_2  KS_1_2  1
+    KST_1_0_2  KSTLO_1_0_2  1
+    KST_1_0_2  KSTHI_1_0_2  1
+    KST_1_0_2  KC_0_2  -1
+    KST_1_0_3  KS_1_3  1
+    KST_1_0_3  KSTLO_1_0_3  1
+    KST_1_0_3  KSTHI_1_0_3  1
+    KST_1_0_3  KC_0_3  -1
+    KST_1_0_4  KS_1_4  1
+    KST_1_0_4  KSTLO_1_0_4  1
+    KST_1_0_4  KSTHI_1_0_4  1
+    KST_1_0_4  KC_0_4  -1
+    KST_1_0_5  KS_1_5  1
+    KST_1_0_5  KSTLO_1_0_5  1
+    KST_1_0_5  KSTHI_1_0_5  1
+    KST_1_0_5  KC_0_5  -1
+    KST_1_0_6  KS_1_6  1
+    KST_1_0_6  KSTLO_1_0_6  1
+    KST_1_0_6  KSTHI_1_0_6  1
+    KST_1_0_6  KC_0_6  -1
+    KST_1_0_7  KS_1_7  1
+    KST_1_0_7  KSTLO_1_0_7  1
+    KST_1_0_7  KSTHI_1_0_7  1
+    KST_1_0_7  KC_0_7  -1
+    KST_1_0_8  KS_1_8  1
+    KST_1_0_8  KSTLO_1_0_8  1
+    KST_1_0_8  KSTHI_1_0_8  1
+    KST_1_0_8  KC_0_8  -1
+    KST_1_0_9  KS_1_9  1
+    KST_1_0_9  KSTLO_1_0_9  1
+    KST_1_0_9  KSTHI_1_0_9  1
+    KST_1_0_9  KC_0_9  -1
+    KST_1_0_10  KS_1_10  1
+    KST_1_0_10  KSTLO_1_0_10  1
+    KST_1_0_10  KSTHI_1_0_10  1
+    KST_1_0_10  KC_0_10  -1
+    KST_1_0_11  KS_1_11  1
+    KST_1_0_11  KSTLO_1_0_11  1
+    KST_1_0_11  KSTHI_1_0_11  1
+    KST_1_0_11  KC_0_11  -1
+    KST_1_1_0  KS_1_0  1
+    KST_1_1_0  KSTLO_1_1_0  1
+    KST_1_1_0  KSTHI_1_1_0  1
+    KST_1_1_0  KC_1_0  -1
+    KST_1_1_1  KS_1_1  1
+    KST_1_1_1  KSTLO_1_1_1  1
+    KST_1_1_1  KSTHI_1_1_1  1
+    KST_1_1_1  KC_1_1  -1
+    KST_1_1_2  KS_1_2  1
+    KST_1_1_2  KSTLO_1_1_2  1
+    KST_1_1_2  KSTHI_1_1_2  1
+    KST_1_1_2  KC_1_2  -1
+    KST_1_1_3  KS_1_3  1
+    KST_1_1_3  KSTLO_1_1_3  1
+    KST_1_1_3  KSTHI_1_1_3  1
+    KST_1_1_3  KC_1_3  -1
+    KST_1_1_4  KS_1_4  1
+    KST_1_1_4  KSTLO_1_1_4  1
+    KST_1_1_4  KSTHI_1_1_4  1
+    KST_1_1_4  KC_1_4  -1
+    KST_1_1_5  KS_1_5  1
+    KST_1_1_5  KSTLO_1_1_5  1
+    KST_1_1_5  KSTHI_1_1_5  1
+    KST_1_1_5  KC_1_5  -1
+    KST_1_1_6  KS_1_6  1
+    KST_1_1_6  KSTLO_1_1_6  1
+    KST_1_1_6  KSTHI_1_1_6  1
+    KST_1_1_6  KC_1_6  -1
+    KST_1_1_7  KS_1_7  1
+    KST_1_1_7  KSTLO_1_1_7  1
+    KST_1_1_7  KSTHI_1_1_7  1
+    KST_1_1_7  KC_1_7  -1
+    KST_1_1_8  KS_1_8  1
+    KST_1_1_8  KSTLO_1_1_8  1
+    KST_1_1_8  KSTHI_1_1_8  1
+    KST_1_1_8  KC_1_8  -1
+    KST_1_1_9  KS_1_9  1
+    KST_1_1_9  KSTLO_1_1_9  1
+    KST_1_1_9  KSTHI_1_1_9  1
+    KST_1_1_9  KC_1_9  -1
+    KST_1_1_10  KS_1_10  1
+    KST_1_1_10  KSTLO_1_1_10  1
+    KST_1_1_10  KSTHI_1_1_10  1
+    KST_1_1_10  KC_1_10  -1
+    KST_1_1_11  KS_1_11  1
+    KST_1_1_11  KSTLO_1_1_11  1
+    KST_1_1_11  KSTHI_1_1_11  1
+    KST_1_1_11  KC_1_11  -1
+    KST_1_2_0  KS_1_0  1
+    KST_1_2_0  KSTLO_1_2_0  1
+    KST_1_2_0  KSTHI_1_2_0  1
+    KST_1_2_0  KC_2_0  -1
+    KST_1_2_1  KS_1_1  1
+    KST_1_2_1  KSTLO_1_2_1  1
+    KST_1_2_1  KSTHI_1_2_1  1
+    KST_1_2_1  KC_2_1  -1
+    KST_1_2_2  KS_1_2  1
+    KST_1_2_2  KSTLO_1_2_2  1
+    KST_1_2_2  KSTHI_1_2_2  1
+    KST_1_2_2  KC_2_2  -1
+    KST_1_2_3  KS_1_3  1
+    KST_1_2_3  KSTLO_1_2_3  1
+    KST_1_2_3  KSTHI_1_2_3  1
+    KST_1_2_3  KC_2_3  -1
+    KST_1_2_4  KS_1_4  1
+    KST_1_2_4  KSTLO_1_2_4  1
+    KST_1_2_4  KSTHI_1_2_4  1
+    KST_1_2_4  KC_2_4  -1
+    KST_1_2_5  KS_1_5  1
+    KST_1_2_5  KSTLO_1_2_5  1
+    KST_1_2_5  KSTHI_1_2_5  1
+    KST_1_2_5  KC_2_5  -1
+    KST_1_2_6  KS_1_6  1
+    KST_1_2_6  KSTLO_1_2_6  1
+    KST_1_2_6  KSTHI_1_2_6  1
+    KST_1_2_6  KC_2_6  -1
+    KST_1_2_7  KS_1_7  1
+    KST_1_2_7  KSTLO_1_2_7  1
+    KST_1_2_7  KSTHI_1_2_7  1
+    KST_1_2_7  KC_2_7  -1
+    KST_1_2_8  KS_1_8  1
+    KST_1_2_8  KSTLO_1_2_8  1
+    KST_1_2_8  KSTHI_1_2_8  1
+    KST_1_2_8  KC_2_8  -1
+    KST_1_2_9  KS_1_9  1
+    KST_1_2_9  KSTLO_1_2_9  1
+    KST_1_2_9  KSTHI_1_2_9  1
+    KST_1_2_9  KC_2_9  -1
+    KST_1_2_10  KS_1_10  1
+    KST_1_2_10  KSTLO_1_2_10  1
+    KST_1_2_10  KSTHI_1_2_10  1
+    KST_1_2_10  KC_2_10  -1
+    KST_1_2_11  KS_1_11  1
+    KST_1_2_11  KSTLO_1_2_11  1
+    KST_1_2_11  KSTHI_1_2_11  1
+    KST_1_2_11  KC_2_11  -1
+    KST_2_0_0  KS_2_0  1
+    KST_2_0_0  KSTLO_2_0_0  1
+    KST_2_0_0  KSTHI_2_0_0  1
+    KST_2_0_0  KC_0_0  -1
+    KST_2_0_1  KS_2_1  1
+    KST_2_0_1  KSTLO_2_0_1  1
+    KST_2_0_1  KSTHI_2_0_1  1
+    KST_2_0_1  KC_0_1  -1
+    KST_2_0_2  KS_2_2  1
+    KST_2_0_2  KSTLO_2_0_2  1
+    KST_2_0_2  KSTHI_2_0_2  1
+    KST_2_0_2  KC_0_2  -1
+    KST_2_0_3  KS_2_3  1
+    KST_2_0_3  KSTLO_2_0_3  1
+    KST_2_0_3  KSTHI_2_0_3  1
+    KST_2_0_3  KC_0_3  -1
+    KST_2_0_4  KS_2_4  1
+    KST_2_0_4  KSTLO_2_0_4  1
+    KST_2_0_4  KSTHI_2_0_4  1
+    KST_2_0_4  KC_0_4  -1
+    KST_2_0_5  KS_2_5  1
+    KST_2_0_5  KSTLO_2_0_5  1
+    KST_2_0_5  KSTHI_2_0_5  1
+    KST_2_0_5  KC_0_5  -1
+    KST_2_0_6  KS_2_6  1
+    KST_2_0_6  KSTLO_2_0_6  1
+    KST_2_0_6  KSTHI_2_0_6  1
+    KST_2_0_6  KC_0_6  -1
+    KST_2_0_7  KS_2_7  1
+    KST_2_0_7  KSTLO_2_0_7  1
+    KST_2_0_7  KSTHI_2_0_7  1
+    KST_2_0_7  KC_0_7  -1
+    KST_2_0_8  KS_2_8  1
+    KST_2_0_8  KSTLO_2_0_8  1
+    KST_2_0_8  KSTHI_2_0_8  1
+    KST_2_0_8  KC_0_8  -1
+    KST_2_0_9  KS_2_9  1
+    KST_2_0_9  KSTLO_2_0_9  1
+    KST_2_0_9  KSTHI_2_0_9  1
+    KST_2_0_9  KC_0_9  -1
+    KST_2_0_10  KS_2_10  1
+    KST_2_0_10  KSTLO_2_0_10  1
+    KST_2_0_10  KSTHI_2_0_10  1
+    KST_2_0_10  KC_0_10  -1
+    KST_2_0_11  KS_2_11  1
+    KST_2_0_11  KSTLO_2_0_11  1
+    KST_2_0_11  KSTHI_2_0_11  1
+    KST_2_0_11  KC_0_11  -1
+    KST_2_1_0  KS_2_0  1
+    KST_2_1_0  KSTLO_2_1_0  1
+    KST_2_1_0  KSTHI_2_1_0  1
+    KST_2_1_0  KC_1_0  -1
+    KST_2_1_1  KS_2_1  1
+    KST_2_1_1  KSTLO_2_1_1  1
+    KST_2_1_1  KSTHI_2_1_1  1
+    KST_2_1_1  KC_1_1  -1
+    KST_2_1_2  KS_2_2  1
+    KST_2_1_2  KSTLO_2_1_2  1
+    KST_2_1_2  KSTHI_2_1_2  1
+    KST_2_1_2  KC_1_2  -1
+    KST_2_1_3  KS_2_3  1
+    KST_2_1_3  KSTLO_2_1_3  1
+    KST_2_1_3  KSTHI_2_1_3  1
+    KST_2_1_3  KC_1_3  -1
+    KST_2_1_4  KS_2_4  1
+    KST_2_1_4  KSTLO_2_1_4  1
+    KST_2_1_4  KSTHI_2_1_4  1
+    KST_2_1_4  KC_1_4  -1
+    KST_2_1_5  KS_2_5  1
+    KST_2_1_5  KSTLO_2_1_5  1
+    KST_2_1_5  KSTHI_2_1_5  1
+    KST_2_1_5  KC_1_5  -1
+    KST_2_1_6  KS_2_6  1
+    KST_2_1_6  KSTLO_2_1_6  1
+    KST_2_1_6  KSTHI_2_1_6  1
+    KST_2_1_6  KC_1_6  -1
+    KST_2_1_7  KS_2_7  1
+    KST_2_1_7  KSTLO_2_1_7  1
+    KST_2_1_7  KSTHI_2_1_7  1
+    KST_2_1_7  KC_1_7  -1
+    KST_2_1_8  KS_2_8  1
+    KST_2_1_8  KSTLO_2_1_8  1
+    KST_2_1_8  KSTHI_2_1_8  1
+    KST_2_1_8  KC_1_8  -1
+    KST_2_1_9  KS_2_9  1
+    KST_2_1_9  KSTLO_2_1_9  1
+    KST_2_1_9  KSTHI_2_1_9  1
+    KST_2_1_9  KC_1_9  -1
+    KST_2_1_10  KS_2_10  1
+    KST_2_1_10  KSTLO_2_1_10  1
+    KST_2_1_10  KSTHI_2_1_10  1
+    KST_2_1_10  KC_1_10  -1
+    KST_2_1_11  KS_2_11  1
+    KST_2_1_11  KSTLO_2_1_11  1
+    KST_2_1_11  KSTHI_2_1_11  1
+    KST_2_1_11  KC_1_11  -1
+    KST_2_2_0  KS_2_0  1
+    KST_2_2_0  KSTLO_2_2_0  1
+    KST_2_2_0  KSTHI_2_2_0  1
+    KST_2_2_0  KC_2_0  -1
+    KST_2_2_1  KS_2_1  1
+    KST_2_2_1  KSTLO_2_2_1  1
+    KST_2_2_1  KSTHI_2_2_1  1
+    KST_2_2_1  KC_2_1  -1
+    KST_2_2_2  KS_2_2  1
+    KST_2_2_2  KSTLO_2_2_2  1
+    KST_2_2_2  KSTHI_2_2_2  1
+    KST_2_2_2  KC_2_2  -1
+    KST_2_2_3  KS_2_3  1
+    KST_2_2_3  KSTLO_2_2_3  1
+    KST_2_2_3  KSTHI_2_2_3  1
+    KST_2_2_3  KC_2_3  -1
+    KST_2_2_4  KS_2_4  1
+    KST_2_2_4  KSTLO_2_2_4  1
+    KST_2_2_4  KSTHI_2_2_4  1
+    KST_2_2_4  KC_2_4  -1
+    KST_2_2_5  KS_2_5  1
+    KST_2_2_5  KSTLO_2_2_5  1
+    KST_2_2_5  KSTHI_2_2_5  1
+    KST_2_2_5  KC_2_5  -1
+    KST_2_2_6  KS_2_6  1
+    KST_2_2_6  KSTLO_2_2_6  1
+    KST_2_2_6  KSTHI_2_2_6  1
+    KST_2_2_6  KC_2_6  -1
+    KST_2_2_7  KS_2_7  1
+    KST_2_2_7  KSTLO_2_2_7  1
+    KST_2_2_7  KSTHI_2_2_7  1
+    KST_2_2_7  KC_2_7  -1
+    KST_2_2_8  KS_2_8  1
+    KST_2_2_8  KSTLO_2_2_8  1
+    KST_2_2_8  KSTHI_2_2_8  1
+    KST_2_2_8  KC_2_8  -1
+    KST_2_2_9  KS_2_9  1
+    KST_2_2_9  KSTLO_2_2_9  1
+    KST_2_2_9  KSTHI_2_2_9  1
+    KST_2_2_9  KC_2_9  -1
+    KST_2_2_10  KS_2_10  1
+    KST_2_2_10  KSTLO_2_2_10  1
+    KST_2_2_10  KSTHI_2_2_10  1
+    KST_2_2_10  KC_2_10  -1
+    KST_2_2_11  KS_2_11  1
+    KST_2_2_11  KSTLO_2_2_11  1
+    KST_2_2_11  KSTHI_2_2_11  1
+    KST_2_2_11  KC_2_11  -1
+    MARKER  'MARKER'  'INTORG'
+    Y_0_0_0  NOMIX_0_0_0_0  1
+    Y_0_0_0  NOMIX_1_0_0_0  1
+    Y_0_0_0  NOMIX_2_0_0_0  1
+    Y_0_0_0  FTC_0_0_0  -100
+    Y_0_0_0  CH_0_0_0  -1
+    Y_0_0_0  FEED_0_0  1
+    Y_0_0_0  CH_0_0_1  1
+    Y_0_0_1  NOMIX_0_0_0_1  1
+    Y_0_0_1  NOMIX_1_0_0_1  1
+    Y_0_0_1  NOMIX_2_0_0_1  1
+    Y_0_0_1  FTC_0_0_1  -100
+    Y_0_0_1  CH_0_0_1  -1
+    Y_0_0_1  FEED_0_1  1
+    Y_0_0_1  CH_0_0_2  1
+    Y_0_0_2  NOMIX_0_0_0_2  1
+    Y_0_0_2  NOMIX_1_0_0_2  1
+    Y_0_0_2  NOMIX_2_0_0_2  1
+    Y_0_0_2  FTC_0_0_2  -100
+    Y_0_0_2  CH_0_0_2  -1
+    Y_0_0_2  FEED_0_2  1
+    Y_0_0_2  CH_0_0_3  1
+    Y_0_0_3  NOMIX_0_0_0_3  1
+    Y_0_0_3  NOMIX_1_0_0_3  1
+    Y_0_0_3  NOMIX_2_0_0_3  1
+    Y_0_0_3  FTC_0_0_3  -100
+    Y_0_0_3  CH_0_0_3  -1
+    Y_0_0_3  FEED_0_3  1
+    Y_0_0_3  CH_0_0_4  1
+    Y_0_0_4  NOMIX_0_0_0_4  1
+    Y_0_0_4  NOMIX_1_0_0_4  1
+    Y_0_0_4  NOMIX_2_0_0_4  1
+    Y_0_0_4  FTC_0_0_4  -100
+    Y_0_0_4  CH_0_0_4  -1
+    Y_0_0_4  FEED_0_4  1
+    Y_0_0_4  CH_0_0_5  1
+    Y_0_0_5  NOMIX_0_0_0_5  1
+    Y_0_0_5  NOMIX_1_0_0_5  1
+    Y_0_0_5  NOMIX_2_0_0_5  1
+    Y_0_0_5  FTC_0_0_5  -100
+    Y_0_0_5  CH_0_0_5  -1
+    Y_0_0_5  FEED_0_5  1
+    Y_0_0_5  CH_0_0_6  1
+    Y_0_0_6  NOMIX_0_0_0_6  1
+    Y_0_0_6  NOMIX_1_0_0_6  1
+    Y_0_0_6  NOMIX_2_0_0_6  1
+    Y_0_0_6  FTC_0_0_6  -100
+    Y_0_0_6  CH_0_0_6  -1
+    Y_0_0_6  FEED_0_6  1
+    Y_0_0_6  CH_0_0_7  1
+    Y_0_0_7  NOMIX_0_0_0_7  1
+    Y_0_0_7  NOMIX_1_0_0_7  1
+    Y_0_0_7  NOMIX_2_0_0_7  1
+    Y_0_0_7  FTC_0_0_7  -100
+    Y_0_0_7  CH_0_0_7  -1
+    Y_0_0_7  FEED_0_7  1
+    Y_0_0_7  CH_0_0_8  1
+    Y_0_0_8  NOMIX_0_0_0_8  1
+    Y_0_0_8  NOMIX_1_0_0_8  1
+    Y_0_0_8  NOMIX_2_0_0_8  1
+    Y_0_0_8  FTC_0_0_8  -100
+    Y_0_0_8  CH_0_0_8  -1
+    Y_0_0_8  FEED_0_8  1
+    Y_0_0_8  CH_0_0_9  1
+    Y_0_0_9  NOMIX_0_0_0_9  1
+    Y_0_0_9  NOMIX_1_0_0_9  1
+    Y_0_0_9  NOMIX_2_0_0_9  1
+    Y_0_0_9  FTC_0_0_9  -100
+    Y_0_0_9  CH_0_0_9  -1
+    Y_0_0_9  FEED_0_9  1
+    Y_0_0_9  CH_0_0_10  1
+    Y_0_0_10  NOMIX_0_0_0_10  1
+    Y_0_0_10  NOMIX_1_0_0_10  1
+    Y_0_0_10  NOMIX_2_0_0_10  1
+    Y_0_0_10  FTC_0_0_10  -100
+    Y_0_0_10  CH_0_0_10  -1
+    Y_0_0_10  FEED_0_10  1
+    Y_0_0_10  CH_0_0_11  1
+    Y_0_0_11  NOMIX_0_0_0_11  1
+    Y_0_0_11  NOMIX_1_0_0_11  1
+    Y_0_0_11  NOMIX_2_0_0_11  1
+    Y_0_0_11  FTC_0_0_11  -100
+    Y_0_0_11  CH_0_0_11  -1
+    Y_0_0_11  FEED_0_11  1
+    Y_0_1_0  NOMIX_0_0_1_0  1
+    Y_0_1_0  NOMIX_1_0_1_0  1
+    Y_0_1_0  NOMIX_2_0_1_0  1
+    Y_0_1_0  FTC_0_1_0  -100
+    Y_0_1_0  CH_0_1_0  -1
+    Y_0_1_0  FEED_1_0  1
+    Y_0_1_0  CH_0_1_1  1
+    Y_0_1_1  NOMIX_0_0_1_1  1
+    Y_0_1_1  NOMIX_1_0_1_1  1
+    Y_0_1_1  NOMIX_2_0_1_1  1
+    Y_0_1_1  FTC_0_1_1  -100
+    Y_0_1_1  CH_0_1_1  -1
+    Y_0_1_1  FEED_1_1  1
+    Y_0_1_1  CH_0_1_2  1
+    Y_0_1_2  NOMIX_0_0_1_2  1
+    Y_0_1_2  NOMIX_1_0_1_2  1
+    Y_0_1_2  NOMIX_2_0_1_2  1
+    Y_0_1_2  FTC_0_1_2  -100
+    Y_0_1_2  CH_0_1_2  -1
+    Y_0_1_2  FEED_1_2  1
+    Y_0_1_2  CH_0_1_3  1
+    Y_0_1_3  NOMIX_0_0_1_3  1
+    Y_0_1_3  NOMIX_1_0_1_3  1
+    Y_0_1_3  NOMIX_2_0_1_3  1
+    Y_0_1_3  FTC_0_1_3  -100
+    Y_0_1_3  CH_0_1_3  -1
+    Y_0_1_3  FEED_1_3  1
+    Y_0_1_3  CH_0_1_4  1
+    Y_0_1_4  NOMIX_0_0_1_4  1
+    Y_0_1_4  NOMIX_1_0_1_4  1
+    Y_0_1_4  NOMIX_2_0_1_4  1
+    Y_0_1_4  FTC_0_1_4  -100
+    Y_0_1_4  CH_0_1_4  -1
+    Y_0_1_4  FEED_1_4  1
+    Y_0_1_4  CH_0_1_5  1
+    Y_0_1_5  NOMIX_0_0_1_5  1
+    Y_0_1_5  NOMIX_1_0_1_5  1
+    Y_0_1_5  NOMIX_2_0_1_5  1
+    Y_0_1_5  FTC_0_1_5  -100
+    Y_0_1_5  CH_0_1_5  -1
+    Y_0_1_5  FEED_1_5  1
+    Y_0_1_5  CH_0_1_6  1
+    Y_0_1_6  NOMIX_0_0_1_6  1
+    Y_0_1_6  NOMIX_1_0_1_6  1
+    Y_0_1_6  NOMIX_2_0_1_6  1
+    Y_0_1_6  FTC_0_1_6  -100
+    Y_0_1_6  CH_0_1_6  -1
+    Y_0_1_6  FEED_1_6  1
+    Y_0_1_6  CH_0_1_7  1
+    Y_0_1_7  NOMIX_0_0_1_7  1
+    Y_0_1_7  NOMIX_1_0_1_7  1
+    Y_0_1_7  NOMIX_2_0_1_7  1
+    Y_0_1_7  FTC_0_1_7  -100
+    Y_0_1_7  CH_0_1_7  -1
+    Y_0_1_7  FEED_1_7  1
+    Y_0_1_7  CH_0_1_8  1
+    Y_0_1_8  NOMIX_0_0_1_8  1
+    Y_0_1_8  NOMIX_1_0_1_8  1
+    Y_0_1_8  NOMIX_2_0_1_8  1
+    Y_0_1_8  FTC_0_1_8  -100
+    Y_0_1_8  CH_0_1_8  -1
+    Y_0_1_8  FEED_1_8  1
+    Y_0_1_8  CH_0_1_9  1
+    Y_0_1_9  NOMIX_0_0_1_9  1
+    Y_0_1_9  NOMIX_1_0_1_9  1
+    Y_0_1_9  NOMIX_2_0_1_9  1
+    Y_0_1_9  FTC_0_1_9  -100
+    Y_0_1_9  CH_0_1_9  -1
+    Y_0_1_9  FEED_1_9  1
+    Y_0_1_9  CH_0_1_10  1
+    Y_0_1_10  NOMIX_0_0_1_10  1
+    Y_0_1_10  NOMIX_1_0_1_10  1
+    Y_0_1_10  NOMIX_2_0_1_10  1
+    Y_0_1_10  FTC_0_1_10  -100
+    Y_0_1_10  CH_0_1_10  -1
+    Y_0_1_10  FEED_1_10  1
+    Y_0_1_10  CH_0_1_11  1
+    Y_0_1_11  NOMIX_0_0_1_11  1
+    Y_0_1_11  NOMIX_1_0_1_11  1
+    Y_0_1_11  NOMIX_2_0_1_11  1
+    Y_0_1_11  FTC_0_1_11  -100
+    Y_0_1_11  CH_0_1_11  -1
+    Y_0_1_11  FEED_1_11  1
+    Y_1_0_0  NOMIX_0_1_0_0  1
+    Y_1_0_0  NOMIX_1_1_0_0  1
+    Y_1_0_0  NOMIX_2_1_0_0  1
+    Y_1_0_0  FTC_1_0_0  -100
+    Y_1_0_0  CH_1_0_0  -1
+    Y_1_0_0  FEED_0_0  1
+    Y_1_0_0  CH_1_0_1  1
+    Y_1_0_1  NOMIX_0_1_0_1  1
+    Y_1_0_1  NOMIX_1_1_0_1  1
+    Y_1_0_1  NOMIX_2_1_0_1  1
+    Y_1_0_1  FTC_1_0_1  -100
+    Y_1_0_1  CH_1_0_1  -1
+    Y_1_0_1  FEED_0_1  1
+    Y_1_0_1  CH_1_0_2  1
+    Y_1_0_2  NOMIX_0_1_0_2  1
+    Y_1_0_2  NOMIX_1_1_0_2  1
+    Y_1_0_2  NOMIX_2_1_0_2  1
+    Y_1_0_2  FTC_1_0_2  -100
+    Y_1_0_2  CH_1_0_2  -1
+    Y_1_0_2  FEED_0_2  1
+    Y_1_0_2  CH_1_0_3  1
+    Y_1_0_3  NOMIX_0_1_0_3  1
+    Y_1_0_3  NOMIX_1_1_0_3  1
+    Y_1_0_3  NOMIX_2_1_0_3  1
+    Y_1_0_3  FTC_1_0_3  -100
+    Y_1_0_3  CH_1_0_3  -1
+    Y_1_0_3  FEED_0_3  1
+    Y_1_0_3  CH_1_0_4  1
+    Y_1_0_4  NOMIX_0_1_0_4  1
+    Y_1_0_4  NOMIX_1_1_0_4  1
+    Y_1_0_4  NOMIX_2_1_0_4  1
+    Y_1_0_4  FTC_1_0_4  -100
+    Y_1_0_4  CH_1_0_4  -1
+    Y_1_0_4  FEED_0_4  1
+    Y_1_0_4  CH_1_0_5  1
+    Y_1_0_5  NOMIX_0_1_0_5  1
+    Y_1_0_5  NOMIX_1_1_0_5  1
+    Y_1_0_5  NOMIX_2_1_0_5  1
+    Y_1_0_5  FTC_1_0_5  -100
+    Y_1_0_5  CH_1_0_5  -1
+    Y_1_0_5  FEED_0_5  1
+    Y_1_0_5  CH_1_0_6  1
+    Y_1_0_6  NOMIX_0_1_0_6  1
+    Y_1_0_6  NOMIX_1_1_0_6  1
+    Y_1_0_6  NOMIX_2_1_0_6  1
+    Y_1_0_6  FTC_1_0_6  -100
+    Y_1_0_6  CH_1_0_6  -1
+    Y_1_0_6  FEED_0_6  1
+    Y_1_0_6  CH_1_0_7  1
+    Y_1_0_7  NOMIX_0_1_0_7  1
+    Y_1_0_7  NOMIX_1_1_0_7  1
+    Y_1_0_7  NOMIX_2_1_0_7  1
+    Y_1_0_7  FTC_1_0_7  -100
+    Y_1_0_7  CH_1_0_7  -1
+    Y_1_0_7  FEED_0_7  1
+    Y_1_0_7  CH_1_0_8  1
+    Y_1_0_8  NOMIX_0_1_0_8  1
+    Y_1_0_8  NOMIX_1_1_0_8  1
+    Y_1_0_8  NOMIX_2_1_0_8  1
+    Y_1_0_8  FTC_1_0_8  -100
+    Y_1_0_8  CH_1_0_8  -1
+    Y_1_0_8  FEED_0_8  1
+    Y_1_0_8  CH_1_0_9  1
+    Y_1_0_9  NOMIX_0_1_0_9  1
+    Y_1_0_9  NOMIX_1_1_0_9  1
+    Y_1_0_9  NOMIX_2_1_0_9  1
+    Y_1_0_9  FTC_1_0_9  -100
+    Y_1_0_9  CH_1_0_9  -1
+    Y_1_0_9  FEED_0_9  1
+    Y_1_0_9  CH_1_0_10  1
+    Y_1_0_10  NOMIX_0_1_0_10  1
+    Y_1_0_10  NOMIX_1_1_0_10  1
+    Y_1_0_10  NOMIX_2_1_0_10  1
+    Y_1_0_10  FTC_1_0_10  -100
+    Y_1_0_10  CH_1_0_10  -1
+    Y_1_0_10  FEED_0_10  1
+    Y_1_0_10  CH_1_0_11  1
+    Y_1_0_11  NOMIX_0_1_0_11  1
+    Y_1_0_11  NOMIX_1_1_0_11  1
+    Y_1_0_11  NOMIX_2_1_0_11  1
+    Y_1_0_11  FTC_1_0_11  -100
+    Y_1_0_11  CH_1_0_11  -1
+    Y_1_0_11  FEED_0_11  1
+    Y_1_1_0  NOMIX_0_1_1_0  1
+    Y_1_1_0  NOMIX_1_1_1_0  1
+    Y_1_1_0  NOMIX_2_1_1_0  1
+    Y_1_1_0  FTC_1_1_0  -100
+    Y_1_1_0  CH_1_1_0  -1
+    Y_1_1_0  FEED_1_0  1
+    Y_1_1_0  CH_1_1_1  1
+    Y_1_1_1  NOMIX_0_1_1_1  1
+    Y_1_1_1  NOMIX_1_1_1_1  1
+    Y_1_1_1  NOMIX_2_1_1_1  1
+    Y_1_1_1  FTC_1_1_1  -100
+    Y_1_1_1  CH_1_1_1  -1
+    Y_1_1_1  FEED_1_1  1
+    Y_1_1_1  CH_1_1_2  1
+    Y_1_1_2  NOMIX_0_1_1_2  1
+    Y_1_1_2  NOMIX_1_1_1_2  1
+    Y_1_1_2  NOMIX_2_1_1_2  1
+    Y_1_1_2  FTC_1_1_2  -100
+    Y_1_1_2  CH_1_1_2  -1
+    Y_1_1_2  FEED_1_2  1
+    Y_1_1_2  CH_1_1_3  1
+    Y_1_1_3  NOMIX_0_1_1_3  1
+    Y_1_1_3  NOMIX_1_1_1_3  1
+    Y_1_1_3  NOMIX_2_1_1_3  1
+    Y_1_1_3  FTC_1_1_3  -100
+    Y_1_1_3  CH_1_1_3  -1
+    Y_1_1_3  FEED_1_3  1
+    Y_1_1_3  CH_1_1_4  1
+    Y_1_1_4  NOMIX_0_1_1_4  1
+    Y_1_1_4  NOMIX_1_1_1_4  1
+    Y_1_1_4  NOMIX_2_1_1_4  1
+    Y_1_1_4  FTC_1_1_4  -100
+    Y_1_1_4  CH_1_1_4  -1
+    Y_1_1_4  FEED_1_4  1
+    Y_1_1_4  CH_1_1_5  1
+    Y_1_1_5  NOMIX_0_1_1_5  1
+    Y_1_1_5  NOMIX_1_1_1_5  1
+    Y_1_1_5  NOMIX_2_1_1_5  1
+    Y_1_1_5  FTC_1_1_5  -100
+    Y_1_1_5  CH_1_1_5  -1
+    Y_1_1_5  FEED_1_5  1
+    Y_1_1_5  CH_1_1_6  1
+    Y_1_1_6  NOMIX_0_1_1_6  1
+    Y_1_1_6  NOMIX_1_1_1_6  1
+    Y_1_1_6  NOMIX_2_1_1_6  1
+    Y_1_1_6  FTC_1_1_6  -100
+    Y_1_1_6  CH_1_1_6  -1
+    Y_1_1_6  FEED_1_6  1
+    Y_1_1_6  CH_1_1_7  1
+    Y_1_1_7  NOMIX_0_1_1_7  1
+    Y_1_1_7  NOMIX_1_1_1_7  1
+    Y_1_1_7  NOMIX_2_1_1_7  1
+    Y_1_1_7  FTC_1_1_7  -100
+    Y_1_1_7  CH_1_1_7  -1
+    Y_1_1_7  FEED_1_7  1
+    Y_1_1_7  CH_1_1_8  1
+    Y_1_1_8  NOMIX_0_1_1_8  1
+    Y_1_1_8  NOMIX_1_1_1_8  1
+    Y_1_1_8  NOMIX_2_1_1_8  1
+    Y_1_1_8  FTC_1_1_8  -100
+    Y_1_1_8  CH_1_1_8  -1
+    Y_1_1_8  FEED_1_8  1
+    Y_1_1_8  CH_1_1_9  1
+    Y_1_1_9  NOMIX_0_1_1_9  1
+    Y_1_1_9  NOMIX_1_1_1_9  1
+    Y_1_1_9  NOMIX_2_1_1_9  1
+    Y_1_1_9  FTC_1_1_9  -100
+    Y_1_1_9  CH_1_1_9  -1
+    Y_1_1_9  FEED_1_9  1
+    Y_1_1_9  CH_1_1_10  1
+    Y_1_1_10  NOMIX_0_1_1_10  1
+    Y_1_1_10  NOMIX_1_1_1_10  1
+    Y_1_1_10  NOMIX_2_1_1_10  1
+    Y_1_1_10  FTC_1_1_10  -100
+    Y_1_1_10  CH_1_1_10  -1
+    Y_1_1_10  FEED_1_10  1
+    Y_1_1_10  CH_1_1_11  1
+    Y_1_1_11  NOMIX_0_1_1_11  1
+    Y_1_1_11  NOMIX_1_1_1_11  1
+    Y_1_1_11  NOMIX_2_1_1_11  1
+    Y_1_1_11  FTC_1_1_11  -100
+    Y_1_1_11  CH_1_1_11  -1
+    Y_1_1_11  FEED_1_11  1
+    Y_2_0_0  NOMIX_0_2_0_0  1
+    Y_2_0_0  NOMIX_1_2_0_0  1
+    Y_2_0_0  NOMIX_2_2_0_0  1
+    Y_2_0_0  FTC_2_0_0  -100
+    Y_2_0_0  CH_2_0_0  -1
+    Y_2_0_0  FEED_0_0  1
+    Y_2_0_0  CH_2_0_1  1
+    Y_2_0_1  NOMIX_0_2_0_1  1
+    Y_2_0_1  NOMIX_1_2_0_1  1
+    Y_2_0_1  NOMIX_2_2_0_1  1
+    Y_2_0_1  FTC_2_0_1  -100
+    Y_2_0_1  CH_2_0_1  -1
+    Y_2_0_1  FEED_0_1  1
+    Y_2_0_1  CH_2_0_2  1
+    Y_2_0_2  NOMIX_0_2_0_2  1
+    Y_2_0_2  NOMIX_1_2_0_2  1
+    Y_2_0_2  NOMIX_2_2_0_2  1
+    Y_2_0_2  FTC_2_0_2  -100
+    Y_2_0_2  CH_2_0_2  -1
+    Y_2_0_2  FEED_0_2  1
+    Y_2_0_2  CH_2_0_3  1
+    Y_2_0_3  NOMIX_0_2_0_3  1
+    Y_2_0_3  NOMIX_1_2_0_3  1
+    Y_2_0_3  NOMIX_2_2_0_3  1
+    Y_2_0_3  FTC_2_0_3  -100
+    Y_2_0_3  CH_2_0_3  -1
+    Y_2_0_3  FEED_0_3  1
+    Y_2_0_3  CH_2_0_4  1
+    Y_2_0_4  NOMIX_0_2_0_4  1
+    Y_2_0_4  NOMIX_1_2_0_4  1
+    Y_2_0_4  NOMIX_2_2_0_4  1
+    Y_2_0_4  FTC_2_0_4  -100
+    Y_2_0_4  CH_2_0_4  -1
+    Y_2_0_4  FEED_0_4  1
+    Y_2_0_4  CH_2_0_5  1
+    Y_2_0_5  NOMIX_0_2_0_5  1
+    Y_2_0_5  NOMIX_1_2_0_5  1
+    Y_2_0_5  NOMIX_2_2_0_5  1
+    Y_2_0_5  FTC_2_0_5  -100
+    Y_2_0_5  CH_2_0_5  -1
+    Y_2_0_5  FEED_0_5  1
+    Y_2_0_5  CH_2_0_6  1
+    Y_2_0_6  NOMIX_0_2_0_6  1
+    Y_2_0_6  NOMIX_1_2_0_6  1
+    Y_2_0_6  NOMIX_2_2_0_6  1
+    Y_2_0_6  FTC_2_0_6  -100
+    Y_2_0_6  CH_2_0_6  -1
+    Y_2_0_6  FEED_0_6  1
+    Y_2_0_6  CH_2_0_7  1
+    Y_2_0_7  NOMIX_0_2_0_7  1
+    Y_2_0_7  NOMIX_1_2_0_7  1
+    Y_2_0_7  NOMIX_2_2_0_7  1
+    Y_2_0_7  FTC_2_0_7  -100
+    Y_2_0_7  CH_2_0_7  -1
+    Y_2_0_7  FEED_0_7  1
+    Y_2_0_7  CH_2_0_8  1
+    Y_2_0_8  NOMIX_0_2_0_8  1
+    Y_2_0_8  NOMIX_1_2_0_8  1
+    Y_2_0_8  NOMIX_2_2_0_8  1
+    Y_2_0_8  FTC_2_0_8  -100
+    Y_2_0_8  CH_2_0_8  -1
+    Y_2_0_8  FEED_0_8  1
+    Y_2_0_8  CH_2_0_9  1
+    Y_2_0_9  NOMIX_0_2_0_9  1
+    Y_2_0_9  NOMIX_1_2_0_9  1
+    Y_2_0_9  NOMIX_2_2_0_9  1
+    Y_2_0_9  FTC_2_0_9  -100
+    Y_2_0_9  CH_2_0_9  -1
+    Y_2_0_9  FEED_0_9  1
+    Y_2_0_9  CH_2_0_10  1
+    Y_2_0_10  NOMIX_0_2_0_10  1
+    Y_2_0_10  NOMIX_1_2_0_10  1
+    Y_2_0_10  NOMIX_2_2_0_10  1
+    Y_2_0_10  FTC_2_0_10  -100
+    Y_2_0_10  CH_2_0_10  -1
+    Y_2_0_10  FEED_0_10  1
+    Y_2_0_10  CH_2_0_11  1
+    Y_2_0_11  NOMIX_0_2_0_11  1
+    Y_2_0_11  NOMIX_1_2_0_11  1
+    Y_2_0_11  NOMIX_2_2_0_11  1
+    Y_2_0_11  FTC_2_0_11  -100
+    Y_2_0_11  CH_2_0_11  -1
+    Y_2_0_11  FEED_0_11  1
+    Y_2_1_0  NOMIX_0_2_1_0  1
+    Y_2_1_0  NOMIX_1_2_1_0  1
+    Y_2_1_0  NOMIX_2_2_1_0  1
+    Y_2_1_0  FTC_2_1_0  -100
+    Y_2_1_0  CH_2_1_0  -1
+    Y_2_1_0  FEED_1_0  1
+    Y_2_1_0  CH_2_1_1  1
+    Y_2_1_1  NOMIX_0_2_1_1  1
+    Y_2_1_1  NOMIX_1_2_1_1  1
+    Y_2_1_1  NOMIX_2_2_1_1  1
+    Y_2_1_1  FTC_2_1_1  -100
+    Y_2_1_1  CH_2_1_1  -1
+    Y_2_1_1  FEED_1_1  1
+    Y_2_1_1  CH_2_1_2  1
+    Y_2_1_2  NOMIX_0_2_1_2  1
+    Y_2_1_2  NOMIX_1_2_1_2  1
+    Y_2_1_2  NOMIX_2_2_1_2  1
+    Y_2_1_2  FTC_2_1_2  -100
+    Y_2_1_2  CH_2_1_2  -1
+    Y_2_1_2  FEED_1_2  1
+    Y_2_1_2  CH_2_1_3  1
+    Y_2_1_3  NOMIX_0_2_1_3  1
+    Y_2_1_3  NOMIX_1_2_1_3  1
+    Y_2_1_3  NOMIX_2_2_1_3  1
+    Y_2_1_3  FTC_2_1_3  -100
+    Y_2_1_3  CH_2_1_3  -1
+    Y_2_1_3  FEED_1_3  1
+    Y_2_1_3  CH_2_1_4  1
+    Y_2_1_4  NOMIX_0_2_1_4  1
+    Y_2_1_4  NOMIX_1_2_1_4  1
+    Y_2_1_4  NOMIX_2_2_1_4  1
+    Y_2_1_4  FTC_2_1_4  -100
+    Y_2_1_4  CH_2_1_4  -1
+    Y_2_1_4  FEED_1_4  1
+    Y_2_1_4  CH_2_1_5  1
+    Y_2_1_5  NOMIX_0_2_1_5  1
+    Y_2_1_5  NOMIX_1_2_1_5  1
+    Y_2_1_5  NOMIX_2_2_1_5  1
+    Y_2_1_5  FTC_2_1_5  -100
+    Y_2_1_5  CH_2_1_5  -1
+    Y_2_1_5  FEED_1_5  1
+    Y_2_1_5  CH_2_1_6  1
+    Y_2_1_6  NOMIX_0_2_1_6  1
+    Y_2_1_6  NOMIX_1_2_1_6  1
+    Y_2_1_6  NOMIX_2_2_1_6  1
+    Y_2_1_6  FTC_2_1_6  -100
+    Y_2_1_6  CH_2_1_6  -1
+    Y_2_1_6  FEED_1_6  1
+    Y_2_1_6  CH_2_1_7  1
+    Y_2_1_7  NOMIX_0_2_1_7  1
+    Y_2_1_7  NOMIX_1_2_1_7  1
+    Y_2_1_7  NOMIX_2_2_1_7  1
+    Y_2_1_7  FTC_2_1_7  -100
+    Y_2_1_7  CH_2_1_7  -1
+    Y_2_1_7  FEED_1_7  1
+    Y_2_1_7  CH_2_1_8  1
+    Y_2_1_8  NOMIX_0_2_1_8  1
+    Y_2_1_8  NOMIX_1_2_1_8  1
+    Y_2_1_8  NOMIX_2_2_1_8  1
+    Y_2_1_8  FTC_2_1_8  -100
+    Y_2_1_8  CH_2_1_8  -1
+    Y_2_1_8  FEED_1_8  1
+    Y_2_1_8  CH_2_1_9  1
+    Y_2_1_9  NOMIX_0_2_1_9  1
+    Y_2_1_9  NOMIX_1_2_1_9  1
+    Y_2_1_9  NOMIX_2_2_1_9  1
+    Y_2_1_9  FTC_2_1_9  -100
+    Y_2_1_9  CH_2_1_9  -1
+    Y_2_1_9  FEED_1_9  1
+    Y_2_1_9  CH_2_1_10  1
+    Y_2_1_10  NOMIX_0_2_1_10  1
+    Y_2_1_10  NOMIX_1_2_1_10  1
+    Y_2_1_10  NOMIX_2_2_1_10  1
+    Y_2_1_10  FTC_2_1_10  -100
+    Y_2_1_10  CH_2_1_10  -1
+    Y_2_1_10  FEED_1_10  1
+    Y_2_1_10  CH_2_1_11  1
+    Y_2_1_11  NOMIX_0_2_1_11  1
+    Y_2_1_11  NOMIX_1_2_1_11  1
+    Y_2_1_11  NOMIX_2_2_1_11  1
+    Y_2_1_11  FTC_2_1_11  -100
+    Y_2_1_11  CH_2_1_11  -1
+    Y_2_1_11  FEED_1_11  1
+    MARKER  'MARKER'  'INTEND'
+    FTC_0_0_0  VC_0_0  1
+    FTC_0_0_0  FTC_0_0_0  1
+    FTC_0_0_0  KTCLO_0_0_0  -1.16
+    FTC_0_0_0  KTCHI_0_0_0  -1.52
+    FTC_0_0_0  DEMAND_0_0  1
+    FTC_0_0_1  VC_0_1  1
+    FTC_0_0_1  FTC_0_0_1  1
+    FTC_0_0_1  KTCLO_0_0_1  -1.16
+    FTC_0_0_1  KTCHI_0_0_1  -1.52
+    FTC_0_0_1  DEMAND_0_1  1
+    FTC_0_0_2  VC_0_2  1
+    FTC_0_0_2  FTC_0_0_2  1
+    FTC_0_0_2  KTCLO_0_0_2  -1.16
+    FTC_0_0_2  KTCHI_0_0_2  -1.52
+    FTC_0_0_2  DEMAND_0_2  1
+    FTC_0_0_3  VC_0_3  1
+    FTC_0_0_3  FTC_0_0_3  1
+    FTC_0_0_3  KTCLO_0_0_3  -1.16
+    FTC_0_0_3  KTCHI_0_0_3  -1.52
+    FTC_0_0_3  DEMAND_0_3  1
+    FTC_0_0_4  VC_0_4  1
+    FTC_0_0_4  FTC_0_0_4  1
+    FTC_0_0_4  KTCLO_0_0_4  -1.16
+    FTC_0_0_4  KTCHI_0_0_4  -1.52
+    FTC_0_0_4  DEMAND_0_4  1
+    FTC_0_0_5  VC_0_5  1
+    FTC_0_0_5  FTC_0_0_5  1
+    FTC_0_0_5  KTCLO_0_0_5  -1.16
+    FTC_0_0_5  KTCHI_0_0_5  -1.52
+    FTC_0_0_5  DEMAND_0_5  1
+    FTC_0_0_6  VC_0_6  1
+    FTC_0_0_6  FTC_0_0_6  1
+    FTC_0_0_6  KTCLO_0_0_6  -1.16
+    FTC_0_0_6  KTCHI_0_0_6  -1.52
+    FTC_0_0_6  DEMAND_0_6  1
+    FTC_0_0_7  VC_0_7  1
+    FTC_0_0_7  FTC_0_0_7  1
+    FTC_0_0_7  KTCLO_0_0_7  -1.16
+    FTC_0_0_7  KTCHI_0_0_7  -1.52
+    FTC_0_0_7  DEMAND_0_7  1
+    FTC_0_0_8  VC_0_8  1
+    FTC_0_0_8  FTC_0_0_8  1
+    FTC_0_0_8  KTCLO_0_0_8  -1.16
+    FTC_0_0_8  KTCHI_0_0_8  -1.52
+    FTC_0_0_8  DEMAND_0_8  1
+    FTC_0_0_9  VC_0_9  1
+    FTC_0_0_9  FTC_0_0_9  1
+    FTC_0_0_9  KTCLO_0_0_9  -1.16
+    FTC_0_0_9  KTCHI_0_0_9  -1.52
+    FTC_0_0_9  DEMAND_0_9  1
+    FTC_0_0_10  VC_0_10  1
+    FTC_0_0_10  FTC_0_0_10  1
+    FTC_0_0_10  KTCLO_0_0_10  -1.16
+    FTC_0_0_10  KTCHI_0_0_10  -1.52
+    FTC_0_0_10  DEMAND_0_10  1
+    FTC_0_0_11  VC_0_11  1
+    FTC_0_0_11  FTC_0_0_11  1
+    FTC_0_0_11  KTCLO_0_0_11  -1.16
+    FTC_0_0_11  KTCHI_0_0_11  -1.52
+    FTC_0_0_11  DEMAND_0_11  1
+    FTC_0_1_0  VC_0_0  1
+    FTC_0_1_0  FTC_0_1_0  1
+    FTC_0_1_0  KTCLO_0_1_0  -1.16
+    FTC_0_1_0  KTCHI_0_1_0  -1.52
+    FTC_0_1_0  DEMAND_1_0  1
+    FTC_0_1_1  VC_0_1  1
+    FTC_0_1_1  FTC_0_1_1  1
+    FTC_0_1_1  KTCLO_0_1_1  -1.16
+    FTC_0_1_1  KTCHI_0_1_1  -1.52
+    FTC_0_1_1  DEMAND_1_1  1
+    FTC_0_1_2  VC_0_2  1
+    FTC_0_1_2  FTC_0_1_2  1
+    FTC_0_1_2  KTCLO_0_1_2  -1.16
+    FTC_0_1_2  KTCHI_0_1_2  -1.52
+    FTC_0_1_2  DEMAND_1_2  1
+    FTC_0_1_3  VC_0_3  1
+    FTC_0_1_3  FTC_0_1_3  1
+    FTC_0_1_3  KTCLO_0_1_3  -1.16
+    FTC_0_1_3  KTCHI_0_1_3  -1.52
+    FTC_0_1_3  DEMAND_1_3  1
+    FTC_0_1_4  VC_0_4  1
+    FTC_0_1_4  FTC_0_1_4  1
+    FTC_0_1_4  KTCLO_0_1_4  -1.16
+    FTC_0_1_4  KTCHI_0_1_4  -1.52
+    FTC_0_1_4  DEMAND_1_4  1
+    FTC_0_1_5  VC_0_5  1
+    FTC_0_1_5  FTC_0_1_5  1
+    FTC_0_1_5  KTCLO_0_1_5  -1.16
+    FTC_0_1_5  KTCHI_0_1_5  -1.52
+    FTC_0_1_5  DEMAND_1_5  1
+    FTC_0_1_6  VC_0_6  1
+    FTC_0_1_6  FTC_0_1_6  1
+    FTC_0_1_6  KTCLO_0_1_6  -1.16
+    FTC_0_1_6  KTCHI_0_1_6  -1.52
+    FTC_0_1_6  DEMAND_1_6  1
+    FTC_0_1_7  VC_0_7  1
+    FTC_0_1_7  FTC_0_1_7  1
+    FTC_0_1_7  KTCLO_0_1_7  -1.16
+    FTC_0_1_7  KTCHI_0_1_7  -1.52
+    FTC_0_1_7  DEMAND_1_7  1
+    FTC_0_1_8  VC_0_8  1
+    FTC_0_1_8  FTC_0_1_8  1
+    FTC_0_1_8  KTCLO_0_1_8  -1.16
+    FTC_0_1_8  KTCHI_0_1_8  -1.52
+    FTC_0_1_8  DEMAND_1_8  1
+    FTC_0_1_9  VC_0_9  1
+    FTC_0_1_9  FTC_0_1_9  1
+    FTC_0_1_9  KTCLO_0_1_9  -1.16
+    FTC_0_1_9  KTCHI_0_1_9  -1.52
+    FTC_0_1_9  DEMAND_1_9  1
+    FTC_0_1_10  VC_0_10  1
+    FTC_0_1_10  FTC_0_1_10  1
+    FTC_0_1_10  KTCLO_0_1_10  -1.16
+    FTC_0_1_10  KTCHI_0_1_10  -1.52
+    FTC_0_1_10  DEMAND_1_10  1
+    FTC_0_1_11  VC_0_11  1
+    FTC_0_1_11  FTC_0_1_11  1
+    FTC_0_1_11  KTCLO_0_1_11  -1.16
+    FTC_0_1_11  KTCHI_0_1_11  -1.52
+    FTC_0_1_11  DEMAND_1_11  1
+    FTC_1_0_0  VC_1_0  1
+    FTC_1_0_0  FTC_1_0_0  1
+    FTC_1_0_0  KTCLO_1_0_0  -1.04
+    FTC_1_0_0  KTCHI_1_0_0  -1.64
+    FTC_1_0_0  DEMAND_0_0  1
+    FTC_1_0_1  VC_1_1  1
+    FTC_1_0_1  FTC_1_0_1  1
+    FTC_1_0_1  KTCLO_1_0_1  -1.04
+    FTC_1_0_1  KTCHI_1_0_1  -1.64
+    FTC_1_0_1  DEMAND_0_1  1
+    FTC_1_0_2  VC_1_2  1
+    FTC_1_0_2  FTC_1_0_2  1
+    FTC_1_0_2  KTCLO_1_0_2  -1.04
+    FTC_1_0_2  KTCHI_1_0_2  -1.64
+    FTC_1_0_2  DEMAND_0_2  1
+    FTC_1_0_3  VC_1_3  1
+    FTC_1_0_3  FTC_1_0_3  1
+    FTC_1_0_3  KTCLO_1_0_3  -1.04
+    FTC_1_0_3  KTCHI_1_0_3  -1.64
+    FTC_1_0_3  DEMAND_0_3  1
+    FTC_1_0_4  VC_1_4  1
+    FTC_1_0_4  FTC_1_0_4  1
+    FTC_1_0_4  KTCLO_1_0_4  -1.04
+    FTC_1_0_4  KTCHI_1_0_4  -1.64
+    FTC_1_0_4  DEMAND_0_4  1
+    FTC_1_0_5  VC_1_5  1
+    FTC_1_0_5  FTC_1_0_5  1
+    FTC_1_0_5  KTCLO_1_0_5  -1.04
+    FTC_1_0_5  KTCHI_1_0_5  -1.64
+    FTC_1_0_5  DEMAND_0_5  1
+    FTC_1_0_6  VC_1_6  1
+    FTC_1_0_6  FTC_1_0_6  1
+    FTC_1_0_6  KTCLO_1_0_6  -1.04
+    FTC_1_0_6  KTCHI_1_0_6  -1.64
+    FTC_1_0_6  DEMAND_0_6  1
+    FTC_1_0_7  VC_1_7  1
+    FTC_1_0_7  FTC_1_0_7  1
+    FTC_1_0_7  KTCLO_1_0_7  -1.04
+    FTC_1_0_7  KTCHI_1_0_7  -1.64
+    FTC_1_0_7  DEMAND_0_7  1
+    FTC_1_0_8  VC_1_8  1
+    FTC_1_0_8  FTC_1_0_8  1
+    FTC_1_0_8  KTCLO_1_0_8  -1.04
+    FTC_1_0_8  KTCHI_1_0_8  -1.64
+    FTC_1_0_8  DEMAND_0_8  1
+    FTC_1_0_9  VC_1_9  1
+    FTC_1_0_9  FTC_1_0_9  1
+    FTC_1_0_9  KTCLO_1_0_9  -1.04
+    FTC_1_0_9  KTCHI_1_0_9  -1.64
+    FTC_1_0_9  DEMAND_0_9  1
+    FTC_1_0_10  VC_1_10  1
+    FTC_1_0_10  FTC_1_0_10  1
+    FTC_1_0_10  KTCLO_1_0_10  -1.04
+    FTC_1_0_10  KTCHI_1_0_10  -1.64
+    FTC_1_0_10  DEMAND_0_10  1
+    FTC_1_0_11  VC_1_11  1
+    FTC_1_0_11  FTC_1_0_11  1
+    FTC_1_0_11  KTCLO_1_0_11  -1.04
+    FTC_1_0_11  KTCHI_1_0_11  -1.64
+    FTC_1_0_11  DEMAND_0_11  1
+    FTC_1_1_0  VC_1_0  1
+    FTC_1_1_0  FTC_1_1_0  1
+    FTC_1_1_0  KTCLO_1_1_0  -1.04
+    FTC_1_1_0  KTCHI_1_1_0  -1.64
+    FTC_1_1_0  DEMAND_1_0  1
+    FTC_1_1_1  VC_1_1  1
+    FTC_1_1_1  FTC_1_1_1  1
+    FTC_1_1_1  KTCLO_1_1_1  -1.04
+    FTC_1_1_1  KTCHI_1_1_1  -1.64
+    FTC_1_1_1  DEMAND_1_1  1
+    FTC_1_1_2  VC_1_2  1
+    FTC_1_1_2  FTC_1_1_2  1
+    FTC_1_1_2  KTCLO_1_1_2  -1.04
+    FTC_1_1_2  KTCHI_1_1_2  -1.64
+    FTC_1_1_2  DEMAND_1_2  1
+    FTC_1_1_3  VC_1_3  1
+    FTC_1_1_3  FTC_1_1_3  1
+    FTC_1_1_3  KTCLO_1_1_3  -1.04
+    FTC_1_1_3  KTCHI_1_1_3  -1.64
+    FTC_1_1_3  DEMAND_1_3  1
+    FTC_1_1_4  VC_1_4  1
+    FTC_1_1_4  FTC_1_1_4  1
+    FTC_1_1_4  KTCLO_1_1_4  -1.04
+    FTC_1_1_4  KTCHI_1_1_4  -1.64
+    FTC_1_1_4  DEMAND_1_4  1
+    FTC_1_1_5  VC_1_5  1
+    FTC_1_1_5  FTC_1_1_5  1
+    FTC_1_1_5  KTCLO_1_1_5  -1.04
+    FTC_1_1_5  KTCHI_1_1_5  -1.64
+    FTC_1_1_5  DEMAND_1_5  1
+    FTC_1_1_6  VC_1_6  1
+    FTC_1_1_6  FTC_1_1_6  1
+    FTC_1_1_6  KTCLO_1_1_6  -1.04
+    FTC_1_1_6  KTCHI_1_1_6  -1.64
+    FTC_1_1_6  DEMAND_1_6  1
+    FTC_1_1_7  VC_1_7  1
+    FTC_1_1_7  FTC_1_1_7  1
+    FTC_1_1_7  KTCLO_1_1_7  -1.04
+    FTC_1_1_7  KTCHI_1_1_7  -1.64
+    FTC_1_1_7  DEMAND_1_7  1
+    FTC_1_1_8  VC_1_8  1
+    FTC_1_1_8  FTC_1_1_8  1
+    FTC_1_1_8  KTCLO_1_1_8  -1.04
+    FTC_1_1_8  KTCHI_1_1_8  -1.64
+    FTC_1_1_8  DEMAND_1_8  1
+    FTC_1_1_9  VC_1_9  1
+    FTC_1_1_9  FTC_1_1_9  1
+    FTC_1_1_9  KTCLO_1_1_9  -1.04
+    FTC_1_1_9  KTCHI_1_1_9  -1.64
+    FTC_1_1_9  DEMAND_1_9  1
+    FTC_1_1_10  VC_1_10  1
+    FTC_1_1_10  FTC_1_1_10  1
+    FTC_1_1_10  KTCLO_1_1_10  -1.04
+    FTC_1_1_10  KTCHI_1_1_10  -1.64
+    FTC_1_1_10  DEMAND_1_10  1
+    FTC_1_1_11  VC_1_11  1
+    FTC_1_1_11  FTC_1_1_11  1
+    FTC_1_1_11  KTCLO_1_1_11  -1.04
+    FTC_1_1_11  KTCHI_1_1_11  -1.64
+    FTC_1_1_11  DEMAND_1_11  1
+    FTC_2_0_0  VC_2_0  1
+    FTC_2_0_0  FTC_2_0_0  1
+    FTC_2_0_0  KTCLO_2_0_0  -0.92
+    FTC_2_0_0  KTCHI_2_0_0  -1.28
+    FTC_2_0_0  DEMAND_0_0  1
+    FTC_2_0_1  VC_2_1  1
+    FTC_2_0_1  FTC_2_0_1  1
+    FTC_2_0_1  KTCLO_2_0_1  -0.92
+    FTC_2_0_1  KTCHI_2_0_1  -1.28
+    FTC_2_0_1  DEMAND_0_1  1
+    FTC_2_0_2  VC_2_2  1
+    FTC_2_0_2  FTC_2_0_2  1
+    FTC_2_0_2  KTCLO_2_0_2  -0.92
+    FTC_2_0_2  KTCHI_2_0_2  -1.28
+    FTC_2_0_2  DEMAND_0_2  1
+    FTC_2_0_3  VC_2_3  1
+    FTC_2_0_3  FTC_2_0_3  1
+    FTC_2_0_3  KTCLO_2_0_3  -0.92
+    FTC_2_0_3  KTCHI_2_0_3  -1.28
+    FTC_2_0_3  DEMAND_0_3  1
+    FTC_2_0_4  VC_2_4  1
+    FTC_2_0_4  FTC_2_0_4  1
+    FTC_2_0_4  KTCLO_2_0_4  -0.92
+    FTC_2_0_4  KTCHI_2_0_4  -1.28
+    FTC_2_0_4  DEMAND_0_4  1
+    FTC_2_0_5  VC_2_5  1
+    FTC_2_0_5  FTC_2_0_5  1
+    FTC_2_0_5  KTCLO_2_0_5  -0.92
+    FTC_2_0_5  KTCHI_2_0_5  -1.28
+    FTC_2_0_5  DEMAND_0_5  1
+    FTC_2_0_6  VC_2_6  1
+    FTC_2_0_6  FTC_2_0_6  1
+    FTC_2_0_6  KTCLO_2_0_6  -0.92
+    FTC_2_0_6  KTCHI_2_0_6  -1.28
+    FTC_2_0_6  DEMAND_0_6  1
+    FTC_2_0_7  VC_2_7  1
+    FTC_2_0_7  FTC_2_0_7  1
+    FTC_2_0_7  KTCLO_2_0_7  -0.92
+    FTC_2_0_7  KTCHI_2_0_7  -1.28
+    FTC_2_0_7  DEMAND_0_7  1
+    FTC_2_0_8  VC_2_8  1
+    FTC_2_0_8  FTC_2_0_8  1
+    FTC_2_0_8  KTCLO_2_0_8  -0.92
+    FTC_2_0_8  KTCHI_2_0_8  -1.28
+    FTC_2_0_8  DEMAND_0_8  1
+    FTC_2_0_9  VC_2_9  1
+    FTC_2_0_9  FTC_2_0_9  1
+    FTC_2_0_9  KTCLO_2_0_9  -0.92
+    FTC_2_0_9  KTCHI_2_0_9  -1.28
+    FTC_2_0_9  DEMAND_0_9  1
+    FTC_2_0_10  VC_2_10  1
+    FTC_2_0_10  FTC_2_0_10  1
+    FTC_2_0_10  KTCLO_2_0_10  -0.92
+    FTC_2_0_10  KTCHI_2_0_10  -1.28
+    FTC_2_0_10  DEMAND_0_10  1
+    FTC_2_0_11  VC_2_11  1
+    FTC_2_0_11  FTC_2_0_11  1
+    FTC_2_0_11  KTCLO_2_0_11  -0.92
+    FTC_2_0_11  KTCHI_2_0_11  -1.28
+    FTC_2_0_11  DEMAND_0_11  1
+    FTC_2_1_0  VC_2_0  1
+    FTC_2_1_0  FTC_2_1_0  1
+    FTC_2_1_0  KTCLO_2_1_0  -0.92
+    FTC_2_1_0  KTCHI_2_1_0  -1.28
+    FTC_2_1_0  DEMAND_1_0  1
+    FTC_2_1_1  VC_2_1  1
+    FTC_2_1_1  FTC_2_1_1  1
+    FTC_2_1_1  KTCLO_2_1_1  -0.92
+    FTC_2_1_1  KTCHI_2_1_1  -1.28
+    FTC_2_1_1  DEMAND_1_1  1
+    FTC_2_1_2  VC_2_2  1
+    FTC_2_1_2  FTC_2_1_2  1
+    FTC_2_1_2  KTCLO_2_1_2  -0.92
+    FTC_2_1_2  KTCHI_2_1_2  -1.28
+    FTC_2_1_2  DEMAND_1_2  1
+    FTC_2_1_3  VC_2_3  1
+    FTC_2_1_3  FTC_2_1_3  1
+    FTC_2_1_3  KTCLO_2_1_3  -0.92
+    FTC_2_1_3  KTCHI_2_1_3  -1.28
+    FTC_2_1_3  DEMAND_1_3  1
+    FTC_2_1_4  VC_2_4  1
+    FTC_2_1_4  FTC_2_1_4  1
+    FTC_2_1_4  KTCLO_2_1_4  -0.92
+    FTC_2_1_4  KTCHI_2_1_4  -1.28
+    FTC_2_1_4  DEMAND_1_4  1
+    FTC_2_1_5  VC_2_5  1
+    FTC_2_1_5  FTC_2_1_5  1
+    FTC_2_1_5  KTCLO_2_1_5  -0.92
+    FTC_2_1_5  KTCHI_2_1_5  -1.28
+    FTC_2_1_5  DEMAND_1_5  1
+    FTC_2_1_6  VC_2_6  1
+    FTC_2_1_6  FTC_2_1_6  1
+    FTC_2_1_6  KTCLO_2_1_6  -0.92
+    FTC_2_1_6  KTCHI_2_1_6  -1.28
+    FTC_2_1_6  DEMAND_1_6  1
+    FTC_2_1_7  VC_2_7  1
+    FTC_2_1_7  FTC_2_1_7  1
+    FTC_2_1_7  KTCLO_2_1_7  -0.92
+    FTC_2_1_7  KTCHI_2_1_7  -1.28
+    FTC_2_1_7  DEMAND_1_7  1
+    FTC_2_1_8  VC_2_8  1
+    FTC_2_1_8  FTC_2_1_8  1
+    FTC_2_1_8  KTCLO_2_1_8  -0.92
+    FTC_2_1_8  KTCHI_2_1_8  -1.28
+    FTC_2_1_8  DEMAND_1_8  1
+    FTC_2_1_9  VC_2_9  1
+    FTC_2_1_9  FTC_2_1_9  1
+    FTC_2_1_9  KTCLO_2_1_9  -0.92
+    FTC_2_1_9  KTCHI_2_1_9  -1.28
+    FTC_2_1_9  DEMAND_1_9  1
+    FTC_2_1_10  VC_2_10  1
+    FTC_2_1_10  FTC_2_1_10  1
+    FTC_2_1_10  KTCLO_2_1_10  -0.92
+    FTC_2_1_10  KTCHI_2_1_10  -1.28
+    FTC_2_1_10  DEMAND_1_10  1
+    FTC_2_1_11  VC_2_11  1
+    FTC_2_1_11  FTC_2_1_11  1
+    FTC_2_1_11  KTCLO_2_1_11  -0.92
+    FTC_2_1_11  KTCHI_2_1_11  -1.28
+    FTC_2_1_11  DEMAND_1_11  1
+    KTC_0_0_0  KC_0_0  1
+    KTC_0_0_0  KTCLO_0_0_0  1
+    KTC_0_0_0  KTCHI_0_0_0  1
+    KTC_0_0_1  KC_0_1  1
+    KTC_0_0_1  KTCLO_0_0_1  1
+    KTC_0_0_1  KTCHI_0_0_1  1
+    KTC_0_0_2  KC_0_2  1
+    KTC_0_0_2  KTCLO_0_0_2  1
+    KTC_0_0_2  KTCHI_0_0_2  1
+    KTC_0_0_3  KC_0_3  1
+    KTC_0_0_3  KTCLO_0_0_3  1
+    KTC_0_0_3  KTCHI_0_0_3  1
+    KTC_0_0_4  KC_0_4  1
+    KTC_0_0_4  KTCLO_0_0_4  1
+    KTC_0_0_4  KTCHI_0_0_4  1
+    KTC_0_0_5  KC_0_5  1
+    KTC_0_0_5  KTCLO_0_0_5  1
+    KTC_0_0_5  KTCHI_0_0_5  1
+    KTC_0_0_6  KC_0_6  1
+    KTC_0_0_6  KTCLO_0_0_6  1
+    KTC_0_0_6  KTCHI_0_0_6  1
+    KTC_0_0_7  KC_0_7  1
+    KTC_0_0_7  KTCLO_0_0_7  1
+    KTC_0_0_7  KTCHI_0_0_7  1
+    KTC_0_0_8  KC_0_8  1
+    KTC_0_0_8  KTCLO_0_0_8  1
+    KTC_0_0_8  KTCHI_0_0_8  1
+    KTC_0_0_9  KC_0_9  1
+    KTC_0_0_9  KTCLO_0_0_9  1
+    KTC_0_0_9  KTCHI_0_0_9  1
+    KTC_0_0_10  KC_0_10  1
+    KTC_0_0_10  KTCLO_0_0_10  1
+    KTC_0_0_10  KTCHI_0_0_10  1
+    KTC_0_0_11  KC_0_11  1
+    KTC_0_0_11  KTCLO_0_0_11  1
+    KTC_0_0_11  KTCHI_0_0_11  1
+    KTC_0_1_0  KC_0_0  1
+    KTC_0_1_0  KTCLO_0_1_0  1
+    KTC_0_1_0  KTCHI_0_1_0  1
+    KTC_0_1_1  KC_0_1  1
+    KTC_0_1_1  KTCLO_0_1_1  1
+    KTC_0_1_1  KTCHI_0_1_1  1
+    KTC_0_1_2  KC_0_2  1
+    KTC_0_1_2  KTCLO_0_1_2  1
+    KTC_0_1_2  KTCHI_0_1_2  1
+    KTC_0_1_3  KC_0_3  1
+    KTC_0_1_3  KTCLO_0_1_3  1
+    KTC_0_1_3  KTCHI_0_1_3  1
+    KTC_0_1_4  KC_0_4  1
+    KTC_0_1_4  KTCLO_0_1_4  1
+    KTC_0_1_4  KTCHI_0_1_4  1
+    KTC_0_1_5  KC_0_5  1
+    KTC_0_1_5  KTCLO_0_1_5  1
+    KTC_0_1_5  KTCHI_0_1_5  1
+    KTC_0_1_6  KC_0_6  1
+    KTC_0_1_6  KTCLO_0_1_6  1
+    KTC_0_1_6  KTCHI_0_1_6  1
+    KTC_0_1_7  KC_0_7  1
+    KTC_0_1_7  KTCLO_0_1_7  1
+    KTC_0_1_7  KTCHI_0_1_7  1
+    KTC_0_1_8  KC_0_8  1
+    KTC_0_1_8  KTCLO_0_1_8  1
+    KTC_0_1_8  KTCHI_0_1_8  1
+    KTC_0_1_9  KC_0_9  1
+    KTC_0_1_9  KTCLO_0_1_9  1
+    KTC_0_1_9  KTCHI_0_1_9  1
+    KTC_0_1_10  KC_0_10  1
+    KTC_0_1_10  KTCLO_0_1_10  1
+    KTC_0_1_10  KTCHI_0_1_10  1
+    KTC_0_1_11  KC_0_11  1
+    KTC_0_1_11  KTCLO_0_1_11  1
+    KTC_0_1_11  KTCHI_0_1_11  1
+    KTC_1_0_0  KC_1_0  1
+    KTC_1_0_0  KTCLO_1_0_0  1
+    KTC_1_0_0  KTCHI_1_0_0  1
+    KTC_1_0_1  KC_1_1  1
+    KTC_1_0_1  KTCLO_1_0_1  1
+    KTC_1_0_1  KTCHI_1_0_1  1
+    KTC_1_0_2  KC_1_2  1
+    KTC_1_0_2  KTCLO_1_0_2  1
+    KTC_1_0_2  KTCHI_1_0_2  1
+    KTC_1_0_3  KC_1_3  1
+    KTC_1_0_3  KTCLO_1_0_3  1
+    KTC_1_0_3  KTCHI_1_0_3  1
+    KTC_1_0_4  KC_1_4  1
+    KTC_1_0_4  KTCLO_1_0_4  1
+    KTC_1_0_4  KTCHI_1_0_4  1
+    KTC_1_0_5  KC_1_5  1
+    KTC_1_0_5  KTCLO_1_0_5  1
+    KTC_1_0_5  KTCHI_1_0_5  1
+    KTC_1_0_6  KC_1_6  1
+    KTC_1_0_6  KTCLO_1_0_6  1
+    KTC_1_0_6  KTCHI_1_0_6  1
+    KTC_1_0_7  KC_1_7  1
+    KTC_1_0_7  KTCLO_1_0_7  1
+    KTC_1_0_7  KTCHI_1_0_7  1
+    KTC_1_0_8  KC_1_8  1
+    KTC_1_0_8  KTCLO_1_0_8  1
+    KTC_1_0_8  KTCHI_1_0_8  1
+    KTC_1_0_9  KC_1_9  1
+    KTC_1_0_9  KTCLO_1_0_9  1
+    KTC_1_0_9  KTCHI_1_0_9  1
+    KTC_1_0_10  KC_1_10  1
+    KTC_1_0_10  KTCLO_1_0_10  1
+    KTC_1_0_10  KTCHI_1_0_10  1
+    KTC_1_0_11  KC_1_11  1
+    KTC_1_0_11  KTCLO_1_0_11  1
+    KTC_1_0_11  KTCHI_1_0_11  1
+    KTC_1_1_0  KC_1_0  1
+    KTC_1_1_0  KTCLO_1_1_0  1
+    KTC_1_1_0  KTCHI_1_1_0  1
+    KTC_1_1_1  KC_1_1  1
+    KTC_1_1_1  KTCLO_1_1_1  1
+    KTC_1_1_1  KTCHI_1_1_1  1
+    KTC_1_1_2  KC_1_2  1
+    KTC_1_1_2  KTCLO_1_1_2  1
+    KTC_1_1_2  KTCHI_1_1_2  1
+    KTC_1_1_3  KC_1_3  1
+    KTC_1_1_3  KTCLO_1_1_3  1
+    KTC_1_1_3  KTCHI_1_1_3  1
+    KTC_1_1_4  KC_1_4  1
+    KTC_1_1_4  KTCLO_1_1_4  1
+    KTC_1_1_4  KTCHI_1_1_4  1
+    KTC_1_1_5  KC_1_5  1
+    KTC_1_1_5  KTCLO_1_1_5  1
+    KTC_1_1_5  KTCHI_1_1_5  1
+    KTC_1_1_6  KC_1_6  1
+    KTC_1_1_6  KTCLO_1_1_6  1
+    KTC_1_1_6  KTCHI_1_1_6  1
+    KTC_1_1_7  KC_1_7  1
+    KTC_1_1_7  KTCLO_1_1_7  1
+    KTC_1_1_7  KTCHI_1_1_7  1
+    KTC_1_1_8  KC_1_8  1
+    KTC_1_1_8  KTCLO_1_1_8  1
+    KTC_1_1_8  KTCHI_1_1_8  1
+    KTC_1_1_9  KC_1_9  1
+    KTC_1_1_9  KTCLO_1_1_9  1
+    KTC_1_1_9  KTCHI_1_1_9  1
+    KTC_1_1_10  KC_1_10  1
+    KTC_1_1_10  KTCLO_1_1_10  1
+    KTC_1_1_10  KTCHI_1_1_10  1
+    KTC_1_1_11  KC_1_11  1
+    KTC_1_1_11  KTCLO_1_1_11  1
+    KTC_1_1_11  KTCHI_1_1_11  1
+    KTC_2_0_0  KC_2_0  1
+    KTC_2_0_0  KTCLO_2_0_0  1
+    KTC_2_0_0  KTCHI_2_0_0  1
+    KTC_2_0_1  KC_2_1  1
+    KTC_2_0_1  KTCLO_2_0_1  1
+    KTC_2_0_1  KTCHI_2_0_1  1
+    KTC_2_0_2  KC_2_2  1
+    KTC_2_0_2  KTCLO_2_0_2  1
+    KTC_2_0_2  KTCHI_2_0_2  1
+    KTC_2_0_3  KC_2_3  1
+    KTC_2_0_3  KTCLO_2_0_3  1
+    KTC_2_0_3  KTCHI_2_0_3  1
+    KTC_2_0_4  KC_2_4  1
+    KTC_2_0_4  KTCLO_2_0_4  1
+    KTC_2_0_4  KTCHI_2_0_4  1
+    KTC_2_0_5  KC_2_5  1
+    KTC_2_0_5  KTCLO_2_0_5  1
+    KTC_2_0_5  KTCHI_2_0_5  1
+    KTC_2_0_6  KC_2_6  1
+    KTC_2_0_6  KTCLO_2_0_6  1
+    KTC_2_0_6  KTCHI_2_0_6  1
+    KTC_2_0_7  KC_2_7  1
+    KTC_2_0_7  KTCLO_2_0_7  1
+    KTC_2_0_7  KTCHI_2_0_7  1
+    KTC_2_0_8  KC_2_8  1
+    KTC_2_0_8  KTCLO_2_0_8  1
+    KTC_2_0_8  KTCHI_2_0_8  1
+    KTC_2_0_9  KC_2_9  1
+    KTC_2_0_9  KTCLO_2_0_9  1
+    KTC_2_0_9  KTCHI_2_0_9  1
+    KTC_2_0_10  KC_2_10  1
+    KTC_2_0_10  KTCLO_2_0_10  1
+    KTC_2_0_10  KTCHI_2_0_10  1
+    KTC_2_0_11  KC_2_11  1
+    KTC_2_0_11  KTCLO_2_0_11  1
+    KTC_2_0_11  KTCHI_2_0_11  1
+    KTC_2_1_0  KC_2_0  1
+    KTC_2_1_0  KTCLO_2_1_0  1
+    KTC_2_1_0  KTCHI_2_1_0  1
+    KTC_2_1_1  KC_2_1  1
+    KTC_2_1_1  KTCLO_2_1_1  1
+    KTC_2_1_1  KTCHI_2_1_1  1
+    KTC_2_1_2  KC_2_2  1
+    KTC_2_1_2  KTCLO_2_1_2  1
+    KTC_2_1_2  KTCHI_2_1_2  1
+    KTC_2_1_3  KC_2_3  1
+    KTC_2_1_3  KTCLO_2_1_3  1
+    KTC_2_1_3  KTCHI_2_1_3  1
+    KTC_2_1_4  KC_2_4  1
+    KTC_2_1_4  KTCLO_2_1_4  1
+    KTC_2_1_4  KTCHI_2_1_4  1
+    KTC_2_1_5  KC_2_5  1
+    KTC_2_1_5  KTCLO_2_1_5  1
+    KTC_2_1_5  KTCHI_2_1_5  1
+    KTC_2_1_6  KC_2_6  1
+    KTC_2_1_6  KTCLO_2_1_6  1
+    KTC_2_1_6  KTCHI_2_1_6  1
+    KTC_2_1_7  KC_2_7  1
+    KTC_2_1_7  KTCLO_2_1_7  1
+    KTC_2_1_7  KTCHI_2_1_7  1
+    KTC_2_1_8  KC_2_8  1
+    KTC_2_1_8  KTCLO_2_1_8  1
+    KTC_2_1_8  KTCHI_2_1_8  1
+    KTC_2_1_9  KC_2_9  1
+    KTC_2_1_9  KTCLO_2_1_9  1
+    KTC_2_1_9  KTCHI_2_1_9  1
+    KTC_2_1_10  KC_2_10  1
+    KTC_2_1_10  KTCLO_2_1_10  1
+    KTC_2_1_10  KTCHI_2_1_10  1
+    KTC_2_1_11  KC_2_11  1
+    KTC_2_1_11  KTCLO_2_1_11  1
+    KTC_2_1_11  KTCHI_2_1_11  1
+    CH_0_0_0  COST  50
+    CH_0_0_0  CH_0_0_0  1
+    CH_0_0_1  COST  50
+    CH_0_0_1  CH_0_0_1  1
+    CH_0_0_2  COST  50
+    CH_0_0_2  CH_0_0_2  1
+    CH_0_0_3  COST  50
+    CH_0_0_3  CH_0_0_3  1
+    CH_0_0_4  COST  50
+    CH_0_0_4  CH_0_0_4  1
+    CH_0_0_5  COST  50
+    CH_0_0_5  CH_0_0_5  1
+    CH_0_0_6  COST  50
+    CH_0_0_6  CH_0_0_6  1
+    CH_0_0_7  COST  50
+    CH_0_0_7  CH_0_0_7  1
+    CH_0_0_8  COST  50
+    CH_0_0_8  CH_0_0_8  1
+    CH_0_0_9  COST  50
+    CH_0_0_9  CH_0_0_9  1
+    CH_0_0_10  COST  50
+    CH_0_0_10  CH_0_0_10  1
+    CH_0_0_11  COST  50
+    CH_0_0_11  CH_0_0_11  1
+    CH_0_1_0  COST  50
+    CH_0_1_0  CH_0_1_0  1
+    CH_0_1_1  COST  50
+    CH_0_1_1  CH_0_1_1  1
+    CH_0_1_2  COST  50
+    CH_0_1_2  CH_0_1_2  1
+    CH_0_1_3  COST  50
+    CH_0_1_3  CH_0_1_3  1
+    CH_0_1_4  COST  50
+    CH_0_1_4  CH_0_1_4  1
+    CH_0_1_5  COST  50
+    CH_0_1_5  CH_0_1_5  1
+    CH_0_1_6  COST  50
+    CH_0_1_6  CH_0_1_6  1
+    CH_0_1_7  COST  50
+    CH_0_1_7  CH_0_1_7  1
+    CH_0_1_8  COST  50
+    CH_0_1_8  CH_0_1_8  1
+    CH_0_1_9  COST  50
+    CH_0_1_9  CH_0_1_9  1
+    CH_0_1_10  COST  50
+    CH_0_1_10  CH_0_1_10  1
+    CH_0_1_11  COST  50
+    CH_0_1_11  CH_0_1_11  1
+    CH_1_0_0  COST  50
+    CH_1_0_0  CH_1_0_0  1
+    CH_1_0_1  COST  50
+    CH_1_0_1  CH_1_0_1  1
+    CH_1_0_2  COST  50
+    CH_1_0_2  CH_1_0_2  1
+    CH_1_0_3  COST  50
+    CH_1_0_3  CH_1_0_3  1
+    CH_1_0_4  COST  50
+    CH_1_0_4  CH_1_0_4  1
+    CH_1_0_5  COST  50
+    CH_1_0_5  CH_1_0_5  1
+    CH_1_0_6  COST  50
+    CH_1_0_6  CH_1_0_6  1
+    CH_1_0_7  COST  50
+    CH_1_0_7  CH_1_0_7  1
+    CH_1_0_8  COST  50
+    CH_1_0_8  CH_1_0_8  1
+    CH_1_0_9  COST  50
+    CH_1_0_9  CH_1_0_9  1
+    CH_1_0_10  COST  50
+    CH_1_0_10  CH_1_0_10  1
+    CH_1_0_11  COST  50
+    CH_1_0_11  CH_1_0_11  1
+    CH_1_1_0  COST  50
+    CH_1_1_0  CH_1_1_0  1
+    CH_1_1_1  COST  50
+    CH_1_1_1  CH_1_1_1  1
+    CH_1_1_2  COST  50
+    CH_1_1_2  CH_1_1_2  1
+    CH_1_1_3  COST  50
+    CH_1_1_3  CH_1_1_3  1
+    CH_1_1_4  COST  50
+    CH_1_1_4  CH_1_1_4  1
+    CH_1_1_5  COST  50
+    CH_1_1_5  CH_1_1_5  1
+    CH_1_1_6  COST  50
+    CH_1_1_6  CH_1_1_6  1
+    CH_1_1_7  COST  50
+    CH_1_1_7  CH_1_1_7  1
+    CH_1_1_8  COST  50
+    CH_1_1_8  CH_1_1_8  1
+    CH_1_1_9  COST  50
+    CH_1_1_9  CH_1_1_9  1
+    CH_1_1_10  COST  50
+    CH_1_1_10  CH_1_1_10  1
+    CH_1_1_11  COST  50
+    CH_1_1_11  CH_1_1_11  1
+    CH_2_0_0  COST  50
+    CH_2_0_0  CH_2_0_0  1
+    CH_2_0_1  COST  50
+    CH_2_0_1  CH_2_0_1  1
+    CH_2_0_2  COST  50
+    CH_2_0_2  CH_2_0_2  1
+    CH_2_0_3  COST  50
+    CH_2_0_3  CH_2_0_3  1
+    CH_2_0_4  COST  50
+    CH_2_0_4  CH_2_0_4  1
+    CH_2_0_5  COST  50
+    CH_2_0_5  CH_2_0_5  1
+    CH_2_0_6  COST  50
+    CH_2_0_6  CH_2_0_6  1
+    CH_2_0_7  COST  50
+    CH_2_0_7  CH_2_0_7  1
+    CH_2_0_8  COST  50
+    CH_2_0_8  CH_2_0_8  1
+    CH_2_0_9  COST  50
+    CH_2_0_9  CH_2_0_9  1
+    CH_2_0_10  COST  50
+    CH_2_0_10  CH_2_0_10  1
+    CH_2_0_11  COST  50
+    CH_2_0_11  CH_2_0_11  1
+    CH_2_1_0  COST  50
+    CH_2_1_0  CH_2_1_0  1
+    CH_2_1_1  COST  50
+    CH_2_1_1  CH_2_1_1  1
+    CH_2_1_2  COST  50
+    CH_2_1_2  CH_2_1_2  1
+    CH_2_1_3  COST  50
+    CH_2_1_3  CH_2_1_3  1
+    CH_2_1_4  COST  50
+    CH_2_1_4  CH_2_1_4  1
+    CH_2_1_5  COST  50
+    CH_2_1_5  CH_2_1_5  1
+    CH_2_1_6  COST  50
+    CH_2_1_6  CH_2_1_6  1
+    CH_2_1_7  COST  50
+    CH_2_1_7  CH_2_1_7  1
+    CH_2_1_8  COST  50
+    CH_2_1_8  CH_2_1_8  1
+    CH_2_1_9  COST  50
+    CH_2_1_9  CH_2_1_9  1
+    CH_2_1_10  COST  50
+    CH_2_1_10  CH_2_1_10  1
+    CH_2_1_11  COST  50
+    CH_2_1_11  CH_2_1_11  1
+    VS_0_0  COST  0.05
+    VS_0_0  VS_0_0  1
+    VS_0_0  KSLO_0_0  -0.8
+    VS_0_0  KSHI_0_0  -2
+    VS_0_0  VS_0_1  -1
+    VS_0_1  COST  0.05
+    VS_0_1  VS_0_1  1
+    VS_0_1  KSLO_0_1  -0.8
+    VS_0_1  KSHI_0_1  -2
+    VS_0_1  VS_0_2  -1
+    VS_0_2  COST  0.05
+    VS_0_2  VS_0_2  1
+    VS_0_2  KSLO_0_2  -0.8
+    VS_0_2  KSHI_0_2  -2
+    VS_0_2  VS_0_3  -1
+    VS_0_3  COST  0.05
+    VS_0_3  VS_0_3  1
+    VS_0_3  KSLO_0_3  -0.8
+    VS_0_3  KSHI_0_3  -2
+    VS_0_3  VS_0_4  -1
+    VS_0_4  COST  0.05
+    VS_0_4  VS_0_4  1
+    VS_0_4  KSLO_0_4  -0.8
+    VS_0_4  KSHI_0_4  -2
+    VS_0_4  VS_0_5  -1
+    VS_0_5  COST  0.05
+    VS_0_5  VS_0_5  1
+    VS_0_5  KSLO_0_5  -0.8
+    VS_0_5  KSHI_0_5  -2
+    VS_0_5  VS_0_6  -1
+    VS_0_6  COST  0.05
+    VS_0_6  VS_0_6  1
+    VS_0_6  KSLO_0_6  -0.8
+    VS_0_6  KSHI_0_6  -2
+    VS_0_6  VS_0_7  -1
+    VS_0_7  COST  0.05
+    VS_0_7  VS_0_7  1
+    VS_0_7  KSLO_0_7  -0.8
+    VS_0_7  KSHI_0_7  -2
+    VS_0_7  VS_0_8  -1
+    VS_0_8  COST  0.05
+    VS_0_8  VS_0_8  1
+    VS_0_8  KSLO_0_8  -0.8
+    VS_0_8  KSHI_0_8  -2
+    VS_0_8  VS_0_9  -1
+    VS_0_9  COST  0.05
+    VS_0_9  VS_0_9  1
+    VS_0_9  KSLO_0_9  -0.8
+    VS_0_9  KSHI_0_9  -2
+    VS_0_9  VS_0_10  -1
+    VS_0_10  COST  0.05
+    VS_0_10  VS_0_10  1
+    VS_0_10  KSLO_0_10  -0.8
+    VS_0_10  KSHI_0_10  -2
+    VS_0_10  VS_0_11  -1
+    VS_0_11  COST  0.05
+    VS_0_11  VS_0_11  1
+    VS_0_11  KSLO_0_11  -0.8
+    VS_0_11  KSHI_0_11  -2
+    VS_1_0  COST  0.05
+    VS_1_0  VS_1_0  1
+    VS_1_0  KSLO_1_0  -0.8
+    VS_1_0  KSHI_1_0  -2
+    VS_1_0  VS_1_1  -1
+    VS_1_1  COST  0.05
+    VS_1_1  VS_1_1  1
+    VS_1_1  KSLO_1_1  -0.8
+    VS_1_1  KSHI_1_1  -2
+    VS_1_1  VS_1_2  -1
+    VS_1_2  COST  0.05
+    VS_1_2  VS_1_2  1
+    VS_1_2  KSLO_1_2  -0.8
+    VS_1_2  KSHI_1_2  -2
+    VS_1_2  VS_1_3  -1
+    VS_1_3  COST  0.05
+    VS_1_3  VS_1_3  1
+    VS_1_3  KSLO_1_3  -0.8
+    VS_1_3  KSHI_1_3  -2
+    VS_1_3  VS_1_4  -1
+    VS_1_4  COST  0.05
+    VS_1_4  VS_1_4  1
+    VS_1_4  KSLO_1_4  -0.8
+    VS_1_4  KSHI_1_4  -2
+    VS_1_4  VS_1_5  -1
+    VS_1_5  COST  0.05
+    VS_1_5  VS_1_5  1
+    VS_1_5  KSLO_1_5  -0.8
+    VS_1_5  KSHI_1_5  -2
+    VS_1_5  VS_1_6  -1
+    VS_1_6  COST  0.05
+    VS_1_6  VS_1_6  1
+    VS_1_6  KSLO_1_6  -0.8
+    VS_1_6  KSHI_1_6  -2
+    VS_1_6  VS_1_7  -1
+    VS_1_7  COST  0.05
+    VS_1_7  VS_1_7  1
+    VS_1_7  KSLO_1_7  -0.8
+    VS_1_7  KSHI_1_7  -2
+    VS_1_7  VS_1_8  -1
+    VS_1_8  COST  0.05
+    VS_1_8  VS_1_8  1
+    VS_1_8  KSLO_1_8  -0.8
+    VS_1_8  KSHI_1_8  -2
+    VS_1_8  VS_1_9  -1
+    VS_1_9  COST  0.05
+    VS_1_9  VS_1_9  1
+    VS_1_9  KSLO_1_9  -0.8
+    VS_1_9  KSHI_1_9  -2
+    VS_1_9  VS_1_10  -1
+    VS_1_10  COST  0.05
+    VS_1_10  VS_1_10  1
+    VS_1_10  KSLO_1_10  -0.8
+    VS_1_10  KSHI_1_10  -2
+    VS_1_10  VS_1_11  -1
+    VS_1_11  COST  0.05
+    VS_1_11  VS_1_11  1
+    VS_1_11  KSLO_1_11  -0.8
+    VS_1_11  KSHI_1_11  -2
+    VS_2_0  COST  0.05
+    VS_2_0  VS_2_0  1
+    VS_2_0  KSLO_2_0  -0.8
+    VS_2_0  KSHI_2_0  -2
+    VS_2_0  VS_2_1  -1
+    VS_2_1  COST  0.05
+    VS_2_1  VS_2_1  1
+    VS_2_1  KSLO_2_1  -0.8
+    VS_2_1  KSHI_2_1  -2
+    VS_2_1  VS_2_2  -1
+    VS_2_2  COST  0.05
+    VS_2_2  VS_2_2  1
+    VS_2_2  KSLO_2_2  -0.8
+    VS_2_2  KSHI_2_2  -2
+    VS_2_2  VS_2_3  -1
+    VS_2_3  COST  0.05
+    VS_2_3  VS_2_3  1
+    VS_2_3  KSLO_2_3  -0.8
+    VS_2_3  KSHI_2_3  -2
+    VS_2_3  VS_2_4  -1
+    VS_2_4  COST  0.05
+    VS_2_4  VS_2_4  1
+    VS_2_4  KSLO_2_4  -0.8
+    VS_2_4  KSHI_2_4  -2
+    VS_2_4  VS_2_5  -1
+    VS_2_5  COST  0.05
+    VS_2_5  VS_2_5  1
+    VS_2_5  KSLO_2_5  -0.8
+    VS_2_5  KSHI_2_5  -2
+    VS_2_5  VS_2_6  -1
+    VS_2_6  COST  0.05
+    VS_2_6  VS_2_6  1
+    VS_2_6  KSLO_2_6  -0.8
+    VS_2_6  KSHI_2_6  -2
+    VS_2_6  VS_2_7  -1
+    VS_2_7  COST  0.05
+    VS_2_7  VS_2_7  1
+    VS_2_7  KSLO_2_7  -0.8
+    VS_2_7  KSHI_2_7  -2
+    VS_2_7  VS_2_8  -1
+    VS_2_8  COST  0.05
+    VS_2_8  VS_2_8  1
+    VS_2_8  KSLO_2_8  -0.8
+    VS_2_8  KSHI_2_8  -2
+    VS_2_8  VS_2_9  -1
+    VS_2_9  COST  0.05
+    VS_2_9  VS_2_9  1
+    VS_2_9  KSLO_2_9  -0.8
+    VS_2_9  KSHI_2_9  -2
+    VS_2_9  VS_2_10  -1
+    VS_2_10  COST  0.05
+    VS_2_10  VS_2_10  1
+    VS_2_10  KSLO_2_10  -0.8
+    VS_2_10  KSHI_2_10  -2
+    VS_2_10  VS_2_11  -1
+    VS_2_11  COST  0.05
+    VS_2_11  VS_2_11  1
+    VS_2_11  KSLO_2_11  -0.8
+    VS_2_11  KSHI_2_11  -2
+    KS_0_0  KS_0_0  1
+    KS_0_0  KSLO_0_0  1
+    KS_0_0  KSHI_0_0  1
+    KS_0_0  KS_0_1  -1
+    KS_0_1  KS_0_1  1
+    KS_0_1  KSLO_0_1  1
+    KS_0_1  KSHI_0_1  1
+    KS_0_1  KS_0_2  -1
+    KS_0_2  KS_0_2  1
+    KS_0_2  KSLO_0_2  1
+    KS_0_2  KSHI_0_2  1
+    KS_0_2  KS_0_3  -1
+    KS_0_3  KS_0_3  1
+    KS_0_3  KSLO_0_3  1
+    KS_0_3  KSHI_0_3  1
+    KS_0_3  KS_0_4  -1
+    KS_0_4  KS_0_4  1
+    KS_0_4  KSLO_0_4  1
+    KS_0_4  KSHI_0_4  1
+    KS_0_4  KS_0_5  -1
+    KS_0_5  KS_0_5  1
+    KS_0_5  KSLO_0_5  1
+    KS_0_5  KSHI_0_5  1
+    KS_0_5  KS_0_6  -1
+    KS_0_6  KS_0_6  1
+    KS_0_6  KSLO_0_6  1
+    KS_0_6  KSHI_0_6  1
+    KS_0_6  KS_0_7  -1
+    KS_0_7  KS_0_7  1
+    KS_0_7  KSLO_0_7  1
+    KS_0_7  KSHI_0_7  1
+    KS_0_7  KS_0_8  -1
+    KS_0_8  KS_0_8  1
+    KS_0_8  KSLO_0_8  1
+    KS_0_8  KSHI_0_8  1
+    KS_0_8  KS_0_9  -1
+    KS_0_9  KS_0_9  1
+    KS_0_9  KSLO_0_9  1
+    KS_0_9  KSHI_0_9  1
+    KS_0_9  KS_0_10  -1
+    KS_0_10  KS_0_10  1
+    KS_0_10  KSLO_0_10  1
+    KS_0_10  KSHI_0_10  1
+    KS_0_10  KS_0_11  -1
+    KS_0_11  KS_0_11  1
+    KS_0_11  KSLO_0_11  1
+    KS_0_11  KSHI_0_11  1
+    KS_1_0  KS_1_0  1
+    KS_1_0  KSLO_1_0  1
+    KS_1_0  KSHI_1_0  1
+    KS_1_0  KS_1_1  -1
+    KS_1_1  KS_1_1  1
+    KS_1_1  KSLO_1_1  1
+    KS_1_1  KSHI_1_1  1
+    KS_1_1  KS_1_2  -1
+    KS_1_2  KS_1_2  1
+    KS_1_2  KSLO_1_2  1
+    KS_1_2  KSHI_1_2  1
+    KS_1_2  KS_1_3  -1
+    KS_1_3  KS_1_3  1
+    KS_1_3  KSLO_1_3  1
+    KS_1_3  KSHI_1_3  1
+    KS_1_3  KS_1_4  -1
+    KS_1_4  KS_1_4  1
+    KS_1_4  KSLO_1_4  1
+    KS_1_4  KSHI_1_4  1
+    KS_1_4  KS_1_5  -1
+    KS_1_5  KS_1_5  1
+    KS_1_5  KSLO_1_5  1
+    KS_1_5  KSHI_1_5  1
+    KS_1_5  KS_1_6  -1
+    KS_1_6  KS_1_6  1
+    KS_1_6  KSLO_1_6  1
+    KS_1_6  KSHI_1_6  1
+    KS_1_6  KS_1_7  -1
+    KS_1_7  KS_1_7  1
+    KS_1_7  KSLO_1_7  1
+    KS_1_7  KSHI_1_7  1
+    KS_1_7  KS_1_8  -1
+    KS_1_8  KS_1_8  1
+    KS_1_8  KSLO_1_8  1
+    KS_1_8  KSHI_1_8  1
+    KS_1_8  KS_1_9  -1
+    KS_1_9  KS_1_9  1
+    KS_1_9  KSLO_1_9  1
+    KS_1_9  KSHI_1_9  1
+    KS_1_9  KS_1_10  -1
+    KS_1_10  KS_1_10  1
+    KS_1_10  KSLO_1_10  1
+    KS_1_10  KSHI_1_10  1
+    KS_1_10  KS_1_11  -1
+    KS_1_11  KS_1_11  1
+    KS_1_11  KSLO_1_11  1
+    KS_1_11  KSHI_1_11  1
+    KS_2_0  KS_2_0  1
+    KS_2_0  KSLO_2_0  1
+    KS_2_0  KSHI_2_0  1
+    KS_2_0  KS_2_1  -1
+    KS_2_1  KS_2_1  1
+    KS_2_1  KSLO_2_1  1
+    KS_2_1  KSHI_2_1  1
+    KS_2_1  KS_2_2  -1
+    KS_2_2  KS_2_2  1
+    KS_2_2  KSLO_2_2  1
+    KS_2_2  KSHI_2_2  1
+    KS_2_2  KS_2_3  -1
+    KS_2_3  KS_2_3  1
+    KS_2_3  KSLO_2_3  1
+    KS_2_3  KSHI_2_3  1
+    KS_2_3  KS_2_4  -1
+    KS_2_4  KS_2_4  1
+    KS_2_4  KSLO_2_4  1
+    KS_2_4  KSHI_2_4  1
+    KS_2_4  KS_2_5  -1
+    KS_2_5  KS_2_5  1
+    KS_2_5  KSLO_2_5  1
+    KS_2_5  KSHI_2_5  1
+    KS_2_5  KS_2_6  -1
+    KS_2_6  KS_2_6  1
+    KS_2_6  KSLO_2_6  1
+    KS_2_6  KSHI_2_6  1
+    KS_2_6  KS_2_7  -1
+    KS_2_7  KS_2_7  1
+    KS_2_7  KSLO_2_7  1
+    KS_2_7  KSHI_2_7  1
+    KS_2_7  KS_2_8  -1
+    KS_2_8  KS_2_8  1
+    KS_2_8  KSLO_2_8  1
+    KS_2_8  KSHI_2_8  1
+    KS_2_8  KS_2_9  -1
+    KS_2_9  KS_2_9  1
+    KS_2_9  KSLO_2_9  1
+    KS_2_9  KSHI_2_9  1
+    KS_2_9  KS_2_10  -1
+    KS_2_10  KS_2_10  1
+    KS_2_10  KSLO_2_10  1
+    KS_2_10  KSHI_2_10  1
+    KS_2_10  KS_2_11  -1
+    KS_2_11  KS_2_11  1
+    KS_2_11  KSLO_2_11  1
+    KS_2_11  KSHI_2_11  1
+    VC_0_0  COST  0.08
+    VC_0_0  VC_0_0  1
+    VC_0_0  KCLO_0_0  -1.16
+    VC_0_0  KCHI_0_0  -1.52
+    VC_0_0  VC_0_1  -1
+    VC_0_1  COST  0.08
+    VC_0_1  VC_0_1  1
+    VC_0_1  KCLO_0_1  -1.16
+    VC_0_1  KCHI_0_1  -1.52
+    VC_0_1  VC_0_2  -1
+    VC_0_2  COST  0.08
+    VC_0_2  VC_0_2  1
+    VC_0_2  KCLO_0_2  -1.16
+    VC_0_2  KCHI_0_2  -1.52
+    VC_0_2  VC_0_3  -1
+    VC_0_3  COST  0.08
+    VC_0_3  VC_0_3  1
+    VC_0_3  KCLO_0_3  -1.16
+    VC_0_3  KCHI_0_3  -1.52
+    VC_0_3  VC_0_4  -1
+    VC_0_4  COST  0.08
+    VC_0_4  VC_0_4  1
+    VC_0_4  KCLO_0_4  -1.16
+    VC_0_4  KCHI_0_4  -1.52
+    VC_0_4  VC_0_5  -1
+    VC_0_5  COST  0.08
+    VC_0_5  VC_0_5  1
+    VC_0_5  KCLO_0_5  -1.16
+    VC_0_5  KCHI_0_5  -1.52
+    VC_0_5  VC_0_6  -1
+    VC_0_6  COST  0.08
+    VC_0_6  VC_0_6  1
+    VC_0_6  KCLO_0_6  -1.16
+    VC_0_6  KCHI_0_6  -1.52
+    VC_0_6  VC_0_7  -1
+    VC_0_7  COST  0.08
+    VC_0_7  VC_0_7  1
+    VC_0_7  KCLO_0_7  -1.16
+    VC_0_7  KCHI_0_7  -1.52
+    VC_0_7  VC_0_8  -1
+    VC_0_8  COST  0.08
+    VC_0_8  VC_0_8  1
+    VC_0_8  KCLO_0_8  -1.16
+    VC_0_8  KCHI_0_8  -1.52
+    VC_0_8  VC_0_9  -1
+    VC_0_9  COST  0.08
+    VC_0_9  VC_0_9  1
+    VC_0_9  KCLO_0_9  -1.16
+    VC_0_9  KCHI_0_9  -1.52
+    VC_0_9  VC_0_10  -1
+    VC_0_10  COST  0.08
+    VC_0_10  VC_0_10  1
+    VC_0_10  KCLO_0_10  -1.16
+    VC_0_10  KCHI_0_10  -1.52
+    VC_0_10  VC_0_11  -1
+    VC_0_11  COST  0.08
+    VC_0_11  VC_0_11  1
+    VC_0_11  KCLO_0_11  -1.16
+    VC_0_11  KCHI_0_11  -1.52
+    VC_1_0  COST  0.08
+    VC_1_0  VC_1_0  1
+    VC_1_0  KCLO_1_0  -1.04
+    VC_1_0  KCHI_1_0  -1.64
+    VC_1_0  VC_1_1  -1
+    VC_1_1  COST  0.08
+    VC_1_1  VC_1_1  1
+    VC_1_1  KCLO_1_1  -1.04
+    VC_1_1  KCHI_1_1  -1.64
+    VC_1_1  VC_1_2  -1
+    VC_1_2  COST  0.08
+    VC_1_2  VC_1_2  1
+    VC_1_2  KCLO_1_2  -1.04
+    VC_1_2  KCHI_1_2  -1.64
+    VC_1_2  VC_1_3  -1
+    VC_1_3  COST  0.08
+    VC_1_3  VC_1_3  1
+    VC_1_3  KCLO_1_3  -1.04
+    VC_1_3  KCHI_1_3  -1.64
+    VC_1_3  VC_1_4  -1
+    VC_1_4  COST  0.08
+    VC_1_4  VC_1_4  1
+    VC_1_4  KCLO_1_4  -1.04
+    VC_1_4  KCHI_1_4  -1.64
+    VC_1_4  VC_1_5  -1
+    VC_1_5  COST  0.08
+    VC_1_5  VC_1_5  1
+    VC_1_5  KCLO_1_5  -1.04
+    VC_1_5  KCHI_1_5  -1.64
+    VC_1_5  VC_1_6  -1
+    VC_1_6  COST  0.08
+    VC_1_6  VC_1_6  1
+    VC_1_6  KCLO_1_6  -1.04
+    VC_1_6  KCHI_1_6  -1.64
+    VC_1_6  VC_1_7  -1
+    VC_1_7  COST  0.08
+    VC_1_7  VC_1_7  1
+    VC_1_7  KCLO_1_7  -1.04
+    VC_1_7  KCHI_1_7  -1.64
+    VC_1_7  VC_1_8  -1
+    VC_1_8  COST  0.08
+    VC_1_8  VC_1_8  1
+    VC_1_8  KCLO_1_8  -1.04
+    VC_1_8  KCHI_1_8  -1.64
+    VC_1_8  VC_1_9  -1
+    VC_1_9  COST  0.08
+    VC_1_9  VC_1_9  1
+    VC_1_9  KCLO_1_9  -1.04
+    VC_1_9  KCHI_1_9  -1.64
+    VC_1_9  VC_1_10  -1
+    VC_1_10  COST  0.08
+    VC_1_10  VC_1_10  1
+    VC_1_10  KCLO_1_10  -1.04
+    VC_1_10  KCHI_1_10  -1.64
+    VC_1_10  VC_1_11  -1
+    VC_1_11  COST  0.08
+    VC_1_11  VC_1_11  1
+    VC_1_11  KCLO_1_11  -1.04
+    VC_1_11  KCHI_1_11  -1.64
+    VC_2_0  COST  0.08
+    VC_2_0  VC_2_0  1
+    VC_2_0  KCLO_2_0  -0.92
+    VC_2_0  KCHI_2_0  -1.28
+    VC_2_0  VC_2_1  -1
+    VC_2_1  COST  0.08
+    VC_2_1  VC_2_1  1
+    VC_2_1  KCLO_2_1  -0.92
+    VC_2_1  KCHI_2_1  -1.28
+    VC_2_1  VC_2_2  -1
+    VC_2_2  COST  0.08
+    VC_2_2  VC_2_2  1
+    VC_2_2  KCLO_2_2  -0.92
+    VC_2_2  KCHI_2_2  -1.28
+    VC_2_2  VC_2_3  -1
+    VC_2_3  COST  0.08
+    VC_2_3  VC_2_3  1
+    VC_2_3  KCLO_2_3  -0.92
+    VC_2_3  KCHI_2_3  -1.28
+    VC_2_3  VC_2_4  -1
+    VC_2_4  COST  0.08
+    VC_2_4  VC_2_4  1
+    VC_2_4  KCLO_2_4  -0.92
+    VC_2_4  KCHI_2_4  -1.28
+    VC_2_4  VC_2_5  -1
+    VC_2_5  COST  0.08
+    VC_2_5  VC_2_5  1
+    VC_2_5  KCLO_2_5  -0.92
+    VC_2_5  KCHI_2_5  -1.28
+    VC_2_5  VC_2_6  -1
+    VC_2_6  COST  0.08
+    VC_2_6  VC_2_6  1
+    VC_2_6  KCLO_2_6  -0.92
+    VC_2_6  KCHI_2_6  -1.28
+    VC_2_6  VC_2_7  -1
+    VC_2_7  COST  0.08
+    VC_2_7  VC_2_7  1
+    VC_2_7  KCLO_2_7  -0.92
+    VC_2_7  KCHI_2_7  -1.28
+    VC_2_7  VC_2_8  -1
+    VC_2_8  COST  0.08
+    VC_2_8  VC_2_8  1
+    VC_2_8  KCLO_2_8  -0.92
+    VC_2_8  KCHI_2_8  -1.28
+    VC_2_8  VC_2_9  -1
+    VC_2_9  COST  0.08
+    VC_2_9  VC_2_9  1
+    VC_2_9  KCLO_2_9  -0.92
+    VC_2_9  KCHI_2_9  -1.28
+    VC_2_9  VC_2_10  -1
+    VC_2_10  COST  0.08
+    VC_2_10  VC_2_10  1
+    VC_2_10  KCLO_2_10  -0.92
+    VC_2_10  KCHI_2_10  -1.28
+    VC_2_10  VC_2_11  -1
+    VC_2_11  COST  0.08
+    VC_2_11  VC_2_11  1
+    VC_2_11  KCLO_2_11  -0.92
+    VC_2_11  KCHI_2_11  -1.28
+    KC_0_0  KC_0_0  1
+    KC_0_0  KCLO_0_0  1
+    KC_0_0  KCHI_0_0  1
+    KC_0_0  KC_0_1  -1
+    KC_0_1  KC_0_1  1
+    KC_0_1  KCLO_0_1  1
+    KC_0_1  KCHI_0_1  1
+    KC_0_1  KC_0_2  -1
+    KC_0_2  KC_0_2  1
+    KC_0_2  KCLO_0_2  1
+    KC_0_2  KCHI_0_2  1
+    KC_0_2  KC_0_3  -1
+    KC_0_3  KC_0_3  1
+    KC_0_3  KCLO_0_3  1
+    KC_0_3  KCHI_0_3  1
+    KC_0_3  KC_0_4  -1
+    KC_0_4  KC_0_4  1
+    KC_0_4  KCLO_0_4  1
+    KC_0_4  KCHI_0_4  1
+    KC_0_4  KC_0_5  -1
+    KC_0_5  KC_0_5  1
+    KC_0_5  KCLO_0_5  1
+    KC_0_5  KCHI_0_5  1
+    KC_0_5  KC_0_6  -1
+    KC_0_6  KC_0_6  1
+    KC_0_6  KCLO_0_6  1
+    KC_0_6  KCHI_0_6  1
+    KC_0_6  KC_0_7  -1
+    KC_0_7  KC_0_7  1
+    KC_0_7  KCLO_0_7  1
+    KC_0_7  KCHI_0_7  1
+    KC_0_7  KC_0_8  -1
+    KC_0_8  KC_0_8  1
+    KC_0_8  KCLO_0_8  1
+    KC_0_8  KCHI_0_8  1
+    KC_0_8  KC_0_9  -1
+    KC_0_9  KC_0_9  1
+    KC_0_9  KCLO_0_9  1
+    KC_0_9  KCHI_0_9  1
+    KC_0_9  KC_0_10  -1
+    KC_0_10  KC_0_10  1
+    KC_0_10  KCLO_0_10  1
+    KC_0_10  KCHI_0_10  1
+    KC_0_10  KC_0_11  -1
+    KC_0_11  KC_0_11  1
+    KC_0_11  KCLO_0_11  1
+    KC_0_11  KCHI_0_11  1
+    KC_1_0  KC_1_0  1
+    KC_1_0  KCLO_1_0  1
+    KC_1_0  KCHI_1_0  1
+    KC_1_0  KC_1_1  -1
+    KC_1_1  KC_1_1  1
+    KC_1_1  KCLO_1_1  1
+    KC_1_1  KCHI_1_1  1
+    KC_1_1  KC_1_2  -1
+    KC_1_2  KC_1_2  1
+    KC_1_2  KCLO_1_2  1
+    KC_1_2  KCHI_1_2  1
+    KC_1_2  KC_1_3  -1
+    KC_1_3  KC_1_3  1
+    KC_1_3  KCLO_1_3  1
+    KC_1_3  KCHI_1_3  1
+    KC_1_3  KC_1_4  -1
+    KC_1_4  KC_1_4  1
+    KC_1_4  KCLO_1_4  1
+    KC_1_4  KCHI_1_4  1
+    KC_1_4  KC_1_5  -1
+    KC_1_5  KC_1_5  1
+    KC_1_5  KCLO_1_5  1
+    KC_1_5  KCHI_1_5  1
+    KC_1_5  KC_1_6  -1
+    KC_1_6  KC_1_6  1
+    KC_1_6  KCLO_1_6  1
+    KC_1_6  KCHI_1_6  1
+    KC_1_6  KC_1_7  -1
+    KC_1_7  KC_1_7  1
+    KC_1_7  KCLO_1_7  1
+    KC_1_7  KCHI_1_7  1
+    KC_1_7  KC_1_8  -1
+    KC_1_8  KC_1_8  1
+    KC_1_8  KCLO_1_8  1
+    KC_1_8  KCHI_1_8  1
+    KC_1_8  KC_1_9  -1
+    KC_1_9  KC_1_9  1
+    KC_1_9  KCLO_1_9  1
+    KC_1_9  KCHI_1_9  1
+    KC_1_9  KC_1_10  -1
+    KC_1_10  KC_1_10  1
+    KC_1_10  KCLO_1_10  1
+    KC_1_10  KCHI_1_10  1
+    KC_1_10  KC_1_11  -1
+    KC_1_11  KC_1_11  1
+    KC_1_11  KCLO_1_11  1
+    KC_1_11  KCHI_1_11  1
+    KC_2_0  KC_2_0  1
+    KC_2_0  KCLO_2_0  1
+    KC_2_0  KCHI_2_0  1
+    KC_2_0  KC_2_1  -1
+    KC_2_1  KC_2_1  1
+    KC_2_1  KCLO_2_1  1
+    KC_2_1  KCHI_2_1  1
+    KC_2_1  KC_2_2  -1
+    KC_2_2  KC_2_2  1
+    KC_2_2  KCLO_2_2  1
+    KC_2_2  KCHI_2_2  1
+    KC_2_2  KC_2_3  -1
+    KC_2_3  KC_2_3  1
+    KC_2_3  KCLO_2_3  1
+    KC_2_3  KCHI_2_3  1
+    KC_2_3  KC_2_4  -1
+    KC_2_4  KC_2_4  1
+    KC_2_4  KCLO_2_4  1
+    KC_2_4  KCHI_2_4  1
+    KC_2_4  KC_2_5  -1
+    KC_2_5  KC_2_5  1
+    KC_2_5  KCLO_2_5  1
+    KC_2_5  KCHI_2_5  1
+    KC_2_5  KC_2_6  -1
+    KC_2_6  KC_2_6  1
+    KC_2_6  KCLO_2_6  1
+    KC_2_6  KCHI_2_6  1
+    KC_2_6  KC_2_7  -1
+    KC_2_7  KC_2_7  1
+    KC_2_7  KCLO_2_7  1
+    KC_2_7  KCHI_2_7  1
+    KC_2_7  KC_2_8  -1
+    KC_2_8  KC_2_8  1
+    KC_2_8  KCLO_2_8  1
+    KC_2_8  KCHI_2_8  1
+    KC_2_8  KC_2_9  -1
+    KC_2_9  KC_2_9  1
+    KC_2_9  KCLO_2_9  1
+    KC_2_9  KCHI_2_9  1
+    KC_2_9  KC_2_10  -1
+    KC_2_10  KC_2_10  1
+    KC_2_10  KCLO_2_10  1
+    KC_2_10  KCHI_2_10  1
+    KC_2_10  KC_2_11  -1
+    KC_2_11  KC_2_11  1
+    KC_2_11  KCLO_2_11  1
+    KC_2_11  KCHI_2_11  1
+RHS
+    RHS  START_0  1
+    RHS  CARGO_0  200
+    RHS  START_1  1
+    RHS  CARGO_1  400
+    RHS  START_2  1
+    RHS  CARGO_2  200
+    RHS  JETTY_0  1
+    RHS  VS_0_0  400
+    RHS  KS_0_0  360
+    RHS  NOMIX_0_0_0_0  1
+    RHS  NOMIX_0_0_1_0  1
+    RHS  NOMIX_0_1_0_0  1
+    RHS  NOMIX_0_1_1_0  1
+    RHS  NOMIX_0_2_0_0  1
+    RHS  NOMIX_0_2_1_0  1
+    RHS  VS_1_0  300
+    RHS  KS_1_0  450
+    RHS  NOMIX_1_0_0_0  1
+    RHS  NOMIX_1_0_1_0  1
+    RHS  NOMIX_1_1_0_0  1
+    RHS  NOMIX_1_1_1_0  1
+    RHS  NOMIX_1_2_0_0  1
+    RHS  NOMIX_1_2_1_0  1
+    RHS  VS_2_0  200
+    RHS  KS_2_0  160
+    RHS  NOMIX_2_0_0_0  1
+    RHS  NOMIX_2_0_1_0  1
+    RHS  NOMIX_2_1_0_0  1
+    RHS  NOMIX_2_1_1_0  1
+    RHS  NOMIX_2_2_0_0  1
+    RHS  NOMIX_2_2_1_0  1
+    RHS  VC_0_0  300
+    RHS  KC_0_0  402
+    RHS  VC_1_0  300
+    RHS  KC_1_0  402
+    RHS  VC_2_0  200
+    RHS  KC_2_0  220
+    RHS  FEED_0_0  1
+    RHS  DEMAND_0_0  30
+    RHS  FEED_1_0  1
+    RHS  DEMAND_1_0  30
+    RHS  JETTY_1  1
+    RHS  NOMIX_0_0_0_1  1
+    RHS  NOMIX_0_0_1_1  1
+    RHS  NOMIX_0_1_0_1  1
+    RHS  NOMIX_0_1_1_1  1
+    RHS  NOMIX_0_2_0_1  1
+    RHS  NOMIX_0_2_1_1  1
+    RHS  NOMIX_1_0_0_1  1
+    RHS  NOMIX_1_0_1_1  1
+    RHS  NOMIX_1_1_0_1  1
+    RHS  NOMIX_1_1_1_1  1
+    RHS  NOMIX_1_2_0_1  1
+    RHS  NOMIX_1_2_1_1  1
+    RHS  NOMIX_2_0_0_1  1
+    RHS  NOMIX_2_0_1_1  1
+    RHS  NOMIX_2_1_0_1  1
+    RHS  NOMIX_2_1_1_1  1
+    RHS  NOMIX_2_2_0_1  1
+    RHS  NOMIX_2_2_1_1  1
+    RHS  FEED_0_1  1
+    RHS  DEMAND_0_1  30
+    RHS  FEED_1_1  1
+    RHS  DEMAND_1_1  30
+    RHS  JETTY_2  1
+    RHS  NOMIX_0_0_0_2  1
+    RHS  NOMIX_0_0_1_2  1
+    RHS  NOMIX_0_1_0_2  1
+    RHS  NOMIX_0_1_1_2  1
+    RHS  NOMIX_0_2_0_2  1
+    RHS  NOMIX_0_2_1_2  1
+    RHS  NOMIX_1_0_0_2  1
+    RHS  NOMIX_1_0_1_2  1
+    RHS  NOMIX_1_1_0_2  1
+    RHS  NOMIX_1_1_1_2  1
+    RHS  NOMIX_1_2_0_2  1
+    RHS  NOMIX_1_2_1_2  1
+    RHS  NOMIX_2_0_0_2  1
+    RHS  NOMIX_2_0_1_2  1
+    RHS  NOMIX_2_1_0_2  1
+    RHS  NOMIX_2_1_1_2  1
+    RHS  NOMIX_2_2_0_2  1
+    RHS  NOMIX_2_2_1_2  1
+    RHS  FEED_0_2  1
+    RHS  DEMAND_0_2  30
+    RHS  FEED_1_2  1
+    RHS  DEMAND_1_2  30
+    RHS  JETTY_3  1
+    RHS  NOMIX_0_0_0_3  1
+    RHS  NOMIX_0_0_1_3  1
+    RHS  NOMIX_0_1_0_3  1
+    RHS  NOMIX_0_1_1_3  1
+    RHS  NOMIX_0_2_0_3  1
+    RHS  NOMIX_0_2_1_3  1
+    RHS  NOMIX_1_0_0_3  1
+    RHS  NOMIX_1_0_1_3  1
+    RHS  NOMIX_1_1_0_3  1
+    RHS  NOMIX_1_1_1_3  1
+    RHS  NOMIX_1_2_0_3  1
+    RHS  NOMIX_1_2_1_3  1
+    RHS  NOMIX_2_0_0_3  1
+    RHS  NOMIX_2_0_1_3  1
+    RHS  NOMIX_2_1_0_3  1
+    RHS  NOMIX_2_1_1_3  1
+    RHS  NOMIX_2_2_0_3  1
+    RHS  NOMIX_2_2_1_3  1
+    RHS  FEED_0_3  1
+    RHS  DEMAND_0_3  30
+    RHS  FEED_1_3  1
+    RHS  DEMAND_1_3  30
+    RHS  JETTY_4  1
+    RHS  NOMIX_0_0_0_4  1
+    RHS  NOMIX_0_0_1_4  1
+    RHS  NOMIX_0_1_0_4  1
+    RHS  NOMIX_0_1_1_4  1
+    RHS  NOMIX_0_2_0_4  1
+    RHS  NOMIX_0_2_1_4  1
+    RHS  NOMIX_1_0_0_4  1
+    RHS  NOMIX_1_0_1_4  1
+    RHS  NOMIX_1_1_0_4  1
+    RHS  NOMIX_1_1_1_4  1
+    RHS  NOMIX_1_2_0_4  1
+    RHS  NOMIX_1_2_1_4  1
+    RHS  NOMIX_2_0_0_4  1
+    RHS  NOMIX_2_0_1_4  1
+    RHS  NOMIX_2_1_0_4  1
+    RHS  NOMIX_2_1_1_4  1
+    RHS  NOMIX_2_2_0_4  1
+    RHS  NOMIX_2_2_1_4  1
+    RHS  FEED_0_4  1
+    RHS  DEMAND_0_4  30
+    RHS  FEED_1_4  1
+    RHS  DEMAND_1_4  30
+    RHS  JETTY_5  1
+    RHS  NOMIX_0_0_0_5  1
+    RHS  NOMIX_0_0_1_5  1
+    RHS  NOMIX_0_1_0_5  1
+    RHS  NOMIX_0_1_1_5  1
+    RHS  NOMIX_0_2_0_5  1
+    RHS  NOMIX_0_2_1_5  1
+    RHS  NOMIX_1_0_0_5  1
+    RHS  NOMIX_1_0_1_5  1
+    RHS  NOMIX_1_1_0_5  1
+    RHS  NOMIX_1_1_1_5  1
+    RHS  NOMIX_1_2_0_5  1
+    RHS  NOMIX_1_2_1_5  1
+    RHS  NOMIX_2_0_0_5  1
+    RHS  NOMIX_2_0_1_5  1
+    RHS  NOMIX_2_1_0_5  1
+    RHS  NOMIX_2_1_1_5  1
+    RHS  NOMIX_2_2_0_5  1
+    RHS  NOMIX_2_2_1_5  1
+    RHS  FEED_0_5  1
+    RHS  DEMAND_0_5  30
+    RHS  FEED_1_5  1
+    RHS  DEMAND_1_5  30
+    RHS  JETTY_6  1
+    RHS  NOMIX_0_0_0_6  1
+    RHS  NOMIX_0_0_1_6  1
+    RHS  NOMIX_0_1_0_6  1
+    RHS  NOMIX_0_1_1_6  1
+    RHS  NOMIX_0_2_0_6  1
+    RHS  NOMIX_0_2_1_6  1
+    RHS  NOMIX_1_0_0_6  1
+    RHS  NOMIX_1_0_1_6  1
+    RHS  NOMIX_1_1_0_6  1
+    RHS  NOMIX_1_1_1_6  1
+    RHS  NOMIX_1_2_0_6  1
+    RHS  NOMIX_1_2_1_6  1
+    RHS  NOMIX_2_0_0_6  1
+    RHS  NOMIX_2_0_1_6  1
+    RHS  NOMIX_2_1_0_6  1
+    RHS  NOMIX_2_1_1_6  1
+    RHS  NOMIX_2_2_0_6  1
+    RHS  NOMIX_2_2_1_6  1
+    RHS  FEED_0_6  1
+    RHS  DEMAND_0_6  30
+    RHS  FEED_1_6  1
+    RHS  DEMAND_1_6  30
+    RHS  JETTY_7  1
+    RHS  NOMIX_0_0_0_7  1
+    RHS  NOMIX_0_0_1_7  1
+    RHS  NOMIX_0_1_0_7  1
+    RHS  NOMIX_0_1_1_7  1
+    RHS  NOMIX_0_2_0_7  1
+    RHS  NOMIX_0_2_1_7  1
+    RHS  NOMIX_1_0_0_7  1
+    RHS  NOMIX_1_0_1_7  1
+    RHS  NOMIX_1_1_0_7  1
+    RHS  NOMIX_1_1_1_7  1
+    RHS  NOMIX_1_2_0_7  1
+    RHS  NOMIX_1_2_1_7  1
+    RHS  NOMIX_2_0_0_7  1
+    RHS  NOMIX_2_0_1_7  1
+    RHS  NOMIX_2_1_0_7  1
+    RHS  NOMIX_2_1_1_7  1
+    RHS  NOMIX_2_2_0_7  1
+    RHS  NOMIX_2_2_1_7  1
+    RHS  FEED_0_7  1
+    RHS  DEMAND_0_7  30
+    RHS  FEED_1_7  1
+    RHS  DEMAND_1_7  30
+    RHS  JETTY_8  1
+    RHS  NOMIX_0_0_0_8  1
+    RHS  NOMIX_0_0_1_8  1
+    RHS  NOMIX_0_1_0_8  1
+    RHS  NOMIX_0_1_1_8  1
+    RHS  NOMIX_0_2_0_8  1
+    RHS  NOMIX_0_2_1_8  1
+    RHS  NOMIX_1_0_0_8  1
+    RHS  NOMIX_1_0_1_8  1
+    RHS  NOMIX_1_1_0_8  1
+    RHS  NOMIX_1_1_1_8  1
+    RHS  NOMIX_1_2_0_8  1
+    RHS  NOMIX_1_2_1_8  1
+    RHS  NOMIX_2_0_0_8  1
+    RHS  NOMIX_2_0_1_8  1
+    RHS  NOMIX_2_1_0_8  1
+    RHS  NOMIX_2_1_1_8  1
+    RHS  NOMIX_2_2_0_8  1
+    RHS  NOMIX_2_2_1_8  1
+    RHS  FEED_0_8  1
+    RHS  DEMAND_0_8  30
+    RHS  FEED_1_8  1
+    RHS  DEMAND_1_8  30
+    RHS  JETTY_9  1
+    RHS  NOMIX_0_0_0_9  1
+    RHS  NOMIX_0_0_1_9  1
+    RHS  NOMIX_0_1_0_9  1
+    RHS  NOMIX_0_1_1_9  1
+    RHS  NOMIX_0_2_0_9  1
+    RHS  NOMIX_0_2_1_9  1
+    RHS  NOMIX_1_0_0_9  1
+    RHS  NOMIX_1_0_1_9  1
+    RHS  NOMIX_1_1_0_9  1
+    RHS  NOMIX_1_1_1_9  1
+    RHS  NOMIX_1_2_0_9  1
+    RHS  NOMIX_1_2_1_9  1
+    RHS  NOMIX_2_0_0_9  1
+    RHS  NOMIX_2_0_1_9  1
+    RHS  NOMIX_2_1_0_9  1
+    RHS  NOMIX_2_1_1_9  1
+    RHS  NOMIX_2_2_0_9  1
+    RHS  NOMIX_2_2_1_9  1
+    RHS  FEED_0_9  1
+    RHS  DEMAND_0_9  30
+    RHS  FEED_1_9  1
+    RHS  DEMAND_1_9  30
+    RHS  JETTY_10  1
+    RHS  NOMIX_0_0_0_10  1
+    RHS  NOMIX_0_0_1_10  1
+    RHS  NOMIX_0_1_0_10  1
+    RHS  NOMIX_0_1_1_10  1
+    RHS  NOMIX_0_2_0_10  1
+    RHS  NOMIX_0_2_1_10  1
+    RHS  NOMIX_1_0_0_10  1
+    RHS  NOMIX_1_0_1_10  1
+    RHS  NOMIX_1_1_0_10  1
+    RHS  NOMIX_1_1_1_10  1
+    RHS  NOMIX_1_2_0_10  1
+    RHS  NOMIX_1_2_1_10  1
+    RHS  NOMIX_2_0_0_10  1
+    RHS  NOMIX_2_0_1_10  1
+    RHS  NOMIX_2_1_0_10  1
+    RHS  NOMIX_2_1_1_10  1
+    RHS  NOMIX_2_2_0_10  1
+    RHS  NOMIX_2_2_1_10  1
+    RHS  FEED_0_10  1
+    RHS  DEMAND_0_10  30
+    RHS  FEED_1_10  1
+    RHS  DEMAND_1_10  30
+    RHS  JETTY_11  1
+    RHS  NOMIX_0_0_0_11  1
+    RHS  NOMIX_0_0_1_11  1
+    RHS  NOMIX_0_1_0_11  1
+    RHS  NOMIX_0_1_1_11  1
+    RHS  NOMIX_0_2_0_11  1
+    RHS  NOMIX_0_2_1_11  1
+    RHS  NOMIX_1_0_0_11  1
+    RHS  NOMIX_1_0_1_11  1
+    RHS  NOMIX_1_1_0_11  1
+    RHS  NOMIX_1_1_1_11  1
+    RHS  NOMIX_1_2_0_11  1
+    RHS  NOMIX_1_2_1_11  1
+    RHS  NOMIX_2_0_0_11  1
+    RHS  NOMIX_2_0_1_11  1
+    RHS  NOMIX_2_1_0_11  1
+    RHS  NOMIX_2_1_1_11  1
+    RHS  NOMIX_2_2_0_11  1
+    RHS  NOMIX_2_2_1_11  1
+    RHS  FEED_0_11  1
+    RHS  DEMAND_0_11  30
+    RHS  FEED_1_11  1
+    RHS  DEMAND_1_11  30
+BOUNDS
+ BV BND  XF_0_3
+ BV BND  XF_0_4
+ BV BND  XF_0_5
+ BV BND  XF_0_6
+ BV BND  XF_0_7
+ BV BND  XF_0_8
+ BV BND  XF_0_9
+ BV BND  XF_0_10
+ BV BND  XF_0_11
+ BV BND  XF_1_3
+ BV BND  XF_1_4
+ BV BND  XF_1_5
+ BV BND  XF_1_6
+ BV BND  XF_1_7
+ BV BND  XF_1_8
+ BV BND  XF_1_9
+ BV BND  XF_1_10
+ BV BND  XF_1_11
+ BV BND  XF_2_6
+ BV BND  XF_2_7
+ BV BND  XF_2_8
+ BV BND  XF_2_9
+ BV BND  XF_2_10
+ BV BND  XF_2_11
+ BV BND  XW_0_3
+ BV BND  XW_0_4
+ BV BND  XW_0_5
+ BV BND  XW_0_6
+ BV BND  XW_0_7
+ BV BND  XW_0_8
+ BV BND  XW_0_9
+ BV BND  XW_0_10
+ BV BND  XW_0_11
+ BV BND  XW_1_3
+ BV BND  XW_1_4
+ BV BND  XW_1_5
+ BV BND  XW_1_6
+ BV BND  XW_1_7
+ BV BND  XW_1_8
+ BV BND  XW_1_9
+ BV BND  XW_1_10
+ BV BND  XW_1_11
+ BV BND  XW_2_6
+ BV BND  XW_2_7
+ BV BND  XW_2_8
+ BV BND  XW_2_9
+ BV BND  XW_2_10
+ BV BND  XW_2_11
+ BV BND  Z_0_0_0
+ BV BND  Z_0_0_1
+ BV BND  Z_0_0_2
+ BV BND  Z_0_0_3
+ BV BND  Z_0_0_4
+ BV BND  Z_0_0_5
+ BV BND  Z_0_0_6
+ BV BND  Z_0_0_7
+ BV BND  Z_0_0_8
+ BV BND  Z_0_0_9
+ BV BND  Z_0_0_10
+ BV BND  Z_0_0_11
+ BV BND  Z_0_1_0
+ BV BND  Z_0_1_1
+ BV BND  Z_0_1_2
+ BV BND  Z_0_1_3
+ BV BND  Z_0_1_4
+ BV BND  Z_0_1_5
+ BV BND  Z_0_1_6
+ BV BND  Z_0_1_7
+ BV BND  Z_0_1_8
+ BV BND  Z_0_1_9
+ BV BND  Z_0_1_10
+ BV BND  Z_0_1_11
+ BV BND  Z_0_2_0
+ BV BND  Z_0_2_1
+ BV BND  Z_0_2_2
+ BV BND  Z_0_2_3
+ BV BND  Z_0_2_4
+ BV BND  Z_0_2_5
+ BV BND  Z_0_2_6
+ BV BND  Z_0_2_7
+ BV BND  Z_0_2_8
+ BV BND  Z_0_2_9
+ BV BND  Z_0_2_10
+ BV BND  Z_0_2_11
+ BV BND  Z_1_0_0
+ BV BND  Z_1_0_1
+ BV BND  Z_1_0_2
+ BV BND  Z_1_0_3
+ BV BND  Z_1_0_4
+ BV BND  Z_1_0_5
+ BV BND  Z_1_0_6
+ BV BND  Z_1_0_7
+ BV BND  Z_1_0_8
+ BV BND  Z_1_0_9
+ BV BND  Z_1_0_10
+ BV BND  Z_1_0_11
+ BV BND  Z_1_1_0
+ BV BND  Z_1_1_1
+ BV BND  Z_1_1_2
+ BV BND  Z_1_1_3
+ BV BND  Z_1_1_4
+ BV BND  Z_1_1_5
+ BV BND  Z_1_1_6
+ BV BND  Z_1_1_7
+ BV BND  Z_1_1_8
+ BV BND  Z_1_1_9
+ BV BND  Z_1_1_10
+ BV BND  Z_1_1_11
+ BV BND  Z_1_2_0
+ BV BND  Z_1_2_1
+ BV BND  Z_1_2_2
+ BV BND  Z_1_2_3
+ BV BND  Z_1_2_4
+ BV BND  Z_1_2_5
+ BV BND  Z_1_2_6
+ BV BND  Z_1_2_7
+ BV BND  Z_1_2_8
+ BV BND  Z_1_2_9
+ BV BND  Z_1_2_10
+ BV BND  Z_1_2_11
+ BV BND  Z_2_0_0
+ BV BND  Z_2_0_1
+ BV BND  Z_2_0_2
+ BV BND  Z_2_0_3
+ BV BND  Z_2_0_4
+ BV BND  Z_2_0_5
+ BV BND  Z_2_0_6
+ BV BND  Z_2_0_7
+ BV BND  Z_2_0_8
+ BV BND  Z_2_0_9
+ BV BND  Z_2_0_10
+ BV BND  Z_2_0_11
+ BV BND  Z_2_1_0
+ BV BND  Z_2_1_1
+ BV BND  Z_2_1_2
+ BV BND  Z_2_1_3
+ BV BND  Z_2_1_4
+ BV BND  Z_2_1_5
+ BV BND  Z_2_1_6
+ BV BND  Z_2_1_7
+ BV BND  Z_2_1_8
+ BV BND  Z_2_1_9
+ BV BND  Z_2_1_10
+ BV BND  Z_2_1_11
+ BV BND  Z_2_2_0
+ BV BND  Z_2_2_1
+ BV BND  Z_2_2_2
+ BV BND  Z_2_2_3
+ BV BND  Z_2_2_4
+ BV BND  Z_2_2_5
+ BV BND  Z_2_2_6
+ BV BND  Z_2_2_7
+ BV BND  Z_2_2_8
+ BV BND  Z_2_2_9
+ BV BND  Z_2_2_10
+ BV BND  Z_2_2_11
+ BV BND  Y_0_0_0
+ BV BND  Y_0_0_1
+ BV BND  Y_0_0_2
+ BV BND  Y_0_0_3
+ BV BND  Y_0_0_4
+ BV BND  Y_0_0_5
+ BV BND  Y_0_0_6
+ BV BND  Y_0_0_7
+ BV BND  Y_0_0_8
+ BV BND  Y_0_0_9
+ BV BND  Y_0_0_10
+ BV BND  Y_0_0_11
+ BV BND  Y_0_1_0
+ BV BND  Y_0_1_1
+ BV BND  Y_0_1_2
+ BV BND  Y_0_1_3
+ BV BND  Y_0_1_4
+ BV BND  Y_0_1_5
+ BV BND  Y_0_1_6
+ BV BND  Y_0_1_7
+ BV BND  Y_0_1_8
+ BV BND  Y_0_1_9
+ BV BND  Y_0_1_10
+ BV BND  Y_0_1_11
+ BV BND  Y_1_0_0
+ BV BND  Y_1_0_1
+ BV BND  Y_1_0_2
+ BV BND  Y_1_0_3
+ BV BND  Y_1_0_4
+ BV BND  Y_1_0_5
+ BV BND  Y_1_0_6
+ BV BND  Y_1_0_7
+ BV BND  Y_1_0_8
+ BV BND  Y_1_0_9
+ BV BND  Y_1_0_10
+ BV BND  Y_1_0_11
+ BV BND  Y_1_1_0
+ BV BND  Y_1_1_1
+ BV BND  Y_1_1_2
+ BV BND  Y_1_1_3
+ BV BND  Y_1_1_4
+ BV BND  Y_1_1_5
+ BV BND  Y_1_1_6
+ BV BND  Y_1_1_7
+ BV BND  Y_1_1_8
+ BV BND  Y_1_1_9
+ BV BND  Y_1_1_10
+ BV BND  Y_1_1_11
+ BV BND  Y_2_0_0
+ BV BND  Y_2_0_1
+ BV BND  Y_2_0_2
+ BV BND  Y_2_0_3
+ BV BND  Y_2_0_4
+ BV BND  Y_2_0_5
+ BV BND  Y_2_0_6
+ BV BND  Y_2_0_7
+ BV BND  Y_2_0_8
+ BV BND  Y_2_0_9
+ BV BND  Y_2_0_10
+ BV BND  Y_2_0_11
+ BV BND  Y_2_1_0
+ BV BND  Y_2_1_1
+ BV BND  Y_2_1_2
+ BV BND  Y_2_1_3
+ BV BND  Y_2_1_4
+ BV BND  Y_2_1_5
+ BV BND  Y_2_1_6
+ BV BND  Y_2_1_7
+ BV BND  Y_2_1_8
+ BV BND  Y_2_1_9
+ BV BND  Y_2_1_10
+ BV BND  Y_2_1_11
+ UP BND  VS_0_0  600
+ UP BND  VS_0_1  600
+ UP BND  VS_0_2  600
+ UP BND  VS_0_3  600
+ UP BND  VS_0_4  600
+ UP BND  VS_0_5  600
+ UP BND  VS_0_6  600
+ UP BND  VS_0_7  600
+ UP BND  VS_0_8  600
+ UP BND  VS_0_9  600
+ UP BND  VS_0_10  600
+ UP BND  VS_0_11  600
+ UP BND  VS_1_0  600
+ UP BND  VS_1_1  600
+ UP BND  VS_1_2  600
+ UP BND  VS_1_3  600
+ UP BND  VS_1_4  600
+ UP BND  VS_1_5  600
+ UP BND  VS_1_6  600
+ UP BND  VS_1_7  600
+ UP BND  VS_1_8  600
+ UP BND  VS_1_9  600
+ UP BND  VS_1_10  600
+ UP BND  VS_1_11  600
+ UP BND  VS_2_0  600
+ UP BND  VS_2_1  600
+ UP BND  VS_2_2  600
+ UP BND  VS_2_3  600
+ UP BND  VS_2_4  600
+ UP BND  VS_2_5  600
+ UP BND  VS_2_6  600
+ UP BND  VS_2_7  600
+ UP BND  VS_2_8  600
+ UP BND  VS_2_9  600
+ UP BND  VS_2_10  600
+ UP BND  VS_2_11  600
+ UP BND  VC_0_0  600
+ UP BND  VC_0_1  600
+ UP BND  VC_0_2  600
+ UP BND  VC_0_3  600
+ UP BND  VC_0_4  600
+ UP BND  VC_0_5  600
+ UP BND  VC_0_6  600
+ UP BND  VC_0_7  600
+ UP BND  VC_0_8  600
+ UP BND  VC_0_9  600
+ UP BND  VC_0_10  600
+ UP BND  VC_0_11  600
+ UP BND  VC_1_0  600
+ UP BND  VC_1_1  600
+ UP BND  VC_1_2  600
+ UP BND  VC_1_3  600
+ UP BND  VC_1_4  600
+ UP BND  VC_1_5  600
+ UP BND  VC_1_6  600
+ UP BND  VC_1_7  600
+ UP BND  VC_1_8  600
+ UP BND  VC_1_9  600
+ UP BND  VC_1_10  600
+ UP BND  VC_1_11  600
+ UP BND  VC_2_0  600
+ UP BND  VC_2_1  600
+ UP BND  VC_2_2  600
+ UP BND  VC_2_3  600
+ UP BND  VC_2_4  600
+ UP BND  VC_2_5  600
+ UP BND  VC_2_6  600
+ UP BND  VC_2_7  600
+ UP BND  VC_2_8  600
+ UP BND  VC_2_9  600
+ UP BND  VC_2_10  600
+ UP BND  VC_2_11  600
+ENDATA

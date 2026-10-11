@@ -1,0 +1,8564 @@
+NAME          TWO_STAGE_MEDIUM_S1
+* model 8: two-stage price-scenario LP, deterministic equivalent
+* source: Birge and Louveaux, Introduction to Stochastic Programming, 2nd ed. (2011) ch. 2-3; Khor, Elkamel, Ponnambalam and Douglas, Chem. Eng. Process. 47 (2008)
+* 15 crudes, 12 products, 20 equiprobable scenarios
+* exact optimum: -14140.486 (kkt-construction)
+* suite: bench/refinery/generate.py, seed 1
+* rows 880  columns 795  nonzeros 6160  integer 0  semi-continuous 0
+ROWS
+ N  COST
+ L  CRUDE_0_0
+ L  CRUDE_1_0
+ L  CRUDE_2_0
+ L  CRUDE_3_0
+ L  CRUDE_4_0
+ L  CRUDE_5_0
+ L  CRUDE_6_0
+ L  CRUDE_7_0
+ L  CRUDE_8_0
+ L  CRUDE_9_0
+ L  CRUDE_10_0
+ L  CRUDE_11_0
+ L  CRUDE_12_0
+ L  CRUDE_13_0
+ L  CRUDE_14_0
+ L  CDU_0
+ E  PROD_0_0
+ L  SELL_0_0
+ E  PROD_1_0
+ L  SELL_1_0
+ E  PROD_2_0
+ L  SELL_2_0
+ E  PROD_3_0
+ L  SELL_3_0
+ E  PROD_4_0
+ L  SELL_4_0
+ E  PROD_5_0
+ L  SELL_5_0
+ E  PROD_6_0
+ L  SELL_6_0
+ E  PROD_7_0
+ L  SELL_7_0
+ E  PROD_8_0
+ L  SELL_8_0
+ E  PROD_9_0
+ L  SELL_9_0
+ E  PROD_10_0
+ L  SELL_10_0
+ E  PROD_11_0
+ L  SELL_11_0
+ L  SPEC_0_0
+ L  SPEC_1_0
+ L  SPEC_2_0
+ L  SPEC_3_0
+ L  CRUDE_0_1
+ L  CRUDE_1_1
+ L  CRUDE_2_1
+ L  CRUDE_3_1
+ L  CRUDE_4_1
+ L  CRUDE_5_1
+ L  CRUDE_6_1
+ L  CRUDE_7_1
+ L  CRUDE_8_1
+ L  CRUDE_9_1
+ L  CRUDE_10_1
+ L  CRUDE_11_1
+ L  CRUDE_12_1
+ L  CRUDE_13_1
+ L  CRUDE_14_1
+ L  CDU_1
+ E  PROD_0_1
+ L  SELL_0_1
+ E  PROD_1_1
+ L  SELL_1_1
+ E  PROD_2_1
+ L  SELL_2_1
+ E  PROD_3_1
+ L  SELL_3_1
+ E  PROD_4_1
+ L  SELL_4_1
+ E  PROD_5_1
+ L  SELL_5_1
+ E  PROD_6_1
+ L  SELL_6_1
+ E  PROD_7_1
+ L  SELL_7_1
+ E  PROD_8_1
+ L  SELL_8_1
+ E  PROD_9_1
+ L  SELL_9_1
+ E  PROD_10_1
+ L  SELL_10_1
+ E  PROD_11_1
+ L  SELL_11_1
+ L  SPEC_0_1
+ L  SPEC_1_1
+ L  SPEC_2_1
+ L  SPEC_3_1
+ L  CRUDE_0_2
+ L  CRUDE_1_2
+ L  CRUDE_2_2
+ L  CRUDE_3_2
+ L  CRUDE_4_2
+ L  CRUDE_5_2
+ L  CRUDE_6_2
+ L  CRUDE_7_2
+ L  CRUDE_8_2
+ L  CRUDE_9_2
+ L  CRUDE_10_2
+ L  CRUDE_11_2
+ L  CRUDE_12_2
+ L  CRUDE_13_2
+ L  CRUDE_14_2
+ L  CDU_2
+ E  PROD_0_2
+ L  SELL_0_2
+ E  PROD_1_2
+ L  SELL_1_2
+ E  PROD_2_2
+ L  SELL_2_2
+ E  PROD_3_2
+ L  SELL_3_2
+ E  PROD_4_2
+ L  SELL_4_2
+ E  PROD_5_2
+ L  SELL_5_2
+ E  PROD_6_2
+ L  SELL_6_2
+ E  PROD_7_2
+ L  SELL_7_2
+ E  PROD_8_2
+ L  SELL_8_2
+ E  PROD_9_2
+ L  SELL_9_2
+ E  PROD_10_2
+ L  SELL_10_2
+ E  PROD_11_2
+ L  SELL_11_2
+ L  SPEC_0_2
+ L  SPEC_1_2
+ L  SPEC_2_2
+ L  SPEC_3_2
+ L  CRUDE_0_3
+ L  CRUDE_1_3
+ L  CRUDE_2_3
+ L  CRUDE_3_3
+ L  CRUDE_4_3
+ L  CRUDE_5_3
+ L  CRUDE_6_3
+ L  CRUDE_7_3
+ L  CRUDE_8_3
+ L  CRUDE_9_3
+ L  CRUDE_10_3
+ L  CRUDE_11_3
+ L  CRUDE_12_3
+ L  CRUDE_13_3
+ L  CRUDE_14_3
+ L  CDU_3
+ E  PROD_0_3
+ L  SELL_0_3
+ E  PROD_1_3
+ L  SELL_1_3
+ E  PROD_2_3
+ L  SELL_2_3
+ E  PROD_3_3
+ L  SELL_3_3
+ E  PROD_4_3
+ L  SELL_4_3
+ E  PROD_5_3
+ L  SELL_5_3
+ E  PROD_6_3
+ L  SELL_6_3
+ E  PROD_7_3
+ L  SELL_7_3
+ E  PROD_8_3
+ L  SELL_8_3
+ E  PROD_9_3
+ L  SELL_9_3
+ E  PROD_10_3
+ L  SELL_10_3
+ E  PROD_11_3
+ L  SELL_11_3
+ L  SPEC_0_3
+ L  SPEC_1_3
+ L  SPEC_2_3
+ L  SPEC_3_3
+ L  CRUDE_0_4
+ L  CRUDE_1_4
+ L  CRUDE_2_4
+ L  CRUDE_3_4
+ L  CRUDE_4_4
+ L  CRUDE_5_4
+ L  CRUDE_6_4
+ L  CRUDE_7_4
+ L  CRUDE_8_4
+ L  CRUDE_9_4
+ L  CRUDE_10_4
+ L  CRUDE_11_4
+ L  CRUDE_12_4
+ L  CRUDE_13_4
+ L  CRUDE_14_4
+ L  CDU_4
+ E  PROD_0_4
+ L  SELL_0_4
+ E  PROD_1_4
+ L  SELL_1_4
+ E  PROD_2_4
+ L  SELL_2_4
+ E  PROD_3_4
+ L  SELL_3_4
+ E  PROD_4_4
+ L  SELL_4_4
+ E  PROD_5_4
+ L  SELL_5_4
+ E  PROD_6_4
+ L  SELL_6_4
+ E  PROD_7_4
+ L  SELL_7_4
+ E  PROD_8_4
+ L  SELL_8_4
+ E  PROD_9_4
+ L  SELL_9_4
+ E  PROD_10_4
+ L  SELL_10_4
+ E  PROD_11_4
+ L  SELL_11_4
+ L  SPEC_0_4
+ L  SPEC_1_4
+ L  SPEC_2_4
+ L  SPEC_3_4
+ L  CRUDE_0_5
+ L  CRUDE_1_5
+ L  CRUDE_2_5
+ L  CRUDE_3_5
+ L  CRUDE_4_5
+ L  CRUDE_5_5
+ L  CRUDE_6_5
+ L  CRUDE_7_5
+ L  CRUDE_8_5
+ L  CRUDE_9_5
+ L  CRUDE_10_5
+ L  CRUDE_11_5
+ L  CRUDE_12_5
+ L  CRUDE_13_5
+ L  CRUDE_14_5
+ L  CDU_5
+ E  PROD_0_5
+ L  SELL_0_5
+ E  PROD_1_5
+ L  SELL_1_5
+ E  PROD_2_5
+ L  SELL_2_5
+ E  PROD_3_5
+ L  SELL_3_5
+ E  PROD_4_5
+ L  SELL_4_5
+ E  PROD_5_5
+ L  SELL_5_5
+ E  PROD_6_5
+ L  SELL_6_5
+ E  PROD_7_5
+ L  SELL_7_5
+ E  PROD_8_5
+ L  SELL_8_5
+ E  PROD_9_5
+ L  SELL_9_5
+ E  PROD_10_5
+ L  SELL_10_5
+ E  PROD_11_5
+ L  SELL_11_5
+ L  SPEC_0_5
+ L  SPEC_1_5
+ L  SPEC_2_5
+ L  SPEC_3_5
+ L  CRUDE_0_6
+ L  CRUDE_1_6
+ L  CRUDE_2_6
+ L  CRUDE_3_6
+ L  CRUDE_4_6
+ L  CRUDE_5_6
+ L  CRUDE_6_6
+ L  CRUDE_7_6
+ L  CRUDE_8_6
+ L  CRUDE_9_6
+ L  CRUDE_10_6
+ L  CRUDE_11_6
+ L  CRUDE_12_6
+ L  CRUDE_13_6
+ L  CRUDE_14_6
+ L  CDU_6
+ E  PROD_0_6
+ L  SELL_0_6
+ E  PROD_1_6
+ L  SELL_1_6
+ E  PROD_2_6
+ L  SELL_2_6
+ E  PROD_3_6
+ L  SELL_3_6
+ E  PROD_4_6
+ L  SELL_4_6
+ E  PROD_5_6
+ L  SELL_5_6
+ E  PROD_6_6
+ L  SELL_6_6
+ E  PROD_7_6
+ L  SELL_7_6
+ E  PROD_8_6
+ L  SELL_8_6
+ E  PROD_9_6
+ L  SELL_9_6
+ E  PROD_10_6
+ L  SELL_10_6
+ E  PROD_11_6
+ L  SELL_11_6
+ L  SPEC_0_6
+ L  SPEC_1_6
+ L  SPEC_2_6
+ L  SPEC_3_6
+ L  CRUDE_0_7
+ L  CRUDE_1_7
+ L  CRUDE_2_7
+ L  CRUDE_3_7
+ L  CRUDE_4_7
+ L  CRUDE_5_7
+ L  CRUDE_6_7
+ L  CRUDE_7_7
+ L  CRUDE_8_7
+ L  CRUDE_9_7
+ L  CRUDE_10_7
+ L  CRUDE_11_7
+ L  CRUDE_12_7
+ L  CRUDE_13_7
+ L  CRUDE_14_7
+ L  CDU_7
+ E  PROD_0_7
+ L  SELL_0_7
+ E  PROD_1_7
+ L  SELL_1_7
+ E  PROD_2_7
+ L  SELL_2_7
+ E  PROD_3_7
+ L  SELL_3_7
+ E  PROD_4_7
+ L  SELL_4_7
+ E  PROD_5_7
+ L  SELL_5_7
+ E  PROD_6_7
+ L  SELL_6_7
+ E  PROD_7_7
+ L  SELL_7_7
+ E  PROD_8_7
+ L  SELL_8_7
+ E  PROD_9_7
+ L  SELL_9_7
+ E  PROD_10_7
+ L  SELL_10_7
+ E  PROD_11_7
+ L  SELL_11_7
+ L  SPEC_0_7
+ L  SPEC_1_7
+ L  SPEC_2_7
+ L  SPEC_3_7
+ L  CRUDE_0_8
+ L  CRUDE_1_8
+ L  CRUDE_2_8
+ L  CRUDE_3_8
+ L  CRUDE_4_8
+ L  CRUDE_5_8
+ L  CRUDE_6_8
+ L  CRUDE_7_8
+ L  CRUDE_8_8
+ L  CRUDE_9_8
+ L  CRUDE_10_8
+ L  CRUDE_11_8
+ L  CRUDE_12_8
+ L  CRUDE_13_8
+ L  CRUDE_14_8
+ L  CDU_8
+ E  PROD_0_8
+ L  SELL_0_8
+ E  PROD_1_8
+ L  SELL_1_8
+ E  PROD_2_8
+ L  SELL_2_8
+ E  PROD_3_8
+ L  SELL_3_8
+ E  PROD_4_8
+ L  SELL_4_8
+ E  PROD_5_8
+ L  SELL_5_8
+ E  PROD_6_8
+ L  SELL_6_8
+ E  PROD_7_8
+ L  SELL_7_8
+ E  PROD_8_8
+ L  SELL_8_8
+ E  PROD_9_8
+ L  SELL_9_8
+ E  PROD_10_8
+ L  SELL_10_8
+ E  PROD_11_8
+ L  SELL_11_8
+ L  SPEC_0_8
+ L  SPEC_1_8
+ L  SPEC_2_8
+ L  SPEC_3_8
+ L  CRUDE_0_9
+ L  CRUDE_1_9
+ L  CRUDE_2_9
+ L  CRUDE_3_9
+ L  CRUDE_4_9
+ L  CRUDE_5_9
+ L  CRUDE_6_9
+ L  CRUDE_7_9
+ L  CRUDE_8_9
+ L  CRUDE_9_9
+ L  CRUDE_10_9
+ L  CRUDE_11_9
+ L  CRUDE_12_9
+ L  CRUDE_13_9
+ L  CRUDE_14_9
+ L  CDU_9
+ E  PROD_0_9
+ L  SELL_0_9
+ E  PROD_1_9
+ L  SELL_1_9
+ E  PROD_2_9
+ L  SELL_2_9
+ E  PROD_3_9
+ L  SELL_3_9
+ E  PROD_4_9
+ L  SELL_4_9
+ E  PROD_5_9
+ L  SELL_5_9
+ E  PROD_6_9
+ L  SELL_6_9
+ E  PROD_7_9
+ L  SELL_7_9
+ E  PROD_8_9
+ L  SELL_8_9
+ E  PROD_9_9
+ L  SELL_9_9
+ E  PROD_10_9
+ L  SELL_10_9
+ E  PROD_11_9
+ L  SELL_11_9
+ L  SPEC_0_9
+ L  SPEC_1_9
+ L  SPEC_2_9
+ L  SPEC_3_9
+ L  CRUDE_0_10
+ L  CRUDE_1_10
+ L  CRUDE_2_10
+ L  CRUDE_3_10
+ L  CRUDE_4_10
+ L  CRUDE_5_10
+ L  CRUDE_6_10
+ L  CRUDE_7_10
+ L  CRUDE_8_10
+ L  CRUDE_9_10
+ L  CRUDE_10_10
+ L  CRUDE_11_10
+ L  CRUDE_12_10
+ L  CRUDE_13_10
+ L  CRUDE_14_10
+ L  CDU_10
+ E  PROD_0_10
+ L  SELL_0_10
+ E  PROD_1_10
+ L  SELL_1_10
+ E  PROD_2_10
+ L  SELL_2_10
+ E  PROD_3_10
+ L  SELL_3_10
+ E  PROD_4_10
+ L  SELL_4_10
+ E  PROD_5_10
+ L  SELL_5_10
+ E  PROD_6_10
+ L  SELL_6_10
+ E  PROD_7_10
+ L  SELL_7_10
+ E  PROD_8_10
+ L  SELL_8_10
+ E  PROD_9_10
+ L  SELL_9_10
+ E  PROD_10_10
+ L  SELL_10_10
+ E  PROD_11_10
+ L  SELL_11_10
+ L  SPEC_0_10
+ L  SPEC_1_10
+ L  SPEC_2_10
+ L  SPEC_3_10
+ L  CRUDE_0_11
+ L  CRUDE_1_11
+ L  CRUDE_2_11
+ L  CRUDE_3_11
+ L  CRUDE_4_11
+ L  CRUDE_5_11
+ L  CRUDE_6_11
+ L  CRUDE_7_11
+ L  CRUDE_8_11
+ L  CRUDE_9_11
+ L  CRUDE_10_11
+ L  CRUDE_11_11
+ L  CRUDE_12_11
+ L  CRUDE_13_11
+ L  CRUDE_14_11
+ L  CDU_11
+ E  PROD_0_11
+ L  SELL_0_11
+ E  PROD_1_11
+ L  SELL_1_11
+ E  PROD_2_11
+ L  SELL_2_11
+ E  PROD_3_11
+ L  SELL_3_11
+ E  PROD_4_11
+ L  SELL_4_11
+ E  PROD_5_11
+ L  SELL_5_11
+ E  PROD_6_11
+ L  SELL_6_11
+ E  PROD_7_11
+ L  SELL_7_11
+ E  PROD_8_11
+ L  SELL_8_11
+ E  PROD_9_11
+ L  SELL_9_11
+ E  PROD_10_11
+ L  SELL_10_11
+ E  PROD_11_11
+ L  SELL_11_11
+ L  SPEC_0_11
+ L  SPEC_1_11
+ L  SPEC_2_11
+ L  SPEC_3_11
+ L  CRUDE_0_12
+ L  CRUDE_1_12
+ L  CRUDE_2_12
+ L  CRUDE_3_12
+ L  CRUDE_4_12
+ L  CRUDE_5_12
+ L  CRUDE_6_12
+ L  CRUDE_7_12
+ L  CRUDE_8_12
+ L  CRUDE_9_12
+ L  CRUDE_10_12
+ L  CRUDE_11_12
+ L  CRUDE_12_12
+ L  CRUDE_13_12
+ L  CRUDE_14_12
+ L  CDU_12
+ E  PROD_0_12
+ L  SELL_0_12
+ E  PROD_1_12
+ L  SELL_1_12
+ E  PROD_2_12
+ L  SELL_2_12
+ E  PROD_3_12
+ L  SELL_3_12
+ E  PROD_4_12
+ L  SELL_4_12
+ E  PROD_5_12
+ L  SELL_5_12
+ E  PROD_6_12
+ L  SELL_6_12
+ E  PROD_7_12
+ L  SELL_7_12
+ E  PROD_8_12
+ L  SELL_8_12
+ E  PROD_9_12
+ L  SELL_9_12
+ E  PROD_10_12
+ L  SELL_10_12
+ E  PROD_11_12
+ L  SELL_11_12
+ L  SPEC_0_12
+ L  SPEC_1_12
+ L  SPEC_2_12
+ L  SPEC_3_12
+ L  CRUDE_0_13
+ L  CRUDE_1_13
+ L  CRUDE_2_13
+ L  CRUDE_3_13
+ L  CRUDE_4_13
+ L  CRUDE_5_13
+ L  CRUDE_6_13
+ L  CRUDE_7_13
+ L  CRUDE_8_13
+ L  CRUDE_9_13
+ L  CRUDE_10_13
+ L  CRUDE_11_13
+ L  CRUDE_12_13
+ L  CRUDE_13_13
+ L  CRUDE_14_13
+ L  CDU_13
+ E  PROD_0_13
+ L  SELL_0_13
+ E  PROD_1_13
+ L  SELL_1_13
+ E  PROD_2_13
+ L  SELL_2_13
+ E  PROD_3_13
+ L  SELL_3_13
+ E  PROD_4_13
+ L  SELL_4_13
+ E  PROD_5_13
+ L  SELL_5_13
+ E  PROD_6_13
+ L  SELL_6_13
+ E  PROD_7_13
+ L  SELL_7_13
+ E  PROD_8_13
+ L  SELL_8_13
+ E  PROD_9_13
+ L  SELL_9_13
+ E  PROD_10_13
+ L  SELL_10_13
+ E  PROD_11_13
+ L  SELL_11_13
+ L  SPEC_0_13
+ L  SPEC_1_13
+ L  SPEC_2_13
+ L  SPEC_3_13
+ L  CRUDE_0_14
+ L  CRUDE_1_14
+ L  CRUDE_2_14
+ L  CRUDE_3_14
+ L  CRUDE_4_14
+ L  CRUDE_5_14
+ L  CRUDE_6_14
+ L  CRUDE_7_14
+ L  CRUDE_8_14
+ L  CRUDE_9_14
+ L  CRUDE_10_14
+ L  CRUDE_11_14
+ L  CRUDE_12_14
+ L  CRUDE_13_14
+ L  CRUDE_14_14
+ L  CDU_14
+ E  PROD_0_14
+ L  SELL_0_14
+ E  PROD_1_14
+ L  SELL_1_14
+ E  PROD_2_14
+ L  SELL_2_14
+ E  PROD_3_14
+ L  SELL_3_14
+ E  PROD_4_14
+ L  SELL_4_14
+ E  PROD_5_14
+ L  SELL_5_14
+ E  PROD_6_14
+ L  SELL_6_14
+ E  PROD_7_14
+ L  SELL_7_14
+ E  PROD_8_14
+ L  SELL_8_14
+ E  PROD_9_14
+ L  SELL_9_14
+ E  PROD_10_14
+ L  SELL_10_14
+ E  PROD_11_14
+ L  SELL_11_14
+ L  SPEC_0_14
+ L  SPEC_1_14
+ L  SPEC_2_14
+ L  SPEC_3_14
+ L  CRUDE_0_15
+ L  CRUDE_1_15
+ L  CRUDE_2_15
+ L  CRUDE_3_15
+ L  CRUDE_4_15
+ L  CRUDE_5_15
+ L  CRUDE_6_15
+ L  CRUDE_7_15
+ L  CRUDE_8_15
+ L  CRUDE_9_15
+ L  CRUDE_10_15
+ L  CRUDE_11_15
+ L  CRUDE_12_15
+ L  CRUDE_13_15
+ L  CRUDE_14_15
+ L  CDU_15
+ E  PROD_0_15
+ L  SELL_0_15
+ E  PROD_1_15
+ L  SELL_1_15
+ E  PROD_2_15
+ L  SELL_2_15
+ E  PROD_3_15
+ L  SELL_3_15
+ E  PROD_4_15
+ L  SELL_4_15
+ E  PROD_5_15
+ L  SELL_5_15
+ E  PROD_6_15
+ L  SELL_6_15
+ E  PROD_7_15
+ L  SELL_7_15
+ E  PROD_8_15
+ L  SELL_8_15
+ E  PROD_9_15
+ L  SELL_9_15
+ E  PROD_10_15
+ L  SELL_10_15
+ E  PROD_11_15
+ L  SELL_11_15
+ L  SPEC_0_15
+ L  SPEC_1_15
+ L  SPEC_2_15
+ L  SPEC_3_15
+ L  CRUDE_0_16
+ L  CRUDE_1_16
+ L  CRUDE_2_16
+ L  CRUDE_3_16
+ L  CRUDE_4_16
+ L  CRUDE_5_16
+ L  CRUDE_6_16
+ L  CRUDE_7_16
+ L  CRUDE_8_16
+ L  CRUDE_9_16
+ L  CRUDE_10_16
+ L  CRUDE_11_16
+ L  CRUDE_12_16
+ L  CRUDE_13_16
+ L  CRUDE_14_16
+ L  CDU_16
+ E  PROD_0_16
+ L  SELL_0_16
+ E  PROD_1_16
+ L  SELL_1_16
+ E  PROD_2_16
+ L  SELL_2_16
+ E  PROD_3_16
+ L  SELL_3_16
+ E  PROD_4_16
+ L  SELL_4_16
+ E  PROD_5_16
+ L  SELL_5_16
+ E  PROD_6_16
+ L  SELL_6_16
+ E  PROD_7_16
+ L  SELL_7_16
+ E  PROD_8_16
+ L  SELL_8_16
+ E  PROD_9_16
+ L  SELL_9_16
+ E  PROD_10_16
+ L  SELL_10_16
+ E  PROD_11_16
+ L  SELL_11_16
+ L  SPEC_0_16
+ L  SPEC_1_16
+ L  SPEC_2_16
+ L  SPEC_3_16
+ L  CRUDE_0_17
+ L  CRUDE_1_17
+ L  CRUDE_2_17
+ L  CRUDE_3_17
+ L  CRUDE_4_17
+ L  CRUDE_5_17
+ L  CRUDE_6_17
+ L  CRUDE_7_17
+ L  CRUDE_8_17
+ L  CRUDE_9_17
+ L  CRUDE_10_17
+ L  CRUDE_11_17
+ L  CRUDE_12_17
+ L  CRUDE_13_17
+ L  CRUDE_14_17
+ L  CDU_17
+ E  PROD_0_17
+ L  SELL_0_17
+ E  PROD_1_17
+ L  SELL_1_17
+ E  PROD_2_17
+ L  SELL_2_17
+ E  PROD_3_17
+ L  SELL_3_17
+ E  PROD_4_17
+ L  SELL_4_17
+ E  PROD_5_17
+ L  SELL_5_17
+ E  PROD_6_17
+ L  SELL_6_17
+ E  PROD_7_17
+ L  SELL_7_17
+ E  PROD_8_17
+ L  SELL_8_17
+ E  PROD_9_17
+ L  SELL_9_17
+ E  PROD_10_17
+ L  SELL_10_17
+ E  PROD_11_17
+ L  SELL_11_17
+ L  SPEC_0_17
+ L  SPEC_1_17
+ L  SPEC_2_17
+ L  SPEC_3_17
+ L  CRUDE_0_18
+ L  CRUDE_1_18
+ L  CRUDE_2_18
+ L  CRUDE_3_18
+ L  CRUDE_4_18
+ L  CRUDE_5_18
+ L  CRUDE_6_18
+ L  CRUDE_7_18
+ L  CRUDE_8_18
+ L  CRUDE_9_18
+ L  CRUDE_10_18
+ L  CRUDE_11_18
+ L  CRUDE_12_18
+ L  CRUDE_13_18
+ L  CRUDE_14_18
+ L  CDU_18
+ E  PROD_0_18
+ L  SELL_0_18
+ E  PROD_1_18
+ L  SELL_1_18
+ E  PROD_2_18
+ L  SELL_2_18
+ E  PROD_3_18
+ L  SELL_3_18
+ E  PROD_4_18
+ L  SELL_4_18
+ E  PROD_5_18
+ L  SELL_5_18
+ E  PROD_6_18
+ L  SELL_6_18
+ E  PROD_7_18
+ L  SELL_7_18
+ E  PROD_8_18
+ L  SELL_8_18
+ E  PROD_9_18
+ L  SELL_9_18
+ E  PROD_10_18
+ L  SELL_10_18
+ E  PROD_11_18
+ L  SELL_11_18
+ L  SPEC_0_18
+ L  SPEC_1_18
+ L  SPEC_2_18
+ L  SPEC_3_18
+ L  CRUDE_0_19
+ L  CRUDE_1_19
+ L  CRUDE_2_19
+ L  CRUDE_3_19
+ L  CRUDE_4_19
+ L  CRUDE_5_19
+ L  CRUDE_6_19
+ L  CRUDE_7_19
+ L  CRUDE_8_19
+ L  CRUDE_9_19
+ L  CRUDE_10_19
+ L  CRUDE_11_19
+ L  CRUDE_12_19
+ L  CRUDE_13_19
+ L  CRUDE_14_19
+ L  CDU_19
+ E  PROD_0_19
+ L  SELL_0_19
+ E  PROD_1_19
+ L  SELL_1_19
+ E  PROD_2_19
+ L  SELL_2_19
+ E  PROD_3_19
+ L  SELL_3_19
+ E  PROD_4_19
+ L  SELL_4_19
+ E  PROD_5_19
+ L  SELL_5_19
+ E  PROD_6_19
+ L  SELL_6_19
+ E  PROD_7_19
+ L  SELL_7_19
+ E  PROD_8_19
+ L  SELL_8_19
+ E  PROD_9_19
+ L  SELL_9_19
+ E  PROD_10_19
+ L  SELL_10_19
+ E  PROD_11_19
+ L  SELL_11_19
+ L  SPEC_0_19
+ L  SPEC_1_19
+ L  SPEC_2_19
+ L  SPEC_3_19
+COLUMNS
+    BUY_0  CRUDE_0_0  -1
+    BUY_0  CRUDE_0_1  -1
+    BUY_0  CRUDE_0_2  -1
+    BUY_0  CRUDE_0_3  -1
+    BUY_0  CRUDE_0_4  -1
+    BUY_0  CRUDE_0_5  -1
+    BUY_0  CRUDE_0_6  -1
+    BUY_0  CRUDE_0_7  -1
+    BUY_0  CRUDE_0_8  -1
+    BUY_0  CRUDE_0_9  -1
+    BUY_0  CRUDE_0_10  -1
+    BUY_0  CRUDE_0_11  -1
+    BUY_0  CRUDE_0_12  -1
+    BUY_0  CRUDE_0_13  -1
+    BUY_0  CRUDE_0_14  -1
+    BUY_0  CRUDE_0_15  -1
+    BUY_0  CRUDE_0_16  -1
+    BUY_0  CRUDE_0_17  -1
+    BUY_0  CRUDE_0_18  -1
+    BUY_0  CRUDE_0_19  -1
+    BUY_1  COST  3
+    BUY_1  CRUDE_1_0  -1
+    BUY_1  CRUDE_1_1  -1
+    BUY_1  CRUDE_1_2  -1
+    BUY_1  CRUDE_1_3  -1
+    BUY_1  CRUDE_1_4  -1
+    BUY_1  CRUDE_1_5  -1
+    BUY_1  CRUDE_1_6  -1
+    BUY_1  CRUDE_1_7  -1
+    BUY_1  CRUDE_1_8  -1
+    BUY_1  CRUDE_1_9  -1
+    BUY_1  CRUDE_1_10  -1
+    BUY_1  CRUDE_1_11  -1
+    BUY_1  CRUDE_1_12  -1
+    BUY_1  CRUDE_1_13  -1
+    BUY_1  CRUDE_1_14  -1
+    BUY_1  CRUDE_1_15  -1
+    BUY_1  CRUDE_1_16  -1
+    BUY_1  CRUDE_1_17  -1
+    BUY_1  CRUDE_1_18  -1
+    BUY_1  CRUDE_1_19  -1
+    BUY_2  CRUDE_2_0  -1
+    BUY_2  CRUDE_2_1  -1
+    BUY_2  CRUDE_2_2  -1
+    BUY_2  CRUDE_2_3  -1
+    BUY_2  CRUDE_2_4  -1
+    BUY_2  CRUDE_2_5  -1
+    BUY_2  CRUDE_2_6  -1
+    BUY_2  CRUDE_2_7  -1
+    BUY_2  CRUDE_2_8  -1
+    BUY_2  CRUDE_2_9  -1
+    BUY_2  CRUDE_2_10  -1
+    BUY_2  CRUDE_2_11  -1
+    BUY_2  CRUDE_2_12  -1
+    BUY_2  CRUDE_2_13  -1
+    BUY_2  CRUDE_2_14  -1
+    BUY_2  CRUDE_2_15  -1
+    BUY_2  CRUDE_2_16  -1
+    BUY_2  CRUDE_2_17  -1
+    BUY_2  CRUDE_2_18  -1
+    BUY_2  CRUDE_2_19  -1
+    BUY_3  COST  10
+    BUY_3  CRUDE_3_0  -1
+    BUY_3  CRUDE_3_1  -1
+    BUY_3  CRUDE_3_2  -1
+    BUY_3  CRUDE_3_3  -1
+    BUY_3  CRUDE_3_4  -1
+    BUY_3  CRUDE_3_5  -1
+    BUY_3  CRUDE_3_6  -1
+    BUY_3  CRUDE_3_7  -1
+    BUY_3  CRUDE_3_8  -1
+    BUY_3  CRUDE_3_9  -1
+    BUY_3  CRUDE_3_10  -1
+    BUY_3  CRUDE_3_11  -1
+    BUY_3  CRUDE_3_12  -1
+    BUY_3  CRUDE_3_13  -1
+    BUY_3  CRUDE_3_14  -1
+    BUY_3  CRUDE_3_15  -1
+    BUY_3  CRUDE_3_16  -1
+    BUY_3  CRUDE_3_17  -1
+    BUY_3  CRUDE_3_18  -1
+    BUY_3  CRUDE_3_19  -1
+    BUY_4  CRUDE_4_0  -1
+    BUY_4  CRUDE_4_1  -1
+    BUY_4  CRUDE_4_2  -1
+    BUY_4  CRUDE_4_3  -1
+    BUY_4  CRUDE_4_4  -1
+    BUY_4  CRUDE_4_5  -1
+    BUY_4  CRUDE_4_6  -1
+    BUY_4  CRUDE_4_7  -1
+    BUY_4  CRUDE_4_8  -1
+    BUY_4  CRUDE_4_9  -1
+    BUY_4  CRUDE_4_10  -1
+    BUY_4  CRUDE_4_11  -1
+    BUY_4  CRUDE_4_12  -1
+    BUY_4  CRUDE_4_13  -1
+    BUY_4  CRUDE_4_14  -1
+    BUY_4  CRUDE_4_15  -1
+    BUY_4  CRUDE_4_16  -1
+    BUY_4  CRUDE_4_17  -1
+    BUY_4  CRUDE_4_18  -1
+    BUY_4  CRUDE_4_19  -1
+    BUY_5  CRUDE_5_0  -1
+    BUY_5  CRUDE_5_1  -1
+    BUY_5  CRUDE_5_2  -1
+    BUY_5  CRUDE_5_3  -1
+    BUY_5  CRUDE_5_4  -1
+    BUY_5  CRUDE_5_5  -1
+    BUY_5  CRUDE_5_6  -1
+    BUY_5  CRUDE_5_7  -1
+    BUY_5  CRUDE_5_8  -1
+    BUY_5  CRUDE_5_9  -1
+    BUY_5  CRUDE_5_10  -1
+    BUY_5  CRUDE_5_11  -1
+    BUY_5  CRUDE_5_12  -1
+    BUY_5  CRUDE_5_13  -1
+    BUY_5  CRUDE_5_14  -1
+    BUY_5  CRUDE_5_15  -1
+    BUY_5  CRUDE_5_16  -1
+    BUY_5  CRUDE_5_17  -1
+    BUY_5  CRUDE_5_18  -1
+    BUY_5  CRUDE_5_19  -1
+    BUY_6  CRUDE_6_0  -1
+    BUY_6  CRUDE_6_1  -1
+    BUY_6  CRUDE_6_2  -1
+    BUY_6  CRUDE_6_3  -1
+    BUY_6  CRUDE_6_4  -1
+    BUY_6  CRUDE_6_5  -1
+    BUY_6  CRUDE_6_6  -1
+    BUY_6  CRUDE_6_7  -1
+    BUY_6  CRUDE_6_8  -1
+    BUY_6  CRUDE_6_9  -1
+    BUY_6  CRUDE_6_10  -1
+    BUY_6  CRUDE_6_11  -1
+    BUY_6  CRUDE_6_12  -1
+    BUY_6  CRUDE_6_13  -1
+    BUY_6  CRUDE_6_14  -1
+    BUY_6  CRUDE_6_15  -1
+    BUY_6  CRUDE_6_16  -1
+    BUY_6  CRUDE_6_17  -1
+    BUY_6  CRUDE_6_18  -1
+    BUY_6  CRUDE_6_19  -1
+    BUY_7  CRUDE_7_0  -1
+    BUY_7  CRUDE_7_1  -1
+    BUY_7  CRUDE_7_2  -1
+    BUY_7  CRUDE_7_3  -1
+    BUY_7  CRUDE_7_4  -1
+    BUY_7  CRUDE_7_5  -1
+    BUY_7  CRUDE_7_6  -1
+    BUY_7  CRUDE_7_7  -1
+    BUY_7  CRUDE_7_8  -1
+    BUY_7  CRUDE_7_9  -1
+    BUY_7  CRUDE_7_10  -1
+    BUY_7  CRUDE_7_11  -1
+    BUY_7  CRUDE_7_12  -1
+    BUY_7  CRUDE_7_13  -1
+    BUY_7  CRUDE_7_14  -1
+    BUY_7  CRUDE_7_15  -1
+    BUY_7  CRUDE_7_16  -1
+    BUY_7  CRUDE_7_17  -1
+    BUY_7  CRUDE_7_18  -1
+    BUY_7  CRUDE_7_19  -1
+    BUY_8  COST  9
+    BUY_8  CRUDE_8_0  -1
+    BUY_8  CRUDE_8_1  -1
+    BUY_8  CRUDE_8_2  -1
+    BUY_8  CRUDE_8_3  -1
+    BUY_8  CRUDE_8_4  -1
+    BUY_8  CRUDE_8_5  -1
+    BUY_8  CRUDE_8_6  -1
+    BUY_8  CRUDE_8_7  -1
+    BUY_8  CRUDE_8_8  -1
+    BUY_8  CRUDE_8_9  -1
+    BUY_8  CRUDE_8_10  -1
+    BUY_8  CRUDE_8_11  -1
+    BUY_8  CRUDE_8_12  -1
+    BUY_8  CRUDE_8_13  -1
+    BUY_8  CRUDE_8_14  -1
+    BUY_8  CRUDE_8_15  -1
+    BUY_8  CRUDE_8_16  -1
+    BUY_8  CRUDE_8_17  -1
+    BUY_8  CRUDE_8_18  -1
+    BUY_8  CRUDE_8_19  -1
+    BUY_9  COST  38
+    BUY_9  CRUDE_9_0  -1
+    BUY_9  CRUDE_9_1  -1
+    BUY_9  CRUDE_9_2  -1
+    BUY_9  CRUDE_9_3  -1
+    BUY_9  CRUDE_9_4  -1
+    BUY_9  CRUDE_9_5  -1
+    BUY_9  CRUDE_9_6  -1
+    BUY_9  CRUDE_9_7  -1
+    BUY_9  CRUDE_9_8  -1
+    BUY_9  CRUDE_9_9  -1
+    BUY_9  CRUDE_9_10  -1
+    BUY_9  CRUDE_9_11  -1
+    BUY_9  CRUDE_9_12  -1
+    BUY_9  CRUDE_9_13  -1
+    BUY_9  CRUDE_9_14  -1
+    BUY_9  CRUDE_9_15  -1
+    BUY_9  CRUDE_9_16  -1
+    BUY_9  CRUDE_9_17  -1
+    BUY_9  CRUDE_9_18  -1
+    BUY_9  CRUDE_9_19  -1
+    BUY_10  COST  11
+    BUY_10  CRUDE_10_0  -1
+    BUY_10  CRUDE_10_1  -1
+    BUY_10  CRUDE_10_2  -1
+    BUY_10  CRUDE_10_3  -1
+    BUY_10  CRUDE_10_4  -1
+    BUY_10  CRUDE_10_5  -1
+    BUY_10  CRUDE_10_6  -1
+    BUY_10  CRUDE_10_7  -1
+    BUY_10  CRUDE_10_8  -1
+    BUY_10  CRUDE_10_9  -1
+    BUY_10  CRUDE_10_10  -1
+    BUY_10  CRUDE_10_11  -1
+    BUY_10  CRUDE_10_12  -1
+    BUY_10  CRUDE_10_13  -1
+    BUY_10  CRUDE_10_14  -1
+    BUY_10  CRUDE_10_15  -1
+    BUY_10  CRUDE_10_16  -1
+    BUY_10  CRUDE_10_17  -1
+    BUY_10  CRUDE_10_18  -1
+    BUY_10  CRUDE_10_19  -1
+    BUY_11  CRUDE_11_0  -1
+    BUY_11  CRUDE_11_1  -1
+    BUY_11  CRUDE_11_2  -1
+    BUY_11  CRUDE_11_3  -1
+    BUY_11  CRUDE_11_4  -1
+    BUY_11  CRUDE_11_5  -1
+    BUY_11  CRUDE_11_6  -1
+    BUY_11  CRUDE_11_7  -1
+    BUY_11  CRUDE_11_8  -1
+    BUY_11  CRUDE_11_9  -1
+    BUY_11  CRUDE_11_10  -1
+    BUY_11  CRUDE_11_11  -1
+    BUY_11  CRUDE_11_12  -1
+    BUY_11  CRUDE_11_13  -1
+    BUY_11  CRUDE_11_14  -1
+    BUY_11  CRUDE_11_15  -1
+    BUY_11  CRUDE_11_16  -1
+    BUY_11  CRUDE_11_17  -1
+    BUY_11  CRUDE_11_18  -1
+    BUY_11  CRUDE_11_19  -1
+    BUY_12  CRUDE_12_0  -1
+    BUY_12  CRUDE_12_1  -1
+    BUY_12  CRUDE_12_2  -1
+    BUY_12  CRUDE_12_3  -1
+    BUY_12  CRUDE_12_4  -1
+    BUY_12  CRUDE_12_5  -1
+    BUY_12  CRUDE_12_6  -1
+    BUY_12  CRUDE_12_7  -1
+    BUY_12  CRUDE_12_8  -1
+    BUY_12  CRUDE_12_9  -1
+    BUY_12  CRUDE_12_10  -1
+    BUY_12  CRUDE_12_11  -1
+    BUY_12  CRUDE_12_12  -1
+    BUY_12  CRUDE_12_13  -1
+    BUY_12  CRUDE_12_14  -1
+    BUY_12  CRUDE_12_15  -1
+    BUY_12  CRUDE_12_16  -1
+    BUY_12  CRUDE_12_17  -1
+    BUY_12  CRUDE_12_18  -1
+    BUY_12  CRUDE_12_19  -1
+    BUY_13  COST  6
+    BUY_13  CRUDE_13_0  -1
+    BUY_13  CRUDE_13_1  -1
+    BUY_13  CRUDE_13_2  -1
+    BUY_13  CRUDE_13_3  -1
+    BUY_13  CRUDE_13_4  -1
+    BUY_13  CRUDE_13_5  -1
+    BUY_13  CRUDE_13_6  -1
+    BUY_13  CRUDE_13_7  -1
+    BUY_13  CRUDE_13_8  -1
+    BUY_13  CRUDE_13_9  -1
+    BUY_13  CRUDE_13_10  -1
+    BUY_13  CRUDE_13_11  -1
+    BUY_13  CRUDE_13_12  -1
+    BUY_13  CRUDE_13_13  -1
+    BUY_13  CRUDE_13_14  -1
+    BUY_13  CRUDE_13_15  -1
+    BUY_13  CRUDE_13_16  -1
+    BUY_13  CRUDE_13_17  -1
+    BUY_13  CRUDE_13_18  -1
+    BUY_13  CRUDE_13_19  -1
+    BUY_14  CRUDE_14_0  -1
+    BUY_14  CRUDE_14_1  -1
+    BUY_14  CRUDE_14_2  -1
+    BUY_14  CRUDE_14_3  -1
+    BUY_14  CRUDE_14_4  -1
+    BUY_14  CRUDE_14_5  -1
+    BUY_14  CRUDE_14_6  -1
+    BUY_14  CRUDE_14_7  -1
+    BUY_14  CRUDE_14_8  -1
+    BUY_14  CRUDE_14_9  -1
+    BUY_14  CRUDE_14_10  -1
+    BUY_14  CRUDE_14_11  -1
+    BUY_14  CRUDE_14_12  -1
+    BUY_14  CRUDE_14_13  -1
+    BUY_14  CRUDE_14_14  -1
+    BUY_14  CRUDE_14_15  -1
+    BUY_14  CRUDE_14_16  -1
+    BUY_14  CRUDE_14_17  -1
+    BUY_14  CRUDE_14_18  -1
+    BUY_14  CRUDE_14_19  -1
+    RUN_0_0  COST  -8.824
+    RUN_0_0  CRUDE_0_0  1
+    RUN_0_0  CDU_0  1
+    RUN_0_0  PROD_0_0  -0.04
+    RUN_0_0  PROD_1_0  -0.18
+    RUN_0_0  PROD_2_0  -0.27
+    RUN_0_0  PROD_3_0  -0.25
+    RUN_0_0  PROD_4_0  -0.24
+    RUN_0_0  PROD_5_0  -0.02
+    RUN_0_0  PROD_6_0  -0.08
+    RUN_0_0  PROD_7_0  -0.03
+    RUN_0_0  PROD_8_0  -0.15
+    RUN_0_0  PROD_9_0  -0.24
+    RUN_0_0  PROD_10_0  -0.14
+    RUN_0_0  PROD_11_0  -0.15
+    RUN_0_0  SPEC_0_0  0.047
+    RUN_0_0  SPEC_1_0  0.026
+    RUN_0_0  SPEC_2_0  0.014
+    RUN_1_0  COST  -15.167
+    RUN_1_0  CRUDE_1_0  1
+    RUN_1_0  CDU_0  1
+    RUN_1_0  PROD_0_0  -0.2
+    RUN_1_0  PROD_1_0  -0.12
+    RUN_1_0  PROD_2_0  -0.25
+    RUN_1_0  PROD_3_0  -0.06
+    RUN_1_0  PROD_4_0  -0.03
+    RUN_1_0  PROD_5_0  -0.15
+    RUN_1_0  PROD_7_0  -0.28
+    RUN_1_0  PROD_8_0  -0.26
+    RUN_1_0  PROD_9_0  -0.12
+    RUN_1_0  PROD_10_0  -0.13
+    RUN_1_0  PROD_11_0  -0.19
+    RUN_1_0  SPEC_0_0  0.032
+    RUN_1_0  SPEC_1_0  0.031
+    RUN_1_0  SPEC_2_0  0.04
+    RUN_1_0  SPEC_3_0  0.048
+    RUN_2_0  COST  -17.617
+    RUN_2_0  CRUDE_2_0  1
+    RUN_2_0  CDU_0  1
+    RUN_2_0  PROD_0_0  -0.24
+    RUN_2_0  PROD_1_0  -0.24
+    RUN_2_0  PROD_3_0  -0.22
+    RUN_2_0  PROD_4_0  -0.14
+    RUN_2_0  PROD_5_0  -0.08
+    RUN_2_0  PROD_6_0  -0.23
+    RUN_2_0  PROD_7_0  -0.25
+    RUN_2_0  PROD_8_0  -0.07
+    RUN_2_0  PROD_9_0  -0.18
+    RUN_2_0  PROD_10_0  -0.3
+    RUN_2_0  PROD_11_0  -0.03
+    RUN_2_0  SPEC_0_0  0.008
+    RUN_2_0  SPEC_1_0  0.022
+    RUN_2_0  SPEC_2_0  0.011
+    RUN_2_0  SPEC_3_0  0.048
+    RUN_3_0  COST  -13.877
+    RUN_3_0  CRUDE_3_0  1
+    RUN_3_0  CDU_0  1
+    RUN_3_0  PROD_0_0  -0.28
+    RUN_3_0  PROD_1_0  -0.1
+    RUN_3_0  PROD_5_0  -0.2
+    RUN_3_0  PROD_6_0  -0.17
+    RUN_3_0  PROD_8_0  -0.3
+    RUN_3_0  PROD_9_0  -0.28
+    RUN_3_0  PROD_10_0  -0.12
+    RUN_3_0  PROD_11_0  -0.21
+    RUN_3_0  SPEC_0_0  0.033
+    RUN_3_0  SPEC_1_0  0.026
+    RUN_3_0  SPEC_2_0  0.035
+    RUN_3_0  SPEC_3_0  0.017
+    RUN_4_0  COST  -11.775
+    RUN_4_0  CRUDE_4_0  1
+    RUN_4_0  CDU_0  1
+    RUN_4_0  PROD_0_0  -0.06
+    RUN_4_0  PROD_1_0  -0.13
+    RUN_4_0  PROD_2_0  -0.23
+    RUN_4_0  PROD_4_0  -0.16
+    RUN_4_0  PROD_5_0  -0.07
+    RUN_4_0  PROD_6_0  -0.24
+    RUN_4_0  PROD_7_0  -0.14
+    RUN_4_0  PROD_8_0  -0.3
+    RUN_4_0  PROD_9_0  -0.15
+    RUN_4_0  PROD_10_0  -0.17
+    RUN_4_0  PROD_11_0  -0.07
+    RUN_4_0  SPEC_0_0  0.049
+    RUN_4_0  SPEC_1_0  0.022
+    RUN_4_0  SPEC_2_0  0.037
+    RUN_4_0  SPEC_3_0  0.015
+    RUN_5_0  COST  -12.393
+    RUN_5_0  CRUDE_5_0  1
+    RUN_5_0  CDU_0  1
+    RUN_5_0  PROD_0_0  -0.11
+    RUN_5_0  PROD_1_0  -0.07
+    RUN_5_0  PROD_2_0  -0.21
+    RUN_5_0  PROD_3_0  -0.07
+    RUN_5_0  PROD_4_0  -0.24
+    RUN_5_0  PROD_5_0  -0.14
+    RUN_5_0  PROD_6_0  -0.3
+    RUN_5_0  PROD_7_0  -0.09
+    RUN_5_0  PROD_8_0  -0.29
+    RUN_5_0  PROD_10_0  -0.13
+    RUN_5_0  PROD_11_0  -0.26
+    RUN_5_0  SPEC_0_0  0.035
+    RUN_5_0  SPEC_2_0  0.011
+    RUN_5_0  SPEC_3_0  0.017
+    RUN_6_0  COST  -18.043
+    RUN_6_0  CRUDE_6_0  1
+    RUN_6_0  CDU_0  1
+    RUN_6_0  PROD_0_0  -0.29
+    RUN_6_0  PROD_1_0  -0.17
+    RUN_6_0  PROD_2_0  -0.29
+    RUN_6_0  PROD_3_0  -0.2
+    RUN_6_0  PROD_4_0  -0.03
+    RUN_6_0  PROD_5_0  -0.05
+    RUN_6_0  PROD_6_0  -0.2
+    RUN_6_0  PROD_7_0  -0.23
+    RUN_6_0  PROD_8_0  -0.27
+    RUN_6_0  PROD_9_0  -0.09
+    RUN_6_0  PROD_10_0  -0.03
+    RUN_6_0  PROD_11_0  -0.23
+    RUN_6_0  SPEC_0_0  0.013
+    RUN_6_0  SPEC_1_0  0.034
+    RUN_6_0  SPEC_2_0  0.005
+    RUN_6_0  SPEC_3_0  0.007
+    RUN_7_0  COST  -19.083
+    RUN_7_0  CRUDE_7_0  1
+    RUN_7_0  CDU_0  1
+    RUN_7_0  PROD_0_0  -0.1
+    RUN_7_0  PROD_1_0  -0.28
+    RUN_7_0  PROD_2_0  -0.23
+    RUN_7_0  PROD_3_0  -0.22
+    RUN_7_0  PROD_4_0  -0.16
+    RUN_7_0  PROD_5_0  -0.29
+    RUN_7_0  PROD_6_0  -0.3
+    RUN_7_0  PROD_7_0  -0.13
+    RUN_7_0  PROD_8_0  -0.16
+    RUN_7_0  PROD_9_0  -0.26
+    RUN_7_0  PROD_10_0  -0.29
+    RUN_7_0  PROD_11_0  -0.21
+    RUN_7_0  SPEC_0_0  0.027
+    RUN_7_0  SPEC_1_0  0.034
+    RUN_7_0  SPEC_2_0  0.035
+    RUN_7_0  SPEC_3_0  0.039
+    RUN_8_0  COST  -16.621
+    RUN_8_0  CRUDE_8_0  1
+    RUN_8_0  CDU_0  1
+    RUN_8_0  PROD_0_0  -0.06
+    RUN_8_0  PROD_1_0  -0.09
+    RUN_8_0  PROD_2_0  -0.09
+    RUN_8_0  PROD_3_0  -0.18
+    RUN_8_0  PROD_4_0  -0.28
+    RUN_8_0  PROD_5_0  -0.15
+    RUN_8_0  PROD_6_0  -0.27
+    RUN_8_0  PROD_7_0  -0.3
+    RUN_8_0  PROD_8_0  -0.16
+    RUN_8_0  PROD_9_0  -0.12
+    RUN_8_0  PROD_10_0  -0.18
+    RUN_8_0  PROD_11_0  -0.27
+    RUN_8_0  SPEC_0_0  0.003
+    RUN_8_0  SPEC_1_0  0.039
+    RUN_8_0  SPEC_2_0  0.016
+    RUN_8_0  SPEC_3_0  0.011
+    RUN_9_0  COST  -9.736
+    RUN_9_0  CRUDE_9_0  1
+    RUN_9_0  CDU_0  1
+    RUN_9_0  PROD_0_0  -0.01
+    RUN_9_0  PROD_1_0  -0.15
+    RUN_9_0  PROD_2_0  -0.07
+    RUN_9_0  PROD_3_0  -0.23
+    RUN_9_0  PROD_4_0  -0.25
+    RUN_9_0  PROD_5_0  -0.12
+    RUN_9_0  PROD_6_0  -0.13
+    RUN_9_0  PROD_7_0  -0.21
+    RUN_9_0  PROD_8_0  -0.05
+    RUN_9_0  PROD_9_0  -0.11
+    RUN_9_0  PROD_10_0  -0.17
+    RUN_9_0  PROD_11_0  -0.28
+    RUN_9_0  SPEC_0_0  0.03
+    RUN_9_0  SPEC_1_0  0.05
+    RUN_9_0  SPEC_2_0  0.002
+    RUN_9_0  SPEC_3_0  0.022
+    RUN_10_0  COST  -17.272
+    RUN_10_0  CRUDE_10_0  1
+    RUN_10_0  CDU_0  1
+    RUN_10_0  PROD_0_0  -0.22
+    RUN_10_0  PROD_1_0  -0.24
+    RUN_10_0  PROD_2_0  -0.21
+    RUN_10_0  PROD_3_0  -0.23
+    RUN_10_0  PROD_4_0  -0.11
+    RUN_10_0  PROD_5_0  -0.02
+    RUN_10_0  PROD_6_0  -0.14
+    RUN_10_0  PROD_7_0  -0.21
+    RUN_10_0  PROD_8_0  -0.16
+    RUN_10_0  PROD_9_0  -0.03
+    RUN_10_0  PROD_10_0  -0.24
+    RUN_10_0  PROD_11_0  -0.05
+    RUN_10_0  SPEC_0_0  0.023
+    RUN_10_0  SPEC_1_0  0.039
+    RUN_10_0  SPEC_2_0  0.043
+    RUN_10_0  SPEC_3_0  0.018
+    RUN_11_0  COST  -18.409
+    RUN_11_0  CRUDE_11_0  1
+    RUN_11_0  CDU_0  1
+    RUN_11_0  PROD_0_0  -0.16
+    RUN_11_0  PROD_1_0  -0.26
+    RUN_11_0  PROD_2_0  -0.12
+    RUN_11_0  PROD_3_0  -0.11
+    RUN_11_0  PROD_4_0  -0.15
+    RUN_11_0  PROD_5_0  -0.23
+    RUN_11_0  PROD_7_0  -0.15
+    RUN_11_0  PROD_8_0  -0.01
+    RUN_11_0  PROD_9_0  -0.09
+    RUN_11_0  PROD_10_0  -0.22
+    RUN_11_0  PROD_11_0  -0.27
+    RUN_11_0  SPEC_0_0  0.036
+    RUN_11_0  SPEC_1_0  0.021
+    RUN_11_0  SPEC_2_0  0.004
+    RUN_11_0  SPEC_3_0  0.004
+    RUN_12_0  COST  -16.328
+    RUN_12_0  CRUDE_12_0  1
+    RUN_12_0  CDU_0  1
+    RUN_12_0  PROD_0_0  -0.19
+    RUN_12_0  PROD_1_0  -0.18
+    RUN_12_0  PROD_2_0  -0.18
+    RUN_12_0  PROD_3_0  -0.12
+    RUN_12_0  PROD_4_0  -0.2
+    RUN_12_0  PROD_5_0  -0.05
+    RUN_12_0  PROD_6_0  -0.05
+    RUN_12_0  PROD_7_0  -0.16
+    RUN_12_0  PROD_8_0  -0.07
+    RUN_12_0  PROD_10_0  -0.24
+    RUN_12_0  PROD_11_0  -0.06
+    RUN_12_0  SPEC_0_0  0.035
+    RUN_12_0  SPEC_1_0  0.029
+    RUN_12_0  SPEC_2_0  0.005
+    RUN_12_0  SPEC_3_0  0.01
+    RUN_13_0  COST  -17.599
+    RUN_13_0  CRUDE_13_0  1
+    RUN_13_0  CDU_0  1
+    RUN_13_0  PROD_0_0  -0.17
+    RUN_13_0  PROD_1_0  -0.29
+    RUN_13_0  PROD_2_0  -0.27
+    RUN_13_0  PROD_3_0  -0.17
+    RUN_13_0  PROD_4_0  -0.07
+    RUN_13_0  PROD_5_0  -0.12
+    RUN_13_0  PROD_6_0  -0.16
+    RUN_13_0  PROD_7_0  -0.11
+    RUN_13_0  PROD_8_0  -0.3
+    RUN_13_0  PROD_9_0  -0.27
+    RUN_13_0  PROD_10_0  -0.18
+    RUN_13_0  PROD_11_0  -0.11
+    RUN_13_0  SPEC_0_0  0.012
+    RUN_13_0  SPEC_1_0  0.038
+    RUN_13_0  SPEC_2_0  0.001
+    RUN_13_0  SPEC_3_0  0.01
+    RUN_14_0  COST  -19.051
+    RUN_14_0  CRUDE_14_0  1
+    RUN_14_0  CDU_0  1
+    RUN_14_0  PROD_0_0  -0.14
+    RUN_14_0  PROD_1_0  -0.29
+    RUN_14_0  PROD_2_0  -0.08
+    RUN_14_0  PROD_3_0  -0.21
+    RUN_14_0  PROD_4_0  -0.17
+    RUN_14_0  PROD_5_0  -0.19
+    RUN_14_0  PROD_6_0  -0.3
+    RUN_14_0  PROD_7_0  -0.23
+    RUN_14_0  PROD_9_0  -0.12
+    RUN_14_0  PROD_10_0  -0.25
+    RUN_14_0  PROD_11_0  -0.27
+    RUN_14_0  SPEC_0_0  0.032
+    RUN_14_0  SPEC_1_0  0.001
+    RUN_14_0  SPEC_2_0  0.028
+    RUN_14_0  SPEC_3_0  0.016
+    PROD_0_0  COST  9
+    PROD_0_0  PROD_0_0  1
+    PROD_0_0  SELL_0_0  -1
+    SELL_0_0  SELL_0_0  1
+    PROD_1_0  COST  7
+    PROD_1_0  PROD_1_0  1
+    PROD_1_0  SELL_1_0  -1
+    SELL_1_0  COST  9
+    SELL_1_0  SELL_1_0  1
+    PROD_2_0  COST  9
+    PROD_2_0  PROD_2_0  1
+    PROD_2_0  SELL_2_0  -1
+    SELL_2_0  COST  -8
+    SELL_2_0  SELL_2_0  1
+    PROD_3_0  COST  3
+    PROD_3_0  PROD_3_0  1
+    PROD_3_0  SELL_3_0  -1
+    SELL_3_0  COST  -2
+    SELL_3_0  SELL_3_0  1
+    PROD_4_0  COST  3
+    PROD_4_0  PROD_4_0  1
+    PROD_4_0  SELL_4_0  -1
+    SELL_4_0  COST  -6
+    SELL_4_0  SELL_4_0  1
+    PROD_5_0  COST  1
+    PROD_5_0  PROD_5_0  1
+    PROD_5_0  SELL_5_0  -1
+    SELL_5_0  COST  -5
+    SELL_5_0  SELL_5_0  1
+    PROD_6_0  COST  -1
+    PROD_6_0  PROD_6_0  1
+    PROD_6_0  SELL_6_0  -1
+    SELL_6_0  COST  -5
+    SELL_6_0  SELL_6_0  1
+    PROD_7_0  COST  8
+    PROD_7_0  PROD_7_0  1
+    PROD_7_0  SELL_7_0  -1
+    SELL_7_0  COST  -9
+    SELL_7_0  SELL_7_0  1
+    PROD_8_0  COST  -8
+    PROD_8_0  PROD_8_0  1
+    PROD_8_0  SELL_8_0  -1
+    SELL_8_0  COST  -5
+    SELL_8_0  SELL_8_0  1
+    PROD_9_0  COST  8
+    PROD_9_0  PROD_9_0  1
+    PROD_9_0  SELL_9_0  -1
+    SELL_9_0  COST  -5
+    SELL_9_0  SELL_9_0  1
+    PROD_10_0  COST  2
+    PROD_10_0  PROD_10_0  1
+    PROD_10_0  SELL_10_0  -1
+    SELL_10_0  SELL_10_0  1
+    PROD_11_0  COST  6
+    PROD_11_0  PROD_11_0  1
+    PROD_11_0  SELL_11_0  -1
+    SELL_11_0  SELL_11_0  1
+    RUN_0_1  COST  5.488
+    RUN_0_1  CRUDE_0_1  1
+    RUN_0_1  CDU_1  1
+    RUN_0_1  PROD_0_1  -0.04
+    RUN_0_1  PROD_1_1  -0.18
+    RUN_0_1  PROD_2_1  -0.27
+    RUN_0_1  PROD_3_1  -0.25
+    RUN_0_1  PROD_4_1  -0.24
+    RUN_0_1  PROD_5_1  -0.02
+    RUN_0_1  PROD_6_1  -0.08
+    RUN_0_1  PROD_7_1  -0.03
+    RUN_0_1  PROD_8_1  -0.15
+    RUN_0_1  PROD_9_1  -0.24
+    RUN_0_1  PROD_10_1  -0.14
+    RUN_0_1  PROD_11_1  -0.15
+    RUN_0_1  SPEC_0_1  0.047
+    RUN_0_1  SPEC_1_1  0.026
+    RUN_0_1  SPEC_2_1  0.014
+    RUN_1_1  COST  3.153
+    RUN_1_1  CRUDE_1_1  1
+    RUN_1_1  CDU_1  1
+    RUN_1_1  PROD_0_1  -0.2
+    RUN_1_1  PROD_1_1  -0.12
+    RUN_1_1  PROD_2_1  -0.25
+    RUN_1_1  PROD_3_1  -0.06
+    RUN_1_1  PROD_4_1  -0.03
+    RUN_1_1  PROD_5_1  -0.15
+    RUN_1_1  PROD_7_1  -0.28
+    RUN_1_1  PROD_8_1  -0.26
+    RUN_1_1  PROD_9_1  -0.12
+    RUN_1_1  PROD_10_1  -0.13
+    RUN_1_1  PROD_11_1  -0.19
+    RUN_1_1  SPEC_0_1  0.032
+    RUN_1_1  SPEC_1_1  0.031
+    RUN_1_1  SPEC_2_1  0.04
+    RUN_1_1  SPEC_3_1  0.048
+    RUN_2_1  COST  1.074
+    RUN_2_1  CRUDE_2_1  1
+    RUN_2_1  CDU_1  1
+    RUN_2_1  PROD_0_1  -0.24
+    RUN_2_1  PROD_1_1  -0.24
+    RUN_2_1  PROD_3_1  -0.22
+    RUN_2_1  PROD_4_1  -0.14
+    RUN_2_1  PROD_5_1  -0.08
+    RUN_2_1  PROD_6_1  -0.23
+    RUN_2_1  PROD_7_1  -0.25
+    RUN_2_1  PROD_8_1  -0.07
+    RUN_2_1  PROD_9_1  -0.18
+    RUN_2_1  PROD_10_1  -0.3
+    RUN_2_1  PROD_11_1  -0.03
+    RUN_2_1  SPEC_0_1  0.008
+    RUN_2_1  SPEC_1_1  0.022
+    RUN_2_1  SPEC_2_1  0.011
+    RUN_2_1  SPEC_3_1  0.048
+    RUN_3_1  COST  -2.079
+    RUN_3_1  CRUDE_3_1  1
+    RUN_3_1  CDU_1  1
+    RUN_3_1  PROD_0_1  -0.28
+    RUN_3_1  PROD_1_1  -0.1
+    RUN_3_1  PROD_5_1  -0.2
+    RUN_3_1  PROD_6_1  -0.17
+    RUN_3_1  PROD_8_1  -0.3
+    RUN_3_1  PROD_9_1  -0.28
+    RUN_3_1  PROD_10_1  -0.12
+    RUN_3_1  PROD_11_1  -0.21
+    RUN_3_1  SPEC_0_1  0.033
+    RUN_3_1  SPEC_1_1  0.026
+    RUN_3_1  SPEC_2_1  0.035
+    RUN_3_1  SPEC_3_1  0.017
+    RUN_4_1  COST  3.027
+    RUN_4_1  CRUDE_4_1  1
+    RUN_4_1  CDU_1  1
+    RUN_4_1  PROD_0_1  -0.06
+    RUN_4_1  PROD_1_1  -0.13
+    RUN_4_1  PROD_2_1  -0.23
+    RUN_4_1  PROD_4_1  -0.16
+    RUN_4_1  PROD_5_1  -0.07
+    RUN_4_1  PROD_6_1  -0.24
+    RUN_4_1  PROD_7_1  -0.14
+    RUN_4_1  PROD_8_1  -0.3
+    RUN_4_1  PROD_9_1  -0.15
+    RUN_4_1  PROD_10_1  -0.17
+    RUN_4_1  PROD_11_1  -0.07
+    RUN_4_1  SPEC_0_1  0.049
+    RUN_4_1  SPEC_1_1  0.022
+    RUN_4_1  SPEC_2_1  0.037
+    RUN_4_1  SPEC_3_1  0.015
+    RUN_5_1  COST  3.873
+    RUN_5_1  CRUDE_5_1  1
+    RUN_5_1  CDU_1  1
+    RUN_5_1  PROD_0_1  -0.11
+    RUN_5_1  PROD_1_1  -0.07
+    RUN_5_1  PROD_2_1  -0.21
+    RUN_5_1  PROD_3_1  -0.07
+    RUN_5_1  PROD_4_1  -0.24
+    RUN_5_1  PROD_5_1  -0.14
+    RUN_5_1  PROD_6_1  -0.3
+    RUN_5_1  PROD_7_1  -0.09
+    RUN_5_1  PROD_8_1  -0.29
+    RUN_5_1  PROD_10_1  -0.13
+    RUN_5_1  PROD_11_1  -0.26
+    RUN_5_1  SPEC_0_1  0.035
+    RUN_5_1  SPEC_2_1  0.011
+    RUN_5_1  SPEC_3_1  0.017
+    RUN_6_1  COST  1.097
+    RUN_6_1  CRUDE_6_1  1
+    RUN_6_1  CDU_1  1
+    RUN_6_1  PROD_0_1  -0.29
+    RUN_6_1  PROD_1_1  -0.17
+    RUN_6_1  PROD_2_1  -0.29
+    RUN_6_1  PROD_3_1  -0.2
+    RUN_6_1  PROD_4_1  -0.03
+    RUN_6_1  PROD_5_1  -0.05
+    RUN_6_1  PROD_6_1  -0.2
+    RUN_6_1  PROD_7_1  -0.23
+    RUN_6_1  PROD_8_1  -0.27
+    RUN_6_1  PROD_9_1  -0.09
+    RUN_6_1  PROD_10_1  -0.03
+    RUN_6_1  PROD_11_1  -0.23
+    RUN_6_1  SPEC_0_1  0.013
+    RUN_6_1  SPEC_1_1  0.034
+    RUN_6_1  SPEC_2_1  0.005
+    RUN_6_1  SPEC_3_1  0.007
+    RUN_7_1  COST  -0.659
+    RUN_7_1  CRUDE_7_1  1
+    RUN_7_1  CDU_1  1
+    RUN_7_1  PROD_0_1  -0.1
+    RUN_7_1  PROD_1_1  -0.28
+    RUN_7_1  PROD_2_1  -0.23
+    RUN_7_1  PROD_3_1  -0.22
+    RUN_7_1  PROD_4_1  -0.16
+    RUN_7_1  PROD_5_1  -0.29
+    RUN_7_1  PROD_6_1  -0.3
+    RUN_7_1  PROD_7_1  -0.13
+    RUN_7_1  PROD_8_1  -0.16
+    RUN_7_1  PROD_9_1  -0.26
+    RUN_7_1  PROD_10_1  -0.29
+    RUN_7_1  PROD_11_1  -0.21
+    RUN_7_1  SPEC_0_1  0.027
+    RUN_7_1  SPEC_1_1  0.034
+    RUN_7_1  SPEC_2_1  0.035
+    RUN_7_1  SPEC_3_1  0.039
+    RUN_8_1  COST  7.344
+    RUN_8_1  CRUDE_8_1  1
+    RUN_8_1  CDU_1  1
+    RUN_8_1  PROD_0_1  -0.06
+    RUN_8_1  PROD_1_1  -0.09
+    RUN_8_1  PROD_2_1  -0.09
+    RUN_8_1  PROD_3_1  -0.18
+    RUN_8_1  PROD_4_1  -0.28
+    RUN_8_1  PROD_5_1  -0.15
+    RUN_8_1  PROD_6_1  -0.27
+    RUN_8_1  PROD_7_1  -0.3
+    RUN_8_1  PROD_8_1  -0.16
+    RUN_8_1  PROD_9_1  -0.12
+    RUN_8_1  PROD_10_1  -0.18
+    RUN_8_1  PROD_11_1  -0.27
+    RUN_8_1  SPEC_0_1  0.003
+    RUN_8_1  SPEC_1_1  0.039
+    RUN_8_1  SPEC_2_1  0.016
+    RUN_8_1  SPEC_3_1  0.011
+    RUN_9_1  COST  9.252
+    RUN_9_1  CRUDE_9_1  1
+    RUN_9_1  CDU_1  1
+    RUN_9_1  PROD_0_1  -0.01
+    RUN_9_1  PROD_1_1  -0.15
+    RUN_9_1  PROD_2_1  -0.07
+    RUN_9_1  PROD_3_1  -0.23
+    RUN_9_1  PROD_4_1  -0.25
+    RUN_9_1  PROD_5_1  -0.12
+    RUN_9_1  PROD_6_1  -0.13
+    RUN_9_1  PROD_7_1  -0.21
+    RUN_9_1  PROD_8_1  -0.05
+    RUN_9_1  PROD_9_1  -0.11
+    RUN_9_1  PROD_10_1  -0.17
+    RUN_9_1  PROD_11_1  -0.28
+    RUN_9_1  SPEC_0_1  0.03
+    RUN_9_1  SPEC_1_1  0.05
+    RUN_9_1  SPEC_2_1  0.002
+    RUN_9_1  SPEC_3_1  0.022
+    RUN_10_1  COST  5.401
+    RUN_10_1  CRUDE_10_1  1
+    RUN_10_1  CDU_1  1
+    RUN_10_1  PROD_0_1  -0.22
+    RUN_10_1  PROD_1_1  -0.24
+    RUN_10_1  PROD_2_1  -0.21
+    RUN_10_1  PROD_3_1  -0.23
+    RUN_10_1  PROD_4_1  -0.11
+    RUN_10_1  PROD_5_1  -0.02
+    RUN_10_1  PROD_6_1  -0.14
+    RUN_10_1  PROD_7_1  -0.21
+    RUN_10_1  PROD_8_1  -0.16
+    RUN_10_1  PROD_9_1  -0.03
+    RUN_10_1  PROD_10_1  -0.24
+    RUN_10_1  PROD_11_1  -0.05
+    RUN_10_1  SPEC_0_1  0.023
+    RUN_10_1  SPEC_1_1  0.039
+    RUN_10_1  SPEC_2_1  0.043
+    RUN_10_1  SPEC_3_1  0.018
+    RUN_11_1  COST  2.871
+    RUN_11_1  CRUDE_11_1  1
+    RUN_11_1  CDU_1  1
+    RUN_11_1  PROD_0_1  -0.16
+    RUN_11_1  PROD_1_1  -0.26
+    RUN_11_1  PROD_2_1  -0.12
+    RUN_11_1  PROD_3_1  -0.11
+    RUN_11_1  PROD_4_1  -0.15
+    RUN_11_1  PROD_5_1  -0.23
+    RUN_11_1  PROD_7_1  -0.15
+    RUN_11_1  PROD_8_1  -0.01
+    RUN_11_1  PROD_9_1  -0.09
+    RUN_11_1  PROD_10_1  -0.22
+    RUN_11_1  PROD_11_1  -0.27
+    RUN_11_1  SPEC_0_1  0.036
+    RUN_11_1  SPEC_1_1  0.021
+    RUN_11_1  SPEC_2_1  0.004
+    RUN_11_1  SPEC_3_1  0.004
+    RUN_12_1  COST  1.483
+    RUN_12_1  CRUDE_12_1  1
+    RUN_12_1  CDU_1  1
+    RUN_12_1  PROD_0_1  -0.19
+    RUN_12_1  PROD_1_1  -0.18
+    RUN_12_1  PROD_2_1  -0.18
+    RUN_12_1  PROD_3_1  -0.12
+    RUN_12_1  PROD_4_1  -0.2
+    RUN_12_1  PROD_5_1  -0.05
+    RUN_12_1  PROD_6_1  -0.05
+    RUN_12_1  PROD_7_1  -0.16
+    RUN_12_1  PROD_8_1  -0.07
+    RUN_12_1  PROD_10_1  -0.24
+    RUN_12_1  PROD_11_1  -0.06
+    RUN_12_1  SPEC_0_1  0.035
+    RUN_12_1  SPEC_1_1  0.029
+    RUN_12_1  SPEC_2_1  0.005
+    RUN_12_1  SPEC_3_1  0.01
+    RUN_13_1  COST  2.74
+    RUN_13_1  CRUDE_13_1  1
+    RUN_13_1  CDU_1  1
+    RUN_13_1  PROD_0_1  -0.17
+    RUN_13_1  PROD_1_1  -0.29
+    RUN_13_1  PROD_2_1  -0.27
+    RUN_13_1  PROD_3_1  -0.17
+    RUN_13_1  PROD_4_1  -0.07
+    RUN_13_1  PROD_5_1  -0.12
+    RUN_13_1  PROD_6_1  -0.16
+    RUN_13_1  PROD_7_1  -0.11
+    RUN_13_1  PROD_8_1  -0.3
+    RUN_13_1  PROD_9_1  -0.27
+    RUN_13_1  PROD_10_1  -0.18
+    RUN_13_1  PROD_11_1  -0.11
+    RUN_13_1  SPEC_0_1  0.012
+    RUN_13_1  SPEC_1_1  0.038
+    RUN_13_1  SPEC_2_1  0.001
+    RUN_13_1  SPEC_3_1  0.01
+    RUN_14_1  COST  7.121
+    RUN_14_1  CRUDE_14_1  1
+    RUN_14_1  CDU_1  1
+    RUN_14_1  PROD_0_1  -0.14
+    RUN_14_1  PROD_1_1  -0.29
+    RUN_14_1  PROD_2_1  -0.08
+    RUN_14_1  PROD_3_1  -0.21
+    RUN_14_1  PROD_4_1  -0.17
+    RUN_14_1  PROD_5_1  -0.19
+    RUN_14_1  PROD_6_1  -0.3
+    RUN_14_1  PROD_7_1  -0.23
+    RUN_14_1  PROD_9_1  -0.12
+    RUN_14_1  PROD_10_1  -0.25
+    RUN_14_1  PROD_11_1  -0.27
+    RUN_14_1  SPEC_0_1  0.032
+    RUN_14_1  SPEC_1_1  0.001
+    RUN_14_1  SPEC_2_1  0.028
+    RUN_14_1  SPEC_3_1  0.016
+    PROD_0_1  COST  -9
+    PROD_0_1  PROD_0_1  1
+    PROD_0_1  SELL_0_1  -1
+    SELL_0_1  SELL_0_1  1
+    PROD_1_1  COST  5
+    PROD_1_1  PROD_1_1  1
+    PROD_1_1  SELL_1_1  -1
+    SELL_1_1  SELL_1_1  1
+    PROD_2_1  COST  1
+    PROD_2_1  PROD_2_1  1
+    PROD_2_1  SELL_2_1  -1
+    SELL_2_1  COST  -7
+    SELL_2_1  SELL_2_1  1
+    PROD_3_1  COST  8
+    PROD_3_1  PROD_3_1  1
+    PROD_3_1  SELL_3_1  -1
+    SELL_3_1  COST  -9
+    SELL_3_1  SELL_3_1  1
+    PROD_4_1  COST  -3
+    PROD_4_1  PROD_4_1  1
+    PROD_4_1  SELL_4_1  -1
+    SELL_4_1  COST  -2
+    SELL_4_1  SELL_4_1  1
+    PROD_5_1  COST  -1
+    PROD_5_1  PROD_5_1  1
+    PROD_5_1  SELL_5_1  -1
+    SELL_5_1  COST  -3
+    SELL_5_1  SELL_5_1  1
+    PROD_6_1  COST  9
+    PROD_6_1  PROD_6_1  1
+    PROD_6_1  SELL_6_1  -1
+    SELL_6_1  COST  -5
+    SELL_6_1  SELL_6_1  1
+    PROD_7_1  COST  1
+    PROD_7_1  PROD_7_1  1
+    PROD_7_1  SELL_7_1  -1
+    SELL_7_1  SELL_7_1  1
+    PROD_8_1  COST  -2
+    PROD_8_1  PROD_8_1  1
+    PROD_8_1  SELL_8_1  -1
+    SELL_8_1  SELL_8_1  1
+    PROD_9_1  COST  -7
+    PROD_9_1  PROD_9_1  1
+    PROD_9_1  SELL_9_1  -1
+    SELL_9_1  COST  2
+    SELL_9_1  SELL_9_1  1
+    PROD_10_1  COST  -1
+    PROD_10_1  PROD_10_1  1
+    PROD_10_1  SELL_10_1  -1
+    SELL_10_1  COST  -4
+    SELL_10_1  SELL_10_1  1
+    PROD_11_1  COST  -4
+    PROD_11_1  PROD_11_1  1
+    PROD_11_1  SELL_11_1  -1
+    SELL_11_1  COST  -10
+    SELL_11_1  SELL_11_1  1
+    RUN_0_2  COST  -3.85
+    RUN_0_2  CRUDE_0_2  1
+    RUN_0_2  CDU_2  1
+    RUN_0_2  PROD_0_2  -0.04
+    RUN_0_2  PROD_1_2  -0.18
+    RUN_0_2  PROD_2_2  -0.27
+    RUN_0_2  PROD_3_2  -0.25
+    RUN_0_2  PROD_4_2  -0.24
+    RUN_0_2  PROD_5_2  -0.02
+    RUN_0_2  PROD_6_2  -0.08
+    RUN_0_2  PROD_7_2  -0.03
+    RUN_0_2  PROD_8_2  -0.15
+    RUN_0_2  PROD_9_2  -0.24
+    RUN_0_2  PROD_10_2  -0.14
+    RUN_0_2  PROD_11_2  -0.15
+    RUN_0_2  SPEC_0_2  0.047
+    RUN_0_2  SPEC_1_2  0.026
+    RUN_0_2  SPEC_2_2  0.014
+    RUN_1_2  COST  2.654
+    RUN_1_2  CRUDE_1_2  1
+    RUN_1_2  CDU_2  1
+    RUN_1_2  PROD_0_2  -0.2
+    RUN_1_2  PROD_1_2  -0.12
+    RUN_1_2  PROD_2_2  -0.25
+    RUN_1_2  PROD_3_2  -0.06
+    RUN_1_2  PROD_4_2  -0.03
+    RUN_1_2  PROD_5_2  -0.15
+    RUN_1_2  PROD_7_2  -0.28
+    RUN_1_2  PROD_8_2  -0.26
+    RUN_1_2  PROD_9_2  -0.12
+    RUN_1_2  PROD_10_2  -0.13
+    RUN_1_2  PROD_11_2  -0.19
+    RUN_1_2  SPEC_0_2  0.032
+    RUN_1_2  SPEC_1_2  0.031
+    RUN_1_2  SPEC_2_2  0.04
+    RUN_1_2  SPEC_3_2  0.048
+    RUN_2_2  COST  -1.206
+    RUN_2_2  CRUDE_2_2  1
+    RUN_2_2  CDU_2  1
+    RUN_2_2  PROD_0_2  -0.24
+    RUN_2_2  PROD_1_2  -0.24
+    RUN_2_2  PROD_3_2  -0.22
+    RUN_2_2  PROD_4_2  -0.14
+    RUN_2_2  PROD_5_2  -0.08
+    RUN_2_2  PROD_6_2  -0.23
+    RUN_2_2  PROD_7_2  -0.25
+    RUN_2_2  PROD_8_2  -0.07
+    RUN_2_2  PROD_9_2  -0.18
+    RUN_2_2  PROD_10_2  -0.3
+    RUN_2_2  PROD_11_2  -0.03
+    RUN_2_2  SPEC_0_2  0.008
+    RUN_2_2  SPEC_1_2  0.022
+    RUN_2_2  SPEC_2_2  0.011
+    RUN_2_2  SPEC_3_2  0.048
+    RUN_3_2  COST  -2.794
+    RUN_3_2  CRUDE_3_2  1
+    RUN_3_2  CDU_2  1
+    RUN_3_2  PROD_0_2  -0.28
+    RUN_3_2  PROD_1_2  -0.1
+    RUN_3_2  PROD_5_2  -0.2
+    RUN_3_2  PROD_6_2  -0.17
+    RUN_3_2  PROD_8_2  -0.3
+    RUN_3_2  PROD_9_2  -0.28
+    RUN_3_2  PROD_10_2  -0.12
+    RUN_3_2  PROD_11_2  -0.21
+    RUN_3_2  SPEC_0_2  0.033
+    RUN_3_2  SPEC_1_2  0.026
+    RUN_3_2  SPEC_2_2  0.035
+    RUN_3_2  SPEC_3_2  0.017
+    RUN_4_2  COST  -2.84
+    RUN_4_2  CRUDE_4_2  1
+    RUN_4_2  CDU_2  1
+    RUN_4_2  PROD_0_2  -0.06
+    RUN_4_2  PROD_1_2  -0.13
+    RUN_4_2  PROD_2_2  -0.23
+    RUN_4_2  PROD_4_2  -0.16
+    RUN_4_2  PROD_5_2  -0.07
+    RUN_4_2  PROD_6_2  -0.24
+    RUN_4_2  PROD_7_2  -0.14
+    RUN_4_2  PROD_8_2  -0.3
+    RUN_4_2  PROD_9_2  -0.15
+    RUN_4_2  PROD_10_2  -0.17
+    RUN_4_2  PROD_11_2  -0.07
+    RUN_4_2  SPEC_0_2  0.049
+    RUN_4_2  SPEC_1_2  0.022
+    RUN_4_2  SPEC_2_2  0.037
+    RUN_4_2  SPEC_3_2  0.015
+    RUN_5_2  COST  -3.254
+    RUN_5_2  CRUDE_5_2  1
+    RUN_5_2  CDU_2  1
+    RUN_5_2  PROD_0_2  -0.11
+    RUN_5_2  PROD_1_2  -0.07
+    RUN_5_2  PROD_2_2  -0.21
+    RUN_5_2  PROD_3_2  -0.07
+    RUN_5_2  PROD_4_2  -0.24
+    RUN_5_2  PROD_5_2  -0.14
+    RUN_5_2  PROD_6_2  -0.3
+    RUN_5_2  PROD_7_2  -0.09
+    RUN_5_2  PROD_8_2  -0.29
+    RUN_5_2  PROD_10_2  -0.13
+    RUN_5_2  PROD_11_2  -0.26
+    RUN_5_2  SPEC_0_2  0.035
+    RUN_5_2  SPEC_2_2  0.011
+    RUN_5_2  SPEC_3_2  0.017
+    RUN_6_2  COST  5.466
+    RUN_6_2  CRUDE_6_2  1
+    RUN_6_2  CDU_2  1
+    RUN_6_2  PROD_0_2  -0.29
+    RUN_6_2  PROD_1_2  -0.17
+    RUN_6_2  PROD_2_2  -0.29
+    RUN_6_2  PROD_3_2  -0.2
+    RUN_6_2  PROD_4_2  -0.03
+    RUN_6_2  PROD_5_2  -0.05
+    RUN_6_2  PROD_6_2  -0.2
+    RUN_6_2  PROD_7_2  -0.23
+    RUN_6_2  PROD_8_2  -0.27
+    RUN_6_2  PROD_9_2  -0.09
+    RUN_6_2  PROD_10_2  -0.03
+    RUN_6_2  PROD_11_2  -0.23
+    RUN_6_2  SPEC_0_2  0.013
+    RUN_6_2  SPEC_1_2  0.034
+    RUN_6_2  SPEC_2_2  0.005
+    RUN_6_2  SPEC_3_2  0.007
+    RUN_7_2  COST  -3.828
+    RUN_7_2  CRUDE_7_2  1
+    RUN_7_2  CDU_2  1
+    RUN_7_2  PROD_0_2  -0.1
+    RUN_7_2  PROD_1_2  -0.28
+    RUN_7_2  PROD_2_2  -0.23
+    RUN_7_2  PROD_3_2  -0.22
+    RUN_7_2  PROD_4_2  -0.16
+    RUN_7_2  PROD_5_2  -0.29
+    RUN_7_2  PROD_6_2  -0.3
+    RUN_7_2  PROD_7_2  -0.13
+    RUN_7_2  PROD_8_2  -0.16
+    RUN_7_2  PROD_9_2  -0.26
+    RUN_7_2  PROD_10_2  -0.29
+    RUN_7_2  PROD_11_2  -0.21
+    RUN_7_2  SPEC_0_2  0.027
+    RUN_7_2  SPEC_1_2  0.034
+    RUN_7_2  SPEC_2_2  0.035
+    RUN_7_2  SPEC_3_2  0.039
+    RUN_8_2  COST  1.658
+    RUN_8_2  CRUDE_8_2  1
+    RUN_8_2  CDU_2  1
+    RUN_8_2  PROD_0_2  -0.06
+    RUN_8_2  PROD_1_2  -0.09
+    RUN_8_2  PROD_2_2  -0.09
+    RUN_8_2  PROD_3_2  -0.18
+    RUN_8_2  PROD_4_2  -0.28
+    RUN_8_2  PROD_5_2  -0.15
+    RUN_8_2  PROD_6_2  -0.27
+    RUN_8_2  PROD_7_2  -0.3
+    RUN_8_2  PROD_8_2  -0.16
+    RUN_8_2  PROD_9_2  -0.12
+    RUN_8_2  PROD_10_2  -0.18
+    RUN_8_2  PROD_11_2  -0.27
+    RUN_8_2  SPEC_0_2  0.003
+    RUN_8_2  SPEC_1_2  0.039
+    RUN_8_2  SPEC_2_2  0.016
+    RUN_8_2  SPEC_3_2  0.011
+    RUN_9_2  COST  -3.814
+    RUN_9_2  CRUDE_9_2  1
+    RUN_9_2  CDU_2  1
+    RUN_9_2  PROD_0_2  -0.01
+    RUN_9_2  PROD_1_2  -0.15
+    RUN_9_2  PROD_2_2  -0.07
+    RUN_9_2  PROD_3_2  -0.23
+    RUN_9_2  PROD_4_2  -0.25
+    RUN_9_2  PROD_5_2  -0.12
+    RUN_9_2  PROD_6_2  -0.13
+    RUN_9_2  PROD_7_2  -0.21
+    RUN_9_2  PROD_8_2  -0.05
+    RUN_9_2  PROD_9_2  -0.11
+    RUN_9_2  PROD_10_2  -0.17
+    RUN_9_2  PROD_11_2  -0.28
+    RUN_9_2  SPEC_0_2  0.03
+    RUN_9_2  SPEC_1_2  0.05
+    RUN_9_2  SPEC_2_2  0.002
+    RUN_9_2  SPEC_3_2  0.022
+    RUN_10_2  COST  -3.726
+    RUN_10_2  CRUDE_10_2  1
+    RUN_10_2  CDU_2  1
+    RUN_10_2  PROD_0_2  -0.22
+    RUN_10_2  PROD_1_2  -0.24
+    RUN_10_2  PROD_2_2  -0.21
+    RUN_10_2  PROD_3_2  -0.23
+    RUN_10_2  PROD_4_2  -0.11
+    RUN_10_2  PROD_5_2  -0.02
+    RUN_10_2  PROD_6_2  -0.14
+    RUN_10_2  PROD_7_2  -0.21
+    RUN_10_2  PROD_8_2  -0.16
+    RUN_10_2  PROD_9_2  -0.03
+    RUN_10_2  PROD_10_2  -0.24
+    RUN_10_2  PROD_11_2  -0.05
+    RUN_10_2  SPEC_0_2  0.023
+    RUN_10_2  SPEC_1_2  0.039
+    RUN_10_2  SPEC_2_2  0.043
+    RUN_10_2  SPEC_3_2  0.018
+    RUN_11_2  COST  -6.638
+    RUN_11_2  CRUDE_11_2  1
+    RUN_11_2  CDU_2  1
+    RUN_11_2  PROD_0_2  -0.16
+    RUN_11_2  PROD_1_2  -0.26
+    RUN_11_2  PROD_2_2  -0.12
+    RUN_11_2  PROD_3_2  -0.11
+    RUN_11_2  PROD_4_2  -0.15
+    RUN_11_2  PROD_5_2  -0.23
+    RUN_11_2  PROD_7_2  -0.15
+    RUN_11_2  PROD_8_2  -0.01
+    RUN_11_2  PROD_9_2  -0.09
+    RUN_11_2  PROD_10_2  -0.22
+    RUN_11_2  PROD_11_2  -0.27
+    RUN_11_2  SPEC_0_2  0.036
+    RUN_11_2  SPEC_1_2  0.021
+    RUN_11_2  SPEC_2_2  0.004
+    RUN_11_2  SPEC_3_2  0.004
+    RUN_12_2  COST  -4.77
+    RUN_12_2  CRUDE_12_2  1
+    RUN_12_2  CDU_2  1
+    RUN_12_2  PROD_0_2  -0.19
+    RUN_12_2  PROD_1_2  -0.18
+    RUN_12_2  PROD_2_2  -0.18
+    RUN_12_2  PROD_3_2  -0.12
+    RUN_12_2  PROD_4_2  -0.2
+    RUN_12_2  PROD_5_2  -0.05
+    RUN_12_2  PROD_6_2  -0.05
+    RUN_12_2  PROD_7_2  -0.16
+    RUN_12_2  PROD_8_2  -0.07
+    RUN_12_2  PROD_10_2  -0.24
+    RUN_12_2  PROD_11_2  -0.06
+    RUN_12_2  SPEC_0_2  0.035
+    RUN_12_2  SPEC_1_2  0.029
+    RUN_12_2  SPEC_2_2  0.005
+    RUN_12_2  SPEC_3_2  0.01
+    RUN_13_2  COST  -2.62
+    RUN_13_2  CRUDE_13_2  1
+    RUN_13_2  CDU_2  1
+    RUN_13_2  PROD_0_2  -0.17
+    RUN_13_2  PROD_1_2  -0.29
+    RUN_13_2  PROD_2_2  -0.27
+    RUN_13_2  PROD_3_2  -0.17
+    RUN_13_2  PROD_4_2  -0.07
+    RUN_13_2  PROD_5_2  -0.12
+    RUN_13_2  PROD_6_2  -0.16
+    RUN_13_2  PROD_7_2  -0.11
+    RUN_13_2  PROD_8_2  -0.3
+    RUN_13_2  PROD_9_2  -0.27
+    RUN_13_2  PROD_10_2  -0.18
+    RUN_13_2  PROD_11_2  -0.11
+    RUN_13_2  SPEC_0_2  0.012
+    RUN_13_2  SPEC_1_2  0.038
+    RUN_13_2  SPEC_2_2  0.001
+    RUN_13_2  SPEC_3_2  0.01
+    RUN_14_2  COST  -6.432
+    RUN_14_2  CRUDE_14_2  1
+    RUN_14_2  CDU_2  1
+    RUN_14_2  PROD_0_2  -0.14
+    RUN_14_2  PROD_1_2  -0.29
+    RUN_14_2  PROD_2_2  -0.08
+    RUN_14_2  PROD_3_2  -0.21
+    RUN_14_2  PROD_4_2  -0.17
+    RUN_14_2  PROD_5_2  -0.19
+    RUN_14_2  PROD_6_2  -0.3
+    RUN_14_2  PROD_7_2  -0.23
+    RUN_14_2  PROD_9_2  -0.12
+    RUN_14_2  PROD_10_2  -0.25
+    RUN_14_2  PROD_11_2  -0.27
+    RUN_14_2  SPEC_0_2  0.032
+    RUN_14_2  SPEC_1_2  0.001
+    RUN_14_2  SPEC_2_2  0.028
+    RUN_14_2  SPEC_3_2  0.016
+    PROD_0_2  COST  2
+    PROD_0_2  PROD_0_2  1
+    PROD_0_2  SELL_0_2  -1
+    SELL_0_2  COST  -4
+    SELL_0_2  SELL_0_2  1
+    PROD_1_2  COST  -1
+    PROD_1_2  PROD_1_2  1
+    PROD_1_2  SELL_1_2  -1
+    SELL_1_2  COST  -8
+    SELL_1_2  SELL_1_2  1
+    PROD_2_2  COST  -7
+    PROD_2_2  PROD_2_2  1
+    PROD_2_2  SELL_2_2  -1
+    SELL_2_2  COST  -4
+    SELL_2_2  SELL_2_2  1
+    PROD_3_2  COST  5
+    PROD_3_2  PROD_3_2  1
+    PROD_3_2  SELL_3_2  -1
+    SELL_3_2  SELL_3_2  1
+    PROD_4_2  COST  4
+    PROD_4_2  PROD_4_2  1
+    PROD_4_2  SELL_4_2  -1
+    SELL_4_2  SELL_4_2  1
+    PROD_5_2  COST  -1
+    PROD_5_2  PROD_5_2  1
+    PROD_5_2  SELL_5_2  -1
+    SELL_5_2  COST  -1
+    SELL_5_2  SELL_5_2  1
+    PROD_6_2  COST  -4
+    PROD_6_2  PROD_6_2  1
+    PROD_6_2  SELL_6_2  -1
+    SELL_6_2  SELL_6_2  1
+    PROD_7_2  PROD_7_2  1
+    PROD_7_2  SELL_7_2  -1
+    SELL_7_2  COST  -8
+    SELL_7_2  SELL_7_2  1
+    PROD_8_2  COST  -5
+    PROD_8_2  PROD_8_2  1
+    PROD_8_2  SELL_8_2  -1
+    SELL_8_2  COST  -2
+    SELL_8_2  SELL_8_2  1
+    PROD_9_2  COST  -5
+    PROD_9_2  PROD_9_2  1
+    PROD_9_2  SELL_9_2  -1
+    SELL_9_2  SELL_9_2  1
+    PROD_10_2  COST  6
+    PROD_10_2  PROD_10_2  1
+    PROD_10_2  SELL_10_2  -1
+    SELL_10_2  SELL_10_2  1
+    PROD_11_2  COST  -4
+    PROD_11_2  PROD_11_2  1
+    PROD_11_2  SELL_11_2  -1
+    SELL_11_2  COST  -3
+    SELL_11_2  SELL_11_2  1
+    RUN_0_3  COST  -7.788
+    RUN_0_3  CRUDE_0_3  1
+    RUN_0_3  CDU_3  1
+    RUN_0_3  PROD_0_3  -0.04
+    RUN_0_3  PROD_1_3  -0.18
+    RUN_0_3  PROD_2_3  -0.27
+    RUN_0_3  PROD_3_3  -0.25
+    RUN_0_3  PROD_4_3  -0.24
+    RUN_0_3  PROD_5_3  -0.02
+    RUN_0_3  PROD_6_3  -0.08
+    RUN_0_3  PROD_7_3  -0.03
+    RUN_0_3  PROD_8_3  -0.15
+    RUN_0_3  PROD_9_3  -0.24
+    RUN_0_3  PROD_10_3  -0.14
+    RUN_0_3  PROD_11_3  -0.15
+    RUN_0_3  SPEC_0_3  0.047
+    RUN_0_3  SPEC_1_3  0.026
+    RUN_0_3  SPEC_2_3  0.014
+    RUN_1_3  COST  -8.138
+    RUN_1_3  CRUDE_1_3  1
+    RUN_1_3  CDU_3  1
+    RUN_1_3  PROD_0_3  -0.2
+    RUN_1_3  PROD_1_3  -0.12
+    RUN_1_3  PROD_2_3  -0.25
+    RUN_1_3  PROD_3_3  -0.06
+    RUN_1_3  PROD_4_3  -0.03
+    RUN_1_3  PROD_5_3  -0.15
+    RUN_1_3  PROD_7_3  -0.28
+    RUN_1_3  PROD_8_3  -0.26
+    RUN_1_3  PROD_9_3  -0.12
+    RUN_1_3  PROD_10_3  -0.13
+    RUN_1_3  PROD_11_3  -0.19
+    RUN_1_3  SPEC_0_3  0.032
+    RUN_1_3  SPEC_1_3  0.031
+    RUN_1_3  SPEC_2_3  0.04
+    RUN_1_3  SPEC_3_3  0.048
+    RUN_2_3  COST  -9.774
+    RUN_2_3  CRUDE_2_3  1
+    RUN_2_3  CDU_3  1
+    RUN_2_3  PROD_0_3  -0.24
+    RUN_2_3  PROD_1_3  -0.24
+    RUN_2_3  PROD_3_3  -0.22
+    RUN_2_3  PROD_4_3  -0.14
+    RUN_2_3  PROD_5_3  -0.08
+    RUN_2_3  PROD_6_3  -0.23
+    RUN_2_3  PROD_7_3  -0.25
+    RUN_2_3  PROD_8_3  -0.07
+    RUN_2_3  PROD_9_3  -0.18
+    RUN_2_3  PROD_10_3  -0.3
+    RUN_2_3  PROD_11_3  -0.03
+    RUN_2_3  SPEC_0_3  0.008
+    RUN_2_3  SPEC_1_3  0.022
+    RUN_2_3  SPEC_2_3  0.011
+    RUN_2_3  SPEC_3_3  0.048
+    RUN_3_3  COST  -13.94
+    RUN_3_3  CRUDE_3_3  1
+    RUN_3_3  CDU_3  1
+    RUN_3_3  PROD_0_3  -0.28
+    RUN_3_3  PROD_1_3  -0.1
+    RUN_3_3  PROD_5_3  -0.2
+    RUN_3_3  PROD_6_3  -0.17
+    RUN_3_3  PROD_8_3  -0.3
+    RUN_3_3  PROD_9_3  -0.28
+    RUN_3_3  PROD_10_3  -0.12
+    RUN_3_3  PROD_11_3  -0.21
+    RUN_3_3  SPEC_0_3  0.033
+    RUN_3_3  SPEC_1_3  0.026
+    RUN_3_3  SPEC_2_3  0.035
+    RUN_3_3  SPEC_3_3  0.017
+    RUN_4_3  COST  -10.356
+    RUN_4_3  CRUDE_4_3  1
+    RUN_4_3  CDU_3  1
+    RUN_4_3  PROD_0_3  -0.06
+    RUN_4_3  PROD_1_3  -0.13
+    RUN_4_3  PROD_2_3  -0.23
+    RUN_4_3  PROD_4_3  -0.16
+    RUN_4_3  PROD_5_3  -0.07
+    RUN_4_3  PROD_6_3  -0.24
+    RUN_4_3  PROD_7_3  -0.14
+    RUN_4_3  PROD_8_3  -0.3
+    RUN_4_3  PROD_9_3  -0.15
+    RUN_4_3  PROD_10_3  -0.17
+    RUN_4_3  PROD_11_3  -0.07
+    RUN_4_3  SPEC_0_3  0.049
+    RUN_4_3  SPEC_1_3  0.022
+    RUN_4_3  SPEC_2_3  0.037
+    RUN_4_3  SPEC_3_3  0.015
+    RUN_5_3  COST  -12.04
+    RUN_5_3  CRUDE_5_3  1
+    RUN_5_3  CDU_3  1
+    RUN_5_3  PROD_0_3  -0.11
+    RUN_5_3  PROD_1_3  -0.07
+    RUN_5_3  PROD_2_3  -0.21
+    RUN_5_3  PROD_3_3  -0.07
+    RUN_5_3  PROD_4_3  -0.24
+    RUN_5_3  PROD_5_3  -0.14
+    RUN_5_3  PROD_6_3  -0.3
+    RUN_5_3  PROD_7_3  -0.09
+    RUN_5_3  PROD_8_3  -0.29
+    RUN_5_3  PROD_10_3  -0.13
+    RUN_5_3  PROD_11_3  -0.26
+    RUN_5_3  SPEC_0_3  0.035
+    RUN_5_3  SPEC_2_3  0.011
+    RUN_5_3  SPEC_3_3  0.017
+    RUN_6_3  COST  -9.902
+    RUN_6_3  CRUDE_6_3  1
+    RUN_6_3  CDU_3  1
+    RUN_6_3  PROD_0_3  -0.29
+    RUN_6_3  PROD_1_3  -0.17
+    RUN_6_3  PROD_2_3  -0.29
+    RUN_6_3  PROD_3_3  -0.2
+    RUN_6_3  PROD_4_3  -0.03
+    RUN_6_3  PROD_5_3  -0.05
+    RUN_6_3  PROD_6_3  -0.2
+    RUN_6_3  PROD_7_3  -0.23
+    RUN_6_3  PROD_8_3  -0.27
+    RUN_6_3  PROD_9_3  -0.09
+    RUN_6_3  PROD_10_3  -0.03
+    RUN_6_3  PROD_11_3  -0.23
+    RUN_6_3  SPEC_0_3  0.013
+    RUN_6_3  SPEC_1_3  0.034
+    RUN_6_3  SPEC_2_3  0.005
+    RUN_6_3  SPEC_3_3  0.007
+    RUN_7_3  COST  -11.36
+    RUN_7_3  CRUDE_7_3  1
+    RUN_7_3  CDU_3  1
+    RUN_7_3  PROD_0_3  -0.1
+    RUN_7_3  PROD_1_3  -0.28
+    RUN_7_3  PROD_2_3  -0.23
+    RUN_7_3  PROD_3_3  -0.22
+    RUN_7_3  PROD_4_3  -0.16
+    RUN_7_3  PROD_5_3  -0.29
+    RUN_7_3  PROD_6_3  -0.3
+    RUN_7_3  PROD_7_3  -0.13
+    RUN_7_3  PROD_8_3  -0.16
+    RUN_7_3  PROD_9_3  -0.26
+    RUN_7_3  PROD_10_3  -0.29
+    RUN_7_3  PROD_11_3  -0.21
+    RUN_7_3  SPEC_0_3  0.027
+    RUN_7_3  SPEC_1_3  0.034
+    RUN_7_3  SPEC_2_3  0.035
+    RUN_7_3  SPEC_3_3  0.039
+    RUN_8_3  COST  -10.852
+    RUN_8_3  CRUDE_8_3  1
+    RUN_8_3  CDU_3  1
+    RUN_8_3  PROD_0_3  -0.06
+    RUN_8_3  PROD_1_3  -0.09
+    RUN_8_3  PROD_2_3  -0.09
+    RUN_8_3  PROD_3_3  -0.18
+    RUN_8_3  PROD_4_3  -0.28
+    RUN_8_3  PROD_5_3  -0.15
+    RUN_8_3  PROD_6_3  -0.27
+    RUN_8_3  PROD_7_3  -0.3
+    RUN_8_3  PROD_8_3  -0.16
+    RUN_8_3  PROD_9_3  -0.12
+    RUN_8_3  PROD_10_3  -0.18
+    RUN_8_3  PROD_11_3  -0.27
+    RUN_8_3  SPEC_0_3  0.003
+    RUN_8_3  SPEC_1_3  0.039
+    RUN_8_3  SPEC_2_3  0.016
+    RUN_8_3  SPEC_3_3  0.011
+    RUN_9_3  COST  -7.51
+    RUN_9_3  CRUDE_9_3  1
+    RUN_9_3  CDU_3  1
+    RUN_9_3  PROD_0_3  -0.01
+    RUN_9_3  PROD_1_3  -0.15
+    RUN_9_3  PROD_2_3  -0.07
+    RUN_9_3  PROD_3_3  -0.23
+    RUN_9_3  PROD_4_3  -0.25
+    RUN_9_3  PROD_5_3  -0.12
+    RUN_9_3  PROD_6_3  -0.13
+    RUN_9_3  PROD_7_3  -0.21
+    RUN_9_3  PROD_8_3  -0.05
+    RUN_9_3  PROD_9_3  -0.11
+    RUN_9_3  PROD_10_3  -0.17
+    RUN_9_3  PROD_11_3  -0.28
+    RUN_9_3  SPEC_0_3  0.03
+    RUN_9_3  SPEC_1_3  0.05
+    RUN_9_3  SPEC_2_3  0.002
+    RUN_9_3  SPEC_3_3  0.022
+    RUN_10_3  COST  -7.492
+    RUN_10_3  CRUDE_10_3  1
+    RUN_10_3  CDU_3  1
+    RUN_10_3  PROD_0_3  -0.22
+    RUN_10_3  PROD_1_3  -0.24
+    RUN_10_3  PROD_2_3  -0.21
+    RUN_10_3  PROD_3_3  -0.23
+    RUN_10_3  PROD_4_3  -0.11
+    RUN_10_3  PROD_5_3  -0.02
+    RUN_10_3  PROD_6_3  -0.14
+    RUN_10_3  PROD_7_3  -0.21
+    RUN_10_3  PROD_8_3  -0.16
+    RUN_10_3  PROD_9_3  -0.03
+    RUN_10_3  PROD_10_3  -0.24
+    RUN_10_3  PROD_11_3  -0.05
+    RUN_10_3  SPEC_0_3  0.023
+    RUN_10_3  SPEC_1_3  0.039
+    RUN_10_3  SPEC_2_3  0.043
+    RUN_10_3  SPEC_3_3  0.018
+    RUN_11_3  COST  -8.546
+    RUN_11_3  CRUDE_11_3  1
+    RUN_11_3  CDU_3  1
+    RUN_11_3  PROD_0_3  -0.16
+    RUN_11_3  PROD_1_3  -0.26
+    RUN_11_3  PROD_2_3  -0.12
+    RUN_11_3  PROD_3_3  -0.11
+    RUN_11_3  PROD_4_3  -0.15
+    RUN_11_3  PROD_5_3  -0.23
+    RUN_11_3  PROD_7_3  -0.15
+    RUN_11_3  PROD_8_3  -0.01
+    RUN_11_3  PROD_9_3  -0.09
+    RUN_11_3  PROD_10_3  -0.22
+    RUN_11_3  PROD_11_3  -0.27
+    RUN_11_3  SPEC_0_3  0.036
+    RUN_11_3  SPEC_1_3  0.021
+    RUN_11_3  SPEC_2_3  0.004
+    RUN_11_3  SPEC_3_3  0.004
+    RUN_12_3  COST  -6.196
+    RUN_12_3  CRUDE_12_3  1
+    RUN_12_3  CDU_3  1
+    RUN_12_3  PROD_0_3  -0.19
+    RUN_12_3  PROD_1_3  -0.18
+    RUN_12_3  PROD_2_3  -0.18
+    RUN_12_3  PROD_3_3  -0.12
+    RUN_12_3  PROD_4_3  -0.2
+    RUN_12_3  PROD_5_3  -0.05
+    RUN_12_3  PROD_6_3  -0.05
+    RUN_12_3  PROD_7_3  -0.16
+    RUN_12_3  PROD_8_3  -0.07
+    RUN_12_3  PROD_10_3  -0.24
+    RUN_12_3  PROD_11_3  -0.06
+    RUN_12_3  SPEC_0_3  0.035
+    RUN_12_3  SPEC_1_3  0.029
+    RUN_12_3  SPEC_2_3  0.005
+    RUN_12_3  SPEC_3_3  0.01
+    RUN_13_3  COST  -9.216
+    RUN_13_3  CRUDE_13_3  1
+    RUN_13_3  CDU_3  1
+    RUN_13_3  PROD_0_3  -0.17
+    RUN_13_3  PROD_1_3  -0.29
+    RUN_13_3  PROD_2_3  -0.27
+    RUN_13_3  PROD_3_3  -0.17
+    RUN_13_3  PROD_4_3  -0.07
+    RUN_13_3  PROD_5_3  -0.12
+    RUN_13_3  PROD_6_3  -0.16
+    RUN_13_3  PROD_7_3  -0.11
+    RUN_13_3  PROD_8_3  -0.3
+    RUN_13_3  PROD_9_3  -0.27
+    RUN_13_3  PROD_10_3  -0.18
+    RUN_13_3  PROD_11_3  -0.11
+    RUN_13_3  SPEC_0_3  0.012
+    RUN_13_3  SPEC_1_3  0.038
+    RUN_13_3  SPEC_2_3  0.001
+    RUN_13_3  SPEC_3_3  0.01
+    RUN_14_3  COST  -4.488
+    RUN_14_3  CRUDE_14_3  1
+    RUN_14_3  CDU_3  1
+    RUN_14_3  PROD_0_3  -0.14
+    RUN_14_3  PROD_1_3  -0.29
+    RUN_14_3  PROD_2_3  -0.08
+    RUN_14_3  PROD_3_3  -0.21
+    RUN_14_3  PROD_4_3  -0.17
+    RUN_14_3  PROD_5_3  -0.19
+    RUN_14_3  PROD_6_3  -0.3
+    RUN_14_3  PROD_7_3  -0.23
+    RUN_14_3  PROD_9_3  -0.12
+    RUN_14_3  PROD_10_3  -0.25
+    RUN_14_3  PROD_11_3  -0.27
+    RUN_14_3  SPEC_0_3  0.032
+    RUN_14_3  SPEC_1_3  0.001
+    RUN_14_3  SPEC_2_3  0.028
+    RUN_14_3  SPEC_3_3  0.016
+    PROD_0_3  COST  8
+    PROD_0_3  PROD_0_3  1
+    PROD_0_3  SELL_0_3  -1
+    SELL_0_3  SELL_0_3  1
+    PROD_1_3  COST  3
+    PROD_1_3  PROD_1_3  1
+    PROD_1_3  SELL_1_3  -1
+    SELL_1_3  SELL_1_3  1
+    PROD_2_3  COST  -6
+    PROD_2_3  PROD_2_3  1
+    PROD_2_3  SELL_2_3  -1
+    SELL_2_3  SELL_2_3  1
+    PROD_3_3  COST  -5
+    PROD_3_3  PROD_3_3  1
+    PROD_3_3  SELL_3_3  -1
+    SELL_3_3  COST  -5
+    SELL_3_3  SELL_3_3  1
+    PROD_4_3  COST  7
+    PROD_4_3  PROD_4_3  1
+    PROD_4_3  SELL_4_3  -1
+    SELL_4_3  SELL_4_3  1
+    PROD_5_3  COST  5
+    PROD_5_3  PROD_5_3  1
+    PROD_5_3  SELL_5_3  -1
+    SELL_5_3  COST  -1
+    SELL_5_3  SELL_5_3  1
+    PROD_6_3  COST  9
+    PROD_6_3  PROD_6_3  1
+    PROD_6_3  SELL_6_3  -1
+    SELL_6_3  COST  -7
+    SELL_6_3  SELL_6_3  1
+    PROD_7_3  COST  -3
+    PROD_7_3  PROD_7_3  1
+    PROD_7_3  SELL_7_3  -1
+    SELL_7_3  COST  9
+    SELL_7_3  SELL_7_3  1
+    PROD_8_3  COST  7
+    PROD_8_3  PROD_8_3  1
+    PROD_8_3  SELL_8_3  -1
+    SELL_8_3  COST  7
+    SELL_8_3  SELL_8_3  1
+    PROD_9_3  COST  4
+    PROD_9_3  PROD_9_3  1
+    PROD_9_3  SELL_9_3  -1
+    SELL_9_3  SELL_9_3  1
+    PROD_10_3  COST  -3
+    PROD_10_3  PROD_10_3  1
+    PROD_10_3  SELL_10_3  -1
+    SELL_10_3  SELL_10_3  1
+    PROD_11_3  COST  11
+    PROD_11_3  PROD_11_3  1
+    PROD_11_3  SELL_11_3  -1
+    SELL_11_3  COST  -14
+    SELL_11_3  SELL_11_3  1
+    RUN_0_4  COST  3.4
+    RUN_0_4  CRUDE_0_4  1
+    RUN_0_4  CDU_4  1
+    RUN_0_4  PROD_0_4  -0.04
+    RUN_0_4  PROD_1_4  -0.18
+    RUN_0_4  PROD_2_4  -0.27
+    RUN_0_4  PROD_3_4  -0.25
+    RUN_0_4  PROD_4_4  -0.24
+    RUN_0_4  PROD_5_4  -0.02
+    RUN_0_4  PROD_6_4  -0.08
+    RUN_0_4  PROD_7_4  -0.03
+    RUN_0_4  PROD_8_4  -0.15
+    RUN_0_4  PROD_9_4  -0.24
+    RUN_0_4  PROD_10_4  -0.14
+    RUN_0_4  PROD_11_4  -0.15
+    RUN_0_4  SPEC_0_4  0.047
+    RUN_0_4  SPEC_1_4  0.026
+    RUN_0_4  SPEC_2_4  0.014
+    RUN_1_4  COST  2.066
+    RUN_1_4  CRUDE_1_4  1
+    RUN_1_4  CDU_4  1
+    RUN_1_4  PROD_0_4  -0.2
+    RUN_1_4  PROD_1_4  -0.12
+    RUN_1_4  PROD_2_4  -0.25
+    RUN_1_4  PROD_3_4  -0.06
+    RUN_1_4  PROD_4_4  -0.03
+    RUN_1_4  PROD_5_4  -0.15
+    RUN_1_4  PROD_7_4  -0.28
+    RUN_1_4  PROD_8_4  -0.26
+    RUN_1_4  PROD_9_4  -0.12
+    RUN_1_4  PROD_10_4  -0.13
+    RUN_1_4  PROD_11_4  -0.19
+    RUN_1_4  SPEC_0_4  0.032
+    RUN_1_4  SPEC_1_4  0.031
+    RUN_1_4  SPEC_2_4  0.04
+    RUN_1_4  SPEC_3_4  0.048
+    RUN_2_4  COST  2.251
+    RUN_2_4  CRUDE_2_4  1
+    RUN_2_4  CDU_4  1
+    RUN_2_4  PROD_0_4  -0.24
+    RUN_2_4  PROD_1_4  -0.24
+    RUN_2_4  PROD_3_4  -0.22
+    RUN_2_4  PROD_4_4  -0.14
+    RUN_2_4  PROD_5_4  -0.08
+    RUN_2_4  PROD_6_4  -0.23
+    RUN_2_4  PROD_7_4  -0.25
+    RUN_2_4  PROD_8_4  -0.07
+    RUN_2_4  PROD_9_4  -0.18
+    RUN_2_4  PROD_10_4  -0.3
+    RUN_2_4  PROD_11_4  -0.03
+    RUN_2_4  SPEC_0_4  0.008
+    RUN_2_4  SPEC_1_4  0.022
+    RUN_2_4  SPEC_2_4  0.011
+    RUN_2_4  SPEC_3_4  0.048
+    RUN_3_4  COST  6.354
+    RUN_3_4  CRUDE_3_4  1
+    RUN_3_4  CDU_4  1
+    RUN_3_4  PROD_0_4  -0.28
+    RUN_3_4  PROD_1_4  -0.1
+    RUN_3_4  PROD_5_4  -0.2
+    RUN_3_4  PROD_6_4  -0.17
+    RUN_3_4  PROD_8_4  -0.3
+    RUN_3_4  PROD_9_4  -0.28
+    RUN_3_4  PROD_10_4  -0.12
+    RUN_3_4  PROD_11_4  -0.21
+    RUN_3_4  SPEC_0_4  0.033
+    RUN_3_4  SPEC_1_4  0.026
+    RUN_3_4  SPEC_2_4  0.035
+    RUN_3_4  SPEC_3_4  0.017
+    RUN_4_4  COST  0.21
+    RUN_4_4  CRUDE_4_4  1
+    RUN_4_4  CDU_4  1
+    RUN_4_4  PROD_0_4  -0.06
+    RUN_4_4  PROD_1_4  -0.13
+    RUN_4_4  PROD_2_4  -0.23
+    RUN_4_4  PROD_4_4  -0.16
+    RUN_4_4  PROD_5_4  -0.07
+    RUN_4_4  PROD_6_4  -0.24
+    RUN_4_4  PROD_7_4  -0.14
+    RUN_4_4  PROD_8_4  -0.3
+    RUN_4_4  PROD_9_4  -0.15
+    RUN_4_4  PROD_10_4  -0.17
+    RUN_4_4  PROD_11_4  -0.07
+    RUN_4_4  SPEC_0_4  0.049
+    RUN_4_4  SPEC_1_4  0.022
+    RUN_4_4  SPEC_2_4  0.037
+    RUN_4_4  SPEC_3_4  0.015
+    RUN_5_4  COST  2.434
+    RUN_5_4  CRUDE_5_4  1
+    RUN_5_4  CDU_4  1
+    RUN_5_4  PROD_0_4  -0.11
+    RUN_5_4  PROD_1_4  -0.07
+    RUN_5_4  PROD_2_4  -0.21
+    RUN_5_4  PROD_3_4  -0.07
+    RUN_5_4  PROD_4_4  -0.24
+    RUN_5_4  PROD_5_4  -0.14
+    RUN_5_4  PROD_6_4  -0.3
+    RUN_5_4  PROD_7_4  -0.09
+    RUN_5_4  PROD_8_4  -0.29
+    RUN_5_4  PROD_10_4  -0.13
+    RUN_5_4  PROD_11_4  -0.26
+    RUN_5_4  SPEC_0_4  0.035
+    RUN_5_4  SPEC_2_4  0.011
+    RUN_5_4  SPEC_3_4  0.017
+    RUN_6_4  COST  2.134
+    RUN_6_4  CRUDE_6_4  1
+    RUN_6_4  CDU_4  1
+    RUN_6_4  PROD_0_4  -0.29
+    RUN_6_4  PROD_1_4  -0.17
+    RUN_6_4  PROD_2_4  -0.29
+    RUN_6_4  PROD_3_4  -0.2
+    RUN_6_4  PROD_4_4  -0.03
+    RUN_6_4  PROD_5_4  -0.05
+    RUN_6_4  PROD_6_4  -0.2
+    RUN_6_4  PROD_7_4  -0.23
+    RUN_6_4  PROD_8_4  -0.27
+    RUN_6_4  PROD_9_4  -0.09
+    RUN_6_4  PROD_10_4  -0.03
+    RUN_6_4  PROD_11_4  -0.23
+    RUN_6_4  SPEC_0_4  0.013
+    RUN_6_4  SPEC_1_4  0.034
+    RUN_6_4  SPEC_2_4  0.005
+    RUN_6_4  SPEC_3_4  0.007
+    RUN_7_4  COST  4.558
+    RUN_7_4  CRUDE_7_4  1
+    RUN_7_4  CDU_4  1
+    RUN_7_4  PROD_0_4  -0.1
+    RUN_7_4  PROD_1_4  -0.28
+    RUN_7_4  PROD_2_4  -0.23
+    RUN_7_4  PROD_3_4  -0.22
+    RUN_7_4  PROD_4_4  -0.16
+    RUN_7_4  PROD_5_4  -0.29
+    RUN_7_4  PROD_6_4  -0.3
+    RUN_7_4  PROD_7_4  -0.13
+    RUN_7_4  PROD_8_4  -0.16
+    RUN_7_4  PROD_9_4  -0.26
+    RUN_7_4  PROD_10_4  -0.29
+    RUN_7_4  PROD_11_4  -0.21
+    RUN_7_4  SPEC_0_4  0.027
+    RUN_7_4  SPEC_1_4  0.034
+    RUN_7_4  SPEC_2_4  0.035
+    RUN_7_4  SPEC_3_4  0.039
+    RUN_8_4  COST  -4.783
+    RUN_8_4  CRUDE_8_4  1
+    RUN_8_4  CDU_4  1
+    RUN_8_4  PROD_0_4  -0.06
+    RUN_8_4  PROD_1_4  -0.09
+    RUN_8_4  PROD_2_4  -0.09
+    RUN_8_4  PROD_3_4  -0.18
+    RUN_8_4  PROD_4_4  -0.28
+    RUN_8_4  PROD_5_4  -0.15
+    RUN_8_4  PROD_6_4  -0.27
+    RUN_8_4  PROD_7_4  -0.3
+    RUN_8_4  PROD_8_4  -0.16
+    RUN_8_4  PROD_9_4  -0.12
+    RUN_8_4  PROD_10_4  -0.18
+    RUN_8_4  PROD_11_4  -0.27
+    RUN_8_4  SPEC_0_4  0.003
+    RUN_8_4  SPEC_1_4  0.039
+    RUN_8_4  SPEC_2_4  0.016
+    RUN_8_4  SPEC_3_4  0.011
+    RUN_9_4  COST  10.874
+    RUN_9_4  CRUDE_9_4  1
+    RUN_9_4  CDU_4  1
+    RUN_9_4  PROD_0_4  -0.01
+    RUN_9_4  PROD_1_4  -0.15
+    RUN_9_4  PROD_2_4  -0.07
+    RUN_9_4  PROD_3_4  -0.23
+    RUN_9_4  PROD_4_4  -0.25
+    RUN_9_4  PROD_5_4  -0.12
+    RUN_9_4  PROD_6_4  -0.13
+    RUN_9_4  PROD_7_4  -0.21
+    RUN_9_4  PROD_8_4  -0.05
+    RUN_9_4  PROD_9_4  -0.11
+    RUN_9_4  PROD_10_4  -0.17
+    RUN_9_4  PROD_11_4  -0.28
+    RUN_9_4  SPEC_0_4  0.03
+    RUN_9_4  SPEC_1_4  0.05
+    RUN_9_4  SPEC_2_4  0.002
+    RUN_9_4  SPEC_3_4  0.022
+    RUN_10_4  COST  1.181
+    RUN_10_4  CRUDE_10_4  1
+    RUN_10_4  CDU_4  1
+    RUN_10_4  PROD_0_4  -0.22
+    RUN_10_4  PROD_1_4  -0.24
+    RUN_10_4  PROD_2_4  -0.21
+    RUN_10_4  PROD_3_4  -0.23
+    RUN_10_4  PROD_4_4  -0.11
+    RUN_10_4  PROD_5_4  -0.02
+    RUN_10_4  PROD_6_4  -0.14
+    RUN_10_4  PROD_7_4  -0.21
+    RUN_10_4  PROD_8_4  -0.16
+    RUN_10_4  PROD_9_4  -0.03
+    RUN_10_4  PROD_10_4  -0.24
+    RUN_10_4  PROD_11_4  -0.05
+    RUN_10_4  SPEC_0_4  0.023
+    RUN_10_4  SPEC_1_4  0.039
+    RUN_10_4  SPEC_2_4  0.043
+    RUN_10_4  SPEC_3_4  0.018
+    RUN_11_4  COST  4.918
+    RUN_11_4  CRUDE_11_4  1
+    RUN_11_4  CDU_4  1
+    RUN_11_4  PROD_0_4  -0.16
+    RUN_11_4  PROD_1_4  -0.26
+    RUN_11_4  PROD_2_4  -0.12
+    RUN_11_4  PROD_3_4  -0.11
+    RUN_11_4  PROD_4_4  -0.15
+    RUN_11_4  PROD_5_4  -0.23
+    RUN_11_4  PROD_7_4  -0.15
+    RUN_11_4  PROD_8_4  -0.01
+    RUN_11_4  PROD_9_4  -0.09
+    RUN_11_4  PROD_10_4  -0.22
+    RUN_11_4  PROD_11_4  -0.27
+    RUN_11_4  SPEC_0_4  0.036
+    RUN_11_4  SPEC_1_4  0.021
+    RUN_11_4  SPEC_2_4  0.004
+    RUN_11_4  SPEC_3_4  0.004
+    RUN_12_4  COST  2.505
+    RUN_12_4  CRUDE_12_4  1
+    RUN_12_4  CDU_4  1
+    RUN_12_4  PROD_0_4  -0.19
+    RUN_12_4  PROD_1_4  -0.18
+    RUN_12_4  PROD_2_4  -0.18
+    RUN_12_4  PROD_3_4  -0.12
+    RUN_12_4  PROD_4_4  -0.2
+    RUN_12_4  PROD_5_4  -0.05
+    RUN_12_4  PROD_6_4  -0.05
+    RUN_12_4  PROD_7_4  -0.16
+    RUN_12_4  PROD_8_4  -0.07
+    RUN_12_4  PROD_10_4  -0.24
+    RUN_12_4  PROD_11_4  -0.06
+    RUN_12_4  SPEC_0_4  0.035
+    RUN_12_4  SPEC_1_4  0.029
+    RUN_12_4  SPEC_2_4  0.005
+    RUN_12_4  SPEC_3_4  0.01
+    RUN_13_4  COST  1.545
+    RUN_13_4  CRUDE_13_4  1
+    RUN_13_4  CDU_4  1
+    RUN_13_4  PROD_0_4  -0.17
+    RUN_13_4  PROD_1_4  -0.29
+    RUN_13_4  PROD_2_4  -0.27
+    RUN_13_4  PROD_3_4  -0.17
+    RUN_13_4  PROD_4_4  -0.07
+    RUN_13_4  PROD_5_4  -0.12
+    RUN_13_4  PROD_6_4  -0.16
+    RUN_13_4  PROD_7_4  -0.11
+    RUN_13_4  PROD_8_4  -0.3
+    RUN_13_4  PROD_9_4  -0.27
+    RUN_13_4  PROD_10_4  -0.18
+    RUN_13_4  PROD_11_4  -0.11
+    RUN_13_4  SPEC_0_4  0.012
+    RUN_13_4  SPEC_1_4  0.038
+    RUN_13_4  SPEC_2_4  0.001
+    RUN_13_4  SPEC_3_4  0.01
+    RUN_14_4  COST  3.832
+    RUN_14_4  CRUDE_14_4  1
+    RUN_14_4  CDU_4  1
+    RUN_14_4  PROD_0_4  -0.14
+    RUN_14_4  PROD_1_4  -0.29
+    RUN_14_4  PROD_2_4  -0.08
+    RUN_14_4  PROD_3_4  -0.21
+    RUN_14_4  PROD_4_4  -0.17
+    RUN_14_4  PROD_5_4  -0.19
+    RUN_14_4  PROD_6_4  -0.3
+    RUN_14_4  PROD_7_4  -0.23
+    RUN_14_4  PROD_9_4  -0.12
+    RUN_14_4  PROD_10_4  -0.25
+    RUN_14_4  PROD_11_4  -0.27
+    RUN_14_4  SPEC_0_4  0.032
+    RUN_14_4  SPEC_1_4  0.001
+    RUN_14_4  SPEC_2_4  0.028
+    RUN_14_4  SPEC_3_4  0.016
+    PROD_0_4  COST  -4
+    PROD_0_4  PROD_0_4  1
+    PROD_0_4  SELL_0_4  -1
+    SELL_0_4  SELL_0_4  1
+    PROD_1_4  COST  5
+    PROD_1_4  PROD_1_4  1
+    PROD_1_4  SELL_1_4  -1
+    SELL_1_4  COST  -6
+    SELL_1_4  SELL_1_4  1
+    PROD_2_4  COST  3
+    PROD_2_4  PROD_2_4  1
+    PROD_2_4  SELL_2_4  -1
+    SELL_2_4  COST  -5
+    SELL_2_4  SELL_2_4  1
+    PROD_3_4  COST  -2
+    PROD_3_4  PROD_3_4  1
+    PROD_3_4  SELL_3_4  -1
+    SELL_3_4  SELL_3_4  1
+    PROD_4_4  COST  -2
+    PROD_4_4  PROD_4_4  1
+    PROD_4_4  SELL_4_4  -1
+    SELL_4_4  COST  -12
+    SELL_4_4  SELL_4_4  1
+    PROD_5_4  COST  -1
+    PROD_5_4  PROD_5_4  1
+    PROD_5_4  SELL_5_4  -1
+    SELL_5_4  SELL_5_4  1
+    PROD_6_4  COST  5
+    PROD_6_4  PROD_6_4  1
+    PROD_6_4  SELL_6_4  -1
+    SELL_6_4  COST  6
+    SELL_6_4  SELL_6_4  1
+    PROD_7_4  COST  7
+    PROD_7_4  PROD_7_4  1
+    PROD_7_4  SELL_7_4  -1
+    SELL_7_4  COST  -14
+    SELL_7_4  SELL_7_4  1
+    PROD_8_4  COST  2
+    PROD_8_4  PROD_8_4  1
+    PROD_8_4  SELL_8_4  -1
+    SELL_8_4  SELL_8_4  1
+    PROD_9_4  COST  -3
+    PROD_9_4  PROD_9_4  1
+    PROD_9_4  SELL_9_4  -1
+    SELL_9_4  COST  -6
+    SELL_9_4  SELL_9_4  1
+    PROD_10_4  COST  1
+    PROD_10_4  PROD_10_4  1
+    PROD_10_4  SELL_10_4  -1
+    SELL_10_4  COST  2
+    SELL_10_4  SELL_10_4  1
+    PROD_11_4  COST  -9
+    PROD_11_4  PROD_11_4  1
+    PROD_11_4  SELL_11_4  -1
+    SELL_11_4  COST  -8
+    SELL_11_4  SELL_11_4  1
+    RUN_0_5  COST  8.382
+    RUN_0_5  CRUDE_0_5  1
+    RUN_0_5  CDU_5  1
+    RUN_0_5  PROD_0_5  -0.04
+    RUN_0_5  PROD_1_5  -0.18
+    RUN_0_5  PROD_2_5  -0.27
+    RUN_0_5  PROD_3_5  -0.25
+    RUN_0_5  PROD_4_5  -0.24
+    RUN_0_5  PROD_5_5  -0.02
+    RUN_0_5  PROD_6_5  -0.08
+    RUN_0_5  PROD_7_5  -0.03
+    RUN_0_5  PROD_8_5  -0.15
+    RUN_0_5  PROD_9_5  -0.24
+    RUN_0_5  PROD_10_5  -0.14
+    RUN_0_5  PROD_11_5  -0.15
+    RUN_0_5  SPEC_0_5  0.047
+    RUN_0_5  SPEC_1_5  0.026
+    RUN_0_5  SPEC_2_5  0.014
+    RUN_1_5  COST  3.107
+    RUN_1_5  CRUDE_1_5  1
+    RUN_1_5  CDU_5  1
+    RUN_1_5  PROD_0_5  -0.2
+    RUN_1_5  PROD_1_5  -0.12
+    RUN_1_5  PROD_2_5  -0.25
+    RUN_1_5  PROD_3_5  -0.06
+    RUN_1_5  PROD_4_5  -0.03
+    RUN_1_5  PROD_5_5  -0.15
+    RUN_1_5  PROD_7_5  -0.28
+    RUN_1_5  PROD_8_5  -0.26
+    RUN_1_5  PROD_9_5  -0.12
+    RUN_1_5  PROD_10_5  -0.13
+    RUN_1_5  PROD_11_5  -0.19
+    RUN_1_5  SPEC_0_5  0.032
+    RUN_1_5  SPEC_1_5  0.031
+    RUN_1_5  SPEC_2_5  0.04
+    RUN_1_5  SPEC_3_5  0.048
+    RUN_2_5  COST  8.82
+    RUN_2_5  CRUDE_2_5  1
+    RUN_2_5  CDU_5  1
+    RUN_2_5  PROD_0_5  -0.24
+    RUN_2_5  PROD_1_5  -0.24
+    RUN_2_5  PROD_3_5  -0.22
+    RUN_2_5  PROD_4_5  -0.14
+    RUN_2_5  PROD_5_5  -0.08
+    RUN_2_5  PROD_6_5  -0.23
+    RUN_2_5  PROD_7_5  -0.25
+    RUN_2_5  PROD_8_5  -0.07
+    RUN_2_5  PROD_9_5  -0.18
+    RUN_2_5  PROD_10_5  -0.3
+    RUN_2_5  PROD_11_5  -0.03
+    RUN_2_5  SPEC_0_5  0.008
+    RUN_2_5  SPEC_1_5  0.022
+    RUN_2_5  SPEC_2_5  0.011
+    RUN_2_5  SPEC_3_5  0.048
+    RUN_3_5  COST  1.096
+    RUN_3_5  CRUDE_3_5  1
+    RUN_3_5  CDU_5  1
+    RUN_3_5  PROD_0_5  -0.28
+    RUN_3_5  PROD_1_5  -0.1
+    RUN_3_5  PROD_5_5  -0.2
+    RUN_3_5  PROD_6_5  -0.17
+    RUN_3_5  PROD_8_5  -0.3
+    RUN_3_5  PROD_9_5  -0.28
+    RUN_3_5  PROD_10_5  -0.12
+    RUN_3_5  PROD_11_5  -0.21
+    RUN_3_5  SPEC_0_5  0.033
+    RUN_3_5  SPEC_1_5  0.026
+    RUN_3_5  SPEC_2_5  0.035
+    RUN_3_5  SPEC_3_5  0.017
+    RUN_4_5  COST  5.994
+    RUN_4_5  CRUDE_4_5  1
+    RUN_4_5  CDU_5  1
+    RUN_4_5  PROD_0_5  -0.06
+    RUN_4_5  PROD_1_5  -0.13
+    RUN_4_5  PROD_2_5  -0.23
+    RUN_4_5  PROD_4_5  -0.16
+    RUN_4_5  PROD_5_5  -0.07
+    RUN_4_5  PROD_6_5  -0.24
+    RUN_4_5  PROD_7_5  -0.14
+    RUN_4_5  PROD_8_5  -0.3
+    RUN_4_5  PROD_9_5  -0.15
+    RUN_4_5  PROD_10_5  -0.17
+    RUN_4_5  PROD_11_5  -0.07
+    RUN_4_5  SPEC_0_5  0.049
+    RUN_4_5  SPEC_1_5  0.022
+    RUN_4_5  SPEC_2_5  0.037
+    RUN_4_5  SPEC_3_5  0.015
+    RUN_5_5  COST  5.08
+    RUN_5_5  CRUDE_5_5  1
+    RUN_5_5  CDU_5  1
+    RUN_5_5  PROD_0_5  -0.11
+    RUN_5_5  PROD_1_5  -0.07
+    RUN_5_5  PROD_2_5  -0.21
+    RUN_5_5  PROD_3_5  -0.07
+    RUN_5_5  PROD_4_5  -0.24
+    RUN_5_5  PROD_5_5  -0.14
+    RUN_5_5  PROD_6_5  -0.3
+    RUN_5_5  PROD_7_5  -0.09
+    RUN_5_5  PROD_8_5  -0.29
+    RUN_5_5  PROD_10_5  -0.13
+    RUN_5_5  PROD_11_5  -0.26
+    RUN_5_5  SPEC_0_5  0.035
+    RUN_5_5  SPEC_2_5  0.011
+    RUN_5_5  SPEC_3_5  0.017
+    RUN_6_5  COST  8.758
+    RUN_6_5  CRUDE_6_5  1
+    RUN_6_5  CDU_5  1
+    RUN_6_5  PROD_0_5  -0.29
+    RUN_6_5  PROD_1_5  -0.17
+    RUN_6_5  PROD_2_5  -0.29
+    RUN_6_5  PROD_3_5  -0.2
+    RUN_6_5  PROD_4_5  -0.03
+    RUN_6_5  PROD_5_5  -0.05
+    RUN_6_5  PROD_6_5  -0.2
+    RUN_6_5  PROD_7_5  -0.23
+    RUN_6_5  PROD_8_5  -0.27
+    RUN_6_5  PROD_9_5  -0.09
+    RUN_6_5  PROD_10_5  -0.03
+    RUN_6_5  PROD_11_5  -0.23
+    RUN_6_5  SPEC_0_5  0.013
+    RUN_6_5  SPEC_1_5  0.034
+    RUN_6_5  SPEC_2_5  0.005
+    RUN_6_5  SPEC_3_5  0.007
+    RUN_7_5  COST  5.774
+    RUN_7_5  CRUDE_7_5  1
+    RUN_7_5  CDU_5  1
+    RUN_7_5  PROD_0_5  -0.1
+    RUN_7_5  PROD_1_5  -0.28
+    RUN_7_5  PROD_2_5  -0.23
+    RUN_7_5  PROD_3_5  -0.22
+    RUN_7_5  PROD_4_5  -0.16
+    RUN_7_5  PROD_5_5  -0.29
+    RUN_7_5  PROD_6_5  -0.3
+    RUN_7_5  PROD_7_5  -0.13
+    RUN_7_5  PROD_8_5  -0.16
+    RUN_7_5  PROD_9_5  -0.26
+    RUN_7_5  PROD_10_5  -0.29
+    RUN_7_5  PROD_11_5  -0.21
+    RUN_7_5  SPEC_0_5  0.027
+    RUN_7_5  SPEC_1_5  0.034
+    RUN_7_5  SPEC_2_5  0.035
+    RUN_7_5  SPEC_3_5  0.039
+    RUN_8_5  COST  7.143
+    RUN_8_5  CRUDE_8_5  1
+    RUN_8_5  CDU_5  1
+    RUN_8_5  PROD_0_5  -0.06
+    RUN_8_5  PROD_1_5  -0.09
+    RUN_8_5  PROD_2_5  -0.09
+    RUN_8_5  PROD_3_5  -0.18
+    RUN_8_5  PROD_4_5  -0.28
+    RUN_8_5  PROD_5_5  -0.15
+    RUN_8_5  PROD_6_5  -0.27
+    RUN_8_5  PROD_7_5  -0.3
+    RUN_8_5  PROD_8_5  -0.16
+    RUN_8_5  PROD_9_5  -0.12
+    RUN_8_5  PROD_10_5  -0.18
+    RUN_8_5  PROD_11_5  -0.27
+    RUN_8_5  SPEC_0_5  0.003
+    RUN_8_5  SPEC_1_5  0.039
+    RUN_8_5  SPEC_2_5  0.016
+    RUN_8_5  SPEC_3_5  0.011
+    RUN_9_5  COST  6.06
+    RUN_9_5  CRUDE_9_5  1
+    RUN_9_5  CDU_5  1
+    RUN_9_5  PROD_0_5  -0.01
+    RUN_9_5  PROD_1_5  -0.15
+    RUN_9_5  PROD_2_5  -0.07
+    RUN_9_5  PROD_3_5  -0.23
+    RUN_9_5  PROD_4_5  -0.25
+    RUN_9_5  PROD_5_5  -0.12
+    RUN_9_5  PROD_6_5  -0.13
+    RUN_9_5  PROD_7_5  -0.21
+    RUN_9_5  PROD_8_5  -0.05
+    RUN_9_5  PROD_9_5  -0.11
+    RUN_9_5  PROD_10_5  -0.17
+    RUN_9_5  PROD_11_5  -0.28
+    RUN_9_5  SPEC_0_5  0.03
+    RUN_9_5  SPEC_1_5  0.05
+    RUN_9_5  SPEC_2_5  0.002
+    RUN_9_5  SPEC_3_5  0.022
+    RUN_10_5  COST  10.193
+    RUN_10_5  CRUDE_10_5  1
+    RUN_10_5  CDU_5  1
+    RUN_10_5  PROD_0_5  -0.22
+    RUN_10_5  PROD_1_5  -0.24
+    RUN_10_5  PROD_2_5  -0.21
+    RUN_10_5  PROD_3_5  -0.23
+    RUN_10_5  PROD_4_5  -0.11
+    RUN_10_5  PROD_5_5  -0.02
+    RUN_10_5  PROD_6_5  -0.14
+    RUN_10_5  PROD_7_5  -0.21
+    RUN_10_5  PROD_8_5  -0.16
+    RUN_10_5  PROD_9_5  -0.03
+    RUN_10_5  PROD_10_5  -0.24
+    RUN_10_5  PROD_11_5  -0.05
+    RUN_10_5  SPEC_0_5  0.023
+    RUN_10_5  SPEC_1_5  0.039
+    RUN_10_5  SPEC_2_5  0.043
+    RUN_10_5  SPEC_3_5  0.018
+    RUN_11_5  COST  1.733
+    RUN_11_5  CRUDE_11_5  1
+    RUN_11_5  CDU_5  1
+    RUN_11_5  PROD_0_5  -0.16
+    RUN_11_5  PROD_1_5  -0.26
+    RUN_11_5  PROD_2_5  -0.12
+    RUN_11_5  PROD_3_5  -0.11
+    RUN_11_5  PROD_4_5  -0.15
+    RUN_11_5  PROD_5_5  -0.23
+    RUN_11_5  PROD_7_5  -0.15
+    RUN_11_5  PROD_8_5  -0.01
+    RUN_11_5  PROD_9_5  -0.09
+    RUN_11_5  PROD_10_5  -0.22
+    RUN_11_5  PROD_11_5  -0.27
+    RUN_11_5  SPEC_0_5  0.036
+    RUN_11_5  SPEC_1_5  0.021
+    RUN_11_5  SPEC_2_5  0.004
+    RUN_11_5  SPEC_3_5  0.004
+    RUN_12_5  COST  5.731
+    RUN_12_5  CRUDE_12_5  1
+    RUN_12_5  CDU_5  1
+    RUN_12_5  PROD_0_5  -0.19
+    RUN_12_5  PROD_1_5  -0.18
+    RUN_12_5  PROD_2_5  -0.18
+    RUN_12_5  PROD_3_5  -0.12
+    RUN_12_5  PROD_4_5  -0.2
+    RUN_12_5  PROD_5_5  -0.05
+    RUN_12_5  PROD_6_5  -0.05
+    RUN_12_5  PROD_7_5  -0.16
+    RUN_12_5  PROD_8_5  -0.07
+    RUN_12_5  PROD_10_5  -0.24
+    RUN_12_5  PROD_11_5  -0.06
+    RUN_12_5  SPEC_0_5  0.035
+    RUN_12_5  SPEC_1_5  0.029
+    RUN_12_5  SPEC_2_5  0.005
+    RUN_12_5  SPEC_3_5  0.01
+    RUN_13_5  COST  6.16
+    RUN_13_5  CRUDE_13_5  1
+    RUN_13_5  CDU_5  1
+    RUN_13_5  PROD_0_5  -0.17
+    RUN_13_5  PROD_1_5  -0.29
+    RUN_13_5  PROD_2_5  -0.27
+    RUN_13_5  PROD_3_5  -0.17
+    RUN_13_5  PROD_4_5  -0.07
+    RUN_13_5  PROD_5_5  -0.12
+    RUN_13_5  PROD_6_5  -0.16
+    RUN_13_5  PROD_7_5  -0.11
+    RUN_13_5  PROD_8_5  -0.3
+    RUN_13_5  PROD_9_5  -0.27
+    RUN_13_5  PROD_10_5  -0.18
+    RUN_13_5  PROD_11_5  -0.11
+    RUN_13_5  SPEC_0_5  0.012
+    RUN_13_5  SPEC_1_5  0.038
+    RUN_13_5  SPEC_2_5  0.001
+    RUN_13_5  SPEC_3_5  0.01
+    RUN_14_5  COST  6.017
+    RUN_14_5  CRUDE_14_5  1
+    RUN_14_5  CDU_5  1
+    RUN_14_5  PROD_0_5  -0.14
+    RUN_14_5  PROD_1_5  -0.29
+    RUN_14_5  PROD_2_5  -0.08
+    RUN_14_5  PROD_3_5  -0.21
+    RUN_14_5  PROD_4_5  -0.17
+    RUN_14_5  PROD_5_5  -0.19
+    RUN_14_5  PROD_6_5  -0.3
+    RUN_14_5  PROD_7_5  -0.23
+    RUN_14_5  PROD_9_5  -0.12
+    RUN_14_5  PROD_10_5  -0.25
+    RUN_14_5  PROD_11_5  -0.27
+    RUN_14_5  SPEC_0_5  0.032
+    RUN_14_5  SPEC_1_5  0.001
+    RUN_14_5  SPEC_2_5  0.028
+    RUN_14_5  SPEC_3_5  0.016
+    PROD_0_5  COST  -1
+    PROD_0_5  PROD_0_5  1
+    PROD_0_5  SELL_0_5  -1
+    SELL_0_5  SELL_0_5  1
+    PROD_1_5  COST  -5
+    PROD_1_5  PROD_1_5  1
+    PROD_1_5  SELL_1_5  -1
+    SELL_1_5  COST  -3
+    SELL_1_5  SELL_1_5  1
+    PROD_2_5  COST  1
+    PROD_2_5  PROD_2_5  1
+    PROD_2_5  SELL_2_5  -1
+    SELL_2_5  SELL_2_5  1
+    PROD_3_5  COST  -5
+    PROD_3_5  PROD_3_5  1
+    PROD_3_5  SELL_3_5  -1
+    SELL_3_5  COST  -3
+    SELL_3_5  SELL_3_5  1
+    PROD_4_5  COST  -8
+    PROD_4_5  PROD_4_5  1
+    PROD_4_5  SELL_4_5  -1
+    SELL_4_5  SELL_4_5  1
+    PROD_5_5  COST  8
+    PROD_5_5  PROD_5_5  1
+    PROD_5_5  SELL_5_5  -1
+    SELL_5_5  COST  -3
+    SELL_5_5  SELL_5_5  1
+    PROD_6_5  COST  -7
+    PROD_6_5  PROD_6_5  1
+    PROD_6_5  SELL_6_5  -1
+    SELL_6_5  SELL_6_5  1
+    PROD_7_5  COST  -8
+    PROD_7_5  PROD_7_5  1
+    PROD_7_5  SELL_7_5  -1
+    SELL_7_5  COST  -9
+    SELL_7_5  SELL_7_5  1
+    PROD_8_5  COST  -7
+    PROD_8_5  PROD_8_5  1
+    PROD_8_5  SELL_8_5  -1
+    SELL_8_5  COST  -3
+    SELL_8_5  SELL_8_5  1
+    PROD_9_5  COST  1
+    PROD_9_5  PROD_9_5  1
+    PROD_9_5  SELL_9_5  -1
+    SELL_9_5  COST  -6
+    SELL_9_5  SELL_9_5  1
+    PROD_10_5  COST  -5
+    PROD_10_5  PROD_10_5  1
+    PROD_10_5  SELL_10_5  -1
+    SELL_10_5  COST  5
+    SELL_10_5  SELL_10_5  1
+    PROD_11_5  COST  7
+    PROD_11_5  PROD_11_5  1
+    PROD_11_5  SELL_11_5  -1
+    SELL_11_5  COST  -9
+    SELL_11_5  SELL_11_5  1
+    RUN_0_6  COST  -2.156
+    RUN_0_6  CRUDE_0_6  1
+    RUN_0_6  CDU_6  1
+    RUN_0_6  PROD_0_6  -0.04
+    RUN_0_6  PROD_1_6  -0.18
+    RUN_0_6  PROD_2_6  -0.27
+    RUN_0_6  PROD_3_6  -0.25
+    RUN_0_6  PROD_4_6  -0.24
+    RUN_0_6  PROD_5_6  -0.02
+    RUN_0_6  PROD_6_6  -0.08
+    RUN_0_6  PROD_7_6  -0.03
+    RUN_0_6  PROD_8_6  -0.15
+    RUN_0_6  PROD_9_6  -0.24
+    RUN_0_6  PROD_10_6  -0.14
+    RUN_0_6  PROD_11_6  -0.15
+    RUN_0_6  SPEC_0_6  0.047
+    RUN_0_6  SPEC_1_6  0.026
+    RUN_0_6  SPEC_2_6  0.014
+    RUN_1_6  COST  -1.386
+    RUN_1_6  CRUDE_1_6  1
+    RUN_1_6  CDU_6  1
+    RUN_1_6  PROD_0_6  -0.2
+    RUN_1_6  PROD_1_6  -0.12
+    RUN_1_6  PROD_2_6  -0.25
+    RUN_1_6  PROD_3_6  -0.06
+    RUN_1_6  PROD_4_6  -0.03
+    RUN_1_6  PROD_5_6  -0.15
+    RUN_1_6  PROD_7_6  -0.28
+    RUN_1_6  PROD_8_6  -0.26
+    RUN_1_6  PROD_9_6  -0.12
+    RUN_1_6  PROD_10_6  -0.13
+    RUN_1_6  PROD_11_6  -0.19
+    RUN_1_6  SPEC_0_6  0.032
+    RUN_1_6  SPEC_1_6  0.031
+    RUN_1_6  SPEC_2_6  0.04
+    RUN_1_6  SPEC_3_6  0.048
+    RUN_2_6  COST  -2.432
+    RUN_2_6  CRUDE_2_6  1
+    RUN_2_6  CDU_6  1
+    RUN_2_6  PROD_0_6  -0.24
+    RUN_2_6  PROD_1_6  -0.24
+    RUN_2_6  PROD_3_6  -0.22
+    RUN_2_6  PROD_4_6  -0.14
+    RUN_2_6  PROD_5_6  -0.08
+    RUN_2_6  PROD_6_6  -0.23
+    RUN_2_6  PROD_7_6  -0.25
+    RUN_2_6  PROD_8_6  -0.07
+    RUN_2_6  PROD_9_6  -0.18
+    RUN_2_6  PROD_10_6  -0.3
+    RUN_2_6  PROD_11_6  -0.03
+    RUN_2_6  SPEC_0_6  0.008
+    RUN_2_6  SPEC_1_6  0.022
+    RUN_2_6  SPEC_2_6  0.011
+    RUN_2_6  SPEC_3_6  0.048
+    RUN_3_6  COST  3.214
+    RUN_3_6  CRUDE_3_6  1
+    RUN_3_6  CDU_6  1
+    RUN_3_6  PROD_0_6  -0.28
+    RUN_3_6  PROD_1_6  -0.1
+    RUN_3_6  PROD_5_6  -0.2
+    RUN_3_6  PROD_6_6  -0.17
+    RUN_3_6  PROD_8_6  -0.3
+    RUN_3_6  PROD_9_6  -0.28
+    RUN_3_6  PROD_10_6  -0.12
+    RUN_3_6  PROD_11_6  -0.21
+    RUN_3_6  SPEC_0_6  0.033
+    RUN_3_6  SPEC_1_6  0.026
+    RUN_3_6  SPEC_2_6  0.035
+    RUN_3_6  SPEC_3_6  0.017
+    RUN_4_6  COST  -2.742
+    RUN_4_6  CRUDE_4_6  1
+    RUN_4_6  CDU_6  1
+    RUN_4_6  PROD_0_6  -0.06
+    RUN_4_6  PROD_1_6  -0.13
+    RUN_4_6  PROD_2_6  -0.23
+    RUN_4_6  PROD_4_6  -0.16
+    RUN_4_6  PROD_5_6  -0.07
+    RUN_4_6  PROD_6_6  -0.24
+    RUN_4_6  PROD_7_6  -0.14
+    RUN_4_6  PROD_8_6  -0.3
+    RUN_4_6  PROD_9_6  -0.15
+    RUN_4_6  PROD_10_6  -0.17
+    RUN_4_6  PROD_11_6  -0.07
+    RUN_4_6  SPEC_0_6  0.049
+    RUN_4_6  SPEC_1_6  0.022
+    RUN_4_6  SPEC_2_6  0.037
+    RUN_4_6  SPEC_3_6  0.015
+    RUN_5_6  COST  -3.84
+    RUN_5_6  CRUDE_5_6  1
+    RUN_5_6  CDU_6  1
+    RUN_5_6  PROD_0_6  -0.11
+    RUN_5_6  PROD_1_6  -0.07
+    RUN_5_6  PROD_2_6  -0.21
+    RUN_5_6  PROD_3_6  -0.07
+    RUN_5_6  PROD_4_6  -0.24
+    RUN_5_6  PROD_5_6  -0.14
+    RUN_5_6  PROD_6_6  -0.3
+    RUN_5_6  PROD_7_6  -0.09
+    RUN_5_6  PROD_8_6  -0.29
+    RUN_5_6  PROD_10_6  -0.13
+    RUN_5_6  PROD_11_6  -0.26
+    RUN_5_6  SPEC_0_6  0.035
+    RUN_5_6  SPEC_2_6  0.011
+    RUN_5_6  SPEC_3_6  0.017
+    RUN_6_6  COST  -1.534
+    RUN_6_6  CRUDE_6_6  1
+    RUN_6_6  CDU_6  1
+    RUN_6_6  PROD_0_6  -0.29
+    RUN_6_6  PROD_1_6  -0.17
+    RUN_6_6  PROD_2_6  -0.29
+    RUN_6_6  PROD_3_6  -0.2
+    RUN_6_6  PROD_4_6  -0.03
+    RUN_6_6  PROD_5_6  -0.05
+    RUN_6_6  PROD_6_6  -0.2
+    RUN_6_6  PROD_7_6  -0.23
+    RUN_6_6  PROD_8_6  -0.27
+    RUN_6_6  PROD_9_6  -0.09
+    RUN_6_6  PROD_10_6  -0.03
+    RUN_6_6  PROD_11_6  -0.23
+    RUN_6_6  SPEC_0_6  0.013
+    RUN_6_6  SPEC_1_6  0.034
+    RUN_6_6  SPEC_2_6  0.005
+    RUN_6_6  SPEC_3_6  0.007
+    RUN_7_6  COST  -1.374
+    RUN_7_6  CRUDE_7_6  1
+    RUN_7_6  CDU_6  1
+    RUN_7_6  PROD_0_6  -0.1
+    RUN_7_6  PROD_1_6  -0.28
+    RUN_7_6  PROD_2_6  -0.23
+    RUN_7_6  PROD_3_6  -0.22
+    RUN_7_6  PROD_4_6  -0.16
+    RUN_7_6  PROD_5_6  -0.29
+    RUN_7_6  PROD_6_6  -0.3
+    RUN_7_6  PROD_7_6  -0.13
+    RUN_7_6  PROD_8_6  -0.16
+    RUN_7_6  PROD_9_6  -0.26
+    RUN_7_6  PROD_10_6  -0.29
+    RUN_7_6  PROD_11_6  -0.21
+    RUN_7_6  SPEC_0_6  0.027
+    RUN_7_6  SPEC_1_6  0.034
+    RUN_7_6  SPEC_2_6  0.035
+    RUN_7_6  SPEC_3_6  0.039
+    RUN_8_6  COST  -1.174
+    RUN_8_6  CRUDE_8_6  1
+    RUN_8_6  CDU_6  1
+    RUN_8_6  PROD_0_6  -0.06
+    RUN_8_6  PROD_1_6  -0.09
+    RUN_8_6  PROD_2_6  -0.09
+    RUN_8_6  PROD_3_6  -0.18
+    RUN_8_6  PROD_4_6  -0.28
+    RUN_8_6  PROD_5_6  -0.15
+    RUN_8_6  PROD_6_6  -0.27
+    RUN_8_6  PROD_7_6  -0.3
+    RUN_8_6  PROD_8_6  -0.16
+    RUN_8_6  PROD_9_6  -0.12
+    RUN_8_6  PROD_10_6  -0.18
+    RUN_8_6  PROD_11_6  -0.27
+    RUN_8_6  SPEC_0_6  0.003
+    RUN_8_6  SPEC_1_6  0.039
+    RUN_8_6  SPEC_2_6  0.016
+    RUN_8_6  SPEC_3_6  0.011
+    RUN_9_6  COST  -4.7
+    RUN_9_6  CRUDE_9_6  1
+    RUN_9_6  CDU_6  1
+    RUN_9_6  PROD_0_6  -0.01
+    RUN_9_6  PROD_1_6  -0.15
+    RUN_9_6  PROD_2_6  -0.07
+    RUN_9_6  PROD_3_6  -0.23
+    RUN_9_6  PROD_4_6  -0.25
+    RUN_9_6  PROD_5_6  -0.12
+    RUN_9_6  PROD_6_6  -0.13
+    RUN_9_6  PROD_7_6  -0.21
+    RUN_9_6  PROD_8_6  -0.05
+    RUN_9_6  PROD_9_6  -0.11
+    RUN_9_6  PROD_10_6  -0.17
+    RUN_9_6  PROD_11_6  -0.28
+    RUN_9_6  SPEC_0_6  0.03
+    RUN_9_6  SPEC_1_6  0.05
+    RUN_9_6  SPEC_2_6  0.002
+    RUN_9_6  SPEC_3_6  0.022
+    RUN_10_6  COST  -2.774
+    RUN_10_6  CRUDE_10_6  1
+    RUN_10_6  CDU_6  1
+    RUN_10_6  PROD_0_6  -0.22
+    RUN_10_6  PROD_1_6  -0.24
+    RUN_10_6  PROD_2_6  -0.21
+    RUN_10_6  PROD_3_6  -0.23
+    RUN_10_6  PROD_4_6  -0.11
+    RUN_10_6  PROD_5_6  -0.02
+    RUN_10_6  PROD_6_6  -0.14
+    RUN_10_6  PROD_7_6  -0.21
+    RUN_10_6  PROD_8_6  -0.16
+    RUN_10_6  PROD_9_6  -0.03
+    RUN_10_6  PROD_10_6  -0.24
+    RUN_10_6  PROD_11_6  -0.05
+    RUN_10_6  SPEC_0_6  0.023
+    RUN_10_6  SPEC_1_6  0.039
+    RUN_10_6  SPEC_2_6  0.043
+    RUN_10_6  SPEC_3_6  0.018
+    RUN_11_6  COST  -3.786
+    RUN_11_6  CRUDE_11_6  1
+    RUN_11_6  CDU_6  1
+    RUN_11_6  PROD_0_6  -0.16
+    RUN_11_6  PROD_1_6  -0.26
+    RUN_11_6  PROD_2_6  -0.12
+    RUN_11_6  PROD_3_6  -0.11
+    RUN_11_6  PROD_4_6  -0.15
+    RUN_11_6  PROD_5_6  -0.23
+    RUN_11_6  PROD_7_6  -0.15
+    RUN_11_6  PROD_8_6  -0.01
+    RUN_11_6  PROD_9_6  -0.09
+    RUN_11_6  PROD_10_6  -0.22
+    RUN_11_6  PROD_11_6  -0.27
+    RUN_11_6  SPEC_0_6  0.036
+    RUN_11_6  SPEC_1_6  0.021
+    RUN_11_6  SPEC_2_6  0.004
+    RUN_11_6  SPEC_3_6  0.004
+    RUN_12_6  COST  -4.774
+    RUN_12_6  CRUDE_12_6  1
+    RUN_12_6  CDU_6  1
+    RUN_12_6  PROD_0_6  -0.19
+    RUN_12_6  PROD_1_6  -0.18
+    RUN_12_6  PROD_2_6  -0.18
+    RUN_12_6  PROD_3_6  -0.12
+    RUN_12_6  PROD_4_6  -0.2
+    RUN_12_6  PROD_5_6  -0.05
+    RUN_12_6  PROD_6_6  -0.05
+    RUN_12_6  PROD_7_6  -0.16
+    RUN_12_6  PROD_8_6  -0.07
+    RUN_12_6  PROD_10_6  -0.24
+    RUN_12_6  PROD_11_6  -0.06
+    RUN_12_6  SPEC_0_6  0.035
+    RUN_12_6  SPEC_1_6  0.029
+    RUN_12_6  SPEC_2_6  0.005
+    RUN_12_6  SPEC_3_6  0.01
+    RUN_13_6  COST  7.532
+    RUN_13_6  CRUDE_13_6  1
+    RUN_13_6  CDU_6  1
+    RUN_13_6  PROD_0_6  -0.17
+    RUN_13_6  PROD_1_6  -0.29
+    RUN_13_6  PROD_2_6  -0.27
+    RUN_13_6  PROD_3_6  -0.17
+    RUN_13_6  PROD_4_6  -0.07
+    RUN_13_6  PROD_5_6  -0.12
+    RUN_13_6  PROD_6_6  -0.16
+    RUN_13_6  PROD_7_6  -0.11
+    RUN_13_6  PROD_8_6  -0.3
+    RUN_13_6  PROD_9_6  -0.27
+    RUN_13_6  PROD_10_6  -0.18
+    RUN_13_6  PROD_11_6  -0.11
+    RUN_13_6  SPEC_0_6  0.012
+    RUN_13_6  SPEC_1_6  0.038
+    RUN_13_6  SPEC_2_6  0.001
+    RUN_13_6  SPEC_3_6  0.01
+    RUN_14_6  COST  -2.086
+    RUN_14_6  CRUDE_14_6  1
+    RUN_14_6  CDU_6  1
+    RUN_14_6  PROD_0_6  -0.14
+    RUN_14_6  PROD_1_6  -0.29
+    RUN_14_6  PROD_2_6  -0.08
+    RUN_14_6  PROD_3_6  -0.21
+    RUN_14_6  PROD_4_6  -0.17
+    RUN_14_6  PROD_5_6  -0.19
+    RUN_14_6  PROD_6_6  -0.3
+    RUN_14_6  PROD_7_6  -0.23
+    RUN_14_6  PROD_9_6  -0.12
+    RUN_14_6  PROD_10_6  -0.25
+    RUN_14_6  PROD_11_6  -0.27
+    RUN_14_6  SPEC_0_6  0.032
+    RUN_14_6  SPEC_1_6  0.001
+    RUN_14_6  SPEC_2_6  0.028
+    RUN_14_6  SPEC_3_6  0.016
+    PROD_0_6  COST  7
+    PROD_0_6  PROD_0_6  1
+    PROD_0_6  SELL_0_6  -1
+    SELL_0_6  COST  -1
+    SELL_0_6  SELL_0_6  1
+    PROD_1_6  COST  1
+    PROD_1_6  PROD_1_6  1
+    PROD_1_6  SELL_1_6  -1
+    SELL_1_6  COST  -8
+    SELL_1_6  SELL_1_6  1
+    PROD_2_6  COST  -1
+    PROD_2_6  PROD_2_6  1
+    PROD_2_6  SELL_2_6  -1
+    SELL_2_6  COST  -2
+    SELL_2_6  SELL_2_6  1
+    PROD_3_6  COST  -7
+    PROD_3_6  PROD_3_6  1
+    PROD_3_6  SELL_3_6  -1
+    SELL_3_6  SELL_3_6  1
+    PROD_4_6  COST  6
+    PROD_4_6  PROD_4_6  1
+    PROD_4_6  SELL_4_6  -1
+    SELL_4_6  COST  -8
+    SELL_4_6  SELL_4_6  1
+    PROD_5_6  COST  1
+    PROD_5_6  PROD_5_6  1
+    PROD_5_6  SELL_5_6  -1
+    SELL_5_6  SELL_5_6  1
+    PROD_6_6  COST  8
+    PROD_6_6  PROD_6_6  1
+    PROD_6_6  SELL_6_6  -1
+    SELL_6_6  COST  -8
+    SELL_6_6  SELL_6_6  1
+    PROD_7_6  COST  -9
+    PROD_7_6  PROD_7_6  1
+    PROD_7_6  SELL_7_6  -1
+    SELL_7_6  SELL_7_6  1
+    PROD_8_6  COST  -4
+    PROD_8_6  PROD_8_6  1
+    PROD_8_6  SELL_8_6  -1
+    SELL_8_6  SELL_8_6  1
+    PROD_9_6  COST  -6
+    PROD_9_6  PROD_9_6  1
+    PROD_9_6  SELL_9_6  -1
+    SELL_9_6  SELL_9_6  1
+    PROD_10_6  COST  1
+    PROD_10_6  PROD_10_6  1
+    PROD_10_6  SELL_10_6  -1
+    SELL_10_6  COST  -8
+    SELL_10_6  SELL_10_6  1
+    PROD_11_6  COST  -3
+    PROD_11_6  PROD_11_6  1
+    PROD_11_6  SELL_11_6  -1
+    SELL_11_6  SELL_11_6  1
+    RUN_0_7  COST  8.542
+    RUN_0_7  CRUDE_0_7  1
+    RUN_0_7  CDU_7  1
+    RUN_0_7  PROD_0_7  -0.04
+    RUN_0_7  PROD_1_7  -0.18
+    RUN_0_7  PROD_2_7  -0.27
+    RUN_0_7  PROD_3_7  -0.25
+    RUN_0_7  PROD_4_7  -0.24
+    RUN_0_7  PROD_5_7  -0.02
+    RUN_0_7  PROD_6_7  -0.08
+    RUN_0_7  PROD_7_7  -0.03
+    RUN_0_7  PROD_8_7  -0.15
+    RUN_0_7  PROD_9_7  -0.24
+    RUN_0_7  PROD_10_7  -0.14
+    RUN_0_7  PROD_11_7  -0.15
+    RUN_0_7  SPEC_0_7  0.047
+    RUN_0_7  SPEC_1_7  0.026
+    RUN_0_7  SPEC_2_7  0.014
+    RUN_1_7  COST  7.619
+    RUN_1_7  CRUDE_1_7  1
+    RUN_1_7  CDU_7  1
+    RUN_1_7  PROD_0_7  -0.2
+    RUN_1_7  PROD_1_7  -0.12
+    RUN_1_7  PROD_2_7  -0.25
+    RUN_1_7  PROD_3_7  -0.06
+    RUN_1_7  PROD_4_7  -0.03
+    RUN_1_7  PROD_5_7  -0.15
+    RUN_1_7  PROD_7_7  -0.28
+    RUN_1_7  PROD_8_7  -0.26
+    RUN_1_7  PROD_9_7  -0.12
+    RUN_1_7  PROD_10_7  -0.13
+    RUN_1_7  PROD_11_7  -0.19
+    RUN_1_7  SPEC_0_7  0.032
+    RUN_1_7  SPEC_1_7  0.031
+    RUN_1_7  SPEC_2_7  0.04
+    RUN_1_7  SPEC_3_7  0.048
+    RUN_2_7  COST  3.886
+    RUN_2_7  CRUDE_2_7  1
+    RUN_2_7  CDU_7  1
+    RUN_2_7  PROD_0_7  -0.24
+    RUN_2_7  PROD_1_7  -0.24
+    RUN_2_7  PROD_3_7  -0.22
+    RUN_2_7  PROD_4_7  -0.14
+    RUN_2_7  PROD_5_7  -0.08
+    RUN_2_7  PROD_6_7  -0.23
+    RUN_2_7  PROD_7_7  -0.25
+    RUN_2_7  PROD_8_7  -0.07
+    RUN_2_7  PROD_9_7  -0.18
+    RUN_2_7  PROD_10_7  -0.3
+    RUN_2_7  PROD_11_7  -0.03
+    RUN_2_7  SPEC_0_7  0.008
+    RUN_2_7  SPEC_1_7  0.022
+    RUN_2_7  SPEC_2_7  0.011
+    RUN_2_7  SPEC_3_7  0.048
+    RUN_3_7  COST  -0.635
+    RUN_3_7  CRUDE_3_7  1
+    RUN_3_7  CDU_7  1
+    RUN_3_7  PROD_0_7  -0.28
+    RUN_3_7  PROD_1_7  -0.1
+    RUN_3_7  PROD_5_7  -0.2
+    RUN_3_7  PROD_6_7  -0.17
+    RUN_3_7  PROD_8_7  -0.3
+    RUN_3_7  PROD_9_7  -0.28
+    RUN_3_7  PROD_10_7  -0.12
+    RUN_3_7  PROD_11_7  -0.21
+    RUN_3_7  SPEC_0_7  0.033
+    RUN_3_7  SPEC_1_7  0.026
+    RUN_3_7  SPEC_2_7  0.035
+    RUN_3_7  SPEC_3_7  0.017
+    RUN_4_7  COST  3.009
+    RUN_4_7  CRUDE_4_7  1
+    RUN_4_7  CDU_7  1
+    RUN_4_7  PROD_0_7  -0.06
+    RUN_4_7  PROD_1_7  -0.13
+    RUN_4_7  PROD_2_7  -0.23
+    RUN_4_7  PROD_4_7  -0.16
+    RUN_4_7  PROD_5_7  -0.07
+    RUN_4_7  PROD_6_7  -0.24
+    RUN_4_7  PROD_7_7  -0.14
+    RUN_4_7  PROD_8_7  -0.3
+    RUN_4_7  PROD_9_7  -0.15
+    RUN_4_7  PROD_10_7  -0.17
+    RUN_4_7  PROD_11_7  -0.07
+    RUN_4_7  SPEC_0_7  0.049
+    RUN_4_7  SPEC_1_7  0.022
+    RUN_4_7  SPEC_2_7  0.037
+    RUN_4_7  SPEC_3_7  0.015
+    RUN_5_7  COST  5.203
+    RUN_5_7  CRUDE_5_7  1
+    RUN_5_7  CDU_7  1
+    RUN_5_7  PROD_0_7  -0.11
+    RUN_5_7  PROD_1_7  -0.07
+    RUN_5_7  PROD_2_7  -0.21
+    RUN_5_7  PROD_3_7  -0.07
+    RUN_5_7  PROD_4_7  -0.24
+    RUN_5_7  PROD_5_7  -0.14
+    RUN_5_7  PROD_6_7  -0.3
+    RUN_5_7  PROD_7_7  -0.09
+    RUN_5_7  PROD_8_7  -0.29
+    RUN_5_7  PROD_10_7  -0.13
+    RUN_5_7  PROD_11_7  -0.26
+    RUN_5_7  SPEC_0_7  0.035
+    RUN_5_7  SPEC_2_7  0.011
+    RUN_5_7  SPEC_3_7  0.017
+    RUN_6_7  COST  5.491
+    RUN_6_7  CRUDE_6_7  1
+    RUN_6_7  CDU_7  1
+    RUN_6_7  PROD_0_7  -0.29
+    RUN_6_7  PROD_1_7  -0.17
+    RUN_6_7  PROD_2_7  -0.29
+    RUN_6_7  PROD_3_7  -0.2
+    RUN_6_7  PROD_4_7  -0.03
+    RUN_6_7  PROD_5_7  -0.05
+    RUN_6_7  PROD_6_7  -0.2
+    RUN_6_7  PROD_7_7  -0.23
+    RUN_6_7  PROD_8_7  -0.27
+    RUN_6_7  PROD_9_7  -0.09
+    RUN_6_7  PROD_10_7  -0.03
+    RUN_6_7  PROD_11_7  -0.23
+    RUN_6_7  SPEC_0_7  0.013
+    RUN_6_7  SPEC_1_7  0.034
+    RUN_6_7  SPEC_2_7  0.005
+    RUN_6_7  SPEC_3_7  0.007
+    RUN_7_7  COST  7.489
+    RUN_7_7  CRUDE_7_7  1
+    RUN_7_7  CDU_7  1
+    RUN_7_7  PROD_0_7  -0.1
+    RUN_7_7  PROD_1_7  -0.28
+    RUN_7_7  PROD_2_7  -0.23
+    RUN_7_7  PROD_3_7  -0.22
+    RUN_7_7  PROD_4_7  -0.16
+    RUN_7_7  PROD_5_7  -0.29
+    RUN_7_7  PROD_6_7  -0.3
+    RUN_7_7  PROD_7_7  -0.13
+    RUN_7_7  PROD_8_7  -0.16
+    RUN_7_7  PROD_9_7  -0.26
+    RUN_7_7  PROD_10_7  -0.29
+    RUN_7_7  PROD_11_7  -0.21
+    RUN_7_7  SPEC_0_7  0.027
+    RUN_7_7  SPEC_1_7  0.034
+    RUN_7_7  SPEC_2_7  0.035
+    RUN_7_7  SPEC_3_7  0.039
+    RUN_8_7  COST  4.702
+    RUN_8_7  CRUDE_8_7  1
+    RUN_8_7  CDU_7  1
+    RUN_8_7  PROD_0_7  -0.06
+    RUN_8_7  PROD_1_7  -0.09
+    RUN_8_7  PROD_2_7  -0.09
+    RUN_8_7  PROD_3_7  -0.18
+    RUN_8_7  PROD_4_7  -0.28
+    RUN_8_7  PROD_5_7  -0.15
+    RUN_8_7  PROD_6_7  -0.27
+    RUN_8_7  PROD_7_7  -0.3
+    RUN_8_7  PROD_8_7  -0.16
+    RUN_8_7  PROD_9_7  -0.12
+    RUN_8_7  PROD_10_7  -0.18
+    RUN_8_7  PROD_11_7  -0.27
+    RUN_8_7  SPEC_0_7  0.003
+    RUN_8_7  SPEC_1_7  0.039
+    RUN_8_7  SPEC_2_7  0.016
+    RUN_8_7  SPEC_3_7  0.011
+    RUN_9_7  COST  -4.532
+    RUN_9_7  CRUDE_9_7  1
+    RUN_9_7  CDU_7  1
+    RUN_9_7  PROD_0_7  -0.01
+    RUN_9_7  PROD_1_7  -0.15
+    RUN_9_7  PROD_2_7  -0.07
+    RUN_9_7  PROD_3_7  -0.23
+    RUN_9_7  PROD_4_7  -0.25
+    RUN_9_7  PROD_5_7  -0.12
+    RUN_9_7  PROD_6_7  -0.13
+    RUN_9_7  PROD_7_7  -0.21
+    RUN_9_7  PROD_8_7  -0.05
+    RUN_9_7  PROD_9_7  -0.11
+    RUN_9_7  PROD_10_7  -0.17
+    RUN_9_7  PROD_11_7  -0.28
+    RUN_9_7  SPEC_0_7  0.03
+    RUN_9_7  SPEC_1_7  0.05
+    RUN_9_7  SPEC_2_7  0.002
+    RUN_9_7  SPEC_3_7  0.022
+    RUN_10_7  COST  8.535
+    RUN_10_7  CRUDE_10_7  1
+    RUN_10_7  CDU_7  1
+    RUN_10_7  PROD_0_7  -0.22
+    RUN_10_7  PROD_1_7  -0.24
+    RUN_10_7  PROD_2_7  -0.21
+    RUN_10_7  PROD_3_7  -0.23
+    RUN_10_7  PROD_4_7  -0.11
+    RUN_10_7  PROD_5_7  -0.02
+    RUN_10_7  PROD_6_7  -0.14
+    RUN_10_7  PROD_7_7  -0.21
+    RUN_10_7  PROD_8_7  -0.16
+    RUN_10_7  PROD_9_7  -0.03
+    RUN_10_7  PROD_10_7  -0.24
+    RUN_10_7  PROD_11_7  -0.05
+    RUN_10_7  SPEC_0_7  0.023
+    RUN_10_7  SPEC_1_7  0.039
+    RUN_10_7  SPEC_2_7  0.043
+    RUN_10_7  SPEC_3_7  0.018
+    RUN_11_7  COST  3.133
+    RUN_11_7  CRUDE_11_7  1
+    RUN_11_7  CDU_7  1
+    RUN_11_7  PROD_0_7  -0.16
+    RUN_11_7  PROD_1_7  -0.26
+    RUN_11_7  PROD_2_7  -0.12
+    RUN_11_7  PROD_3_7  -0.11
+    RUN_11_7  PROD_4_7  -0.15
+    RUN_11_7  PROD_5_7  -0.23
+    RUN_11_7  PROD_7_7  -0.15
+    RUN_11_7  PROD_8_7  -0.01
+    RUN_11_7  PROD_9_7  -0.09
+    RUN_11_7  PROD_10_7  -0.22
+    RUN_11_7  PROD_11_7  -0.27
+    RUN_11_7  SPEC_0_7  0.036
+    RUN_11_7  SPEC_1_7  0.021
+    RUN_11_7  SPEC_2_7  0.004
+    RUN_11_7  SPEC_3_7  0.004
+    RUN_12_7  COST  4.043
+    RUN_12_7  CRUDE_12_7  1
+    RUN_12_7  CDU_7  1
+    RUN_12_7  PROD_0_7  -0.19
+    RUN_12_7  PROD_1_7  -0.18
+    RUN_12_7  PROD_2_7  -0.18
+    RUN_12_7  PROD_3_7  -0.12
+    RUN_12_7  PROD_4_7  -0.2
+    RUN_12_7  PROD_5_7  -0.05
+    RUN_12_7  PROD_6_7  -0.05
+    RUN_12_7  PROD_7_7  -0.16
+    RUN_12_7  PROD_8_7  -0.07
+    RUN_12_7  PROD_10_7  -0.24
+    RUN_12_7  PROD_11_7  -0.06
+    RUN_12_7  SPEC_0_7  0.035
+    RUN_12_7  SPEC_1_7  0.029
+    RUN_12_7  SPEC_2_7  0.005
+    RUN_12_7  SPEC_3_7  0.01
+    RUN_13_7  COST  3.566
+    RUN_13_7  CRUDE_13_7  1
+    RUN_13_7  CDU_7  1
+    RUN_13_7  PROD_0_7  -0.17
+    RUN_13_7  PROD_1_7  -0.29
+    RUN_13_7  PROD_2_7  -0.27
+    RUN_13_7  PROD_3_7  -0.17
+    RUN_13_7  PROD_4_7  -0.07
+    RUN_13_7  PROD_5_7  -0.12
+    RUN_13_7  PROD_6_7  -0.16
+    RUN_13_7  PROD_7_7  -0.11
+    RUN_13_7  PROD_8_7  -0.3
+    RUN_13_7  PROD_9_7  -0.27
+    RUN_13_7  PROD_10_7  -0.18
+    RUN_13_7  PROD_11_7  -0.11
+    RUN_13_7  SPEC_0_7  0.012
+    RUN_13_7  SPEC_1_7  0.038
+    RUN_13_7  SPEC_2_7  0.001
+    RUN_13_7  SPEC_3_7  0.01
+    RUN_14_7  COST  6.551
+    RUN_14_7  CRUDE_14_7  1
+    RUN_14_7  CDU_7  1
+    RUN_14_7  PROD_0_7  -0.14
+    RUN_14_7  PROD_1_7  -0.29
+    RUN_14_7  PROD_2_7  -0.08
+    RUN_14_7  PROD_3_7  -0.21
+    RUN_14_7  PROD_4_7  -0.17
+    RUN_14_7  PROD_5_7  -0.19
+    RUN_14_7  PROD_6_7  -0.3
+    RUN_14_7  PROD_7_7  -0.23
+    RUN_14_7  PROD_9_7  -0.12
+    RUN_14_7  PROD_10_7  -0.25
+    RUN_14_7  PROD_11_7  -0.27
+    RUN_14_7  SPEC_0_7  0.032
+    RUN_14_7  SPEC_1_7  0.001
+    RUN_14_7  SPEC_2_7  0.028
+    RUN_14_7  SPEC_3_7  0.016
+    PROD_0_7  COST  3
+    PROD_0_7  PROD_0_7  1
+    PROD_0_7  SELL_0_7  -1
+    SELL_0_7  COST  -3
+    SELL_0_7  SELL_0_7  1
+    PROD_1_7  COST  -4
+    PROD_1_7  PROD_1_7  1
+    PROD_1_7  SELL_1_7  -1
+    SELL_1_7  COST  -5
+    SELL_1_7  SELL_1_7  1
+    PROD_2_7  COST  -8
+    PROD_2_7  PROD_2_7  1
+    PROD_2_7  SELL_2_7  -1
+    SELL_2_7  SELL_2_7  1
+    PROD_3_7  COST  -7
+    PROD_3_7  PROD_3_7  1
+    PROD_3_7  SELL_3_7  -1
+    SELL_3_7  SELL_3_7  1
+    PROD_4_7  COST  -1
+    PROD_4_7  PROD_4_7  1
+    PROD_4_7  SELL_4_7  -1
+    SELL_4_7  COST  -6
+    SELL_4_7  SELL_4_7  1
+    PROD_5_7  COST  5
+    PROD_5_7  PROD_5_7  1
+    PROD_5_7  SELL_5_7  -1
+    SELL_5_7  SELL_5_7  1
+    PROD_6_7  COST  -9
+    PROD_6_7  PROD_6_7  1
+    PROD_6_7  SELL_6_7  -1
+    SELL_6_7  COST  -5
+    SELL_6_7  SELL_6_7  1
+    PROD_7_7  PROD_7_7  1
+    PROD_7_7  SELL_7_7  -1
+    SELL_7_7  SELL_7_7  1
+    PROD_8_7  COST  4
+    PROD_8_7  PROD_8_7  1
+    PROD_8_7  SELL_8_7  -1
+    SELL_8_7  COST  -9
+    SELL_8_7  SELL_8_7  1
+    PROD_9_7  COST  6
+    PROD_9_7  PROD_9_7  1
+    PROD_9_7  SELL_9_7  -1
+    SELL_9_7  SELL_9_7  1
+    PROD_10_7  COST  -3
+    PROD_10_7  PROD_10_7  1
+    PROD_10_7  SELL_10_7  -1
+    SELL_10_7  COST  -8
+    SELL_10_7  SELL_10_7  1
+    PROD_11_7  COST  -5
+    PROD_11_7  PROD_11_7  1
+    PROD_11_7  SELL_11_7  -1
+    SELL_11_7  COST  -7
+    SELL_11_7  SELL_11_7  1
+    RUN_0_8  COST  -1.631
+    RUN_0_8  CRUDE_0_8  1
+    RUN_0_8  CDU_8  1
+    RUN_0_8  PROD_0_8  -0.04
+    RUN_0_8  PROD_1_8  -0.18
+    RUN_0_8  PROD_2_8  -0.27
+    RUN_0_8  PROD_3_8  -0.25
+    RUN_0_8  PROD_4_8  -0.24
+    RUN_0_8  PROD_5_8  -0.02
+    RUN_0_8  PROD_6_8  -0.08
+    RUN_0_8  PROD_7_8  -0.03
+    RUN_0_8  PROD_8_8  -0.15
+    RUN_0_8  PROD_9_8  -0.24
+    RUN_0_8  PROD_10_8  -0.14
+    RUN_0_8  PROD_11_8  -0.15
+    RUN_0_8  SPEC_0_8  0.047
+    RUN_0_8  SPEC_1_8  0.026
+    RUN_0_8  SPEC_2_8  0.014
+    RUN_1_8  COST  -7.651
+    RUN_1_8  CRUDE_1_8  1
+    RUN_1_8  CDU_8  1
+    RUN_1_8  PROD_0_8  -0.2
+    RUN_1_8  PROD_1_8  -0.12
+    RUN_1_8  PROD_2_8  -0.25
+    RUN_1_8  PROD_3_8  -0.06
+    RUN_1_8  PROD_4_8  -0.03
+    RUN_1_8  PROD_5_8  -0.15
+    RUN_1_8  PROD_7_8  -0.28
+    RUN_1_8  PROD_8_8  -0.26
+    RUN_1_8  PROD_9_8  -0.12
+    RUN_1_8  PROD_10_8  -0.13
+    RUN_1_8  PROD_11_8  -0.19
+    RUN_1_8  SPEC_0_8  0.032
+    RUN_1_8  SPEC_1_8  0.031
+    RUN_1_8  SPEC_2_8  0.04
+    RUN_1_8  SPEC_3_8  0.048
+    RUN_2_8  COST  -3.552
+    RUN_2_8  CRUDE_2_8  1
+    RUN_2_8  CDU_8  1
+    RUN_2_8  PROD_0_8  -0.24
+    RUN_2_8  PROD_1_8  -0.24
+    RUN_2_8  PROD_3_8  -0.22
+    RUN_2_8  PROD_4_8  -0.14
+    RUN_2_8  PROD_5_8  -0.08
+    RUN_2_8  PROD_6_8  -0.23
+    RUN_2_8  PROD_7_8  -0.25
+    RUN_2_8  PROD_8_8  -0.07
+    RUN_2_8  PROD_9_8  -0.18
+    RUN_2_8  PROD_10_8  -0.3
+    RUN_2_8  PROD_11_8  -0.03
+    RUN_2_8  SPEC_0_8  0.008
+    RUN_2_8  SPEC_1_8  0.022
+    RUN_2_8  SPEC_2_8  0.011
+    RUN_2_8  SPEC_3_8  0.048
+    RUN_3_8  COST  -4.241
+    RUN_3_8  CRUDE_3_8  1
+    RUN_3_8  CDU_8  1
+    RUN_3_8  PROD_0_8  -0.28
+    RUN_3_8  PROD_1_8  -0.1
+    RUN_3_8  PROD_5_8  -0.2
+    RUN_3_8  PROD_6_8  -0.17
+    RUN_3_8  PROD_8_8  -0.3
+    RUN_3_8  PROD_9_8  -0.28
+    RUN_3_8  PROD_10_8  -0.12
+    RUN_3_8  PROD_11_8  -0.21
+    RUN_3_8  SPEC_0_8  0.033
+    RUN_3_8  SPEC_1_8  0.026
+    RUN_3_8  SPEC_2_8  0.035
+    RUN_3_8  SPEC_3_8  0.017
+    RUN_4_8  COST  -4.547
+    RUN_4_8  CRUDE_4_8  1
+    RUN_4_8  CDU_8  1
+    RUN_4_8  PROD_0_8  -0.06
+    RUN_4_8  PROD_1_8  -0.13
+    RUN_4_8  PROD_2_8  -0.23
+    RUN_4_8  PROD_4_8  -0.16
+    RUN_4_8  PROD_5_8  -0.07
+    RUN_4_8  PROD_6_8  -0.24
+    RUN_4_8  PROD_7_8  -0.14
+    RUN_4_8  PROD_8_8  -0.3
+    RUN_4_8  PROD_9_8  -0.15
+    RUN_4_8  PROD_10_8  -0.17
+    RUN_4_8  PROD_11_8  -0.07
+    RUN_4_8  SPEC_0_8  0.049
+    RUN_4_8  SPEC_1_8  0.022
+    RUN_4_8  SPEC_2_8  0.037
+    RUN_4_8  SPEC_3_8  0.015
+    RUN_5_8  COST  -3.705
+    RUN_5_8  CRUDE_5_8  1
+    RUN_5_8  CDU_8  1
+    RUN_5_8  PROD_0_8  -0.11
+    RUN_5_8  PROD_1_8  -0.07
+    RUN_5_8  PROD_2_8  -0.21
+    RUN_5_8  PROD_3_8  -0.07
+    RUN_5_8  PROD_4_8  -0.24
+    RUN_5_8  PROD_5_8  -0.14
+    RUN_5_8  PROD_6_8  -0.3
+    RUN_5_8  PROD_7_8  -0.09
+    RUN_5_8  PROD_8_8  -0.29
+    RUN_5_8  PROD_10_8  -0.13
+    RUN_5_8  PROD_11_8  -0.26
+    RUN_5_8  SPEC_0_8  0.035
+    RUN_5_8  SPEC_2_8  0.011
+    RUN_5_8  SPEC_3_8  0.017
+    RUN_6_8  COST  5.051
+    RUN_6_8  CRUDE_6_8  1
+    RUN_6_8  CDU_8  1
+    RUN_6_8  PROD_0_8  -0.29
+    RUN_6_8  PROD_1_8  -0.17
+    RUN_6_8  PROD_2_8  -0.29
+    RUN_6_8  PROD_3_8  -0.2
+    RUN_6_8  PROD_4_8  -0.03
+    RUN_6_8  PROD_5_8  -0.05
+    RUN_6_8  PROD_6_8  -0.2
+    RUN_6_8  PROD_7_8  -0.23
+    RUN_6_8  PROD_8_8  -0.27
+    RUN_6_8  PROD_9_8  -0.09
+    RUN_6_8  PROD_10_8  -0.03
+    RUN_6_8  PROD_11_8  -0.23
+    RUN_6_8  SPEC_0_8  0.013
+    RUN_6_8  SPEC_1_8  0.034
+    RUN_6_8  SPEC_2_8  0.005
+    RUN_6_8  SPEC_3_8  0.007
+    RUN_7_8  COST  3.001
+    RUN_7_8  CRUDE_7_8  1
+    RUN_7_8  CDU_8  1
+    RUN_7_8  PROD_0_8  -0.1
+    RUN_7_8  PROD_1_8  -0.28
+    RUN_7_8  PROD_2_8  -0.23
+    RUN_7_8  PROD_3_8  -0.22
+    RUN_7_8  PROD_4_8  -0.16
+    RUN_7_8  PROD_5_8  -0.29
+    RUN_7_8  PROD_6_8  -0.3
+    RUN_7_8  PROD_7_8  -0.13
+    RUN_7_8  PROD_8_8  -0.16
+    RUN_7_8  PROD_9_8  -0.26
+    RUN_7_8  PROD_10_8  -0.29
+    RUN_7_8  PROD_11_8  -0.21
+    RUN_7_8  SPEC_0_8  0.027
+    RUN_7_8  SPEC_1_8  0.034
+    RUN_7_8  SPEC_2_8  0.035
+    RUN_7_8  SPEC_3_8  0.039
+    RUN_8_8  COST  2.966
+    RUN_8_8  CRUDE_8_8  1
+    RUN_8_8  CDU_8  1
+    RUN_8_8  PROD_0_8  -0.06
+    RUN_8_8  PROD_1_8  -0.09
+    RUN_8_8  PROD_2_8  -0.09
+    RUN_8_8  PROD_3_8  -0.18
+    RUN_8_8  PROD_4_8  -0.28
+    RUN_8_8  PROD_5_8  -0.15
+    RUN_8_8  PROD_6_8  -0.27
+    RUN_8_8  PROD_7_8  -0.3
+    RUN_8_8  PROD_8_8  -0.16
+    RUN_8_8  PROD_9_8  -0.12
+    RUN_8_8  PROD_10_8  -0.18
+    RUN_8_8  PROD_11_8  -0.27
+    RUN_8_8  SPEC_0_8  0.003
+    RUN_8_8  SPEC_1_8  0.039
+    RUN_8_8  SPEC_2_8  0.016
+    RUN_8_8  SPEC_3_8  0.011
+    RUN_9_8  COST  -5.34
+    RUN_9_8  CRUDE_9_8  1
+    RUN_9_8  CDU_8  1
+    RUN_9_8  PROD_0_8  -0.01
+    RUN_9_8  PROD_1_8  -0.15
+    RUN_9_8  PROD_2_8  -0.07
+    RUN_9_8  PROD_3_8  -0.23
+    RUN_9_8  PROD_4_8  -0.25
+    RUN_9_8  PROD_5_8  -0.12
+    RUN_9_8  PROD_6_8  -0.13
+    RUN_9_8  PROD_7_8  -0.21
+    RUN_9_8  PROD_8_8  -0.05
+    RUN_9_8  PROD_9_8  -0.11
+    RUN_9_8  PROD_10_8  -0.17
+    RUN_9_8  PROD_11_8  -0.28
+    RUN_9_8  SPEC_0_8  0.03
+    RUN_9_8  SPEC_1_8  0.05
+    RUN_9_8  SPEC_2_8  0.002
+    RUN_9_8  SPEC_3_8  0.022
+    RUN_10_8  COST  -2.594
+    RUN_10_8  CRUDE_10_8  1
+    RUN_10_8  CDU_8  1
+    RUN_10_8  PROD_0_8  -0.22
+    RUN_10_8  PROD_1_8  -0.24
+    RUN_10_8  PROD_2_8  -0.21
+    RUN_10_8  PROD_3_8  -0.23
+    RUN_10_8  PROD_4_8  -0.11
+    RUN_10_8  PROD_5_8  -0.02
+    RUN_10_8  PROD_6_8  -0.14
+    RUN_10_8  PROD_7_8  -0.21
+    RUN_10_8  PROD_8_8  -0.16
+    RUN_10_8  PROD_9_8  -0.03
+    RUN_10_8  PROD_10_8  -0.24
+    RUN_10_8  PROD_11_8  -0.05
+    RUN_10_8  SPEC_0_8  0.023
+    RUN_10_8  SPEC_1_8  0.039
+    RUN_10_8  SPEC_2_8  0.043
+    RUN_10_8  SPEC_3_8  0.018
+    RUN_11_8  COST  -5.061
+    RUN_11_8  CRUDE_11_8  1
+    RUN_11_8  CDU_8  1
+    RUN_11_8  PROD_0_8  -0.16
+    RUN_11_8  PROD_1_8  -0.26
+    RUN_11_8  PROD_2_8  -0.12
+    RUN_11_8  PROD_3_8  -0.11
+    RUN_11_8  PROD_4_8  -0.15
+    RUN_11_8  PROD_5_8  -0.23
+    RUN_11_8  PROD_7_8  -0.15
+    RUN_11_8  PROD_8_8  -0.01
+    RUN_11_8  PROD_9_8  -0.09
+    RUN_11_8  PROD_10_8  -0.22
+    RUN_11_8  PROD_11_8  -0.27
+    RUN_11_8  SPEC_0_8  0.036
+    RUN_11_8  SPEC_1_8  0.021
+    RUN_11_8  SPEC_2_8  0.004
+    RUN_11_8  SPEC_3_8  0.004
+    RUN_12_8  COST  -4.874
+    RUN_12_8  CRUDE_12_8  1
+    RUN_12_8  CDU_8  1
+    RUN_12_8  PROD_0_8  -0.19
+    RUN_12_8  PROD_1_8  -0.18
+    RUN_12_8  PROD_2_8  -0.18
+    RUN_12_8  PROD_3_8  -0.12
+    RUN_12_8  PROD_4_8  -0.2
+    RUN_12_8  PROD_5_8  -0.05
+    RUN_12_8  PROD_6_8  -0.05
+    RUN_12_8  PROD_7_8  -0.16
+    RUN_12_8  PROD_8_8  -0.07
+    RUN_12_8  PROD_10_8  -0.24
+    RUN_12_8  PROD_11_8  -0.06
+    RUN_12_8  SPEC_0_8  0.035
+    RUN_12_8  SPEC_1_8  0.029
+    RUN_12_8  SPEC_2_8  0.005
+    RUN_12_8  SPEC_3_8  0.01
+    RUN_13_8  COST  -0.588
+    RUN_13_8  CRUDE_13_8  1
+    RUN_13_8  CDU_8  1
+    RUN_13_8  PROD_0_8  -0.17
+    RUN_13_8  PROD_1_8  -0.29
+    RUN_13_8  PROD_2_8  -0.27
+    RUN_13_8  PROD_3_8  -0.17
+    RUN_13_8  PROD_4_8  -0.07
+    RUN_13_8  PROD_5_8  -0.12
+    RUN_13_8  PROD_6_8  -0.16
+    RUN_13_8  PROD_7_8  -0.11
+    RUN_13_8  PROD_8_8  -0.3
+    RUN_13_8  PROD_9_8  -0.27
+    RUN_13_8  PROD_10_8  -0.18
+    RUN_13_8  PROD_11_8  -0.11
+    RUN_13_8  SPEC_0_8  0.012
+    RUN_13_8  SPEC_1_8  0.038
+    RUN_13_8  SPEC_2_8  0.001
+    RUN_13_8  SPEC_3_8  0.01
+    RUN_14_8  COST  -4.461
+    RUN_14_8  CRUDE_14_8  1
+    RUN_14_8  CDU_8  1
+    RUN_14_8  PROD_0_8  -0.14
+    RUN_14_8  PROD_1_8  -0.29
+    RUN_14_8  PROD_2_8  -0.08
+    RUN_14_8  PROD_3_8  -0.21
+    RUN_14_8  PROD_4_8  -0.17
+    RUN_14_8  PROD_5_8  -0.19
+    RUN_14_8  PROD_6_8  -0.3
+    RUN_14_8  PROD_7_8  -0.23
+    RUN_14_8  PROD_9_8  -0.12
+    RUN_14_8  PROD_10_8  -0.25
+    RUN_14_8  PROD_11_8  -0.27
+    RUN_14_8  SPEC_0_8  0.032
+    RUN_14_8  SPEC_1_8  0.001
+    RUN_14_8  SPEC_2_8  0.028
+    RUN_14_8  SPEC_3_8  0.016
+    PROD_0_8  COST  -1
+    PROD_0_8  PROD_0_8  1
+    PROD_0_8  SELL_0_8  -1
+    SELL_0_8  COST  5
+    SELL_0_8  SELL_0_8  1
+    PROD_1_8  COST  -6
+    PROD_1_8  PROD_1_8  1
+    PROD_1_8  SELL_1_8  -1
+    SELL_1_8  COST  -1
+    SELL_1_8  SELL_1_8  1
+    PROD_2_8  COST  -5
+    PROD_2_8  PROD_2_8  1
+    PROD_2_8  SELL_2_8  -1
+    SELL_2_8  SELL_2_8  1
+    PROD_3_8  COST  -8
+    PROD_3_8  PROD_3_8  1
+    PROD_3_8  SELL_3_8  -1
+    SELL_3_8  SELL_3_8  1
+    PROD_4_8  COST  4
+    PROD_4_8  PROD_4_8  1
+    PROD_4_8  SELL_4_8  -1
+    SELL_4_8  COST  -3
+    SELL_4_8  SELL_4_8  1
+    PROD_5_8  COST  10
+    PROD_5_8  PROD_5_8  1
+    PROD_5_8  SELL_5_8  -1
+    SELL_5_8  COST  -5
+    SELL_5_8  SELL_5_8  1
+    PROD_6_8  COST  1
+    PROD_6_8  PROD_6_8  1
+    PROD_6_8  SELL_6_8  -1
+    SELL_6_8  COST  -6
+    SELL_6_8  SELL_6_8  1
+    PROD_7_8  COST  5
+    PROD_7_8  PROD_7_8  1
+    PROD_7_8  SELL_7_8  -1
+    SELL_7_8  SELL_7_8  1
+    PROD_8_8  COST  -5
+    PROD_8_8  PROD_8_8  1
+    PROD_8_8  SELL_8_8  -1
+    SELL_8_8  COST  2
+    SELL_8_8  SELL_8_8  1
+    PROD_9_8  COST  -6
+    PROD_9_8  PROD_9_8  1
+    PROD_9_8  SELL_9_8  -1
+    SELL_9_8  SELL_9_8  1
+    PROD_10_8  COST  2
+    PROD_10_8  PROD_10_8  1
+    PROD_10_8  SELL_10_8  -1
+    SELL_10_8  COST  -14
+    SELL_10_8  SELL_10_8  1
+    PROD_11_8  COST  -2
+    PROD_11_8  PROD_11_8  1
+    PROD_11_8  SELL_11_8  -1
+    SELL_11_8  SELL_11_8  1
+    RUN_0_9  COST  5.438
+    RUN_0_9  CRUDE_0_9  1
+    RUN_0_9  CDU_9  1
+    RUN_0_9  PROD_0_9  -0.04
+    RUN_0_9  PROD_1_9  -0.18
+    RUN_0_9  PROD_2_9  -0.27
+    RUN_0_9  PROD_3_9  -0.25
+    RUN_0_9  PROD_4_9  -0.24
+    RUN_0_9  PROD_5_9  -0.02
+    RUN_0_9  PROD_6_9  -0.08
+    RUN_0_9  PROD_7_9  -0.03
+    RUN_0_9  PROD_8_9  -0.15
+    RUN_0_9  PROD_9_9  -0.24
+    RUN_0_9  PROD_10_9  -0.14
+    RUN_0_9  PROD_11_9  -0.15
+    RUN_0_9  SPEC_0_9  0.047
+    RUN_0_9  SPEC_1_9  0.026
+    RUN_0_9  SPEC_2_9  0.014
+    RUN_1_9  COST  -2.685
+    RUN_1_9  CRUDE_1_9  1
+    RUN_1_9  CDU_9  1
+    RUN_1_9  PROD_0_9  -0.2
+    RUN_1_9  PROD_1_9  -0.12
+    RUN_1_9  PROD_2_9  -0.25
+    RUN_1_9  PROD_3_9  -0.06
+    RUN_1_9  PROD_4_9  -0.03
+    RUN_1_9  PROD_5_9  -0.15
+    RUN_1_9  PROD_7_9  -0.28
+    RUN_1_9  PROD_8_9  -0.26
+    RUN_1_9  PROD_9_9  -0.12
+    RUN_1_9  PROD_10_9  -0.13
+    RUN_1_9  PROD_11_9  -0.19
+    RUN_1_9  SPEC_0_9  0.032
+    RUN_1_9  SPEC_1_9  0.031
+    RUN_1_9  SPEC_2_9  0.04
+    RUN_1_9  SPEC_3_9  0.048
+    RUN_2_9  COST  -0.242
+    RUN_2_9  CRUDE_2_9  1
+    RUN_2_9  CDU_9  1
+    RUN_2_9  PROD_0_9  -0.24
+    RUN_2_9  PROD_1_9  -0.24
+    RUN_2_9  PROD_3_9  -0.22
+    RUN_2_9  PROD_4_9  -0.14
+    RUN_2_9  PROD_5_9  -0.08
+    RUN_2_9  PROD_6_9  -0.23
+    RUN_2_9  PROD_7_9  -0.25
+    RUN_2_9  PROD_8_9  -0.07
+    RUN_2_9  PROD_9_9  -0.18
+    RUN_2_9  PROD_10_9  -0.3
+    RUN_2_9  PROD_11_9  -0.03
+    RUN_2_9  SPEC_0_9  0.008
+    RUN_2_9  SPEC_1_9  0.022
+    RUN_2_9  SPEC_2_9  0.011
+    RUN_2_9  SPEC_3_9  0.048
+    RUN_3_9  COST  0.396
+    RUN_3_9  CRUDE_3_9  1
+    RUN_3_9  CDU_9  1
+    RUN_3_9  PROD_0_9  -0.28
+    RUN_3_9  PROD_1_9  -0.1
+    RUN_3_9  PROD_5_9  -0.2
+    RUN_3_9  PROD_6_9  -0.17
+    RUN_3_9  PROD_8_9  -0.3
+    RUN_3_9  PROD_9_9  -0.28
+    RUN_3_9  PROD_10_9  -0.12
+    RUN_3_9  PROD_11_9  -0.21
+    RUN_3_9  SPEC_0_9  0.033
+    RUN_3_9  SPEC_1_9  0.026
+    RUN_3_9  SPEC_2_9  0.035
+    RUN_3_9  SPEC_3_9  0.017
+    RUN_4_9  COST  0.756
+    RUN_4_9  CRUDE_4_9  1
+    RUN_4_9  CDU_9  1
+    RUN_4_9  PROD_0_9  -0.06
+    RUN_4_9  PROD_1_9  -0.13
+    RUN_4_9  PROD_2_9  -0.23
+    RUN_4_9  PROD_4_9  -0.16
+    RUN_4_9  PROD_5_9  -0.07
+    RUN_4_9  PROD_6_9  -0.24
+    RUN_4_9  PROD_7_9  -0.14
+    RUN_4_9  PROD_8_9  -0.3
+    RUN_4_9  PROD_9_9  -0.15
+    RUN_4_9  PROD_10_9  -0.17
+    RUN_4_9  PROD_11_9  -0.07
+    RUN_4_9  SPEC_0_9  0.049
+    RUN_4_9  SPEC_1_9  0.022
+    RUN_4_9  SPEC_2_9  0.037
+    RUN_4_9  SPEC_3_9  0.015
+    RUN_5_9  COST  1.748
+    RUN_5_9  CRUDE_5_9  1
+    RUN_5_9  CDU_9  1
+    RUN_5_9  PROD_0_9  -0.11
+    RUN_5_9  PROD_1_9  -0.07
+    RUN_5_9  PROD_2_9  -0.21
+    RUN_5_9  PROD_3_9  -0.07
+    RUN_5_9  PROD_4_9  -0.24
+    RUN_5_9  PROD_5_9  -0.14
+    RUN_5_9  PROD_6_9  -0.3
+    RUN_5_9  PROD_7_9  -0.09
+    RUN_5_9  PROD_8_9  -0.29
+    RUN_5_9  PROD_10_9  -0.13
+    RUN_5_9  PROD_11_9  -0.26
+    RUN_5_9  SPEC_0_9  0.035
+    RUN_5_9  SPEC_2_9  0.011
+    RUN_5_9  SPEC_3_9  0.017
+    RUN_6_9  COST  -0.47
+    RUN_6_9  CRUDE_6_9  1
+    RUN_6_9  CDU_9  1
+    RUN_6_9  PROD_0_9  -0.29
+    RUN_6_9  PROD_1_9  -0.17
+    RUN_6_9  PROD_2_9  -0.29
+    RUN_6_9  PROD_3_9  -0.2
+    RUN_6_9  PROD_4_9  -0.03
+    RUN_6_9  PROD_5_9  -0.05
+    RUN_6_9  PROD_6_9  -0.2
+    RUN_6_9  PROD_7_9  -0.23
+    RUN_6_9  PROD_8_9  -0.27
+    RUN_6_9  PROD_9_9  -0.09
+    RUN_6_9  PROD_10_9  -0.03
+    RUN_6_9  PROD_11_9  -0.23
+    RUN_6_9  SPEC_0_9  0.013
+    RUN_6_9  SPEC_1_9  0.034
+    RUN_6_9  SPEC_2_9  0.005
+    RUN_6_9  SPEC_3_9  0.007
+    RUN_7_9  COST  7.828
+    RUN_7_9  CRUDE_7_9  1
+    RUN_7_9  CDU_9  1
+    RUN_7_9  PROD_0_9  -0.1
+    RUN_7_9  PROD_1_9  -0.28
+    RUN_7_9  PROD_2_9  -0.23
+    RUN_7_9  PROD_3_9  -0.22
+    RUN_7_9  PROD_4_9  -0.16
+    RUN_7_9  PROD_5_9  -0.29
+    RUN_7_9  PROD_6_9  -0.3
+    RUN_7_9  PROD_7_9  -0.13
+    RUN_7_9  PROD_8_9  -0.16
+    RUN_7_9  PROD_9_9  -0.26
+    RUN_7_9  PROD_10_9  -0.29
+    RUN_7_9  PROD_11_9  -0.21
+    RUN_7_9  SPEC_0_9  0.027
+    RUN_7_9  SPEC_1_9  0.034
+    RUN_7_9  SPEC_2_9  0.035
+    RUN_7_9  SPEC_3_9  0.039
+    RUN_8_9  COST  0.061
+    RUN_8_9  CRUDE_8_9  1
+    RUN_8_9  CDU_9  1
+    RUN_8_9  PROD_0_9  -0.06
+    RUN_8_9  PROD_1_9  -0.09
+    RUN_8_9  PROD_2_9  -0.09
+    RUN_8_9  PROD_3_9  -0.18
+    RUN_8_9  PROD_4_9  -0.28
+    RUN_8_9  PROD_5_9  -0.15
+    RUN_8_9  PROD_6_9  -0.27
+    RUN_8_9  PROD_7_9  -0.3
+    RUN_8_9  PROD_8_9  -0.16
+    RUN_8_9  PROD_9_9  -0.12
+    RUN_8_9  PROD_10_9  -0.18
+    RUN_8_9  PROD_11_9  -0.27
+    RUN_8_9  SPEC_0_9  0.003
+    RUN_8_9  SPEC_1_9  0.039
+    RUN_8_9  SPEC_2_9  0.016
+    RUN_8_9  SPEC_3_9  0.011
+    RUN_9_9  COST  0.458
+    RUN_9_9  CRUDE_9_9  1
+    RUN_9_9  CDU_9  1
+    RUN_9_9  PROD_0_9  -0.01
+    RUN_9_9  PROD_1_9  -0.15
+    RUN_9_9  PROD_2_9  -0.07
+    RUN_9_9  PROD_3_9  -0.23
+    RUN_9_9  PROD_4_9  -0.25
+    RUN_9_9  PROD_5_9  -0.12
+    RUN_9_9  PROD_6_9  -0.13
+    RUN_9_9  PROD_7_9  -0.21
+    RUN_9_9  PROD_8_9  -0.05
+    RUN_9_9  PROD_9_9  -0.11
+    RUN_9_9  PROD_10_9  -0.17
+    RUN_9_9  PROD_11_9  -0.28
+    RUN_9_9  SPEC_0_9  0.03
+    RUN_9_9  SPEC_1_9  0.05
+    RUN_9_9  SPEC_2_9  0.002
+    RUN_9_9  SPEC_3_9  0.022
+    RUN_10_9  COST  1.049
+    RUN_10_9  CRUDE_10_9  1
+    RUN_10_9  CDU_9  1
+    RUN_10_9  PROD_0_9  -0.22
+    RUN_10_9  PROD_1_9  -0.24
+    RUN_10_9  PROD_2_9  -0.21
+    RUN_10_9  PROD_3_9  -0.23
+    RUN_10_9  PROD_4_9  -0.11
+    RUN_10_9  PROD_5_9  -0.02
+    RUN_10_9  PROD_6_9  -0.14
+    RUN_10_9  PROD_7_9  -0.21
+    RUN_10_9  PROD_8_9  -0.16
+    RUN_10_9  PROD_9_9  -0.03
+    RUN_10_9  PROD_10_9  -0.24
+    RUN_10_9  PROD_11_9  -0.05
+    RUN_10_9  SPEC_0_9  0.023
+    RUN_10_9  SPEC_1_9  0.039
+    RUN_10_9  SPEC_2_9  0.043
+    RUN_10_9  SPEC_3_9  0.018
+    RUN_11_9  COST  -2.671
+    RUN_11_9  CRUDE_11_9  1
+    RUN_11_9  CDU_9  1
+    RUN_11_9  PROD_0_9  -0.16
+    RUN_11_9  PROD_1_9  -0.26
+    RUN_11_9  PROD_2_9  -0.12
+    RUN_11_9  PROD_3_9  -0.11
+    RUN_11_9  PROD_4_9  -0.15
+    RUN_11_9  PROD_5_9  -0.23
+    RUN_11_9  PROD_7_9  -0.15
+    RUN_11_9  PROD_8_9  -0.01
+    RUN_11_9  PROD_9_9  -0.09
+    RUN_11_9  PROD_10_9  -0.22
+    RUN_11_9  PROD_11_9  -0.27
+    RUN_11_9  SPEC_0_9  0.036
+    RUN_11_9  SPEC_1_9  0.021
+    RUN_11_9  SPEC_2_9  0.004
+    RUN_11_9  SPEC_3_9  0.004
+    RUN_12_9  COST  7.117
+    RUN_12_9  CRUDE_12_9  1
+    RUN_12_9  CDU_9  1
+    RUN_12_9  PROD_0_9  -0.19
+    RUN_12_9  PROD_1_9  -0.18
+    RUN_12_9  PROD_2_9  -0.18
+    RUN_12_9  PROD_3_9  -0.12
+    RUN_12_9  PROD_4_9  -0.2
+    RUN_12_9  PROD_5_9  -0.05
+    RUN_12_9  PROD_6_9  -0.05
+    RUN_12_9  PROD_7_9  -0.16
+    RUN_12_9  PROD_8_9  -0.07
+    RUN_12_9  PROD_10_9  -0.24
+    RUN_12_9  PROD_11_9  -0.06
+    RUN_12_9  SPEC_0_9  0.035
+    RUN_12_9  SPEC_1_9  0.029
+    RUN_12_9  SPEC_2_9  0.005
+    RUN_12_9  SPEC_3_9  0.01
+    RUN_13_9  COST  1.244
+    RUN_13_9  CRUDE_13_9  1
+    RUN_13_9  CDU_9  1
+    RUN_13_9  PROD_0_9  -0.17
+    RUN_13_9  PROD_1_9  -0.29
+    RUN_13_9  PROD_2_9  -0.27
+    RUN_13_9  PROD_3_9  -0.17
+    RUN_13_9  PROD_4_9  -0.07
+    RUN_13_9  PROD_5_9  -0.12
+    RUN_13_9  PROD_6_9  -0.16
+    RUN_13_9  PROD_7_9  -0.11
+    RUN_13_9  PROD_8_9  -0.3
+    RUN_13_9  PROD_9_9  -0.27
+    RUN_13_9  PROD_10_9  -0.18
+    RUN_13_9  PROD_11_9  -0.11
+    RUN_13_9  SPEC_0_9  0.012
+    RUN_13_9  SPEC_1_9  0.038
+    RUN_13_9  SPEC_2_9  0.001
+    RUN_13_9  SPEC_3_9  0.01
+    RUN_14_9  COST  0.637
+    RUN_14_9  CRUDE_14_9  1
+    RUN_14_9  CDU_9  1
+    RUN_14_9  PROD_0_9  -0.14
+    RUN_14_9  PROD_1_9  -0.29
+    RUN_14_9  PROD_2_9  -0.08
+    RUN_14_9  PROD_3_9  -0.21
+    RUN_14_9  PROD_4_9  -0.17
+    RUN_14_9  PROD_5_9  -0.19
+    RUN_14_9  PROD_6_9  -0.3
+    RUN_14_9  PROD_7_9  -0.23
+    RUN_14_9  PROD_9_9  -0.12
+    RUN_14_9  PROD_10_9  -0.25
+    RUN_14_9  PROD_11_9  -0.27
+    RUN_14_9  SPEC_0_9  0.032
+    RUN_14_9  SPEC_1_9  0.001
+    RUN_14_9  SPEC_2_9  0.028
+    RUN_14_9  SPEC_3_9  0.016
+    PROD_0_9  COST  13
+    PROD_0_9  PROD_0_9  1
+    PROD_0_9  SELL_0_9  -1
+    SELL_0_9  COST  -7
+    SELL_0_9  SELL_0_9  1
+    PROD_1_9  COST  -2
+    PROD_1_9  PROD_1_9  1
+    PROD_1_9  SELL_1_9  -1
+    SELL_1_9  COST  -9
+    SELL_1_9  SELL_1_9  1
+    PROD_2_9  COST  -4
+    PROD_2_9  PROD_2_9  1
+    PROD_2_9  SELL_2_9  -1
+    SELL_2_9  SELL_2_9  1
+    PROD_3_9  COST  -9
+    PROD_3_9  PROD_3_9  1
+    PROD_3_9  SELL_3_9  -1
+    SELL_3_9  COST  -6
+    SELL_3_9  SELL_3_9  1
+    PROD_4_9  COST  -5
+    PROD_4_9  PROD_4_9  1
+    PROD_4_9  SELL_4_9  -1
+    SELL_4_9  COST  -1
+    SELL_4_9  SELL_4_9  1
+    PROD_5_9  COST  14
+    PROD_5_9  PROD_5_9  1
+    PROD_5_9  SELL_5_9  -1
+    SELL_5_9  COST  -13
+    SELL_5_9  SELL_5_9  1
+    PROD_6_9  COST  -4
+    PROD_6_9  PROD_6_9  1
+    PROD_6_9  SELL_6_9  -1
+    SELL_6_9  COST  -5
+    SELL_6_9  SELL_6_9  1
+    PROD_7_9  COST  9
+    PROD_7_9  PROD_7_9  1
+    PROD_7_9  SELL_7_9  -1
+    SELL_7_9  COST  -8
+    SELL_7_9  SELL_7_9  1
+    PROD_8_9  COST  1
+    PROD_8_9  PROD_8_9  1
+    PROD_8_9  SELL_8_9  -1
+    SELL_8_9  COST  -9
+    SELL_8_9  SELL_8_9  1
+    PROD_9_9  COST  3
+    PROD_9_9  PROD_9_9  1
+    PROD_9_9  SELL_9_9  -1
+    SELL_9_9  COST  -8
+    SELL_9_9  SELL_9_9  1
+    PROD_10_9  PROD_10_9  1
+    PROD_10_9  SELL_10_9  -1
+    SELL_10_9  COST  -1
+    SELL_10_9  SELL_10_9  1
+    PROD_11_9  COST  3
+    PROD_11_9  PROD_11_9  1
+    PROD_11_9  SELL_11_9  -1
+    SELL_11_9  SELL_11_9  1
+    RUN_0_10  COST  -4.262
+    RUN_0_10  CRUDE_0_10  1
+    RUN_0_10  CDU_10  1
+    RUN_0_10  PROD_0_10  -0.04
+    RUN_0_10  PROD_1_10  -0.18
+    RUN_0_10  PROD_2_10  -0.27
+    RUN_0_10  PROD_3_10  -0.25
+    RUN_0_10  PROD_4_10  -0.24
+    RUN_0_10  PROD_5_10  -0.02
+    RUN_0_10  PROD_6_10  -0.08
+    RUN_0_10  PROD_7_10  -0.03
+    RUN_0_10  PROD_8_10  -0.15
+    RUN_0_10  PROD_9_10  -0.24
+    RUN_0_10  PROD_10_10  -0.14
+    RUN_0_10  PROD_11_10  -0.15
+    RUN_0_10  SPEC_0_10  0.047
+    RUN_0_10  SPEC_1_10  0.026
+    RUN_0_10  SPEC_2_10  0.014
+    RUN_1_10  COST  0.265
+    RUN_1_10  CRUDE_1_10  1
+    RUN_1_10  CDU_10  1
+    RUN_1_10  PROD_0_10  -0.2
+    RUN_1_10  PROD_1_10  -0.12
+    RUN_1_10  PROD_2_10  -0.25
+    RUN_1_10  PROD_3_10  -0.06
+    RUN_1_10  PROD_4_10  -0.03
+    RUN_1_10  PROD_5_10  -0.15
+    RUN_1_10  PROD_7_10  -0.28
+    RUN_1_10  PROD_8_10  -0.26
+    RUN_1_10  PROD_9_10  -0.12
+    RUN_1_10  PROD_10_10  -0.13
+    RUN_1_10  PROD_11_10  -0.19
+    RUN_1_10  SPEC_0_10  0.032
+    RUN_1_10  SPEC_1_10  0.031
+    RUN_1_10  SPEC_2_10  0.04
+    RUN_1_10  SPEC_3_10  0.048
+    RUN_2_10  COST  -8.648
+    RUN_2_10  CRUDE_2_10  1
+    RUN_2_10  CDU_10  1
+    RUN_2_10  PROD_0_10  -0.24
+    RUN_2_10  PROD_1_10  -0.24
+    RUN_2_10  PROD_3_10  -0.22
+    RUN_2_10  PROD_4_10  -0.14
+    RUN_2_10  PROD_5_10  -0.08
+    RUN_2_10  PROD_6_10  -0.23
+    RUN_2_10  PROD_7_10  -0.25
+    RUN_2_10  PROD_8_10  -0.07
+    RUN_2_10  PROD_9_10  -0.18
+    RUN_2_10  PROD_10_10  -0.3
+    RUN_2_10  PROD_11_10  -0.03
+    RUN_2_10  SPEC_0_10  0.008
+    RUN_2_10  SPEC_1_10  0.022
+    RUN_2_10  SPEC_2_10  0.011
+    RUN_2_10  SPEC_3_10  0.048
+    RUN_3_10  COST  2.577
+    RUN_3_10  CRUDE_3_10  1
+    RUN_3_10  CDU_10  1
+    RUN_3_10  PROD_0_10  -0.28
+    RUN_3_10  PROD_1_10  -0.1
+    RUN_3_10  PROD_5_10  -0.2
+    RUN_3_10  PROD_6_10  -0.17
+    RUN_3_10  PROD_8_10  -0.3
+    RUN_3_10  PROD_9_10  -0.28
+    RUN_3_10  PROD_10_10  -0.12
+    RUN_3_10  PROD_11_10  -0.21
+    RUN_3_10  SPEC_0_10  0.033
+    RUN_3_10  SPEC_1_10  0.026
+    RUN_3_10  SPEC_2_10  0.035
+    RUN_3_10  SPEC_3_10  0.017
+    RUN_4_10  COST  -3.249
+    RUN_4_10  CRUDE_4_10  1
+    RUN_4_10  CDU_10  1
+    RUN_4_10  PROD_0_10  -0.06
+    RUN_4_10  PROD_1_10  -0.13
+    RUN_4_10  PROD_2_10  -0.23
+    RUN_4_10  PROD_4_10  -0.16
+    RUN_4_10  PROD_5_10  -0.07
+    RUN_4_10  PROD_6_10  -0.24
+    RUN_4_10  PROD_7_10  -0.14
+    RUN_4_10  PROD_8_10  -0.3
+    RUN_4_10  PROD_9_10  -0.15
+    RUN_4_10  PROD_10_10  -0.17
+    RUN_4_10  PROD_11_10  -0.07
+    RUN_4_10  SPEC_0_10  0.049
+    RUN_4_10  SPEC_1_10  0.022
+    RUN_4_10  SPEC_2_10  0.037
+    RUN_4_10  SPEC_3_10  0.015
+    RUN_5_10  COST  3.433
+    RUN_5_10  CRUDE_5_10  1
+    RUN_5_10  CDU_10  1
+    RUN_5_10  PROD_0_10  -0.11
+    RUN_5_10  PROD_1_10  -0.07
+    RUN_5_10  PROD_2_10  -0.21
+    RUN_5_10  PROD_3_10  -0.07
+    RUN_5_10  PROD_4_10  -0.24
+    RUN_5_10  PROD_5_10  -0.14
+    RUN_5_10  PROD_6_10  -0.3
+    RUN_5_10  PROD_7_10  -0.09
+    RUN_5_10  PROD_8_10  -0.29
+    RUN_5_10  PROD_10_10  -0.13
+    RUN_5_10  PROD_11_10  -0.26
+    RUN_5_10  SPEC_0_10  0.035
+    RUN_5_10  SPEC_2_10  0.011
+    RUN_5_10  SPEC_3_10  0.017
+    RUN_6_10  COST  6.965
+    RUN_6_10  CRUDE_6_10  1
+    RUN_6_10  CDU_10  1
+    RUN_6_10  PROD_0_10  -0.29
+    RUN_6_10  PROD_1_10  -0.17
+    RUN_6_10  PROD_2_10  -0.29
+    RUN_6_10  PROD_3_10  -0.2
+    RUN_6_10  PROD_4_10  -0.03
+    RUN_6_10  PROD_5_10  -0.05
+    RUN_6_10  PROD_6_10  -0.2
+    RUN_6_10  PROD_7_10  -0.23
+    RUN_6_10  PROD_8_10  -0.27
+    RUN_6_10  PROD_9_10  -0.09
+    RUN_6_10  PROD_10_10  -0.03
+    RUN_6_10  PROD_11_10  -0.23
+    RUN_6_10  SPEC_0_10  0.013
+    RUN_6_10  SPEC_1_10  0.034
+    RUN_6_10  SPEC_2_10  0.005
+    RUN_6_10  SPEC_3_10  0.007
+    RUN_7_10  COST  -8.433
+    RUN_7_10  CRUDE_7_10  1
+    RUN_7_10  CDU_10  1
+    RUN_7_10  PROD_0_10  -0.1
+    RUN_7_10  PROD_1_10  -0.28
+    RUN_7_10  PROD_2_10  -0.23
+    RUN_7_10  PROD_3_10  -0.22
+    RUN_7_10  PROD_4_10  -0.16
+    RUN_7_10  PROD_5_10  -0.29
+    RUN_7_10  PROD_6_10  -0.3
+    RUN_7_10  PROD_7_10  -0.13
+    RUN_7_10  PROD_8_10  -0.16
+    RUN_7_10  PROD_9_10  -0.26
+    RUN_7_10  PROD_10_10  -0.29
+    RUN_7_10  PROD_11_10  -0.21
+    RUN_7_10  SPEC_0_10  0.027
+    RUN_7_10  SPEC_1_10  0.034
+    RUN_7_10  SPEC_2_10  0.035
+    RUN_7_10  SPEC_3_10  0.039
+    RUN_8_10  COST  -4.104
+    RUN_8_10  CRUDE_8_10  1
+    RUN_8_10  CDU_10  1
+    RUN_8_10  PROD_0_10  -0.06
+    RUN_8_10  PROD_1_10  -0.09
+    RUN_8_10  PROD_2_10  -0.09
+    RUN_8_10  PROD_3_10  -0.18
+    RUN_8_10  PROD_4_10  -0.28
+    RUN_8_10  PROD_5_10  -0.15
+    RUN_8_10  PROD_6_10  -0.27
+    RUN_8_10  PROD_7_10  -0.3
+    RUN_8_10  PROD_8_10  -0.16
+    RUN_8_10  PROD_9_10  -0.12
+    RUN_8_10  PROD_10_10  -0.18
+    RUN_8_10  PROD_11_10  -0.27
+    RUN_8_10  SPEC_0_10  0.003
+    RUN_8_10  SPEC_1_10  0.039
+    RUN_8_10  SPEC_2_10  0.016
+    RUN_8_10  SPEC_3_10  0.011
+    RUN_9_10  COST  3.588
+    RUN_9_10  CRUDE_9_10  1
+    RUN_9_10  CDU_10  1
+    RUN_9_10  PROD_0_10  -0.01
+    RUN_9_10  PROD_1_10  -0.15
+    RUN_9_10  PROD_2_10  -0.07
+    RUN_9_10  PROD_3_10  -0.23
+    RUN_9_10  PROD_4_10  -0.25
+    RUN_9_10  PROD_5_10  -0.12
+    RUN_9_10  PROD_6_10  -0.13
+    RUN_9_10  PROD_7_10  -0.21
+    RUN_9_10  PROD_8_10  -0.05
+    RUN_9_10  PROD_9_10  -0.11
+    RUN_9_10  PROD_10_10  -0.17
+    RUN_9_10  PROD_11_10  -0.28
+    RUN_9_10  SPEC_0_10  0.03
+    RUN_9_10  SPEC_1_10  0.05
+    RUN_9_10  SPEC_2_10  0.002
+    RUN_9_10  SPEC_3_10  0.022
+    RUN_10_10  COST  -10.341
+    RUN_10_10  CRUDE_10_10  1
+    RUN_10_10  CDU_10  1
+    RUN_10_10  PROD_0_10  -0.22
+    RUN_10_10  PROD_1_10  -0.24
+    RUN_10_10  PROD_2_10  -0.21
+    RUN_10_10  PROD_3_10  -0.23
+    RUN_10_10  PROD_4_10  -0.11
+    RUN_10_10  PROD_5_10  -0.02
+    RUN_10_10  PROD_6_10  -0.14
+    RUN_10_10  PROD_7_10  -0.21
+    RUN_10_10  PROD_8_10  -0.16
+    RUN_10_10  PROD_9_10  -0.03
+    RUN_10_10  PROD_10_10  -0.24
+    RUN_10_10  PROD_11_10  -0.05
+    RUN_10_10  SPEC_0_10  0.023
+    RUN_10_10  SPEC_1_10  0.039
+    RUN_10_10  SPEC_2_10  0.043
+    RUN_10_10  SPEC_3_10  0.018
+    RUN_11_10  COST  -0.347
+    RUN_11_10  CRUDE_11_10  1
+    RUN_11_10  CDU_10  1
+    RUN_11_10  PROD_0_10  -0.16
+    RUN_11_10  PROD_1_10  -0.26
+    RUN_11_10  PROD_2_10  -0.12
+    RUN_11_10  PROD_3_10  -0.11
+    RUN_11_10  PROD_4_10  -0.15
+    RUN_11_10  PROD_5_10  -0.23
+    RUN_11_10  PROD_7_10  -0.15
+    RUN_11_10  PROD_8_10  -0.01
+    RUN_11_10  PROD_9_10  -0.09
+    RUN_11_10  PROD_10_10  -0.22
+    RUN_11_10  PROD_11_10  -0.27
+    RUN_11_10  SPEC_0_10  0.036
+    RUN_11_10  SPEC_1_10  0.021
+    RUN_11_10  SPEC_2_10  0.004
+    RUN_11_10  SPEC_3_10  0.004
+    RUN_12_10  COST  -5.341
+    RUN_12_10  CRUDE_12_10  1
+    RUN_12_10  CDU_10  1
+    RUN_12_10  PROD_0_10  -0.19
+    RUN_12_10  PROD_1_10  -0.18
+    RUN_12_10  PROD_2_10  -0.18
+    RUN_12_10  PROD_3_10  -0.12
+    RUN_12_10  PROD_4_10  -0.2
+    RUN_12_10  PROD_5_10  -0.05
+    RUN_12_10  PROD_6_10  -0.05
+    RUN_12_10  PROD_7_10  -0.16
+    RUN_12_10  PROD_8_10  -0.07
+    RUN_12_10  PROD_10_10  -0.24
+    RUN_12_10  PROD_11_10  -0.06
+    RUN_12_10  SPEC_0_10  0.035
+    RUN_12_10  SPEC_1_10  0.029
+    RUN_12_10  SPEC_2_10  0.005
+    RUN_12_10  SPEC_3_10  0.01
+    RUN_13_10  COST  -5.65
+    RUN_13_10  CRUDE_13_10  1
+    RUN_13_10  CDU_10  1
+    RUN_13_10  PROD_0_10  -0.17
+    RUN_13_10  PROD_1_10  -0.29
+    RUN_13_10  PROD_2_10  -0.27
+    RUN_13_10  PROD_3_10  -0.17
+    RUN_13_10  PROD_4_10  -0.07
+    RUN_13_10  PROD_5_10  -0.12
+    RUN_13_10  PROD_6_10  -0.16
+    RUN_13_10  PROD_7_10  -0.11
+    RUN_13_10  PROD_8_10  -0.3
+    RUN_13_10  PROD_9_10  -0.27
+    RUN_13_10  PROD_10_10  -0.18
+    RUN_13_10  PROD_11_10  -0.11
+    RUN_13_10  SPEC_0_10  0.012
+    RUN_13_10  SPEC_1_10  0.038
+    RUN_13_10  SPEC_2_10  0.001
+    RUN_13_10  SPEC_3_10  0.01
+    RUN_14_10  COST  -7.733
+    RUN_14_10  CRUDE_14_10  1
+    RUN_14_10  CDU_10  1
+    RUN_14_10  PROD_0_10  -0.14
+    RUN_14_10  PROD_1_10  -0.29
+    RUN_14_10  PROD_2_10  -0.08
+    RUN_14_10  PROD_3_10  -0.21
+    RUN_14_10  PROD_4_10  -0.17
+    RUN_14_10  PROD_5_10  -0.19
+    RUN_14_10  PROD_6_10  -0.3
+    RUN_14_10  PROD_7_10  -0.23
+    RUN_14_10  PROD_9_10  -0.12
+    RUN_14_10  PROD_10_10  -0.25
+    RUN_14_10  PROD_11_10  -0.27
+    RUN_14_10  SPEC_0_10  0.032
+    RUN_14_10  SPEC_1_10  0.001
+    RUN_14_10  SPEC_2_10  0.028
+    RUN_14_10  SPEC_3_10  0.016
+    PROD_0_10  COST  8
+    PROD_0_10  PROD_0_10  1
+    PROD_0_10  SELL_0_10  -1
+    SELL_0_10  SELL_0_10  1
+    PROD_1_10  COST  10
+    PROD_1_10  PROD_1_10  1
+    PROD_1_10  SELL_1_10  -1
+    SELL_1_10  COST  -4
+    SELL_1_10  SELL_1_10  1
+    PROD_2_10  COST  -4
+    PROD_2_10  PROD_2_10  1
+    PROD_2_10  SELL_2_10  -1
+    SELL_2_10  COST  -8
+    SELL_2_10  SELL_2_10  1
+    PROD_3_10  COST  1
+    PROD_3_10  PROD_3_10  1
+    PROD_3_10  SELL_3_10  -1
+    SELL_3_10  COST  -6
+    SELL_3_10  SELL_3_10  1
+    PROD_4_10  COST  6
+    PROD_4_10  PROD_4_10  1
+    PROD_4_10  SELL_4_10  -1
+    SELL_4_10  SELL_4_10  1
+    PROD_5_10  COST  6
+    PROD_5_10  PROD_5_10  1
+    PROD_5_10  SELL_5_10  -1
+    SELL_5_10  SELL_5_10  1
+    PROD_6_10  COST  4
+    PROD_6_10  PROD_6_10  1
+    PROD_6_10  SELL_6_10  -1
+    SELL_6_10  COST  -7
+    SELL_6_10  SELL_6_10  1
+    PROD_7_10  COST  4
+    PROD_7_10  PROD_7_10  1
+    PROD_7_10  SELL_7_10  -1
+    SELL_7_10  COST  -13
+    SELL_7_10  SELL_7_10  1
+    PROD_8_10  COST  -2
+    PROD_8_10  PROD_8_10  1
+    PROD_8_10  SELL_8_10  -1
+    SELL_8_10  COST  -3
+    SELL_8_10  SELL_8_10  1
+    PROD_9_10  COST  5
+    PROD_9_10  PROD_9_10  1
+    PROD_9_10  SELL_9_10  -1
+    SELL_9_10  SELL_9_10  1
+    PROD_10_10  COST  15
+    PROD_10_10  PROD_10_10  1
+    PROD_10_10  SELL_10_10  -1
+    SELL_10_10  COST  -7
+    SELL_10_10  SELL_10_10  1
+    PROD_11_10  COST  -4
+    PROD_11_10  PROD_11_10  1
+    PROD_11_10  SELL_11_10  -1
+    SELL_11_10  SELL_11_10  1
+    RUN_0_11  COST  2.423
+    RUN_0_11  CRUDE_0_11  1
+    RUN_0_11  CDU_11  1
+    RUN_0_11  PROD_0_11  -0.04
+    RUN_0_11  PROD_1_11  -0.18
+    RUN_0_11  PROD_2_11  -0.27
+    RUN_0_11  PROD_3_11  -0.25
+    RUN_0_11  PROD_4_11  -0.24
+    RUN_0_11  PROD_5_11  -0.02
+    RUN_0_11  PROD_6_11  -0.08
+    RUN_0_11  PROD_7_11  -0.03
+    RUN_0_11  PROD_8_11  -0.15
+    RUN_0_11  PROD_9_11  -0.24
+    RUN_0_11  PROD_10_11  -0.14
+    RUN_0_11  PROD_11_11  -0.15
+    RUN_0_11  SPEC_0_11  0.047
+    RUN_0_11  SPEC_1_11  0.026
+    RUN_0_11  SPEC_2_11  0.014
+    RUN_1_11  COST  13.029
+    RUN_1_11  CRUDE_1_11  1
+    RUN_1_11  CDU_11  1
+    RUN_1_11  PROD_0_11  -0.2
+    RUN_1_11  PROD_1_11  -0.12
+    RUN_1_11  PROD_2_11  -0.25
+    RUN_1_11  PROD_3_11  -0.06
+    RUN_1_11  PROD_4_11  -0.03
+    RUN_1_11  PROD_5_11  -0.15
+    RUN_1_11  PROD_7_11  -0.28
+    RUN_1_11  PROD_8_11  -0.26
+    RUN_1_11  PROD_9_11  -0.12
+    RUN_1_11  PROD_10_11  -0.13
+    RUN_1_11  PROD_11_11  -0.19
+    RUN_1_11  SPEC_0_11  0.032
+    RUN_1_11  SPEC_1_11  0.031
+    RUN_1_11  SPEC_2_11  0.04
+    RUN_1_11  SPEC_3_11  0.048
+    RUN_2_11  COST  6.196
+    RUN_2_11  CRUDE_2_11  1
+    RUN_2_11  CDU_11  1
+    RUN_2_11  PROD_0_11  -0.24
+    RUN_2_11  PROD_1_11  -0.24
+    RUN_2_11  PROD_3_11  -0.22
+    RUN_2_11  PROD_4_11  -0.14
+    RUN_2_11  PROD_5_11  -0.08
+    RUN_2_11  PROD_6_11  -0.23
+    RUN_2_11  PROD_7_11  -0.25
+    RUN_2_11  PROD_8_11  -0.07
+    RUN_2_11  PROD_9_11  -0.18
+    RUN_2_11  PROD_10_11  -0.3
+    RUN_2_11  PROD_11_11  -0.03
+    RUN_2_11  SPEC_0_11  0.008
+    RUN_2_11  SPEC_1_11  0.022
+    RUN_2_11  SPEC_2_11  0.011
+    RUN_2_11  SPEC_3_11  0.048
+    RUN_3_11  COST  5.151
+    RUN_3_11  CRUDE_3_11  1
+    RUN_3_11  CDU_11  1
+    RUN_3_11  PROD_0_11  -0.28
+    RUN_3_11  PROD_1_11  -0.1
+    RUN_3_11  PROD_5_11  -0.2
+    RUN_3_11  PROD_6_11  -0.17
+    RUN_3_11  PROD_8_11  -0.3
+    RUN_3_11  PROD_9_11  -0.28
+    RUN_3_11  PROD_10_11  -0.12
+    RUN_3_11  PROD_11_11  -0.21
+    RUN_3_11  SPEC_0_11  0.033
+    RUN_3_11  SPEC_1_11  0.026
+    RUN_3_11  SPEC_2_11  0.035
+    RUN_3_11  SPEC_3_11  0.017
+    RUN_4_11  COST  2.939
+    RUN_4_11  CRUDE_4_11  1
+    RUN_4_11  CDU_11  1
+    RUN_4_11  PROD_0_11  -0.06
+    RUN_4_11  PROD_1_11  -0.13
+    RUN_4_11  PROD_2_11  -0.23
+    RUN_4_11  PROD_4_11  -0.16
+    RUN_4_11  PROD_5_11  -0.07
+    RUN_4_11  PROD_6_11  -0.24
+    RUN_4_11  PROD_7_11  -0.14
+    RUN_4_11  PROD_8_11  -0.3
+    RUN_4_11  PROD_9_11  -0.15
+    RUN_4_11  PROD_10_11  -0.17
+    RUN_4_11  PROD_11_11  -0.07
+    RUN_4_11  SPEC_0_11  0.049
+    RUN_4_11  SPEC_1_11  0.022
+    RUN_4_11  SPEC_2_11  0.037
+    RUN_4_11  SPEC_3_11  0.015
+    RUN_5_11  COST  3.403
+    RUN_5_11  CRUDE_5_11  1
+    RUN_5_11  CDU_11  1
+    RUN_5_11  PROD_0_11  -0.11
+    RUN_5_11  PROD_1_11  -0.07
+    RUN_5_11  PROD_2_11  -0.21
+    RUN_5_11  PROD_3_11  -0.07
+    RUN_5_11  PROD_4_11  -0.24
+    RUN_5_11  PROD_5_11  -0.14
+    RUN_5_11  PROD_6_11  -0.3
+    RUN_5_11  PROD_7_11  -0.09
+    RUN_5_11  PROD_8_11  -0.29
+    RUN_5_11  PROD_10_11  -0.13
+    RUN_5_11  PROD_11_11  -0.26
+    RUN_5_11  SPEC_0_11  0.035
+    RUN_5_11  SPEC_2_11  0.011
+    RUN_5_11  SPEC_3_11  0.017
+    RUN_6_11  COST  9.501
+    RUN_6_11  CRUDE_6_11  1
+    RUN_6_11  CDU_11  1
+    RUN_6_11  PROD_0_11  -0.29
+    RUN_6_11  PROD_1_11  -0.17
+    RUN_6_11  PROD_2_11  -0.29
+    RUN_6_11  PROD_3_11  -0.2
+    RUN_6_11  PROD_4_11  -0.03
+    RUN_6_11  PROD_5_11  -0.05
+    RUN_6_11  PROD_6_11  -0.2
+    RUN_6_11  PROD_7_11  -0.23
+    RUN_6_11  PROD_8_11  -0.27
+    RUN_6_11  PROD_9_11  -0.09
+    RUN_6_11  PROD_10_11  -0.03
+    RUN_6_11  PROD_11_11  -0.23
+    RUN_6_11  SPEC_0_11  0.013
+    RUN_6_11  SPEC_1_11  0.034
+    RUN_6_11  SPEC_2_11  0.005
+    RUN_6_11  SPEC_3_11  0.007
+    RUN_7_11  COST  5.707
+    RUN_7_11  CRUDE_7_11  1
+    RUN_7_11  CDU_11  1
+    RUN_7_11  PROD_0_11  -0.1
+    RUN_7_11  PROD_1_11  -0.28
+    RUN_7_11  PROD_2_11  -0.23
+    RUN_7_11  PROD_3_11  -0.22
+    RUN_7_11  PROD_4_11  -0.16
+    RUN_7_11  PROD_5_11  -0.29
+    RUN_7_11  PROD_6_11  -0.3
+    RUN_7_11  PROD_7_11  -0.13
+    RUN_7_11  PROD_8_11  -0.16
+    RUN_7_11  PROD_9_11  -0.26
+    RUN_7_11  PROD_10_11  -0.29
+    RUN_7_11  PROD_11_11  -0.21
+    RUN_7_11  SPEC_0_11  0.027
+    RUN_7_11  SPEC_1_11  0.034
+    RUN_7_11  SPEC_2_11  0.035
+    RUN_7_11  SPEC_3_11  0.039
+    RUN_8_11  COST  7.4
+    RUN_8_11  CRUDE_8_11  1
+    RUN_8_11  CDU_11  1
+    RUN_8_11  PROD_0_11  -0.06
+    RUN_8_11  PROD_1_11  -0.09
+    RUN_8_11  PROD_2_11  -0.09
+    RUN_8_11  PROD_3_11  -0.18
+    RUN_8_11  PROD_4_11  -0.28
+    RUN_8_11  PROD_5_11  -0.15
+    RUN_8_11  PROD_6_11  -0.27
+    RUN_8_11  PROD_7_11  -0.3
+    RUN_8_11  PROD_8_11  -0.16
+    RUN_8_11  PROD_9_11  -0.12
+    RUN_8_11  PROD_10_11  -0.18
+    RUN_8_11  PROD_11_11  -0.27
+    RUN_8_11  SPEC_0_11  0.003
+    RUN_8_11  SPEC_1_11  0.039
+    RUN_8_11  SPEC_2_11  0.016
+    RUN_8_11  SPEC_3_11  0.011
+    RUN_9_11  COST  -5.72
+    RUN_9_11  CRUDE_9_11  1
+    RUN_9_11  CDU_11  1
+    RUN_9_11  PROD_0_11  -0.01
+    RUN_9_11  PROD_1_11  -0.15
+    RUN_9_11  PROD_2_11  -0.07
+    RUN_9_11  PROD_3_11  -0.23
+    RUN_9_11  PROD_4_11  -0.25
+    RUN_9_11  PROD_5_11  -0.12
+    RUN_9_11  PROD_6_11  -0.13
+    RUN_9_11  PROD_7_11  -0.21
+    RUN_9_11  PROD_8_11  -0.05
+    RUN_9_11  PROD_9_11  -0.11
+    RUN_9_11  PROD_10_11  -0.17
+    RUN_9_11  PROD_11_11  -0.28
+    RUN_9_11  SPEC_0_11  0.03
+    RUN_9_11  SPEC_1_11  0.05
+    RUN_9_11  SPEC_2_11  0.002
+    RUN_9_11  SPEC_3_11  0.022
+    RUN_10_11  COST  13.99
+    RUN_10_11  CRUDE_10_11  1
+    RUN_10_11  CDU_11  1
+    RUN_10_11  PROD_0_11  -0.22
+    RUN_10_11  PROD_1_11  -0.24
+    RUN_10_11  PROD_2_11  -0.21
+    RUN_10_11  PROD_3_11  -0.23
+    RUN_10_11  PROD_4_11  -0.11
+    RUN_10_11  PROD_5_11  -0.02
+    RUN_10_11  PROD_6_11  -0.14
+    RUN_10_11  PROD_7_11  -0.21
+    RUN_10_11  PROD_8_11  -0.16
+    RUN_10_11  PROD_9_11  -0.03
+    RUN_10_11  PROD_10_11  -0.24
+    RUN_10_11  PROD_11_11  -0.05
+    RUN_10_11  SPEC_0_11  0.023
+    RUN_10_11  SPEC_1_11  0.039
+    RUN_10_11  SPEC_2_11  0.043
+    RUN_10_11  SPEC_3_11  0.018
+    RUN_11_11  COST  13.195
+    RUN_11_11  CRUDE_11_11  1
+    RUN_11_11  CDU_11  1
+    RUN_11_11  PROD_0_11  -0.16
+    RUN_11_11  PROD_1_11  -0.26
+    RUN_11_11  PROD_2_11  -0.12
+    RUN_11_11  PROD_3_11  -0.11
+    RUN_11_11  PROD_4_11  -0.15
+    RUN_11_11  PROD_5_11  -0.23
+    RUN_11_11  PROD_7_11  -0.15
+    RUN_11_11  PROD_8_11  -0.01
+    RUN_11_11  PROD_9_11  -0.09
+    RUN_11_11  PROD_10_11  -0.22
+    RUN_11_11  PROD_11_11  -0.27
+    RUN_11_11  SPEC_0_11  0.036
+    RUN_11_11  SPEC_1_11  0.021
+    RUN_11_11  SPEC_2_11  0.004
+    RUN_11_11  SPEC_3_11  0.004
+    RUN_12_11  COST  2.27
+    RUN_12_11  CRUDE_12_11  1
+    RUN_12_11  CDU_11  1
+    RUN_12_11  PROD_0_11  -0.19
+    RUN_12_11  PROD_1_11  -0.18
+    RUN_12_11  PROD_2_11  -0.18
+    RUN_12_11  PROD_3_11  -0.12
+    RUN_12_11  PROD_4_11  -0.2
+    RUN_12_11  PROD_5_11  -0.05
+    RUN_12_11  PROD_6_11  -0.05
+    RUN_12_11  PROD_7_11  -0.16
+    RUN_12_11  PROD_8_11  -0.07
+    RUN_12_11  PROD_10_11  -0.24
+    RUN_12_11  PROD_11_11  -0.06
+    RUN_12_11  SPEC_0_11  0.035
+    RUN_12_11  SPEC_1_11  0.029
+    RUN_12_11  SPEC_2_11  0.005
+    RUN_12_11  SPEC_3_11  0.01
+    RUN_13_11  COST  6.742
+    RUN_13_11  CRUDE_13_11  1
+    RUN_13_11  CDU_11  1
+    RUN_13_11  PROD_0_11  -0.17
+    RUN_13_11  PROD_1_11  -0.29
+    RUN_13_11  PROD_2_11  -0.27
+    RUN_13_11  PROD_3_11  -0.17
+    RUN_13_11  PROD_4_11  -0.07
+    RUN_13_11  PROD_5_11  -0.12
+    RUN_13_11  PROD_6_11  -0.16
+    RUN_13_11  PROD_7_11  -0.11
+    RUN_13_11  PROD_8_11  -0.3
+    RUN_13_11  PROD_9_11  -0.27
+    RUN_13_11  PROD_10_11  -0.18
+    RUN_13_11  PROD_11_11  -0.11
+    RUN_13_11  SPEC_0_11  0.012
+    RUN_13_11  SPEC_1_11  0.038
+    RUN_13_11  SPEC_2_11  0.001
+    RUN_13_11  SPEC_3_11  0.01
+    RUN_14_11  COST  10.869
+    RUN_14_11  CRUDE_14_11  1
+    RUN_14_11  CDU_11  1
+    RUN_14_11  PROD_0_11  -0.14
+    RUN_14_11  PROD_1_11  -0.29
+    RUN_14_11  PROD_2_11  -0.08
+    RUN_14_11  PROD_3_11  -0.21
+    RUN_14_11  PROD_4_11  -0.17
+    RUN_14_11  PROD_5_11  -0.19
+    RUN_14_11  PROD_6_11  -0.3
+    RUN_14_11  PROD_7_11  -0.23
+    RUN_14_11  PROD_9_11  -0.12
+    RUN_14_11  PROD_10_11  -0.25
+    RUN_14_11  PROD_11_11  -0.27
+    RUN_14_11  SPEC_0_11  0.032
+    RUN_14_11  SPEC_1_11  0.001
+    RUN_14_11  SPEC_2_11  0.028
+    RUN_14_11  SPEC_3_11  0.016
+    PROD_0_11  COST  -5
+    PROD_0_11  PROD_0_11  1
+    PROD_0_11  SELL_0_11  -1
+    SELL_0_11  SELL_0_11  1
+    PROD_1_11  COST  -7
+    PROD_1_11  PROD_1_11  1
+    PROD_1_11  SELL_1_11  -1
+    SELL_1_11  SELL_1_11  1
+    PROD_2_11  COST  -1
+    PROD_2_11  PROD_2_11  1
+    PROD_2_11  SELL_2_11  -1
+    SELL_2_11  COST  -1
+    SELL_2_11  SELL_2_11  1
+    PROD_3_11  COST  -5
+    PROD_3_11  PROD_3_11  1
+    PROD_3_11  SELL_3_11  -1
+    SELL_3_11  COST  -1
+    SELL_3_11  SELL_3_11  1
+    PROD_4_11  COST  9
+    PROD_4_11  PROD_4_11  1
+    PROD_4_11  SELL_4_11  -1
+    SELL_4_11  COST  -5
+    SELL_4_11  SELL_4_11  1
+    PROD_5_11  COST  -2
+    PROD_5_11  PROD_5_11  1
+    PROD_5_11  SELL_5_11  -1
+    SELL_5_11  COST  -1
+    SELL_5_11  SELL_5_11  1
+    PROD_6_11  COST  -3
+    PROD_6_11  PROD_6_11  1
+    PROD_6_11  SELL_6_11  -1
+    SELL_6_11  COST  -3
+    SELL_6_11  SELL_6_11  1
+    PROD_7_11  COST  -8
+    PROD_7_11  PROD_7_11  1
+    PROD_7_11  SELL_7_11  -1
+    SELL_7_11  COST  -1
+    SELL_7_11  SELL_7_11  1
+    PROD_8_11  COST  -5
+    PROD_8_11  PROD_8_11  1
+    PROD_8_11  SELL_8_11  -1
+    SELL_8_11  COST  -9
+    SELL_8_11  SELL_8_11  1
+    PROD_9_11  COST  5
+    PROD_9_11  PROD_9_11  1
+    PROD_9_11  SELL_9_11  -1
+    SELL_9_11  COST  -7
+    SELL_9_11  SELL_9_11  1
+    PROD_10_11  COST  3
+    PROD_10_11  PROD_10_11  1
+    PROD_10_11  SELL_10_11  -1
+    SELL_10_11  COST  -7
+    SELL_10_11  SELL_10_11  1
+    PROD_11_11  COST  -5
+    PROD_11_11  PROD_11_11  1
+    PROD_11_11  SELL_11_11  -1
+    SELL_11_11  SELL_11_11  1
+    RUN_0_12  COST  -10.715
+    RUN_0_12  CRUDE_0_12  1
+    RUN_0_12  CDU_12  1
+    RUN_0_12  PROD_0_12  -0.04
+    RUN_0_12  PROD_1_12  -0.18
+    RUN_0_12  PROD_2_12  -0.27
+    RUN_0_12  PROD_3_12  -0.25
+    RUN_0_12  PROD_4_12  -0.24
+    RUN_0_12  PROD_5_12  -0.02
+    RUN_0_12  PROD_6_12  -0.08
+    RUN_0_12  PROD_7_12  -0.03
+    RUN_0_12  PROD_8_12  -0.15
+    RUN_0_12  PROD_9_12  -0.24
+    RUN_0_12  PROD_10_12  -0.14
+    RUN_0_12  PROD_11_12  -0.15
+    RUN_0_12  SPEC_0_12  0.047
+    RUN_0_12  SPEC_1_12  0.026
+    RUN_0_12  SPEC_2_12  0.014
+    RUN_1_12  COST  -1.7
+    RUN_1_12  CRUDE_1_12  1
+    RUN_1_12  CDU_12  1
+    RUN_1_12  PROD_0_12  -0.2
+    RUN_1_12  PROD_1_12  -0.12
+    RUN_1_12  PROD_2_12  -0.25
+    RUN_1_12  PROD_3_12  -0.06
+    RUN_1_12  PROD_4_12  -0.03
+    RUN_1_12  PROD_5_12  -0.15
+    RUN_1_12  PROD_7_12  -0.28
+    RUN_1_12  PROD_8_12  -0.26
+    RUN_1_12  PROD_9_12  -0.12
+    RUN_1_12  PROD_10_12  -0.13
+    RUN_1_12  PROD_11_12  -0.19
+    RUN_1_12  SPEC_0_12  0.032
+    RUN_1_12  SPEC_1_12  0.031
+    RUN_1_12  SPEC_2_12  0.04
+    RUN_1_12  SPEC_3_12  0.048
+    RUN_2_12  COST  -3.72
+    RUN_2_12  CRUDE_2_12  1
+    RUN_2_12  CDU_12  1
+    RUN_2_12  PROD_0_12  -0.24
+    RUN_2_12  PROD_1_12  -0.24
+    RUN_2_12  PROD_3_12  -0.22
+    RUN_2_12  PROD_4_12  -0.14
+    RUN_2_12  PROD_5_12  -0.08
+    RUN_2_12  PROD_6_12  -0.23
+    RUN_2_12  PROD_7_12  -0.25
+    RUN_2_12  PROD_8_12  -0.07
+    RUN_2_12  PROD_9_12  -0.18
+    RUN_2_12  PROD_10_12  -0.3
+    RUN_2_12  PROD_11_12  -0.03
+    RUN_2_12  SPEC_0_12  0.008
+    RUN_2_12  SPEC_1_12  0.022
+    RUN_2_12  SPEC_2_12  0.011
+    RUN_2_12  SPEC_3_12  0.048
+    RUN_3_12  COST  -14.195
+    RUN_3_12  CRUDE_3_12  1
+    RUN_3_12  CDU_12  1
+    RUN_3_12  PROD_0_12  -0.28
+    RUN_3_12  PROD_1_12  -0.1
+    RUN_3_12  PROD_5_12  -0.2
+    RUN_3_12  PROD_6_12  -0.17
+    RUN_3_12  PROD_8_12  -0.3
+    RUN_3_12  PROD_9_12  -0.28
+    RUN_3_12  PROD_10_12  -0.12
+    RUN_3_12  PROD_11_12  -0.21
+    RUN_3_12  SPEC_0_12  0.033
+    RUN_3_12  SPEC_1_12  0.026
+    RUN_3_12  SPEC_2_12  0.035
+    RUN_3_12  SPEC_3_12  0.017
+    RUN_4_12  COST  -9.805
+    RUN_4_12  CRUDE_4_12  1
+    RUN_4_12  CDU_12  1
+    RUN_4_12  PROD_0_12  -0.06
+    RUN_4_12  PROD_1_12  -0.13
+    RUN_4_12  PROD_2_12  -0.23
+    RUN_4_12  PROD_4_12  -0.16
+    RUN_4_12  PROD_5_12  -0.07
+    RUN_4_12  PROD_6_12  -0.24
+    RUN_4_12  PROD_7_12  -0.14
+    RUN_4_12  PROD_8_12  -0.3
+    RUN_4_12  PROD_9_12  -0.15
+    RUN_4_12  PROD_10_12  -0.17
+    RUN_4_12  PROD_11_12  -0.07
+    RUN_4_12  SPEC_0_12  0.049
+    RUN_4_12  SPEC_1_12  0.022
+    RUN_4_12  SPEC_2_12  0.037
+    RUN_4_12  SPEC_3_12  0.015
+    RUN_5_12  COST  -14.055
+    RUN_5_12  CRUDE_5_12  1
+    RUN_5_12  CDU_12  1
+    RUN_5_12  PROD_0_12  -0.11
+    RUN_5_12  PROD_1_12  -0.07
+    RUN_5_12  PROD_2_12  -0.21
+    RUN_5_12  PROD_3_12  -0.07
+    RUN_5_12  PROD_4_12  -0.24
+    RUN_5_12  PROD_5_12  -0.14
+    RUN_5_12  PROD_6_12  -0.3
+    RUN_5_12  PROD_7_12  -0.09
+    RUN_5_12  PROD_8_12  -0.29
+    RUN_5_12  PROD_10_12  -0.13
+    RUN_5_12  PROD_11_12  -0.26
+    RUN_5_12  SPEC_0_12  0.035
+    RUN_5_12  SPEC_2_12  0.011
+    RUN_5_12  SPEC_3_12  0.017
+    RUN_6_12  COST  -10.635
+    RUN_6_12  CRUDE_6_12  1
+    RUN_6_12  CDU_12  1
+    RUN_6_12  PROD_0_12  -0.29
+    RUN_6_12  PROD_1_12  -0.17
+    RUN_6_12  PROD_2_12  -0.29
+    RUN_6_12  PROD_3_12  -0.2
+    RUN_6_12  PROD_4_12  -0.03
+    RUN_6_12  PROD_5_12  -0.05
+    RUN_6_12  PROD_6_12  -0.2
+    RUN_6_12  PROD_7_12  -0.23
+    RUN_6_12  PROD_8_12  -0.27
+    RUN_6_12  PROD_9_12  -0.09
+    RUN_6_12  PROD_10_12  -0.03
+    RUN_6_12  PROD_11_12  -0.23
+    RUN_6_12  SPEC_0_12  0.013
+    RUN_6_12  SPEC_1_12  0.034
+    RUN_6_12  SPEC_2_12  0.005
+    RUN_6_12  SPEC_3_12  0.007
+    RUN_7_12  COST  -9.405
+    RUN_7_12  CRUDE_7_12  1
+    RUN_7_12  CDU_12  1
+    RUN_7_12  PROD_0_12  -0.1
+    RUN_7_12  PROD_1_12  -0.28
+    RUN_7_12  PROD_2_12  -0.23
+    RUN_7_12  PROD_3_12  -0.22
+    RUN_7_12  PROD_4_12  -0.16
+    RUN_7_12  PROD_5_12  -0.29
+    RUN_7_12  PROD_6_12  -0.3
+    RUN_7_12  PROD_7_12  -0.13
+    RUN_7_12  PROD_8_12  -0.16
+    RUN_7_12  PROD_9_12  -0.26
+    RUN_7_12  PROD_10_12  -0.29
+    RUN_7_12  PROD_11_12  -0.21
+    RUN_7_12  SPEC_0_12  0.027
+    RUN_7_12  SPEC_1_12  0.034
+    RUN_7_12  SPEC_2_12  0.035
+    RUN_7_12  SPEC_3_12  0.039
+    RUN_8_12  COST  -13.545
+    RUN_8_12  CRUDE_8_12  1
+    RUN_8_12  CDU_12  1
+    RUN_8_12  PROD_0_12  -0.06
+    RUN_8_12  PROD_1_12  -0.09
+    RUN_8_12  PROD_2_12  -0.09
+    RUN_8_12  PROD_3_12  -0.18
+    RUN_8_12  PROD_4_12  -0.28
+    RUN_8_12  PROD_5_12  -0.15
+    RUN_8_12  PROD_6_12  -0.27
+    RUN_8_12  PROD_7_12  -0.3
+    RUN_8_12  PROD_8_12  -0.16
+    RUN_8_12  PROD_9_12  -0.12
+    RUN_8_12  PROD_10_12  -0.18
+    RUN_8_12  PROD_11_12  -0.27
+    RUN_8_12  SPEC_0_12  0.003
+    RUN_8_12  SPEC_1_12  0.039
+    RUN_8_12  SPEC_2_12  0.016
+    RUN_8_12  SPEC_3_12  0.011
+    RUN_9_12  COST  -15.34
+    RUN_9_12  CRUDE_9_12  1
+    RUN_9_12  CDU_12  1
+    RUN_9_12  PROD_0_12  -0.01
+    RUN_9_12  PROD_1_12  -0.15
+    RUN_9_12  PROD_2_12  -0.07
+    RUN_9_12  PROD_3_12  -0.23
+    RUN_9_12  PROD_4_12  -0.25
+    RUN_9_12  PROD_5_12  -0.12
+    RUN_9_12  PROD_6_12  -0.13
+    RUN_9_12  PROD_7_12  -0.21
+    RUN_9_12  PROD_8_12  -0.05
+    RUN_9_12  PROD_9_12  -0.11
+    RUN_9_12  PROD_10_12  -0.17
+    RUN_9_12  PROD_11_12  -0.28
+    RUN_9_12  SPEC_0_12  0.03
+    RUN_9_12  SPEC_1_12  0.05
+    RUN_9_12  SPEC_2_12  0.002
+    RUN_9_12  SPEC_3_12  0.022
+    RUN_10_12  COST  -1.525
+    RUN_10_12  CRUDE_10_12  1
+    RUN_10_12  CDU_12  1
+    RUN_10_12  PROD_0_12  -0.22
+    RUN_10_12  PROD_1_12  -0.24
+    RUN_10_12  PROD_2_12  -0.21
+    RUN_10_12  PROD_3_12  -0.23
+    RUN_10_12  PROD_4_12  -0.11
+    RUN_10_12  PROD_5_12  -0.02
+    RUN_10_12  PROD_6_12  -0.14
+    RUN_10_12  PROD_7_12  -0.21
+    RUN_10_12  PROD_8_12  -0.16
+    RUN_10_12  PROD_9_12  -0.03
+    RUN_10_12  PROD_10_12  -0.24
+    RUN_10_12  PROD_11_12  -0.05
+    RUN_10_12  SPEC_0_12  0.023
+    RUN_10_12  SPEC_1_12  0.039
+    RUN_10_12  SPEC_2_12  0.043
+    RUN_10_12  SPEC_3_12  0.018
+    RUN_11_12  COST  -9.42
+    RUN_11_12  CRUDE_11_12  1
+    RUN_11_12  CDU_12  1
+    RUN_11_12  PROD_0_12  -0.16
+    RUN_11_12  PROD_1_12  -0.26
+    RUN_11_12  PROD_2_12  -0.12
+    RUN_11_12  PROD_3_12  -0.11
+    RUN_11_12  PROD_4_12  -0.15
+    RUN_11_12  PROD_5_12  -0.23
+    RUN_11_12  PROD_7_12  -0.15
+    RUN_11_12  PROD_8_12  -0.01
+    RUN_11_12  PROD_9_12  -0.09
+    RUN_11_12  PROD_10_12  -0.22
+    RUN_11_12  PROD_11_12  -0.27
+    RUN_11_12  SPEC_0_12  0.036
+    RUN_11_12  SPEC_1_12  0.021
+    RUN_11_12  SPEC_2_12  0.004
+    RUN_11_12  SPEC_3_12  0.004
+    RUN_12_12  COST  0.725
+    RUN_12_12  CRUDE_12_12  1
+    RUN_12_12  CDU_12  1
+    RUN_12_12  PROD_0_12  -0.19
+    RUN_12_12  PROD_1_12  -0.18
+    RUN_12_12  PROD_2_12  -0.18
+    RUN_12_12  PROD_3_12  -0.12
+    RUN_12_12  PROD_4_12  -0.2
+    RUN_12_12  PROD_5_12  -0.05
+    RUN_12_12  PROD_6_12  -0.05
+    RUN_12_12  PROD_7_12  -0.16
+    RUN_12_12  PROD_8_12  -0.07
+    RUN_12_12  PROD_10_12  -0.24
+    RUN_12_12  PROD_11_12  -0.06
+    RUN_12_12  SPEC_0_12  0.035
+    RUN_12_12  SPEC_1_12  0.029
+    RUN_12_12  SPEC_2_12  0.005
+    RUN_12_12  SPEC_3_12  0.01
+    RUN_13_12  COST  -11.22
+    RUN_13_12  CRUDE_13_12  1
+    RUN_13_12  CDU_12  1
+    RUN_13_12  PROD_0_12  -0.17
+    RUN_13_12  PROD_1_12  -0.29
+    RUN_13_12  PROD_2_12  -0.27
+    RUN_13_12  PROD_3_12  -0.17
+    RUN_13_12  PROD_4_12  -0.07
+    RUN_13_12  PROD_5_12  -0.12
+    RUN_13_12  PROD_6_12  -0.16
+    RUN_13_12  PROD_7_12  -0.11
+    RUN_13_12  PROD_8_12  -0.3
+    RUN_13_12  PROD_9_12  -0.27
+    RUN_13_12  PROD_10_12  -0.18
+    RUN_13_12  PROD_11_12  -0.11
+    RUN_13_12  SPEC_0_12  0.012
+    RUN_13_12  SPEC_1_12  0.038
+    RUN_13_12  SPEC_2_12  0.001
+    RUN_13_12  SPEC_3_12  0.01
+    RUN_14_12  COST  -11.67
+    RUN_14_12  CRUDE_14_12  1
+    RUN_14_12  CDU_12  1
+    RUN_14_12  PROD_0_12  -0.14
+    RUN_14_12  PROD_1_12  -0.29
+    RUN_14_12  PROD_2_12  -0.08
+    RUN_14_12  PROD_3_12  -0.21
+    RUN_14_12  PROD_4_12  -0.17
+    RUN_14_12  PROD_5_12  -0.19
+    RUN_14_12  PROD_6_12  -0.3
+    RUN_14_12  PROD_7_12  -0.23
+    RUN_14_12  PROD_9_12  -0.12
+    RUN_14_12  PROD_10_12  -0.25
+    RUN_14_12  PROD_11_12  -0.27
+    RUN_14_12  SPEC_0_12  0.032
+    RUN_14_12  SPEC_1_12  0.001
+    RUN_14_12  SPEC_2_12  0.028
+    RUN_14_12  SPEC_3_12  0.016
+    PROD_0_12  COST  7
+    PROD_0_12  PROD_0_12  1
+    PROD_0_12  SELL_0_12  -1
+    SELL_0_12  COST  -8
+    SELL_0_12  SELL_0_12  1
+    PROD_1_12  COST  -4
+    PROD_1_12  PROD_1_12  1
+    PROD_1_12  SELL_1_12  -1
+    SELL_1_12  COST  9
+    SELL_1_12  SELL_1_12  1
+    PROD_2_12  COST  -3
+    PROD_2_12  PROD_2_12  1
+    PROD_2_12  SELL_2_12  -1
+    SELL_2_12  COST  6
+    SELL_2_12  SELL_2_12  1
+    PROD_3_12  COST  -2
+    PROD_3_12  PROD_3_12  1
+    PROD_3_12  SELL_3_12  -1
+    SELL_3_12  SELL_3_12  1
+    PROD_4_12  COST  5
+    PROD_4_12  PROD_4_12  1
+    PROD_4_12  SELL_4_12  -1
+    SELL_4_12  COST  8
+    SELL_4_12  SELL_4_12  1
+    PROD_5_12  COST  3
+    PROD_5_12  PROD_5_12  1
+    PROD_5_12  SELL_5_12  -1
+    SELL_5_12  SELL_5_12  1
+    PROD_6_12  COST  9
+    PROD_6_12  PROD_6_12  1
+    PROD_6_12  SELL_6_12  -1
+    SELL_6_12  COST  -4
+    SELL_6_12  SELL_6_12  1
+    PROD_7_12  COST  -4
+    PROD_7_12  PROD_7_12  1
+    PROD_7_12  SELL_7_12  -1
+    SELL_7_12  COST  -6
+    SELL_7_12  SELL_7_12  1
+    PROD_8_12  COST  9
+    PROD_8_12  PROD_8_12  1
+    PROD_8_12  SELL_8_12  -1
+    SELL_8_12  SELL_8_12  1
+    PROD_9_12  COST  3
+    PROD_9_12  PROD_9_12  1
+    PROD_9_12  SELL_9_12  -1
+    SELL_9_12  COST  9
+    SELL_9_12  SELL_9_12  1
+    PROD_10_12  COST  3
+    PROD_10_12  PROD_10_12  1
+    PROD_10_12  SELL_10_12  -1
+    SELL_10_12  SELL_10_12  1
+    PROD_11_12  COST  8
+    PROD_11_12  PROD_11_12  1
+    PROD_11_12  SELL_11_12  -1
+    SELL_11_12  SELL_11_12  1
+    RUN_0_13  COST  -1.95
+    RUN_0_13  CRUDE_0_13  1
+    RUN_0_13  CDU_13  1
+    RUN_0_13  PROD_0_13  -0.04
+    RUN_0_13  PROD_1_13  -0.18
+    RUN_0_13  PROD_2_13  -0.27
+    RUN_0_13  PROD_3_13  -0.25
+    RUN_0_13  PROD_4_13  -0.24
+    RUN_0_13  PROD_5_13  -0.02
+    RUN_0_13  PROD_6_13  -0.08
+    RUN_0_13  PROD_7_13  -0.03
+    RUN_0_13  PROD_8_13  -0.15
+    RUN_0_13  PROD_9_13  -0.24
+    RUN_0_13  PROD_10_13  -0.14
+    RUN_0_13  PROD_11_13  -0.15
+    RUN_0_13  SPEC_0_13  0.047
+    RUN_0_13  SPEC_1_13  0.026
+    RUN_0_13  SPEC_2_13  0.014
+    RUN_1_13  COST  -3.844
+    RUN_1_13  CRUDE_1_13  1
+    RUN_1_13  CDU_13  1
+    RUN_1_13  PROD_0_13  -0.2
+    RUN_1_13  PROD_1_13  -0.12
+    RUN_1_13  PROD_2_13  -0.25
+    RUN_1_13  PROD_3_13  -0.06
+    RUN_1_13  PROD_4_13  -0.03
+    RUN_1_13  PROD_5_13  -0.15
+    RUN_1_13  PROD_7_13  -0.28
+    RUN_1_13  PROD_8_13  -0.26
+    RUN_1_13  PROD_9_13  -0.12
+    RUN_1_13  PROD_10_13  -0.13
+    RUN_1_13  PROD_11_13  -0.19
+    RUN_1_13  SPEC_0_13  0.032
+    RUN_1_13  SPEC_1_13  0.031
+    RUN_1_13  SPEC_2_13  0.04
+    RUN_1_13  SPEC_3_13  0.048
+    RUN_2_13  COST  0.066
+    RUN_2_13  CRUDE_2_13  1
+    RUN_2_13  CDU_13  1
+    RUN_2_13  PROD_0_13  -0.24
+    RUN_2_13  PROD_1_13  -0.24
+    RUN_2_13  PROD_3_13  -0.22
+    RUN_2_13  PROD_4_13  -0.14
+    RUN_2_13  PROD_5_13  -0.08
+    RUN_2_13  PROD_6_13  -0.23
+    RUN_2_13  PROD_7_13  -0.25
+    RUN_2_13  PROD_8_13  -0.07
+    RUN_2_13  PROD_9_13  -0.18
+    RUN_2_13  PROD_10_13  -0.3
+    RUN_2_13  PROD_11_13  -0.03
+    RUN_2_13  SPEC_0_13  0.008
+    RUN_2_13  SPEC_1_13  0.022
+    RUN_2_13  SPEC_2_13  0.011
+    RUN_2_13  SPEC_3_13  0.048
+    RUN_3_13  COST  -8.546
+    RUN_3_13  CRUDE_3_13  1
+    RUN_3_13  CDU_13  1
+    RUN_3_13  PROD_0_13  -0.28
+    RUN_3_13  PROD_1_13  -0.1
+    RUN_3_13  PROD_5_13  -0.2
+    RUN_3_13  PROD_6_13  -0.17
+    RUN_3_13  PROD_8_13  -0.3
+    RUN_3_13  PROD_9_13  -0.28
+    RUN_3_13  PROD_10_13  -0.12
+    RUN_3_13  PROD_11_13  -0.21
+    RUN_3_13  SPEC_0_13  0.033
+    RUN_3_13  SPEC_1_13  0.026
+    RUN_3_13  SPEC_2_13  0.035
+    RUN_3_13  SPEC_3_13  0.017
+    RUN_4_13  COST  -2.13
+    RUN_4_13  CRUDE_4_13  1
+    RUN_4_13  CDU_13  1
+    RUN_4_13  PROD_0_13  -0.06
+    RUN_4_13  PROD_1_13  -0.13
+    RUN_4_13  PROD_2_13  -0.23
+    RUN_4_13  PROD_4_13  -0.16
+    RUN_4_13  PROD_5_13  -0.07
+    RUN_4_13  PROD_6_13  -0.24
+    RUN_4_13  PROD_7_13  -0.14
+    RUN_4_13  PROD_8_13  -0.3
+    RUN_4_13  PROD_9_13  -0.15
+    RUN_4_13  PROD_10_13  -0.17
+    RUN_4_13  PROD_11_13  -0.07
+    RUN_4_13  SPEC_0_13  0.049
+    RUN_4_13  SPEC_1_13  0.022
+    RUN_4_13  SPEC_2_13  0.037
+    RUN_4_13  SPEC_3_13  0.015
+    RUN_5_13  COST  1.454
+    RUN_5_13  CRUDE_5_13  1
+    RUN_5_13  CDU_13  1
+    RUN_5_13  PROD_0_13  -0.11
+    RUN_5_13  PROD_1_13  -0.07
+    RUN_5_13  PROD_2_13  -0.21
+    RUN_5_13  PROD_3_13  -0.07
+    RUN_5_13  PROD_4_13  -0.24
+    RUN_5_13  PROD_5_13  -0.14
+    RUN_5_13  PROD_6_13  -0.3
+    RUN_5_13  PROD_7_13  -0.09
+    RUN_5_13  PROD_8_13  -0.29
+    RUN_5_13  PROD_10_13  -0.13
+    RUN_5_13  PROD_11_13  -0.26
+    RUN_5_13  SPEC_0_13  0.035
+    RUN_5_13  SPEC_2_13  0.011
+    RUN_5_13  SPEC_3_13  0.017
+    RUN_6_13  COST  8.874
+    RUN_6_13  CRUDE_6_13  1
+    RUN_6_13  CDU_13  1
+    RUN_6_13  PROD_0_13  -0.29
+    RUN_6_13  PROD_1_13  -0.17
+    RUN_6_13  PROD_2_13  -0.29
+    RUN_6_13  PROD_3_13  -0.2
+    RUN_6_13  PROD_4_13  -0.03
+    RUN_6_13  PROD_5_13  -0.05
+    RUN_6_13  PROD_6_13  -0.2
+    RUN_6_13  PROD_7_13  -0.23
+    RUN_6_13  PROD_8_13  -0.27
+    RUN_6_13  PROD_9_13  -0.09
+    RUN_6_13  PROD_10_13  -0.03
+    RUN_6_13  PROD_11_13  -0.23
+    RUN_6_13  SPEC_0_13  0.013
+    RUN_6_13  SPEC_1_13  0.034
+    RUN_6_13  SPEC_2_13  0.005
+    RUN_6_13  SPEC_3_13  0.007
+    RUN_7_13  COST  -2.152
+    RUN_7_13  CRUDE_7_13  1
+    RUN_7_13  CDU_13  1
+    RUN_7_13  PROD_0_13  -0.1
+    RUN_7_13  PROD_1_13  -0.28
+    RUN_7_13  PROD_2_13  -0.23
+    RUN_7_13  PROD_3_13  -0.22
+    RUN_7_13  PROD_4_13  -0.16
+    RUN_7_13  PROD_5_13  -0.29
+    RUN_7_13  PROD_6_13  -0.3
+    RUN_7_13  PROD_7_13  -0.13
+    RUN_7_13  PROD_8_13  -0.16
+    RUN_7_13  PROD_9_13  -0.26
+    RUN_7_13  PROD_10_13  -0.29
+    RUN_7_13  PROD_11_13  -0.21
+    RUN_7_13  SPEC_0_13  0.027
+    RUN_7_13  SPEC_1_13  0.034
+    RUN_7_13  SPEC_2_13  0.035
+    RUN_7_13  SPEC_3_13  0.039
+    RUN_8_13  COST  3.602
+    RUN_8_13  CRUDE_8_13  1
+    RUN_8_13  CDU_13  1
+    RUN_8_13  PROD_0_13  -0.06
+    RUN_8_13  PROD_1_13  -0.09
+    RUN_8_13  PROD_2_13  -0.09
+    RUN_8_13  PROD_3_13  -0.18
+    RUN_8_13  PROD_4_13  -0.28
+    RUN_8_13  PROD_5_13  -0.15
+    RUN_8_13  PROD_6_13  -0.27
+    RUN_8_13  PROD_7_13  -0.3
+    RUN_8_13  PROD_8_13  -0.16
+    RUN_8_13  PROD_9_13  -0.12
+    RUN_8_13  PROD_10_13  -0.18
+    RUN_8_13  PROD_11_13  -0.27
+    RUN_8_13  SPEC_0_13  0.003
+    RUN_8_13  SPEC_1_13  0.039
+    RUN_8_13  SPEC_2_13  0.016
+    RUN_8_13  SPEC_3_13  0.011
+    RUN_9_13  COST  4.374
+    RUN_9_13  CRUDE_9_13  1
+    RUN_9_13  CDU_13  1
+    RUN_9_13  PROD_0_13  -0.01
+    RUN_9_13  PROD_1_13  -0.15
+    RUN_9_13  PROD_2_13  -0.07
+    RUN_9_13  PROD_3_13  -0.23
+    RUN_9_13  PROD_4_13  -0.25
+    RUN_9_13  PROD_5_13  -0.12
+    RUN_9_13  PROD_6_13  -0.13
+    RUN_9_13  PROD_7_13  -0.21
+    RUN_9_13  PROD_8_13  -0.05
+    RUN_9_13  PROD_9_13  -0.11
+    RUN_9_13  PROD_10_13  -0.17
+    RUN_9_13  PROD_11_13  -0.28
+    RUN_9_13  SPEC_0_13  0.03
+    RUN_9_13  SPEC_1_13  0.05
+    RUN_9_13  SPEC_2_13  0.002
+    RUN_9_13  SPEC_3_13  0.022
+    RUN_10_13  COST  1.756
+    RUN_10_13  CRUDE_10_13  1
+    RUN_10_13  CDU_13  1
+    RUN_10_13  PROD_0_13  -0.22
+    RUN_10_13  PROD_1_13  -0.24
+    RUN_10_13  PROD_2_13  -0.21
+    RUN_10_13  PROD_3_13  -0.23
+    RUN_10_13  PROD_4_13  -0.11
+    RUN_10_13  PROD_5_13  -0.02
+    RUN_10_13  PROD_6_13  -0.14
+    RUN_10_13  PROD_7_13  -0.21
+    RUN_10_13  PROD_8_13  -0.16
+    RUN_10_13  PROD_9_13  -0.03
+    RUN_10_13  PROD_10_13  -0.24
+    RUN_10_13  PROD_11_13  -0.05
+    RUN_10_13  SPEC_0_13  0.023
+    RUN_10_13  SPEC_1_13  0.039
+    RUN_10_13  SPEC_2_13  0.043
+    RUN_10_13  SPEC_3_13  0.018
+    RUN_11_13  COST  -2.192
+    RUN_11_13  CRUDE_11_13  1
+    RUN_11_13  CDU_13  1
+    RUN_11_13  PROD_0_13  -0.16
+    RUN_11_13  PROD_1_13  -0.26
+    RUN_11_13  PROD_2_13  -0.12
+    RUN_11_13  PROD_3_13  -0.11
+    RUN_11_13  PROD_4_13  -0.15
+    RUN_11_13  PROD_5_13  -0.23
+    RUN_11_13  PROD_7_13  -0.15
+    RUN_11_13  PROD_8_13  -0.01
+    RUN_11_13  PROD_9_13  -0.09
+    RUN_11_13  PROD_10_13  -0.22
+    RUN_11_13  PROD_11_13  -0.27
+    RUN_11_13  SPEC_0_13  0.036
+    RUN_11_13  SPEC_1_13  0.021
+    RUN_11_13  SPEC_2_13  0.004
+    RUN_11_13  SPEC_3_13  0.004
+    RUN_12_13  COST  0.38
+    RUN_12_13  CRUDE_12_13  1
+    RUN_12_13  CDU_13  1
+    RUN_12_13  PROD_0_13  -0.19
+    RUN_12_13  PROD_1_13  -0.18
+    RUN_12_13  PROD_2_13  -0.18
+    RUN_12_13  PROD_3_13  -0.12
+    RUN_12_13  PROD_4_13  -0.2
+    RUN_12_13  PROD_5_13  -0.05
+    RUN_12_13  PROD_6_13  -0.05
+    RUN_12_13  PROD_7_13  -0.16
+    RUN_12_13  PROD_8_13  -0.07
+    RUN_12_13  PROD_10_13  -0.24
+    RUN_12_13  PROD_11_13  -0.06
+    RUN_12_13  SPEC_0_13  0.035
+    RUN_12_13  SPEC_1_13  0.029
+    RUN_12_13  SPEC_2_13  0.005
+    RUN_12_13  SPEC_3_13  0.01
+    RUN_13_13  COST  1.2
+    RUN_13_13  CRUDE_13_13  1
+    RUN_13_13  CDU_13  1
+    RUN_13_13  PROD_0_13  -0.17
+    RUN_13_13  PROD_1_13  -0.29
+    RUN_13_13  PROD_2_13  -0.27
+    RUN_13_13  PROD_3_13  -0.17
+    RUN_13_13  PROD_4_13  -0.07
+    RUN_13_13  PROD_5_13  -0.12
+    RUN_13_13  PROD_6_13  -0.16
+    RUN_13_13  PROD_7_13  -0.11
+    RUN_13_13  PROD_8_13  -0.3
+    RUN_13_13  PROD_9_13  -0.27
+    RUN_13_13  PROD_10_13  -0.18
+    RUN_13_13  PROD_11_13  -0.11
+    RUN_13_13  SPEC_0_13  0.012
+    RUN_13_13  SPEC_1_13  0.038
+    RUN_13_13  SPEC_2_13  0.001
+    RUN_13_13  SPEC_3_13  0.01
+    RUN_14_13  COST  4.352
+    RUN_14_13  CRUDE_14_13  1
+    RUN_14_13  CDU_13  1
+    RUN_14_13  PROD_0_13  -0.14
+    RUN_14_13  PROD_1_13  -0.29
+    RUN_14_13  PROD_2_13  -0.08
+    RUN_14_13  PROD_3_13  -0.21
+    RUN_14_13  PROD_4_13  -0.17
+    RUN_14_13  PROD_5_13  -0.19
+    RUN_14_13  PROD_6_13  -0.3
+    RUN_14_13  PROD_7_13  -0.23
+    RUN_14_13  PROD_9_13  -0.12
+    RUN_14_13  PROD_10_13  -0.25
+    RUN_14_13  PROD_11_13  -0.27
+    RUN_14_13  SPEC_0_13  0.032
+    RUN_14_13  SPEC_1_13  0.001
+    RUN_14_13  SPEC_2_13  0.028
+    RUN_14_13  SPEC_3_13  0.016
+    PROD_0_13  COST  6
+    PROD_0_13  PROD_0_13  1
+    PROD_0_13  SELL_0_13  -1
+    SELL_0_13  COST  -12
+    SELL_0_13  SELL_0_13  1
+    PROD_1_13  COST  -7
+    PROD_1_13  PROD_1_13  1
+    PROD_1_13  SELL_1_13  -1
+    SELL_1_13  SELL_1_13  1
+    PROD_2_13  COST  -5
+    PROD_2_13  PROD_2_13  1
+    PROD_2_13  SELL_2_13  -1
+    SELL_2_13  COST  -7
+    SELL_2_13  SELL_2_13  1
+    PROD_3_13  COST  -1
+    PROD_3_13  PROD_3_13  1
+    PROD_3_13  SELL_3_13  -1
+    SELL_3_13  COST  -9
+    SELL_3_13  SELL_3_13  1
+    PROD_4_13  COST  7
+    PROD_4_13  PROD_4_13  1
+    PROD_4_13  SELL_4_13  -1
+    SELL_4_13  COST  -8
+    SELL_4_13  SELL_4_13  1
+    PROD_5_13  COST  8
+    PROD_5_13  PROD_5_13  1
+    PROD_5_13  SELL_5_13  -1
+    SELL_5_13  SELL_5_13  1
+    PROD_6_13  COST  -8
+    PROD_6_13  PROD_6_13  1
+    PROD_6_13  SELL_6_13  -1
+    SELL_6_13  SELL_6_13  1
+    PROD_7_13  COST  8
+    PROD_7_13  PROD_7_13  1
+    PROD_7_13  SELL_7_13  -1
+    SELL_7_13  COST  -7
+    SELL_7_13  SELL_7_13  1
+    PROD_8_13  COST  9
+    PROD_8_13  PROD_8_13  1
+    PROD_8_13  SELL_8_13  -1
+    SELL_8_13  COST  -4
+    SELL_8_13  SELL_8_13  1
+    PROD_9_13  COST  9
+    PROD_9_13  PROD_9_13  1
+    PROD_9_13  SELL_9_13  -1
+    SELL_9_13  COST  -8
+    SELL_9_13  SELL_9_13  1
+    PROD_10_13  COST  -1
+    PROD_10_13  PROD_10_13  1
+    PROD_10_13  SELL_10_13  -1
+    SELL_10_13  COST  -2
+    SELL_10_13  SELL_10_13  1
+    PROD_11_13  COST  5
+    PROD_11_13  PROD_11_13  1
+    PROD_11_13  SELL_11_13  -1
+    SELL_11_13  COST  5
+    SELL_11_13  SELL_11_13  1
+    RUN_0_14  COST  -0.803
+    RUN_0_14  CRUDE_0_14  1
+    RUN_0_14  CDU_14  1
+    RUN_0_14  PROD_0_14  -0.04
+    RUN_0_14  PROD_1_14  -0.18
+    RUN_0_14  PROD_2_14  -0.27
+    RUN_0_14  PROD_3_14  -0.25
+    RUN_0_14  PROD_4_14  -0.24
+    RUN_0_14  PROD_5_14  -0.02
+    RUN_0_14  PROD_6_14  -0.08
+    RUN_0_14  PROD_7_14  -0.03
+    RUN_0_14  PROD_8_14  -0.15
+    RUN_0_14  PROD_9_14  -0.24
+    RUN_0_14  PROD_10_14  -0.14
+    RUN_0_14  PROD_11_14  -0.15
+    RUN_0_14  SPEC_0_14  0.047
+    RUN_0_14  SPEC_1_14  0.026
+    RUN_0_14  SPEC_2_14  0.014
+    RUN_1_14  COST  -6.718
+    RUN_1_14  CRUDE_1_14  1
+    RUN_1_14  CDU_14  1
+    RUN_1_14  PROD_0_14  -0.2
+    RUN_1_14  PROD_1_14  -0.12
+    RUN_1_14  PROD_2_14  -0.25
+    RUN_1_14  PROD_3_14  -0.06
+    RUN_1_14  PROD_4_14  -0.03
+    RUN_1_14  PROD_5_14  -0.15
+    RUN_1_14  PROD_7_14  -0.28
+    RUN_1_14  PROD_8_14  -0.26
+    RUN_1_14  PROD_9_14  -0.12
+    RUN_1_14  PROD_10_14  -0.13
+    RUN_1_14  PROD_11_14  -0.19
+    RUN_1_14  SPEC_0_14  0.032
+    RUN_1_14  SPEC_1_14  0.031
+    RUN_1_14  SPEC_2_14  0.04
+    RUN_1_14  SPEC_3_14  0.048
+    RUN_2_14  COST  4.038
+    RUN_2_14  CRUDE_2_14  1
+    RUN_2_14  CDU_14  1
+    RUN_2_14  PROD_0_14  -0.24
+    RUN_2_14  PROD_1_14  -0.24
+    RUN_2_14  PROD_3_14  -0.22
+    RUN_2_14  PROD_4_14  -0.14
+    RUN_2_14  PROD_5_14  -0.08
+    RUN_2_14  PROD_6_14  -0.23
+    RUN_2_14  PROD_7_14  -0.25
+    RUN_2_14  PROD_8_14  -0.07
+    RUN_2_14  PROD_9_14  -0.18
+    RUN_2_14  PROD_10_14  -0.3
+    RUN_2_14  PROD_11_14  -0.03
+    RUN_2_14  SPEC_0_14  0.008
+    RUN_2_14  SPEC_1_14  0.022
+    RUN_2_14  SPEC_2_14  0.011
+    RUN_2_14  SPEC_3_14  0.048
+    RUN_3_14  COST  3.053
+    RUN_3_14  CRUDE_3_14  1
+    RUN_3_14  CDU_14  1
+    RUN_3_14  PROD_0_14  -0.28
+    RUN_3_14  PROD_1_14  -0.1
+    RUN_3_14  PROD_5_14  -0.2
+    RUN_3_14  PROD_6_14  -0.17
+    RUN_3_14  PROD_8_14  -0.3
+    RUN_3_14  PROD_9_14  -0.28
+    RUN_3_14  PROD_10_14  -0.12
+    RUN_3_14  PROD_11_14  -0.21
+    RUN_3_14  SPEC_0_14  0.033
+    RUN_3_14  SPEC_1_14  0.026
+    RUN_3_14  SPEC_2_14  0.035
+    RUN_3_14  SPEC_3_14  0.017
+    RUN_4_14  COST  -7.761
+    RUN_4_14  CRUDE_4_14  1
+    RUN_4_14  CDU_14  1
+    RUN_4_14  PROD_0_14  -0.06
+    RUN_4_14  PROD_1_14  -0.13
+    RUN_4_14  PROD_2_14  -0.23
+    RUN_4_14  PROD_4_14  -0.16
+    RUN_4_14  PROD_5_14  -0.07
+    RUN_4_14  PROD_6_14  -0.24
+    RUN_4_14  PROD_7_14  -0.14
+    RUN_4_14  PROD_8_14  -0.3
+    RUN_4_14  PROD_9_14  -0.15
+    RUN_4_14  PROD_10_14  -0.17
+    RUN_4_14  PROD_11_14  -0.07
+    RUN_4_14  SPEC_0_14  0.049
+    RUN_4_14  SPEC_1_14  0.022
+    RUN_4_14  SPEC_2_14  0.037
+    RUN_4_14  SPEC_3_14  0.015
+    RUN_5_14  COST  -7.075
+    RUN_5_14  CRUDE_5_14  1
+    RUN_5_14  CDU_14  1
+    RUN_5_14  PROD_0_14  -0.11
+    RUN_5_14  PROD_1_14  -0.07
+    RUN_5_14  PROD_2_14  -0.21
+    RUN_5_14  PROD_3_14  -0.07
+    RUN_5_14  PROD_4_14  -0.24
+    RUN_5_14  PROD_5_14  -0.14
+    RUN_5_14  PROD_6_14  -0.3
+    RUN_5_14  PROD_7_14  -0.09
+    RUN_5_14  PROD_8_14  -0.29
+    RUN_5_14  PROD_10_14  -0.13
+    RUN_5_14  PROD_11_14  -0.26
+    RUN_5_14  SPEC_0_14  0.035
+    RUN_5_14  SPEC_2_14  0.011
+    RUN_5_14  SPEC_3_14  0.017
+    RUN_6_14  COST  -10.147
+    RUN_6_14  CRUDE_6_14  1
+    RUN_6_14  CDU_14  1
+    RUN_6_14  PROD_0_14  -0.29
+    RUN_6_14  PROD_1_14  -0.17
+    RUN_6_14  PROD_2_14  -0.29
+    RUN_6_14  PROD_3_14  -0.2
+    RUN_6_14  PROD_4_14  -0.03
+    RUN_6_14  PROD_5_14  -0.05
+    RUN_6_14  PROD_6_14  -0.2
+    RUN_6_14  PROD_7_14  -0.23
+    RUN_6_14  PROD_8_14  -0.27
+    RUN_6_14  PROD_9_14  -0.09
+    RUN_6_14  PROD_10_14  -0.03
+    RUN_6_14  PROD_11_14  -0.23
+    RUN_6_14  SPEC_0_14  0.013
+    RUN_6_14  SPEC_1_14  0.034
+    RUN_6_14  SPEC_2_14  0.005
+    RUN_6_14  SPEC_3_14  0.007
+    RUN_7_14  COST  -1.883
+    RUN_7_14  CRUDE_7_14  1
+    RUN_7_14  CDU_14  1
+    RUN_7_14  PROD_0_14  -0.1
+    RUN_7_14  PROD_1_14  -0.28
+    RUN_7_14  PROD_2_14  -0.23
+    RUN_7_14  PROD_3_14  -0.22
+    RUN_7_14  PROD_4_14  -0.16
+    RUN_7_14  PROD_5_14  -0.29
+    RUN_7_14  PROD_6_14  -0.3
+    RUN_7_14  PROD_7_14  -0.13
+    RUN_7_14  PROD_8_14  -0.16
+    RUN_7_14  PROD_9_14  -0.26
+    RUN_7_14  PROD_10_14  -0.29
+    RUN_7_14  PROD_11_14  -0.21
+    RUN_7_14  SPEC_0_14  0.027
+    RUN_7_14  SPEC_1_14  0.034
+    RUN_7_14  SPEC_2_14  0.035
+    RUN_7_14  SPEC_3_14  0.039
+    RUN_8_14  COST  0.243
+    RUN_8_14  CRUDE_8_14  1
+    RUN_8_14  CDU_14  1
+    RUN_8_14  PROD_0_14  -0.06
+    RUN_8_14  PROD_1_14  -0.09
+    RUN_8_14  PROD_2_14  -0.09
+    RUN_8_14  PROD_3_14  -0.18
+    RUN_8_14  PROD_4_14  -0.28
+    RUN_8_14  PROD_5_14  -0.15
+    RUN_8_14  PROD_6_14  -0.27
+    RUN_8_14  PROD_7_14  -0.3
+    RUN_8_14  PROD_8_14  -0.16
+    RUN_8_14  PROD_9_14  -0.12
+    RUN_8_14  PROD_10_14  -0.18
+    RUN_8_14  PROD_11_14  -0.27
+    RUN_8_14  SPEC_0_14  0.003
+    RUN_8_14  SPEC_1_14  0.039
+    RUN_8_14  SPEC_2_14  0.016
+    RUN_8_14  SPEC_3_14  0.011
+    RUN_9_14  COST  -12.93
+    RUN_9_14  CRUDE_9_14  1
+    RUN_9_14  CDU_14  1
+    RUN_9_14  PROD_0_14  -0.01
+    RUN_9_14  PROD_1_14  -0.15
+    RUN_9_14  PROD_2_14  -0.07
+    RUN_9_14  PROD_3_14  -0.23
+    RUN_9_14  PROD_4_14  -0.25
+    RUN_9_14  PROD_5_14  -0.12
+    RUN_9_14  PROD_6_14  -0.13
+    RUN_9_14  PROD_7_14  -0.21
+    RUN_9_14  PROD_8_14  -0.05
+    RUN_9_14  PROD_9_14  -0.11
+    RUN_9_14  PROD_10_14  -0.17
+    RUN_9_14  PROD_11_14  -0.28
+    RUN_9_14  SPEC_0_14  0.03
+    RUN_9_14  SPEC_1_14  0.05
+    RUN_9_14  SPEC_2_14  0.002
+    RUN_9_14  SPEC_3_14  0.022
+    RUN_10_14  COST  -8.707
+    RUN_10_14  CRUDE_10_14  1
+    RUN_10_14  CDU_14  1
+    RUN_10_14  PROD_0_14  -0.22
+    RUN_10_14  PROD_1_14  -0.24
+    RUN_10_14  PROD_2_14  -0.21
+    RUN_10_14  PROD_3_14  -0.23
+    RUN_10_14  PROD_4_14  -0.11
+    RUN_10_14  PROD_5_14  -0.02
+    RUN_10_14  PROD_6_14  -0.14
+    RUN_10_14  PROD_7_14  -0.21
+    RUN_10_14  PROD_8_14  -0.16
+    RUN_10_14  PROD_9_14  -0.03
+    RUN_10_14  PROD_10_14  -0.24
+    RUN_10_14  PROD_11_14  -0.05
+    RUN_10_14  SPEC_0_14  0.023
+    RUN_10_14  SPEC_1_14  0.039
+    RUN_10_14  SPEC_2_14  0.043
+    RUN_10_14  SPEC_3_14  0.018
+    RUN_11_14  COST  -1.234
+    RUN_11_14  CRUDE_11_14  1
+    RUN_11_14  CDU_14  1
+    RUN_11_14  PROD_0_14  -0.16
+    RUN_11_14  PROD_1_14  -0.26
+    RUN_11_14  PROD_2_14  -0.12
+    RUN_11_14  PROD_3_14  -0.11
+    RUN_11_14  PROD_4_14  -0.15
+    RUN_11_14  PROD_5_14  -0.23
+    RUN_11_14  PROD_7_14  -0.15
+    RUN_11_14  PROD_8_14  -0.01
+    RUN_11_14  PROD_9_14  -0.09
+    RUN_11_14  PROD_10_14  -0.22
+    RUN_11_14  PROD_11_14  -0.27
+    RUN_11_14  SPEC_0_14  0.036
+    RUN_11_14  SPEC_1_14  0.021
+    RUN_11_14  SPEC_2_14  0.004
+    RUN_11_14  SPEC_3_14  0.004
+    RUN_12_14  COST  -4.075
+    RUN_12_14  CRUDE_12_14  1
+    RUN_12_14  CDU_14  1
+    RUN_12_14  PROD_0_14  -0.19
+    RUN_12_14  PROD_1_14  -0.18
+    RUN_12_14  PROD_2_14  -0.18
+    RUN_12_14  PROD_3_14  -0.12
+    RUN_12_14  PROD_4_14  -0.2
+    RUN_12_14  PROD_5_14  -0.05
+    RUN_12_14  PROD_6_14  -0.05
+    RUN_12_14  PROD_7_14  -0.16
+    RUN_12_14  PROD_8_14  -0.07
+    RUN_12_14  PROD_10_14  -0.24
+    RUN_12_14  PROD_11_14  -0.06
+    RUN_12_14  SPEC_0_14  0.035
+    RUN_12_14  SPEC_1_14  0.029
+    RUN_12_14  SPEC_2_14  0.005
+    RUN_12_14  SPEC_3_14  0.01
+    RUN_13_14  COST  -7.498
+    RUN_13_14  CRUDE_13_14  1
+    RUN_13_14  CDU_14  1
+    RUN_13_14  PROD_0_14  -0.17
+    RUN_13_14  PROD_1_14  -0.29
+    RUN_13_14  PROD_2_14  -0.27
+    RUN_13_14  PROD_3_14  -0.17
+    RUN_13_14  PROD_4_14  -0.07
+    RUN_13_14  PROD_5_14  -0.12
+    RUN_13_14  PROD_6_14  -0.16
+    RUN_13_14  PROD_7_14  -0.11
+    RUN_13_14  PROD_8_14  -0.3
+    RUN_13_14  PROD_9_14  -0.27
+    RUN_13_14  PROD_10_14  -0.18
+    RUN_13_14  PROD_11_14  -0.11
+    RUN_13_14  SPEC_0_14  0.012
+    RUN_13_14  SPEC_1_14  0.038
+    RUN_13_14  SPEC_2_14  0.001
+    RUN_13_14  SPEC_3_14  0.01
+    RUN_14_14  COST  -5.368
+    RUN_14_14  CRUDE_14_14  1
+    RUN_14_14  CDU_14  1
+    RUN_14_14  PROD_0_14  -0.14
+    RUN_14_14  PROD_1_14  -0.29
+    RUN_14_14  PROD_2_14  -0.08
+    RUN_14_14  PROD_3_14  -0.21
+    RUN_14_14  PROD_4_14  -0.17
+    RUN_14_14  PROD_5_14  -0.19
+    RUN_14_14  PROD_6_14  -0.3
+    RUN_14_14  PROD_7_14  -0.23
+    RUN_14_14  PROD_9_14  -0.12
+    RUN_14_14  PROD_10_14  -0.25
+    RUN_14_14  PROD_11_14  -0.27
+    RUN_14_14  SPEC_0_14  0.032
+    RUN_14_14  SPEC_1_14  0.001
+    RUN_14_14  SPEC_2_14  0.028
+    RUN_14_14  SPEC_3_14  0.016
+    PROD_0_14  COST  7
+    PROD_0_14  PROD_0_14  1
+    PROD_0_14  SELL_0_14  -1
+    SELL_0_14  SELL_0_14  1
+    PROD_1_14  COST  9
+    PROD_1_14  PROD_1_14  1
+    PROD_1_14  SELL_1_14  -1
+    SELL_1_14  COST  -3
+    SELL_1_14  SELL_1_14  1
+    PROD_2_14  COST  16
+    PROD_2_14  PROD_2_14  1
+    PROD_2_14  SELL_2_14  -1
+    SELL_2_14  COST  -7
+    SELL_2_14  SELL_2_14  1
+    PROD_3_14  COST  -9
+    PROD_3_14  PROD_3_14  1
+    PROD_3_14  SELL_3_14  -1
+    SELL_3_14  COST  -6
+    SELL_3_14  SELL_3_14  1
+    PROD_4_14  COST  2
+    PROD_4_14  PROD_4_14  1
+    PROD_4_14  SELL_4_14  -1
+    SELL_4_14  COST  -8
+    SELL_4_14  SELL_4_14  1
+    PROD_5_14  COST  -5
+    PROD_5_14  PROD_5_14  1
+    PROD_5_14  SELL_5_14  -1
+    SELL_5_14  SELL_5_14  1
+    PROD_6_14  COST  -9
+    PROD_6_14  PROD_6_14  1
+    PROD_6_14  SELL_6_14  -1
+    SELL_6_14  SELL_6_14  1
+    PROD_7_14  COST  4
+    PROD_7_14  PROD_7_14  1
+    PROD_7_14  SELL_7_14  -1
+    SELL_7_14  COST  -10
+    SELL_7_14  SELL_7_14  1
+    PROD_8_14  COST  -3
+    PROD_8_14  PROD_8_14  1
+    PROD_8_14  SELL_8_14  -1
+    SELL_8_14  SELL_8_14  1
+    PROD_9_14  PROD_9_14  1
+    PROD_9_14  SELL_9_14  -1
+    SELL_9_14  COST  -5
+    SELL_9_14  SELL_9_14  1
+    PROD_10_14  COST  -9
+    PROD_10_14  PROD_10_14  1
+    PROD_10_14  SELL_10_14  -1
+    SELL_10_14  COST  -6
+    SELL_10_14  SELL_10_14  1
+    PROD_11_14  PROD_11_14  1
+    PROD_11_14  SELL_11_14  -1
+    SELL_11_14  SELL_11_14  1
+    RUN_0_15  COST  13.446
+    RUN_0_15  CRUDE_0_15  1
+    RUN_0_15  CDU_15  1
+    RUN_0_15  PROD_0_15  -0.04
+    RUN_0_15  PROD_1_15  -0.18
+    RUN_0_15  PROD_2_15  -0.27
+    RUN_0_15  PROD_3_15  -0.25
+    RUN_0_15  PROD_4_15  -0.24
+    RUN_0_15  PROD_5_15  -0.02
+    RUN_0_15  PROD_6_15  -0.08
+    RUN_0_15  PROD_7_15  -0.03
+    RUN_0_15  PROD_8_15  -0.15
+    RUN_0_15  PROD_9_15  -0.24
+    RUN_0_15  PROD_10_15  -0.14
+    RUN_0_15  PROD_11_15  -0.15
+    RUN_0_15  SPEC_0_15  0.047
+    RUN_0_15  SPEC_1_15  0.026
+    RUN_0_15  SPEC_2_15  0.014
+    RUN_1_15  COST  9.358
+    RUN_1_15  CRUDE_1_15  1
+    RUN_1_15  CDU_15  1
+    RUN_1_15  PROD_0_15  -0.2
+    RUN_1_15  PROD_1_15  -0.12
+    RUN_1_15  PROD_2_15  -0.25
+    RUN_1_15  PROD_3_15  -0.06
+    RUN_1_15  PROD_4_15  -0.03
+    RUN_1_15  PROD_5_15  -0.15
+    RUN_1_15  PROD_7_15  -0.28
+    RUN_1_15  PROD_8_15  -0.26
+    RUN_1_15  PROD_9_15  -0.12
+    RUN_1_15  PROD_10_15  -0.13
+    RUN_1_15  PROD_11_15  -0.19
+    RUN_1_15  SPEC_0_15  0.032
+    RUN_1_15  SPEC_1_15  0.031
+    RUN_1_15  SPEC_2_15  0.04
+    RUN_1_15  SPEC_3_15  0.048
+    RUN_2_15  COST  8.014
+    RUN_2_15  CRUDE_2_15  1
+    RUN_2_15  CDU_15  1
+    RUN_2_15  PROD_0_15  -0.24
+    RUN_2_15  PROD_1_15  -0.24
+    RUN_2_15  PROD_3_15  -0.22
+    RUN_2_15  PROD_4_15  -0.14
+    RUN_2_15  PROD_5_15  -0.08
+    RUN_2_15  PROD_6_15  -0.23
+    RUN_2_15  PROD_7_15  -0.25
+    RUN_2_15  PROD_8_15  -0.07
+    RUN_2_15  PROD_9_15  -0.18
+    RUN_2_15  PROD_10_15  -0.3
+    RUN_2_15  PROD_11_15  -0.03
+    RUN_2_15  SPEC_0_15  0.008
+    RUN_2_15  SPEC_1_15  0.022
+    RUN_2_15  SPEC_2_15  0.011
+    RUN_2_15  SPEC_3_15  0.048
+    RUN_3_15  COST  2.859
+    RUN_3_15  CRUDE_3_15  1
+    RUN_3_15  CDU_15  1
+    RUN_3_15  PROD_0_15  -0.28
+    RUN_3_15  PROD_1_15  -0.1
+    RUN_3_15  PROD_5_15  -0.2
+    RUN_3_15  PROD_6_15  -0.17
+    RUN_3_15  PROD_8_15  -0.3
+    RUN_3_15  PROD_9_15  -0.28
+    RUN_3_15  PROD_10_15  -0.12
+    RUN_3_15  PROD_11_15  -0.21
+    RUN_3_15  SPEC_0_15  0.033
+    RUN_3_15  SPEC_1_15  0.026
+    RUN_3_15  SPEC_2_15  0.035
+    RUN_3_15  SPEC_3_15  0.017
+    RUN_4_15  COST  2.927
+    RUN_4_15  CRUDE_4_15  1
+    RUN_4_15  CDU_15  1
+    RUN_4_15  PROD_0_15  -0.06
+    RUN_4_15  PROD_1_15  -0.13
+    RUN_4_15  PROD_2_15  -0.23
+    RUN_4_15  PROD_4_15  -0.16
+    RUN_4_15  PROD_5_15  -0.07
+    RUN_4_15  PROD_6_15  -0.24
+    RUN_4_15  PROD_7_15  -0.14
+    RUN_4_15  PROD_8_15  -0.3
+    RUN_4_15  PROD_9_15  -0.15
+    RUN_4_15  PROD_10_15  -0.17
+    RUN_4_15  PROD_11_15  -0.07
+    RUN_4_15  SPEC_0_15  0.049
+    RUN_4_15  SPEC_1_15  0.022
+    RUN_4_15  SPEC_2_15  0.037
+    RUN_4_15  SPEC_3_15  0.015
+    RUN_5_15  COST  2.853
+    RUN_5_15  CRUDE_5_15  1
+    RUN_5_15  CDU_15  1
+    RUN_5_15  PROD_0_15  -0.11
+    RUN_5_15  PROD_1_15  -0.07
+    RUN_5_15  PROD_2_15  -0.21
+    RUN_5_15  PROD_3_15  -0.07
+    RUN_5_15  PROD_4_15  -0.24
+    RUN_5_15  PROD_5_15  -0.14
+    RUN_5_15  PROD_6_15  -0.3
+    RUN_5_15  PROD_7_15  -0.09
+    RUN_5_15  PROD_8_15  -0.29
+    RUN_5_15  PROD_10_15  -0.13
+    RUN_5_15  PROD_11_15  -0.26
+    RUN_5_15  SPEC_0_15  0.035
+    RUN_5_15  SPEC_2_15  0.011
+    RUN_5_15  SPEC_3_15  0.017
+    RUN_6_15  COST  6.347
+    RUN_6_15  CRUDE_6_15  1
+    RUN_6_15  CDU_15  1
+    RUN_6_15  PROD_0_15  -0.29
+    RUN_6_15  PROD_1_15  -0.17
+    RUN_6_15  PROD_2_15  -0.29
+    RUN_6_15  PROD_3_15  -0.2
+    RUN_6_15  PROD_4_15  -0.03
+    RUN_6_15  PROD_5_15  -0.05
+    RUN_6_15  PROD_6_15  -0.2
+    RUN_6_15  PROD_7_15  -0.23
+    RUN_6_15  PROD_8_15  -0.27
+    RUN_6_15  PROD_9_15  -0.09
+    RUN_6_15  PROD_10_15  -0.03
+    RUN_6_15  PROD_11_15  -0.23
+    RUN_6_15  SPEC_0_15  0.013
+    RUN_6_15  SPEC_1_15  0.034
+    RUN_6_15  SPEC_2_15  0.005
+    RUN_6_15  SPEC_3_15  0.007
+    RUN_7_15  COST  7.365
+    RUN_7_15  CRUDE_7_15  1
+    RUN_7_15  CDU_15  1
+    RUN_7_15  PROD_0_15  -0.1
+    RUN_7_15  PROD_1_15  -0.28
+    RUN_7_15  PROD_2_15  -0.23
+    RUN_7_15  PROD_3_15  -0.22
+    RUN_7_15  PROD_4_15  -0.16
+    RUN_7_15  PROD_5_15  -0.29
+    RUN_7_15  PROD_6_15  -0.3
+    RUN_7_15  PROD_7_15  -0.13
+    RUN_7_15  PROD_8_15  -0.16
+    RUN_7_15  PROD_9_15  -0.26
+    RUN_7_15  PROD_10_15  -0.29
+    RUN_7_15  PROD_11_15  -0.21
+    RUN_7_15  SPEC_0_15  0.027
+    RUN_7_15  SPEC_1_15  0.034
+    RUN_7_15  SPEC_2_15  0.035
+    RUN_7_15  SPEC_3_15  0.039
+    RUN_8_15  COST  3.673
+    RUN_8_15  CRUDE_8_15  1
+    RUN_8_15  CDU_15  1
+    RUN_8_15  PROD_0_15  -0.06
+    RUN_8_15  PROD_1_15  -0.09
+    RUN_8_15  PROD_2_15  -0.09
+    RUN_8_15  PROD_3_15  -0.18
+    RUN_8_15  PROD_4_15  -0.28
+    RUN_8_15  PROD_5_15  -0.15
+    RUN_8_15  PROD_6_15  -0.27
+    RUN_8_15  PROD_7_15  -0.3
+    RUN_8_15  PROD_8_15  -0.16
+    RUN_8_15  PROD_9_15  -0.12
+    RUN_8_15  PROD_10_15  -0.18
+    RUN_8_15  PROD_11_15  -0.27
+    RUN_8_15  SPEC_0_15  0.003
+    RUN_8_15  SPEC_1_15  0.039
+    RUN_8_15  SPEC_2_15  0.016
+    RUN_8_15  SPEC_3_15  0.011
+    RUN_9_15  COST  10.898
+    RUN_9_15  CRUDE_9_15  1
+    RUN_9_15  CDU_15  1
+    RUN_9_15  PROD_0_15  -0.01
+    RUN_9_15  PROD_1_15  -0.15
+    RUN_9_15  PROD_2_15  -0.07
+    RUN_9_15  PROD_3_15  -0.23
+    RUN_9_15  PROD_4_15  -0.25
+    RUN_9_15  PROD_5_15  -0.12
+    RUN_9_15  PROD_6_15  -0.13
+    RUN_9_15  PROD_7_15  -0.21
+    RUN_9_15  PROD_8_15  -0.05
+    RUN_9_15  PROD_9_15  -0.11
+    RUN_9_15  PROD_10_15  -0.17
+    RUN_9_15  PROD_11_15  -0.28
+    RUN_9_15  SPEC_0_15  0.03
+    RUN_9_15  SPEC_1_15  0.05
+    RUN_9_15  SPEC_2_15  0.002
+    RUN_9_15  SPEC_3_15  0.022
+    RUN_10_15  COST  5.936
+    RUN_10_15  CRUDE_10_15  1
+    RUN_10_15  CDU_15  1
+    RUN_10_15  PROD_0_15  -0.22
+    RUN_10_15  PROD_1_15  -0.24
+    RUN_10_15  PROD_2_15  -0.21
+    RUN_10_15  PROD_3_15  -0.23
+    RUN_10_15  PROD_4_15  -0.11
+    RUN_10_15  PROD_5_15  -0.02
+    RUN_10_15  PROD_6_15  -0.14
+    RUN_10_15  PROD_7_15  -0.21
+    RUN_10_15  PROD_8_15  -0.16
+    RUN_10_15  PROD_9_15  -0.03
+    RUN_10_15  PROD_10_15  -0.24
+    RUN_10_15  PROD_11_15  -0.05
+    RUN_10_15  SPEC_0_15  0.023
+    RUN_10_15  SPEC_1_15  0.039
+    RUN_10_15  SPEC_2_15  0.043
+    RUN_10_15  SPEC_3_15  0.018
+    RUN_11_15  COST  4.542
+    RUN_11_15  CRUDE_11_15  1
+    RUN_11_15  CDU_15  1
+    RUN_11_15  PROD_0_15  -0.16
+    RUN_11_15  PROD_1_15  -0.26
+    RUN_11_15  PROD_2_15  -0.12
+    RUN_11_15  PROD_3_15  -0.11
+    RUN_11_15  PROD_4_15  -0.15
+    RUN_11_15  PROD_5_15  -0.23
+    RUN_11_15  PROD_7_15  -0.15
+    RUN_11_15  PROD_8_15  -0.01
+    RUN_11_15  PROD_9_15  -0.09
+    RUN_11_15  PROD_10_15  -0.22
+    RUN_11_15  PROD_11_15  -0.27
+    RUN_11_15  SPEC_0_15  0.036
+    RUN_11_15  SPEC_1_15  0.021
+    RUN_11_15  SPEC_2_15  0.004
+    RUN_11_15  SPEC_3_15  0.004
+    RUN_12_15  COST  3.764
+    RUN_12_15  CRUDE_12_15  1
+    RUN_12_15  CDU_15  1
+    RUN_12_15  PROD_0_15  -0.19
+    RUN_12_15  PROD_1_15  -0.18
+    RUN_12_15  PROD_2_15  -0.18
+    RUN_12_15  PROD_3_15  -0.12
+    RUN_12_15  PROD_4_15  -0.2
+    RUN_12_15  PROD_5_15  -0.05
+    RUN_12_15  PROD_6_15  -0.05
+    RUN_12_15  PROD_7_15  -0.16
+    RUN_12_15  PROD_8_15  -0.07
+    RUN_12_15  PROD_10_15  -0.24
+    RUN_12_15  PROD_11_15  -0.06
+    RUN_12_15  SPEC_0_15  0.035
+    RUN_12_15  SPEC_1_15  0.029
+    RUN_12_15  SPEC_2_15  0.005
+    RUN_12_15  SPEC_3_15  0.01
+    RUN_13_15  COST  6.818
+    RUN_13_15  CRUDE_13_15  1
+    RUN_13_15  CDU_15  1
+    RUN_13_15  PROD_0_15  -0.17
+    RUN_13_15  PROD_1_15  -0.29
+    RUN_13_15  PROD_2_15  -0.27
+    RUN_13_15  PROD_3_15  -0.17
+    RUN_13_15  PROD_4_15  -0.07
+    RUN_13_15  PROD_5_15  -0.12
+    RUN_13_15  PROD_6_15  -0.16
+    RUN_13_15  PROD_7_15  -0.11
+    RUN_13_15  PROD_8_15  -0.3
+    RUN_13_15  PROD_9_15  -0.27
+    RUN_13_15  PROD_10_15  -0.18
+    RUN_13_15  PROD_11_15  -0.11
+    RUN_13_15  SPEC_0_15  0.012
+    RUN_13_15  SPEC_1_15  0.038
+    RUN_13_15  SPEC_2_15  0.001
+    RUN_13_15  SPEC_3_15  0.01
+    RUN_14_15  COST  8.28
+    RUN_14_15  CRUDE_14_15  1
+    RUN_14_15  CDU_15  1
+    RUN_14_15  PROD_0_15  -0.14
+    RUN_14_15  PROD_1_15  -0.29
+    RUN_14_15  PROD_2_15  -0.08
+    RUN_14_15  PROD_3_15  -0.21
+    RUN_14_15  PROD_4_15  -0.17
+    RUN_14_15  PROD_5_15  -0.19
+    RUN_14_15  PROD_6_15  -0.3
+    RUN_14_15  PROD_7_15  -0.23
+    RUN_14_15  PROD_9_15  -0.12
+    RUN_14_15  PROD_10_15  -0.25
+    RUN_14_15  PROD_11_15  -0.27
+    RUN_14_15  SPEC_0_15  0.032
+    RUN_14_15  SPEC_1_15  0.001
+    RUN_14_15  SPEC_2_15  0.028
+    RUN_14_15  SPEC_3_15  0.016
+    PROD_0_15  COST  -4
+    PROD_0_15  PROD_0_15  1
+    PROD_0_15  SELL_0_15  -1
+    SELL_0_15  COST  4
+    SELL_0_15  SELL_0_15  1
+    PROD_1_15  COST  -3
+    PROD_1_15  PROD_1_15  1
+    PROD_1_15  SELL_1_15  -1
+    SELL_1_15  SELL_1_15  1
+    PROD_2_15  COST  -7
+    PROD_2_15  PROD_2_15  1
+    PROD_2_15  SELL_2_15  -1
+    SELL_2_15  SELL_2_15  1
+    PROD_3_15  COST  -9
+    PROD_3_15  PROD_3_15  1
+    PROD_3_15  SELL_3_15  -1
+    SELL_3_15  COST  4
+    SELL_3_15  SELL_3_15  1
+    PROD_4_15  COST  -3
+    PROD_4_15  PROD_4_15  1
+    PROD_4_15  SELL_4_15  -1
+    SELL_4_15  COST  8
+    SELL_4_15  SELL_4_15  1
+    PROD_5_15  COST  -4
+    PROD_5_15  PROD_5_15  1
+    PROD_5_15  SELL_5_15  -1
+    SELL_5_15  SELL_5_15  1
+    PROD_6_15  COST  8
+    PROD_6_15  PROD_6_15  1
+    PROD_6_15  SELL_6_15  -1
+    SELL_6_15  COST  -4
+    SELL_6_15  SELL_6_15  1
+    PROD_7_15  COST  -6
+    PROD_7_15  PROD_7_15  1
+    PROD_7_15  SELL_7_15  -1
+    SELL_7_15  COST  -5
+    SELL_7_15  SELL_7_15  1
+    PROD_8_15  COST  -3
+    PROD_8_15  PROD_8_15  1
+    PROD_8_15  SELL_8_15  -1
+    SELL_8_15  SELL_8_15  1
+    PROD_9_15  COST  -8
+    PROD_9_15  PROD_9_15  1
+    PROD_9_15  SELL_9_15  -1
+    SELL_9_15  COST  1
+    SELL_9_15  SELL_9_15  1
+    PROD_10_15  COST  5
+    PROD_10_15  PROD_10_15  1
+    PROD_10_15  SELL_10_15  -1
+    SELL_10_15  COST  -8
+    SELL_10_15  SELL_10_15  1
+    PROD_11_15  COST  3
+    PROD_11_15  PROD_11_15  1
+    PROD_11_15  SELL_11_15  -1
+    SELL_11_15  COST  -3
+    SELL_11_15  SELL_11_15  1
+    RUN_0_16  COST  -3.881
+    RUN_0_16  CRUDE_0_16  1
+    RUN_0_16  CDU_16  1
+    RUN_0_16  PROD_0_16  -0.04
+    RUN_0_16  PROD_1_16  -0.18
+    RUN_0_16  PROD_2_16  -0.27
+    RUN_0_16  PROD_3_16  -0.25
+    RUN_0_16  PROD_4_16  -0.24
+    RUN_0_16  PROD_5_16  -0.02
+    RUN_0_16  PROD_6_16  -0.08
+    RUN_0_16  PROD_7_16  -0.03
+    RUN_0_16  PROD_8_16  -0.15
+    RUN_0_16  PROD_9_16  -0.24
+    RUN_0_16  PROD_10_16  -0.14
+    RUN_0_16  PROD_11_16  -0.15
+    RUN_0_16  SPEC_0_16  0.047
+    RUN_0_16  SPEC_1_16  0.026
+    RUN_0_16  SPEC_2_16  0.014
+    RUN_1_16  COST  3.71
+    RUN_1_16  CRUDE_1_16  1
+    RUN_1_16  CDU_16  1
+    RUN_1_16  PROD_0_16  -0.2
+    RUN_1_16  PROD_1_16  -0.12
+    RUN_1_16  PROD_2_16  -0.25
+    RUN_1_16  PROD_3_16  -0.06
+    RUN_1_16  PROD_4_16  -0.03
+    RUN_1_16  PROD_5_16  -0.15
+    RUN_1_16  PROD_7_16  -0.28
+    RUN_1_16  PROD_8_16  -0.26
+    RUN_1_16  PROD_9_16  -0.12
+    RUN_1_16  PROD_10_16  -0.13
+    RUN_1_16  PROD_11_16  -0.19
+    RUN_1_16  SPEC_0_16  0.032
+    RUN_1_16  SPEC_1_16  0.031
+    RUN_1_16  SPEC_2_16  0.04
+    RUN_1_16  SPEC_3_16  0.048
+    RUN_2_16  COST  -4.656
+    RUN_2_16  CRUDE_2_16  1
+    RUN_2_16  CDU_16  1
+    RUN_2_16  PROD_0_16  -0.24
+    RUN_2_16  PROD_1_16  -0.24
+    RUN_2_16  PROD_3_16  -0.22
+    RUN_2_16  PROD_4_16  -0.14
+    RUN_2_16  PROD_5_16  -0.08
+    RUN_2_16  PROD_6_16  -0.23
+    RUN_2_16  PROD_7_16  -0.25
+    RUN_2_16  PROD_8_16  -0.07
+    RUN_2_16  PROD_9_16  -0.18
+    RUN_2_16  PROD_10_16  -0.3
+    RUN_2_16  PROD_11_16  -0.03
+    RUN_2_16  SPEC_0_16  0.008
+    RUN_2_16  SPEC_1_16  0.022
+    RUN_2_16  SPEC_2_16  0.011
+    RUN_2_16  SPEC_3_16  0.048
+    RUN_3_16  COST  -4.02
+    RUN_3_16  CRUDE_3_16  1
+    RUN_3_16  CDU_16  1
+    RUN_3_16  PROD_0_16  -0.28
+    RUN_3_16  PROD_1_16  -0.1
+    RUN_3_16  PROD_5_16  -0.2
+    RUN_3_16  PROD_6_16  -0.17
+    RUN_3_16  PROD_8_16  -0.3
+    RUN_3_16  PROD_9_16  -0.28
+    RUN_3_16  PROD_10_16  -0.12
+    RUN_3_16  PROD_11_16  -0.21
+    RUN_3_16  SPEC_0_16  0.033
+    RUN_3_16  SPEC_1_16  0.026
+    RUN_3_16  SPEC_2_16  0.035
+    RUN_3_16  SPEC_3_16  0.017
+    RUN_4_16  COST  -5
+    RUN_4_16  CRUDE_4_16  1
+    RUN_4_16  CDU_16  1
+    RUN_4_16  PROD_0_16  -0.06
+    RUN_4_16  PROD_1_16  -0.13
+    RUN_4_16  PROD_2_16  -0.23
+    RUN_4_16  PROD_4_16  -0.16
+    RUN_4_16  PROD_5_16  -0.07
+    RUN_4_16  PROD_6_16  -0.24
+    RUN_4_16  PROD_7_16  -0.14
+    RUN_4_16  PROD_8_16  -0.3
+    RUN_4_16  PROD_9_16  -0.15
+    RUN_4_16  PROD_10_16  -0.17
+    RUN_4_16  PROD_11_16  -0.07
+    RUN_4_16  SPEC_0_16  0.049
+    RUN_4_16  SPEC_1_16  0.022
+    RUN_4_16  SPEC_2_16  0.037
+    RUN_4_16  SPEC_3_16  0.015
+    RUN_5_16  COST  -4.04
+    RUN_5_16  CRUDE_5_16  1
+    RUN_5_16  CDU_16  1
+    RUN_5_16  PROD_0_16  -0.11
+    RUN_5_16  PROD_1_16  -0.07
+    RUN_5_16  PROD_2_16  -0.21
+    RUN_5_16  PROD_3_16  -0.07
+    RUN_5_16  PROD_4_16  -0.24
+    RUN_5_16  PROD_5_16  -0.14
+    RUN_5_16  PROD_6_16  -0.3
+    RUN_5_16  PROD_7_16  -0.09
+    RUN_5_16  PROD_8_16  -0.29
+    RUN_5_16  PROD_10_16  -0.13
+    RUN_5_16  PROD_11_16  -0.26
+    RUN_5_16  SPEC_0_16  0.035
+    RUN_5_16  SPEC_2_16  0.011
+    RUN_5_16  SPEC_3_16  0.017
+    RUN_6_16  COST  4.05
+    RUN_6_16  CRUDE_6_16  1
+    RUN_6_16  CDU_16  1
+    RUN_6_16  PROD_0_16  -0.29
+    RUN_6_16  PROD_1_16  -0.17
+    RUN_6_16  PROD_2_16  -0.29
+    RUN_6_16  PROD_3_16  -0.2
+    RUN_6_16  PROD_4_16  -0.03
+    RUN_6_16  PROD_5_16  -0.05
+    RUN_6_16  PROD_6_16  -0.2
+    RUN_6_16  PROD_7_16  -0.23
+    RUN_6_16  PROD_8_16  -0.27
+    RUN_6_16  PROD_9_16  -0.09
+    RUN_6_16  PROD_10_16  -0.03
+    RUN_6_16  PROD_11_16  -0.23
+    RUN_6_16  SPEC_0_16  0.013
+    RUN_6_16  SPEC_1_16  0.034
+    RUN_6_16  SPEC_2_16  0.005
+    RUN_6_16  SPEC_3_16  0.007
+    RUN_7_16  COST  5.406
+    RUN_7_16  CRUDE_7_16  1
+    RUN_7_16  CDU_16  1
+    RUN_7_16  PROD_0_16  -0.1
+    RUN_7_16  PROD_1_16  -0.28
+    RUN_7_16  PROD_2_16  -0.23
+    RUN_7_16  PROD_3_16  -0.22
+    RUN_7_16  PROD_4_16  -0.16
+    RUN_7_16  PROD_5_16  -0.29
+    RUN_7_16  PROD_6_16  -0.3
+    RUN_7_16  PROD_7_16  -0.13
+    RUN_7_16  PROD_8_16  -0.16
+    RUN_7_16  PROD_9_16  -0.26
+    RUN_7_16  PROD_10_16  -0.29
+    RUN_7_16  PROD_11_16  -0.21
+    RUN_7_16  SPEC_0_16  0.027
+    RUN_7_16  SPEC_1_16  0.034
+    RUN_7_16  SPEC_2_16  0.035
+    RUN_7_16  SPEC_3_16  0.039
+    RUN_8_16  COST  4.372
+    RUN_8_16  CRUDE_8_16  1
+    RUN_8_16  CDU_16  1
+    RUN_8_16  PROD_0_16  -0.06
+    RUN_8_16  PROD_1_16  -0.09
+    RUN_8_16  PROD_2_16  -0.09
+    RUN_8_16  PROD_3_16  -0.18
+    RUN_8_16  PROD_4_16  -0.28
+    RUN_8_16  PROD_5_16  -0.15
+    RUN_8_16  PROD_6_16  -0.27
+    RUN_8_16  PROD_7_16  -0.3
+    RUN_8_16  PROD_8_16  -0.16
+    RUN_8_16  PROD_9_16  -0.12
+    RUN_8_16  PROD_10_16  -0.18
+    RUN_8_16  PROD_11_16  -0.27
+    RUN_8_16  SPEC_0_16  0.003
+    RUN_8_16  SPEC_1_16  0.039
+    RUN_8_16  SPEC_2_16  0.016
+    RUN_8_16  SPEC_3_16  0.011
+    RUN_9_16  COST  -10.722
+    RUN_9_16  CRUDE_9_16  1
+    RUN_9_16  CDU_16  1
+    RUN_9_16  PROD_0_16  -0.01
+    RUN_9_16  PROD_1_16  -0.15
+    RUN_9_16  PROD_2_16  -0.07
+    RUN_9_16  PROD_3_16  -0.23
+    RUN_9_16  PROD_4_16  -0.25
+    RUN_9_16  PROD_5_16  -0.12
+    RUN_9_16  PROD_6_16  -0.13
+    RUN_9_16  PROD_7_16  -0.21
+    RUN_9_16  PROD_8_16  -0.05
+    RUN_9_16  PROD_9_16  -0.11
+    RUN_9_16  PROD_10_16  -0.17
+    RUN_9_16  PROD_11_16  -0.28
+    RUN_9_16  SPEC_0_16  0.03
+    RUN_9_16  SPEC_1_16  0.05
+    RUN_9_16  SPEC_2_16  0.002
+    RUN_9_16  SPEC_3_16  0.022
+    RUN_10_16  COST  -9.375
+    RUN_10_16  CRUDE_10_16  1
+    RUN_10_16  CDU_16  1
+    RUN_10_16  PROD_0_16  -0.22
+    RUN_10_16  PROD_1_16  -0.24
+    RUN_10_16  PROD_2_16  -0.21
+    RUN_10_16  PROD_3_16  -0.23
+    RUN_10_16  PROD_4_16  -0.11
+    RUN_10_16  PROD_5_16  -0.02
+    RUN_10_16  PROD_6_16  -0.14
+    RUN_10_16  PROD_7_16  -0.21
+    RUN_10_16  PROD_8_16  -0.16
+    RUN_10_16  PROD_9_16  -0.03
+    RUN_10_16  PROD_10_16  -0.24
+    RUN_10_16  PROD_11_16  -0.05
+    RUN_10_16  SPEC_0_16  0.023
+    RUN_10_16  SPEC_1_16  0.039
+    RUN_10_16  SPEC_2_16  0.043
+    RUN_10_16  SPEC_3_16  0.018
+    RUN_11_16  COST  -2.028
+    RUN_11_16  CRUDE_11_16  1
+    RUN_11_16  CDU_16  1
+    RUN_11_16  PROD_0_16  -0.16
+    RUN_11_16  PROD_1_16  -0.26
+    RUN_11_16  PROD_2_16  -0.12
+    RUN_11_16  PROD_3_16  -0.11
+    RUN_11_16  PROD_4_16  -0.15
+    RUN_11_16  PROD_5_16  -0.23
+    RUN_11_16  PROD_7_16  -0.15
+    RUN_11_16  PROD_8_16  -0.01
+    RUN_11_16  PROD_9_16  -0.09
+    RUN_11_16  PROD_10_16  -0.22
+    RUN_11_16  PROD_11_16  -0.27
+    RUN_11_16  SPEC_0_16  0.036
+    RUN_11_16  SPEC_1_16  0.021
+    RUN_11_16  SPEC_2_16  0.004
+    RUN_11_16  SPEC_3_16  0.004
+    RUN_12_16  COST  -3.825
+    RUN_12_16  CRUDE_12_16  1
+    RUN_12_16  CDU_16  1
+    RUN_12_16  PROD_0_16  -0.19
+    RUN_12_16  PROD_1_16  -0.18
+    RUN_12_16  PROD_2_16  -0.18
+    RUN_12_16  PROD_3_16  -0.12
+    RUN_12_16  PROD_4_16  -0.2
+    RUN_12_16  PROD_5_16  -0.05
+    RUN_12_16  PROD_6_16  -0.05
+    RUN_12_16  PROD_7_16  -0.16
+    RUN_12_16  PROD_8_16  -0.07
+    RUN_12_16  PROD_10_16  -0.24
+    RUN_12_16  PROD_11_16  -0.06
+    RUN_12_16  SPEC_0_16  0.035
+    RUN_12_16  SPEC_1_16  0.029
+    RUN_12_16  SPEC_2_16  0.005
+    RUN_12_16  SPEC_3_16  0.01
+    RUN_13_16  COST  -8.1
+    RUN_13_16  CRUDE_13_16  1
+    RUN_13_16  CDU_16  1
+    RUN_13_16  PROD_0_16  -0.17
+    RUN_13_16  PROD_1_16  -0.29
+    RUN_13_16  PROD_2_16  -0.27
+    RUN_13_16  PROD_3_16  -0.17
+    RUN_13_16  PROD_4_16  -0.07
+    RUN_13_16  PROD_5_16  -0.12
+    RUN_13_16  PROD_6_16  -0.16
+    RUN_13_16  PROD_7_16  -0.11
+    RUN_13_16  PROD_8_16  -0.3
+    RUN_13_16  PROD_9_16  -0.27
+    RUN_13_16  PROD_10_16  -0.18
+    RUN_13_16  PROD_11_16  -0.11
+    RUN_13_16  SPEC_0_16  0.012
+    RUN_13_16  SPEC_1_16  0.038
+    RUN_13_16  SPEC_2_16  0.001
+    RUN_13_16  SPEC_3_16  0.01
+    RUN_14_16  COST  -3.018
+    RUN_14_16  CRUDE_14_16  1
+    RUN_14_16  CDU_16  1
+    RUN_14_16  PROD_0_16  -0.14
+    RUN_14_16  PROD_1_16  -0.29
+    RUN_14_16  PROD_2_16  -0.08
+    RUN_14_16  PROD_3_16  -0.21
+    RUN_14_16  PROD_4_16  -0.17
+    RUN_14_16  PROD_5_16  -0.19
+    RUN_14_16  PROD_6_16  -0.3
+    RUN_14_16  PROD_7_16  -0.23
+    RUN_14_16  PROD_9_16  -0.12
+    RUN_14_16  PROD_10_16  -0.25
+    RUN_14_16  PROD_11_16  -0.27
+    RUN_14_16  SPEC_0_16  0.032
+    RUN_14_16  SPEC_1_16  0.001
+    RUN_14_16  SPEC_2_16  0.028
+    RUN_14_16  SPEC_3_16  0.016
+    PROD_0_16  COST  -4
+    PROD_0_16  PROD_0_16  1
+    PROD_0_16  SELL_0_16  -1
+    SELL_0_16  COST  -5
+    SELL_0_16  SELL_0_16  1
+    PROD_1_16  COST  -4
+    PROD_1_16  PROD_1_16  1
+    PROD_1_16  SELL_1_16  -1
+    SELL_1_16  SELL_1_16  1
+    PROD_2_16  COST  -7
+    PROD_2_16  PROD_2_16  1
+    PROD_2_16  SELL_2_16  -1
+    SELL_2_16  COST  -8
+    SELL_2_16  SELL_2_16  1
+    PROD_3_16  COST  -1
+    PROD_3_16  PROD_3_16  1
+    PROD_3_16  SELL_3_16  -1
+    SELL_3_16  SELL_3_16  1
+    PROD_4_16  COST  2
+    PROD_4_16  PROD_4_16  1
+    PROD_4_16  SELL_4_16  -1
+    SELL_4_16  COST  -5
+    SELL_4_16  SELL_4_16  1
+    PROD_5_16  COST  -4
+    PROD_5_16  PROD_5_16  1
+    PROD_5_16  SELL_5_16  -1
+    SELL_5_16  SELL_5_16  1
+    PROD_6_16  COST  2
+    PROD_6_16  PROD_6_16  1
+    PROD_6_16  SELL_6_16  -1
+    SELL_6_16  SELL_6_16  1
+    PROD_7_16  COST  2
+    PROD_7_16  PROD_7_16  1
+    PROD_7_16  SELL_7_16  -1
+    SELL_7_16  SELL_7_16  1
+    PROD_8_16  COST  -1
+    PROD_8_16  PROD_8_16  1
+    PROD_8_16  SELL_8_16  -1
+    SELL_8_16  SELL_8_16  1
+    PROD_9_16  PROD_9_16  1
+    PROD_9_16  SELL_9_16  -1
+    SELL_9_16  COST  -2
+    SELL_9_16  SELL_9_16  1
+    PROD_10_16  COST  -8
+    PROD_10_16  PROD_10_16  1
+    PROD_10_16  SELL_10_16  -1
+    SELL_10_16  SELL_10_16  1
+    PROD_11_16  COST  -3
+    PROD_11_16  PROD_11_16  1
+    PROD_11_16  SELL_11_16  -1
+    SELL_11_16  COST  -3
+    SELL_11_16  SELL_11_16  1
+    RUN_0_17  COST  -5.752
+    RUN_0_17  CRUDE_0_17  1
+    RUN_0_17  CDU_17  1
+    RUN_0_17  PROD_0_17  -0.04
+    RUN_0_17  PROD_1_17  -0.18
+    RUN_0_17  PROD_2_17  -0.27
+    RUN_0_17  PROD_3_17  -0.25
+    RUN_0_17  PROD_4_17  -0.24
+    RUN_0_17  PROD_5_17  -0.02
+    RUN_0_17  PROD_6_17  -0.08
+    RUN_0_17  PROD_7_17  -0.03
+    RUN_0_17  PROD_8_17  -0.15
+    RUN_0_17  PROD_9_17  -0.24
+    RUN_0_17  PROD_10_17  -0.14
+    RUN_0_17  PROD_11_17  -0.15
+    RUN_0_17  SPEC_0_17  0.047
+    RUN_0_17  SPEC_1_17  0.026
+    RUN_0_17  SPEC_2_17  0.014
+    RUN_1_17  COST  -8.357
+    RUN_1_17  CRUDE_1_17  1
+    RUN_1_17  CDU_17  1
+    RUN_1_17  PROD_0_17  -0.2
+    RUN_1_17  PROD_1_17  -0.12
+    RUN_1_17  PROD_2_17  -0.25
+    RUN_1_17  PROD_3_17  -0.06
+    RUN_1_17  PROD_4_17  -0.03
+    RUN_1_17  PROD_5_17  -0.15
+    RUN_1_17  PROD_7_17  -0.28
+    RUN_1_17  PROD_8_17  -0.26
+    RUN_1_17  PROD_9_17  -0.12
+    RUN_1_17  PROD_10_17  -0.13
+    RUN_1_17  PROD_11_17  -0.19
+    RUN_1_17  SPEC_0_17  0.032
+    RUN_1_17  SPEC_1_17  0.031
+    RUN_1_17  SPEC_2_17  0.04
+    RUN_1_17  SPEC_3_17  0.048
+    RUN_2_17  COST  -3.284
+    RUN_2_17  CRUDE_2_17  1
+    RUN_2_17  CDU_17  1
+    RUN_2_17  PROD_0_17  -0.24
+    RUN_2_17  PROD_1_17  -0.24
+    RUN_2_17  PROD_3_17  -0.22
+    RUN_2_17  PROD_4_17  -0.14
+    RUN_2_17  PROD_5_17  -0.08
+    RUN_2_17  PROD_6_17  -0.23
+    RUN_2_17  PROD_7_17  -0.25
+    RUN_2_17  PROD_8_17  -0.07
+    RUN_2_17  PROD_9_17  -0.18
+    RUN_2_17  PROD_10_17  -0.3
+    RUN_2_17  PROD_11_17  -0.03
+    RUN_2_17  SPEC_0_17  0.008
+    RUN_2_17  SPEC_1_17  0.022
+    RUN_2_17  SPEC_2_17  0.011
+    RUN_2_17  SPEC_3_17  0.048
+    RUN_3_17  COST  -1.912
+    RUN_3_17  CRUDE_3_17  1
+    RUN_3_17  CDU_17  1
+    RUN_3_17  PROD_0_17  -0.28
+    RUN_3_17  PROD_1_17  -0.1
+    RUN_3_17  PROD_5_17  -0.2
+    RUN_3_17  PROD_6_17  -0.17
+    RUN_3_17  PROD_8_17  -0.3
+    RUN_3_17  PROD_9_17  -0.28
+    RUN_3_17  PROD_10_17  -0.12
+    RUN_3_17  PROD_11_17  -0.21
+    RUN_3_17  SPEC_0_17  0.033
+    RUN_3_17  SPEC_1_17  0.026
+    RUN_3_17  SPEC_2_17  0.035
+    RUN_3_17  SPEC_3_17  0.017
+    RUN_4_17  COST  -7.194
+    RUN_4_17  CRUDE_4_17  1
+    RUN_4_17  CDU_17  1
+    RUN_4_17  PROD_0_17  -0.06
+    RUN_4_17  PROD_1_17  -0.13
+    RUN_4_17  PROD_2_17  -0.23
+    RUN_4_17  PROD_4_17  -0.16
+    RUN_4_17  PROD_5_17  -0.07
+    RUN_4_17  PROD_6_17  -0.24
+    RUN_4_17  PROD_7_17  -0.14
+    RUN_4_17  PROD_8_17  -0.3
+    RUN_4_17  PROD_9_17  -0.15
+    RUN_4_17  PROD_10_17  -0.17
+    RUN_4_17  PROD_11_17  -0.07
+    RUN_4_17  SPEC_0_17  0.049
+    RUN_4_17  SPEC_1_17  0.022
+    RUN_4_17  SPEC_2_17  0.037
+    RUN_4_17  SPEC_3_17  0.015
+    RUN_5_17  COST  -6.97
+    RUN_5_17  CRUDE_5_17  1
+    RUN_5_17  CDU_17  1
+    RUN_5_17  PROD_0_17  -0.11
+    RUN_5_17  PROD_1_17  -0.07
+    RUN_5_17  PROD_2_17  -0.21
+    RUN_5_17  PROD_3_17  -0.07
+    RUN_5_17  PROD_4_17  -0.24
+    RUN_5_17  PROD_5_17  -0.14
+    RUN_5_17  PROD_6_17  -0.3
+    RUN_5_17  PROD_7_17  -0.09
+    RUN_5_17  PROD_8_17  -0.29
+    RUN_5_17  PROD_10_17  -0.13
+    RUN_5_17  PROD_11_17  -0.26
+    RUN_5_17  SPEC_0_17  0.035
+    RUN_5_17  SPEC_2_17  0.011
+    RUN_5_17  SPEC_3_17  0.017
+    RUN_6_17  COST  -6.858
+    RUN_6_17  CRUDE_6_17  1
+    RUN_6_17  CDU_17  1
+    RUN_6_17  PROD_0_17  -0.29
+    RUN_6_17  PROD_1_17  -0.17
+    RUN_6_17  PROD_2_17  -0.29
+    RUN_6_17  PROD_3_17  -0.2
+    RUN_6_17  PROD_4_17  -0.03
+    RUN_6_17  PROD_5_17  -0.05
+    RUN_6_17  PROD_6_17  -0.2
+    RUN_6_17  PROD_7_17  -0.23
+    RUN_6_17  PROD_8_17  -0.27
+    RUN_6_17  PROD_9_17  -0.09
+    RUN_6_17  PROD_10_17  -0.03
+    RUN_6_17  PROD_11_17  -0.23
+    RUN_6_17  SPEC_0_17  0.013
+    RUN_6_17  SPEC_1_17  0.034
+    RUN_6_17  SPEC_2_17  0.005
+    RUN_6_17  SPEC_3_17  0.007
+    RUN_7_17  COST  -0.378
+    RUN_7_17  CRUDE_7_17  1
+    RUN_7_17  CDU_17  1
+    RUN_7_17  PROD_0_17  -0.1
+    RUN_7_17  PROD_1_17  -0.28
+    RUN_7_17  PROD_2_17  -0.23
+    RUN_7_17  PROD_3_17  -0.22
+    RUN_7_17  PROD_4_17  -0.16
+    RUN_7_17  PROD_5_17  -0.29
+    RUN_7_17  PROD_6_17  -0.3
+    RUN_7_17  PROD_7_17  -0.13
+    RUN_7_17  PROD_8_17  -0.16
+    RUN_7_17  PROD_9_17  -0.26
+    RUN_7_17  PROD_10_17  -0.29
+    RUN_7_17  PROD_11_17  -0.21
+    RUN_7_17  SPEC_0_17  0.027
+    RUN_7_17  SPEC_1_17  0.034
+    RUN_7_17  SPEC_2_17  0.035
+    RUN_7_17  SPEC_3_17  0.039
+    RUN_8_17  COST  3.177
+    RUN_8_17  CRUDE_8_17  1
+    RUN_8_17  CDU_17  1
+    RUN_8_17  PROD_0_17  -0.06
+    RUN_8_17  PROD_1_17  -0.09
+    RUN_8_17  PROD_2_17  -0.09
+    RUN_8_17  PROD_3_17  -0.18
+    RUN_8_17  PROD_4_17  -0.28
+    RUN_8_17  PROD_5_17  -0.15
+    RUN_8_17  PROD_6_17  -0.27
+    RUN_8_17  PROD_7_17  -0.3
+    RUN_8_17  PROD_8_17  -0.16
+    RUN_8_17  PROD_9_17  -0.12
+    RUN_8_17  PROD_10_17  -0.18
+    RUN_8_17  PROD_11_17  -0.27
+    RUN_8_17  SPEC_0_17  0.003
+    RUN_8_17  SPEC_1_17  0.039
+    RUN_8_17  SPEC_2_17  0.016
+    RUN_8_17  SPEC_3_17  0.011
+    RUN_9_17  COST  -3.53
+    RUN_9_17  CRUDE_9_17  1
+    RUN_9_17  CDU_17  1
+    RUN_9_17  PROD_0_17  -0.01
+    RUN_9_17  PROD_1_17  -0.15
+    RUN_9_17  PROD_2_17  -0.07
+    RUN_9_17  PROD_3_17  -0.23
+    RUN_9_17  PROD_4_17  -0.25
+    RUN_9_17  PROD_5_17  -0.12
+    RUN_9_17  PROD_6_17  -0.13
+    RUN_9_17  PROD_7_17  -0.21
+    RUN_9_17  PROD_8_17  -0.05
+    RUN_9_17  PROD_9_17  -0.11
+    RUN_9_17  PROD_10_17  -0.17
+    RUN_9_17  PROD_11_17  -0.28
+    RUN_9_17  SPEC_0_17  0.03
+    RUN_9_17  SPEC_1_17  0.05
+    RUN_9_17  SPEC_2_17  0.002
+    RUN_9_17  SPEC_3_17  0.022
+    RUN_10_17  COST  2.537
+    RUN_10_17  CRUDE_10_17  1
+    RUN_10_17  CDU_17  1
+    RUN_10_17  PROD_0_17  -0.22
+    RUN_10_17  PROD_1_17  -0.24
+    RUN_10_17  PROD_2_17  -0.21
+    RUN_10_17  PROD_3_17  -0.23
+    RUN_10_17  PROD_4_17  -0.11
+    RUN_10_17  PROD_5_17  -0.02
+    RUN_10_17  PROD_6_17  -0.14
+    RUN_10_17  PROD_7_17  -0.21
+    RUN_10_17  PROD_8_17  -0.16
+    RUN_10_17  PROD_9_17  -0.03
+    RUN_10_17  PROD_10_17  -0.24
+    RUN_10_17  PROD_11_17  -0.05
+    RUN_10_17  SPEC_0_17  0.023
+    RUN_10_17  SPEC_1_17  0.039
+    RUN_10_17  SPEC_2_17  0.043
+    RUN_10_17  SPEC_3_17  0.018
+    RUN_11_17  COST  -2.897
+    RUN_11_17  CRUDE_11_17  1
+    RUN_11_17  CDU_17  1
+    RUN_11_17  PROD_0_17  -0.16
+    RUN_11_17  PROD_1_17  -0.26
+    RUN_11_17  PROD_2_17  -0.12
+    RUN_11_17  PROD_3_17  -0.11
+    RUN_11_17  PROD_4_17  -0.15
+    RUN_11_17  PROD_5_17  -0.23
+    RUN_11_17  PROD_7_17  -0.15
+    RUN_11_17  PROD_8_17  -0.01
+    RUN_11_17  PROD_9_17  -0.09
+    RUN_11_17  PROD_10_17  -0.22
+    RUN_11_17  PROD_11_17  -0.27
+    RUN_11_17  SPEC_0_17  0.036
+    RUN_11_17  SPEC_1_17  0.021
+    RUN_11_17  SPEC_2_17  0.004
+    RUN_11_17  SPEC_3_17  0.004
+    RUN_12_17  COST  -2.723
+    RUN_12_17  CRUDE_12_17  1
+    RUN_12_17  CDU_17  1
+    RUN_12_17  PROD_0_17  -0.19
+    RUN_12_17  PROD_1_17  -0.18
+    RUN_12_17  PROD_2_17  -0.18
+    RUN_12_17  PROD_3_17  -0.12
+    RUN_12_17  PROD_4_17  -0.2
+    RUN_12_17  PROD_5_17  -0.05
+    RUN_12_17  PROD_6_17  -0.05
+    RUN_12_17  PROD_7_17  -0.16
+    RUN_12_17  PROD_8_17  -0.07
+    RUN_12_17  PROD_10_17  -0.24
+    RUN_12_17  PROD_11_17  -0.06
+    RUN_12_17  SPEC_0_17  0.035
+    RUN_12_17  SPEC_1_17  0.029
+    RUN_12_17  SPEC_2_17  0.005
+    RUN_12_17  SPEC_3_17  0.01
+    RUN_13_17  COST  -7.416
+    RUN_13_17  CRUDE_13_17  1
+    RUN_13_17  CDU_17  1
+    RUN_13_17  PROD_0_17  -0.17
+    RUN_13_17  PROD_1_17  -0.29
+    RUN_13_17  PROD_2_17  -0.27
+    RUN_13_17  PROD_3_17  -0.17
+    RUN_13_17  PROD_4_17  -0.07
+    RUN_13_17  PROD_5_17  -0.12
+    RUN_13_17  PROD_6_17  -0.16
+    RUN_13_17  PROD_7_17  -0.11
+    RUN_13_17  PROD_8_17  -0.3
+    RUN_13_17  PROD_9_17  -0.27
+    RUN_13_17  PROD_10_17  -0.18
+    RUN_13_17  PROD_11_17  -0.11
+    RUN_13_17  SPEC_0_17  0.012
+    RUN_13_17  SPEC_1_17  0.038
+    RUN_13_17  SPEC_2_17  0.001
+    RUN_13_17  SPEC_3_17  0.01
+    RUN_14_17  COST  -3.007
+    RUN_14_17  CRUDE_14_17  1
+    RUN_14_17  CDU_17  1
+    RUN_14_17  PROD_0_17  -0.14
+    RUN_14_17  PROD_1_17  -0.29
+    RUN_14_17  PROD_2_17  -0.08
+    RUN_14_17  PROD_3_17  -0.21
+    RUN_14_17  PROD_4_17  -0.17
+    RUN_14_17  PROD_5_17  -0.19
+    RUN_14_17  PROD_6_17  -0.3
+    RUN_14_17  PROD_7_17  -0.23
+    RUN_14_17  PROD_9_17  -0.12
+    RUN_14_17  PROD_10_17  -0.25
+    RUN_14_17  PROD_11_17  -0.27
+    RUN_14_17  SPEC_0_17  0.032
+    RUN_14_17  SPEC_1_17  0.001
+    RUN_14_17  SPEC_2_17  0.028
+    RUN_14_17  SPEC_3_17  0.016
+    PROD_0_17  COST  1
+    PROD_0_17  PROD_0_17  1
+    PROD_0_17  SELL_0_17  -1
+    SELL_0_17  SELL_0_17  1
+    PROD_1_17  COST  -7
+    PROD_1_17  PROD_1_17  1
+    PROD_1_17  SELL_1_17  -1
+    SELL_1_17  SELL_1_17  1
+    PROD_2_17  COST  1
+    PROD_2_17  PROD_2_17  1
+    PROD_2_17  SELL_2_17  -1
+    SELL_2_17  SELL_2_17  1
+    PROD_3_17  COST  -1
+    PROD_3_17  PROD_3_17  1
+    PROD_3_17  SELL_3_17  -1
+    SELL_3_17  COST  -4
+    SELL_3_17  SELL_3_17  1
+    PROD_4_17  COST  -9
+    PROD_4_17  PROD_4_17  1
+    PROD_4_17  SELL_4_17  -1
+    SELL_4_17  COST  -8
+    SELL_4_17  SELL_4_17  1
+    PROD_5_17  COST  -6
+    PROD_5_17  PROD_5_17  1
+    PROD_5_17  SELL_5_17  -1
+    SELL_5_17  COST  -9
+    SELL_5_17  SELL_5_17  1
+    PROD_6_17  COST  2
+    PROD_6_17  PROD_6_17  1
+    PROD_6_17  SELL_6_17  -1
+    SELL_6_17  COST  -9
+    SELL_6_17  SELL_6_17  1
+    PROD_7_17  COST  1
+    PROD_7_17  PROD_7_17  1
+    PROD_7_17  SELL_7_17  -1
+    SELL_7_17  SELL_7_17  1
+    PROD_8_17  COST  9
+    PROD_8_17  PROD_8_17  1
+    PROD_8_17  SELL_8_17  -1
+    SELL_8_17  COST  -6
+    SELL_8_17  SELL_8_17  1
+    PROD_9_17  COST  6
+    PROD_9_17  PROD_9_17  1
+    PROD_9_17  SELL_9_17  -1
+    SELL_9_17  COST  -1
+    SELL_9_17  SELL_9_17  1
+    PROD_10_17  COST  -7
+    PROD_10_17  PROD_10_17  1
+    PROD_10_17  SELL_10_17  -1
+    SELL_10_17  COST  1
+    SELL_10_17  SELL_10_17  1
+    PROD_11_17  COST  7
+    PROD_11_17  PROD_11_17  1
+    PROD_11_17  SELL_11_17  -1
+    SELL_11_17  SELL_11_17  1
+    RUN_0_18  COST  -2.634
+    RUN_0_18  CRUDE_0_18  1
+    RUN_0_18  CDU_18  1
+    RUN_0_18  PROD_0_18  -0.04
+    RUN_0_18  PROD_1_18  -0.18
+    RUN_0_18  PROD_2_18  -0.27
+    RUN_0_18  PROD_3_18  -0.25
+    RUN_0_18  PROD_4_18  -0.24
+    RUN_0_18  PROD_5_18  -0.02
+    RUN_0_18  PROD_6_18  -0.08
+    RUN_0_18  PROD_7_18  -0.03
+    RUN_0_18  PROD_8_18  -0.15
+    RUN_0_18  PROD_9_18  -0.24
+    RUN_0_18  PROD_10_18  -0.14
+    RUN_0_18  PROD_11_18  -0.15
+    RUN_0_18  SPEC_0_18  0.047
+    RUN_0_18  SPEC_1_18  0.026
+    RUN_0_18  SPEC_2_18  0.014
+    RUN_1_18  COST  2.361
+    RUN_1_18  CRUDE_1_18  1
+    RUN_1_18  CDU_18  1
+    RUN_1_18  PROD_0_18  -0.2
+    RUN_1_18  PROD_1_18  -0.12
+    RUN_1_18  PROD_2_18  -0.25
+    RUN_1_18  PROD_3_18  -0.06
+    RUN_1_18  PROD_4_18  -0.03
+    RUN_1_18  PROD_5_18  -0.15
+    RUN_1_18  PROD_7_18  -0.28
+    RUN_1_18  PROD_8_18  -0.26
+    RUN_1_18  PROD_9_18  -0.12
+    RUN_1_18  PROD_10_18  -0.13
+    RUN_1_18  PROD_11_18  -0.19
+    RUN_1_18  SPEC_0_18  0.032
+    RUN_1_18  SPEC_1_18  0.031
+    RUN_1_18  SPEC_2_18  0.04
+    RUN_1_18  SPEC_3_18  0.048
+    RUN_2_18  COST  -8.223
+    RUN_2_18  CRUDE_2_18  1
+    RUN_2_18  CDU_18  1
+    RUN_2_18  PROD_0_18  -0.24
+    RUN_2_18  PROD_1_18  -0.24
+    RUN_2_18  PROD_3_18  -0.22
+    RUN_2_18  PROD_4_18  -0.14
+    RUN_2_18  PROD_5_18  -0.08
+    RUN_2_18  PROD_6_18  -0.23
+    RUN_2_18  PROD_7_18  -0.25
+    RUN_2_18  PROD_8_18  -0.07
+    RUN_2_18  PROD_9_18  -0.18
+    RUN_2_18  PROD_10_18  -0.3
+    RUN_2_18  PROD_11_18  -0.03
+    RUN_2_18  SPEC_0_18  0.008
+    RUN_2_18  SPEC_1_18  0.022
+    RUN_2_18  SPEC_2_18  0.011
+    RUN_2_18  SPEC_3_18  0.048
+    RUN_3_18  COST  -5.98
+    RUN_3_18  CRUDE_3_18  1
+    RUN_3_18  CDU_18  1
+    RUN_3_18  PROD_0_18  -0.28
+    RUN_3_18  PROD_1_18  -0.1
+    RUN_3_18  PROD_5_18  -0.2
+    RUN_3_18  PROD_6_18  -0.17
+    RUN_3_18  PROD_8_18  -0.3
+    RUN_3_18  PROD_9_18  -0.28
+    RUN_3_18  PROD_10_18  -0.12
+    RUN_3_18  PROD_11_18  -0.21
+    RUN_3_18  SPEC_0_18  0.033
+    RUN_3_18  SPEC_1_18  0.026
+    RUN_3_18  SPEC_2_18  0.035
+    RUN_3_18  SPEC_3_18  0.017
+    RUN_4_18  COST  1.896
+    RUN_4_18  CRUDE_4_18  1
+    RUN_4_18  CDU_18  1
+    RUN_4_18  PROD_0_18  -0.06
+    RUN_4_18  PROD_1_18  -0.13
+    RUN_4_18  PROD_2_18  -0.23
+    RUN_4_18  PROD_4_18  -0.16
+    RUN_4_18  PROD_5_18  -0.07
+    RUN_4_18  PROD_6_18  -0.24
+    RUN_4_18  PROD_7_18  -0.14
+    RUN_4_18  PROD_8_18  -0.3
+    RUN_4_18  PROD_9_18  -0.15
+    RUN_4_18  PROD_10_18  -0.17
+    RUN_4_18  PROD_11_18  -0.07
+    RUN_4_18  SPEC_0_18  0.049
+    RUN_4_18  SPEC_1_18  0.022
+    RUN_4_18  SPEC_2_18  0.037
+    RUN_4_18  SPEC_3_18  0.015
+    RUN_5_18  COST  -7.578
+    RUN_5_18  CRUDE_5_18  1
+    RUN_5_18  CDU_18  1
+    RUN_5_18  PROD_0_18  -0.11
+    RUN_5_18  PROD_1_18  -0.07
+    RUN_5_18  PROD_2_18  -0.21
+    RUN_5_18  PROD_3_18  -0.07
+    RUN_5_18  PROD_4_18  -0.24
+    RUN_5_18  PROD_5_18  -0.14
+    RUN_5_18  PROD_6_18  -0.3
+    RUN_5_18  PROD_7_18  -0.09
+    RUN_5_18  PROD_8_18  -0.29
+    RUN_5_18  PROD_10_18  -0.13
+    RUN_5_18  PROD_11_18  -0.26
+    RUN_5_18  SPEC_0_18  0.035
+    RUN_5_18  SPEC_2_18  0.011
+    RUN_5_18  SPEC_3_18  0.017
+    RUN_6_18  COST  -6.776
+    RUN_6_18  CRUDE_6_18  1
+    RUN_6_18  CDU_18  1
+    RUN_6_18  PROD_0_18  -0.29
+    RUN_6_18  PROD_1_18  -0.17
+    RUN_6_18  PROD_2_18  -0.29
+    RUN_6_18  PROD_3_18  -0.2
+    RUN_6_18  PROD_4_18  -0.03
+    RUN_6_18  PROD_5_18  -0.05
+    RUN_6_18  PROD_6_18  -0.2
+    RUN_6_18  PROD_7_18  -0.23
+    RUN_6_18  PROD_8_18  -0.27
+    RUN_6_18  PROD_9_18  -0.09
+    RUN_6_18  PROD_10_18  -0.03
+    RUN_6_18  PROD_11_18  -0.23
+    RUN_6_18  SPEC_0_18  0.013
+    RUN_6_18  SPEC_1_18  0.034
+    RUN_6_18  SPEC_2_18  0.005
+    RUN_6_18  SPEC_3_18  0.007
+    RUN_7_18  COST  -4.142
+    RUN_7_18  CRUDE_7_18  1
+    RUN_7_18  CDU_18  1
+    RUN_7_18  PROD_0_18  -0.1
+    RUN_7_18  PROD_1_18  -0.28
+    RUN_7_18  PROD_2_18  -0.23
+    RUN_7_18  PROD_3_18  -0.22
+    RUN_7_18  PROD_4_18  -0.16
+    RUN_7_18  PROD_5_18  -0.29
+    RUN_7_18  PROD_6_18  -0.3
+    RUN_7_18  PROD_7_18  -0.13
+    RUN_7_18  PROD_8_18  -0.16
+    RUN_7_18  PROD_9_18  -0.26
+    RUN_7_18  PROD_10_18  -0.29
+    RUN_7_18  PROD_11_18  -0.21
+    RUN_7_18  SPEC_0_18  0.027
+    RUN_7_18  SPEC_1_18  0.034
+    RUN_7_18  SPEC_2_18  0.035
+    RUN_7_18  SPEC_3_18  0.039
+    RUN_8_18  COST  -6.528
+    RUN_8_18  CRUDE_8_18  1
+    RUN_8_18  CDU_18  1
+    RUN_8_18  PROD_0_18  -0.06
+    RUN_8_18  PROD_1_18  -0.09
+    RUN_8_18  PROD_2_18  -0.09
+    RUN_8_18  PROD_3_18  -0.18
+    RUN_8_18  PROD_4_18  -0.28
+    RUN_8_18  PROD_5_18  -0.15
+    RUN_8_18  PROD_6_18  -0.27
+    RUN_8_18  PROD_7_18  -0.3
+    RUN_8_18  PROD_8_18  -0.16
+    RUN_8_18  PROD_9_18  -0.12
+    RUN_8_18  PROD_10_18  -0.18
+    RUN_8_18  PROD_11_18  -0.27
+    RUN_8_18  SPEC_0_18  0.003
+    RUN_8_18  SPEC_1_18  0.039
+    RUN_8_18  SPEC_2_18  0.016
+    RUN_8_18  SPEC_3_18  0.011
+    RUN_9_18  COST  1.628
+    RUN_9_18  CRUDE_9_18  1
+    RUN_9_18  CDU_18  1
+    RUN_9_18  PROD_0_18  -0.01
+    RUN_9_18  PROD_1_18  -0.15
+    RUN_9_18  PROD_2_18  -0.07
+    RUN_9_18  PROD_3_18  -0.23
+    RUN_9_18  PROD_4_18  -0.25
+    RUN_9_18  PROD_5_18  -0.12
+    RUN_9_18  PROD_6_18  -0.13
+    RUN_9_18  PROD_7_18  -0.21
+    RUN_9_18  PROD_8_18  -0.05
+    RUN_9_18  PROD_9_18  -0.11
+    RUN_9_18  PROD_10_18  -0.17
+    RUN_9_18  PROD_11_18  -0.28
+    RUN_9_18  SPEC_0_18  0.03
+    RUN_9_18  SPEC_1_18  0.05
+    RUN_9_18  SPEC_2_18  0.002
+    RUN_9_18  SPEC_3_18  0.022
+    RUN_10_18  COST  -9.55
+    RUN_10_18  CRUDE_10_18  1
+    RUN_10_18  CDU_18  1
+    RUN_10_18  PROD_0_18  -0.22
+    RUN_10_18  PROD_1_18  -0.24
+    RUN_10_18  PROD_2_18  -0.21
+    RUN_10_18  PROD_3_18  -0.23
+    RUN_10_18  PROD_4_18  -0.11
+    RUN_10_18  PROD_5_18  -0.02
+    RUN_10_18  PROD_6_18  -0.14
+    RUN_10_18  PROD_7_18  -0.21
+    RUN_10_18  PROD_8_18  -0.16
+    RUN_10_18  PROD_9_18  -0.03
+    RUN_10_18  PROD_10_18  -0.24
+    RUN_10_18  PROD_11_18  -0.05
+    RUN_10_18  SPEC_0_18  0.023
+    RUN_10_18  SPEC_1_18  0.039
+    RUN_10_18  SPEC_2_18  0.043
+    RUN_10_18  SPEC_3_18  0.018
+    RUN_11_18  COST  -6.549
+    RUN_11_18  CRUDE_11_18  1
+    RUN_11_18  CDU_18  1
+    RUN_11_18  PROD_0_18  -0.16
+    RUN_11_18  PROD_1_18  -0.26
+    RUN_11_18  PROD_2_18  -0.12
+    RUN_11_18  PROD_3_18  -0.11
+    RUN_11_18  PROD_4_18  -0.15
+    RUN_11_18  PROD_5_18  -0.23
+    RUN_11_18  PROD_7_18  -0.15
+    RUN_11_18  PROD_8_18  -0.01
+    RUN_11_18  PROD_9_18  -0.09
+    RUN_11_18  PROD_10_18  -0.22
+    RUN_11_18  PROD_11_18  -0.27
+    RUN_11_18  SPEC_0_18  0.036
+    RUN_11_18  SPEC_1_18  0.021
+    RUN_11_18  SPEC_2_18  0.004
+    RUN_11_18  SPEC_3_18  0.004
+    RUN_12_18  COST  -9.928
+    RUN_12_18  CRUDE_12_18  1
+    RUN_12_18  CDU_18  1
+    RUN_12_18  PROD_0_18  -0.19
+    RUN_12_18  PROD_1_18  -0.18
+    RUN_12_18  PROD_2_18  -0.18
+    RUN_12_18  PROD_3_18  -0.12
+    RUN_12_18  PROD_4_18  -0.2
+    RUN_12_18  PROD_5_18  -0.05
+    RUN_12_18  PROD_6_18  -0.05
+    RUN_12_18  PROD_7_18  -0.16
+    RUN_12_18  PROD_8_18  -0.07
+    RUN_12_18  PROD_10_18  -0.24
+    RUN_12_18  PROD_11_18  -0.06
+    RUN_12_18  SPEC_0_18  0.035
+    RUN_12_18  SPEC_1_18  0.029
+    RUN_12_18  SPEC_2_18  0.005
+    RUN_12_18  SPEC_3_18  0.01
+    RUN_13_18  COST  -5.471
+    RUN_13_18  CRUDE_13_18  1
+    RUN_13_18  CDU_18  1
+    RUN_13_18  PROD_0_18  -0.17
+    RUN_13_18  PROD_1_18  -0.29
+    RUN_13_18  PROD_2_18  -0.27
+    RUN_13_18  PROD_3_18  -0.17
+    RUN_13_18  PROD_4_18  -0.07
+    RUN_13_18  PROD_5_18  -0.12
+    RUN_13_18  PROD_6_18  -0.16
+    RUN_13_18  PROD_7_18  -0.11
+    RUN_13_18  PROD_8_18  -0.3
+    RUN_13_18  PROD_9_18  -0.27
+    RUN_13_18  PROD_10_18  -0.18
+    RUN_13_18  PROD_11_18  -0.11
+    RUN_13_18  SPEC_0_18  0.012
+    RUN_13_18  SPEC_1_18  0.038
+    RUN_13_18  SPEC_2_18  0.001
+    RUN_13_18  SPEC_3_18  0.01
+    RUN_14_18  COST  1.313
+    RUN_14_18  CRUDE_14_18  1
+    RUN_14_18  CDU_18  1
+    RUN_14_18  PROD_0_18  -0.14
+    RUN_14_18  PROD_1_18  -0.29
+    RUN_14_18  PROD_2_18  -0.08
+    RUN_14_18  PROD_3_18  -0.21
+    RUN_14_18  PROD_4_18  -0.17
+    RUN_14_18  PROD_5_18  -0.19
+    RUN_14_18  PROD_6_18  -0.3
+    RUN_14_18  PROD_7_18  -0.23
+    RUN_14_18  PROD_9_18  -0.12
+    RUN_14_18  PROD_10_18  -0.25
+    RUN_14_18  PROD_11_18  -0.27
+    RUN_14_18  SPEC_0_18  0.032
+    RUN_14_18  SPEC_1_18  0.001
+    RUN_14_18  SPEC_2_18  0.028
+    RUN_14_18  SPEC_3_18  0.016
+    PROD_0_18  COST  5
+    PROD_0_18  PROD_0_18  1
+    PROD_0_18  SELL_0_18  -1
+    SELL_0_18  SELL_0_18  1
+    PROD_1_18  PROD_1_18  1
+    PROD_1_18  SELL_1_18  -1
+    SELL_1_18  SELL_1_18  1
+    PROD_2_18  COST  -5
+    PROD_2_18  PROD_2_18  1
+    PROD_2_18  SELL_2_18  -1
+    SELL_2_18  COST  -1
+    SELL_2_18  SELL_2_18  1
+    PROD_3_18  COST  3
+    PROD_3_18  PROD_3_18  1
+    PROD_3_18  SELL_3_18  -1
+    SELL_3_18  COST  -9
+    SELL_3_18  SELL_3_18  1
+    PROD_4_18  COST  8
+    PROD_4_18  PROD_4_18  1
+    PROD_4_18  SELL_4_18  -1
+    SELL_4_18  SELL_4_18  1
+    PROD_5_18  COST  -6
+    PROD_5_18  PROD_5_18  1
+    PROD_5_18  SELL_5_18  -1
+    SELL_5_18  COST  -7
+    SELL_5_18  SELL_5_18  1
+    PROD_6_18  COST  -4
+    PROD_6_18  PROD_6_18  1
+    PROD_6_18  SELL_6_18  -1
+    SELL_6_18  COST  -8
+    SELL_6_18  SELL_6_18  1
+    PROD_7_18  COST  -3
+    PROD_7_18  PROD_7_18  1
+    PROD_7_18  SELL_7_18  -1
+    SELL_7_18  COST  -5
+    SELL_7_18  SELL_7_18  1
+    PROD_8_18  COST  2
+    PROD_8_18  PROD_8_18  1
+    PROD_8_18  SELL_8_18  -1
+    SELL_8_18  COST  -9
+    SELL_8_18  SELL_8_18  1
+    PROD_9_18  COST  -9
+    PROD_9_18  PROD_9_18  1
+    PROD_9_18  SELL_9_18  -1
+    SELL_9_18  SELL_9_18  1
+    PROD_10_18  COST  -2
+    PROD_10_18  PROD_10_18  1
+    PROD_10_18  SELL_10_18  -1
+    SELL_10_18  COST  3
+    SELL_10_18  SELL_10_18  1
+    PROD_11_18  COST  -6
+    PROD_11_18  PROD_11_18  1
+    PROD_11_18  SELL_11_18  -1
+    SELL_11_18  COST  -2
+    SELL_11_18  SELL_11_18  1
+    RUN_0_19  COST  -0.963
+    RUN_0_19  CRUDE_0_19  1
+    RUN_0_19  CDU_19  1
+    RUN_0_19  PROD_0_19  -0.04
+    RUN_0_19  PROD_1_19  -0.18
+    RUN_0_19  PROD_2_19  -0.27
+    RUN_0_19  PROD_3_19  -0.25
+    RUN_0_19  PROD_4_19  -0.24
+    RUN_0_19  PROD_5_19  -0.02
+    RUN_0_19  PROD_6_19  -0.08
+    RUN_0_19  PROD_7_19  -0.03
+    RUN_0_19  PROD_8_19  -0.15
+    RUN_0_19  PROD_9_19  -0.24
+    RUN_0_19  PROD_10_19  -0.14
+    RUN_0_19  PROD_11_19  -0.15
+    RUN_0_19  SPEC_0_19  0.047
+    RUN_0_19  SPEC_1_19  0.026
+    RUN_0_19  SPEC_2_19  0.014
+    RUN_1_19  COST  -2.937
+    RUN_1_19  CRUDE_1_19  1
+    RUN_1_19  CDU_19  1
+    RUN_1_19  PROD_0_19  -0.2
+    RUN_1_19  PROD_1_19  -0.12
+    RUN_1_19  PROD_2_19  -0.25
+    RUN_1_19  PROD_3_19  -0.06
+    RUN_1_19  PROD_4_19  -0.03
+    RUN_1_19  PROD_5_19  -0.15
+    RUN_1_19  PROD_7_19  -0.28
+    RUN_1_19  PROD_8_19  -0.26
+    RUN_1_19  PROD_9_19  -0.12
+    RUN_1_19  PROD_10_19  -0.13
+    RUN_1_19  PROD_11_19  -0.19
+    RUN_1_19  SPEC_0_19  0.032
+    RUN_1_19  SPEC_1_19  0.031
+    RUN_1_19  SPEC_2_19  0.04
+    RUN_1_19  SPEC_3_19  0.048
+    RUN_2_19  COST  -2.938
+    RUN_2_19  CRUDE_2_19  1
+    RUN_2_19  CDU_19  1
+    RUN_2_19  PROD_0_19  -0.24
+    RUN_2_19  PROD_1_19  -0.24
+    RUN_2_19  PROD_3_19  -0.22
+    RUN_2_19  PROD_4_19  -0.14
+    RUN_2_19  PROD_5_19  -0.08
+    RUN_2_19  PROD_6_19  -0.23
+    RUN_2_19  PROD_7_19  -0.25
+    RUN_2_19  PROD_8_19  -0.07
+    RUN_2_19  PROD_9_19  -0.18
+    RUN_2_19  PROD_10_19  -0.3
+    RUN_2_19  PROD_11_19  -0.03
+    RUN_2_19  SPEC_0_19  0.008
+    RUN_2_19  SPEC_1_19  0.022
+    RUN_2_19  SPEC_2_19  0.011
+    RUN_2_19  SPEC_3_19  0.048
+    RUN_3_19  COST  -3.356
+    RUN_3_19  CRUDE_3_19  1
+    RUN_3_19  CDU_19  1
+    RUN_3_19  PROD_0_19  -0.28
+    RUN_3_19  PROD_1_19  -0.1
+    RUN_3_19  PROD_5_19  -0.2
+    RUN_3_19  PROD_6_19  -0.17
+    RUN_3_19  PROD_8_19  -0.3
+    RUN_3_19  PROD_9_19  -0.28
+    RUN_3_19  PROD_10_19  -0.12
+    RUN_3_19  PROD_11_19  -0.21
+    RUN_3_19  SPEC_0_19  0.033
+    RUN_3_19  SPEC_1_19  0.026
+    RUN_3_19  SPEC_2_19  0.035
+    RUN_3_19  SPEC_3_19  0.017
+    RUN_4_19  COST  -1.986
+    RUN_4_19  CRUDE_4_19  1
+    RUN_4_19  CDU_19  1
+    RUN_4_19  PROD_0_19  -0.06
+    RUN_4_19  PROD_1_19  -0.13
+    RUN_4_19  PROD_2_19  -0.23
+    RUN_4_19  PROD_4_19  -0.16
+    RUN_4_19  PROD_5_19  -0.07
+    RUN_4_19  PROD_6_19  -0.24
+    RUN_4_19  PROD_7_19  -0.14
+    RUN_4_19  PROD_8_19  -0.3
+    RUN_4_19  PROD_9_19  -0.15
+    RUN_4_19  PROD_10_19  -0.17
+    RUN_4_19  PROD_11_19  -0.07
+    RUN_4_19  SPEC_0_19  0.049
+    RUN_4_19  SPEC_1_19  0.022
+    RUN_4_19  SPEC_2_19  0.037
+    RUN_4_19  SPEC_3_19  0.015
+    RUN_5_19  COST  -0.576
+    RUN_5_19  CRUDE_5_19  1
+    RUN_5_19  CDU_19  1
+    RUN_5_19  PROD_0_19  -0.11
+    RUN_5_19  PROD_1_19  -0.07
+    RUN_5_19  PROD_2_19  -0.21
+    RUN_5_19  PROD_3_19  -0.07
+    RUN_5_19  PROD_4_19  -0.24
+    RUN_5_19  PROD_5_19  -0.14
+    RUN_5_19  PROD_6_19  -0.3
+    RUN_5_19  PROD_7_19  -0.09
+    RUN_5_19  PROD_8_19  -0.29
+    RUN_5_19  PROD_10_19  -0.13
+    RUN_5_19  PROD_11_19  -0.26
+    RUN_5_19  SPEC_0_19  0.035
+    RUN_5_19  SPEC_2_19  0.011
+    RUN_5_19  SPEC_3_19  0.017
+    RUN_6_19  COST  5.942
+    RUN_6_19  CRUDE_6_19  1
+    RUN_6_19  CDU_19  1
+    RUN_6_19  PROD_0_19  -0.29
+    RUN_6_19  PROD_1_19  -0.17
+    RUN_6_19  PROD_2_19  -0.29
+    RUN_6_19  PROD_3_19  -0.2
+    RUN_6_19  PROD_4_19  -0.03
+    RUN_6_19  PROD_5_19  -0.05
+    RUN_6_19  PROD_6_19  -0.2
+    RUN_6_19  PROD_7_19  -0.23
+    RUN_6_19  PROD_8_19  -0.27
+    RUN_6_19  PROD_9_19  -0.09
+    RUN_6_19  PROD_10_19  -0.03
+    RUN_6_19  PROD_11_19  -0.23
+    RUN_6_19  SPEC_0_19  0.013
+    RUN_6_19  SPEC_1_19  0.034
+    RUN_6_19  SPEC_2_19  0.005
+    RUN_6_19  SPEC_3_19  0.007
+    RUN_7_19  COST  -2.902
+    RUN_7_19  CRUDE_7_19  1
+    RUN_7_19  CDU_19  1
+    RUN_7_19  PROD_0_19  -0.1
+    RUN_7_19  PROD_1_19  -0.28
+    RUN_7_19  PROD_2_19  -0.23
+    RUN_7_19  PROD_3_19  -0.22
+    RUN_7_19  PROD_4_19  -0.16
+    RUN_7_19  PROD_5_19  -0.29
+    RUN_7_19  PROD_6_19  -0.3
+    RUN_7_19  PROD_7_19  -0.13
+    RUN_7_19  PROD_8_19  -0.16
+    RUN_7_19  PROD_9_19  -0.26
+    RUN_7_19  PROD_10_19  -0.29
+    RUN_7_19  PROD_11_19  -0.21
+    RUN_7_19  SPEC_0_19  0.027
+    RUN_7_19  SPEC_1_19  0.034
+    RUN_7_19  SPEC_2_19  0.035
+    RUN_7_19  SPEC_3_19  0.039
+    RUN_8_19  COST  1.325
+    RUN_8_19  CRUDE_8_19  1
+    RUN_8_19  CDU_19  1
+    RUN_8_19  PROD_0_19  -0.06
+    RUN_8_19  PROD_1_19  -0.09
+    RUN_8_19  PROD_2_19  -0.09
+    RUN_8_19  PROD_3_19  -0.18
+    RUN_8_19  PROD_4_19  -0.28
+    RUN_8_19  PROD_5_19  -0.15
+    RUN_8_19  PROD_6_19  -0.27
+    RUN_8_19  PROD_7_19  -0.3
+    RUN_8_19  PROD_8_19  -0.16
+    RUN_8_19  PROD_9_19  -0.12
+    RUN_8_19  PROD_10_19  -0.18
+    RUN_8_19  PROD_11_19  -0.27
+    RUN_8_19  SPEC_0_19  0.003
+    RUN_8_19  SPEC_1_19  0.039
+    RUN_8_19  SPEC_2_19  0.016
+    RUN_8_19  SPEC_3_19  0.011
+    RUN_9_19  COST  1.304
+    RUN_9_19  CRUDE_9_19  1
+    RUN_9_19  CDU_19  1
+    RUN_9_19  PROD_0_19  -0.01
+    RUN_9_19  PROD_1_19  -0.15
+    RUN_9_19  PROD_2_19  -0.07
+    RUN_9_19  PROD_3_19  -0.23
+    RUN_9_19  PROD_4_19  -0.25
+    RUN_9_19  PROD_5_19  -0.12
+    RUN_9_19  PROD_6_19  -0.13
+    RUN_9_19  PROD_7_19  -0.21
+    RUN_9_19  PROD_8_19  -0.05
+    RUN_9_19  PROD_9_19  -0.11
+    RUN_9_19  PROD_10_19  -0.17
+    RUN_9_19  PROD_11_19  -0.28
+    RUN_9_19  SPEC_0_19  0.03
+    RUN_9_19  SPEC_1_19  0.05
+    RUN_9_19  SPEC_2_19  0.002
+    RUN_9_19  SPEC_3_19  0.022
+    RUN_10_19  COST  -3.936
+    RUN_10_19  CRUDE_10_19  1
+    RUN_10_19  CDU_19  1
+    RUN_10_19  PROD_0_19  -0.22
+    RUN_10_19  PROD_1_19  -0.24
+    RUN_10_19  PROD_2_19  -0.21
+    RUN_10_19  PROD_3_19  -0.23
+    RUN_10_19  PROD_4_19  -0.11
+    RUN_10_19  PROD_5_19  -0.02
+    RUN_10_19  PROD_6_19  -0.14
+    RUN_10_19  PROD_7_19  -0.21
+    RUN_10_19  PROD_8_19  -0.16
+    RUN_10_19  PROD_9_19  -0.03
+    RUN_10_19  PROD_10_19  -0.24
+    RUN_10_19  PROD_11_19  -0.05
+    RUN_10_19  SPEC_0_19  0.023
+    RUN_10_19  SPEC_1_19  0.039
+    RUN_10_19  SPEC_2_19  0.043
+    RUN_10_19  SPEC_3_19  0.018
+    RUN_11_19  COST  -2.253
+    RUN_11_19  CRUDE_11_19  1
+    RUN_11_19  CDU_19  1
+    RUN_11_19  PROD_0_19  -0.16
+    RUN_11_19  PROD_1_19  -0.26
+    RUN_11_19  PROD_2_19  -0.12
+    RUN_11_19  PROD_3_19  -0.11
+    RUN_11_19  PROD_4_19  -0.15
+    RUN_11_19  PROD_5_19  -0.23
+    RUN_11_19  PROD_7_19  -0.15
+    RUN_11_19  PROD_8_19  -0.01
+    RUN_11_19  PROD_9_19  -0.09
+    RUN_11_19  PROD_10_19  -0.22
+    RUN_11_19  PROD_11_19  -0.27
+    RUN_11_19  SPEC_0_19  0.036
+    RUN_11_19  SPEC_1_19  0.021
+    RUN_11_19  SPEC_2_19  0.004
+    RUN_11_19  SPEC_3_19  0.004
+    RUN_12_19  COST  4.744
+    RUN_12_19  CRUDE_12_19  1
+    RUN_12_19  CDU_19  1
+    RUN_12_19  PROD_0_19  -0.19
+    RUN_12_19  PROD_1_19  -0.18
+    RUN_12_19  PROD_2_19  -0.18
+    RUN_12_19  PROD_3_19  -0.12
+    RUN_12_19  PROD_4_19  -0.2
+    RUN_12_19  PROD_5_19  -0.05
+    RUN_12_19  PROD_6_19  -0.05
+    RUN_12_19  PROD_7_19  -0.16
+    RUN_12_19  PROD_8_19  -0.07
+    RUN_12_19  PROD_10_19  -0.24
+    RUN_12_19  PROD_11_19  -0.06
+    RUN_12_19  SPEC_0_19  0.035
+    RUN_12_19  SPEC_1_19  0.029
+    RUN_12_19  SPEC_2_19  0.005
+    RUN_12_19  SPEC_3_19  0.01
+    RUN_13_19  COST  -3.846
+    RUN_13_19  CRUDE_13_19  1
+    RUN_13_19  CDU_19  1
+    RUN_13_19  PROD_0_19  -0.17
+    RUN_13_19  PROD_1_19  -0.29
+    RUN_13_19  PROD_2_19  -0.27
+    RUN_13_19  PROD_3_19  -0.17
+    RUN_13_19  PROD_4_19  -0.07
+    RUN_13_19  PROD_5_19  -0.12
+    RUN_13_19  PROD_6_19  -0.16
+    RUN_13_19  PROD_7_19  -0.11
+    RUN_13_19  PROD_8_19  -0.3
+    RUN_13_19  PROD_9_19  -0.27
+    RUN_13_19  PROD_10_19  -0.18
+    RUN_13_19  PROD_11_19  -0.11
+    RUN_13_19  SPEC_0_19  0.012
+    RUN_13_19  SPEC_1_19  0.038
+    RUN_13_19  SPEC_2_19  0.001
+    RUN_13_19  SPEC_3_19  0.01
+    RUN_14_19  COST  -2.211
+    RUN_14_19  CRUDE_14_19  1
+    RUN_14_19  CDU_19  1
+    RUN_14_19  PROD_0_19  -0.14
+    RUN_14_19  PROD_1_19  -0.29
+    RUN_14_19  PROD_2_19  -0.08
+    RUN_14_19  PROD_3_19  -0.21
+    RUN_14_19  PROD_4_19  -0.17
+    RUN_14_19  PROD_5_19  -0.19
+    RUN_14_19  PROD_6_19  -0.3
+    RUN_14_19  PROD_7_19  -0.23
+    RUN_14_19  PROD_9_19  -0.12
+    RUN_14_19  PROD_10_19  -0.25
+    RUN_14_19  PROD_11_19  -0.27
+    RUN_14_19  SPEC_0_19  0.032
+    RUN_14_19  SPEC_1_19  0.001
+    RUN_14_19  SPEC_2_19  0.028
+    RUN_14_19  SPEC_3_19  0.016
+    PROD_0_19  COST  6
+    PROD_0_19  PROD_0_19  1
+    PROD_0_19  SELL_0_19  -1
+    SELL_0_19  COST  -8
+    SELL_0_19  SELL_0_19  1
+    PROD_1_19  COST  8
+    PROD_1_19  PROD_1_19  1
+    PROD_1_19  SELL_1_19  -1
+    SELL_1_19  SELL_1_19  1
+    PROD_2_19  COST  3
+    PROD_2_19  PROD_2_19  1
+    PROD_2_19  SELL_2_19  -1
+    SELL_2_19  COST  -4
+    SELL_2_19  SELL_2_19  1
+    PROD_3_19  COST  -3
+    PROD_3_19  PROD_3_19  1
+    PROD_3_19  SELL_3_19  -1
+    SELL_3_19  COST  -3
+    SELL_3_19  SELL_3_19  1
+    PROD_4_19  COST  -8
+    PROD_4_19  PROD_4_19  1
+    PROD_4_19  SELL_4_19  -1
+    SELL_4_19  SELL_4_19  1
+    PROD_5_19  COST  2
+    PROD_5_19  PROD_5_19  1
+    PROD_5_19  SELL_5_19  -1
+    SELL_5_19  COST  -2
+    SELL_5_19  SELL_5_19  1
+    PROD_6_19  COST  4
+    PROD_6_19  PROD_6_19  1
+    PROD_6_19  SELL_6_19  -1
+    SELL_6_19  COST  -4
+    SELL_6_19  SELL_6_19  1
+    PROD_7_19  COST  -3
+    PROD_7_19  PROD_7_19  1
+    PROD_7_19  SELL_7_19  -1
+    SELL_7_19  COST  -9
+    SELL_7_19  SELL_7_19  1
+    PROD_8_19  COST  -2
+    PROD_8_19  PROD_8_19  1
+    PROD_8_19  SELL_8_19  -1
+    SELL_8_19  SELL_8_19  1
+    PROD_9_19  COST  -3
+    PROD_9_19  PROD_9_19  1
+    PROD_9_19  SELL_9_19  -1
+    SELL_9_19  COST  2
+    SELL_9_19  SELL_9_19  1
+    PROD_10_19  COST  2
+    PROD_10_19  PROD_10_19  1
+    PROD_10_19  SELL_10_19  -1
+    SELL_10_19  COST  -2
+    SELL_10_19  SELL_10_19  1
+    PROD_11_19  COST  -4
+    PROD_11_19  PROD_11_19  1
+    PROD_11_19  SELL_11_19  -1
+    SELL_11_19  COST  -3
+    SELL_11_19  SELL_11_19  1
+RHS
+    RHS  CRUDE_0_0  -29
+    RHS  CRUDE_1_0  -9
+    RHS  CRUDE_2_0  -8
+    RHS  CRUDE_3_0  -3
+    RHS  CRUDE_4_0  -27
+    RHS  CRUDE_5_0  -19
+    RHS  CRUDE_6_0  -26
+    RHS  CRUDE_7_0  -24
+    RHS  CRUDE_9_0  2
+    RHS  CRUDE_11_0  -6
+    RHS  CRUDE_12_0  -5
+    RHS  CRUDE_13_0  4
+    RHS  CRUDE_14_0  1
+    RHS  CDU_0  111
+    RHS  SELL_0_0  -6.265
+    RHS  SELL_1_0  -24.33
+    RHS  SELL_2_0  -1.178
+    RHS  SELL_3_0  -0.426
+    RHS  SELL_4_0  -3.695
+    RHS  SELL_5_0  -10.03
+    RHS  SELL_6_0  -4.085
+    RHS  SELL_7_0  2.286
+    RHS  SELL_8_0  -0.768
+    RHS  SELL_9_0  -14.79
+    RHS  SELL_10_0  -3.957
+    RHS  SELL_11_0  -3.199
+    RHS  SPEC_0_0  3.64
+    RHS  SPEC_1_0  3.21
+    RHS  SPEC_2_0  1.919
+    RHS  SPEC_3_0  4.666
+    RHS  CRUDE_0_1  -31
+    RHS  CRUDE_1_1  -2
+    RHS  CRUDE_2_1  -12
+    RHS  CRUDE_4_1  -27
+    RHS  CRUDE_5_1  -19
+    RHS  CRUDE_6_1  -20
+    RHS  CRUDE_7_1  -20
+    RHS  CRUDE_8_1  -5
+    RHS  CRUDE_9_1  1
+    RHS  CRUDE_10_1  -18
+    RHS  CRUDE_11_1  -20
+    RHS  CRUDE_12_1  -17
+    RHS  CRUDE_13_1  -21
+    RHS  CRUDE_14_1  -9
+    RHS  CDU_1  43
+    RHS  SELL_0_1  -2.628
+    RHS  SELL_1_1  2.215
+    RHS  SELL_2_1  2.315
+    RHS  SELL_3_1  2.24
+    RHS  SELL_4_1  2.499
+    RHS  SELL_5_1  -6.17
+    RHS  SELL_6_1  1.628
+    RHS  SELL_7_1  1.134
+    RHS  SELL_8_1  1.987
+    RHS  SELL_9_1  -6.47
+    RHS  SELL_10_1  2.812
+    RHS  SPEC_0_1  4.093
+    RHS  SPEC_1_1  1.164
+    RHS  SPEC_2_1  1.185
+    RHS  SPEC_3_1  0.955
+    RHS  CRUDE_0_2  -32
+    RHS  CRUDE_1_2  -6
+    RHS  CRUDE_2_2  -13
+    RHS  CRUDE_3_2  -4
+    RHS  CRUDE_4_2  -26
+    RHS  CRUDE_5_2  4
+    RHS  CRUDE_6_2  -27
+    RHS  CRUDE_7_2  -21
+    RHS  CRUDE_8_2  -3
+    RHS  CRUDE_10_2  -15
+    RHS  CRUDE_11_2  -16
+    RHS  CRUDE_12_2  -19
+    RHS  CRUDE_13_2  -16
+    RHS  CRUDE_14_2  -8
+    RHS  CDU_2  44
+    RHS  SELL_0_2  1.5
+    RHS  SELL_1_2  -3.68
+    RHS  SELL_2_2  0.52
+    RHS  SELL_3_2  0.42
+    RHS  SELL_4_2  1.712
+    RHS  SELL_6_2  4.045
+    RHS  SELL_7_2  3.5
+    RHS  SELL_9_2  2.41
+    RHS  SELL_10_2  3.293
+    RHS  SELL_11_2  2.063
+    RHS  SPEC_0_2  2.334
+    RHS  SPEC_1_2  1.741
+    RHS  SPEC_2_2  1.691
+    RHS  SPEC_3_2  0.722
+    RHS  CRUDE_0_3  -23
+    RHS  CRUDE_1_3  4
+    RHS  CRUDE_2_3  -11
+    RHS  CRUDE_3_3  -6
+    RHS  CRUDE_4_3  -16
+    RHS  CRUDE_5_3  -6
+    RHS  CRUDE_6_3  -6
+    RHS  CRUDE_7_3  -9
+    RHS  CRUDE_8_3  -1
+    RHS  CRUDE_9_3  1
+    RHS  CRUDE_10_3  -4
+    RHS  CRUDE_12_3  -19
+    RHS  CRUDE_13_3  -21
+    RHS  CRUDE_14_3  -10
+    RHS  CDU_3  127
+    RHS  SELL_0_3  -1.162
+    RHS  SELL_1_3  -9.87
+    RHS  SELL_2_3  -7.795
+    RHS  SELL_3_3  -0.791
+    RHS  SELL_4_3  1.343
+    RHS  SELL_5_3  -1.334
+    RHS  SELL_6_3  1.86
+    RHS  SELL_7_3  -14.96
+    RHS  SELL_8_3  -22.36
+    RHS  SELL_9_3  -0.3
+    RHS  SELL_10_3  -1.37
+    RHS  SPEC_0_3  3.791
+    RHS  SPEC_1_3  3.368
+    RHS  SPEC_2_3  5.782
+    RHS  SPEC_3_3  6.28
+    RHS  CRUDE_0_4  -19
+    RHS  CRUDE_1_4  -2
+    RHS  CRUDE_2_4  -11
+    RHS  CRUDE_3_4  -14
+    RHS  CRUDE_4_4  -18
+    RHS  CRUDE_5_4  -2
+    RHS  CRUDE_6_4  -9
+    RHS  CRUDE_7_4  -28
+    RHS  CRUDE_9_4  1
+    RHS  CRUDE_10_4  -9
+    RHS  CRUDE_11_4  2
+    RHS  CRUDE_12_4  -16
+    RHS  CRUDE_13_4  -4
+    RHS  CRUDE_14_4  -9
+    RHS  CDU_4  128
+    RHS  SELL_0_4  -1.054
+    RHS  SELL_2_4  -8.108
+    RHS  SELL_3_4  -2.484
+    RHS  SELL_5_4  -0.862
+    RHS  SELL_6_4  -13.56
+    RHS  SELL_8_4  -6.452
+    RHS  SELL_9_4  -3.3
+    RHS  SELL_10_4  -16.16
+    RHS  SELL_11_4  -6.968
+    RHS  SPEC_0_4  7.168
+    RHS  SPEC_1_4  8.278
+    RHS  SPEC_2_4  1.59
+    RHS  SPEC_3_4  1.577
+    RHS  CRUDE_0_5  -31
+    RHS  CRUDE_1_5  -1
+    RHS  CRUDE_2_5  -11
+    RHS  CRUDE_3_5  -10
+    RHS  CRUDE_4_5  -11
+    RHS  CRUDE_5_5  -6
+    RHS  CRUDE_6_5  -26
+    RHS  CRUDE_7_5  -19
+    RHS  CRUDE_8_5  -1
+    RHS  CRUDE_9_5  3
+    RHS  CRUDE_10_5  -16
+    RHS  CRUDE_11_5  -7
+    RHS  CRUDE_12_5  -8
+    RHS  CRUDE_13_5  -13
+    RHS  CRUDE_14_5  -3
+    RHS  CDU_5  99
+    RHS  SELL_0_5  -0.483
+    RHS  SELL_1_5  -4.48
+    RHS  SELL_2_5  -3.7
+    RHS  SELL_4_5  1.579
+    RHS  SELL_5_5  2.517
+    RHS  SELL_6_5  -5.205
+    RHS  SELL_7_5  -12.39
+    RHS  SELL_8_5  -3.7
+    RHS  SELL_9_5  -2.906
+    RHS  SELL_10_5  -15.57
+    RHS  SELL_11_5  -0.36
+    RHS  SPEC_0_5  3.134
+    RHS  SPEC_1_5  2.207
+    RHS  SPEC_2_5  2.893
+    RHS  SPEC_3_5  4.876
+    RHS  CRUDE_0_6  -15
+    RHS  CRUDE_1_6  -7
+    RHS  CRUDE_2_6  -5
+    RHS  CRUDE_3_6  -14
+    RHS  CRUDE_4_6  -8
+    RHS  CRUDE_5_6  -7
+    RHS  CRUDE_6_6  -5
+    RHS  CRUDE_7_6  -8
+    RHS  CRUDE_8_6  -2
+    RHS  CRUDE_10_6  3
+    RHS  CRUDE_11_6  -5
+    RHS  CRUDE_12_6  -3
+    RHS  CRUDE_13_6  -23
+    RHS  CRUDE_14_6  -3
+    RHS  CDU_6  154
+    RHS  SELL_0_6  -2.395
+    RHS  SELL_1_6  -27.54
+    RHS  SELL_2_6  0.89
+    RHS  SELL_3_6  -2.518
+    RHS  SELL_4_6  -4.272
+    RHS  SELL_5_6  -2.007
+    RHS  SELL_7_6  -5.488
+    RHS  SELL_8_6  -6.032
+    RHS  SELL_9_6  3.213
+    RHS  SELL_11_6  -0.474
+    RHS  SPEC_0_6  8.599
+    RHS  SPEC_1_6  4.125
+    RHS  SPEC_2_6  6.854
+    RHS  SPEC_3_6  5.423
+    RHS  CRUDE_0_7  -32
+    RHS  CRUDE_1_7  -8
+    RHS  CRUDE_2_7  -7
+    RHS  CRUDE_3_7  -6
+    RHS  CRUDE_4_7  -18
+    RHS  CRUDE_5_7  -17
+    RHS  CRUDE_6_7  -12
+    RHS  CRUDE_7_7  -25
+    RHS  CRUDE_8_7  2
+    RHS  CRUDE_10_7  -14
+    RHS  CRUDE_11_7  -3
+    RHS  CRUDE_13_7  -10
+    RHS  CRUDE_14_7  -1
+    RHS  CDU_7  106
+    RHS  SELL_1_7  1.027
+    RHS  SELL_2_7  -0.148
+    RHS  SELL_3_7  -3.035
+    RHS  SELL_4_7  0.442
+    RHS  SELL_5_7  -1.502
+    RHS  SELL_6_7  -4.092
+    RHS  SELL_7_7  -0.968
+    RHS  SELL_8_7  1.378
+    RHS  SELL_9_7  1.448
+    RHS  SELL_10_7  -7
+    RHS  SELL_11_7  -4.77
+    RHS  SPEC_0_7  3.601
+    RHS  SPEC_1_7  2.683
+    RHS  SPEC_2_7  2.245
+    RHS  SPEC_3_7  1.313
+    RHS  CRUDE_0_8  -5
+    RHS  CRUDE_2_8  -10
+    RHS  CRUDE_4_8  -4
+    RHS  CRUDE_5_8  -18
+    RHS  CRUDE_6_8  -26
+    RHS  CRUDE_7_8  -27
+    RHS  CRUDE_8_8  -3
+    RHS  CRUDE_9_8  4
+    RHS  CRUDE_10_8  -13
+    RHS  CRUDE_11_8  -11
+    RHS  CRUDE_12_8  -1
+    RHS  CRUDE_13_8  -21
+    RHS  CDU_8  113
+    RHS  SELL_0_8  -14.26
+    RHS  SELL_1_8  -1.946
+    RHS  SELL_2_8  -4.258
+    RHS  SELL_3_8  2.306
+    RHS  SELL_4_8  1.304
+    RHS  SELL_6_8  0.567
+    RHS  SELL_7_8  -0.56
+    RHS  SELL_8_8  -18.18
+    RHS  SELL_9_8  -1.572
+    RHS  SELL_11_8  -3.04
+    RHS  SPEC_0_8  4.347
+    RHS  SPEC_1_8  2.784
+    RHS  SPEC_2_8  5.556
+    RHS  SPEC_3_8  3.572
+    RHS  CRUDE_0_9  -32
+    RHS  CRUDE_1_9  -9
+    RHS  CRUDE_2_9  -5
+    RHS  CRUDE_3_9  -14
+    RHS  CRUDE_4_9  -14
+    RHS  CRUDE_5_9  -18
+    RHS  CRUDE_6_9  -22
+    RHS  CRUDE_7_9  -27
+    RHS  CRUDE_8_9  -2
+    RHS  CRUDE_10_9  -12
+    RHS  CRUDE_11_9  -18
+    RHS  CRUDE_12_9  -20
+    RHS  CRUDE_13_9  -23
+    RHS  CRUDE_14_9  -5
+    RHS  CDU_9  45
+    RHS  SELL_1_9  1.358
+    RHS  SELL_2_9  -1.22
+    RHS  SELL_3_9  1.8
+    RHS  SELL_4_9  3.436
+    RHS  SELL_7_9  -1.456
+    RHS  SELL_8_9  0.148
+    RHS  SELL_9_9  1.804
+    RHS  SELL_10_9  4.197
+    RHS  SELL_11_9  4.422
+    RHS  SPEC_0_9  2.092
+    RHS  SPEC_1_9  0.98
+    RHS  SPEC_2_9  4.864
+    RHS  SPEC_3_9  0.866
+    RHS  CRUDE_0_10  -1
+    RHS  CRUDE_1_10  -6
+    RHS  CRUDE_2_10  -13
+    RHS  CRUDE_3_10  -15
+    RHS  CRUDE_4_10  -2
+    RHS  CRUDE_5_10  -15
+    RHS  CRUDE_6_10  -27
+    RHS  CRUDE_7_10  -15
+    RHS  CRUDE_8_10  2
+    RHS  CRUDE_9_10  2
+    RHS  CRUDE_11_10  -21
+    RHS  CRUDE_12_10  -6
+    RHS  CRUDE_13_10  -21
+    RHS  CRUDE_14_10  4
+    RHS  CDU_10  117
+    RHS  SELL_0_10  -2.34
+    RHS  SELL_2_10  -5.78
+    RHS  SELL_3_10  -7.65
+    RHS  SELL_4_10  -2.158
+    RHS  SELL_5_10  1.04
+    RHS  SELL_6_10  -7.172
+    RHS  SELL_9_10  -4.6
+    RHS  SELL_11_10  0.523
+    RHS  SPEC_0_10  4.167
+    RHS  SPEC_1_10  3.102
+    RHS  SPEC_2_10  5.027
+    RHS  SPEC_3_10  1.58
+    RHS  CRUDE_0_11  -3
+    RHS  CRUDE_1_11  -6
+    RHS  CRUDE_2_11  -14
+    RHS  CRUDE_3_11  -8
+    RHS  CRUDE_4_11  -5
+    RHS  CRUDE_5_11  2
+    RHS  CRUDE_6_11  -29
+    RHS  CRUDE_7_11  -11
+    RHS  CRUDE_8_11  -4
+    RHS  CRUDE_10_11  -15
+    RHS  CRUDE_11_11  -19
+    RHS  CRUDE_12_11  -16
+    RHS  CRUDE_13_11  -14
+    RHS  CRUDE_14_11  -10
+    RHS  CDU_11  99
+    RHS  SELL_0_11  1.252
+    RHS  SELL_1_11  -3.316
+    RHS  SELL_2_11  -5.512
+    RHS  SELL_3_11  0.744
+    RHS  SELL_4_11  -1.904
+    RHS  SELL_5_11  3.927
+    RHS  SELL_6_11  -18.06
+    RHS  SELL_7_11  -3.19
+    RHS  SELL_8_11  0.632
+    RHS  SELL_10_11  -13.18
+    RHS  SELL_11_11  -3.128
+    RHS  SPEC_0_11  3.667
+    RHS  SPEC_1_11  2.163
+    RHS  SPEC_2_11  2.093
+    RHS  SPEC_3_11  1.369
+    RHS  CRUDE_1_12  -7
+    RHS  CRUDE_2_12  -16
+    RHS  CRUDE_3_12  -7
+    RHS  CRUDE_4_12  -27
+    RHS  CRUDE_5_12  -15
+    RHS  CRUDE_6_12  -21
+    RHS  CRUDE_7_12  -26
+    RHS  CRUDE_8_12  1
+    RHS  CRUDE_10_12  -16
+    RHS  CRUDE_11_12  -1
+    RHS  CRUDE_12_12  -19
+    RHS  CRUDE_14_12  -5
+    RHS  CDU_12  93
+    RHS  SELL_1_12  -14.87
+    RHS  SELL_2_12  -14.11
+    RHS  SELL_3_12  -0.538
+    RHS  SELL_4_12  -11.1
+    RHS  SELL_5_12  3.861
+    RHS  SELL_6_12  -3.016
+    RHS  SELL_7_12  -2.7
+    RHS  SELL_8_12  0.239
+    RHS  SELL_9_12  -17.42
+    RHS  SELL_10_12  1.487
+    RHS  SELL_11_12  0.488
+    RHS  SPEC_0_12  2.871
+    RHS  SPEC_1_12  5.621
+    RHS  SPEC_2_12  5.987
+    RHS  SPEC_3_12  3.597
+    RHS  CRUDE_0_13  -30
+    RHS  CRUDE_1_13  -2
+    RHS  CRUDE_2_13  1
+    RHS  CRUDE_4_13  -23
+    RHS  CRUDE_5_13  -18
+    RHS  CRUDE_6_13  -26
+    RHS  CRUDE_8_13  -3
+    RHS  CRUDE_9_13  2
+    RHS  CRUDE_10_13  -12
+    RHS  CRUDE_11_13  -6
+    RHS  CRUDE_12_13  -1
+    RHS  CRUDE_13_13  -23
+    RHS  CRUDE_14_13  -9
+    RHS  CDU_13  103
+    RHS  SELL_1_13  -0.167
+    RHS  SELL_2_13  -0.993
+    RHS  SELL_4_13  0.418
+    RHS  SELL_5_13  -4.288
+    RHS  SELL_6_13  -1.043
+    RHS  SELL_8_13  3.559
+    RHS  SELL_9_13  -5.012
+    RHS  SELL_10_13  1.617
+    RHS  SELL_11_13  -13.27
+    RHS  SPEC_0_13  7.859
+    RHS  SPEC_1_13  4.848
+    RHS  SPEC_2_13  3.285
+    RHS  SPEC_3_13  2.722
+    RHS  CRUDE_0_14  -29
+    RHS  CRUDE_1_14  -5
+    RHS  CRUDE_2_14  -13
+    RHS  CRUDE_3_14  -15
+    RHS  CRUDE_4_14  -12
+    RHS  CRUDE_5_14  -15
+    RHS  CRUDE_6_14  -18
+    RHS  CRUDE_7_14  -29
+    RHS  CRUDE_8_14  -2
+    RHS  CRUDE_10_14  -12
+    RHS  CRUDE_11_14  -21
+    RHS  CRUDE_12_14  -18
+    RHS  CRUDE_13_14  -16
+    RHS  CRUDE_14_14  1
+    RHS  CDU_14  50
+    RHS  SELL_0_14  3.221
+    RHS  SELL_3_14  3.026
+    RHS  SELL_4_14  0.842
+    RHS  SELL_5_14  2.076
+    RHS  SELL_6_14  -2.545
+    RHS  SELL_8_14  -2.42
+    RHS  SELL_10_14  1.227
+    RHS  SELL_11_14  2.206
+    RHS  SPEC_0_14  1.447
+    RHS  SPEC_1_14  2.239
+    RHS  SPEC_2_14  5.012
+    RHS  SPEC_3_14  5.633
+    RHS  CRUDE_0_15  -30
+    RHS  CRUDE_1_15  -5
+    RHS  CRUDE_2_15  -14
+    RHS  CRUDE_3_15  -2
+    RHS  CRUDE_4_15  -28
+    RHS  CRUDE_5_15  -17
+    RHS  CRUDE_6_15  -7
+    RHS  CRUDE_7_15  -26
+    RHS  CRUDE_8_15  -2
+    RHS  CRUDE_9_15  4
+    RHS  CRUDE_10_15  -17
+    RHS  CRUDE_11_15  -6
+    RHS  CRUDE_12_15  -2
+    RHS  CRUDE_13_15  -3
+    RHS  CRUDE_14_15  -9
+    RHS  CDU_15  88
+    RHS  SELL_0_15  -16.62
+    RHS  SELL_1_15  -7.62
+    RHS  SELL_2_15  -2.32
+    RHS  SELL_3_15  -6.9
+    RHS  SELL_4_15  -5.29
+    RHS  SELL_5_15  0.978
+    RHS  SELL_6_15  -1.78
+    RHS  SELL_7_15  -12.09
+    RHS  SELL_8_15  0.26
+    RHS  SELL_9_15  -9.21
+    RHS  SELL_10_15  -3.188
+    RHS  SPEC_0_15  5.963
+    RHS  SPEC_1_15  2.709
+    RHS  SPEC_2_15  1.75
+    RHS  SPEC_3_15  0.811
+    RHS  CRUDE_0_16  -24
+    RHS  CRUDE_1_16  -5
+    RHS  CRUDE_2_16  -9
+    RHS  CRUDE_3_16  -8
+    RHS  CRUDE_4_16  -1
+    RHS  CRUDE_5_16  -16
+    RHS  CRUDE_6_16  -28
+    RHS  CRUDE_7_16  -25
+    RHS  CRUDE_8_16  -4
+    RHS  CRUDE_11_16  1
+    RHS  CRUDE_12_16  -4
+    RHS  CRUDE_14_16  -4
+    RHS  CDU_16  134
+    RHS  SELL_0_16  -3.288
+    RHS  SELL_1_16  1.125
+    RHS  SELL_2_16  -4.776
+    RHS  SELL_3_16  -1.169
+    RHS  SELL_4_16  0.452
+    RHS  SELL_5_16  -1.696
+    RHS  SELL_6_16  -6.555
+    RHS  SELL_7_16  -2.754
+    RHS  SELL_8_16  -4.62
+    RHS  SELL_9_16  -4.768
+    RHS  SELL_10_16  -8.812
+    RHS  SPEC_0_16  4.122
+    RHS  SPEC_1_16  5.74
+    RHS  SPEC_2_16  2.588
+    RHS  SPEC_3_16  1.795
+    RHS  CRUDE_0_17  -5
+    RHS  CRUDE_1_17  1
+    RHS  CRUDE_3_17  -13
+    RHS  CRUDE_4_17  -20
+    RHS  CRUDE_5_17  -16
+    RHS  CRUDE_6_17  -26
+    RHS  CRUDE_7_17  -29
+    RHS  CRUDE_8_17  -5
+    RHS  CRUDE_9_17  2
+    RHS  CRUDE_10_17  -15
+    RHS  CRUDE_11_17  -18
+    RHS  CRUDE_12_17  -18
+    RHS  CRUDE_13_17  -4
+    RHS  CRUDE_14_17  -6
+    RHS  CDU_17  84
+    RHS  SELL_0_17  -6.19
+    RHS  SELL_1_17  -1.34
+    RHS  SELL_2_17  -7.615
+    RHS  SELL_3_17  -1.548
+    RHS  SELL_4_17  0.448
+    RHS  SELL_5_17  -2.91
+    RHS  SELL_6_17  3.799
+    RHS  SELL_7_17  -1.303
+    RHS  SELL_8_17  -1.15
+    RHS  SELL_9_17  -1.408
+    RHS  SELL_10_17  -14.7
+    RHS  SELL_11_17  -0.056
+    RHS  SPEC_0_17  6.431
+    RHS  SPEC_1_17  2.261
+    RHS  SPEC_2_17  6.186
+    RHS  SPEC_3_17  5.462
+    RHS  CRUDE_0_18  -31
+    RHS  CRUDE_1_18  -5
+    RHS  CRUDE_2_18  -5
+    RHS  CRUDE_4_18  -27
+    RHS  CRUDE_5_18  2
+    RHS  CRUDE_6_18  -24
+    RHS  CRUDE_7_18  1
+    RHS  CRUDE_8_18  -1
+    RHS  CRUDE_10_18  -15
+    RHS  CRUDE_11_18  -3
+    RHS  CRUDE_12_18  -14
+    RHS  CRUDE_13_18  -9
+    RHS  CRUDE_14_18  -9
+    RHS  CDU_18  115
+    RHS  SELL_0_18  3.07
+    RHS  SELL_1_18  -4.596
+    RHS  SELL_2_18  -6.492
+    RHS  SELL_3_18  0.119
+    RHS  SELL_4_18  2.449
+    RHS  SELL_5_18  -7.26
+    RHS  SELL_6_18  -4.976
+    RHS  SELL_7_18  3.51
+    RHS  SELL_8_18  -2.216
+    RHS  SELL_9_18  -0.793
+    RHS  SELL_10_18  -19.63
+    RHS  SELL_11_18  -0.382
+    RHS  SPEC_0_18  2.971
+    RHS  SPEC_1_18  2.904
+    RHS  SPEC_2_18  1.955
+    RHS  SPEC_3_18  2.455
+    RHS  CRUDE_0_19  -5
+    RHS  CRUDE_1_19  3
+    RHS  CRUDE_2_19  2
+    RHS  CRUDE_3_19  -4
+    RHS  CRUDE_4_19  -26
+    RHS  CRUDE_5_19  2
+    RHS  CRUDE_6_19  -26
+    RHS  CRUDE_7_19  -20
+    RHS  CRUDE_8_19  -2
+    RHS  CRUDE_9_19  2
+    RHS  CRUDE_10_19  -17
+    RHS  CRUDE_11_19  -23
+    RHS  CRUDE_12_19  -17
+    RHS  CRUDE_13_19  -14
+    RHS  CRUDE_14_19  -2
+    RHS  CDU_19  104
+    RHS  SELL_0_19  3.537
+    RHS  SELL_1_19  -0.511
+    RHS  SELL_2_19  -0.481
+    RHS  SELL_3_19  -1.624
+    RHS  SELL_4_19  -5.325
+    RHS  SELL_5_19  -1.065
+    RHS  SELL_8_19  -4.069
+    RHS  SELL_9_19  -15.28
+    RHS  SELL_10_19  -17.52
+    RHS  SELL_11_19  -4.108
+    RHS  SPEC_0_19  3.152
+    RHS  SPEC_1_19  2.239
+    RHS  SPEC_2_19  3.882
+    RHS  SPEC_3_19  2.097
+BOUNDS
+ UP BND  SELL_0_0  12.265
+ UP BND  SELL_1_0  5
+ UP BND  SELL_2_0  12.082
+ UP BND  SELL_3_0  13.704
+ UP BND  SELL_4_0  6.695
+ UP BND  SELL_5_0  0
+ UP BND  SELL_6_0  11.865
+ UP BND  SELL_7_0  15.426
+ UP BND  SELL_8_0  15.912
+ UP BND  SELL_9_0  0
+ UP BND  SELL_10_0  19.233
+ UP BND  SELL_11_0  12.131
+ UP BND  SELL_0_1  6.442
+ UP BND  SELL_1_1  7.165
+ UP BND  SELL_2_1  2.685
+ UP BND  SELL_3_1  1.76
+ UP BND  SELL_4_1  1.169
+ UP BND  SELL_5_1  0
+ UP BND  SELL_6_1  5.488
+ UP BND  SELL_7_1  4.464
+ UP BND  SELL_8_1  12.117
+ UP BND  SELL_9_1  5
+ UP BND  SELL_10_1  3.282
+ UP BND  SELL_11_1  8.21
+ UP BND  SELL_0_2  3.5
+ UP BND  SELL_1_2  0
+ UP BND  SELL_2_2  5.92
+ UP BND  SELL_3_2  7.37
+ UP BND  SELL_4_2  7.152
+ UP BND  SELL_5_2  10.61
+ UP BND  SELL_6_2  11.595
+ UP BND  SELL_7_2  2.25
+ UP BND  SELL_8_2  15
+ UP BND  SELL_9_2  7.31
+ UP BND  SELL_10_2  7.363
+ UP BND  SELL_11_2  6.853
+ UP BND  SELL_0_3  18.648
+ UP BND  SELL_1_3  16.87
+ UP BND  SELL_2_3  13.795
+ UP BND  SELL_3_3  16.119
+ UP BND  SELL_4_3  18.913
+ UP BND  SELL_5_3  12.446
+ UP BND  SELL_6_3  19.26
+ UP BND  SELL_7_3  4
+ UP BND  SELL_8_3  0
+ UP BND  SELL_9_3  18.2
+ UP BND  SELL_10_3  22.48
+ UP BND  SELL_11_3  24.38
+ UP BND  SELL_0_4  17.216
+ UP BND  SELL_1_4  29.28
+ UP BND  SELL_2_4  15.162
+ UP BND  SELL_3_4  15.796
+ UP BND  SELL_4_4  16.51
+ UP BND  SELL_5_4  13.448
+ UP BND  SELL_6_4  5
+ UP BND  SELL_7_4  20.18
+ UP BND  SELL_8_4  18.178
+ UP BND  SELL_9_4  9.45
+ UP BND  SELL_10_4  0
+ UP BND  SELL_11_4  13.452
+ UP BND  SELL_0_5  14.347
+ UP BND  SELL_1_5  11.22
+ UP BND  SELL_2_5  14.05
+ UP BND  SELL_3_5  12.62
+ UP BND  SELL_4_5  17.789
+ UP BND  SELL_5_5  13.347
+ UP BND  SELL_6_5  13.205
+ UP BND  SELL_7_5  0
+ UP BND  SELL_8_5  8.7
+ UP BND  SELL_9_5  9.114
+ UP BND  SELL_10_5  0
+ UP BND  SELL_11_5  13.44
+ UP BND  SELL_0_6  17.255
+ UP BND  SELL_1_6  0
+ UP BND  SELL_2_6  27.99
+ UP BND  SELL_3_6  21.542
+ UP BND  SELL_4_6  13.908
+ UP BND  SELL_5_6  16.683
+ UP BND  SELL_6_6  25.69
+ UP BND  SELL_7_6  19.472
+ UP BND  SELL_8_6  16.048
+ UP BND  SELL_9_6  16.083
+ UP BND  SELL_10_6  28.71
+ UP BND  SELL_11_6  23.266
+ UP BND  SELL_0_7  23.18
+ UP BND  SELL_1_7  17.757
+ UP BND  SELL_2_7  17.592
+ UP BND  SELL_3_7  10.415
+ UP BND  SELL_4_7  10.232
+ UP BND  SELL_5_7  14.008
+ UP BND  SELL_6_7  9.138
+ UP BND  SELL_7_7  16.592
+ UP BND  SELL_8_7  14.598
+ UP BND  SELL_9_7  10.208
+ UP BND  SELL_10_7  9
+ UP BND  SELL_11_7  8.77
+ UP BND  SELL_0_8  3
+ UP BND  SELL_1_8  15.784
+ UP BND  SELL_2_8  18.602
+ UP BND  SELL_3_8  15.776
+ UP BND  SELL_4_8  15.264
+ UP BND  SELL_5_8  11.06
+ UP BND  SELL_6_8  12.897
+ UP BND  SELL_7_8  13.34
+ UP BND  SELL_8_8  5
+ UP BND  SELL_9_8  14.288
+ UP BND  SELL_10_8  20.04
+ UP BND  SELL_11_8  9.04
+ UP BND  SELL_0_9  12.18
+ UP BND  SELL_1_9  6.568
+ UP BND  SELL_2_9  4.22
+ UP BND  SELL_3_9  4.8
+ UP BND  SELL_4_9  5.076
+ UP BND  SELL_5_9  4.02
+ UP BND  SELL_6_9  14.1
+ UP BND  SELL_7_9  5.184
+ UP BND  SELL_8_9  4.278
+ UP BND  SELL_9_9  3.294
+ UP BND  SELL_10_9  7.227
+ UP BND  SELL_11_9  7.202
+ UP BND  SELL_0_10  8.34
+ UP BND  SELL_1_10  22.97
+ UP BND  SELL_2_10  14.67
+ UP BND  SELL_3_10  9.65
+ UP BND  SELL_4_10  19.632
+ UP BND  SELL_5_10  12.84
+ UP BND  SELL_6_10  12.258
+ UP BND  SELL_7_10  16.3
+ UP BND  SELL_8_10  22.49
+ UP BND  SELL_9_10  9.6
+ UP BND  SELL_10_10  25.36
+ UP BND  SELL_11_10  17.293
+ UP BND  SELL_0_11  9.992
+ UP BND  SELL_1_11  14.474
+ UP BND  SELL_2_11  12.768
+ UP BND  SELL_3_11  11.304
+ UP BND  SELL_4_11  10.356
+ UP BND  SELL_5_11  9.657
+ UP BND  SELL_6_11  0
+ UP BND  SELL_7_11  4.19
+ UP BND  SELL_8_11  17.472
+ UP BND  SELL_9_11  18.1
+ UP BND  SELL_10_11  0
+ UP BND  SELL_11_11  9.192
+ UP BND  SELL_0_12  13.22
+ UP BND  SELL_1_12  2
+ UP BND  SELL_2_12  4
+ UP BND  SELL_3_12  16.842
+ UP BND  SELL_4_12  4
+ UP BND  SELL_5_12  15.251
+ UP BND  SELL_6_12  6.024
+ UP BND  SELL_7_12  4.7
+ UP BND  SELL_8_12  11.109
+ UP BND  SELL_9_12  5
+ UP BND  SELL_10_12  16.617
+ UP BND  SELL_11_12  15.048
+ UP BND  SELL_0_13  18.75
+ UP BND  SELL_1_13  20.503
+ UP BND  SELL_2_13  9.317
+ UP BND  SELL_3_13  14.24
+ UP BND  SELL_4_13  10.328
+ UP BND  SELL_5_13  11.932
+ UP BND  SELL_6_13  13.767
+ UP BND  SELL_7_13  14.55
+ UP BND  SELL_8_13  12.969
+ UP BND  SELL_9_13  10.518
+ UP BND  SELL_10_13  21.447
+ UP BND  SELL_11_13  0
+ UP BND  SELL_0_14  12.011
+ UP BND  SELL_1_14  14.04
+ UP BND  SELL_2_14  14.01
+ UP BND  SELL_3_14  4.606
+ UP BND  SELL_4_14  4.632
+ UP BND  SELL_5_14  5.886
+ UP BND  SELL_6_14  8.545
+ UP BND  SELL_7_14  8.78
+ UP BND  SELL_8_14  8.98
+ UP BND  SELL_9_14  8.16
+ UP BND  SELL_10_14  6.957
+ UP BND  SELL_11_14  10.146
+ UP BND  SELL_0_15  5
+ UP BND  SELL_1_15  9.62
+ UP BND  SELL_2_15  14.28
+ UP BND  SELL_3_15  3
+ UP BND  SELL_4_15  0
+ UP BND  SELL_5_15  11.198
+ UP BND  SELL_6_15  5.78
+ UP BND  SELL_7_15  0
+ UP BND  SELL_8_15  17.66
+ UP BND  SELL_9_15  1
+ UP BND  SELL_10_15  7.782
+ UP BND  SELL_11_15  15.45
+ UP BND  SELL_0_16  14.672
+ UP BND  SELL_1_16  27.875
+ UP BND  SELL_2_16  14.664
+ UP BND  SELL_3_16  14.061
+ UP BND  SELL_4_16  14.192
+ UP BND  SELL_5_16  9.544
+ UP BND  SELL_6_16  11.555
+ UP BND  SELL_7_16  18.426
+ UP BND  SELL_8_16  15.43
+ UP BND  SELL_9_16  11.652
+ UP BND  SELL_10_16  16.218
+ UP BND  SELL_11_16  18.72
+ UP BND  SELL_0_17  0
+ UP BND  SELL_1_17  17.46
+ UP BND  SELL_2_17  8.615
+ UP BND  SELL_3_17  10.612
+ UP BND  SELL_4_17  10.208
+ UP BND  SELL_5_17  0
+ UP BND  SELL_6_17  10.809
+ UP BND  SELL_7_17  9.707
+ UP BND  SELL_8_17  12.6
+ UP BND  SELL_9_17  13.632
+ UP BND  SELL_10_17  1
+ UP BND  SELL_11_17  11.224
+ UP BND  SELL_0_18  21.37
+ UP BND  SELL_1_18  19.394
+ UP BND  SELL_2_18  11.238
+ UP BND  SELL_3_18  11.389
+ UP BND  SELL_4_18  17.959
+ UP BND  SELL_5_18  12.39
+ UP BND  SELL_6_18  13.464
+ UP BND  SELL_7_18  13.41
+ UP BND  SELL_8_18  16.864
+ UP BND  SELL_9_18  13.517
+ UP BND  SELL_10_18  5
+ UP BND  SELL_11_18  17.528
+ UP BND  SELL_0_19  13.167
+ UP BND  SELL_1_19  15.859
+ UP BND  SELL_2_19  12.789
+ UP BND  SELL_3_19  9.936
+ UP BND  SELL_4_19  13.325
+ UP BND  SELL_5_19  6.065
+ UP BND  SELL_6_19  20.75
+ UP BND  SELL_7_19  12.65
+ UP BND  SELL_8_19  19.161
+ UP BND  SELL_9_19  4
+ UP BND  SELL_10_19  0
+ UP BND  SELL_11_19  10.662
+ENDATA
