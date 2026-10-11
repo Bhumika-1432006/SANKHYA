@@ -55,7 +55,7 @@ and the deck, and CI fails if a committed copy differs from a fresh render.
 | Mittelmann | 12 | **5 of 12** (matches HiGHS's objective and verified, `passed`) | HiGHS (objective check) | `bench/results/mittelmann-72123ff.csv` | `72123ff` | 2026-09-24 |
 | MIPLIB 3 | 52 | **44 of 52** (matched the published optimum and verified, best of 3 seeds) | HiGHS (same host) | `bench/results/miplib3-300s-seeds3-f2cf240.csv` | `f2cf240` | 2026-10-03 |
 | MIPLIB 2017 | 30 | **14 of 30** (matched the published optimum and verified) | - | `bench/results/miplib-ad57c03.csv` | `ad57c03` | 2026-09-27 |
-| Maros-Meszaros (QP) | 138 | **106 of 138** (within relative 1e-6 of the reference and verified, `passed`) | - | `bench/results/maros-meszaros-9094e1c.csv` | `9094e1c` | 2026-09-29 |
+| Maros-Meszaros (QP) | 138 | **108 of 138** (within relative 1e-6 of the reference and verified, `passed`) | - | `bench/results/maros-meszaros-847042e3.csv` | `847042e3` | 2026-10-11 |
 | QPLIB (convex) | 16 | **9 of 16** (within relative 1e-6 of the published or best-known value and verified, `passed`) | - | `bench/results/qplib-5a39fb2.csv` | `5a39fb2` | 2026-10-01 |
 | Stress set | 126 | **111 of 126** (verdict `correct`) | - | `bench/results/stress-d32b3847.csv` | `d32b3847` | 2026-10-08 |
 | GPU, real instances (A100) | 3 | **2 of 3** (faster than the faster CPU arm on the same instance) | construction, highs | `bench/results/gpu-real-a100-fdd1f35.csv` | `fdd1f35` | 2026-09-27 |
@@ -297,9 +297,12 @@ at `60455ce`, after #559's certificates, **28 of 29** carry a Farkas certificate
 accepts; `cplex2` stays a `numerical_error`, since its elastic optimum is zero at the 1e-7
 tolerance and no certificate exists there (`bench/results/netlib-infeasible-60455ce.csv`, a
 laptop with desktop apps open; every instance ends in under 14 s of its 60 s limit). At `5a39fb2`, with `--iis` (#871), the 28 stay certified, and **12 of 29** also name an irreducible infeasible subsystem the verifier proves on its own arithmetic, infeasible using nothing outside the set and irreducible by one witness per member; 18 name one (`bench/results/netlib-infeasible-5a39fb2.csv`). Infeasibility repair (#523, `tools/repair_infeasibility.py`, elastic programming over rows and column bounds) on the same 29: the repair applied, the repaired model re-solved as a pure feasibility problem by the CLI and checked by `tools/verify_solution.py`, **28 of 29** accepted; `gran`'s elastic LP itself ends `numerical_error` (`bench/results/netlib-repair-5a39fb2.csv`, `bench/runners/netlib_repair.py`). Maros-Meszaros, all 138 convex QPs at 60 s with the proximal interior point the
-default QP engine (#740): **`optimal` on 106, within 1e-6 of the reference on 106,
-verifier-accepted on 120, and no `optimal` the verifier rejects** (`bench/results/maros-meszaros-9094e1c.csv`,
-`docs/BENCHMARKS.md` section 2b). The run before it, Condat-Vu at 300 s, read 45, 44 and 39 with
+default QP engine (#740): **`optimal` on 109, within 1e-6 of the reference on 108,
+verifier-accepted on 119, and no `optimal` the verifier rejects** (`bench/results/maros-meszaros-847042e3.csv`,
+`docs/BENCHMARKS.md` section 2b; a laptop with other builds running, so the two largest models,
+`boyd2` and `cont-300`, hit the 60 s limit at 0 and 11 iterations where the quiet `9094e1c` run
+solved them in 36 s and 31 s - the gains since that run, with the Newton step refined against the
+unregularized KKT matrix (#1010), are `powell20`, `primalc1`, `qcapri` and `qshare1b`). The run before it, Condat-Vu at 300 s, read 45, 44 and 39 with
 six `optimal` answers the verifier rejected (`maros-meszaros-65eecbc.csv`, #590). QPLIB's convex continuous QPs, all 17 fetched (19 selected, 2 over the size cap, 16 with a
 published value), on `main` at `5a39fb2` at the runner's default 1000 s on the laptop with no other jobs
 (`bench/results/qplib-5a39fb2.csv`, `docs/BENCHMARKS.md` section 2d): the default QP engine and the
