@@ -74,4 +74,11 @@ class KktMatrix {
 void solve_refined(const SparseLdl& ldl, const SparseMatrix& k, const std::vector<double>& rhs,
                    std::vector<double>* x);
 
+/// Then corrections against the UNREGULARIZED matrix `k0` (the same Theta^{-1}, rho = delta =
+/// 0) with the same factors: x <- x + K^{-1} (rhs - K_0 x), each kept only when it lowers the
+/// residual rhs - K_0 x, at most tol::kQpIpmRefinementSteps of them. On a singular or
+/// inconsistent K_0 the first correction that does not help ends it and x stands.
+void refine_unregularized(const SparseLdl& ldl, const SparseMatrix& k0,
+                          const std::vector<double>& rhs, std::vector<double>* x);
+
 }  // namespace sankhya::qp::ipm_detail
