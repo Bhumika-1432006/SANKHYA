@@ -2050,7 +2050,7 @@ const std::vector<OptionSpec>& Options::registry() {
     s.push_back(
         {"qp_ipm_stall_handoff",
          OptionType::Bool,
-         false,
+         true,
          "qp_algorithm=ipm (#981): tell a stall from slow progress, and try the other QP "
          "engine on what is left of the time limit instead of stopping with most of it "
          "unused. On Maros-Meszaros nine instances stopped at the interior point's fixed "
@@ -2066,15 +2066,21 @@ const std::vector<OptionSpec>& Options::registry() {
          "and the reverse direction - that engine's own ceiling or a time limit ending it - "
          "hands its point to the interior point the same way, through the warm-start "
          "plumbing #494 already built. Whichever engine's answer is adopted (only when it is "
-         "better) is named in the algorithm field, e.g. qp-ipm+convex-qp. Off by default "
-         "until an A/B on main (#981's acceptance item).",
+         "better) is named in the algorithm field, e.g. qp-ipm+convex-qp. On by default "
+         "since the A/B on main at 847042e3 (60 s, all 138 Maros-Meszaros, this and "
+         "qp_ipm_finish on together against both off, bench/results/maros-meszaros-"
+         "finish-handoff-847042e3.csv against maros-meszaros-847042e3.csv): ubh1 goes "
+         "from the 200-iteration ceiling 1.4e-8 from the reference to optimal at 209 "
+         "iterations, liswet2 to a verified optimum through the first-order engine, no "
+         "instance loses its label and no optimal is rejected by the verifier; seven stalls "
+         "spend the rest of their 60 s on the hand-off without an answer being adopted.",
          0.0,
          0.0,
          {}});
     s.push_back(
         {"qp_ipm_finish",
          OptionType::Bool,
-         false,
+         true,
          "qp_algorithm=ipm (#980): when the relative measures are met but at least one "
          "complementarity product is still above the in-process KKT gate's share "
          "(tol::kQpIpmComplementarityShare * tol::kComplementarity), take the active set the "
@@ -2087,7 +2093,12 @@ const std::vector<OptionSpec>& Options::registry() {
          "instead of after ADMM). The finished point is kept only if it is primal feasible, "
          "every multiplier has the right sign, and every product is under the gate; "
          "otherwise the interior point's own point stands unchanged, so this can never make "
-         "an answer worse. Off by default until an A/B on main.",
+         "an answer worse. On by default since the A/B on main at 847042e3 (see "
+         "qp_ipm_stall_handoff for the run): with the Newton step refined against the "
+         "unregularized KKT matrix (#1010) the three holdouts it closed alone at 8d4b07b3 "
+         "(primalc1, qcapri, qshare1b) close without it, and in that A/B it changes no "
+         "instance's label on its own; it stays on because it can only ever accept a point "
+         "the gate would accept.",
          0.0,
          0.0,
          {}});

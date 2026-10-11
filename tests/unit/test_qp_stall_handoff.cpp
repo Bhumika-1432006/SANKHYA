@@ -50,13 +50,14 @@ Model inequality_qp() {
   return model;
 }
 
-// ---- (d) the option defaults off, and off changes nothing -------------------------------
+// ---- (d) the option defaults on since the A/B on main at 847042e3, and on an ordinary -----
+// ---- convergent solve it changes nothing ----------------------------------------------------
 
-TEST(QpIpmStallHandoff, DefaultsOff) {
-  EXPECT_FALSE(Options().get_bool("qp_ipm_stall_handoff"));
+TEST(QpIpmStallHandoff, DefaultsOn) {
+  EXPECT_TRUE(Options().get_bool("qp_ipm_stall_handoff"));
 }
 
-TEST(QpIpmStallHandoff, OffLeavesAnOrdinaryConvergentSolveExactlyAsItWas) {
+TEST(QpIpmStallHandoff, OnByDefaultLeavesAnOrdinaryConvergentSolveExactlyAsOff) {
   const Model model = inequality_qp();
   Logger logger(nullptr);
   const Solution without = qp::solve_convex_qp_ipm(model, quiet(), logger);

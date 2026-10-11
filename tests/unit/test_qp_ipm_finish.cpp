@@ -87,17 +87,17 @@ Model tight_bound_large_curvature_qp() {
   return model;
 }
 
-TEST(QpIpmFinish, OptionDefaultsOff) {
+TEST(QpIpmFinish, OptionDefaultsOn) {
   const Options options = quiet();
-  EXPECT_FALSE(options.get_bool("qp_ipm_finish"));
+  EXPECT_TRUE(options.get_bool("qp_ipm_finish"));
 }
 
-TEST(QpIpmFinish, OffLeavesTheSolveByteForByteUnchanged) {
+TEST(QpIpmFinish, OnByDefaultLeavesAnOrdinaryConvergentSolveByteForByteAsOff) {
   const Model model = inequality_qp();
   Logger logger(nullptr);
 
-  Options off_default = quiet();
-  const Solution baseline = qp::solve_convex_qp_ipm(model, off_default, logger);
+  Options on_default = quiet();  // the default since the A/B on main at 847042e3
+  const Solution baseline = qp::solve_convex_qp_ipm(model, on_default, logger);
 
   Options off_explicit = quiet();
   off_explicit.set_bool("qp_ipm_finish", false);
