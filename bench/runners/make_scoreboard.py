@@ -122,6 +122,26 @@ def netlib_infeasible_row() -> Row | None:
                "certified infeasible, `passed`", "-")
 
 
+def netlib_certified_row() -> Row | None:
+    """Optimal Netlib answers whose Neumaier-Shcherbina bound is within 1e-6 relative of the
+    objective (#763): the bound holds by construction and the verifier re-derives it."""
+    path = latest_result.latest("certified-gap-netlib-full-*.csv",
+                                prefix="certified-gap-netlib-full")
+    if path is None:
+        return None
+    optimal = [r for r in read_csv(path) if r.get("status") == "optimal"]
+
+    def certified(row: dict) -> bool:
+        try:
+            return abs(float(row.get("certified_relative_gap", ""))) <= 1e-6
+        except ValueError:
+            return False
+
+    passed, total = passed_predicate(optimal, certified)
+    return Row("Netlib certified bounds", path, passed, total,
+               "optimal answer within 1e-6 of a rigorous bound the verifier re-derives", "-")
+
+
 def kennington_row() -> Row | None:
     path = (latest_result.latest("kennington-full-*.csv", prefix="kennington-full")
             or latest_result.latest("kennington-small-*.csv", prefix="kennington-small"))
@@ -250,7 +270,8 @@ def gpu_rows() -> list[Row]:
 
 
 def all_rows() -> list[Row]:
-    rows = [netlib_row(), netlib_infeasible_row(), kennington_row(), mittelmann_row(),
+    rows = [netlib_row(), netlib_certified_row(), netlib_infeasible_row(), kennington_row(),
+            mittelmann_row(),
             miplib3_row(), miplib_row(), maros_meszaros_row(), qplib_row(), stress_row()]
     rows = [r for r in rows if r is not None]
     rows += gpu_rows()

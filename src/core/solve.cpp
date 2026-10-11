@@ -749,7 +749,7 @@ Solution solve(const Model& model, const Options& requested_options, SolveContro
         [&] { return engine_ran; }, timer, logger);
   }
   // #763: every optimal LP carries a bound valid by construction, from its own duals.
-  attach_safe_lower_bound(model, options, &solved);
+  attach_safe_lower_bound(model, options, &solved, &logger);
   if (!std::isnan(solved.safe_lower_bound)) {
     logger.info(
         "Safe bound (Neumaier-Shcherbina): {:.17g}, certified gap {:.3e} ({:.3e} relative)",

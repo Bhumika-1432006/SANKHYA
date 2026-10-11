@@ -32,9 +32,11 @@
 //  4. The exact rational duals of the reported basis (lp_exact_dual.hpp): every basic reduced
 //     cost exactly zero, so no basic column needs a bound, and the bound, evaluated
 //     exactly, is finite whenever the basis is exactly dual feasible over the box. The
-//     multipliers are reported as exact fractions. Within option exact_seconds. When the
-//     reported basis is not exactly dual feasible, the exact repair of #757 pivots to one
-//     that is exactly optimal first, and its exact duals are used.
+//     multipliers are reported as exact fractions. Within option exact_seconds. The duals
+//     come from numeric-symbolic refinement, or, where the basis is too ill-conditioned for
+//     that to converge, from the exact rational LU (lp_exact_dual.cpp). When the reported
+//     basis is not exactly dual feasible, the exact repair of #757 pivots to one that is
+//     exactly optimal first, and its exact duals are used.
 //
 //  5. When 1-4 leave the bound infinite or the gap above the target, the one-sided columns
 //     of that box are what is left: a zero reduced cost - basic, or nonbasic at a dual-
@@ -65,6 +67,8 @@
 #include <span>
 #include <string>
 #include <vector>
+
+#include <fmt/format.h>
 
 #include "core/lp_exact_dual.hpp"
 #include "core/safe_bound.hpp"
@@ -135,13 +139,17 @@ std::vector<double> sign_fixing_direction(const Model& model, const Solution& so
 
 }  // namespace
 
-void attach_safe_lower_bound(const Model& model, const Options& options, Solution* solution) {
+void attach_safe_lower_bound(const Model& model, const Options& options, Solution* solution,
+                             Logger* logger) {
   if (solution->status != SolveStatus::kOptimal || model.has_integrality() ||
       model.has_quadratic_objective() ||
       solution->row_dual.size() != static_cast<Sz>(model.num_rows()) ||
       !options.get_bool("certified_gap")) {
     return;
   }
+  const auto note = [&](const std::string& line) {
+    if (logger != nullptr) logger->info("Safe bound: {}", line);
+  };
   const bool maximize = model.sense == ObjSense::kMaximize;
   const double sense = model.sense_multiplier();
   std::vector<double> cost(model.col_cost.size());
@@ -240,18 +248,31 @@ void attach_safe_lower_bound(const Model& model, const Options& options, Solutio
 
   // 4. The exact duals of a basis, over the box stage 2 left: the reported one here, and in
   // stage 5 the re-solve's, for the costs it was optimal for.
-  const auto try_exact = [&](std::span<const double> dual_cost, const Solution& source) {
+  const auto try_exact = [&](std::span<const double> dual_cost, const Solution& source,
+                             const char* what) {
     if (exact_timed_out) return;
     ExactDualBound exact_bound = exact_dual_bound(model, dual_cost, cost, lower, upper, source,
                                                   options.get_double("exact_seconds"));
     exact_timed_out = exact_bound.timed_out;
+    if (exact_bound.proved) {
+      note(fmt::format("exact duals of {}: {:.17g} ({:.3e} relative)", what, exact_bound.value,
+                       relative_gap(exact_bound.value)));
+    } else {
+      note(fmt::format("exact duals of {}: no bound, {}", what, exact_bound.message));
+    }
     if (exact_bound.proved && (!std::isfinite(best.value) || exact_bound.value > best.value)) {
       best.value = exact_bound.value;
       best_uses_propagation = !propagated.empty();
       exact_multipliers = std::move(exact_bound.multipliers);
     }
   };
-  if (!good_enough()) try_exact(cost, *solution);
+  if (!good_enough()) {
+    note(std::isfinite(best.value)
+             ? fmt::format("float duals: {:.17g} ({:.3e} relative), above the target",
+                           best.value, relative_gap(best.value))
+             : "float duals: no finite bound");
+    try_exact(cost, *solution, "the reported basis");
+  }
   // The reported basis is often optimal only to tolerance: exactly, a nonbasic reduced cost
   // of -1e-14 on a column with no upper bound, and then its exact duals prove nothing. The
   // exact repair (#757, src/exact/exact_repair.hpp) pivots from it, in rational arithmetic,
@@ -260,10 +281,20 @@ void attach_safe_lower_bound(const Model& model, const Options& options, Solutio
     const exact::RepairResult repair =
         exact::repair_basis_exact(model, *solution, options.get_double("exact_seconds"));
     if (repair.verdict == exact::ExactVerdict::kVerified && repair.changed()) {
+      note(
+          fmt::format("exact repair: {} pivot(s) and {} bound flip(s) to an exactly optimal "
+                      "basis",
+                      repair.dual_pivots + repair.primal_pivots, repair.bound_flips));
       Solution repaired;
       repaired.col_status = repair.col_status;
       repaired.row_status = repair.row_status;
-      try_exact(cost, repaired);
+      repaired.col_value = repair.col_value;  // load_basis resolves a status by the value
+      repaired.row_activity.assign(static_cast<Sz>(model.num_rows()), 0.0);
+      try_exact(cost, repaired, "the repaired basis");
+    } else if (repair.verdict == exact::ExactVerdict::kVerified) {
+      note("exact repair: the reported basis is already exactly optimal");
+    } else {
+      note(fmt::format("exact repair: {}", repair.message));
     }
   }
 
@@ -303,6 +334,9 @@ void attach_safe_lower_bound(const Model& model, const Options& options, Solutio
       }
       const Solution resolved = solve(perturbed, inner);
       resolve_budget -= resolved.solve_seconds;
+      note(fmt::format("re-solve with costs moved by {:.0e}: {} after {:.2f} s{}", delta,
+                       to_string(resolved.status), resolved.solve_seconds,
+                       resolved.message.empty() ? "" : " (" + resolved.message + ")"));
       // Lowering a cost makes any zero-cost ray of the original improving: unbounded for
       // the smallest move means unbounded for every larger one.
       if (resolved.status == SolveStatus::kUnbounded) break;
@@ -316,7 +350,7 @@ void attach_safe_lower_bound(const Model& model, const Options& options, Solutio
       if (!good_enough()) {
         std::vector<double> moved_cost(cost.size());
         for (Sz j = 0; j < cost.size(); ++j) moved_cost[j] = sense * perturbed.col_cost[j];
-        try_exact(moved_cost, resolved);
+        try_exact(moved_cost, resolved, "the perturbed re-solve's basis");
       }
     }
   }
