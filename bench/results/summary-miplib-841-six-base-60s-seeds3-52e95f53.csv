@@ -1,0 +1,7 @@
+instance,seeds,seeds_matched,seeds_proved,matched_seeds,proved_seeds,sgm_seconds,sgm_first_feasible_seconds,mean_primal_integral,time_limit,git_commit,machine
+enlight8,3,0,0,,,60.0000,60.0000,60.0037,60,52e95f53,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+enlight_hard,3,0,0,,,60.0000,60.0000,60.0101,60,52e95f53,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+markshare1,3,0,0,,,60.0000,0.0713,58.4575,60,52e95f53,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+noswot,3,1,0,0,,60.0000,0.6959,2.4458,60,52e95f53,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+opt1217,3,3,0,0 1 2,,60.0000,1.7246,4.0664,60,52e95f53,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+rlp1,3,3,0,0 1 2,,60.0000,0.3378,1.1873,60,52e95f53,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"

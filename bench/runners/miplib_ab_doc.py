@@ -241,6 +241,33 @@ def plateau_ab(off: Path | None, on: Path | None, option: str,
     return "\n".join(out)
 
 
+# The #841 heuristics - parity over GF(2), the propagation dive, local branching - each
+# measured alone against the same binary's defaults, on three sets: the six instances the
+# issue names at 60 s, the three unproved ones at 300 s, and MIPLIB tier 1 node-limited (so
+# load cannot move a row) for the no-proof-lost check.
+HEURISTICS_841 = (("parity", "mip_heur_parity"), ("propdive", "mip_heur_prop_dive"),
+                  ("localbranch", "mip_heur_local_branching"))
+
+
+def heuristics_841_section(legs: dict[str, dict[str, Path | None]]) -> str:
+    """`legs[set][leg]` is the CSV of that leg (`base` and each HEURISTICS_841 name) on that
+    set (`six-60s`, `proof-300s`, `tier1-n2000`); each heuristic reads against base."""
+    out = []
+    for set_name, title in (("six-60s", "the six #841 instances at 60 s"),
+                            ("proof-300s", "opt1217, rlp1 and noswot at 300 s"),
+                            ("tier1-n2000", "MIPLIB tier 1 at node_limit 2000")):
+        paths = legs.get(set_name, {})
+        for leg, option in HEURISTICS_841:
+            text = seeds_ab(paths.get("base"), paths.get(leg), option)
+            if text:
+                out += [f"**{option} on {title}.**", "", text]
+        if out and set_name == "tier1-n2000":
+            out += ["On the node-limited set the time columns charge every unproved run the "
+                    "runner's nominal 100000 s limit and say nothing; the proved and matched "
+                    "counts, which a loaded machine cannot move, are the reading.", ""]
+    return "\n".join(out) if out else "Not yet run on an idle machine at a commit on `main`."
+
+
 def tier2_section(path: Path | None) -> str:
     """The 60-instance tier (#504) over its seeds, every instance listed."""
     if path is None:
