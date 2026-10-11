@@ -1,0 +1,4 @@
+instance,seeds,seeds_matched,seeds_proved,matched_seeds,proved_seeds,sgm_seconds,sgm_first_feasible_seconds,mean_primal_integral,time_limit,git_commit,machine
+noswot,3,3,0,0 1 2,,300.0000,0.0151,3.9234,300,ac7a7151,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+opt1217,3,3,0,0 1 2,,300.0000,0.0472,0.0472,300,ac7a7151,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"
+rlp1,3,3,0,0 1 2,,300.0000,0.1526,1.0110,300,ac7a7151,"unknown; Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64"

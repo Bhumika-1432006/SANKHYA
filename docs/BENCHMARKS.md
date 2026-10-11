@@ -1590,6 +1590,103 @@ Source CSVs: `bench/results/miplib-506-fj-off-seeds3-bce539f.csv` and `bench/res
 Instances whose matched or proved seed count moved between the legs: `noswot` matched 0->1, proved 0->0.
 
 
+#### A/B: the #841 heuristics, each alone
+
+Issue #841: enlight8 and enlight_hard reach no feasible point at 60 s, markshare1 never the
+optimum, and opt1217, rlp1 and noswot hold the published optimum without a proof. Three
+heuristics, each off by default and read here against the same binary's defaults.
+
+**mip_heur_parity on the six #841 instances at 60 s.**
+
+Source CSVs: `bench/results/miplib-841-six-60s-base-ac7a7151.csv` and `bench/results/miplib-841-six-60s-parity-ac7a7151.csv`, `mip_heur_parity` off and on, 3 seeds each (the published file and row and column permutations of it), 60 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 18 | 7 | 0 | 60.00 | 12 | 4.428 | 30.94 |
+| on | 18 | 13 | 0 | 60.00 | 18 | 0.385 | 10.84 |
+
+Instances whose matched or proved seed count moved between the legs: `enlight8` matched 0->3, proved 0->0; `enlight_hard` matched 0->3, proved 0->0.
+
+**mip_heur_prop_dive on the six #841 instances at 60 s.**
+
+Source CSVs: `bench/results/miplib-841-six-60s-base-ac7a7151.csv` and `bench/results/miplib-841-six-60s-propdive-ac7a7151.csv`, `mip_heur_prop_dive` off and on, 3 seeds each (the published file and row and column permutations of it), 60 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 18 | 7 | 0 | 60.00 | 12 | 4.428 | 30.94 |
+| on | 18 | 9 | 0 | 60.00 | 14 | 1.696 | 23.75 |
+
+Instances whose matched or proved seed count moved between the legs: `enlight8` matched 0->1, proved 0->0; `enlight_hard` matched 0->1, proved 0->0.
+
+**mip_heur_local_branching on the six #841 instances at 60 s.**
+
+Source CSVs: `bench/results/miplib-841-six-60s-base-ac7a7151.csv` and `bench/results/miplib-841-six-60s-localbranch-ac7a7151.csv`, `mip_heur_local_branching` off and on, 3 seeds each (the published file and row and column permutations of it), 60 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 18 | 7 | 0 | 60.00 | 12 | 4.428 | 30.94 |
+| on | 18 | 7 | 0 | 60.00 | 12 | 7.820 | 32.67 |
+
+Instances whose matched or proved seed count moved between the legs: none.
+
+**mip_heur_prop_dive on opt1217, rlp1 and noswot at 300 s.**
+
+Source CSVs: `bench/results/miplib-841-proof-300s-base-ac7a7151.csv` and `bench/results/miplib-841-proof-300s-propdive-ac7a7151.csv`, `mip_heur_prop_dive` off and on, 3 seeds each (the published file and row and column permutations of it), 300 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 9 | 8 | 0 | 300.00 | 9 | 0.717 | 2.70 |
+| on | 9 | 9 | 0 | 300.00 | 9 | 0.070 | 1.66 |
+
+Instances whose matched or proved seed count moved between the legs: `noswot` matched 2->3, proved 0->0.
+
+**mip_heur_local_branching on opt1217, rlp1 and noswot at 300 s.**
+
+Source CSVs: `bench/results/miplib-841-proof-300s-base-ac7a7151.csv` and `bench/results/miplib-841-proof-300s-localbranch-ac7a7151.csv`, `mip_heur_local_branching` off and on, 3 seeds each (the published file and row and column permutations of it), 300 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 9 | 8 | 0 | 300.00 | 9 | 0.717 | 2.70 |
+| on | 9 | 8 | 0 | 300.00 | 9 | 1.717 | 3.61 |
+
+Instances whose matched or proved seed count moved between the legs: none.
+
+**mip_heur_parity on MIPLIB tier 1 at node_limit 2000.**
+
+Source CSVs: `bench/results/miplib-841-tier1-n2000-base-ac7a7151.csv` and `bench/results/miplib-841-tier1-n2000-parity-ac7a7151.csv`, `mip_heur_parity` off and on, 3 seeds each (the published file and row and column permutations of it), 100000 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 90 | 35 | 28 | 5785.17 | 78 | 4.505 | 0.58 |
+| on | 90 | 41 | 28 | 5786.45 | 84 | 1.639 | 0.59 |
+
+Instances whose matched or proved seed count moved between the legs: `enlight8` matched 0->3, proved 0->0; `enlight_hard` matched 0->3, proved 0->0.
+
+**mip_heur_prop_dive on MIPLIB tier 1 at node_limit 2000.**
+
+Source CSVs: `bench/results/miplib-841-tier1-n2000-base-ac7a7151.csv` and `bench/results/miplib-841-tier1-n2000-propdive-ac7a7151.csv`, `mip_heur_prop_dive` off and on, 3 seeds each (the published file and row and column permutations of it), 100000 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 90 | 35 | 28 | 5785.17 | 78 | 4.505 | 0.58 |
+| on | 90 | 39 | 28 | 5785.71 | 80 | 3.041 | 5.87 |
+
+Instances whose matched or proved seed count moved between the legs: `enlight8` matched 0->1, proved 0->0; `enlight_hard` matched 0->1, proved 0->0; `opt1217` matched 1->3, proved 0->0.
+
+**mip_heur_local_branching on MIPLIB tier 1 at node_limit 2000.**
+
+Source CSVs: `bench/results/miplib-841-tier1-n2000-base-ac7a7151.csv` and `bench/results/miplib-841-tier1-n2000-localbranch-ac7a7151.csv`, `mip_heur_local_branching` off and on, 3 seeds each (the published file and row and column permutations of it), 100000 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 90 | 35 | 28 | 5785.17 | 78 | 4.505 | 0.58 |
+| on | 90 | 35 | 27 | 6532.55 | 78 | 6.610 | 1.56 |
+
+Instances whose matched or proved seed count moved between the legs: `gt2` matched 3->2, proved 3->2; `opt1217` matched 1->2, proved 0->0.
+
+On the node-limited set the time columns charge every unproved run the runner's nominal 100000 s limit and say nothing; the proved and matched counts, which a loaded machine cannot move, are the reading.
+
+
 #### A/B: Devex for the node LPs on the seed harness (#792)
 
 Source CSVs: `bench/results/nodepricing-ab-miplib-seeds3-inherit-fef0192.csv` and `bench/results/nodepricing-ab-miplib-seeds3-devex-fef0192.csv`, `mip_node_pricing` off and on, 3 seeds each (the published file and row and column permutations of it), 60 s per run, one thread.

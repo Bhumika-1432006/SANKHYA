@@ -2845,6 +2845,15 @@ def main() -> int:
                 newest_option_run("miplib-501-cache8-*.csv", "mip_node_factor_cache=8"))
     fj_ab = (newest_option_run("miplib-506-fj-off-seeds*-*.csv", "mip_heur_fj=off"),
              newest_option_run("miplib-506-fj-on-seeds*-*.csv", "mip_heur_fj=on"))
+    # #841: three heuristics, each alone against the defaults, on three sets (miplib_ab_doc).
+    # The node-limited set carries node_limit=2000 in solver_options, which latest() skips by
+    # design, so its base leg is read by that option like the heuristic legs are by theirs.
+    heuristics_841 = {
+        s: {"base": (newest_option_run(f"miplib-841-{s}-base-*.csv", "node_limit=2000")
+                     if s == "tier1-n2000" else newest(f"miplib-841-{s}-base-*.csv")),
+            **{leg: newest_option_run(f"miplib-841-{s}-{leg}-*.csv", f"{option}=on")
+               for leg, option in miplib_ab_doc.HEURISTICS_841}}
+        for s in ("six-60s", "proof-300s", "tier1-n2000")}
     nodepricing_ab = (newest_option_run("nodepricing-ab-miplib-seeds*-inherit-*.csv",
                                         "mip_node_pricing=inherit"),
                       newest_option_run("nodepricing-ab-miplib-seeds*-devex-*.csv",
@@ -3250,6 +3259,14 @@ is a harder library: MIPLIB instances are chosen to be difficult for mature solv
 #### A/B: Feasibility Jump on the seed harness (#506)
 
 {miplib_ab_doc.seeds_ab(*fj_ab, "mip_heur_fj") or "Not yet run on an idle machine."}
+
+#### A/B: the #841 heuristics, each alone
+
+Issue #841: enlight8 and enlight_hard reach no feasible point at 60 s, markshare1 never the
+optimum, and opt1217, rlp1 and noswot hold the published optimum without a proof. Three
+heuristics, each off by default and read here against the same binary's defaults.
+
+{miplib_ab_doc.heuristics_841_section(heuristics_841)}
 
 #### A/B: Devex for the node LPs on the seed harness (#792)
 
