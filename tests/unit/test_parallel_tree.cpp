@@ -594,13 +594,15 @@ class MemoryPressure {
   std::vector<std::thread> threads_;
 };
 
-/// tests/data/miplib/gen-ip016.mps, fetched from MIPLIB 2017 for this reproducer: the actual
-/// instance #733 was seen failing on, not the market_split stand-in the earlier two stress
-/// tests above use (PR #736, PR #947). Those PRs could not reach miplib.zib.de from their
+/// tests/data/miplib/gen-ip016.mps, MIPLIB 2017's gen-ip016.mps.gz (the gz sha256 is in
+/// data/miplib/reference.json) decompressed byte for byte: the actual instance #733 was seen
+/// failing on, not the market_split stand-in the earlier two stress tests above use (PR #736,
+/// PR #947). Those PRs could not reach miplib.zib.de from their
 /// sandboxes (a 403 from the outbound proxy) and said so; this run could reach it, so this
 /// test closes that specific gap in the prior investigation rather than repeating it.
 std::string fixture(const std::string& name) {
-  return (std::filesystem::path(__FILE__).parent_path().parent_path() / "data" / "miplib" / name)
+  return (std::filesystem::path(__FILE__).parent_path().parent_path() / "data" / "miplib" /
+          name)
       .string();
 }
 
