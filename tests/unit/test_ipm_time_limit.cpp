@@ -228,7 +228,7 @@ class CountingDevice : public gpu::LinearSolverDevice {
 
 TEST(InteriorPointTimeLimit, AnExplicitCudssDoesNotStartTheDeviceWithNoBudgetToRecoverFromIt) {
   constexpr double kLimit = 1.0;  // under kIpmDeviceStartSeconds (2.0s), over what a tiny
-                                   // model like this one needs to solve on the CPU alone.
+                                  // model like this one needs to solve on the CPU alone.
   int initialize_calls = 0;
   ipm::testing::fake_device_factory = [&] {
     return std::unique_ptr<gpu::LinearSolverDevice>(new CountingDevice(&initialize_calls));
