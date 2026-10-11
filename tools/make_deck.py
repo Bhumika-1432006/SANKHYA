@@ -131,10 +131,11 @@ class Deck:
     def save(self, target: Path) -> None:
         raw = io.BytesIO()
         self.prs.save(raw)
-        with zipfile.ZipFile(raw) as src, zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as dst:
+        # Stored, not deflated: the bytes then depend only on the XML, not on the zlib the
+        # interpreter links, so Windows and the CI runner write the same file.
+        with zipfile.ZipFile(raw) as src, zipfile.ZipFile(target, "w", zipfile.ZIP_STORED) as dst:
             for info in src.infolist():
                 stamped = zipfile.ZipInfo(info.filename, date_time=(1980, 1, 1, 0, 0, 0))
-                stamped.compress_type = zipfile.ZIP_DEFLATED
                 dst.writestr(stamped, src.read(info.filename))
 
 

@@ -1206,6 +1206,8 @@ jobs:
       - name: docs/REPORT.pdf and docs/SANKHYA-deck.pptx are what tools/make_report.py renders
         run: python3 tools/make_report.py --check
       - uses: actions/upload-artifact@v4
+        # Also on a failed check: build/ then holds the runner's own render to diff against.
+        if: always()
         with:
           name: sankhya-jury-docs
           path: |
@@ -1213,3 +1215,5 @@ jobs:
             docs/REPORT.pdf
             docs/SANKHYA-deck.pptx
             docs/VIDEO.md
+            build/REPORT.pdf
+            build/SANKHYA-deck.pptx
