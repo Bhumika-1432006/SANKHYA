@@ -156,8 +156,13 @@ TEST(InteriorPointTimeLimit, TheDeviceDeadlineStopsAfterOneLateCallNotNineteen) 
   // dimension, which segfaulted (stl_vector.h, out of bounds) rather than returning a status
   // at all. The fix is that once a factorization proves unusable every later solve of it
   // says so too (ipm.cpp, normal_factor_unusable_) instead of calling solve() blind.
-  constexpr double kLimit = 0.03;
-  constexpr double kPerCallDelay = 0.06;
+  //
+  // The limit sits above tol::kIpmDeviceStartSeconds (2.0s) on purpose: under it an explicit
+  // cudss never starts the device at all (#907, choose_linear_solver()), the CPU factor solves
+  // this model in well under the limit, and the test would be asserting on a device that was
+  // never used. One call of kPerCallDelay still runs straight past the deadline.
+  constexpr double kLimit = 2.5;
+  constexpr double kPerCallDelay = 3.0;
   constexpr double kMargin = 2.0;  // generous: this asserts "not 19 iterations", not a bound
   int factorize_calls = 0;
   int solve_calls = 0;
@@ -184,6 +189,7 @@ TEST(InteriorPointTimeLimit, TheDeviceDeadlineStopsAfterOneLateCallNotNineteen) 
   EXPECT_NE(solved.status, SolveStatus::kOptimal) << solved.message;
   // A handful of calls - the one that started late, plus whatever the predictor and corrector
   // of the single iteration before it needed - never nineteen iterations' worth.
+  EXPECT_GE(factorize_calls, 1) << "the device was never started: " << solved.message;
   EXPECT_LE(factorize_calls, 3) << solved.message;
   EXPECT_LE(wall, kLimit + kMargin) << solved.message;
 }
