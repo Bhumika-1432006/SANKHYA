@@ -136,6 +136,7 @@ class Deck:
         with zipfile.ZipFile(raw) as src, zipfile.ZipFile(target, "w", zipfile.ZIP_STORED) as dst:
             for info in src.infolist():
                 stamped = zipfile.ZipInfo(info.filename, date_time=(1980, 1, 1, 0, 0, 0))
+                stamped.create_system = 3  # zipfile stamps the host OS here; fixed to Unix
                 dst.writestr(stamped, src.read(info.filename))
 
 
