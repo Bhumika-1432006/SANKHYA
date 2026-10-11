@@ -3561,7 +3561,66 @@ shifted geometric mean. Produced by `python bench/runners/compare.py --suite ref
 | 10 | crude procurement lot-sizing MILP | Wagner and Whitin, Management Science 5 (1958); Pochet and Wolsey (2006) ch. 7 | medium | 360 | 540 | 180 | 0 | `e01938dc0254` | 85810.3 | exact, Wagner-Whitin recursion |
 | 10 | crude procurement lot-sizing MILP | Wagner and Whitin, Management Science 5 (1958); Pochet and Wolsey (2006) ch. 7 | large | 1800 | 2700 | 900 | 0 | `266a6ee08f73` | 434744 | exact, Wagner-Whitin recursion |
 
-No `head-to-head-refinery-*.csv` in `bench/results/`, so **no numbers are stated for this suite**. Run `python bench/runners/compare.py --suite refinery`.
+Source CSV: `bench/results/head-to-head-refinery-8d4b07b3.csv`  
+Commit `8d4b07b3` · machine `shared laptop (other applications open; timings indicative only); Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; 8 cores; unknown RAM; Windows-AMD64`  
+30 instances · time limit 600 s · 1 thread per solver · every solver a separate process · **a shared laptop, so the times are indicative; the counts are the result**
+
+| solver | version | runs | solved | matched | verified | checked on | SGM time, shift 10 s |
+|---|---|---:|---:|---:|---:|---|---:|
+| SANKHYA | 8d4b07b3 | 30 | 26 | 26 | 26 | primal+dual | 9.525 s |
+| HiGHS | 1.15.1 | 30 | 30 | 30 | 30 | primal+dual, primal-only | 1.925 s |
+| SCIP | 10.0.2 | 30 | 30 | 30 | 30 | primal-only | 4.024 s |
+
+**Instance by instance, SANKHYA against each rival:**
+
+| against | instances compared | SANKHYA faster | tie | rival faster | median of SANKHYA's time over the rival's, floored | the same, clocks as recorded |
+|---|---:|---:|---:|---:|---:|---:|
+| HiGHS | 30 | 5 | 17 | 8 | 1.00x | 0.69x |
+| SCIP | 30 | 5 | 18 | 7 | 1.00x | 0.35x |
+
+*A tie is two times within 10% of each other, or both under 0.1 s (the coarsest clock here cannot tell those apart). A run that did not count loses to one that did, and an instance on which neither counted is left out. Both medians are over the instances both solvers counted on, and above 1x SANKHYA is the slower one: the first floors each time at 0.1 s as the profile below does, the second takes each solver's clock as recorded, which on instances of a few milliseconds is a ratio of start-up costs and, for a solver that prints 0.0, is left out.*
+
+![Dolan-More performance profile, refinery suite](img/profile-refinery.svg)
+
+**Every instance, every solver** (status, the objective at the solver's point, its relative gap to the reference, the verifier's verdict, the solver's time):
+
+| instance | kind | reference | SANKHYA | HiGHS | SCIP |
+|---|---|---:|---|---|---|
+| `crude_blend_large` | lp | 146636 | 146636, gap 2.0e-16, verified, 0.27 s | 146636, gap 2.0e-16, verified, 0.88 s | 146636, gap 4.0e-16, verified, 2.00 s |
+| `crude_blend_medium` | lp | -1769.64 | -1769.64, gap 3.9e-16, verified, 0.00 s | -1769.64, gap 1.3e-16, verified, 0.01 s | -1769.64, gap 9.0e-16, verified, 0.00 s |
+| `crude_blend_small` | lp | 12.129 | 12.129, gap 3.1e-15, verified, 0.00 s | 12.129, gap 1.9e-15, verified, 0.00 s | 12.129, gap 1.9e-15, verified, 0.00 s |
+| `distribution_large` | lp | -632238 | -632238, gap 1.8e-16, verified, 0.18 s | -632238, gap 0.0e+00, verified, 0.18 s | -632238, gap 0.0e+00, verified, 1.00 s |
+| `distribution_medium` | lp | -41552 | -41552, gap 0.0e+00, verified, 0.01 s | -41552, gap 0.0e+00, verified, 0.01 s | -41552, gap 0.0e+00, verified, 0.00 s |
+| `distribution_small` | lp | -1943 | -1943, gap 2.3e-16, verified, 0.00 s | -1943, gap 0.0e+00, verified, 0.00 s | -1943, gap 0.0e+00, verified, 0.00 s |
+| `haverly_discrete_large` | mip | -10300 | -10300, gap 1.8e-16, verified, 0.02 s | -10300, gap 0.0e+00, verified, 0.04 s | -10300, gap 5.3e-16, verified, 0.00 s |
+| `haverly_discrete_medium` | mip | -2504.29 | -2504.29, gap 0.0e+00, verified, 0.00 s | -2504.29, gap 0.0e+00, verified, 0.09 s | -2504.29, gap 1.8e-16, verified, 0.00 s |
+| `haverly_discrete_small` | mip | -400 | -400, gap 5.7e-16, verified, 0.00 s | -400, gap 5.7e-16, verified, 0.02 s | -400, gap 2.3e-15, verified, 0.00 s |
+| `haverly_mccormick_large` | lp | -10300 | -10300, gap 1.8e-16, verified, 0.00 s | -10300, gap 0.0e+00, verified, 0.21 s | -10300, gap 0.0e+00, verified, 0.00 s |
+| `haverly_mccormick_medium` | lp | -4221.43 | -4221.43, gap 4.3e-16, verified, 0.00 s | -4221.43, gap 2.2e-16, verified, 0.00 s | -4221.43, gap 0.0e+00, verified, 0.00 s |
+| `haverly_mccormick_small` | lp | -600 | -600, gap 7.6e-16, verified, 0.00 s | -600, gap 0.0e+00, verified, 0.00 s | -600, gap 0.0e+00, verified, 0.00 s |
+| `lot_sizing_large` | mip | 434744 | feasible, 600.02 s | 434744, gap 6.7e-16, verified, 1.95 s | 434744, gap 6.7e-16, verified, 1.00 s |
+| `lot_sizing_medium` | mip | 85810.3 | feasible, 600.37 s | 85810.3, gap 5.1e-16, verified, 0.24 s | 85810.3, gap 5.1e-16, verified, 0.00 s |
+| `lot_sizing_small` | mip | 18739.9 | 18739.9, gap 1.9e-16, verified, 0.05 s | 18739.9, gap 3.9e-16, verified, 0.04 s | 18739.9, gap 3.9e-16, verified, 0.00 s |
+| `multi_period_large` | lp | -487485 | -487485, gap 1.2e-16, verified, 0.57 s | -487485, gap 2.4e-16, verified, 0.44 s | -487485, gap 3.6e-16, verified, 1.00 s |
+| `multi_period_medium` | lp | -70480.5 | -70480.5, gap 4.1e-16, verified, 0.02 s | -70480.5, gap 4.1e-16, verified, 0.02 s | -70480.5, gap 6.2e-16, verified, 0.00 s |
+| `multi_period_small` | lp | -27270.1 | -27270.1, gap 0.0e+00, verified, 0.00 s | -27270.1, gap 0.0e+00, verified, 0.01 s | -27270.1, gap 1.3e-16, verified, 0.00 s |
+| `product_blend_large` | lp | -1.48322e+07 | -1.48322e+07, gap 8.8e-16, verified, 2.77 s | -1.48322e+07, gap 1.3e-16, verified, 3.35 s | -1.48322e+07, gap 1.1e-15, verified, 8.00 s |
+| `product_blend_medium` | lp | -734959 | -734959, gap 1.6e-16, verified, 0.02 s | -734959, gap 3.2e-16, verified, 0.03 s | -734959, gap 1.6e-16, verified, 0.00 s |
+| `product_blend_small` | lp | -18714 | -18714, gap 1.9e-16, verified, 0.00 s | -18714, gap 1.9e-16, verified, 0.00 s | -18714, gap 0.0e+00, verified, 0.00 s |
+| `two_stage_large` | lp | -79599.2 | -79599.2, gap 7.3e-16, verified, 1.70 s | -79599.2, gap 1.6e-15, verified, 0.89 s | -79599.2, gap 2.0e-15, verified, 1.00 s |
+| `two_stage_medium` | lp | -14140.5 | -14140.5, gap 3.9e-16, verified, 0.03 s | -14140.5, gap 7.7e-16, verified, 0.02 s | -14140.5, gap 9.0e-16, verified, 0.00 s |
+| `two_stage_small` | lp | -138.525 | -138.525, gap 2.1e-16, verified, 0.00 s | -138.525, gap 2.1e-16, verified, 0.00 s | -138.525, gap 2.1e-16, verified, 0.00 s |
+| `unit_modes_large` | mip | -489245 | feasible, 600.01 s | -489245, gap 5.9e-16, verified, 62.41 s | -489245, gap 2.4e-16, verified, 550.00 s |
+| `unit_modes_medium` | mip | -212991 | -212991, gap 1.2e-14, verified, 3.70 s | -212991, gap 1.2e-14, verified, 7.15 s | -212991, gap 1.2e-14, verified, 138.00 s |
+| `unit_modes_small` | mip | -37204.6 | -37204.6, gap 2.0e-16, verified, 0.02 s | -37204.6, gap 2.0e-16, verified, 0.16 s | -37204.6, gap 2.0e-16, verified, 0.00 s |
+| `unloading_large` | mip | 3126.6 | feasible, 600.00 s | 3126.6, gap 2.9e-16, verified, 24.14 s | 3126.6, gap 2.9e-16, verified, 26.00 s |
+| `unloading_medium` | mip | 1250.6 | 1250.6, gap 1.8e-16, verified, 150.49 s | 1250.6, gap 1.8e-16, verified, 11.03 s | 1250.6, gap 3.6e-16, verified, 17.00 s |
+| `unloading_small` | mip | 1142.4 | 1142.4, gap 2.0e-16, verified, 0.21 s | 1142.4, gap 2.0e-16, verified, 0.03 s | 1142.4, gap 0.0e+00, verified, 0.00 s |
+
+Every run that did not count, by solver:
+
+- **SANKHYA**, 4: `lot_sizing_large` (feasible), `lot_sizing_medium` (feasible), `unit_modes_large` (feasible), `unloading_large` (feasible)
+
 ---
 
 ## 4b. Agreement against size-limited commercial editions (#533)
