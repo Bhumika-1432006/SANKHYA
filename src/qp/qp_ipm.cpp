@@ -99,6 +99,7 @@ using ipm_detail::hessian_times;
 using ipm_detail::inf_norm;
 using ipm_detail::KktMatrix;
 using ipm_detail::largest_complementarity_product;
+using ipm_detail::refine_unregularized;
 using ipm_detail::solve_refined;
 using ipm_detail::Standard;
 
@@ -422,7 +423,10 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
   };
 
   // The step for a given complementarity target: rcl and rcu hold sigma mu - s z (- the
-  // Mehrotra cross term), and the result lands in dv, dy, dzl, dzu.
+  // Mehrotra cross term), and the result lands in dv, dy, dzl, dzu. Solved with the factors
+  // of the regularized k, then refined against the unregularized k0 (Altman & Gondzio 1999,
+  // refine_unregularized), so the proximal terms steady the factorization and not the step.
+  SparseMatrix k0;
   const auto newton = [&](const SparseMatrix& k) {
     for (std::size_t j = 0; j < nc; ++j) {
       double r = rd[j];
@@ -432,6 +436,7 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
     }
     for (std::size_t i = 0; i < nr; ++i) rhs[nc + i] = rp[i];
     solve_refined(ldl, k, rhs, &step);
+    refine_unregularized(ldl, k0, rhs, &step);
     for (std::size_t j = 0; j < nc; ++j) {
       dv[j] = step[j];
       dzl[j] = has_lower[j] ? (rcl[j] - zl[j] * dv[j]) / (v[j] - s.lower[j]) : 0.0;
@@ -510,13 +515,13 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
         shift.moved_inside, shift.recentred, shift.mu, rho);
   } else {
     std::fill(theta_inverse.begin(), theta_inverse.end(), 1.0);
-    const SparseMatrix k0 = kkt.build(theta_inverse, rho, delta);
-    if (ldl.factorize_quasidefinite(k0, signs, tol::kQpIpmPivotShare * std::min(rho, delta),
-                                    should_stop) &&
+    const SparseMatrix k_start = kkt.build(theta_inverse, rho, delta);
+    if (ldl.factorize_quasidefinite(
+            k_start, signs, tol::kQpIpmPivotShare * std::min(rho, delta), should_stop) &&
         ldl.regularized_pivots() == 0) {
       for (std::size_t j = 0; j < nc; ++j) rhs[j] = s.g[j];
       for (std::size_t i = 0; i < nr; ++i) rhs[nc + i] = s.b[i];
-      solve_refined(ldl, k0, rhs, &step);
+      solve_refined(ldl, k_start, rhs, &step);
       if (std::all_of(step.begin(), step.end(), [](double x) { return std::isfinite(x); })) {
         std::copy(step.begin(), step.begin() + static_cast<std::ptrdiff_t>(nc), v.begin());
         std::copy(step.begin() + static_cast<std::ptrdiff_t>(nc), step.end(), y.begin());
@@ -742,6 +747,7 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
       }
       if (ldl.regularized_pivots() == 0) {
         factored = true;
+        k0 = kkt.build(theta_inverse, 0.0, 0.0);
       } else {
         rho *= tol::kQpIpmRegularizationRaise;
         delta *= tol::kQpIpmRegularizationRaise;

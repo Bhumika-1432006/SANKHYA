@@ -417,6 +417,33 @@ TEST(SparseLdlQuasidefinite, APivotOfTheWrongSignIsCountedNotUsed) {
   EXPECT_GE(ldl.regularized_pivots(), 1);
 }
 
+/// K_0 = [-2 1; 1 0] is the unregularized KKT matrix of one column (H + Theta^{-1} = 2) and
+/// one row (M = 1): K_0 x = (0, 7) has x = (7, 14). The regularized K = [-2.01 1; 1 0.01] is
+/// what gets factored; its own solution is off by about 1e-2, and the refinement against K_0
+/// with K's factors must take that back out.
+TEST(QpIpmRefinement, CorrectionsAgainstTheUnregularizedMatrixRemoveTheProximalPerturbation) {
+  SparseMatrix k, k0;
+  k.reset(2, 2);
+  k.add_entry(0, 0, -2.01);
+  k.add_entry(1, 0, 1.0);
+  k.add_entry(1, 1, 0.01);
+  k.finalize();
+  k0.reset(2, 2);
+  k0.add_entry(0, 0, -2.0);
+  k0.add_entry(1, 0, 1.0);
+  k0.finalize();
+  SparseLdl ldl;
+  ASSERT_TRUE(ldl.analyze(k));
+  ASSERT_TRUE(ldl.factorize_quasidefinite(k, {-1, 1}, 1e-12));
+  const std::vector<double> rhs = {0.0, 7.0};
+  std::vector<double> x;
+  qp::ipm_detail::solve_refined(ldl, k, rhs, &x);
+  EXPECT_GT(std::fabs(x[1] - 14.0), 1e-3);  // the regularized system's own answer
+  qp::ipm_detail::refine_unregularized(ldl, k0, rhs, &x);
+  EXPECT_NEAR(x[0], 7.0, 1e-10);
+  EXPECT_NEAR(x[1], 14.0, 1e-10);
+}
+
 TEST(SparseLdlQuasidefinite, TheWrongNumberOfSignsIsRefused) {
   const SparseMatrix k = small_quasidefinite();
   SparseLdl ldl;

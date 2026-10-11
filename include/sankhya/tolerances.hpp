@@ -551,6 +551,15 @@ inline constexpr double kQpIpmPivotShare = 0.1;
 inline constexpr double kQpIpmRegularizationRaise = 100.0;
 inline constexpr int kQpIpmRegularizationAttempts = 8;
 
+/// Iterative refinement of each Newton step against the UNREGULARIZED KKT matrix (rho =
+/// delta = 0), the regularized factors as the preconditioner (Altman & Gondzio 1999, see
+/// src/qp/qp_ipm_system.cpp): at most this many corrections per solve, each kept only when it
+/// lowers the unregularized residual, and the refinement stops after one that gains less than
+/// 10% (it has stalled at what the factors allow). The LP path's kIpmProximalRefinementSteps
+/// and kIpmProximalRefinementProgress, tuned apart.
+inline constexpr int kQpIpmRefinementSteps = 5;
+inline constexpr double kQpIpmRefinementProgress = 0.9;
+
 /// The active-set finish after the QP interior point (#980, qp_ipm_finish, off by default):
 /// a bound counts as active when the point is within this distance of it, scaled by
 /// max(1, |bound|). Loose on purpose - pinning a bound that should have stayed inactive only
