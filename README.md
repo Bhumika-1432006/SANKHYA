@@ -128,6 +128,21 @@ on 72 (within 10%, or both under 0.1 s) and HiGHS faster on 17; on the 16 Kennin
 on 11. The per-instance split is stated the way rivals state theirs, and the SGM is the number
 to read: most Netlib pairs are ties because most instances finish in milliseconds.
 
+**The refinery suite (#1004, `docs/BENCHMARKS.md` section 4c).** Ten models of known structure
+from published formulations - crude and product blending, Haverly's pooling problem as its
+McCormick relaxation and as a discrete-set-point MILP, the Lee, Pinto, Grossmann and Park (1996)
+crude unloading schedule, unit modes with semi-continuous throughputs, a 30-day plan, a
+price-scenario plan, product distribution and cargo lot sizing - at three sizes each, generated
+by `bench/refinery/generate.py`, every one of the 30 with a reference optimum (24 exact by
+construction, rational simplex, enumeration or the Wagner-Whitin recursion; 6 by a HiGHS = SCIP
+cross-check at a zero gap). Against HiGHS and SCIP at `8d4b07b3`
+(`bench/results/head-to-head-refinery-8d4b07b3.csv`; 600 s, one thread, a shared laptop, so the
+times are indicative): SANKHYA returns `optimal` on **26 of 30**, every one at the reference and
+independently verified, and no wrong answer; HiGHS and SCIP solve all 30. The four misses are
+time limits: `unloading_large` (the optimum found, not proved), `unit_modes_large` (0.16% above),
+`lot_sizing_medium` and `lot_sizing_large` (5.5% and 12.5% above: the big-M lot-sizing relaxation
+is where the branch and cut is weakest, and the cuts that close it are not in yet).
+
 The second is the number Phase 6's ">= 95% of Netlib" criterion is measured against, and it
 grades us against Netlib's own readme table. The third says how often the solver finishes
 with an answer that checks out. The gap between them is ten instances: the eight where the
