@@ -209,6 +209,55 @@ python bench/runners/scale.py --engines dual-simplex --solver-option pricing=dev
 python bench/runners/scale.py --engines dual-simplex --solver-option pricing=dual-steepest-edge --out bench/results/scale-<sha>-dse.csv
 ```
 
+#### 1b.2 The engine race against the rule table (#476)
+
+`algorithm=auto` picks one LP engine by a rule on the model's size. With `engine_race=true`
+it runs the dual simplex, the interior point with crossover and PDHG at once, one thread
+each, and takes the first answer that passes the in-process KKT check against the original
+model; a rejected answer neither wins nor stops the others. Three threads for three engines
+is a fair default on any modern CPU; whether it pays here is this A/B, both arms on one
+binary, interleaved instance by instance.
+
+At commit `8d4b07b3` on `Windows-AMD64`, from `bench/results/ab-netlib-medium-race-8d4b07b3-summary.csv`.
+
+**Netlib medium tier**, 51 instances, 3 repeats, interleaved; base `threads=1`, race `threads=1 engine_race=true`; 120 s per solve. The machine was not idle (a shared laptop), which the interleaving spreads over both arms rather than removes.
+
+| arm | counted (exact optimum, verified) | shifted geomean seconds (10 s) | total median seconds |
+|---|---:|---:|---:|
+| rule table (default) | 51 of 51 | 0.0316 | 1.615 |
+| engine race | 51 of 51 | 0.0502 | 2.564 |
+
+Shifted geomean ratio race / rule table: **1.5897** (the rule table is faster).
+
+Verification: counted under the rule table and not under the race: none; the reverse: none.
+
+By instance, over the 51 counted under both: the race is faster by more than 5% on **3**, slower on **46**, within 5% on 2.
+
+| instance | rule table s | race s | ratio | rule table engine | race winner |
+|---|---:|---:|---:|---|---|
+| `grow22` | 0.279 | 0.098 | 0.353 | simplex-dual+primal | ipm+crossover |
+| `grow15` | 0.114 | 0.083 | 0.731 | simplex-dual+primal | ipm+crossover |
+| `forplan` | 0.022 | 0.019 | 0.865 | simplex-dual+primal | simplex-dual+primal |
+| `afiro` | 0.002 | 0.014 | 8.318 | simplex-dual | simplex-dual |
+| `recipe` | 0.003 | 0.028 | 8.304 | simplex-dual | simplex-dual |
+| `blend` | 0.006 | 0.050 | 8.185 | simplex-dual | simplex-dual |
+| `sc50b` | 0.004 | 0.025 | 7.002 | simplex-dual | ipm+crossover |
+| `scsd1` | 0.006 | 0.029 | 4.986 | simplex-dual+primal | simplex-dual+primal |
+| `sc105` | 0.007 | 0.031 | 4.723 | simplex-dual+primal | simplex-dual+primal |
+| `scagr7` | 0.005 | 0.022 | 4.317 | simplex-dual | simplex-dual |
+| `sc205` | 0.008 | 0.035 | 4.229 | simplex-dual+primal | simplex-dual+primal |
+
+Race winners by engine: simplex-dual+primal 34, simplex-dual 12, ipm+crossover 5.
+
+To reproduce:
+
+```
+python bench/runners/fetch_data.py --set medium --offline-fallback
+python bench/runners/netlib_ab.py --base build/sankhya --new build/sankhya \
+    --new-option engine_race=true --threads 1 --repeats 3 --time-limit 120 \
+    --out-prefix bench/results/ab-netlib-medium-race-<sha>
+```
+
 ### 1c. The full set — the honest headline
 
 Every instance in Netlib's summary table. Both tiers above are defined by a row cap, which

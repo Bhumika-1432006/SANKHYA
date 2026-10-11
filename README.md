@@ -319,7 +319,14 @@ adding Halpern restarts passes 16, and both legs lose `hs76`, which the plain en
 same engine with its operator on the device, one A100 (`qp_gpu=true`, #830, `maros-meszaros-493-gpu-{host,device}-3f70a78.csv`) passes 18 of 138 against the host's 19: on these small QPs launches and synchronisation cost more than the arithmetic, so it stays off. The PID weight is on by default since the PID A/B, with its gains left at their untuned defaults
 (kp 0.5, ki = kd = 0, PDLP's smoothed update); Halpern restarts stay off. The engine race (#476) on the same binary:
 3 of 8 Mittelmann against `auto`'s 2, the same 89 of 89 on Netlib as the plain run but 182.9 s of
-solver time against 108.0 s, which is why it stays off by default.
+solver time against 108.0 s, which is why it stays off by default. Re-measured interleaved against
+the rule table on the Netlib medium tier at `8d4b07b3`, one thread per engine, three repeats
+(`bench/results/ab-netlib-medium-race-8d4b07b3-summary.csv`, `docs/BENCHMARKS.md` section 1b.2): 51 of 51
+verified under both arms, the race faster on 3 instances (`grow22`, `grow15`, `forplan`) and slower on
+46, shifted geomean 1.59x the rule table's - on models this size the dual simplex alone finishes before
+the other two engines have set up, so the default stays off; three threads for three engines is a fair
+default on any modern CPU, and the option is for the Mittelmann-sized models where the right engine is
+not known in advance.
 
 **Four more sets and three checks, run on `main` between 30 September and 4 October.**
 MIPLIB 3, the classic 1998 set, kept beside MIPLIB 2017 and never merged into its tables

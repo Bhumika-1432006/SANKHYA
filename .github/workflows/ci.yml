@@ -436,6 +436,12 @@ jobs:
         if: matrix.name == 'Release'
         run: python3 bench/runners/test_miplib_ab_doc.py
 
+      - name: The engine race A/B doc section (#476)
+        # Pure Python, no solve: wins, losses, ties and a verification loss come out of a
+        # synthetic summary and runs pair.
+        if: matrix.name == 'Release'
+        run: python3 bench/runners/test_race_ab_doc.py
+
       - name: The MIPLIB 3 catalogue, its match tolerance, CSV names and doc section (#761)
         # Pure Python, no solve, no download: the catalogue parse on an excerpt with its
         # "(not opt)" rows, one unit in the last printed decimal as the tolerance (rgn), no

@@ -8,6 +8,7 @@
 // itself, the fixed order of deterministic mode, the fallback when nothing passes, an engine
 // that runs out of memory, and the option being off by default.
 
+#include <algorithm>
 #include <chrono>
 #include <cmath>
 #include <filesystem>
@@ -185,6 +186,32 @@ TEST(EngineRace, ACorrectAnswerWinsAndEveryEnginesOutcomeIsLogged) {
   }
   EXPECT_NE(s.message.find("the winner"), std::string::npos) << s.message;
   EXPECT_TRUE(check_lp_optimality(model, s).passed);
+}
+
+TEST(EngineRace, MatchesTheRuleTablesAnswerOnTheNetlibSmallSet) {
+  // The race may not report a worse answer than the single engine the rule table would have
+  // run: on every instance of the committed small set both reach optimal, agree on the
+  // objective to the pass tolerance of bench/runners/netlib.py, and the race's answer passes
+  // the check afresh here. Whichever engine won carries its own name; a basis comes only from
+  // the dual simplex or from crossover, so a PDHG win carries none.
+  for (const char* name : {"afiro", "sc50a", "sc50b", "sc105", "adlittle", "share2b", "blend",
+                           "stocfor1", "israel"}) {
+    const Model model = netlib(name);
+    const Solution rule = solve(model, quiet("auto"));
+    const Solution race = solve(model, racing());
+    ASSERT_EQ(rule.status, SolveStatus::kOptimal) << name << ": " << rule.message;
+    ASSERT_EQ(race.status, SolveStatus::kOptimal) << name << ": " << race.message;
+    EXPECT_NEAR(race.objective, rule.objective, 1e-6 * std::max(1.0, std::fabs(rule.objective)))
+        << name;
+    EXPECT_EQ(race.engine_rule, "race") << name;
+    EXPECT_FALSE(race.algorithm.empty()) << name;
+    EXPECT_TRUE(check_lp_optimality(model, race).passed) << name << ": " << race.message;
+    if (!race.col_status.empty()) {
+      EXPECT_TRUE(race.algorithm.find("simplex") != std::string::npos ||
+                  race.algorithm.find("crossover") != std::string::npos)
+          << name << ": a basis from " << race.algorithm;
+    }
+  }
 }
 
 TEST(EngineRace, DeterministicModeRunsAFixedOrderAndReproduces) {
