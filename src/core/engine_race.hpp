@@ -8,7 +8,15 @@
 // the commercial LP codes document for exactly this reason (IBM ILOG CPLEX User's Manual,
 // "Concurrent optimizer"; Gurobi Reference Manual, parameter Method = 3 "concurrent" and
 // Method = 4 "deterministic concurrent"). Only the user-facing behaviour is taken from the
-// manuals; nothing here is derived from either product.
+// manuals; nothing here is derived from either product. The practice is older than the
+// option names: Bixby, "Solving real-world linear programs: a decade and more of progress",
+// Operations Research 50(1), 2002, reports that no one of primal simplex, dual simplex and
+// barrier dominates across the test set, and that on a multiprocessor the three are run at
+// once and the first to finish taken; Mittelmann's LP benchmarks (plato.asu.edu/bench.html)
+// time each code under its own defaults, which for the commercial codes is that concurrent
+// mode, so the per-instance split between engines quoted above is the same one those tables
+// show. Three threads for three engines is a fair default on any modern CPU; whether it pays
+// on this solver is the A/B in docs/BENCHMARKS.md, not an assumption.
 //
 // OUR ADDITION IS THE GATE. The first engine to FINISH is not the first engine to be RIGHT:
 // an engine that stops early on a wrong answer would otherwise stop the engines that were
