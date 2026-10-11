@@ -196,6 +196,13 @@ class SparseLu {
   /// than merely inefficient. Either way the caller must refactorize from scratch; the
   /// factorization itself is left untouched and usable.
   [[nodiscard]] bool update(Index leaving_position, const double* alpha);
+  /// The same update when the caller already knows alpha's nonzero positions (`support`,
+  /// every position where alpha is nonzero; positions outside it must hold exact zeros).
+  /// The two passes over alpha run over the support alone and the eta file comes out
+  /// identical, so the pivots do not move; only the two O(m) scans an iteration paid for a
+  /// hyper-sparse alpha go (Hall and McKinnon 2005; issue #1006, finding 4).
+  [[nodiscard]] bool update(Index leaving_position, const double* alpha,
+                            const std::vector<Index>& support);
 
   // -------------------------------------------------------------------------------------
   // Basis update (Forrest-Tomlin)
@@ -258,6 +265,10 @@ class SparseLu {
   /// update()'s caller does. Every caller today refactorizes anyway once either update
   /// returns false, but this instance itself is not the reason to.
   [[nodiscard]] bool update_forrest_tomlin(Index leaving_position, const double* alpha);
+
+  /// Both update() forms: `support` is alpha's nonzero positions, or nullptr for all m.
+  [[nodiscard]] bool update_over(Index leaving_position, const double* alpha,
+                                 const std::vector<Index>* support);
 
   /// True once update_forrest_tomlin() has been used at least once since factorize().
   [[nodiscard]] bool using_forrest_tomlin() const noexcept { return ft_active_; }

@@ -263,6 +263,16 @@ void SparseLu::build_column_u() {
 // =========================================================================================
 
 bool SparseLu::update(Index leaving_position, const double* alpha) {
+  return update_over(leaving_position, alpha, nullptr);
+}
+
+bool SparseLu::update(Index leaving_position, const double* alpha,
+                      const std::vector<Index>& support) {
+  return update_over(leaving_position, alpha, &support);
+}
+
+bool SparseLu::update_over(Index leaving_position, const double* alpha,
+                           const std::vector<Index>* support) {
   if (m_ == 0) return false;
   if (leaving_position < 0 || leaving_position >= m_) return false;
   // The scheme the caller chose (use_forrest_tomlin) is honoured here, so the simplex has
@@ -276,21 +286,43 @@ bool SparseLu::update(Index leaving_position, const double* alpha) {
   const auto pivot_index = static_cast<std::size_t>(leaving_position);
   const double pivot = alpha[pivot_index];
 
+  // Over the support when the caller gave one, else over every position. A position
+  // outside the support holds an exact zero, which neither sets `largest` nor enters the
+  // eta file, so both forms produce the same eta from the same alpha.
+  const auto for_each_position = [&](auto&& visit) {
+    if (support == nullptr) {
+      for (Index i = 0; i < m_; ++i) visit(i);
+    } else {
+      for (const Index i : *support) visit(i);
+    }
+  };
+
   // Reject rather than divide by something too small. The factorization is left untouched,
   // so the caller can refactorize and retry the same pivot on fresh factors.
   double largest = 0.0;
-  for (Index i = 0; i < m_; ++i) {
+  for_each_position([&](Index i) {
     largest = std::max(largest, std::fabs(alpha[static_cast<std::size_t>(i)]));
-  }
+  });
   if (!std::isfinite(pivot)) return false;
   if (std::fabs(pivot) < kUpdatePivotThreshold * std::max(1.0, largest)) return false;
 
-  for (Index i = 0; i < m_; ++i) {
+  bool finite = true;
+  for_each_position([&](Index i) {
     const double value = alpha[static_cast<std::size_t>(i)];
-    if (i == leaving_position || std::fabs(value) < kDropTolerance) continue;
-    if (!std::isfinite(value)) return false;
+    if (i == leaving_position || std::fabs(value) < kDropTolerance) return;
+    if (!std::isfinite(value)) {
+      finite = false;
+      return;
+    }
     eta_rows_.push_back(i);
     eta_values_.push_back(value);
+  });
+  if (!finite) {
+    // Nothing of this eta is kept: the file ends where the previous one did, as the early
+    // return above left it before (the caller refactorizes either way).
+    eta_rows_.resize(static_cast<std::size_t>(eta_start_.back()));
+    eta_values_.resize(static_cast<std::size_t>(eta_start_.back()));
+    return false;
   }
   eta_start_.push_back(static_cast<Index>(eta_rows_.size()));
   eta_pivot_position_.push_back(leaving_position);
