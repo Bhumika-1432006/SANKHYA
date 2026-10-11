@@ -415,6 +415,8 @@ jobs:
           # The fresh-machine timings this run measured, appended to the written notes.
           { cat "$notes"; echo; echo "## Measured by this release's CI run"; echo
             for t in dist/timing-*.txt; do echo "- $(cat "$t")"; done; } > notes.md
+          # The jury report and deck are the committed, CI-checked renders (ci.yml jury-docs).
           gh release create "$GITHUB_REF_NAME" --draft --prerelease \
             --title "SANKHYA $GITHUB_REF_NAME" --notes-file notes.md \
-            dist/*.tar.gz dist/*.zip dist/*.whl dist/SHA256SUMS
+            dist/*.tar.gz dist/*.zip dist/*.whl dist/SHA256SUMS \
+            docs/REPORT.pdf docs/SANKHYA-deck.pptx
