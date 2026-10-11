@@ -1,0 +1,10809 @@
+NAME          LOT_SIZING_LARGE_S1
+* model 10: crude procurement lot-sizing MILP
+* source: Wagner and Whitin, Management Science 5 (1958); Pochet and Wolsey (2006) ch. 7
+* 10 crudes, 90 periods
+* exact optimum: 434744.4 (wagner-whitin)
+* suite: bench/refinery/generate.py, seed 1
+* rows 1800  columns 2700  nonzeros 4490  integer 900  semi-continuous 0
+ROWS
+ N  COST
+ E  BAL_0_0
+ L  LINK_0_0
+ E  BAL_0_1
+ L  LINK_0_1
+ E  BAL_0_2
+ L  LINK_0_2
+ E  BAL_0_3
+ L  LINK_0_3
+ E  BAL_0_4
+ L  LINK_0_4
+ E  BAL_0_5
+ L  LINK_0_5
+ E  BAL_0_6
+ L  LINK_0_6
+ E  BAL_0_7
+ L  LINK_0_7
+ E  BAL_0_8
+ L  LINK_0_8
+ E  BAL_0_9
+ L  LINK_0_9
+ E  BAL_0_10
+ L  LINK_0_10
+ E  BAL_0_11
+ L  LINK_0_11
+ E  BAL_0_12
+ L  LINK_0_12
+ E  BAL_0_13
+ L  LINK_0_13
+ E  BAL_0_14
+ L  LINK_0_14
+ E  BAL_0_15
+ L  LINK_0_15
+ E  BAL_0_16
+ L  LINK_0_16
+ E  BAL_0_17
+ L  LINK_0_17
+ E  BAL_0_18
+ L  LINK_0_18
+ E  BAL_0_19
+ L  LINK_0_19
+ E  BAL_0_20
+ L  LINK_0_20
+ E  BAL_0_21
+ L  LINK_0_21
+ E  BAL_0_22
+ L  LINK_0_22
+ E  BAL_0_23
+ L  LINK_0_23
+ E  BAL_0_24
+ L  LINK_0_24
+ E  BAL_0_25
+ L  LINK_0_25
+ E  BAL_0_26
+ L  LINK_0_26
+ E  BAL_0_27
+ L  LINK_0_27
+ E  BAL_0_28
+ L  LINK_0_28
+ E  BAL_0_29
+ L  LINK_0_29
+ E  BAL_0_30
+ L  LINK_0_30
+ E  BAL_0_31
+ L  LINK_0_31
+ E  BAL_0_32
+ L  LINK_0_32
+ E  BAL_0_33
+ L  LINK_0_33
+ E  BAL_0_34
+ L  LINK_0_34
+ E  BAL_0_35
+ L  LINK_0_35
+ E  BAL_0_36
+ L  LINK_0_36
+ E  BAL_0_37
+ L  LINK_0_37
+ E  BAL_0_38
+ L  LINK_0_38
+ E  BAL_0_39
+ L  LINK_0_39
+ E  BAL_0_40
+ L  LINK_0_40
+ E  BAL_0_41
+ L  LINK_0_41
+ E  BAL_0_42
+ L  LINK_0_42
+ E  BAL_0_43
+ L  LINK_0_43
+ E  BAL_0_44
+ L  LINK_0_44
+ E  BAL_0_45
+ L  LINK_0_45
+ E  BAL_0_46
+ L  LINK_0_46
+ E  BAL_0_47
+ L  LINK_0_47
+ E  BAL_0_48
+ L  LINK_0_48
+ E  BAL_0_49
+ L  LINK_0_49
+ E  BAL_0_50
+ L  LINK_0_50
+ E  BAL_0_51
+ L  LINK_0_51
+ E  BAL_0_52
+ L  LINK_0_52
+ E  BAL_0_53
+ L  LINK_0_53
+ E  BAL_0_54
+ L  LINK_0_54
+ E  BAL_0_55
+ L  LINK_0_55
+ E  BAL_0_56
+ L  LINK_0_56
+ E  BAL_0_57
+ L  LINK_0_57
+ E  BAL_0_58
+ L  LINK_0_58
+ E  BAL_0_59
+ L  LINK_0_59
+ E  BAL_0_60
+ L  LINK_0_60
+ E  BAL_0_61
+ L  LINK_0_61
+ E  BAL_0_62
+ L  LINK_0_62
+ E  BAL_0_63
+ L  LINK_0_63
+ E  BAL_0_64
+ L  LINK_0_64
+ E  BAL_0_65
+ L  LINK_0_65
+ E  BAL_0_66
+ L  LINK_0_66
+ E  BAL_0_67
+ L  LINK_0_67
+ E  BAL_0_68
+ L  LINK_0_68
+ E  BAL_0_69
+ L  LINK_0_69
+ E  BAL_0_70
+ L  LINK_0_70
+ E  BAL_0_71
+ L  LINK_0_71
+ E  BAL_0_72
+ L  LINK_0_72
+ E  BAL_0_73
+ L  LINK_0_73
+ E  BAL_0_74
+ L  LINK_0_74
+ E  BAL_0_75
+ L  LINK_0_75
+ E  BAL_0_76
+ L  LINK_0_76
+ E  BAL_0_77
+ L  LINK_0_77
+ E  BAL_0_78
+ L  LINK_0_78
+ E  BAL_0_79
+ L  LINK_0_79
+ E  BAL_0_80
+ L  LINK_0_80
+ E  BAL_0_81
+ L  LINK_0_81
+ E  BAL_0_82
+ L  LINK_0_82
+ E  BAL_0_83
+ L  LINK_0_83
+ E  BAL_0_84
+ L  LINK_0_84
+ E  BAL_0_85
+ L  LINK_0_85
+ E  BAL_0_86
+ L  LINK_0_86
+ E  BAL_0_87
+ L  LINK_0_87
+ E  BAL_0_88
+ L  LINK_0_88
+ E  BAL_0_89
+ L  LINK_0_89
+ E  BAL_1_0
+ L  LINK_1_0
+ E  BAL_1_1
+ L  LINK_1_1
+ E  BAL_1_2
+ L  LINK_1_2
+ E  BAL_1_3
+ L  LINK_1_3
+ E  BAL_1_4
+ L  LINK_1_4
+ E  BAL_1_5
+ L  LINK_1_5
+ E  BAL_1_6
+ L  LINK_1_6
+ E  BAL_1_7
+ L  LINK_1_7
+ E  BAL_1_8
+ L  LINK_1_8
+ E  BAL_1_9
+ L  LINK_1_9
+ E  BAL_1_10
+ L  LINK_1_10
+ E  BAL_1_11
+ L  LINK_1_11
+ E  BAL_1_12
+ L  LINK_1_12
+ E  BAL_1_13
+ L  LINK_1_13
+ E  BAL_1_14
+ L  LINK_1_14
+ E  BAL_1_15
+ L  LINK_1_15
+ E  BAL_1_16
+ L  LINK_1_16
+ E  BAL_1_17
+ L  LINK_1_17
+ E  BAL_1_18
+ L  LINK_1_18
+ E  BAL_1_19
+ L  LINK_1_19
+ E  BAL_1_20
+ L  LINK_1_20
+ E  BAL_1_21
+ L  LINK_1_21
+ E  BAL_1_22
+ L  LINK_1_22
+ E  BAL_1_23
+ L  LINK_1_23
+ E  BAL_1_24
+ L  LINK_1_24
+ E  BAL_1_25
+ L  LINK_1_25
+ E  BAL_1_26
+ L  LINK_1_26
+ E  BAL_1_27
+ L  LINK_1_27
+ E  BAL_1_28
+ L  LINK_1_28
+ E  BAL_1_29
+ L  LINK_1_29
+ E  BAL_1_30
+ L  LINK_1_30
+ E  BAL_1_31
+ L  LINK_1_31
+ E  BAL_1_32
+ L  LINK_1_32
+ E  BAL_1_33
+ L  LINK_1_33
+ E  BAL_1_34
+ L  LINK_1_34
+ E  BAL_1_35
+ L  LINK_1_35
+ E  BAL_1_36
+ L  LINK_1_36
+ E  BAL_1_37
+ L  LINK_1_37
+ E  BAL_1_38
+ L  LINK_1_38
+ E  BAL_1_39
+ L  LINK_1_39
+ E  BAL_1_40
+ L  LINK_1_40
+ E  BAL_1_41
+ L  LINK_1_41
+ E  BAL_1_42
+ L  LINK_1_42
+ E  BAL_1_43
+ L  LINK_1_43
+ E  BAL_1_44
+ L  LINK_1_44
+ E  BAL_1_45
+ L  LINK_1_45
+ E  BAL_1_46
+ L  LINK_1_46
+ E  BAL_1_47
+ L  LINK_1_47
+ E  BAL_1_48
+ L  LINK_1_48
+ E  BAL_1_49
+ L  LINK_1_49
+ E  BAL_1_50
+ L  LINK_1_50
+ E  BAL_1_51
+ L  LINK_1_51
+ E  BAL_1_52
+ L  LINK_1_52
+ E  BAL_1_53
+ L  LINK_1_53
+ E  BAL_1_54
+ L  LINK_1_54
+ E  BAL_1_55
+ L  LINK_1_55
+ E  BAL_1_56
+ L  LINK_1_56
+ E  BAL_1_57
+ L  LINK_1_57
+ E  BAL_1_58
+ L  LINK_1_58
+ E  BAL_1_59
+ L  LINK_1_59
+ E  BAL_1_60
+ L  LINK_1_60
+ E  BAL_1_61
+ L  LINK_1_61
+ E  BAL_1_62
+ L  LINK_1_62
+ E  BAL_1_63
+ L  LINK_1_63
+ E  BAL_1_64
+ L  LINK_1_64
+ E  BAL_1_65
+ L  LINK_1_65
+ E  BAL_1_66
+ L  LINK_1_66
+ E  BAL_1_67
+ L  LINK_1_67
+ E  BAL_1_68
+ L  LINK_1_68
+ E  BAL_1_69
+ L  LINK_1_69
+ E  BAL_1_70
+ L  LINK_1_70
+ E  BAL_1_71
+ L  LINK_1_71
+ E  BAL_1_72
+ L  LINK_1_72
+ E  BAL_1_73
+ L  LINK_1_73
+ E  BAL_1_74
+ L  LINK_1_74
+ E  BAL_1_75
+ L  LINK_1_75
+ E  BAL_1_76
+ L  LINK_1_76
+ E  BAL_1_77
+ L  LINK_1_77
+ E  BAL_1_78
+ L  LINK_1_78
+ E  BAL_1_79
+ L  LINK_1_79
+ E  BAL_1_80
+ L  LINK_1_80
+ E  BAL_1_81
+ L  LINK_1_81
+ E  BAL_1_82
+ L  LINK_1_82
+ E  BAL_1_83
+ L  LINK_1_83
+ E  BAL_1_84
+ L  LINK_1_84
+ E  BAL_1_85
+ L  LINK_1_85
+ E  BAL_1_86
+ L  LINK_1_86
+ E  BAL_1_87
+ L  LINK_1_87
+ E  BAL_1_88
+ L  LINK_1_88
+ E  BAL_1_89
+ L  LINK_1_89
+ E  BAL_2_0
+ L  LINK_2_0
+ E  BAL_2_1
+ L  LINK_2_1
+ E  BAL_2_2
+ L  LINK_2_2
+ E  BAL_2_3
+ L  LINK_2_3
+ E  BAL_2_4
+ L  LINK_2_4
+ E  BAL_2_5
+ L  LINK_2_5
+ E  BAL_2_6
+ L  LINK_2_6
+ E  BAL_2_7
+ L  LINK_2_7
+ E  BAL_2_8
+ L  LINK_2_8
+ E  BAL_2_9
+ L  LINK_2_9
+ E  BAL_2_10
+ L  LINK_2_10
+ E  BAL_2_11
+ L  LINK_2_11
+ E  BAL_2_12
+ L  LINK_2_12
+ E  BAL_2_13
+ L  LINK_2_13
+ E  BAL_2_14
+ L  LINK_2_14
+ E  BAL_2_15
+ L  LINK_2_15
+ E  BAL_2_16
+ L  LINK_2_16
+ E  BAL_2_17
+ L  LINK_2_17
+ E  BAL_2_18
+ L  LINK_2_18
+ E  BAL_2_19
+ L  LINK_2_19
+ E  BAL_2_20
+ L  LINK_2_20
+ E  BAL_2_21
+ L  LINK_2_21
+ E  BAL_2_22
+ L  LINK_2_22
+ E  BAL_2_23
+ L  LINK_2_23
+ E  BAL_2_24
+ L  LINK_2_24
+ E  BAL_2_25
+ L  LINK_2_25
+ E  BAL_2_26
+ L  LINK_2_26
+ E  BAL_2_27
+ L  LINK_2_27
+ E  BAL_2_28
+ L  LINK_2_28
+ E  BAL_2_29
+ L  LINK_2_29
+ E  BAL_2_30
+ L  LINK_2_30
+ E  BAL_2_31
+ L  LINK_2_31
+ E  BAL_2_32
+ L  LINK_2_32
+ E  BAL_2_33
+ L  LINK_2_33
+ E  BAL_2_34
+ L  LINK_2_34
+ E  BAL_2_35
+ L  LINK_2_35
+ E  BAL_2_36
+ L  LINK_2_36
+ E  BAL_2_37
+ L  LINK_2_37
+ E  BAL_2_38
+ L  LINK_2_38
+ E  BAL_2_39
+ L  LINK_2_39
+ E  BAL_2_40
+ L  LINK_2_40
+ E  BAL_2_41
+ L  LINK_2_41
+ E  BAL_2_42
+ L  LINK_2_42
+ E  BAL_2_43
+ L  LINK_2_43
+ E  BAL_2_44
+ L  LINK_2_44
+ E  BAL_2_45
+ L  LINK_2_45
+ E  BAL_2_46
+ L  LINK_2_46
+ E  BAL_2_47
+ L  LINK_2_47
+ E  BAL_2_48
+ L  LINK_2_48
+ E  BAL_2_49
+ L  LINK_2_49
+ E  BAL_2_50
+ L  LINK_2_50
+ E  BAL_2_51
+ L  LINK_2_51
+ E  BAL_2_52
+ L  LINK_2_52
+ E  BAL_2_53
+ L  LINK_2_53
+ E  BAL_2_54
+ L  LINK_2_54
+ E  BAL_2_55
+ L  LINK_2_55
+ E  BAL_2_56
+ L  LINK_2_56
+ E  BAL_2_57
+ L  LINK_2_57
+ E  BAL_2_58
+ L  LINK_2_58
+ E  BAL_2_59
+ L  LINK_2_59
+ E  BAL_2_60
+ L  LINK_2_60
+ E  BAL_2_61
+ L  LINK_2_61
+ E  BAL_2_62
+ L  LINK_2_62
+ E  BAL_2_63
+ L  LINK_2_63
+ E  BAL_2_64
+ L  LINK_2_64
+ E  BAL_2_65
+ L  LINK_2_65
+ E  BAL_2_66
+ L  LINK_2_66
+ E  BAL_2_67
+ L  LINK_2_67
+ E  BAL_2_68
+ L  LINK_2_68
+ E  BAL_2_69
+ L  LINK_2_69
+ E  BAL_2_70
+ L  LINK_2_70
+ E  BAL_2_71
+ L  LINK_2_71
+ E  BAL_2_72
+ L  LINK_2_72
+ E  BAL_2_73
+ L  LINK_2_73
+ E  BAL_2_74
+ L  LINK_2_74
+ E  BAL_2_75
+ L  LINK_2_75
+ E  BAL_2_76
+ L  LINK_2_76
+ E  BAL_2_77
+ L  LINK_2_77
+ E  BAL_2_78
+ L  LINK_2_78
+ E  BAL_2_79
+ L  LINK_2_79
+ E  BAL_2_80
+ L  LINK_2_80
+ E  BAL_2_81
+ L  LINK_2_81
+ E  BAL_2_82
+ L  LINK_2_82
+ E  BAL_2_83
+ L  LINK_2_83
+ E  BAL_2_84
+ L  LINK_2_84
+ E  BAL_2_85
+ L  LINK_2_85
+ E  BAL_2_86
+ L  LINK_2_86
+ E  BAL_2_87
+ L  LINK_2_87
+ E  BAL_2_88
+ L  LINK_2_88
+ E  BAL_2_89
+ L  LINK_2_89
+ E  BAL_3_0
+ L  LINK_3_0
+ E  BAL_3_1
+ L  LINK_3_1
+ E  BAL_3_2
+ L  LINK_3_2
+ E  BAL_3_3
+ L  LINK_3_3
+ E  BAL_3_4
+ L  LINK_3_4
+ E  BAL_3_5
+ L  LINK_3_5
+ E  BAL_3_6
+ L  LINK_3_6
+ E  BAL_3_7
+ L  LINK_3_7
+ E  BAL_3_8
+ L  LINK_3_8
+ E  BAL_3_9
+ L  LINK_3_9
+ E  BAL_3_10
+ L  LINK_3_10
+ E  BAL_3_11
+ L  LINK_3_11
+ E  BAL_3_12
+ L  LINK_3_12
+ E  BAL_3_13
+ L  LINK_3_13
+ E  BAL_3_14
+ L  LINK_3_14
+ E  BAL_3_15
+ L  LINK_3_15
+ E  BAL_3_16
+ L  LINK_3_16
+ E  BAL_3_17
+ L  LINK_3_17
+ E  BAL_3_18
+ L  LINK_3_18
+ E  BAL_3_19
+ L  LINK_3_19
+ E  BAL_3_20
+ L  LINK_3_20
+ E  BAL_3_21
+ L  LINK_3_21
+ E  BAL_3_22
+ L  LINK_3_22
+ E  BAL_3_23
+ L  LINK_3_23
+ E  BAL_3_24
+ L  LINK_3_24
+ E  BAL_3_25
+ L  LINK_3_25
+ E  BAL_3_26
+ L  LINK_3_26
+ E  BAL_3_27
+ L  LINK_3_27
+ E  BAL_3_28
+ L  LINK_3_28
+ E  BAL_3_29
+ L  LINK_3_29
+ E  BAL_3_30
+ L  LINK_3_30
+ E  BAL_3_31
+ L  LINK_3_31
+ E  BAL_3_32
+ L  LINK_3_32
+ E  BAL_3_33
+ L  LINK_3_33
+ E  BAL_3_34
+ L  LINK_3_34
+ E  BAL_3_35
+ L  LINK_3_35
+ E  BAL_3_36
+ L  LINK_3_36
+ E  BAL_3_37
+ L  LINK_3_37
+ E  BAL_3_38
+ L  LINK_3_38
+ E  BAL_3_39
+ L  LINK_3_39
+ E  BAL_3_40
+ L  LINK_3_40
+ E  BAL_3_41
+ L  LINK_3_41
+ E  BAL_3_42
+ L  LINK_3_42
+ E  BAL_3_43
+ L  LINK_3_43
+ E  BAL_3_44
+ L  LINK_3_44
+ E  BAL_3_45
+ L  LINK_3_45
+ E  BAL_3_46
+ L  LINK_3_46
+ E  BAL_3_47
+ L  LINK_3_47
+ E  BAL_3_48
+ L  LINK_3_48
+ E  BAL_3_49
+ L  LINK_3_49
+ E  BAL_3_50
+ L  LINK_3_50
+ E  BAL_3_51
+ L  LINK_3_51
+ E  BAL_3_52
+ L  LINK_3_52
+ E  BAL_3_53
+ L  LINK_3_53
+ E  BAL_3_54
+ L  LINK_3_54
+ E  BAL_3_55
+ L  LINK_3_55
+ E  BAL_3_56
+ L  LINK_3_56
+ E  BAL_3_57
+ L  LINK_3_57
+ E  BAL_3_58
+ L  LINK_3_58
+ E  BAL_3_59
+ L  LINK_3_59
+ E  BAL_3_60
+ L  LINK_3_60
+ E  BAL_3_61
+ L  LINK_3_61
+ E  BAL_3_62
+ L  LINK_3_62
+ E  BAL_3_63
+ L  LINK_3_63
+ E  BAL_3_64
+ L  LINK_3_64
+ E  BAL_3_65
+ L  LINK_3_65
+ E  BAL_3_66
+ L  LINK_3_66
+ E  BAL_3_67
+ L  LINK_3_67
+ E  BAL_3_68
+ L  LINK_3_68
+ E  BAL_3_69
+ L  LINK_3_69
+ E  BAL_3_70
+ L  LINK_3_70
+ E  BAL_3_71
+ L  LINK_3_71
+ E  BAL_3_72
+ L  LINK_3_72
+ E  BAL_3_73
+ L  LINK_3_73
+ E  BAL_3_74
+ L  LINK_3_74
+ E  BAL_3_75
+ L  LINK_3_75
+ E  BAL_3_76
+ L  LINK_3_76
+ E  BAL_3_77
+ L  LINK_3_77
+ E  BAL_3_78
+ L  LINK_3_78
+ E  BAL_3_79
+ L  LINK_3_79
+ E  BAL_3_80
+ L  LINK_3_80
+ E  BAL_3_81
+ L  LINK_3_81
+ E  BAL_3_82
+ L  LINK_3_82
+ E  BAL_3_83
+ L  LINK_3_83
+ E  BAL_3_84
+ L  LINK_3_84
+ E  BAL_3_85
+ L  LINK_3_85
+ E  BAL_3_86
+ L  LINK_3_86
+ E  BAL_3_87
+ L  LINK_3_87
+ E  BAL_3_88
+ L  LINK_3_88
+ E  BAL_3_89
+ L  LINK_3_89
+ E  BAL_4_0
+ L  LINK_4_0
+ E  BAL_4_1
+ L  LINK_4_1
+ E  BAL_4_2
+ L  LINK_4_2
+ E  BAL_4_3
+ L  LINK_4_3
+ E  BAL_4_4
+ L  LINK_4_4
+ E  BAL_4_5
+ L  LINK_4_5
+ E  BAL_4_6
+ L  LINK_4_6
+ E  BAL_4_7
+ L  LINK_4_7
+ E  BAL_4_8
+ L  LINK_4_8
+ E  BAL_4_9
+ L  LINK_4_9
+ E  BAL_4_10
+ L  LINK_4_10
+ E  BAL_4_11
+ L  LINK_4_11
+ E  BAL_4_12
+ L  LINK_4_12
+ E  BAL_4_13
+ L  LINK_4_13
+ E  BAL_4_14
+ L  LINK_4_14
+ E  BAL_4_15
+ L  LINK_4_15
+ E  BAL_4_16
+ L  LINK_4_16
+ E  BAL_4_17
+ L  LINK_4_17
+ E  BAL_4_18
+ L  LINK_4_18
+ E  BAL_4_19
+ L  LINK_4_19
+ E  BAL_4_20
+ L  LINK_4_20
+ E  BAL_4_21
+ L  LINK_4_21
+ E  BAL_4_22
+ L  LINK_4_22
+ E  BAL_4_23
+ L  LINK_4_23
+ E  BAL_4_24
+ L  LINK_4_24
+ E  BAL_4_25
+ L  LINK_4_25
+ E  BAL_4_26
+ L  LINK_4_26
+ E  BAL_4_27
+ L  LINK_4_27
+ E  BAL_4_28
+ L  LINK_4_28
+ E  BAL_4_29
+ L  LINK_4_29
+ E  BAL_4_30
+ L  LINK_4_30
+ E  BAL_4_31
+ L  LINK_4_31
+ E  BAL_4_32
+ L  LINK_4_32
+ E  BAL_4_33
+ L  LINK_4_33
+ E  BAL_4_34
+ L  LINK_4_34
+ E  BAL_4_35
+ L  LINK_4_35
+ E  BAL_4_36
+ L  LINK_4_36
+ E  BAL_4_37
+ L  LINK_4_37
+ E  BAL_4_38
+ L  LINK_4_38
+ E  BAL_4_39
+ L  LINK_4_39
+ E  BAL_4_40
+ L  LINK_4_40
+ E  BAL_4_41
+ L  LINK_4_41
+ E  BAL_4_42
+ L  LINK_4_42
+ E  BAL_4_43
+ L  LINK_4_43
+ E  BAL_4_44
+ L  LINK_4_44
+ E  BAL_4_45
+ L  LINK_4_45
+ E  BAL_4_46
+ L  LINK_4_46
+ E  BAL_4_47
+ L  LINK_4_47
+ E  BAL_4_48
+ L  LINK_4_48
+ E  BAL_4_49
+ L  LINK_4_49
+ E  BAL_4_50
+ L  LINK_4_50
+ E  BAL_4_51
+ L  LINK_4_51
+ E  BAL_4_52
+ L  LINK_4_52
+ E  BAL_4_53
+ L  LINK_4_53
+ E  BAL_4_54
+ L  LINK_4_54
+ E  BAL_4_55
+ L  LINK_4_55
+ E  BAL_4_56
+ L  LINK_4_56
+ E  BAL_4_57
+ L  LINK_4_57
+ E  BAL_4_58
+ L  LINK_4_58
+ E  BAL_4_59
+ L  LINK_4_59
+ E  BAL_4_60
+ L  LINK_4_60
+ E  BAL_4_61
+ L  LINK_4_61
+ E  BAL_4_62
+ L  LINK_4_62
+ E  BAL_4_63
+ L  LINK_4_63
+ E  BAL_4_64
+ L  LINK_4_64
+ E  BAL_4_65
+ L  LINK_4_65
+ E  BAL_4_66
+ L  LINK_4_66
+ E  BAL_4_67
+ L  LINK_4_67
+ E  BAL_4_68
+ L  LINK_4_68
+ E  BAL_4_69
+ L  LINK_4_69
+ E  BAL_4_70
+ L  LINK_4_70
+ E  BAL_4_71
+ L  LINK_4_71
+ E  BAL_4_72
+ L  LINK_4_72
+ E  BAL_4_73
+ L  LINK_4_73
+ E  BAL_4_74
+ L  LINK_4_74
+ E  BAL_4_75
+ L  LINK_4_75
+ E  BAL_4_76
+ L  LINK_4_76
+ E  BAL_4_77
+ L  LINK_4_77
+ E  BAL_4_78
+ L  LINK_4_78
+ E  BAL_4_79
+ L  LINK_4_79
+ E  BAL_4_80
+ L  LINK_4_80
+ E  BAL_4_81
+ L  LINK_4_81
+ E  BAL_4_82
+ L  LINK_4_82
+ E  BAL_4_83
+ L  LINK_4_83
+ E  BAL_4_84
+ L  LINK_4_84
+ E  BAL_4_85
+ L  LINK_4_85
+ E  BAL_4_86
+ L  LINK_4_86
+ E  BAL_4_87
+ L  LINK_4_87
+ E  BAL_4_88
+ L  LINK_4_88
+ E  BAL_4_89
+ L  LINK_4_89
+ E  BAL_5_0
+ L  LINK_5_0
+ E  BAL_5_1
+ L  LINK_5_1
+ E  BAL_5_2
+ L  LINK_5_2
+ E  BAL_5_3
+ L  LINK_5_3
+ E  BAL_5_4
+ L  LINK_5_4
+ E  BAL_5_5
+ L  LINK_5_5
+ E  BAL_5_6
+ L  LINK_5_6
+ E  BAL_5_7
+ L  LINK_5_7
+ E  BAL_5_8
+ L  LINK_5_8
+ E  BAL_5_9
+ L  LINK_5_9
+ E  BAL_5_10
+ L  LINK_5_10
+ E  BAL_5_11
+ L  LINK_5_11
+ E  BAL_5_12
+ L  LINK_5_12
+ E  BAL_5_13
+ L  LINK_5_13
+ E  BAL_5_14
+ L  LINK_5_14
+ E  BAL_5_15
+ L  LINK_5_15
+ E  BAL_5_16
+ L  LINK_5_16
+ E  BAL_5_17
+ L  LINK_5_17
+ E  BAL_5_18
+ L  LINK_5_18
+ E  BAL_5_19
+ L  LINK_5_19
+ E  BAL_5_20
+ L  LINK_5_20
+ E  BAL_5_21
+ L  LINK_5_21
+ E  BAL_5_22
+ L  LINK_5_22
+ E  BAL_5_23
+ L  LINK_5_23
+ E  BAL_5_24
+ L  LINK_5_24
+ E  BAL_5_25
+ L  LINK_5_25
+ E  BAL_5_26
+ L  LINK_5_26
+ E  BAL_5_27
+ L  LINK_5_27
+ E  BAL_5_28
+ L  LINK_5_28
+ E  BAL_5_29
+ L  LINK_5_29
+ E  BAL_5_30
+ L  LINK_5_30
+ E  BAL_5_31
+ L  LINK_5_31
+ E  BAL_5_32
+ L  LINK_5_32
+ E  BAL_5_33
+ L  LINK_5_33
+ E  BAL_5_34
+ L  LINK_5_34
+ E  BAL_5_35
+ L  LINK_5_35
+ E  BAL_5_36
+ L  LINK_5_36
+ E  BAL_5_37
+ L  LINK_5_37
+ E  BAL_5_38
+ L  LINK_5_38
+ E  BAL_5_39
+ L  LINK_5_39
+ E  BAL_5_40
+ L  LINK_5_40
+ E  BAL_5_41
+ L  LINK_5_41
+ E  BAL_5_42
+ L  LINK_5_42
+ E  BAL_5_43
+ L  LINK_5_43
+ E  BAL_5_44
+ L  LINK_5_44
+ E  BAL_5_45
+ L  LINK_5_45
+ E  BAL_5_46
+ L  LINK_5_46
+ E  BAL_5_47
+ L  LINK_5_47
+ E  BAL_5_48
+ L  LINK_5_48
+ E  BAL_5_49
+ L  LINK_5_49
+ E  BAL_5_50
+ L  LINK_5_50
+ E  BAL_5_51
+ L  LINK_5_51
+ E  BAL_5_52
+ L  LINK_5_52
+ E  BAL_5_53
+ L  LINK_5_53
+ E  BAL_5_54
+ L  LINK_5_54
+ E  BAL_5_55
+ L  LINK_5_55
+ E  BAL_5_56
+ L  LINK_5_56
+ E  BAL_5_57
+ L  LINK_5_57
+ E  BAL_5_58
+ L  LINK_5_58
+ E  BAL_5_59
+ L  LINK_5_59
+ E  BAL_5_60
+ L  LINK_5_60
+ E  BAL_5_61
+ L  LINK_5_61
+ E  BAL_5_62
+ L  LINK_5_62
+ E  BAL_5_63
+ L  LINK_5_63
+ E  BAL_5_64
+ L  LINK_5_64
+ E  BAL_5_65
+ L  LINK_5_65
+ E  BAL_5_66
+ L  LINK_5_66
+ E  BAL_5_67
+ L  LINK_5_67
+ E  BAL_5_68
+ L  LINK_5_68
+ E  BAL_5_69
+ L  LINK_5_69
+ E  BAL_5_70
+ L  LINK_5_70
+ E  BAL_5_71
+ L  LINK_5_71
+ E  BAL_5_72
+ L  LINK_5_72
+ E  BAL_5_73
+ L  LINK_5_73
+ E  BAL_5_74
+ L  LINK_5_74
+ E  BAL_5_75
+ L  LINK_5_75
+ E  BAL_5_76
+ L  LINK_5_76
+ E  BAL_5_77
+ L  LINK_5_77
+ E  BAL_5_78
+ L  LINK_5_78
+ E  BAL_5_79
+ L  LINK_5_79
+ E  BAL_5_80
+ L  LINK_5_80
+ E  BAL_5_81
+ L  LINK_5_81
+ E  BAL_5_82
+ L  LINK_5_82
+ E  BAL_5_83
+ L  LINK_5_83
+ E  BAL_5_84
+ L  LINK_5_84
+ E  BAL_5_85
+ L  LINK_5_85
+ E  BAL_5_86
+ L  LINK_5_86
+ E  BAL_5_87
+ L  LINK_5_87
+ E  BAL_5_88
+ L  LINK_5_88
+ E  BAL_5_89
+ L  LINK_5_89
+ E  BAL_6_0
+ L  LINK_6_0
+ E  BAL_6_1
+ L  LINK_6_1
+ E  BAL_6_2
+ L  LINK_6_2
+ E  BAL_6_3
+ L  LINK_6_3
+ E  BAL_6_4
+ L  LINK_6_4
+ E  BAL_6_5
+ L  LINK_6_5
+ E  BAL_6_6
+ L  LINK_6_6
+ E  BAL_6_7
+ L  LINK_6_7
+ E  BAL_6_8
+ L  LINK_6_8
+ E  BAL_6_9
+ L  LINK_6_9
+ E  BAL_6_10
+ L  LINK_6_10
+ E  BAL_6_11
+ L  LINK_6_11
+ E  BAL_6_12
+ L  LINK_6_12
+ E  BAL_6_13
+ L  LINK_6_13
+ E  BAL_6_14
+ L  LINK_6_14
+ E  BAL_6_15
+ L  LINK_6_15
+ E  BAL_6_16
+ L  LINK_6_16
+ E  BAL_6_17
+ L  LINK_6_17
+ E  BAL_6_18
+ L  LINK_6_18
+ E  BAL_6_19
+ L  LINK_6_19
+ E  BAL_6_20
+ L  LINK_6_20
+ E  BAL_6_21
+ L  LINK_6_21
+ E  BAL_6_22
+ L  LINK_6_22
+ E  BAL_6_23
+ L  LINK_6_23
+ E  BAL_6_24
+ L  LINK_6_24
+ E  BAL_6_25
+ L  LINK_6_25
+ E  BAL_6_26
+ L  LINK_6_26
+ E  BAL_6_27
+ L  LINK_6_27
+ E  BAL_6_28
+ L  LINK_6_28
+ E  BAL_6_29
+ L  LINK_6_29
+ E  BAL_6_30
+ L  LINK_6_30
+ E  BAL_6_31
+ L  LINK_6_31
+ E  BAL_6_32
+ L  LINK_6_32
+ E  BAL_6_33
+ L  LINK_6_33
+ E  BAL_6_34
+ L  LINK_6_34
+ E  BAL_6_35
+ L  LINK_6_35
+ E  BAL_6_36
+ L  LINK_6_36
+ E  BAL_6_37
+ L  LINK_6_37
+ E  BAL_6_38
+ L  LINK_6_38
+ E  BAL_6_39
+ L  LINK_6_39
+ E  BAL_6_40
+ L  LINK_6_40
+ E  BAL_6_41
+ L  LINK_6_41
+ E  BAL_6_42
+ L  LINK_6_42
+ E  BAL_6_43
+ L  LINK_6_43
+ E  BAL_6_44
+ L  LINK_6_44
+ E  BAL_6_45
+ L  LINK_6_45
+ E  BAL_6_46
+ L  LINK_6_46
+ E  BAL_6_47
+ L  LINK_6_47
+ E  BAL_6_48
+ L  LINK_6_48
+ E  BAL_6_49
+ L  LINK_6_49
+ E  BAL_6_50
+ L  LINK_6_50
+ E  BAL_6_51
+ L  LINK_6_51
+ E  BAL_6_52
+ L  LINK_6_52
+ E  BAL_6_53
+ L  LINK_6_53
+ E  BAL_6_54
+ L  LINK_6_54
+ E  BAL_6_55
+ L  LINK_6_55
+ E  BAL_6_56
+ L  LINK_6_56
+ E  BAL_6_57
+ L  LINK_6_57
+ E  BAL_6_58
+ L  LINK_6_58
+ E  BAL_6_59
+ L  LINK_6_59
+ E  BAL_6_60
+ L  LINK_6_60
+ E  BAL_6_61
+ L  LINK_6_61
+ E  BAL_6_62
+ L  LINK_6_62
+ E  BAL_6_63
+ L  LINK_6_63
+ E  BAL_6_64
+ L  LINK_6_64
+ E  BAL_6_65
+ L  LINK_6_65
+ E  BAL_6_66
+ L  LINK_6_66
+ E  BAL_6_67
+ L  LINK_6_67
+ E  BAL_6_68
+ L  LINK_6_68
+ E  BAL_6_69
+ L  LINK_6_69
+ E  BAL_6_70
+ L  LINK_6_70
+ E  BAL_6_71
+ L  LINK_6_71
+ E  BAL_6_72
+ L  LINK_6_72
+ E  BAL_6_73
+ L  LINK_6_73
+ E  BAL_6_74
+ L  LINK_6_74
+ E  BAL_6_75
+ L  LINK_6_75
+ E  BAL_6_76
+ L  LINK_6_76
+ E  BAL_6_77
+ L  LINK_6_77
+ E  BAL_6_78
+ L  LINK_6_78
+ E  BAL_6_79
+ L  LINK_6_79
+ E  BAL_6_80
+ L  LINK_6_80
+ E  BAL_6_81
+ L  LINK_6_81
+ E  BAL_6_82
+ L  LINK_6_82
+ E  BAL_6_83
+ L  LINK_6_83
+ E  BAL_6_84
+ L  LINK_6_84
+ E  BAL_6_85
+ L  LINK_6_85
+ E  BAL_6_86
+ L  LINK_6_86
+ E  BAL_6_87
+ L  LINK_6_87
+ E  BAL_6_88
+ L  LINK_6_88
+ E  BAL_6_89
+ L  LINK_6_89
+ E  BAL_7_0
+ L  LINK_7_0
+ E  BAL_7_1
+ L  LINK_7_1
+ E  BAL_7_2
+ L  LINK_7_2
+ E  BAL_7_3
+ L  LINK_7_3
+ E  BAL_7_4
+ L  LINK_7_4
+ E  BAL_7_5
+ L  LINK_7_5
+ E  BAL_7_6
+ L  LINK_7_6
+ E  BAL_7_7
+ L  LINK_7_7
+ E  BAL_7_8
+ L  LINK_7_8
+ E  BAL_7_9
+ L  LINK_7_9
+ E  BAL_7_10
+ L  LINK_7_10
+ E  BAL_7_11
+ L  LINK_7_11
+ E  BAL_7_12
+ L  LINK_7_12
+ E  BAL_7_13
+ L  LINK_7_13
+ E  BAL_7_14
+ L  LINK_7_14
+ E  BAL_7_15
+ L  LINK_7_15
+ E  BAL_7_16
+ L  LINK_7_16
+ E  BAL_7_17
+ L  LINK_7_17
+ E  BAL_7_18
+ L  LINK_7_18
+ E  BAL_7_19
+ L  LINK_7_19
+ E  BAL_7_20
+ L  LINK_7_20
+ E  BAL_7_21
+ L  LINK_7_21
+ E  BAL_7_22
+ L  LINK_7_22
+ E  BAL_7_23
+ L  LINK_7_23
+ E  BAL_7_24
+ L  LINK_7_24
+ E  BAL_7_25
+ L  LINK_7_25
+ E  BAL_7_26
+ L  LINK_7_26
+ E  BAL_7_27
+ L  LINK_7_27
+ E  BAL_7_28
+ L  LINK_7_28
+ E  BAL_7_29
+ L  LINK_7_29
+ E  BAL_7_30
+ L  LINK_7_30
+ E  BAL_7_31
+ L  LINK_7_31
+ E  BAL_7_32
+ L  LINK_7_32
+ E  BAL_7_33
+ L  LINK_7_33
+ E  BAL_7_34
+ L  LINK_7_34
+ E  BAL_7_35
+ L  LINK_7_35
+ E  BAL_7_36
+ L  LINK_7_36
+ E  BAL_7_37
+ L  LINK_7_37
+ E  BAL_7_38
+ L  LINK_7_38
+ E  BAL_7_39
+ L  LINK_7_39
+ E  BAL_7_40
+ L  LINK_7_40
+ E  BAL_7_41
+ L  LINK_7_41
+ E  BAL_7_42
+ L  LINK_7_42
+ E  BAL_7_43
+ L  LINK_7_43
+ E  BAL_7_44
+ L  LINK_7_44
+ E  BAL_7_45
+ L  LINK_7_45
+ E  BAL_7_46
+ L  LINK_7_46
+ E  BAL_7_47
+ L  LINK_7_47
+ E  BAL_7_48
+ L  LINK_7_48
+ E  BAL_7_49
+ L  LINK_7_49
+ E  BAL_7_50
+ L  LINK_7_50
+ E  BAL_7_51
+ L  LINK_7_51
+ E  BAL_7_52
+ L  LINK_7_52
+ E  BAL_7_53
+ L  LINK_7_53
+ E  BAL_7_54
+ L  LINK_7_54
+ E  BAL_7_55
+ L  LINK_7_55
+ E  BAL_7_56
+ L  LINK_7_56
+ E  BAL_7_57
+ L  LINK_7_57
+ E  BAL_7_58
+ L  LINK_7_58
+ E  BAL_7_59
+ L  LINK_7_59
+ E  BAL_7_60
+ L  LINK_7_60
+ E  BAL_7_61
+ L  LINK_7_61
+ E  BAL_7_62
+ L  LINK_7_62
+ E  BAL_7_63
+ L  LINK_7_63
+ E  BAL_7_64
+ L  LINK_7_64
+ E  BAL_7_65
+ L  LINK_7_65
+ E  BAL_7_66
+ L  LINK_7_66
+ E  BAL_7_67
+ L  LINK_7_67
+ E  BAL_7_68
+ L  LINK_7_68
+ E  BAL_7_69
+ L  LINK_7_69
+ E  BAL_7_70
+ L  LINK_7_70
+ E  BAL_7_71
+ L  LINK_7_71
+ E  BAL_7_72
+ L  LINK_7_72
+ E  BAL_7_73
+ L  LINK_7_73
+ E  BAL_7_74
+ L  LINK_7_74
+ E  BAL_7_75
+ L  LINK_7_75
+ E  BAL_7_76
+ L  LINK_7_76
+ E  BAL_7_77
+ L  LINK_7_77
+ E  BAL_7_78
+ L  LINK_7_78
+ E  BAL_7_79
+ L  LINK_7_79
+ E  BAL_7_80
+ L  LINK_7_80
+ E  BAL_7_81
+ L  LINK_7_81
+ E  BAL_7_82
+ L  LINK_7_82
+ E  BAL_7_83
+ L  LINK_7_83
+ E  BAL_7_84
+ L  LINK_7_84
+ E  BAL_7_85
+ L  LINK_7_85
+ E  BAL_7_86
+ L  LINK_7_86
+ E  BAL_7_87
+ L  LINK_7_87
+ E  BAL_7_88
+ L  LINK_7_88
+ E  BAL_7_89
+ L  LINK_7_89
+ E  BAL_8_0
+ L  LINK_8_0
+ E  BAL_8_1
+ L  LINK_8_1
+ E  BAL_8_2
+ L  LINK_8_2
+ E  BAL_8_3
+ L  LINK_8_3
+ E  BAL_8_4
+ L  LINK_8_4
+ E  BAL_8_5
+ L  LINK_8_5
+ E  BAL_8_6
+ L  LINK_8_6
+ E  BAL_8_7
+ L  LINK_8_7
+ E  BAL_8_8
+ L  LINK_8_8
+ E  BAL_8_9
+ L  LINK_8_9
+ E  BAL_8_10
+ L  LINK_8_10
+ E  BAL_8_11
+ L  LINK_8_11
+ E  BAL_8_12
+ L  LINK_8_12
+ E  BAL_8_13
+ L  LINK_8_13
+ E  BAL_8_14
+ L  LINK_8_14
+ E  BAL_8_15
+ L  LINK_8_15
+ E  BAL_8_16
+ L  LINK_8_16
+ E  BAL_8_17
+ L  LINK_8_17
+ E  BAL_8_18
+ L  LINK_8_18
+ E  BAL_8_19
+ L  LINK_8_19
+ E  BAL_8_20
+ L  LINK_8_20
+ E  BAL_8_21
+ L  LINK_8_21
+ E  BAL_8_22
+ L  LINK_8_22
+ E  BAL_8_23
+ L  LINK_8_23
+ E  BAL_8_24
+ L  LINK_8_24
+ E  BAL_8_25
+ L  LINK_8_25
+ E  BAL_8_26
+ L  LINK_8_26
+ E  BAL_8_27
+ L  LINK_8_27
+ E  BAL_8_28
+ L  LINK_8_28
+ E  BAL_8_29
+ L  LINK_8_29
+ E  BAL_8_30
+ L  LINK_8_30
+ E  BAL_8_31
+ L  LINK_8_31
+ E  BAL_8_32
+ L  LINK_8_32
+ E  BAL_8_33
+ L  LINK_8_33
+ E  BAL_8_34
+ L  LINK_8_34
+ E  BAL_8_35
+ L  LINK_8_35
+ E  BAL_8_36
+ L  LINK_8_36
+ E  BAL_8_37
+ L  LINK_8_37
+ E  BAL_8_38
+ L  LINK_8_38
+ E  BAL_8_39
+ L  LINK_8_39
+ E  BAL_8_40
+ L  LINK_8_40
+ E  BAL_8_41
+ L  LINK_8_41
+ E  BAL_8_42
+ L  LINK_8_42
+ E  BAL_8_43
+ L  LINK_8_43
+ E  BAL_8_44
+ L  LINK_8_44
+ E  BAL_8_45
+ L  LINK_8_45
+ E  BAL_8_46
+ L  LINK_8_46
+ E  BAL_8_47
+ L  LINK_8_47
+ E  BAL_8_48
+ L  LINK_8_48
+ E  BAL_8_49
+ L  LINK_8_49
+ E  BAL_8_50
+ L  LINK_8_50
+ E  BAL_8_51
+ L  LINK_8_51
+ E  BAL_8_52
+ L  LINK_8_52
+ E  BAL_8_53
+ L  LINK_8_53
+ E  BAL_8_54
+ L  LINK_8_54
+ E  BAL_8_55
+ L  LINK_8_55
+ E  BAL_8_56
+ L  LINK_8_56
+ E  BAL_8_57
+ L  LINK_8_57
+ E  BAL_8_58
+ L  LINK_8_58
+ E  BAL_8_59
+ L  LINK_8_59
+ E  BAL_8_60
+ L  LINK_8_60
+ E  BAL_8_61
+ L  LINK_8_61
+ E  BAL_8_62
+ L  LINK_8_62
+ E  BAL_8_63
+ L  LINK_8_63
+ E  BAL_8_64
+ L  LINK_8_64
+ E  BAL_8_65
+ L  LINK_8_65
+ E  BAL_8_66
+ L  LINK_8_66
+ E  BAL_8_67
+ L  LINK_8_67
+ E  BAL_8_68
+ L  LINK_8_68
+ E  BAL_8_69
+ L  LINK_8_69
+ E  BAL_8_70
+ L  LINK_8_70
+ E  BAL_8_71
+ L  LINK_8_71
+ E  BAL_8_72
+ L  LINK_8_72
+ E  BAL_8_73
+ L  LINK_8_73
+ E  BAL_8_74
+ L  LINK_8_74
+ E  BAL_8_75
+ L  LINK_8_75
+ E  BAL_8_76
+ L  LINK_8_76
+ E  BAL_8_77
+ L  LINK_8_77
+ E  BAL_8_78
+ L  LINK_8_78
+ E  BAL_8_79
+ L  LINK_8_79
+ E  BAL_8_80
+ L  LINK_8_80
+ E  BAL_8_81
+ L  LINK_8_81
+ E  BAL_8_82
+ L  LINK_8_82
+ E  BAL_8_83
+ L  LINK_8_83
+ E  BAL_8_84
+ L  LINK_8_84
+ E  BAL_8_85
+ L  LINK_8_85
+ E  BAL_8_86
+ L  LINK_8_86
+ E  BAL_8_87
+ L  LINK_8_87
+ E  BAL_8_88
+ L  LINK_8_88
+ E  BAL_8_89
+ L  LINK_8_89
+ E  BAL_9_0
+ L  LINK_9_0
+ E  BAL_9_1
+ L  LINK_9_1
+ E  BAL_9_2
+ L  LINK_9_2
+ E  BAL_9_3
+ L  LINK_9_3
+ E  BAL_9_4
+ L  LINK_9_4
+ E  BAL_9_5
+ L  LINK_9_5
+ E  BAL_9_6
+ L  LINK_9_6
+ E  BAL_9_7
+ L  LINK_9_7
+ E  BAL_9_8
+ L  LINK_9_8
+ E  BAL_9_9
+ L  LINK_9_9
+ E  BAL_9_10
+ L  LINK_9_10
+ E  BAL_9_11
+ L  LINK_9_11
+ E  BAL_9_12
+ L  LINK_9_12
+ E  BAL_9_13
+ L  LINK_9_13
+ E  BAL_9_14
+ L  LINK_9_14
+ E  BAL_9_15
+ L  LINK_9_15
+ E  BAL_9_16
+ L  LINK_9_16
+ E  BAL_9_17
+ L  LINK_9_17
+ E  BAL_9_18
+ L  LINK_9_18
+ E  BAL_9_19
+ L  LINK_9_19
+ E  BAL_9_20
+ L  LINK_9_20
+ E  BAL_9_21
+ L  LINK_9_21
+ E  BAL_9_22
+ L  LINK_9_22
+ E  BAL_9_23
+ L  LINK_9_23
+ E  BAL_9_24
+ L  LINK_9_24
+ E  BAL_9_25
+ L  LINK_9_25
+ E  BAL_9_26
+ L  LINK_9_26
+ E  BAL_9_27
+ L  LINK_9_27
+ E  BAL_9_28
+ L  LINK_9_28
+ E  BAL_9_29
+ L  LINK_9_29
+ E  BAL_9_30
+ L  LINK_9_30
+ E  BAL_9_31
+ L  LINK_9_31
+ E  BAL_9_32
+ L  LINK_9_32
+ E  BAL_9_33
+ L  LINK_9_33
+ E  BAL_9_34
+ L  LINK_9_34
+ E  BAL_9_35
+ L  LINK_9_35
+ E  BAL_9_36
+ L  LINK_9_36
+ E  BAL_9_37
+ L  LINK_9_37
+ E  BAL_9_38
+ L  LINK_9_38
+ E  BAL_9_39
+ L  LINK_9_39
+ E  BAL_9_40
+ L  LINK_9_40
+ E  BAL_9_41
+ L  LINK_9_41
+ E  BAL_9_42
+ L  LINK_9_42
+ E  BAL_9_43
+ L  LINK_9_43
+ E  BAL_9_44
+ L  LINK_9_44
+ E  BAL_9_45
+ L  LINK_9_45
+ E  BAL_9_46
+ L  LINK_9_46
+ E  BAL_9_47
+ L  LINK_9_47
+ E  BAL_9_48
+ L  LINK_9_48
+ E  BAL_9_49
+ L  LINK_9_49
+ E  BAL_9_50
+ L  LINK_9_50
+ E  BAL_9_51
+ L  LINK_9_51
+ E  BAL_9_52
+ L  LINK_9_52
+ E  BAL_9_53
+ L  LINK_9_53
+ E  BAL_9_54
+ L  LINK_9_54
+ E  BAL_9_55
+ L  LINK_9_55
+ E  BAL_9_56
+ L  LINK_9_56
+ E  BAL_9_57
+ L  LINK_9_57
+ E  BAL_9_58
+ L  LINK_9_58
+ E  BAL_9_59
+ L  LINK_9_59
+ E  BAL_9_60
+ L  LINK_9_60
+ E  BAL_9_61
+ L  LINK_9_61
+ E  BAL_9_62
+ L  LINK_9_62
+ E  BAL_9_63
+ L  LINK_9_63
+ E  BAL_9_64
+ L  LINK_9_64
+ E  BAL_9_65
+ L  LINK_9_65
+ E  BAL_9_66
+ L  LINK_9_66
+ E  BAL_9_67
+ L  LINK_9_67
+ E  BAL_9_68
+ L  LINK_9_68
+ E  BAL_9_69
+ L  LINK_9_69
+ E  BAL_9_70
+ L  LINK_9_70
+ E  BAL_9_71
+ L  LINK_9_71
+ E  BAL_9_72
+ L  LINK_9_72
+ E  BAL_9_73
+ L  LINK_9_73
+ E  BAL_9_74
+ L  LINK_9_74
+ E  BAL_9_75
+ L  LINK_9_75
+ E  BAL_9_76
+ L  LINK_9_76
+ E  BAL_9_77
+ L  LINK_9_77
+ E  BAL_9_78
+ L  LINK_9_78
+ E  BAL_9_79
+ L  LINK_9_79
+ E  BAL_9_80
+ L  LINK_9_80
+ E  BAL_9_81
+ L  LINK_9_81
+ E  BAL_9_82
+ L  LINK_9_82
+ E  BAL_9_83
+ L  LINK_9_83
+ E  BAL_9_84
+ L  LINK_9_84
+ E  BAL_9_85
+ L  LINK_9_85
+ E  BAL_9_86
+ L  LINK_9_86
+ E  BAL_9_87
+ L  LINK_9_87
+ E  BAL_9_88
+ L  LINK_9_88
+ E  BAL_9_89
+ L  LINK_9_89
+COLUMNS
+    Q_0_0  COST  14.8
+    Q_0_0  BAL_0_0  -1
+    Q_0_0  LINK_0_0  1
+    Q_0_1  COST  14.8
+    Q_0_1  BAL_0_1  -1
+    Q_0_1  LINK_0_1  1
+    Q_0_2  COST  11.7
+    Q_0_2  BAL_0_2  -1
+    Q_0_2  LINK_0_2  1
+    Q_0_3  COST  11.5
+    Q_0_3  BAL_0_3  -1
+    Q_0_3  LINK_0_3  1
+    Q_0_4  COST  11.7
+    Q_0_4  BAL_0_4  -1
+    Q_0_4  LINK_0_4  1
+    Q_0_5  COST  10.7
+    Q_0_5  BAL_0_5  -1
+    Q_0_5  LINK_0_5  1
+    Q_0_6  COST  15.1
+    Q_0_6  BAL_0_6  -1
+    Q_0_6  LINK_0_6  1
+    Q_0_7  COST  13.9
+    Q_0_7  BAL_0_7  -1
+    Q_0_7  LINK_0_7  1
+    Q_0_8  COST  11.1
+    Q_0_8  BAL_0_8  -1
+    Q_0_8  LINK_0_8  1
+    Q_0_9  COST  12.2
+    Q_0_9  BAL_0_9  -1
+    Q_0_9  LINK_0_9  1
+    Q_0_10  COST  11.8
+    Q_0_10  BAL_0_10  -1
+    Q_0_10  LINK_0_10  1
+    Q_0_11  COST  10.4
+    Q_0_11  BAL_0_11  -1
+    Q_0_11  LINK_0_11  1
+    Q_0_12  COST  11
+    Q_0_12  BAL_0_12  -1
+    Q_0_12  LINK_0_12  1
+    Q_0_13  COST  11
+    Q_0_13  BAL_0_13  -1
+    Q_0_13  LINK_0_13  1
+    Q_0_14  COST  11.6
+    Q_0_14  BAL_0_14  -1
+    Q_0_14  LINK_0_14  1
+    Q_0_15  COST  13.3
+    Q_0_15  BAL_0_15  -1
+    Q_0_15  LINK_0_15  1
+    Q_0_16  COST  16
+    Q_0_16  BAL_0_16  -1
+    Q_0_16  LINK_0_16  1
+    Q_0_17  COST  11
+    Q_0_17  BAL_0_17  -1
+    Q_0_17  LINK_0_17  1
+    Q_0_18  COST  14.2
+    Q_0_18  BAL_0_18  -1
+    Q_0_18  LINK_0_18  1
+    Q_0_19  COST  11.7
+    Q_0_19  BAL_0_19  -1
+    Q_0_19  LINK_0_19  1
+    Q_0_20  COST  14.1
+    Q_0_20  BAL_0_20  -1
+    Q_0_20  LINK_0_20  1
+    Q_0_21  COST  14.5
+    Q_0_21  BAL_0_21  -1
+    Q_0_21  LINK_0_21  1
+    Q_0_22  COST  11.8
+    Q_0_22  BAL_0_22  -1
+    Q_0_22  LINK_0_22  1
+    Q_0_23  COST  12.9
+    Q_0_23  BAL_0_23  -1
+    Q_0_23  LINK_0_23  1
+    Q_0_24  COST  14.4
+    Q_0_24  BAL_0_24  -1
+    Q_0_24  LINK_0_24  1
+    Q_0_25  COST  12
+    Q_0_25  BAL_0_25  -1
+    Q_0_25  LINK_0_25  1
+    Q_0_26  COST  13.1
+    Q_0_26  BAL_0_26  -1
+    Q_0_26  LINK_0_26  1
+    Q_0_27  COST  13
+    Q_0_27  BAL_0_27  -1
+    Q_0_27  LINK_0_27  1
+    Q_0_28  COST  10.7
+    Q_0_28  BAL_0_28  -1
+    Q_0_28  LINK_0_28  1
+    Q_0_29  COST  10.1
+    Q_0_29  BAL_0_29  -1
+    Q_0_29  LINK_0_29  1
+    Q_0_30  COST  11.9
+    Q_0_30  BAL_0_30  -1
+    Q_0_30  LINK_0_30  1
+    Q_0_31  COST  12.4
+    Q_0_31  BAL_0_31  -1
+    Q_0_31  LINK_0_31  1
+    Q_0_32  COST  12.1
+    Q_0_32  BAL_0_32  -1
+    Q_0_32  LINK_0_32  1
+    Q_0_33  COST  12.6
+    Q_0_33  BAL_0_33  -1
+    Q_0_33  LINK_0_33  1
+    Q_0_34  COST  15
+    Q_0_34  BAL_0_34  -1
+    Q_0_34  LINK_0_34  1
+    Q_0_35  COST  11.2
+    Q_0_35  BAL_0_35  -1
+    Q_0_35  LINK_0_35  1
+    Q_0_36  COST  11.6
+    Q_0_36  BAL_0_36  -1
+    Q_0_36  LINK_0_36  1
+    Q_0_37  COST  10.6
+    Q_0_37  BAL_0_37  -1
+    Q_0_37  LINK_0_37  1
+    Q_0_38  COST  11.6
+    Q_0_38  BAL_0_38  -1
+    Q_0_38  LINK_0_38  1
+    Q_0_39  COST  15.7
+    Q_0_39  BAL_0_39  -1
+    Q_0_39  LINK_0_39  1
+    Q_0_40  COST  14.6
+    Q_0_40  BAL_0_40  -1
+    Q_0_40  LINK_0_40  1
+    Q_0_41  COST  13.2
+    Q_0_41  BAL_0_41  -1
+    Q_0_41  LINK_0_41  1
+    Q_0_42  COST  11.3
+    Q_0_42  BAL_0_42  -1
+    Q_0_42  LINK_0_42  1
+    Q_0_43  COST  13.8
+    Q_0_43  BAL_0_43  -1
+    Q_0_43  LINK_0_43  1
+    Q_0_44  COST  12.7
+    Q_0_44  BAL_0_44  -1
+    Q_0_44  LINK_0_44  1
+    Q_0_45  COST  15.2
+    Q_0_45  BAL_0_45  -1
+    Q_0_45  LINK_0_45  1
+    Q_0_46  COST  10.1
+    Q_0_46  BAL_0_46  -1
+    Q_0_46  LINK_0_46  1
+    Q_0_47  COST  11.4
+    Q_0_47  BAL_0_47  -1
+    Q_0_47  LINK_0_47  1
+    Q_0_48  COST  10.1
+    Q_0_48  BAL_0_48  -1
+    Q_0_48  LINK_0_48  1
+    Q_0_49  COST  12.5
+    Q_0_49  BAL_0_49  -1
+    Q_0_49  LINK_0_49  1
+    Q_0_50  COST  10.9
+    Q_0_50  BAL_0_50  -1
+    Q_0_50  LINK_0_50  1
+    Q_0_51  COST  10.2
+    Q_0_51  BAL_0_51  -1
+    Q_0_51  LINK_0_51  1
+    Q_0_52  COST  14.6
+    Q_0_52  BAL_0_52  -1
+    Q_0_52  LINK_0_52  1
+    Q_0_53  COST  11
+    Q_0_53  BAL_0_53  -1
+    Q_0_53  LINK_0_53  1
+    Q_0_54  COST  12.8
+    Q_0_54  BAL_0_54  -1
+    Q_0_54  LINK_0_54  1
+    Q_0_55  COST  14.5
+    Q_0_55  BAL_0_55  -1
+    Q_0_55  LINK_0_55  1
+    Q_0_56  COST  13.2
+    Q_0_56  BAL_0_56  -1
+    Q_0_56  LINK_0_56  1
+    Q_0_57  COST  14.3
+    Q_0_57  BAL_0_57  -1
+    Q_0_57  LINK_0_57  1
+    Q_0_58  COST  12.7
+    Q_0_58  BAL_0_58  -1
+    Q_0_58  LINK_0_58  1
+    Q_0_59  COST  13.4
+    Q_0_59  BAL_0_59  -1
+    Q_0_59  LINK_0_59  1
+    Q_0_60  COST  15.3
+    Q_0_60  BAL_0_60  -1
+    Q_0_60  LINK_0_60  1
+    Q_0_61  COST  11.4
+    Q_0_61  BAL_0_61  -1
+    Q_0_61  LINK_0_61  1
+    Q_0_62  COST  14
+    Q_0_62  BAL_0_62  -1
+    Q_0_62  LINK_0_62  1
+    Q_0_63  COST  15.1
+    Q_0_63  BAL_0_63  -1
+    Q_0_63  LINK_0_63  1
+    Q_0_64  COST  14.4
+    Q_0_64  BAL_0_64  -1
+    Q_0_64  LINK_0_64  1
+    Q_0_65  COST  13.3
+    Q_0_65  BAL_0_65  -1
+    Q_0_65  LINK_0_65  1
+    Q_0_66  COST  12.8
+    Q_0_66  BAL_0_66  -1
+    Q_0_66  LINK_0_66  1
+    Q_0_67  COST  11.4
+    Q_0_67  BAL_0_67  -1
+    Q_0_67  LINK_0_67  1
+    Q_0_68  COST  13.3
+    Q_0_68  BAL_0_68  -1
+    Q_0_68  LINK_0_68  1
+    Q_0_69  COST  14.1
+    Q_0_69  BAL_0_69  -1
+    Q_0_69  LINK_0_69  1
+    Q_0_70  COST  10.1
+    Q_0_70  BAL_0_70  -1
+    Q_0_70  LINK_0_70  1
+    Q_0_71  COST  12.5
+    Q_0_71  BAL_0_71  -1
+    Q_0_71  LINK_0_71  1
+    Q_0_72  COST  14.3
+    Q_0_72  BAL_0_72  -1
+    Q_0_72  LINK_0_72  1
+    Q_0_73  COST  13.6
+    Q_0_73  BAL_0_73  -1
+    Q_0_73  LINK_0_73  1
+    Q_0_74  COST  15.1
+    Q_0_74  BAL_0_74  -1
+    Q_0_74  LINK_0_74  1
+    Q_0_75  COST  12
+    Q_0_75  BAL_0_75  -1
+    Q_0_75  LINK_0_75  1
+    Q_0_76  COST  14.2
+    Q_0_76  BAL_0_76  -1
+    Q_0_76  LINK_0_76  1
+    Q_0_77  COST  14
+    Q_0_77  BAL_0_77  -1
+    Q_0_77  LINK_0_77  1
+    Q_0_78  COST  12.7
+    Q_0_78  BAL_0_78  -1
+    Q_0_78  LINK_0_78  1
+    Q_0_79  COST  10.3
+    Q_0_79  BAL_0_79  -1
+    Q_0_79  LINK_0_79  1
+    Q_0_80  COST  14.7
+    Q_0_80  BAL_0_80  -1
+    Q_0_80  LINK_0_80  1
+    Q_0_81  COST  11.9
+    Q_0_81  BAL_0_81  -1
+    Q_0_81  LINK_0_81  1
+    Q_0_82  COST  10.8
+    Q_0_82  BAL_0_82  -1
+    Q_0_82  LINK_0_82  1
+    Q_0_83  COST  11.3
+    Q_0_83  BAL_0_83  -1
+    Q_0_83  LINK_0_83  1
+    Q_0_84  COST  15.6
+    Q_0_84  BAL_0_84  -1
+    Q_0_84  LINK_0_84  1
+    Q_0_85  COST  10.3
+    Q_0_85  BAL_0_85  -1
+    Q_0_85  LINK_0_85  1
+    Q_0_86  COST  11.9
+    Q_0_86  BAL_0_86  -1
+    Q_0_86  LINK_0_86  1
+    Q_0_87  COST  10.4
+    Q_0_87  BAL_0_87  -1
+    Q_0_87  LINK_0_87  1
+    Q_0_88  COST  15.4
+    Q_0_88  BAL_0_88  -1
+    Q_0_88  LINK_0_88  1
+    Q_0_89  COST  10.4
+    Q_0_89  BAL_0_89  -1
+    Q_0_89  LINK_0_89  1
+    I_0_0  COST  1.4
+    I_0_0  BAL_0_0  1
+    I_0_0  BAL_0_1  -1
+    I_0_1  COST  1.4
+    I_0_1  BAL_0_1  1
+    I_0_1  BAL_0_2  -1
+    I_0_2  COST  1.4
+    I_0_2  BAL_0_2  1
+    I_0_2  BAL_0_3  -1
+    I_0_3  COST  1.4
+    I_0_3  BAL_0_3  1
+    I_0_3  BAL_0_4  -1
+    I_0_4  COST  1.4
+    I_0_4  BAL_0_4  1
+    I_0_4  BAL_0_5  -1
+    I_0_5  COST  1.4
+    I_0_5  BAL_0_5  1
+    I_0_5  BAL_0_6  -1
+    I_0_6  COST  1.4
+    I_0_6  BAL_0_6  1
+    I_0_6  BAL_0_7  -1
+    I_0_7  COST  1.4
+    I_0_7  BAL_0_7  1
+    I_0_7  BAL_0_8  -1
+    I_0_8  COST  1.4
+    I_0_8  BAL_0_8  1
+    I_0_8  BAL_0_9  -1
+    I_0_9  COST  1.4
+    I_0_9  BAL_0_9  1
+    I_0_9  BAL_0_10  -1
+    I_0_10  COST  1.4
+    I_0_10  BAL_0_10  1
+    I_0_10  BAL_0_11  -1
+    I_0_11  COST  1.4
+    I_0_11  BAL_0_11  1
+    I_0_11  BAL_0_12  -1
+    I_0_12  COST  1.4
+    I_0_12  BAL_0_12  1
+    I_0_12  BAL_0_13  -1
+    I_0_13  COST  1.4
+    I_0_13  BAL_0_13  1
+    I_0_13  BAL_0_14  -1
+    I_0_14  COST  1.4
+    I_0_14  BAL_0_14  1
+    I_0_14  BAL_0_15  -1
+    I_0_15  COST  1.4
+    I_0_15  BAL_0_15  1
+    I_0_15  BAL_0_16  -1
+    I_0_16  COST  1.4
+    I_0_16  BAL_0_16  1
+    I_0_16  BAL_0_17  -1
+    I_0_17  COST  1.4
+    I_0_17  BAL_0_17  1
+    I_0_17  BAL_0_18  -1
+    I_0_18  COST  1.4
+    I_0_18  BAL_0_18  1
+    I_0_18  BAL_0_19  -1
+    I_0_19  COST  1.4
+    I_0_19  BAL_0_19  1
+    I_0_19  BAL_0_20  -1
+    I_0_20  COST  1.4
+    I_0_20  BAL_0_20  1
+    I_0_20  BAL_0_21  -1
+    I_0_21  COST  1.4
+    I_0_21  BAL_0_21  1
+    I_0_21  BAL_0_22  -1
+    I_0_22  COST  1.4
+    I_0_22  BAL_0_22  1
+    I_0_22  BAL_0_23  -1
+    I_0_23  COST  1.4
+    I_0_23  BAL_0_23  1
+    I_0_23  BAL_0_24  -1
+    I_0_24  COST  1.4
+    I_0_24  BAL_0_24  1
+    I_0_24  BAL_0_25  -1
+    I_0_25  COST  1.4
+    I_0_25  BAL_0_25  1
+    I_0_25  BAL_0_26  -1
+    I_0_26  COST  1.4
+    I_0_26  BAL_0_26  1
+    I_0_26  BAL_0_27  -1
+    I_0_27  COST  1.4
+    I_0_27  BAL_0_27  1
+    I_0_27  BAL_0_28  -1
+    I_0_28  COST  1.4
+    I_0_28  BAL_0_28  1
+    I_0_28  BAL_0_29  -1
+    I_0_29  COST  1.4
+    I_0_29  BAL_0_29  1
+    I_0_29  BAL_0_30  -1
+    I_0_30  COST  1.4
+    I_0_30  BAL_0_30  1
+    I_0_30  BAL_0_31  -1
+    I_0_31  COST  1.4
+    I_0_31  BAL_0_31  1
+    I_0_31  BAL_0_32  -1
+    I_0_32  COST  1.4
+    I_0_32  BAL_0_32  1
+    I_0_32  BAL_0_33  -1
+    I_0_33  COST  1.4
+    I_0_33  BAL_0_33  1
+    I_0_33  BAL_0_34  -1
+    I_0_34  COST  1.4
+    I_0_34  BAL_0_34  1
+    I_0_34  BAL_0_35  -1
+    I_0_35  COST  1.4
+    I_0_35  BAL_0_35  1
+    I_0_35  BAL_0_36  -1
+    I_0_36  COST  1.4
+    I_0_36  BAL_0_36  1
+    I_0_36  BAL_0_37  -1
+    I_0_37  COST  1.4
+    I_0_37  BAL_0_37  1
+    I_0_37  BAL_0_38  -1
+    I_0_38  COST  1.4
+    I_0_38  BAL_0_38  1
+    I_0_38  BAL_0_39  -1
+    I_0_39  COST  1.4
+    I_0_39  BAL_0_39  1
+    I_0_39  BAL_0_40  -1
+    I_0_40  COST  1.4
+    I_0_40  BAL_0_40  1
+    I_0_40  BAL_0_41  -1
+    I_0_41  COST  1.4
+    I_0_41  BAL_0_41  1
+    I_0_41  BAL_0_42  -1
+    I_0_42  COST  1.4
+    I_0_42  BAL_0_42  1
+    I_0_42  BAL_0_43  -1
+    I_0_43  COST  1.4
+    I_0_43  BAL_0_43  1
+    I_0_43  BAL_0_44  -1
+    I_0_44  COST  1.4
+    I_0_44  BAL_0_44  1
+    I_0_44  BAL_0_45  -1
+    I_0_45  COST  1.4
+    I_0_45  BAL_0_45  1
+    I_0_45  BAL_0_46  -1
+    I_0_46  COST  1.4
+    I_0_46  BAL_0_46  1
+    I_0_46  BAL_0_47  -1
+    I_0_47  COST  1.4
+    I_0_47  BAL_0_47  1
+    I_0_47  BAL_0_48  -1
+    I_0_48  COST  1.4
+    I_0_48  BAL_0_48  1
+    I_0_48  BAL_0_49  -1
+    I_0_49  COST  1.4
+    I_0_49  BAL_0_49  1
+    I_0_49  BAL_0_50  -1
+    I_0_50  COST  1.4
+    I_0_50  BAL_0_50  1
+    I_0_50  BAL_0_51  -1
+    I_0_51  COST  1.4
+    I_0_51  BAL_0_51  1
+    I_0_51  BAL_0_52  -1
+    I_0_52  COST  1.4
+    I_0_52  BAL_0_52  1
+    I_0_52  BAL_0_53  -1
+    I_0_53  COST  1.4
+    I_0_53  BAL_0_53  1
+    I_0_53  BAL_0_54  -1
+    I_0_54  COST  1.4
+    I_0_54  BAL_0_54  1
+    I_0_54  BAL_0_55  -1
+    I_0_55  COST  1.4
+    I_0_55  BAL_0_55  1
+    I_0_55  BAL_0_56  -1
+    I_0_56  COST  1.4
+    I_0_56  BAL_0_56  1
+    I_0_56  BAL_0_57  -1
+    I_0_57  COST  1.4
+    I_0_57  BAL_0_57  1
+    I_0_57  BAL_0_58  -1
+    I_0_58  COST  1.4
+    I_0_58  BAL_0_58  1
+    I_0_58  BAL_0_59  -1
+    I_0_59  COST  1.4
+    I_0_59  BAL_0_59  1
+    I_0_59  BAL_0_60  -1
+    I_0_60  COST  1.4
+    I_0_60  BAL_0_60  1
+    I_0_60  BAL_0_61  -1
+    I_0_61  COST  1.4
+    I_0_61  BAL_0_61  1
+    I_0_61  BAL_0_62  -1
+    I_0_62  COST  1.4
+    I_0_62  BAL_0_62  1
+    I_0_62  BAL_0_63  -1
+    I_0_63  COST  1.4
+    I_0_63  BAL_0_63  1
+    I_0_63  BAL_0_64  -1
+    I_0_64  COST  1.4
+    I_0_64  BAL_0_64  1
+    I_0_64  BAL_0_65  -1
+    I_0_65  COST  1.4
+    I_0_65  BAL_0_65  1
+    I_0_65  BAL_0_66  -1
+    I_0_66  COST  1.4
+    I_0_66  BAL_0_66  1
+    I_0_66  BAL_0_67  -1
+    I_0_67  COST  1.4
+    I_0_67  BAL_0_67  1
+    I_0_67  BAL_0_68  -1
+    I_0_68  COST  1.4
+    I_0_68  BAL_0_68  1
+    I_0_68  BAL_0_69  -1
+    I_0_69  COST  1.4
+    I_0_69  BAL_0_69  1
+    I_0_69  BAL_0_70  -1
+    I_0_70  COST  1.4
+    I_0_70  BAL_0_70  1
+    I_0_70  BAL_0_71  -1
+    I_0_71  COST  1.4
+    I_0_71  BAL_0_71  1
+    I_0_71  BAL_0_72  -1
+    I_0_72  COST  1.4
+    I_0_72  BAL_0_72  1
+    I_0_72  BAL_0_73  -1
+    I_0_73  COST  1.4
+    I_0_73  BAL_0_73  1
+    I_0_73  BAL_0_74  -1
+    I_0_74  COST  1.4
+    I_0_74  BAL_0_74  1
+    I_0_74  BAL_0_75  -1
+    I_0_75  COST  1.4
+    I_0_75  BAL_0_75  1
+    I_0_75  BAL_0_76  -1
+    I_0_76  COST  1.4
+    I_0_76  BAL_0_76  1
+    I_0_76  BAL_0_77  -1
+    I_0_77  COST  1.4
+    I_0_77  BAL_0_77  1
+    I_0_77  BAL_0_78  -1
+    I_0_78  COST  1.4
+    I_0_78  BAL_0_78  1
+    I_0_78  BAL_0_79  -1
+    I_0_79  COST  1.4
+    I_0_79  BAL_0_79  1
+    I_0_79  BAL_0_80  -1
+    I_0_80  COST  1.4
+    I_0_80  BAL_0_80  1
+    I_0_80  BAL_0_81  -1
+    I_0_81  COST  1.4
+    I_0_81  BAL_0_81  1
+    I_0_81  BAL_0_82  -1
+    I_0_82  COST  1.4
+    I_0_82  BAL_0_82  1
+    I_0_82  BAL_0_83  -1
+    I_0_83  COST  1.4
+    I_0_83  BAL_0_83  1
+    I_0_83  BAL_0_84  -1
+    I_0_84  COST  1.4
+    I_0_84  BAL_0_84  1
+    I_0_84  BAL_0_85  -1
+    I_0_85  COST  1.4
+    I_0_85  BAL_0_85  1
+    I_0_85  BAL_0_86  -1
+    I_0_86  COST  1.4
+    I_0_86  BAL_0_86  1
+    I_0_86  BAL_0_87  -1
+    I_0_87  COST  1.4
+    I_0_87  BAL_0_87  1
+    I_0_87  BAL_0_88  -1
+    I_0_88  COST  1.4
+    I_0_88  BAL_0_88  1
+    I_0_88  BAL_0_89  -1
+    I_0_89  COST  1.4
+    I_0_89  BAL_0_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_0_0  COST  316
+    Z_0_0  LINK_0_0  -2884
+    Z_0_1  COST  359
+    Z_0_1  LINK_0_1  -2876
+    Z_0_2  COST  197
+    Z_0_2  LINK_0_2  -2840
+    Z_0_3  COST  255
+    Z_0_3  LINK_0_3  -2786
+    Z_0_4  COST  245
+    Z_0_4  LINK_0_4  -2735
+    Z_0_5  COST  400
+    Z_0_5  LINK_0_5  -2687
+    Z_0_6  COST  355
+    Z_0_6  LINK_0_6  -2683
+    Z_0_7  COST  358
+    Z_0_7  LINK_0_7  -2667
+    Z_0_8  COST  301
+    Z_0_8  LINK_0_8  -2660
+    Z_0_9  COST  117
+    Z_0_9  LINK_0_9  -2629
+    Z_0_10  COST  345
+    Z_0_10  LINK_0_10  -2581
+    Z_0_11  COST  224
+    Z_0_11  LINK_0_11  -2553
+    Z_0_12  COST  306
+    Z_0_12  LINK_0_12  -2523
+    Z_0_13  COST  312
+    Z_0_13  LINK_0_13  -2482
+    Z_0_14  COST  188
+    Z_0_14  LINK_0_14  -2458
+    Z_0_15  COST  287
+    Z_0_15  LINK_0_15  -2408
+    Z_0_16  COST  380
+    Z_0_16  LINK_0_16  -2395
+    Z_0_17  COST  291
+    Z_0_17  LINK_0_17  -2389
+    Z_0_18  COST  144
+    Z_0_18  LINK_0_18  -2358
+    Z_0_19  COST  324
+    Z_0_19  LINK_0_19  -2357
+    Z_0_20  COST  360
+    Z_0_20  LINK_0_20  -2300
+    Z_0_21  COST  155
+    Z_0_21  LINK_0_21  -2247
+    Z_0_22  COST  183
+    Z_0_22  LINK_0_22  -2223
+    Z_0_23  COST  366
+    Z_0_23  LINK_0_23  -2196
+    Z_0_24  COST  301
+    Z_0_24  LINK_0_24  -2158
+    Z_0_25  COST  289
+    Z_0_25  LINK_0_25  -2110
+    Z_0_26  COST  350
+    Z_0_26  LINK_0_26  -2061
+    Z_0_27  COST  115
+    Z_0_27  LINK_0_27  -2061
+    Z_0_28  COST  340
+    Z_0_28  LINK_0_28  -2017
+    Z_0_29  COST  122
+    Z_0_29  LINK_0_29  -1989
+    Z_0_30  COST  257
+    Z_0_30  LINK_0_30  -1972
+    Z_0_31  COST  396
+    Z_0_31  LINK_0_31  -1926
+    Z_0_32  COST  301
+    Z_0_32  LINK_0_32  -1875
+    Z_0_33  COST  187
+    Z_0_33  LINK_0_33  -1861
+    Z_0_34  COST  186
+    Z_0_34  LINK_0_34  -1824
+    Z_0_35  COST  357
+    Z_0_35  LINK_0_35  -1764
+    Z_0_36  COST  216
+    Z_0_36  LINK_0_36  -1758
+    Z_0_37  COST  106
+    Z_0_37  LINK_0_37  -1701
+    Z_0_38  COST  202
+    Z_0_38  LINK_0_38  -1681
+    Z_0_39  COST  376
+    Z_0_39  LINK_0_39  -1680
+    Z_0_40  COST  380
+    Z_0_40  LINK_0_40  -1679
+    Z_0_41  COST  218
+    Z_0_41  LINK_0_41  -1678
+    Z_0_42  COST  307
+    Z_0_42  LINK_0_42  -1637
+    Z_0_43  COST  363
+    Z_0_43  LINK_0_43  -1603
+    Z_0_44  COST  276
+    Z_0_44  LINK_0_44  -1603
+    Z_0_45  COST  395
+    Z_0_45  LINK_0_45  -1543
+    Z_0_46  COST  280
+    Z_0_46  LINK_0_46  -1487
+    Z_0_47  COST  335
+    Z_0_47  LINK_0_47  -1463
+    Z_0_48  COST  237
+    Z_0_48  LINK_0_48  -1420
+    Z_0_49  COST  380
+    Z_0_49  LINK_0_49  -1407
+    Z_0_50  COST  102
+    Z_0_50  LINK_0_50  -1380
+    Z_0_51  COST  296
+    Z_0_51  LINK_0_51  -1334
+    Z_0_52  COST  362
+    Z_0_52  LINK_0_52  -1333
+    Z_0_53  COST  166
+    Z_0_53  LINK_0_53  -1300
+    Z_0_54  COST  365
+    Z_0_54  LINK_0_54  -1286
+    Z_0_55  COST  387
+    Z_0_55  LINK_0_55  -1238
+    Z_0_56  COST  205
+    Z_0_56  LINK_0_56  -1210
+    Z_0_57  COST  318
+    Z_0_57  LINK_0_57  -1150
+    Z_0_58  COST  128
+    Z_0_58  LINK_0_58  -1119
+    Z_0_59  COST  346
+    Z_0_59  LINK_0_59  -1084
+    Z_0_60  COST  286
+    Z_0_60  LINK_0_60  -1070
+    Z_0_61  COST  391
+    Z_0_61  LINK_0_61  -1048
+    Z_0_62  COST  383
+    Z_0_62  LINK_0_62  -1034
+    Z_0_63  COST  202
+    Z_0_63  LINK_0_63  -991
+    Z_0_64  COST  358
+    Z_0_64  LINK_0_64  -977
+    Z_0_65  COST  311
+    Z_0_65  LINK_0_65  -929
+    Z_0_66  COST  348
+    Z_0_66  LINK_0_66  -900
+    Z_0_67  COST  282
+    Z_0_67  LINK_0_67  -840
+    Z_0_68  COST  312
+    Z_0_68  LINK_0_68  -822
+    Z_0_69  COST  277
+    Z_0_69  LINK_0_69  -763
+    Z_0_70  COST  100
+    Z_0_70  LINK_0_70  -762
+    Z_0_71  COST  375
+    Z_0_71  LINK_0_71  -736
+    Z_0_72  COST  376
+    Z_0_72  LINK_0_72  -683
+    Z_0_73  COST  269
+    Z_0_73  LINK_0_73  -625
+    Z_0_74  COST  334
+    Z_0_74  LINK_0_74  -590
+    Z_0_75  COST  114
+    Z_0_75  LINK_0_75  -531
+    Z_0_76  COST  217
+    Z_0_76  LINK_0_76  -490
+    Z_0_77  COST  190
+    Z_0_77  LINK_0_77  -484
+    Z_0_78  COST  381
+    Z_0_78  LINK_0_78  -473
+    Z_0_79  COST  399
+    Z_0_79  LINK_0_79  -433
+    Z_0_80  COST  192
+    Z_0_80  LINK_0_80  -387
+    Z_0_81  COST  146
+    Z_0_81  LINK_0_81  -332
+    Z_0_82  COST  382
+    Z_0_82  LINK_0_82  -314
+    Z_0_83  COST  230
+    Z_0_83  LINK_0_83  -307
+    Z_0_84  COST  116
+    Z_0_84  LINK_0_84  -260
+    Z_0_85  COST  136
+    Z_0_85  LINK_0_85  -239
+    Z_0_86  COST  142
+    Z_0_86  LINK_0_86  -182
+    Z_0_87  COST  108
+    Z_0_87  LINK_0_87  -136
+    Z_0_88  COST  331
+    Z_0_88  LINK_0_88  -91
+    Z_0_89  COST  107
+    Z_0_89  LINK_0_89  -59
+    MARKER  'MARKER'  'INTEND'
+    Q_1_0  COST  15
+    Q_1_0  BAL_1_0  -1
+    Q_1_0  LINK_1_0  1
+    Q_1_1  COST  13.9
+    Q_1_1  BAL_1_1  -1
+    Q_1_1  LINK_1_1  1
+    Q_1_2  COST  14.9
+    Q_1_2  BAL_1_2  -1
+    Q_1_2  LINK_1_2  1
+    Q_1_3  COST  15.7
+    Q_1_3  BAL_1_3  -1
+    Q_1_3  LINK_1_3  1
+    Q_1_4  COST  13.4
+    Q_1_4  BAL_1_4  -1
+    Q_1_4  LINK_1_4  1
+    Q_1_5  COST  15.5
+    Q_1_5  BAL_1_5  -1
+    Q_1_5  LINK_1_5  1
+    Q_1_6  COST  14.4
+    Q_1_6  BAL_1_6  -1
+    Q_1_6  LINK_1_6  1
+    Q_1_7  COST  13
+    Q_1_7  BAL_1_7  -1
+    Q_1_7  LINK_1_7  1
+    Q_1_8  COST  14.2
+    Q_1_8  BAL_1_8  -1
+    Q_1_8  LINK_1_8  1
+    Q_1_9  COST  12.2
+    Q_1_9  BAL_1_9  -1
+    Q_1_9  LINK_1_9  1
+    Q_1_10  COST  11.6
+    Q_1_10  BAL_1_10  -1
+    Q_1_10  LINK_1_10  1
+    Q_1_11  COST  11.1
+    Q_1_11  BAL_1_11  -1
+    Q_1_11  LINK_1_11  1
+    Q_1_12  COST  13.4
+    Q_1_12  BAL_1_12  -1
+    Q_1_12  LINK_1_12  1
+    Q_1_13  COST  11.3
+    Q_1_13  BAL_1_13  -1
+    Q_1_13  LINK_1_13  1
+    Q_1_14  COST  11.9
+    Q_1_14  BAL_1_14  -1
+    Q_1_14  LINK_1_14  1
+    Q_1_15  COST  11.2
+    Q_1_15  BAL_1_15  -1
+    Q_1_15  LINK_1_15  1
+    Q_1_16  COST  11.5
+    Q_1_16  BAL_1_16  -1
+    Q_1_16  LINK_1_16  1
+    Q_1_17  COST  12.3
+    Q_1_17  BAL_1_17  -1
+    Q_1_17  LINK_1_17  1
+    Q_1_18  COST  10.5
+    Q_1_18  BAL_1_18  -1
+    Q_1_18  LINK_1_18  1
+    Q_1_19  COST  15.2
+    Q_1_19  BAL_1_19  -1
+    Q_1_19  LINK_1_19  1
+    Q_1_20  COST  11.7
+    Q_1_20  BAL_1_20  -1
+    Q_1_20  LINK_1_20  1
+    Q_1_21  COST  10.5
+    Q_1_21  BAL_1_21  -1
+    Q_1_21  LINK_1_21  1
+    Q_1_22  COST  14.8
+    Q_1_22  BAL_1_22  -1
+    Q_1_22  LINK_1_22  1
+    Q_1_23  COST  12.8
+    Q_1_23  BAL_1_23  -1
+    Q_1_23  LINK_1_23  1
+    Q_1_24  COST  10.5
+    Q_1_24  BAL_1_24  -1
+    Q_1_24  LINK_1_24  1
+    Q_1_25  COST  14.1
+    Q_1_25  BAL_1_25  -1
+    Q_1_25  LINK_1_25  1
+    Q_1_26  COST  13.6
+    Q_1_26  BAL_1_26  -1
+    Q_1_26  LINK_1_26  1
+    Q_1_27  COST  14.1
+    Q_1_27  BAL_1_27  -1
+    Q_1_27  LINK_1_27  1
+    Q_1_28  COST  12.1
+    Q_1_28  BAL_1_28  -1
+    Q_1_28  LINK_1_28  1
+    Q_1_29  COST  16
+    Q_1_29  BAL_1_29  -1
+    Q_1_29  LINK_1_29  1
+    Q_1_30  COST  11.4
+    Q_1_30  BAL_1_30  -1
+    Q_1_30  LINK_1_30  1
+    Q_1_31  COST  12.4
+    Q_1_31  BAL_1_31  -1
+    Q_1_31  LINK_1_31  1
+    Q_1_32  COST  11.9
+    Q_1_32  BAL_1_32  -1
+    Q_1_32  LINK_1_32  1
+    Q_1_33  COST  10.2
+    Q_1_33  BAL_1_33  -1
+    Q_1_33  LINK_1_33  1
+    Q_1_34  COST  12
+    Q_1_34  BAL_1_34  -1
+    Q_1_34  LINK_1_34  1
+    Q_1_35  COST  11.1
+    Q_1_35  BAL_1_35  -1
+    Q_1_35  LINK_1_35  1
+    Q_1_36  COST  12
+    Q_1_36  BAL_1_36  -1
+    Q_1_36  LINK_1_36  1
+    Q_1_37  COST  15
+    Q_1_37  BAL_1_37  -1
+    Q_1_37  LINK_1_37  1
+    Q_1_38  COST  15.4
+    Q_1_38  BAL_1_38  -1
+    Q_1_38  LINK_1_38  1
+    Q_1_39  COST  13.7
+    Q_1_39  BAL_1_39  -1
+    Q_1_39  LINK_1_39  1
+    Q_1_40  COST  15.7
+    Q_1_40  BAL_1_40  -1
+    Q_1_40  LINK_1_40  1
+    Q_1_41  COST  15.8
+    Q_1_41  BAL_1_41  -1
+    Q_1_41  LINK_1_41  1
+    Q_1_42  COST  11.9
+    Q_1_42  BAL_1_42  -1
+    Q_1_42  LINK_1_42  1
+    Q_1_43  COST  11.5
+    Q_1_43  BAL_1_43  -1
+    Q_1_43  LINK_1_43  1
+    Q_1_44  COST  12.1
+    Q_1_44  BAL_1_44  -1
+    Q_1_44  LINK_1_44  1
+    Q_1_45  COST  10.6
+    Q_1_45  BAL_1_45  -1
+    Q_1_45  LINK_1_45  1
+    Q_1_46  COST  13.4
+    Q_1_46  BAL_1_46  -1
+    Q_1_46  LINK_1_46  1
+    Q_1_47  COST  13.9
+    Q_1_47  BAL_1_47  -1
+    Q_1_47  LINK_1_47  1
+    Q_1_48  COST  13.7
+    Q_1_48  BAL_1_48  -1
+    Q_1_48  LINK_1_48  1
+    Q_1_49  COST  15.1
+    Q_1_49  BAL_1_49  -1
+    Q_1_49  LINK_1_49  1
+    Q_1_50  COST  13.8
+    Q_1_50  BAL_1_50  -1
+    Q_1_50  LINK_1_50  1
+    Q_1_51  COST  10.5
+    Q_1_51  BAL_1_51  -1
+    Q_1_51  LINK_1_51  1
+    Q_1_52  COST  11.5
+    Q_1_52  BAL_1_52  -1
+    Q_1_52  LINK_1_52  1
+    Q_1_53  COST  11.4
+    Q_1_53  BAL_1_53  -1
+    Q_1_53  LINK_1_53  1
+    Q_1_54  COST  10.1
+    Q_1_54  BAL_1_54  -1
+    Q_1_54  LINK_1_54  1
+    Q_1_55  COST  15.1
+    Q_1_55  BAL_1_55  -1
+    Q_1_55  LINK_1_55  1
+    Q_1_56  COST  11.5
+    Q_1_56  BAL_1_56  -1
+    Q_1_56  LINK_1_56  1
+    Q_1_57  COST  12.5
+    Q_1_57  BAL_1_57  -1
+    Q_1_57  LINK_1_57  1
+    Q_1_58  COST  10.4
+    Q_1_58  BAL_1_58  -1
+    Q_1_58  LINK_1_58  1
+    Q_1_59  COST  11.7
+    Q_1_59  BAL_1_59  -1
+    Q_1_59  LINK_1_59  1
+    Q_1_60  COST  13.5
+    Q_1_60  BAL_1_60  -1
+    Q_1_60  LINK_1_60  1
+    Q_1_61  COST  15.5
+    Q_1_61  BAL_1_61  -1
+    Q_1_61  LINK_1_61  1
+    Q_1_62  COST  10.4
+    Q_1_62  BAL_1_62  -1
+    Q_1_62  LINK_1_62  1
+    Q_1_63  COST  14.6
+    Q_1_63  BAL_1_63  -1
+    Q_1_63  LINK_1_63  1
+    Q_1_64  COST  10.4
+    Q_1_64  BAL_1_64  -1
+    Q_1_64  LINK_1_64  1
+    Q_1_65  COST  10.1
+    Q_1_65  BAL_1_65  -1
+    Q_1_65  LINK_1_65  1
+    Q_1_66  COST  14
+    Q_1_66  BAL_1_66  -1
+    Q_1_66  LINK_1_66  1
+    Q_1_67  COST  10
+    Q_1_67  BAL_1_67  -1
+    Q_1_67  LINK_1_67  1
+    Q_1_68  COST  11.8
+    Q_1_68  BAL_1_68  -1
+    Q_1_68  LINK_1_68  1
+    Q_1_69  COST  14.8
+    Q_1_69  BAL_1_69  -1
+    Q_1_69  LINK_1_69  1
+    Q_1_70  COST  15
+    Q_1_70  BAL_1_70  -1
+    Q_1_70  LINK_1_70  1
+    Q_1_71  COST  12.2
+    Q_1_71  BAL_1_71  -1
+    Q_1_71  LINK_1_71  1
+    Q_1_72  COST  13.1
+    Q_1_72  BAL_1_72  -1
+    Q_1_72  LINK_1_72  1
+    Q_1_73  COST  13
+    Q_1_73  BAL_1_73  -1
+    Q_1_73  LINK_1_73  1
+    Q_1_74  COST  15.5
+    Q_1_74  BAL_1_74  -1
+    Q_1_74  LINK_1_74  1
+    Q_1_75  COST  15.4
+    Q_1_75  BAL_1_75  -1
+    Q_1_75  LINK_1_75  1
+    Q_1_76  COST  10.9
+    Q_1_76  BAL_1_76  -1
+    Q_1_76  LINK_1_76  1
+    Q_1_77  COST  10.6
+    Q_1_77  BAL_1_77  -1
+    Q_1_77  LINK_1_77  1
+    Q_1_78  COST  13.2
+    Q_1_78  BAL_1_78  -1
+    Q_1_78  LINK_1_78  1
+    Q_1_79  COST  14.9
+    Q_1_79  BAL_1_79  -1
+    Q_1_79  LINK_1_79  1
+    Q_1_80  COST  15
+    Q_1_80  BAL_1_80  -1
+    Q_1_80  LINK_1_80  1
+    Q_1_81  COST  12
+    Q_1_81  BAL_1_81  -1
+    Q_1_81  LINK_1_81  1
+    Q_1_82  COST  10.4
+    Q_1_82  BAL_1_82  -1
+    Q_1_82  LINK_1_82  1
+    Q_1_83  COST  13.2
+    Q_1_83  BAL_1_83  -1
+    Q_1_83  LINK_1_83  1
+    Q_1_84  COST  16
+    Q_1_84  BAL_1_84  -1
+    Q_1_84  LINK_1_84  1
+    Q_1_85  COST  14.2
+    Q_1_85  BAL_1_85  -1
+    Q_1_85  LINK_1_85  1
+    Q_1_86  COST  11.1
+    Q_1_86  BAL_1_86  -1
+    Q_1_86  LINK_1_86  1
+    Q_1_87  COST  11.1
+    Q_1_87  BAL_1_87  -1
+    Q_1_87  LINK_1_87  1
+    Q_1_88  COST  14.9
+    Q_1_88  BAL_1_88  -1
+    Q_1_88  LINK_1_88  1
+    Q_1_89  COST  10.9
+    Q_1_89  BAL_1_89  -1
+    Q_1_89  LINK_1_89  1
+    I_1_0  COST  0.9
+    I_1_0  BAL_1_0  1
+    I_1_0  BAL_1_1  -1
+    I_1_1  COST  0.9
+    I_1_1  BAL_1_1  1
+    I_1_1  BAL_1_2  -1
+    I_1_2  COST  0.9
+    I_1_2  BAL_1_2  1
+    I_1_2  BAL_1_3  -1
+    I_1_3  COST  0.9
+    I_1_3  BAL_1_3  1
+    I_1_3  BAL_1_4  -1
+    I_1_4  COST  0.9
+    I_1_4  BAL_1_4  1
+    I_1_4  BAL_1_5  -1
+    I_1_5  COST  0.9
+    I_1_5  BAL_1_5  1
+    I_1_5  BAL_1_6  -1
+    I_1_6  COST  0.9
+    I_1_6  BAL_1_6  1
+    I_1_6  BAL_1_7  -1
+    I_1_7  COST  0.9
+    I_1_7  BAL_1_7  1
+    I_1_7  BAL_1_8  -1
+    I_1_8  COST  0.9
+    I_1_8  BAL_1_8  1
+    I_1_8  BAL_1_9  -1
+    I_1_9  COST  0.9
+    I_1_9  BAL_1_9  1
+    I_1_9  BAL_1_10  -1
+    I_1_10  COST  0.9
+    I_1_10  BAL_1_10  1
+    I_1_10  BAL_1_11  -1
+    I_1_11  COST  0.9
+    I_1_11  BAL_1_11  1
+    I_1_11  BAL_1_12  -1
+    I_1_12  COST  0.9
+    I_1_12  BAL_1_12  1
+    I_1_12  BAL_1_13  -1
+    I_1_13  COST  0.9
+    I_1_13  BAL_1_13  1
+    I_1_13  BAL_1_14  -1
+    I_1_14  COST  0.9
+    I_1_14  BAL_1_14  1
+    I_1_14  BAL_1_15  -1
+    I_1_15  COST  0.9
+    I_1_15  BAL_1_15  1
+    I_1_15  BAL_1_16  -1
+    I_1_16  COST  0.9
+    I_1_16  BAL_1_16  1
+    I_1_16  BAL_1_17  -1
+    I_1_17  COST  0.9
+    I_1_17  BAL_1_17  1
+    I_1_17  BAL_1_18  -1
+    I_1_18  COST  0.9
+    I_1_18  BAL_1_18  1
+    I_1_18  BAL_1_19  -1
+    I_1_19  COST  0.9
+    I_1_19  BAL_1_19  1
+    I_1_19  BAL_1_20  -1
+    I_1_20  COST  0.9
+    I_1_20  BAL_1_20  1
+    I_1_20  BAL_1_21  -1
+    I_1_21  COST  0.9
+    I_1_21  BAL_1_21  1
+    I_1_21  BAL_1_22  -1
+    I_1_22  COST  0.9
+    I_1_22  BAL_1_22  1
+    I_1_22  BAL_1_23  -1
+    I_1_23  COST  0.9
+    I_1_23  BAL_1_23  1
+    I_1_23  BAL_1_24  -1
+    I_1_24  COST  0.9
+    I_1_24  BAL_1_24  1
+    I_1_24  BAL_1_25  -1
+    I_1_25  COST  0.9
+    I_1_25  BAL_1_25  1
+    I_1_25  BAL_1_26  -1
+    I_1_26  COST  0.9
+    I_1_26  BAL_1_26  1
+    I_1_26  BAL_1_27  -1
+    I_1_27  COST  0.9
+    I_1_27  BAL_1_27  1
+    I_1_27  BAL_1_28  -1
+    I_1_28  COST  0.9
+    I_1_28  BAL_1_28  1
+    I_1_28  BAL_1_29  -1
+    I_1_29  COST  0.9
+    I_1_29  BAL_1_29  1
+    I_1_29  BAL_1_30  -1
+    I_1_30  COST  0.9
+    I_1_30  BAL_1_30  1
+    I_1_30  BAL_1_31  -1
+    I_1_31  COST  0.9
+    I_1_31  BAL_1_31  1
+    I_1_31  BAL_1_32  -1
+    I_1_32  COST  0.9
+    I_1_32  BAL_1_32  1
+    I_1_32  BAL_1_33  -1
+    I_1_33  COST  0.9
+    I_1_33  BAL_1_33  1
+    I_1_33  BAL_1_34  -1
+    I_1_34  COST  0.9
+    I_1_34  BAL_1_34  1
+    I_1_34  BAL_1_35  -1
+    I_1_35  COST  0.9
+    I_1_35  BAL_1_35  1
+    I_1_35  BAL_1_36  -1
+    I_1_36  COST  0.9
+    I_1_36  BAL_1_36  1
+    I_1_36  BAL_1_37  -1
+    I_1_37  COST  0.9
+    I_1_37  BAL_1_37  1
+    I_1_37  BAL_1_38  -1
+    I_1_38  COST  0.9
+    I_1_38  BAL_1_38  1
+    I_1_38  BAL_1_39  -1
+    I_1_39  COST  0.9
+    I_1_39  BAL_1_39  1
+    I_1_39  BAL_1_40  -1
+    I_1_40  COST  0.9
+    I_1_40  BAL_1_40  1
+    I_1_40  BAL_1_41  -1
+    I_1_41  COST  0.9
+    I_1_41  BAL_1_41  1
+    I_1_41  BAL_1_42  -1
+    I_1_42  COST  0.9
+    I_1_42  BAL_1_42  1
+    I_1_42  BAL_1_43  -1
+    I_1_43  COST  0.9
+    I_1_43  BAL_1_43  1
+    I_1_43  BAL_1_44  -1
+    I_1_44  COST  0.9
+    I_1_44  BAL_1_44  1
+    I_1_44  BAL_1_45  -1
+    I_1_45  COST  0.9
+    I_1_45  BAL_1_45  1
+    I_1_45  BAL_1_46  -1
+    I_1_46  COST  0.9
+    I_1_46  BAL_1_46  1
+    I_1_46  BAL_1_47  -1
+    I_1_47  COST  0.9
+    I_1_47  BAL_1_47  1
+    I_1_47  BAL_1_48  -1
+    I_1_48  COST  0.9
+    I_1_48  BAL_1_48  1
+    I_1_48  BAL_1_49  -1
+    I_1_49  COST  0.9
+    I_1_49  BAL_1_49  1
+    I_1_49  BAL_1_50  -1
+    I_1_50  COST  0.9
+    I_1_50  BAL_1_50  1
+    I_1_50  BAL_1_51  -1
+    I_1_51  COST  0.9
+    I_1_51  BAL_1_51  1
+    I_1_51  BAL_1_52  -1
+    I_1_52  COST  0.9
+    I_1_52  BAL_1_52  1
+    I_1_52  BAL_1_53  -1
+    I_1_53  COST  0.9
+    I_1_53  BAL_1_53  1
+    I_1_53  BAL_1_54  -1
+    I_1_54  COST  0.9
+    I_1_54  BAL_1_54  1
+    I_1_54  BAL_1_55  -1
+    I_1_55  COST  0.9
+    I_1_55  BAL_1_55  1
+    I_1_55  BAL_1_56  -1
+    I_1_56  COST  0.9
+    I_1_56  BAL_1_56  1
+    I_1_56  BAL_1_57  -1
+    I_1_57  COST  0.9
+    I_1_57  BAL_1_57  1
+    I_1_57  BAL_1_58  -1
+    I_1_58  COST  0.9
+    I_1_58  BAL_1_58  1
+    I_1_58  BAL_1_59  -1
+    I_1_59  COST  0.9
+    I_1_59  BAL_1_59  1
+    I_1_59  BAL_1_60  -1
+    I_1_60  COST  0.9
+    I_1_60  BAL_1_60  1
+    I_1_60  BAL_1_61  -1
+    I_1_61  COST  0.9
+    I_1_61  BAL_1_61  1
+    I_1_61  BAL_1_62  -1
+    I_1_62  COST  0.9
+    I_1_62  BAL_1_62  1
+    I_1_62  BAL_1_63  -1
+    I_1_63  COST  0.9
+    I_1_63  BAL_1_63  1
+    I_1_63  BAL_1_64  -1
+    I_1_64  COST  0.9
+    I_1_64  BAL_1_64  1
+    I_1_64  BAL_1_65  -1
+    I_1_65  COST  0.9
+    I_1_65  BAL_1_65  1
+    I_1_65  BAL_1_66  -1
+    I_1_66  COST  0.9
+    I_1_66  BAL_1_66  1
+    I_1_66  BAL_1_67  -1
+    I_1_67  COST  0.9
+    I_1_67  BAL_1_67  1
+    I_1_67  BAL_1_68  -1
+    I_1_68  COST  0.9
+    I_1_68  BAL_1_68  1
+    I_1_68  BAL_1_69  -1
+    I_1_69  COST  0.9
+    I_1_69  BAL_1_69  1
+    I_1_69  BAL_1_70  -1
+    I_1_70  COST  0.9
+    I_1_70  BAL_1_70  1
+    I_1_70  BAL_1_71  -1
+    I_1_71  COST  0.9
+    I_1_71  BAL_1_71  1
+    I_1_71  BAL_1_72  -1
+    I_1_72  COST  0.9
+    I_1_72  BAL_1_72  1
+    I_1_72  BAL_1_73  -1
+    I_1_73  COST  0.9
+    I_1_73  BAL_1_73  1
+    I_1_73  BAL_1_74  -1
+    I_1_74  COST  0.9
+    I_1_74  BAL_1_74  1
+    I_1_74  BAL_1_75  -1
+    I_1_75  COST  0.9
+    I_1_75  BAL_1_75  1
+    I_1_75  BAL_1_76  -1
+    I_1_76  COST  0.9
+    I_1_76  BAL_1_76  1
+    I_1_76  BAL_1_77  -1
+    I_1_77  COST  0.9
+    I_1_77  BAL_1_77  1
+    I_1_77  BAL_1_78  -1
+    I_1_78  COST  0.9
+    I_1_78  BAL_1_78  1
+    I_1_78  BAL_1_79  -1
+    I_1_79  COST  0.9
+    I_1_79  BAL_1_79  1
+    I_1_79  BAL_1_80  -1
+    I_1_80  COST  0.9
+    I_1_80  BAL_1_80  1
+    I_1_80  BAL_1_81  -1
+    I_1_81  COST  0.9
+    I_1_81  BAL_1_81  1
+    I_1_81  BAL_1_82  -1
+    I_1_82  COST  0.9
+    I_1_82  BAL_1_82  1
+    I_1_82  BAL_1_83  -1
+    I_1_83  COST  0.9
+    I_1_83  BAL_1_83  1
+    I_1_83  BAL_1_84  -1
+    I_1_84  COST  0.9
+    I_1_84  BAL_1_84  1
+    I_1_84  BAL_1_85  -1
+    I_1_85  COST  0.9
+    I_1_85  BAL_1_85  1
+    I_1_85  BAL_1_86  -1
+    I_1_86  COST  0.9
+    I_1_86  BAL_1_86  1
+    I_1_86  BAL_1_87  -1
+    I_1_87  COST  0.9
+    I_1_87  BAL_1_87  1
+    I_1_87  BAL_1_88  -1
+    I_1_88  COST  0.9
+    I_1_88  BAL_1_88  1
+    I_1_88  BAL_1_89  -1
+    I_1_89  COST  0.9
+    I_1_89  BAL_1_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_1_0  COST  185
+    Z_1_0  LINK_1_0  -2748
+    Z_1_1  COST  375
+    Z_1_1  LINK_1_1  -2690
+    Z_1_2  COST  209
+    Z_1_2  LINK_1_2  -2630
+    Z_1_3  COST  237
+    Z_1_3  LINK_1_3  -2611
+    Z_1_4  COST  270
+    Z_1_4  LINK_1_4  -2564
+    Z_1_5  COST  359
+    Z_1_5  LINK_1_5  -2554
+    Z_1_6  COST  230
+    Z_1_6  LINK_1_6  -2528
+    Z_1_7  COST  288
+    Z_1_7  LINK_1_7  -2492
+    Z_1_8  COST  273
+    Z_1_8  LINK_1_8  -2476
+    Z_1_9  COST  274
+    Z_1_9  LINK_1_9  -2468
+    Z_1_10  COST  158
+    Z_1_10  LINK_1_10  -2468
+    Z_1_11  COST  249
+    Z_1_11  LINK_1_11  -2433
+    Z_1_12  COST  220
+    Z_1_12  LINK_1_12  -2377
+    Z_1_13  COST  350
+    Z_1_13  LINK_1_13  -2323
+    Z_1_14  COST  169
+    Z_1_14  LINK_1_14  -2321
+    Z_1_15  COST  396
+    Z_1_15  LINK_1_15  -2284
+    Z_1_16  COST  382
+    Z_1_16  LINK_1_16  -2232
+    Z_1_17  COST  153
+    Z_1_17  LINK_1_17  -2219
+    Z_1_18  COST  264
+    Z_1_18  LINK_1_18  -2162
+    Z_1_19  COST  120
+    Z_1_19  LINK_1_19  -2126
+    Z_1_20  COST  308
+    Z_1_20  LINK_1_20  -2097
+    Z_1_21  COST  137
+    Z_1_21  LINK_1_21  -2087
+    Z_1_22  COST  294
+    Z_1_22  LINK_1_22  -2035
+    Z_1_23  COST  175
+    Z_1_23  LINK_1_23  -1980
+    Z_1_24  COST  164
+    Z_1_24  LINK_1_24  -1925
+    Z_1_25  COST  274
+    Z_1_25  LINK_1_25  -1876
+    Z_1_26  COST  158
+    Z_1_26  LINK_1_26  -1831
+    Z_1_27  COST  400
+    Z_1_27  LINK_1_27  -1792
+    Z_1_28  COST  293
+    Z_1_28  LINK_1_28  -1760
+    Z_1_29  COST  139
+    Z_1_29  LINK_1_29  -1758
+    Z_1_30  COST  392
+    Z_1_30  LINK_1_30  -1734
+    Z_1_31  COST  381
+    Z_1_31  LINK_1_31  -1722
+    Z_1_32  COST  214
+    Z_1_32  LINK_1_32  -1700
+    Z_1_33  COST  389
+    Z_1_33  LINK_1_33  -1694
+    Z_1_34  COST  141
+    Z_1_34  LINK_1_34  -1681
+    Z_1_35  COST  236
+    Z_1_35  LINK_1_35  -1645
+    Z_1_36  COST  286
+    Z_1_36  LINK_1_36  -1602
+    Z_1_37  COST  251
+    Z_1_37  LINK_1_37  -1545
+    Z_1_38  COST  388
+    Z_1_38  LINK_1_38  -1518
+    Z_1_39  COST  373
+    Z_1_39  LINK_1_39  -1481
+    Z_1_40  COST  158
+    Z_1_40  LINK_1_40  -1469
+    Z_1_41  COST  334
+    Z_1_41  LINK_1_41  -1438
+    Z_1_42  COST  241
+    Z_1_42  LINK_1_42  -1432
+    Z_1_43  COST  155
+    Z_1_43  LINK_1_43  -1372
+    Z_1_44  COST  123
+    Z_1_44  LINK_1_44  -1330
+    Z_1_45  COST  251
+    Z_1_45  LINK_1_45  -1306
+    Z_1_46  COST  106
+    Z_1_46  LINK_1_46  -1288
+    Z_1_47  COST  107
+    Z_1_47  LINK_1_47  -1256
+    Z_1_48  COST  146
+    Z_1_48  LINK_1_48  -1225
+    Z_1_49  COST  311
+    Z_1_49  LINK_1_49  -1224
+    Z_1_50  COST  158
+    Z_1_50  LINK_1_50  -1204
+    Z_1_51  COST  120
+    Z_1_51  LINK_1_51  -1165
+    Z_1_52  COST  196
+    Z_1_52  LINK_1_52  -1110
+    Z_1_53  COST  222
+    Z_1_53  LINK_1_53  -1085
+    Z_1_54  COST  400
+    Z_1_54  LINK_1_54  -1028
+    Z_1_55  COST  315
+    Z_1_55  LINK_1_55  -1010
+    Z_1_56  COST  182
+    Z_1_56  LINK_1_56  -1009
+    Z_1_57  COST  159
+    Z_1_57  LINK_1_57  -999
+    Z_1_58  COST  330
+    Z_1_58  LINK_1_58  -987
+    Z_1_59  COST  185
+    Z_1_59  LINK_1_59  -933
+    Z_1_60  COST  223
+    Z_1_60  LINK_1_60  -913
+    Z_1_61  COST  181
+    Z_1_61  LINK_1_61  -862
+    Z_1_62  COST  152
+    Z_1_62  LINK_1_62  -826
+    Z_1_63  COST  322
+    Z_1_63  LINK_1_63  -776
+    Z_1_64  COST  293
+    Z_1_64  LINK_1_64  -768
+    Z_1_65  COST  377
+    Z_1_65  LINK_1_65  -747
+    Z_1_66  COST  250
+    Z_1_66  LINK_1_66  -720
+    Z_1_67  COST  381
+    Z_1_67  LINK_1_67  -707
+    Z_1_68  COST  229
+    Z_1_68  LINK_1_68  -690
+    Z_1_69  COST  344
+    Z_1_69  LINK_1_69  -647
+    Z_1_70  COST  261
+    Z_1_70  LINK_1_70  -641
+    Z_1_71  COST  151
+    Z_1_71  LINK_1_71  -588
+    Z_1_72  COST  206
+    Z_1_72  LINK_1_72  -564
+    Z_1_73  COST  262
+    Z_1_73  LINK_1_73  -505
+    Z_1_74  COST  120
+    Z_1_74  LINK_1_74  -470
+    Z_1_75  COST  113
+    Z_1_75  LINK_1_75  -448
+    Z_1_76  COST  105
+    Z_1_76  LINK_1_76  -390
+    Z_1_77  COST  251
+    Z_1_77  LINK_1_77  -334
+    Z_1_78  COST  263
+    Z_1_78  LINK_1_78  -281
+    Z_1_79  COST  330
+    Z_1_79  LINK_1_79  -238
+    Z_1_80  COST  300
+    Z_1_80  LINK_1_80  -204
+    Z_1_81  COST  260
+    Z_1_81  LINK_1_81  -173
+    Z_1_82  COST  304
+    Z_1_82  LINK_1_82  -124
+    Z_1_83  COST  132
+    Z_1_83  LINK_1_83  -90
+    Z_1_84  COST  132
+    Z_1_84  LINK_1_84  -75
+    Z_1_85  COST  262
+    Z_1_85  LINK_1_85  -71
+    Z_1_86  COST  333
+    Z_1_86  LINK_1_86  -25
+    Z_1_87  COST  157
+    Z_1_87  LINK_1_87  -23
+    Z_1_88  COST  228
+    Z_1_88  LINK_1_88  -18
+    Z_1_89  COST  210
+    Z_1_89  LINK_1_89  -10
+    MARKER  'MARKER'  'INTEND'
+    Q_2_0  COST  11.1
+    Q_2_0  BAL_2_0  -1
+    Q_2_0  LINK_2_0  1
+    Q_2_1  COST  11.8
+    Q_2_1  BAL_2_1  -1
+    Q_2_1  LINK_2_1  1
+    Q_2_2  COST  10.9
+    Q_2_2  BAL_2_2  -1
+    Q_2_2  LINK_2_2  1
+    Q_2_3  COST  13.4
+    Q_2_3  BAL_2_3  -1
+    Q_2_3  LINK_2_3  1
+    Q_2_4  COST  11.2
+    Q_2_4  BAL_2_4  -1
+    Q_2_4  LINK_2_4  1
+    Q_2_5  COST  11.7
+    Q_2_5  BAL_2_5  -1
+    Q_2_5  LINK_2_5  1
+    Q_2_6  COST  11.9
+    Q_2_6  BAL_2_6  -1
+    Q_2_6  LINK_2_6  1
+    Q_2_7  COST  13.7
+    Q_2_7  BAL_2_7  -1
+    Q_2_7  LINK_2_7  1
+    Q_2_8  COST  14.8
+    Q_2_8  BAL_2_8  -1
+    Q_2_8  LINK_2_8  1
+    Q_2_9  COST  11.6
+    Q_2_9  BAL_2_9  -1
+    Q_2_9  LINK_2_9  1
+    Q_2_10  COST  15.3
+    Q_2_10  BAL_2_10  -1
+    Q_2_10  LINK_2_10  1
+    Q_2_11  COST  14.3
+    Q_2_11  BAL_2_11  -1
+    Q_2_11  LINK_2_11  1
+    Q_2_12  COST  12.8
+    Q_2_12  BAL_2_12  -1
+    Q_2_12  LINK_2_12  1
+    Q_2_13  COST  15
+    Q_2_13  BAL_2_13  -1
+    Q_2_13  LINK_2_13  1
+    Q_2_14  COST  15.5
+    Q_2_14  BAL_2_14  -1
+    Q_2_14  LINK_2_14  1
+    Q_2_15  COST  15.1
+    Q_2_15  BAL_2_15  -1
+    Q_2_15  LINK_2_15  1
+    Q_2_16  COST  15.4
+    Q_2_16  BAL_2_16  -1
+    Q_2_16  LINK_2_16  1
+    Q_2_17  COST  11
+    Q_2_17  BAL_2_17  -1
+    Q_2_17  LINK_2_17  1
+    Q_2_18  COST  13.4
+    Q_2_18  BAL_2_18  -1
+    Q_2_18  LINK_2_18  1
+    Q_2_19  COST  12.2
+    Q_2_19  BAL_2_19  -1
+    Q_2_19  LINK_2_19  1
+    Q_2_20  COST  13.1
+    Q_2_20  BAL_2_20  -1
+    Q_2_20  LINK_2_20  1
+    Q_2_21  COST  12.6
+    Q_2_21  BAL_2_21  -1
+    Q_2_21  LINK_2_21  1
+    Q_2_22  COST  15.4
+    Q_2_22  BAL_2_22  -1
+    Q_2_22  LINK_2_22  1
+    Q_2_23  COST  10.7
+    Q_2_23  BAL_2_23  -1
+    Q_2_23  LINK_2_23  1
+    Q_2_24  COST  14.9
+    Q_2_24  BAL_2_24  -1
+    Q_2_24  LINK_2_24  1
+    Q_2_25  COST  11.3
+    Q_2_25  BAL_2_25  -1
+    Q_2_25  LINK_2_25  1
+    Q_2_26  COST  13.6
+    Q_2_26  BAL_2_26  -1
+    Q_2_26  LINK_2_26  1
+    Q_2_27  COST  15.6
+    Q_2_27  BAL_2_27  -1
+    Q_2_27  LINK_2_27  1
+    Q_2_28  COST  12.4
+    Q_2_28  BAL_2_28  -1
+    Q_2_28  LINK_2_28  1
+    Q_2_29  COST  11.3
+    Q_2_29  BAL_2_29  -1
+    Q_2_29  LINK_2_29  1
+    Q_2_30  COST  11.8
+    Q_2_30  BAL_2_30  -1
+    Q_2_30  LINK_2_30  1
+    Q_2_31  COST  15.1
+    Q_2_31  BAL_2_31  -1
+    Q_2_31  LINK_2_31  1
+    Q_2_32  COST  10.6
+    Q_2_32  BAL_2_32  -1
+    Q_2_32  LINK_2_32  1
+    Q_2_33  COST  15.7
+    Q_2_33  BAL_2_33  -1
+    Q_2_33  LINK_2_33  1
+    Q_2_34  COST  15.1
+    Q_2_34  BAL_2_34  -1
+    Q_2_34  LINK_2_34  1
+    Q_2_35  COST  10.1
+    Q_2_35  BAL_2_35  -1
+    Q_2_35  LINK_2_35  1
+    Q_2_36  COST  10.7
+    Q_2_36  BAL_2_36  -1
+    Q_2_36  LINK_2_36  1
+    Q_2_37  COST  13.6
+    Q_2_37  BAL_2_37  -1
+    Q_2_37  LINK_2_37  1
+    Q_2_38  COST  14.7
+    Q_2_38  BAL_2_38  -1
+    Q_2_38  LINK_2_38  1
+    Q_2_39  COST  10
+    Q_2_39  BAL_2_39  -1
+    Q_2_39  LINK_2_39  1
+    Q_2_40  COST  13.4
+    Q_2_40  BAL_2_40  -1
+    Q_2_40  LINK_2_40  1
+    Q_2_41  COST  11.8
+    Q_2_41  BAL_2_41  -1
+    Q_2_41  LINK_2_41  1
+    Q_2_42  COST  14.3
+    Q_2_42  BAL_2_42  -1
+    Q_2_42  LINK_2_42  1
+    Q_2_43  COST  14.8
+    Q_2_43  BAL_2_43  -1
+    Q_2_43  LINK_2_43  1
+    Q_2_44  COST  14.6
+    Q_2_44  BAL_2_44  -1
+    Q_2_44  LINK_2_44  1
+    Q_2_45  COST  14.1
+    Q_2_45  BAL_2_45  -1
+    Q_2_45  LINK_2_45  1
+    Q_2_46  COST  10.8
+    Q_2_46  BAL_2_46  -1
+    Q_2_46  LINK_2_46  1
+    Q_2_47  COST  10.4
+    Q_2_47  BAL_2_47  -1
+    Q_2_47  LINK_2_47  1
+    Q_2_48  COST  13.2
+    Q_2_48  BAL_2_48  -1
+    Q_2_48  LINK_2_48  1
+    Q_2_49  COST  12.3
+    Q_2_49  BAL_2_49  -1
+    Q_2_49  LINK_2_49  1
+    Q_2_50  COST  13.6
+    Q_2_50  BAL_2_50  -1
+    Q_2_50  LINK_2_50  1
+    Q_2_51  COST  15.1
+    Q_2_51  BAL_2_51  -1
+    Q_2_51  LINK_2_51  1
+    Q_2_52  COST  11.9
+    Q_2_52  BAL_2_52  -1
+    Q_2_52  LINK_2_52  1
+    Q_2_53  COST  12.7
+    Q_2_53  BAL_2_53  -1
+    Q_2_53  LINK_2_53  1
+    Q_2_54  COST  13.2
+    Q_2_54  BAL_2_54  -1
+    Q_2_54  LINK_2_54  1
+    Q_2_55  COST  14.3
+    Q_2_55  BAL_2_55  -1
+    Q_2_55  LINK_2_55  1
+    Q_2_56  COST  12.2
+    Q_2_56  BAL_2_56  -1
+    Q_2_56  LINK_2_56  1
+    Q_2_57  COST  14.8
+    Q_2_57  BAL_2_57  -1
+    Q_2_57  LINK_2_57  1
+    Q_2_58  COST  13.3
+    Q_2_58  BAL_2_58  -1
+    Q_2_58  LINK_2_58  1
+    Q_2_59  COST  12
+    Q_2_59  BAL_2_59  -1
+    Q_2_59  LINK_2_59  1
+    Q_2_60  COST  10
+    Q_2_60  BAL_2_60  -1
+    Q_2_60  LINK_2_60  1
+    Q_2_61  COST  10.7
+    Q_2_61  BAL_2_61  -1
+    Q_2_61  LINK_2_61  1
+    Q_2_62  COST  12.8
+    Q_2_62  BAL_2_62  -1
+    Q_2_62  LINK_2_62  1
+    Q_2_63  COST  14.5
+    Q_2_63  BAL_2_63  -1
+    Q_2_63  LINK_2_63  1
+    Q_2_64  COST  12.8
+    Q_2_64  BAL_2_64  -1
+    Q_2_64  LINK_2_64  1
+    Q_2_65  COST  12.2
+    Q_2_65  BAL_2_65  -1
+    Q_2_65  LINK_2_65  1
+    Q_2_66  COST  11.9
+    Q_2_66  BAL_2_66  -1
+    Q_2_66  LINK_2_66  1
+    Q_2_67  COST  13.4
+    Q_2_67  BAL_2_67  -1
+    Q_2_67  LINK_2_67  1
+    Q_2_68  COST  12.5
+    Q_2_68  BAL_2_68  -1
+    Q_2_68  LINK_2_68  1
+    Q_2_69  COST  12.1
+    Q_2_69  BAL_2_69  -1
+    Q_2_69  LINK_2_69  1
+    Q_2_70  COST  15
+    Q_2_70  BAL_2_70  -1
+    Q_2_70  LINK_2_70  1
+    Q_2_71  COST  14.6
+    Q_2_71  BAL_2_71  -1
+    Q_2_71  LINK_2_71  1
+    Q_2_72  COST  14.3
+    Q_2_72  BAL_2_72  -1
+    Q_2_72  LINK_2_72  1
+    Q_2_73  COST  13.6
+    Q_2_73  BAL_2_73  -1
+    Q_2_73  LINK_2_73  1
+    Q_2_74  COST  13.1
+    Q_2_74  BAL_2_74  -1
+    Q_2_74  LINK_2_74  1
+    Q_2_75  COST  10.7
+    Q_2_75  BAL_2_75  -1
+    Q_2_75  LINK_2_75  1
+    Q_2_76  COST  14.1
+    Q_2_76  BAL_2_76  -1
+    Q_2_76  LINK_2_76  1
+    Q_2_77  COST  15.8
+    Q_2_77  BAL_2_77  -1
+    Q_2_77  LINK_2_77  1
+    Q_2_78  COST  12.4
+    Q_2_78  BAL_2_78  -1
+    Q_2_78  LINK_2_78  1
+    Q_2_79  COST  12.4
+    Q_2_79  BAL_2_79  -1
+    Q_2_79  LINK_2_79  1
+    Q_2_80  COST  11.3
+    Q_2_80  BAL_2_80  -1
+    Q_2_80  LINK_2_80  1
+    Q_2_81  COST  13.5
+    Q_2_81  BAL_2_81  -1
+    Q_2_81  LINK_2_81  1
+    Q_2_82  COST  10
+    Q_2_82  BAL_2_82  -1
+    Q_2_82  LINK_2_82  1
+    Q_2_83  COST  11.7
+    Q_2_83  BAL_2_83  -1
+    Q_2_83  LINK_2_83  1
+    Q_2_84  COST  14
+    Q_2_84  BAL_2_84  -1
+    Q_2_84  LINK_2_84  1
+    Q_2_85  COST  13.8
+    Q_2_85  BAL_2_85  -1
+    Q_2_85  LINK_2_85  1
+    Q_2_86  COST  14.6
+    Q_2_86  BAL_2_86  -1
+    Q_2_86  LINK_2_86  1
+    Q_2_87  COST  15.6
+    Q_2_87  BAL_2_87  -1
+    Q_2_87  LINK_2_87  1
+    Q_2_88  COST  14.7
+    Q_2_88  BAL_2_88  -1
+    Q_2_88  LINK_2_88  1
+    Q_2_89  COST  15.3
+    Q_2_89  BAL_2_89  -1
+    Q_2_89  LINK_2_89  1
+    I_2_0  COST  2.8
+    I_2_0  BAL_2_0  1
+    I_2_0  BAL_2_1  -1
+    I_2_1  COST  2.8
+    I_2_1  BAL_2_1  1
+    I_2_1  BAL_2_2  -1
+    I_2_2  COST  2.8
+    I_2_2  BAL_2_2  1
+    I_2_2  BAL_2_3  -1
+    I_2_3  COST  2.8
+    I_2_3  BAL_2_3  1
+    I_2_3  BAL_2_4  -1
+    I_2_4  COST  2.8
+    I_2_4  BAL_2_4  1
+    I_2_4  BAL_2_5  -1
+    I_2_5  COST  2.8
+    I_2_5  BAL_2_5  1
+    I_2_5  BAL_2_6  -1
+    I_2_6  COST  2.8
+    I_2_6  BAL_2_6  1
+    I_2_6  BAL_2_7  -1
+    I_2_7  COST  2.8
+    I_2_7  BAL_2_7  1
+    I_2_7  BAL_2_8  -1
+    I_2_8  COST  2.8
+    I_2_8  BAL_2_8  1
+    I_2_8  BAL_2_9  -1
+    I_2_9  COST  2.8
+    I_2_9  BAL_2_9  1
+    I_2_9  BAL_2_10  -1
+    I_2_10  COST  2.8
+    I_2_10  BAL_2_10  1
+    I_2_10  BAL_2_11  -1
+    I_2_11  COST  2.8
+    I_2_11  BAL_2_11  1
+    I_2_11  BAL_2_12  -1
+    I_2_12  COST  2.8
+    I_2_12  BAL_2_12  1
+    I_2_12  BAL_2_13  -1
+    I_2_13  COST  2.8
+    I_2_13  BAL_2_13  1
+    I_2_13  BAL_2_14  -1
+    I_2_14  COST  2.8
+    I_2_14  BAL_2_14  1
+    I_2_14  BAL_2_15  -1
+    I_2_15  COST  2.8
+    I_2_15  BAL_2_15  1
+    I_2_15  BAL_2_16  -1
+    I_2_16  COST  2.8
+    I_2_16  BAL_2_16  1
+    I_2_16  BAL_2_17  -1
+    I_2_17  COST  2.8
+    I_2_17  BAL_2_17  1
+    I_2_17  BAL_2_18  -1
+    I_2_18  COST  2.8
+    I_2_18  BAL_2_18  1
+    I_2_18  BAL_2_19  -1
+    I_2_19  COST  2.8
+    I_2_19  BAL_2_19  1
+    I_2_19  BAL_2_20  -1
+    I_2_20  COST  2.8
+    I_2_20  BAL_2_20  1
+    I_2_20  BAL_2_21  -1
+    I_2_21  COST  2.8
+    I_2_21  BAL_2_21  1
+    I_2_21  BAL_2_22  -1
+    I_2_22  COST  2.8
+    I_2_22  BAL_2_22  1
+    I_2_22  BAL_2_23  -1
+    I_2_23  COST  2.8
+    I_2_23  BAL_2_23  1
+    I_2_23  BAL_2_24  -1
+    I_2_24  COST  2.8
+    I_2_24  BAL_2_24  1
+    I_2_24  BAL_2_25  -1
+    I_2_25  COST  2.8
+    I_2_25  BAL_2_25  1
+    I_2_25  BAL_2_26  -1
+    I_2_26  COST  2.8
+    I_2_26  BAL_2_26  1
+    I_2_26  BAL_2_27  -1
+    I_2_27  COST  2.8
+    I_2_27  BAL_2_27  1
+    I_2_27  BAL_2_28  -1
+    I_2_28  COST  2.8
+    I_2_28  BAL_2_28  1
+    I_2_28  BAL_2_29  -1
+    I_2_29  COST  2.8
+    I_2_29  BAL_2_29  1
+    I_2_29  BAL_2_30  -1
+    I_2_30  COST  2.8
+    I_2_30  BAL_2_30  1
+    I_2_30  BAL_2_31  -1
+    I_2_31  COST  2.8
+    I_2_31  BAL_2_31  1
+    I_2_31  BAL_2_32  -1
+    I_2_32  COST  2.8
+    I_2_32  BAL_2_32  1
+    I_2_32  BAL_2_33  -1
+    I_2_33  COST  2.8
+    I_2_33  BAL_2_33  1
+    I_2_33  BAL_2_34  -1
+    I_2_34  COST  2.8
+    I_2_34  BAL_2_34  1
+    I_2_34  BAL_2_35  -1
+    I_2_35  COST  2.8
+    I_2_35  BAL_2_35  1
+    I_2_35  BAL_2_36  -1
+    I_2_36  COST  2.8
+    I_2_36  BAL_2_36  1
+    I_2_36  BAL_2_37  -1
+    I_2_37  COST  2.8
+    I_2_37  BAL_2_37  1
+    I_2_37  BAL_2_38  -1
+    I_2_38  COST  2.8
+    I_2_38  BAL_2_38  1
+    I_2_38  BAL_2_39  -1
+    I_2_39  COST  2.8
+    I_2_39  BAL_2_39  1
+    I_2_39  BAL_2_40  -1
+    I_2_40  COST  2.8
+    I_2_40  BAL_2_40  1
+    I_2_40  BAL_2_41  -1
+    I_2_41  COST  2.8
+    I_2_41  BAL_2_41  1
+    I_2_41  BAL_2_42  -1
+    I_2_42  COST  2.8
+    I_2_42  BAL_2_42  1
+    I_2_42  BAL_2_43  -1
+    I_2_43  COST  2.8
+    I_2_43  BAL_2_43  1
+    I_2_43  BAL_2_44  -1
+    I_2_44  COST  2.8
+    I_2_44  BAL_2_44  1
+    I_2_44  BAL_2_45  -1
+    I_2_45  COST  2.8
+    I_2_45  BAL_2_45  1
+    I_2_45  BAL_2_46  -1
+    I_2_46  COST  2.8
+    I_2_46  BAL_2_46  1
+    I_2_46  BAL_2_47  -1
+    I_2_47  COST  2.8
+    I_2_47  BAL_2_47  1
+    I_2_47  BAL_2_48  -1
+    I_2_48  COST  2.8
+    I_2_48  BAL_2_48  1
+    I_2_48  BAL_2_49  -1
+    I_2_49  COST  2.8
+    I_2_49  BAL_2_49  1
+    I_2_49  BAL_2_50  -1
+    I_2_50  COST  2.8
+    I_2_50  BAL_2_50  1
+    I_2_50  BAL_2_51  -1
+    I_2_51  COST  2.8
+    I_2_51  BAL_2_51  1
+    I_2_51  BAL_2_52  -1
+    I_2_52  COST  2.8
+    I_2_52  BAL_2_52  1
+    I_2_52  BAL_2_53  -1
+    I_2_53  COST  2.8
+    I_2_53  BAL_2_53  1
+    I_2_53  BAL_2_54  -1
+    I_2_54  COST  2.8
+    I_2_54  BAL_2_54  1
+    I_2_54  BAL_2_55  -1
+    I_2_55  COST  2.8
+    I_2_55  BAL_2_55  1
+    I_2_55  BAL_2_56  -1
+    I_2_56  COST  2.8
+    I_2_56  BAL_2_56  1
+    I_2_56  BAL_2_57  -1
+    I_2_57  COST  2.8
+    I_2_57  BAL_2_57  1
+    I_2_57  BAL_2_58  -1
+    I_2_58  COST  2.8
+    I_2_58  BAL_2_58  1
+    I_2_58  BAL_2_59  -1
+    I_2_59  COST  2.8
+    I_2_59  BAL_2_59  1
+    I_2_59  BAL_2_60  -1
+    I_2_60  COST  2.8
+    I_2_60  BAL_2_60  1
+    I_2_60  BAL_2_61  -1
+    I_2_61  COST  2.8
+    I_2_61  BAL_2_61  1
+    I_2_61  BAL_2_62  -1
+    I_2_62  COST  2.8
+    I_2_62  BAL_2_62  1
+    I_2_62  BAL_2_63  -1
+    I_2_63  COST  2.8
+    I_2_63  BAL_2_63  1
+    I_2_63  BAL_2_64  -1
+    I_2_64  COST  2.8
+    I_2_64  BAL_2_64  1
+    I_2_64  BAL_2_65  -1
+    I_2_65  COST  2.8
+    I_2_65  BAL_2_65  1
+    I_2_65  BAL_2_66  -1
+    I_2_66  COST  2.8
+    I_2_66  BAL_2_66  1
+    I_2_66  BAL_2_67  -1
+    I_2_67  COST  2.8
+    I_2_67  BAL_2_67  1
+    I_2_67  BAL_2_68  -1
+    I_2_68  COST  2.8
+    I_2_68  BAL_2_68  1
+    I_2_68  BAL_2_69  -1
+    I_2_69  COST  2.8
+    I_2_69  BAL_2_69  1
+    I_2_69  BAL_2_70  -1
+    I_2_70  COST  2.8
+    I_2_70  BAL_2_70  1
+    I_2_70  BAL_2_71  -1
+    I_2_71  COST  2.8
+    I_2_71  BAL_2_71  1
+    I_2_71  BAL_2_72  -1
+    I_2_72  COST  2.8
+    I_2_72  BAL_2_72  1
+    I_2_72  BAL_2_73  -1
+    I_2_73  COST  2.8
+    I_2_73  BAL_2_73  1
+    I_2_73  BAL_2_74  -1
+    I_2_74  COST  2.8
+    I_2_74  BAL_2_74  1
+    I_2_74  BAL_2_75  -1
+    I_2_75  COST  2.8
+    I_2_75  BAL_2_75  1
+    I_2_75  BAL_2_76  -1
+    I_2_76  COST  2.8
+    I_2_76  BAL_2_76  1
+    I_2_76  BAL_2_77  -1
+    I_2_77  COST  2.8
+    I_2_77  BAL_2_77  1
+    I_2_77  BAL_2_78  -1
+    I_2_78  COST  2.8
+    I_2_78  BAL_2_78  1
+    I_2_78  BAL_2_79  -1
+    I_2_79  COST  2.8
+    I_2_79  BAL_2_79  1
+    I_2_79  BAL_2_80  -1
+    I_2_80  COST  2.8
+    I_2_80  BAL_2_80  1
+    I_2_80  BAL_2_81  -1
+    I_2_81  COST  2.8
+    I_2_81  BAL_2_81  1
+    I_2_81  BAL_2_82  -1
+    I_2_82  COST  2.8
+    I_2_82  BAL_2_82  1
+    I_2_82  BAL_2_83  -1
+    I_2_83  COST  2.8
+    I_2_83  BAL_2_83  1
+    I_2_83  BAL_2_84  -1
+    I_2_84  COST  2.8
+    I_2_84  BAL_2_84  1
+    I_2_84  BAL_2_85  -1
+    I_2_85  COST  2.8
+    I_2_85  BAL_2_85  1
+    I_2_85  BAL_2_86  -1
+    I_2_86  COST  2.8
+    I_2_86  BAL_2_86  1
+    I_2_86  BAL_2_87  -1
+    I_2_87  COST  2.8
+    I_2_87  BAL_2_87  1
+    I_2_87  BAL_2_88  -1
+    I_2_88  COST  2.8
+    I_2_88  BAL_2_88  1
+    I_2_88  BAL_2_89  -1
+    I_2_89  COST  2.8
+    I_2_89  BAL_2_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_2_0  COST  103
+    Z_2_0  LINK_2_0  -2762
+    Z_2_1  COST  190
+    Z_2_1  LINK_2_1  -2710
+    Z_2_2  COST  370
+    Z_2_2  LINK_2_2  -2655
+    Z_2_3  COST  262
+    Z_2_3  LINK_2_3  -2635
+    Z_2_4  COST  356
+    Z_2_4  LINK_2_4  -2616
+    Z_2_5  COST  324
+    Z_2_5  LINK_2_5  -2610
+    Z_2_6  COST  215
+    Z_2_6  LINK_2_6  -2565
+    Z_2_7  COST  222
+    Z_2_7  LINK_2_7  -2533
+    Z_2_8  COST  260
+    Z_2_8  LINK_2_8  -2480
+    Z_2_9  COST  353
+    Z_2_9  LINK_2_9  -2422
+    Z_2_10  COST  345
+    Z_2_10  LINK_2_10  -2384
+    Z_2_11  COST  215
+    Z_2_11  LINK_2_11  -2366
+    Z_2_12  COST  311
+    Z_2_12  LINK_2_12  -2358
+    Z_2_13  COST  272
+    Z_2_13  LINK_2_13  -2301
+    Z_2_14  COST  386
+    Z_2_14  LINK_2_14  -2288
+    Z_2_15  COST  240
+    Z_2_15  LINK_2_15  -2279
+    Z_2_16  COST  212
+    Z_2_16  LINK_2_16  -2245
+    Z_2_17  COST  124
+    Z_2_17  LINK_2_17  -2187
+    Z_2_18  COST  136
+    Z_2_18  LINK_2_18  -2141
+    Z_2_19  COST  361
+    Z_2_19  LINK_2_19  -2139
+    Z_2_20  COST  288
+    Z_2_20  LINK_2_20  -2090
+    Z_2_21  COST  181
+    Z_2_21  LINK_2_21  -2070
+    Z_2_22  COST  361
+    Z_2_22  LINK_2_22  -2018
+    Z_2_23  COST  204
+    Z_2_23  LINK_2_23  -1961
+    Z_2_24  COST  259
+    Z_2_24  LINK_2_24  -1922
+    Z_2_25  COST  252
+    Z_2_25  LINK_2_25  -1871
+    Z_2_26  COST  253
+    Z_2_26  LINK_2_26  -1828
+    Z_2_27  COST  382
+    Z_2_27  LINK_2_27  -1770
+    Z_2_28  COST  290
+    Z_2_28  LINK_2_28  -1735
+    Z_2_29  COST  184
+    Z_2_29  LINK_2_29  -1682
+    Z_2_30  COST  337
+    Z_2_30  LINK_2_30  -1622
+    Z_2_31  COST  143
+    Z_2_31  LINK_2_31  -1575
+    Z_2_32  COST  163
+    Z_2_32  LINK_2_32  -1531
+    Z_2_33  COST  363
+    Z_2_33  LINK_2_33  -1518
+    Z_2_34  COST  392
+    Z_2_34  LINK_2_34  -1507
+    Z_2_35  COST  293
+    Z_2_35  LINK_2_35  -1488
+    Z_2_36  COST  190
+    Z_2_36  LINK_2_36  -1461
+    Z_2_37  COST  179
+    Z_2_37  LINK_2_37  -1427
+    Z_2_38  COST  228
+    Z_2_38  LINK_2_38  -1417
+    Z_2_39  COST  318
+    Z_2_39  LINK_2_39  -1414
+    Z_2_40  COST  211
+    Z_2_40  LINK_2_40  -1369
+    Z_2_41  COST  391
+    Z_2_41  LINK_2_41  -1314
+    Z_2_42  COST  126
+    Z_2_42  LINK_2_42  -1272
+    Z_2_43  COST  353
+    Z_2_43  LINK_2_43  -1257
+    Z_2_44  COST  301
+    Z_2_44  LINK_2_44  -1241
+    Z_2_45  COST  278
+    Z_2_45  LINK_2_45  -1192
+    Z_2_46  COST  296
+    Z_2_46  LINK_2_46  -1188
+    Z_2_47  COST  363
+    Z_2_47  LINK_2_47  -1145
+    Z_2_48  COST  184
+    Z_2_48  LINK_2_48  -1117
+    Z_2_49  COST  378
+    Z_2_49  LINK_2_49  -1066
+    Z_2_50  COST  120
+    Z_2_50  LINK_2_50  -1039
+    Z_2_51  COST  368
+    Z_2_51  LINK_2_51  -1004
+    Z_2_52  COST  146
+    Z_2_52  LINK_2_52  -988
+    Z_2_53  COST  230
+    Z_2_53  LINK_2_53  -954
+    Z_2_54  COST  151
+    Z_2_54  LINK_2_54  -926
+    Z_2_55  COST  236
+    Z_2_55  LINK_2_55  -872
+    Z_2_56  COST  142
+    Z_2_56  LINK_2_56  -838
+    Z_2_57  COST  171
+    Z_2_57  LINK_2_57  -809
+    Z_2_58  COST  141
+    Z_2_58  LINK_2_58  -809
+    Z_2_59  COST  327
+    Z_2_59  LINK_2_59  -784
+    Z_2_60  COST  223
+    Z_2_60  LINK_2_60  -731
+    Z_2_61  COST  295
+    Z_2_61  LINK_2_61  -710
+    Z_2_62  COST  321
+    Z_2_62  LINK_2_62  -700
+    Z_2_63  COST  303
+    Z_2_63  LINK_2_63  -684
+    Z_2_64  COST  184
+    Z_2_64  LINK_2_64  -653
+    Z_2_65  COST  266
+    Z_2_65  LINK_2_65  -652
+    Z_2_66  COST  324
+    Z_2_66  LINK_2_66  -602
+    Z_2_67  COST  164
+    Z_2_67  LINK_2_67  -561
+    Z_2_68  COST  349
+    Z_2_68  LINK_2_68  -502
+    Z_2_69  COST  208
+    Z_2_69  LINK_2_69  -476
+    Z_2_70  COST  161
+    Z_2_70  LINK_2_70  -440
+    Z_2_71  COST  320
+    Z_2_71  LINK_2_71  -439
+    Z_2_72  COST  373
+    Z_2_72  LINK_2_72  -436
+    Z_2_73  COST  309
+    Z_2_73  LINK_2_73  -392
+    Z_2_74  COST  160
+    Z_2_74  LINK_2_74  -370
+    Z_2_75  COST  251
+    Z_2_75  LINK_2_75  -333
+    Z_2_76  COST  242
+    Z_2_76  LINK_2_76  -325
+    Z_2_77  COST  227
+    Z_2_77  LINK_2_77  -288
+    Z_2_78  COST  293
+    Z_2_78  LINK_2_78  -280
+    Z_2_79  COST  386
+    Z_2_79  LINK_2_79  -272
+    Z_2_80  COST  102
+    Z_2_80  LINK_2_80  -256
+    Z_2_81  COST  197
+    Z_2_81  LINK_2_81  -203
+    Z_2_82  COST  370
+    Z_2_82  LINK_2_82  -186
+    Z_2_83  COST  324
+    Z_2_83  LINK_2_83  -161
+    Z_2_84  COST  396
+    Z_2_84  LINK_2_84  -125
+    Z_2_85  COST  110
+    Z_2_85  LINK_2_85  -100
+    Z_2_86  COST  115
+    Z_2_86  LINK_2_86  -89
+    Z_2_87  COST  224
+    Z_2_87  LINK_2_87  -50
+    Z_2_88  COST  233
+    Z_2_88  LINK_2_88  -45
+    Z_2_89  COST  205
+    Z_2_89  LINK_2_89  -31
+    MARKER  'MARKER'  'INTEND'
+    Q_3_0  COST  13.1
+    Q_3_0  BAL_3_0  -1
+    Q_3_0  LINK_3_0  1
+    Q_3_1  COST  12.8
+    Q_3_1  BAL_3_1  -1
+    Q_3_1  LINK_3_1  1
+    Q_3_2  COST  12.4
+    Q_3_2  BAL_3_2  -1
+    Q_3_2  LINK_3_2  1
+    Q_3_3  COST  14.8
+    Q_3_3  BAL_3_3  -1
+    Q_3_3  LINK_3_3  1
+    Q_3_4  COST  11
+    Q_3_4  BAL_3_4  -1
+    Q_3_4  LINK_3_4  1
+    Q_3_5  COST  11.4
+    Q_3_5  BAL_3_5  -1
+    Q_3_5  LINK_3_5  1
+    Q_3_6  COST  11.5
+    Q_3_6  BAL_3_6  -1
+    Q_3_6  LINK_3_6  1
+    Q_3_7  COST  15.2
+    Q_3_7  BAL_3_7  -1
+    Q_3_7  LINK_3_7  1
+    Q_3_8  COST  11.8
+    Q_3_8  BAL_3_8  -1
+    Q_3_8  LINK_3_8  1
+    Q_3_9  COST  12.9
+    Q_3_9  BAL_3_9  -1
+    Q_3_9  LINK_3_9  1
+    Q_3_10  COST  13.5
+    Q_3_10  BAL_3_10  -1
+    Q_3_10  LINK_3_10  1
+    Q_3_11  COST  13.7
+    Q_3_11  BAL_3_11  -1
+    Q_3_11  LINK_3_11  1
+    Q_3_12  COST  12.4
+    Q_3_12  BAL_3_12  -1
+    Q_3_12  LINK_3_12  1
+    Q_3_13  COST  11.3
+    Q_3_13  BAL_3_13  -1
+    Q_3_13  LINK_3_13  1
+    Q_3_14  COST  12.8
+    Q_3_14  BAL_3_14  -1
+    Q_3_14  LINK_3_14  1
+    Q_3_15  COST  14.5
+    Q_3_15  BAL_3_15  -1
+    Q_3_15  LINK_3_15  1
+    Q_3_16  COST  11.6
+    Q_3_16  BAL_3_16  -1
+    Q_3_16  LINK_3_16  1
+    Q_3_17  COST  12.1
+    Q_3_17  BAL_3_17  -1
+    Q_3_17  LINK_3_17  1
+    Q_3_18  COST  13.1
+    Q_3_18  BAL_3_18  -1
+    Q_3_18  LINK_3_18  1
+    Q_3_19  COST  13.7
+    Q_3_19  BAL_3_19  -1
+    Q_3_19  LINK_3_19  1
+    Q_3_20  COST  10.7
+    Q_3_20  BAL_3_20  -1
+    Q_3_20  LINK_3_20  1
+    Q_3_21  COST  15.8
+    Q_3_21  BAL_3_21  -1
+    Q_3_21  LINK_3_21  1
+    Q_3_22  COST  11.3
+    Q_3_22  BAL_3_22  -1
+    Q_3_22  LINK_3_22  1
+    Q_3_23  COST  10.5
+    Q_3_23  BAL_3_23  -1
+    Q_3_23  LINK_3_23  1
+    Q_3_24  COST  10.2
+    Q_3_24  BAL_3_24  -1
+    Q_3_24  LINK_3_24  1
+    Q_3_25  COST  10
+    Q_3_25  BAL_3_25  -1
+    Q_3_25  LINK_3_25  1
+    Q_3_26  COST  15.1
+    Q_3_26  BAL_3_26  -1
+    Q_3_26  LINK_3_26  1
+    Q_3_27  COST  10
+    Q_3_27  BAL_3_27  -1
+    Q_3_27  LINK_3_27  1
+    Q_3_28  COST  15.4
+    Q_3_28  BAL_3_28  -1
+    Q_3_28  LINK_3_28  1
+    Q_3_29  COST  13
+    Q_3_29  BAL_3_29  -1
+    Q_3_29  LINK_3_29  1
+    Q_3_30  COST  12
+    Q_3_30  BAL_3_30  -1
+    Q_3_30  LINK_3_30  1
+    Q_3_31  COST  15.6
+    Q_3_31  BAL_3_31  -1
+    Q_3_31  LINK_3_31  1
+    Q_3_32  COST  12.4
+    Q_3_32  BAL_3_32  -1
+    Q_3_32  LINK_3_32  1
+    Q_3_33  COST  15.4
+    Q_3_33  BAL_3_33  -1
+    Q_3_33  LINK_3_33  1
+    Q_3_34  COST  13.7
+    Q_3_34  BAL_3_34  -1
+    Q_3_34  LINK_3_34  1
+    Q_3_35  COST  11.8
+    Q_3_35  BAL_3_35  -1
+    Q_3_35  LINK_3_35  1
+    Q_3_36  COST  15.8
+    Q_3_36  BAL_3_36  -1
+    Q_3_36  LINK_3_36  1
+    Q_3_37  COST  11.2
+    Q_3_37  BAL_3_37  -1
+    Q_3_37  LINK_3_37  1
+    Q_3_38  COST  12.5
+    Q_3_38  BAL_3_38  -1
+    Q_3_38  LINK_3_38  1
+    Q_3_39  COST  11
+    Q_3_39  BAL_3_39  -1
+    Q_3_39  LINK_3_39  1
+    Q_3_40  COST  15.6
+    Q_3_40  BAL_3_40  -1
+    Q_3_40  LINK_3_40  1
+    Q_3_41  COST  15.2
+    Q_3_41  BAL_3_41  -1
+    Q_3_41  LINK_3_41  1
+    Q_3_42  COST  14.8
+    Q_3_42  BAL_3_42  -1
+    Q_3_42  LINK_3_42  1
+    Q_3_43  COST  14.1
+    Q_3_43  BAL_3_43  -1
+    Q_3_43  LINK_3_43  1
+    Q_3_44  COST  10.9
+    Q_3_44  BAL_3_44  -1
+    Q_3_44  LINK_3_44  1
+    Q_3_45  COST  15
+    Q_3_45  BAL_3_45  -1
+    Q_3_45  LINK_3_45  1
+    Q_3_46  COST  15.8
+    Q_3_46  BAL_3_46  -1
+    Q_3_46  LINK_3_46  1
+    Q_3_47  COST  10.1
+    Q_3_47  BAL_3_47  -1
+    Q_3_47  LINK_3_47  1
+    Q_3_48  COST  10
+    Q_3_48  BAL_3_48  -1
+    Q_3_48  LINK_3_48  1
+    Q_3_49  COST  12.4
+    Q_3_49  BAL_3_49  -1
+    Q_3_49  LINK_3_49  1
+    Q_3_50  COST  10.9
+    Q_3_50  BAL_3_50  -1
+    Q_3_50  LINK_3_50  1
+    Q_3_51  COST  15.6
+    Q_3_51  BAL_3_51  -1
+    Q_3_51  LINK_3_51  1
+    Q_3_52  COST  14.2
+    Q_3_52  BAL_3_52  -1
+    Q_3_52  LINK_3_52  1
+    Q_3_53  COST  13.4
+    Q_3_53  BAL_3_53  -1
+    Q_3_53  LINK_3_53  1
+    Q_3_54  COST  10.3
+    Q_3_54  BAL_3_54  -1
+    Q_3_54  LINK_3_54  1
+    Q_3_55  COST  13.6
+    Q_3_55  BAL_3_55  -1
+    Q_3_55  LINK_3_55  1
+    Q_3_56  COST  12.4
+    Q_3_56  BAL_3_56  -1
+    Q_3_56  LINK_3_56  1
+    Q_3_57  COST  11.6
+    Q_3_57  BAL_3_57  -1
+    Q_3_57  LINK_3_57  1
+    Q_3_58  COST  10.8
+    Q_3_58  BAL_3_58  -1
+    Q_3_58  LINK_3_58  1
+    Q_3_59  COST  10.5
+    Q_3_59  BAL_3_59  -1
+    Q_3_59  LINK_3_59  1
+    Q_3_60  COST  12.9
+    Q_3_60  BAL_3_60  -1
+    Q_3_60  LINK_3_60  1
+    Q_3_61  COST  14.1
+    Q_3_61  BAL_3_61  -1
+    Q_3_61  LINK_3_61  1
+    Q_3_62  COST  15.3
+    Q_3_62  BAL_3_62  -1
+    Q_3_62  LINK_3_62  1
+    Q_3_63  COST  11.9
+    Q_3_63  BAL_3_63  -1
+    Q_3_63  LINK_3_63  1
+    Q_3_64  COST  15.7
+    Q_3_64  BAL_3_64  -1
+    Q_3_64  LINK_3_64  1
+    Q_3_65  COST  10
+    Q_3_65  BAL_3_65  -1
+    Q_3_65  LINK_3_65  1
+    Q_3_66  COST  10.2
+    Q_3_66  BAL_3_66  -1
+    Q_3_66  LINK_3_66  1
+    Q_3_67  COST  13.4
+    Q_3_67  BAL_3_67  -1
+    Q_3_67  LINK_3_67  1
+    Q_3_68  COST  10.3
+    Q_3_68  BAL_3_68  -1
+    Q_3_68  LINK_3_68  1
+    Q_3_69  COST  13.3
+    Q_3_69  BAL_3_69  -1
+    Q_3_69  LINK_3_69  1
+    Q_3_70  COST  15.3
+    Q_3_70  BAL_3_70  -1
+    Q_3_70  LINK_3_70  1
+    Q_3_71  COST  10.8
+    Q_3_71  BAL_3_71  -1
+    Q_3_71  LINK_3_71  1
+    Q_3_72  COST  10.2
+    Q_3_72  BAL_3_72  -1
+    Q_3_72  LINK_3_72  1
+    Q_3_73  COST  15.9
+    Q_3_73  BAL_3_73  -1
+    Q_3_73  LINK_3_73  1
+    Q_3_74  COST  11.7
+    Q_3_74  BAL_3_74  -1
+    Q_3_74  LINK_3_74  1
+    Q_3_75  COST  14.9
+    Q_3_75  BAL_3_75  -1
+    Q_3_75  LINK_3_75  1
+    Q_3_76  COST  10.7
+    Q_3_76  BAL_3_76  -1
+    Q_3_76  LINK_3_76  1
+    Q_3_77  COST  12.7
+    Q_3_77  BAL_3_77  -1
+    Q_3_77  LINK_3_77  1
+    Q_3_78  COST  10.5
+    Q_3_78  BAL_3_78  -1
+    Q_3_78  LINK_3_78  1
+    Q_3_79  COST  11.2
+    Q_3_79  BAL_3_79  -1
+    Q_3_79  LINK_3_79  1
+    Q_3_80  COST  10.1
+    Q_3_80  BAL_3_80  -1
+    Q_3_80  LINK_3_80  1
+    Q_3_81  COST  13.1
+    Q_3_81  BAL_3_81  -1
+    Q_3_81  LINK_3_81  1
+    Q_3_82  COST  14
+    Q_3_82  BAL_3_82  -1
+    Q_3_82  LINK_3_82  1
+    Q_3_83  COST  10.8
+    Q_3_83  BAL_3_83  -1
+    Q_3_83  LINK_3_83  1
+    Q_3_84  COST  14.7
+    Q_3_84  BAL_3_84  -1
+    Q_3_84  LINK_3_84  1
+    Q_3_85  COST  11.7
+    Q_3_85  BAL_3_85  -1
+    Q_3_85  LINK_3_85  1
+    Q_3_86  COST  14.3
+    Q_3_86  BAL_3_86  -1
+    Q_3_86  LINK_3_86  1
+    Q_3_87  COST  15.2
+    Q_3_87  BAL_3_87  -1
+    Q_3_87  LINK_3_87  1
+    Q_3_88  COST  15.4
+    Q_3_88  BAL_3_88  -1
+    Q_3_88  LINK_3_88  1
+    Q_3_89  COST  11.2
+    Q_3_89  BAL_3_89  -1
+    Q_3_89  LINK_3_89  1
+    I_3_0  COST  2.6
+    I_3_0  BAL_3_0  1
+    I_3_0  BAL_3_1  -1
+    I_3_1  COST  2.6
+    I_3_1  BAL_3_1  1
+    I_3_1  BAL_3_2  -1
+    I_3_2  COST  2.6
+    I_3_2  BAL_3_2  1
+    I_3_2  BAL_3_3  -1
+    I_3_3  COST  2.6
+    I_3_3  BAL_3_3  1
+    I_3_3  BAL_3_4  -1
+    I_3_4  COST  2.6
+    I_3_4  BAL_3_4  1
+    I_3_4  BAL_3_5  -1
+    I_3_5  COST  2.6
+    I_3_5  BAL_3_5  1
+    I_3_5  BAL_3_6  -1
+    I_3_6  COST  2.6
+    I_3_6  BAL_3_6  1
+    I_3_6  BAL_3_7  -1
+    I_3_7  COST  2.6
+    I_3_7  BAL_3_7  1
+    I_3_7  BAL_3_8  -1
+    I_3_8  COST  2.6
+    I_3_8  BAL_3_8  1
+    I_3_8  BAL_3_9  -1
+    I_3_9  COST  2.6
+    I_3_9  BAL_3_9  1
+    I_3_9  BAL_3_10  -1
+    I_3_10  COST  2.6
+    I_3_10  BAL_3_10  1
+    I_3_10  BAL_3_11  -1
+    I_3_11  COST  2.6
+    I_3_11  BAL_3_11  1
+    I_3_11  BAL_3_12  -1
+    I_3_12  COST  2.6
+    I_3_12  BAL_3_12  1
+    I_3_12  BAL_3_13  -1
+    I_3_13  COST  2.6
+    I_3_13  BAL_3_13  1
+    I_3_13  BAL_3_14  -1
+    I_3_14  COST  2.6
+    I_3_14  BAL_3_14  1
+    I_3_14  BAL_3_15  -1
+    I_3_15  COST  2.6
+    I_3_15  BAL_3_15  1
+    I_3_15  BAL_3_16  -1
+    I_3_16  COST  2.6
+    I_3_16  BAL_3_16  1
+    I_3_16  BAL_3_17  -1
+    I_3_17  COST  2.6
+    I_3_17  BAL_3_17  1
+    I_3_17  BAL_3_18  -1
+    I_3_18  COST  2.6
+    I_3_18  BAL_3_18  1
+    I_3_18  BAL_3_19  -1
+    I_3_19  COST  2.6
+    I_3_19  BAL_3_19  1
+    I_3_19  BAL_3_20  -1
+    I_3_20  COST  2.6
+    I_3_20  BAL_3_20  1
+    I_3_20  BAL_3_21  -1
+    I_3_21  COST  2.6
+    I_3_21  BAL_3_21  1
+    I_3_21  BAL_3_22  -1
+    I_3_22  COST  2.6
+    I_3_22  BAL_3_22  1
+    I_3_22  BAL_3_23  -1
+    I_3_23  COST  2.6
+    I_3_23  BAL_3_23  1
+    I_3_23  BAL_3_24  -1
+    I_3_24  COST  2.6
+    I_3_24  BAL_3_24  1
+    I_3_24  BAL_3_25  -1
+    I_3_25  COST  2.6
+    I_3_25  BAL_3_25  1
+    I_3_25  BAL_3_26  -1
+    I_3_26  COST  2.6
+    I_3_26  BAL_3_26  1
+    I_3_26  BAL_3_27  -1
+    I_3_27  COST  2.6
+    I_3_27  BAL_3_27  1
+    I_3_27  BAL_3_28  -1
+    I_3_28  COST  2.6
+    I_3_28  BAL_3_28  1
+    I_3_28  BAL_3_29  -1
+    I_3_29  COST  2.6
+    I_3_29  BAL_3_29  1
+    I_3_29  BAL_3_30  -1
+    I_3_30  COST  2.6
+    I_3_30  BAL_3_30  1
+    I_3_30  BAL_3_31  -1
+    I_3_31  COST  2.6
+    I_3_31  BAL_3_31  1
+    I_3_31  BAL_3_32  -1
+    I_3_32  COST  2.6
+    I_3_32  BAL_3_32  1
+    I_3_32  BAL_3_33  -1
+    I_3_33  COST  2.6
+    I_3_33  BAL_3_33  1
+    I_3_33  BAL_3_34  -1
+    I_3_34  COST  2.6
+    I_3_34  BAL_3_34  1
+    I_3_34  BAL_3_35  -1
+    I_3_35  COST  2.6
+    I_3_35  BAL_3_35  1
+    I_3_35  BAL_3_36  -1
+    I_3_36  COST  2.6
+    I_3_36  BAL_3_36  1
+    I_3_36  BAL_3_37  -1
+    I_3_37  COST  2.6
+    I_3_37  BAL_3_37  1
+    I_3_37  BAL_3_38  -1
+    I_3_38  COST  2.6
+    I_3_38  BAL_3_38  1
+    I_3_38  BAL_3_39  -1
+    I_3_39  COST  2.6
+    I_3_39  BAL_3_39  1
+    I_3_39  BAL_3_40  -1
+    I_3_40  COST  2.6
+    I_3_40  BAL_3_40  1
+    I_3_40  BAL_3_41  -1
+    I_3_41  COST  2.6
+    I_3_41  BAL_3_41  1
+    I_3_41  BAL_3_42  -1
+    I_3_42  COST  2.6
+    I_3_42  BAL_3_42  1
+    I_3_42  BAL_3_43  -1
+    I_3_43  COST  2.6
+    I_3_43  BAL_3_43  1
+    I_3_43  BAL_3_44  -1
+    I_3_44  COST  2.6
+    I_3_44  BAL_3_44  1
+    I_3_44  BAL_3_45  -1
+    I_3_45  COST  2.6
+    I_3_45  BAL_3_45  1
+    I_3_45  BAL_3_46  -1
+    I_3_46  COST  2.6
+    I_3_46  BAL_3_46  1
+    I_3_46  BAL_3_47  -1
+    I_3_47  COST  2.6
+    I_3_47  BAL_3_47  1
+    I_3_47  BAL_3_48  -1
+    I_3_48  COST  2.6
+    I_3_48  BAL_3_48  1
+    I_3_48  BAL_3_49  -1
+    I_3_49  COST  2.6
+    I_3_49  BAL_3_49  1
+    I_3_49  BAL_3_50  -1
+    I_3_50  COST  2.6
+    I_3_50  BAL_3_50  1
+    I_3_50  BAL_3_51  -1
+    I_3_51  COST  2.6
+    I_3_51  BAL_3_51  1
+    I_3_51  BAL_3_52  -1
+    I_3_52  COST  2.6
+    I_3_52  BAL_3_52  1
+    I_3_52  BAL_3_53  -1
+    I_3_53  COST  2.6
+    I_3_53  BAL_3_53  1
+    I_3_53  BAL_3_54  -1
+    I_3_54  COST  2.6
+    I_3_54  BAL_3_54  1
+    I_3_54  BAL_3_55  -1
+    I_3_55  COST  2.6
+    I_3_55  BAL_3_55  1
+    I_3_55  BAL_3_56  -1
+    I_3_56  COST  2.6
+    I_3_56  BAL_3_56  1
+    I_3_56  BAL_3_57  -1
+    I_3_57  COST  2.6
+    I_3_57  BAL_3_57  1
+    I_3_57  BAL_3_58  -1
+    I_3_58  COST  2.6
+    I_3_58  BAL_3_58  1
+    I_3_58  BAL_3_59  -1
+    I_3_59  COST  2.6
+    I_3_59  BAL_3_59  1
+    I_3_59  BAL_3_60  -1
+    I_3_60  COST  2.6
+    I_3_60  BAL_3_60  1
+    I_3_60  BAL_3_61  -1
+    I_3_61  COST  2.6
+    I_3_61  BAL_3_61  1
+    I_3_61  BAL_3_62  -1
+    I_3_62  COST  2.6
+    I_3_62  BAL_3_62  1
+    I_3_62  BAL_3_63  -1
+    I_3_63  COST  2.6
+    I_3_63  BAL_3_63  1
+    I_3_63  BAL_3_64  -1
+    I_3_64  COST  2.6
+    I_3_64  BAL_3_64  1
+    I_3_64  BAL_3_65  -1
+    I_3_65  COST  2.6
+    I_3_65  BAL_3_65  1
+    I_3_65  BAL_3_66  -1
+    I_3_66  COST  2.6
+    I_3_66  BAL_3_66  1
+    I_3_66  BAL_3_67  -1
+    I_3_67  COST  2.6
+    I_3_67  BAL_3_67  1
+    I_3_67  BAL_3_68  -1
+    I_3_68  COST  2.6
+    I_3_68  BAL_3_68  1
+    I_3_68  BAL_3_69  -1
+    I_3_69  COST  2.6
+    I_3_69  BAL_3_69  1
+    I_3_69  BAL_3_70  -1
+    I_3_70  COST  2.6
+    I_3_70  BAL_3_70  1
+    I_3_70  BAL_3_71  -1
+    I_3_71  COST  2.6
+    I_3_71  BAL_3_71  1
+    I_3_71  BAL_3_72  -1
+    I_3_72  COST  2.6
+    I_3_72  BAL_3_72  1
+    I_3_72  BAL_3_73  -1
+    I_3_73  COST  2.6
+    I_3_73  BAL_3_73  1
+    I_3_73  BAL_3_74  -1
+    I_3_74  COST  2.6
+    I_3_74  BAL_3_74  1
+    I_3_74  BAL_3_75  -1
+    I_3_75  COST  2.6
+    I_3_75  BAL_3_75  1
+    I_3_75  BAL_3_76  -1
+    I_3_76  COST  2.6
+    I_3_76  BAL_3_76  1
+    I_3_76  BAL_3_77  -1
+    I_3_77  COST  2.6
+    I_3_77  BAL_3_77  1
+    I_3_77  BAL_3_78  -1
+    I_3_78  COST  2.6
+    I_3_78  BAL_3_78  1
+    I_3_78  BAL_3_79  -1
+    I_3_79  COST  2.6
+    I_3_79  BAL_3_79  1
+    I_3_79  BAL_3_80  -1
+    I_3_80  COST  2.6
+    I_3_80  BAL_3_80  1
+    I_3_80  BAL_3_81  -1
+    I_3_81  COST  2.6
+    I_3_81  BAL_3_81  1
+    I_3_81  BAL_3_82  -1
+    I_3_82  COST  2.6
+    I_3_82  BAL_3_82  1
+    I_3_82  BAL_3_83  -1
+    I_3_83  COST  2.6
+    I_3_83  BAL_3_83  1
+    I_3_83  BAL_3_84  -1
+    I_3_84  COST  2.6
+    I_3_84  BAL_3_84  1
+    I_3_84  BAL_3_85  -1
+    I_3_85  COST  2.6
+    I_3_85  BAL_3_85  1
+    I_3_85  BAL_3_86  -1
+    I_3_86  COST  2.6
+    I_3_86  BAL_3_86  1
+    I_3_86  BAL_3_87  -1
+    I_3_87  COST  2.6
+    I_3_87  BAL_3_87  1
+    I_3_87  BAL_3_88  -1
+    I_3_88  COST  2.6
+    I_3_88  BAL_3_88  1
+    I_3_88  BAL_3_89  -1
+    I_3_89  COST  2.6
+    I_3_89  BAL_3_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_3_0  COST  326
+    Z_3_0  LINK_3_0  -2849
+    Z_3_1  COST  110
+    Z_3_1  LINK_3_1  -2817
+    Z_3_2  COST  184
+    Z_3_2  LINK_3_2  -2805
+    Z_3_3  COST  359
+    Z_3_3  LINK_3_3  -2746
+    Z_3_4  COST  182
+    Z_3_4  LINK_3_4  -2717
+    Z_3_5  COST  147
+    Z_3_5  LINK_3_5  -2679
+    Z_3_6  COST  305
+    Z_3_6  LINK_3_6  -2626
+    Z_3_7  COST  241
+    Z_3_7  LINK_3_7  -2593
+    Z_3_8  COST  255
+    Z_3_8  LINK_3_8  -2567
+    Z_3_9  COST  206
+    Z_3_9  LINK_3_9  -2508
+    Z_3_10  COST  370
+    Z_3_10  LINK_3_10  -2461
+    Z_3_11  COST  206
+    Z_3_11  LINK_3_11  -2416
+    Z_3_12  COST  221
+    Z_3_12  LINK_3_12  -2397
+    Z_3_13  COST  270
+    Z_3_13  LINK_3_13  -2353
+    Z_3_14  COST  237
+    Z_3_14  LINK_3_14  -2343
+    Z_3_15  COST  135
+    Z_3_15  LINK_3_15  -2315
+    Z_3_16  COST  138
+    Z_3_16  LINK_3_16  -2276
+    Z_3_17  COST  367
+    Z_3_17  LINK_3_17  -2234
+    Z_3_18  COST  288
+    Z_3_18  LINK_3_18  -2201
+    Z_3_19  COST  339
+    Z_3_19  LINK_3_19  -2189
+    Z_3_20  COST  361
+    Z_3_20  LINK_3_20  -2166
+    Z_3_21  COST  385
+    Z_3_21  LINK_3_21  -2133
+    Z_3_22  COST  125
+    Z_3_22  LINK_3_22  -2133
+    Z_3_23  COST  186
+    Z_3_23  LINK_3_23  -2090
+    Z_3_24  COST  252
+    Z_3_24  LINK_3_24  -2066
+    Z_3_25  COST  384
+    Z_3_25  LINK_3_25  -2029
+    Z_3_26  COST  238
+    Z_3_26  LINK_3_26  -2002
+    Z_3_27  COST  282
+    Z_3_27  LINK_3_27  -1977
+    Z_3_28  COST  218
+    Z_3_28  LINK_3_28  -1956
+    Z_3_29  COST  300
+    Z_3_29  LINK_3_29  -1901
+    Z_3_30  COST  387
+    Z_3_30  LINK_3_30  -1862
+    Z_3_31  COST  304
+    Z_3_31  LINK_3_31  -1825
+    Z_3_32  COST  188
+    Z_3_32  LINK_3_32  -1779
+    Z_3_33  COST  347
+    Z_3_33  LINK_3_33  -1735
+    Z_3_34  COST  232
+    Z_3_34  LINK_3_34  -1678
+    Z_3_35  COST  268
+    Z_3_35  LINK_3_35  -1631
+    Z_3_36  COST  213
+    Z_3_36  LINK_3_36  -1627
+    Z_3_37  COST  232
+    Z_3_37  LINK_3_37  -1596
+    Z_3_38  COST  225
+    Z_3_38  LINK_3_38  -1549
+    Z_3_39  COST  115
+    Z_3_39  LINK_3_39  -1534
+    Z_3_40  COST  306
+    Z_3_40  LINK_3_40  -1494
+    Z_3_41  COST  262
+    Z_3_41  LINK_3_41  -1453
+    Z_3_42  COST  321
+    Z_3_42  LINK_3_42  -1435
+    Z_3_43  COST  227
+    Z_3_43  LINK_3_43  -1395
+    Z_3_44  COST  237
+    Z_3_44  LINK_3_44  -1394
+    Z_3_45  COST  197
+    Z_3_45  LINK_3_45  -1368
+    Z_3_46  COST  137
+    Z_3_46  LINK_3_46  -1322
+    Z_3_47  COST  184
+    Z_3_47  LINK_3_47  -1282
+    Z_3_48  COST  396
+    Z_3_48  LINK_3_48  -1273
+    Z_3_49  COST  327
+    Z_3_49  LINK_3_49  -1233
+    Z_3_50  COST  397
+    Z_3_50  LINK_3_50  -1184
+    Z_3_51  COST  175
+    Z_3_51  LINK_3_51  -1125
+    Z_3_52  COST  234
+    Z_3_52  LINK_3_52  -1100
+    Z_3_53  COST  335
+    Z_3_53  LINK_3_53  -1050
+    Z_3_54  COST  369
+    Z_3_54  LINK_3_54  -1033
+    Z_3_55  COST  183
+    Z_3_55  LINK_3_55  -979
+    Z_3_56  COST  170
+    Z_3_56  LINK_3_56  -968
+    Z_3_57  COST  170
+    Z_3_57  LINK_3_57  -919
+    Z_3_58  COST  325
+    Z_3_58  LINK_3_58  -915
+    Z_3_59  COST  284
+    Z_3_59  LINK_3_59  -863
+    Z_3_60  COST  258
+    Z_3_60  LINK_3_60  -814
+    Z_3_61  COST  305
+    Z_3_61  LINK_3_61  -776
+    Z_3_62  COST  223
+    Z_3_62  LINK_3_62  -776
+    Z_3_63  COST  159
+    Z_3_63  LINK_3_63  -754
+    Z_3_64  COST  205
+    Z_3_64  LINK_3_64  -696
+    Z_3_65  COST  256
+    Z_3_65  LINK_3_65  -680
+    Z_3_66  COST  134
+    Z_3_66  LINK_3_66  -629
+    Z_3_67  COST  154
+    Z_3_67  LINK_3_67  -584
+    Z_3_68  COST  216
+    Z_3_68  LINK_3_68  -558
+    Z_3_69  COST  303
+    Z_3_69  LINK_3_69  -503
+    Z_3_70  COST  264
+    Z_3_70  LINK_3_70  -460
+    Z_3_71  COST  352
+    Z_3_71  LINK_3_71  -426
+    Z_3_72  COST  151
+    Z_3_72  LINK_3_72  -407
+    Z_3_73  COST  195
+    Z_3_73  LINK_3_73  -398
+    Z_3_74  COST  123
+    Z_3_74  LINK_3_74  -369
+    Z_3_75  COST  128
+    Z_3_75  LINK_3_75  -316
+    Z_3_76  COST  111
+    Z_3_76  LINK_3_76  -300
+    Z_3_77  COST  210
+    Z_3_77  LINK_3_77  -269
+    Z_3_78  COST  117
+    Z_3_78  LINK_3_78  -259
+    Z_3_79  COST  353
+    Z_3_79  LINK_3_79  -230
+    Z_3_80  COST  370
+    Z_3_80  LINK_3_80  -198
+    Z_3_81  COST  326
+    Z_3_81  LINK_3_81  -196
+    Z_3_82  COST  275
+    Z_3_82  LINK_3_82  -179
+    Z_3_83  COST  240
+    Z_3_83  LINK_3_83  -147
+    Z_3_84  COST  160
+    Z_3_84  LINK_3_84  -141
+    Z_3_85  COST  188
+    Z_3_85  LINK_3_85  -94
+    Z_3_86  COST  148
+    Z_3_86  LINK_3_86  -57
+    Z_3_87  COST  213
+    Z_3_87  LINK_3_87  -30
+    Z_3_88  COST  304
+    Z_3_88  LINK_3_88  -26
+    Z_3_89  COST  219
+    Z_3_89  LINK_3_89  -4
+    MARKER  'MARKER'  'INTEND'
+    Q_4_0  COST  13.2
+    Q_4_0  BAL_4_0  -1
+    Q_4_0  LINK_4_0  1
+    Q_4_1  COST  11
+    Q_4_1  BAL_4_1  -1
+    Q_4_1  LINK_4_1  1
+    Q_4_2  COST  10.1
+    Q_4_2  BAL_4_2  -1
+    Q_4_2  LINK_4_2  1
+    Q_4_3  COST  10.9
+    Q_4_3  BAL_4_3  -1
+    Q_4_3  LINK_4_3  1
+    Q_4_4  COST  11.6
+    Q_4_4  BAL_4_4  -1
+    Q_4_4  LINK_4_4  1
+    Q_4_5  COST  14.3
+    Q_4_5  BAL_4_5  -1
+    Q_4_5  LINK_4_5  1
+    Q_4_6  COST  11.4
+    Q_4_6  BAL_4_6  -1
+    Q_4_6  LINK_4_6  1
+    Q_4_7  COST  13.6
+    Q_4_7  BAL_4_7  -1
+    Q_4_7  LINK_4_7  1
+    Q_4_8  COST  10.8
+    Q_4_8  BAL_4_8  -1
+    Q_4_8  LINK_4_8  1
+    Q_4_9  COST  15.8
+    Q_4_9  BAL_4_9  -1
+    Q_4_9  LINK_4_9  1
+    Q_4_10  COST  10.7
+    Q_4_10  BAL_4_10  -1
+    Q_4_10  LINK_4_10  1
+    Q_4_11  COST  11.1
+    Q_4_11  BAL_4_11  -1
+    Q_4_11  LINK_4_11  1
+    Q_4_12  COST  14.9
+    Q_4_12  BAL_4_12  -1
+    Q_4_12  LINK_4_12  1
+    Q_4_13  COST  12.6
+    Q_4_13  BAL_4_13  -1
+    Q_4_13  LINK_4_13  1
+    Q_4_14  COST  16
+    Q_4_14  BAL_4_14  -1
+    Q_4_14  LINK_4_14  1
+    Q_4_15  COST  14.6
+    Q_4_15  BAL_4_15  -1
+    Q_4_15  LINK_4_15  1
+    Q_4_16  COST  13.9
+    Q_4_16  BAL_4_16  -1
+    Q_4_16  LINK_4_16  1
+    Q_4_17  COST  10.3
+    Q_4_17  BAL_4_17  -1
+    Q_4_17  LINK_4_17  1
+    Q_4_18  COST  15.1
+    Q_4_18  BAL_4_18  -1
+    Q_4_18  LINK_4_18  1
+    Q_4_19  COST  10.6
+    Q_4_19  BAL_4_19  -1
+    Q_4_19  LINK_4_19  1
+    Q_4_20  COST  13.4
+    Q_4_20  BAL_4_20  -1
+    Q_4_20  LINK_4_20  1
+    Q_4_21  COST  14.3
+    Q_4_21  BAL_4_21  -1
+    Q_4_21  LINK_4_21  1
+    Q_4_22  COST  11.7
+    Q_4_22  BAL_4_22  -1
+    Q_4_22  LINK_4_22  1
+    Q_4_23  COST  14.5
+    Q_4_23  BAL_4_23  -1
+    Q_4_23  LINK_4_23  1
+    Q_4_24  COST  10.6
+    Q_4_24  BAL_4_24  -1
+    Q_4_24  LINK_4_24  1
+    Q_4_25  COST  11.3
+    Q_4_25  BAL_4_25  -1
+    Q_4_25  LINK_4_25  1
+    Q_4_26  COST  11.6
+    Q_4_26  BAL_4_26  -1
+    Q_4_26  LINK_4_26  1
+    Q_4_27  COST  10.4
+    Q_4_27  BAL_4_27  -1
+    Q_4_27  LINK_4_27  1
+    Q_4_28  COST  14
+    Q_4_28  BAL_4_28  -1
+    Q_4_28  LINK_4_28  1
+    Q_4_29  COST  13.6
+    Q_4_29  BAL_4_29  -1
+    Q_4_29  LINK_4_29  1
+    Q_4_30  COST  13.3
+    Q_4_30  BAL_4_30  -1
+    Q_4_30  LINK_4_30  1
+    Q_4_31  COST  14.1
+    Q_4_31  BAL_4_31  -1
+    Q_4_31  LINK_4_31  1
+    Q_4_32  COST  10.5
+    Q_4_32  BAL_4_32  -1
+    Q_4_32  LINK_4_32  1
+    Q_4_33  COST  15.4
+    Q_4_33  BAL_4_33  -1
+    Q_4_33  LINK_4_33  1
+    Q_4_34  COST  10.4
+    Q_4_34  BAL_4_34  -1
+    Q_4_34  LINK_4_34  1
+    Q_4_35  COST  15
+    Q_4_35  BAL_4_35  -1
+    Q_4_35  LINK_4_35  1
+    Q_4_36  COST  15.4
+    Q_4_36  BAL_4_36  -1
+    Q_4_36  LINK_4_36  1
+    Q_4_37  COST  11.3
+    Q_4_37  BAL_4_37  -1
+    Q_4_37  LINK_4_37  1
+    Q_4_38  COST  14.1
+    Q_4_38  BAL_4_38  -1
+    Q_4_38  LINK_4_38  1
+    Q_4_39  COST  15.3
+    Q_4_39  BAL_4_39  -1
+    Q_4_39  LINK_4_39  1
+    Q_4_40  COST  11.1
+    Q_4_40  BAL_4_40  -1
+    Q_4_40  LINK_4_40  1
+    Q_4_41  COST  13.2
+    Q_4_41  BAL_4_41  -1
+    Q_4_41  LINK_4_41  1
+    Q_4_42  COST  15.5
+    Q_4_42  BAL_4_42  -1
+    Q_4_42  LINK_4_42  1
+    Q_4_43  COST  12.7
+    Q_4_43  BAL_4_43  -1
+    Q_4_43  LINK_4_43  1
+    Q_4_44  COST  10.1
+    Q_4_44  BAL_4_44  -1
+    Q_4_44  LINK_4_44  1
+    Q_4_45  COST  13.7
+    Q_4_45  BAL_4_45  -1
+    Q_4_45  LINK_4_45  1
+    Q_4_46  COST  12.3
+    Q_4_46  BAL_4_46  -1
+    Q_4_46  LINK_4_46  1
+    Q_4_47  COST  15.7
+    Q_4_47  BAL_4_47  -1
+    Q_4_47  LINK_4_47  1
+    Q_4_48  COST  15.4
+    Q_4_48  BAL_4_48  -1
+    Q_4_48  LINK_4_48  1
+    Q_4_49  COST  13.1
+    Q_4_49  BAL_4_49  -1
+    Q_4_49  LINK_4_49  1
+    Q_4_50  COST  14.5
+    Q_4_50  BAL_4_50  -1
+    Q_4_50  LINK_4_50  1
+    Q_4_51  COST  15.1
+    Q_4_51  BAL_4_51  -1
+    Q_4_51  LINK_4_51  1
+    Q_4_52  COST  11.8
+    Q_4_52  BAL_4_52  -1
+    Q_4_52  LINK_4_52  1
+    Q_4_53  COST  11.4
+    Q_4_53  BAL_4_53  -1
+    Q_4_53  LINK_4_53  1
+    Q_4_54  COST  15.7
+    Q_4_54  BAL_4_54  -1
+    Q_4_54  LINK_4_54  1
+    Q_4_55  COST  11.2
+    Q_4_55  BAL_4_55  -1
+    Q_4_55  LINK_4_55  1
+    Q_4_56  COST  13.8
+    Q_4_56  BAL_4_56  -1
+    Q_4_56  LINK_4_56  1
+    Q_4_57  COST  13.1
+    Q_4_57  BAL_4_57  -1
+    Q_4_57  LINK_4_57  1
+    Q_4_58  COST  15.5
+    Q_4_58  BAL_4_58  -1
+    Q_4_58  LINK_4_58  1
+    Q_4_59  COST  15.7
+    Q_4_59  BAL_4_59  -1
+    Q_4_59  LINK_4_59  1
+    Q_4_60  COST  15.7
+    Q_4_60  BAL_4_60  -1
+    Q_4_60  LINK_4_60  1
+    Q_4_61  COST  11.5
+    Q_4_61  BAL_4_61  -1
+    Q_4_61  LINK_4_61  1
+    Q_4_62  COST  12.7
+    Q_4_62  BAL_4_62  -1
+    Q_4_62  LINK_4_62  1
+    Q_4_63  COST  12.8
+    Q_4_63  BAL_4_63  -1
+    Q_4_63  LINK_4_63  1
+    Q_4_64  COST  14.3
+    Q_4_64  BAL_4_64  -1
+    Q_4_64  LINK_4_64  1
+    Q_4_65  COST  12.3
+    Q_4_65  BAL_4_65  -1
+    Q_4_65  LINK_4_65  1
+    Q_4_66  COST  13.4
+    Q_4_66  BAL_4_66  -1
+    Q_4_66  LINK_4_66  1
+    Q_4_67  COST  15.8
+    Q_4_67  BAL_4_67  -1
+    Q_4_67  LINK_4_67  1
+    Q_4_68  COST  16
+    Q_4_68  BAL_4_68  -1
+    Q_4_68  LINK_4_68  1
+    Q_4_69  COST  11.2
+    Q_4_69  BAL_4_69  -1
+    Q_4_69  LINK_4_69  1
+    Q_4_70  COST  15.1
+    Q_4_70  BAL_4_70  -1
+    Q_4_70  LINK_4_70  1
+    Q_4_71  COST  13
+    Q_4_71  BAL_4_71  -1
+    Q_4_71  LINK_4_71  1
+    Q_4_72  COST  14.6
+    Q_4_72  BAL_4_72  -1
+    Q_4_72  LINK_4_72  1
+    Q_4_73  COST  10.4
+    Q_4_73  BAL_4_73  -1
+    Q_4_73  LINK_4_73  1
+    Q_4_74  COST  15.2
+    Q_4_74  BAL_4_74  -1
+    Q_4_74  LINK_4_74  1
+    Q_4_75  COST  15.3
+    Q_4_75  BAL_4_75  -1
+    Q_4_75  LINK_4_75  1
+    Q_4_76  COST  11.6
+    Q_4_76  BAL_4_76  -1
+    Q_4_76  LINK_4_76  1
+    Q_4_77  COST  12.6
+    Q_4_77  BAL_4_77  -1
+    Q_4_77  LINK_4_77  1
+    Q_4_78  COST  11.2
+    Q_4_78  BAL_4_78  -1
+    Q_4_78  LINK_4_78  1
+    Q_4_79  COST  10
+    Q_4_79  BAL_4_79  -1
+    Q_4_79  LINK_4_79  1
+    Q_4_80  COST  14.7
+    Q_4_80  BAL_4_80  -1
+    Q_4_80  LINK_4_80  1
+    Q_4_81  COST  13.4
+    Q_4_81  BAL_4_81  -1
+    Q_4_81  LINK_4_81  1
+    Q_4_82  COST  14.9
+    Q_4_82  BAL_4_82  -1
+    Q_4_82  LINK_4_82  1
+    Q_4_83  COST  12.4
+    Q_4_83  BAL_4_83  -1
+    Q_4_83  LINK_4_83  1
+    Q_4_84  COST  13.2
+    Q_4_84  BAL_4_84  -1
+    Q_4_84  LINK_4_84  1
+    Q_4_85  COST  15.6
+    Q_4_85  BAL_4_85  -1
+    Q_4_85  LINK_4_85  1
+    Q_4_86  COST  13.1
+    Q_4_86  BAL_4_86  -1
+    Q_4_86  LINK_4_86  1
+    Q_4_87  COST  10.4
+    Q_4_87  BAL_4_87  -1
+    Q_4_87  LINK_4_87  1
+    Q_4_88  COST  12.5
+    Q_4_88  BAL_4_88  -1
+    Q_4_88  LINK_4_88  1
+    Q_4_89  COST  13.9
+    Q_4_89  BAL_4_89  -1
+    Q_4_89  LINK_4_89  1
+    I_4_0  COST  2.1
+    I_4_0  BAL_4_0  1
+    I_4_0  BAL_4_1  -1
+    I_4_1  COST  2.1
+    I_4_1  BAL_4_1  1
+    I_4_1  BAL_4_2  -1
+    I_4_2  COST  2.1
+    I_4_2  BAL_4_2  1
+    I_4_2  BAL_4_3  -1
+    I_4_3  COST  2.1
+    I_4_3  BAL_4_3  1
+    I_4_3  BAL_4_4  -1
+    I_4_4  COST  2.1
+    I_4_4  BAL_4_4  1
+    I_4_4  BAL_4_5  -1
+    I_4_5  COST  2.1
+    I_4_5  BAL_4_5  1
+    I_4_5  BAL_4_6  -1
+    I_4_6  COST  2.1
+    I_4_6  BAL_4_6  1
+    I_4_6  BAL_4_7  -1
+    I_4_7  COST  2.1
+    I_4_7  BAL_4_7  1
+    I_4_7  BAL_4_8  -1
+    I_4_8  COST  2.1
+    I_4_8  BAL_4_8  1
+    I_4_8  BAL_4_9  -1
+    I_4_9  COST  2.1
+    I_4_9  BAL_4_9  1
+    I_4_9  BAL_4_10  -1
+    I_4_10  COST  2.1
+    I_4_10  BAL_4_10  1
+    I_4_10  BAL_4_11  -1
+    I_4_11  COST  2.1
+    I_4_11  BAL_4_11  1
+    I_4_11  BAL_4_12  -1
+    I_4_12  COST  2.1
+    I_4_12  BAL_4_12  1
+    I_4_12  BAL_4_13  -1
+    I_4_13  COST  2.1
+    I_4_13  BAL_4_13  1
+    I_4_13  BAL_4_14  -1
+    I_4_14  COST  2.1
+    I_4_14  BAL_4_14  1
+    I_4_14  BAL_4_15  -1
+    I_4_15  COST  2.1
+    I_4_15  BAL_4_15  1
+    I_4_15  BAL_4_16  -1
+    I_4_16  COST  2.1
+    I_4_16  BAL_4_16  1
+    I_4_16  BAL_4_17  -1
+    I_4_17  COST  2.1
+    I_4_17  BAL_4_17  1
+    I_4_17  BAL_4_18  -1
+    I_4_18  COST  2.1
+    I_4_18  BAL_4_18  1
+    I_4_18  BAL_4_19  -1
+    I_4_19  COST  2.1
+    I_4_19  BAL_4_19  1
+    I_4_19  BAL_4_20  -1
+    I_4_20  COST  2.1
+    I_4_20  BAL_4_20  1
+    I_4_20  BAL_4_21  -1
+    I_4_21  COST  2.1
+    I_4_21  BAL_4_21  1
+    I_4_21  BAL_4_22  -1
+    I_4_22  COST  2.1
+    I_4_22  BAL_4_22  1
+    I_4_22  BAL_4_23  -1
+    I_4_23  COST  2.1
+    I_4_23  BAL_4_23  1
+    I_4_23  BAL_4_24  -1
+    I_4_24  COST  2.1
+    I_4_24  BAL_4_24  1
+    I_4_24  BAL_4_25  -1
+    I_4_25  COST  2.1
+    I_4_25  BAL_4_25  1
+    I_4_25  BAL_4_26  -1
+    I_4_26  COST  2.1
+    I_4_26  BAL_4_26  1
+    I_4_26  BAL_4_27  -1
+    I_4_27  COST  2.1
+    I_4_27  BAL_4_27  1
+    I_4_27  BAL_4_28  -1
+    I_4_28  COST  2.1
+    I_4_28  BAL_4_28  1
+    I_4_28  BAL_4_29  -1
+    I_4_29  COST  2.1
+    I_4_29  BAL_4_29  1
+    I_4_29  BAL_4_30  -1
+    I_4_30  COST  2.1
+    I_4_30  BAL_4_30  1
+    I_4_30  BAL_4_31  -1
+    I_4_31  COST  2.1
+    I_4_31  BAL_4_31  1
+    I_4_31  BAL_4_32  -1
+    I_4_32  COST  2.1
+    I_4_32  BAL_4_32  1
+    I_4_32  BAL_4_33  -1
+    I_4_33  COST  2.1
+    I_4_33  BAL_4_33  1
+    I_4_33  BAL_4_34  -1
+    I_4_34  COST  2.1
+    I_4_34  BAL_4_34  1
+    I_4_34  BAL_4_35  -1
+    I_4_35  COST  2.1
+    I_4_35  BAL_4_35  1
+    I_4_35  BAL_4_36  -1
+    I_4_36  COST  2.1
+    I_4_36  BAL_4_36  1
+    I_4_36  BAL_4_37  -1
+    I_4_37  COST  2.1
+    I_4_37  BAL_4_37  1
+    I_4_37  BAL_4_38  -1
+    I_4_38  COST  2.1
+    I_4_38  BAL_4_38  1
+    I_4_38  BAL_4_39  -1
+    I_4_39  COST  2.1
+    I_4_39  BAL_4_39  1
+    I_4_39  BAL_4_40  -1
+    I_4_40  COST  2.1
+    I_4_40  BAL_4_40  1
+    I_4_40  BAL_4_41  -1
+    I_4_41  COST  2.1
+    I_4_41  BAL_4_41  1
+    I_4_41  BAL_4_42  -1
+    I_4_42  COST  2.1
+    I_4_42  BAL_4_42  1
+    I_4_42  BAL_4_43  -1
+    I_4_43  COST  2.1
+    I_4_43  BAL_4_43  1
+    I_4_43  BAL_4_44  -1
+    I_4_44  COST  2.1
+    I_4_44  BAL_4_44  1
+    I_4_44  BAL_4_45  -1
+    I_4_45  COST  2.1
+    I_4_45  BAL_4_45  1
+    I_4_45  BAL_4_46  -1
+    I_4_46  COST  2.1
+    I_4_46  BAL_4_46  1
+    I_4_46  BAL_4_47  -1
+    I_4_47  COST  2.1
+    I_4_47  BAL_4_47  1
+    I_4_47  BAL_4_48  -1
+    I_4_48  COST  2.1
+    I_4_48  BAL_4_48  1
+    I_4_48  BAL_4_49  -1
+    I_4_49  COST  2.1
+    I_4_49  BAL_4_49  1
+    I_4_49  BAL_4_50  -1
+    I_4_50  COST  2.1
+    I_4_50  BAL_4_50  1
+    I_4_50  BAL_4_51  -1
+    I_4_51  COST  2.1
+    I_4_51  BAL_4_51  1
+    I_4_51  BAL_4_52  -1
+    I_4_52  COST  2.1
+    I_4_52  BAL_4_52  1
+    I_4_52  BAL_4_53  -1
+    I_4_53  COST  2.1
+    I_4_53  BAL_4_53  1
+    I_4_53  BAL_4_54  -1
+    I_4_54  COST  2.1
+    I_4_54  BAL_4_54  1
+    I_4_54  BAL_4_55  -1
+    I_4_55  COST  2.1
+    I_4_55  BAL_4_55  1
+    I_4_55  BAL_4_56  -1
+    I_4_56  COST  2.1
+    I_4_56  BAL_4_56  1
+    I_4_56  BAL_4_57  -1
+    I_4_57  COST  2.1
+    I_4_57  BAL_4_57  1
+    I_4_57  BAL_4_58  -1
+    I_4_58  COST  2.1
+    I_4_58  BAL_4_58  1
+    I_4_58  BAL_4_59  -1
+    I_4_59  COST  2.1
+    I_4_59  BAL_4_59  1
+    I_4_59  BAL_4_60  -1
+    I_4_60  COST  2.1
+    I_4_60  BAL_4_60  1
+    I_4_60  BAL_4_61  -1
+    I_4_61  COST  2.1
+    I_4_61  BAL_4_61  1
+    I_4_61  BAL_4_62  -1
+    I_4_62  COST  2.1
+    I_4_62  BAL_4_62  1
+    I_4_62  BAL_4_63  -1
+    I_4_63  COST  2.1
+    I_4_63  BAL_4_63  1
+    I_4_63  BAL_4_64  -1
+    I_4_64  COST  2.1
+    I_4_64  BAL_4_64  1
+    I_4_64  BAL_4_65  -1
+    I_4_65  COST  2.1
+    I_4_65  BAL_4_65  1
+    I_4_65  BAL_4_66  -1
+    I_4_66  COST  2.1
+    I_4_66  BAL_4_66  1
+    I_4_66  BAL_4_67  -1
+    I_4_67  COST  2.1
+    I_4_67  BAL_4_67  1
+    I_4_67  BAL_4_68  -1
+    I_4_68  COST  2.1
+    I_4_68  BAL_4_68  1
+    I_4_68  BAL_4_69  -1
+    I_4_69  COST  2.1
+    I_4_69  BAL_4_69  1
+    I_4_69  BAL_4_70  -1
+    I_4_70  COST  2.1
+    I_4_70  BAL_4_70  1
+    I_4_70  BAL_4_71  -1
+    I_4_71  COST  2.1
+    I_4_71  BAL_4_71  1
+    I_4_71  BAL_4_72  -1
+    I_4_72  COST  2.1
+    I_4_72  BAL_4_72  1
+    I_4_72  BAL_4_73  -1
+    I_4_73  COST  2.1
+    I_4_73  BAL_4_73  1
+    I_4_73  BAL_4_74  -1
+    I_4_74  COST  2.1
+    I_4_74  BAL_4_74  1
+    I_4_74  BAL_4_75  -1
+    I_4_75  COST  2.1
+    I_4_75  BAL_4_75  1
+    I_4_75  BAL_4_76  -1
+    I_4_76  COST  2.1
+    I_4_76  BAL_4_76  1
+    I_4_76  BAL_4_77  -1
+    I_4_77  COST  2.1
+    I_4_77  BAL_4_77  1
+    I_4_77  BAL_4_78  -1
+    I_4_78  COST  2.1
+    I_4_78  BAL_4_78  1
+    I_4_78  BAL_4_79  -1
+    I_4_79  COST  2.1
+    I_4_79  BAL_4_79  1
+    I_4_79  BAL_4_80  -1
+    I_4_80  COST  2.1
+    I_4_80  BAL_4_80  1
+    I_4_80  BAL_4_81  -1
+    I_4_81  COST  2.1
+    I_4_81  BAL_4_81  1
+    I_4_81  BAL_4_82  -1
+    I_4_82  COST  2.1
+    I_4_82  BAL_4_82  1
+    I_4_82  BAL_4_83  -1
+    I_4_83  COST  2.1
+    I_4_83  BAL_4_83  1
+    I_4_83  BAL_4_84  -1
+    I_4_84  COST  2.1
+    I_4_84  BAL_4_84  1
+    I_4_84  BAL_4_85  -1
+    I_4_85  COST  2.1
+    I_4_85  BAL_4_85  1
+    I_4_85  BAL_4_86  -1
+    I_4_86  COST  2.1
+    I_4_86  BAL_4_86  1
+    I_4_86  BAL_4_87  -1
+    I_4_87  COST  2.1
+    I_4_87  BAL_4_87  1
+    I_4_87  BAL_4_88  -1
+    I_4_88  COST  2.1
+    I_4_88  BAL_4_88  1
+    I_4_88  BAL_4_89  -1
+    I_4_89  COST  2.1
+    I_4_89  BAL_4_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_4_0  COST  117
+    Z_4_0  LINK_4_0  -2602
+    Z_4_1  COST  296
+    Z_4_1  LINK_4_1  -2574
+    Z_4_2  COST  129
+    Z_4_2  LINK_4_2  -2550
+    Z_4_3  COST  233
+    Z_4_3  LINK_4_3  -2529
+    Z_4_4  COST  260
+    Z_4_4  LINK_4_4  -2489
+    Z_4_5  COST  166
+    Z_4_5  LINK_4_5  -2472
+    Z_4_6  COST  233
+    Z_4_6  LINK_4_6  -2456
+    Z_4_7  COST  294
+    Z_4_7  LINK_4_7  -2415
+    Z_4_8  COST  159
+    Z_4_8  LINK_4_8  -2375
+    Z_4_9  COST  255
+    Z_4_9  LINK_4_9  -2360
+    Z_4_10  COST  148
+    Z_4_10  LINK_4_10  -2345
+    Z_4_11  COST  317
+    Z_4_11  LINK_4_11  -2342
+    Z_4_12  COST  225
+    Z_4_12  LINK_4_12  -2305
+    Z_4_13  COST  357
+    Z_4_13  LINK_4_13  -2246
+    Z_4_14  COST  385
+    Z_4_14  LINK_4_14  -2196
+    Z_4_15  COST  205
+    Z_4_15  LINK_4_15  -2159
+    Z_4_16  COST  269
+    Z_4_16  LINK_4_16  -2148
+    Z_4_17  COST  273
+    Z_4_17  LINK_4_17  -2126
+    Z_4_18  COST  360
+    Z_4_18  LINK_4_18  -2099
+    Z_4_19  COST  300
+    Z_4_19  LINK_4_19  -2061
+    Z_4_20  COST  399
+    Z_4_20  LINK_4_20  -2017
+    Z_4_21  COST  346
+    Z_4_21  LINK_4_21  -1982
+    Z_4_22  COST  153
+    Z_4_22  LINK_4_22  -1942
+    Z_4_23  COST  166
+    Z_4_23  LINK_4_23  -1909
+    Z_4_24  COST  329
+    Z_4_24  LINK_4_24  -1906
+    Z_4_25  COST  368
+    Z_4_25  LINK_4_25  -1849
+    Z_4_26  COST  386
+    Z_4_26  LINK_4_26  -1827
+    Z_4_27  COST  397
+    Z_4_27  LINK_4_27  -1792
+    Z_4_28  COST  366
+    Z_4_28  LINK_4_28  -1766
+    Z_4_29  COST  374
+    Z_4_29  LINK_4_29  -1732
+    Z_4_30  COST  115
+    Z_4_30  LINK_4_30  -1720
+    Z_4_31  COST  249
+    Z_4_31  LINK_4_31  -1675
+    Z_4_32  COST  180
+    Z_4_32  LINK_4_32  -1619
+    Z_4_33  COST  202
+    Z_4_33  LINK_4_33  -1585
+    Z_4_34  COST  289
+    Z_4_34  LINK_4_34  -1558
+    Z_4_35  COST  299
+    Z_4_35  LINK_4_35  -1500
+    Z_4_36  COST  366
+    Z_4_36  LINK_4_36  -1458
+    Z_4_37  COST  266
+    Z_4_37  LINK_4_37  -1454
+    Z_4_38  COST  149
+    Z_4_38  LINK_4_38  -1409
+    Z_4_39  COST  309
+    Z_4_39  LINK_4_39  -1392
+    Z_4_40  COST  276
+    Z_4_40  LINK_4_40  -1345
+    Z_4_41  COST  164
+    Z_4_41  LINK_4_41  -1306
+    Z_4_42  COST  394
+    Z_4_42  LINK_4_42  -1260
+    Z_4_43  COST  133
+    Z_4_43  LINK_4_43  -1212
+    Z_4_44  COST  122
+    Z_4_44  LINK_4_44  -1208
+    Z_4_45  COST  253
+    Z_4_45  LINK_4_45  -1192
+    Z_4_46  COST  373
+    Z_4_46  LINK_4_46  -1181
+    Z_4_47  COST  260
+    Z_4_47  LINK_4_47  -1175
+    Z_4_48  COST  313
+    Z_4_48  LINK_4_48  -1166
+    Z_4_49  COST  252
+    Z_4_49  LINK_4_49  -1163
+    Z_4_50  COST  263
+    Z_4_50  LINK_4_50  -1105
+    Z_4_51  COST  280
+    Z_4_51  LINK_4_51  -1092
+    Z_4_52  COST  239
+    Z_4_52  LINK_4_52  -1038
+    Z_4_53  COST  266
+    Z_4_53  LINK_4_53  -1011
+    Z_4_54  COST  366
+    Z_4_54  LINK_4_54  -957
+    Z_4_55  COST  356
+    Z_4_55  LINK_4_55  -955
+    Z_4_56  COST  104
+    Z_4_56  LINK_4_56  -952
+    Z_4_57  COST  369
+    Z_4_57  LINK_4_57  -912
+    Z_4_58  COST  162
+    Z_4_58  LINK_4_58  -907
+    Z_4_59  COST  176
+    Z_4_59  LINK_4_59  -849
+    Z_4_60  COST  262
+    Z_4_60  LINK_4_60  -797
+    Z_4_61  COST  266
+    Z_4_61  LINK_4_61  -765
+    Z_4_62  COST  267
+    Z_4_62  LINK_4_62  -735
+    Z_4_63  COST  393
+    Z_4_63  LINK_4_63  -703
+    Z_4_64  COST  135
+    Z_4_64  LINK_4_64  -680
+    Z_4_65  COST  331
+    Z_4_65  LINK_4_65  -674
+    Z_4_66  COST  243
+    Z_4_66  LINK_4_66  -654
+    Z_4_67  COST  345
+    Z_4_67  LINK_4_67  -652
+    Z_4_68  COST  332
+    Z_4_68  LINK_4_68  -644
+    Z_4_69  COST  286
+    Z_4_69  LINK_4_69  -610
+    Z_4_70  COST  294
+    Z_4_70  LINK_4_70  -608
+    Z_4_71  COST  140
+    Z_4_71  LINK_4_71  -580
+    Z_4_72  COST  396
+    Z_4_72  LINK_4_72  -538
+    Z_4_73  COST  128
+    Z_4_73  LINK_4_73  -530
+    Z_4_74  COST  168
+    Z_4_74  LINK_4_74  -473
+    Z_4_75  COST  124
+    Z_4_75  LINK_4_75  -448
+    Z_4_76  COST  368
+    Z_4_76  LINK_4_76  -400
+    Z_4_77  COST  351
+    Z_4_77  LINK_4_77  -355
+    Z_4_78  COST  394
+    Z_4_78  LINK_4_78  -298
+    Z_4_79  COST  228
+    Z_4_79  LINK_4_79  -242
+    Z_4_80  COST  225
+    Z_4_80  LINK_4_80  -214
+    Z_4_81  COST  393
+    Z_4_81  LINK_4_81  -213
+    Z_4_82  COST  273
+    Z_4_82  LINK_4_82  -166
+    Z_4_83  COST  285
+    Z_4_83  LINK_4_83  -133
+    Z_4_84  COST  289
+    Z_4_84  LINK_4_84  -116
+    Z_4_85  COST  306
+    Z_4_85  LINK_4_85  -111
+    Z_4_86  COST  257
+    Z_4_86  LINK_4_86  -95
+    Z_4_87  COST  337
+    Z_4_87  LINK_4_87  -44
+    Z_4_88  COST  274
+    Z_4_88  LINK_4_88  -24
+    Z_4_89  COST  372
+    Z_4_89  LINK_4_89  -19
+    MARKER  'MARKER'  'INTEND'
+    Q_5_0  COST  14
+    Q_5_0  BAL_5_0  -1
+    Q_5_0  LINK_5_0  1
+    Q_5_1  COST  12.8
+    Q_5_1  BAL_5_1  -1
+    Q_5_1  LINK_5_1  1
+    Q_5_2  COST  11.9
+    Q_5_2  BAL_5_2  -1
+    Q_5_2  LINK_5_2  1
+    Q_5_3  COST  14.8
+    Q_5_3  BAL_5_3  -1
+    Q_5_3  LINK_5_3  1
+    Q_5_4  COST  15.7
+    Q_5_4  BAL_5_4  -1
+    Q_5_4  LINK_5_4  1
+    Q_5_5  COST  15.3
+    Q_5_5  BAL_5_5  -1
+    Q_5_5  LINK_5_5  1
+    Q_5_6  COST  10.6
+    Q_5_6  BAL_5_6  -1
+    Q_5_6  LINK_5_6  1
+    Q_5_7  COST  11.4
+    Q_5_7  BAL_5_7  -1
+    Q_5_7  LINK_5_7  1
+    Q_5_8  COST  13.2
+    Q_5_8  BAL_5_8  -1
+    Q_5_8  LINK_5_8  1
+    Q_5_9  COST  11.7
+    Q_5_9  BAL_5_9  -1
+    Q_5_9  LINK_5_9  1
+    Q_5_10  COST  11.7
+    Q_5_10  BAL_5_10  -1
+    Q_5_10  LINK_5_10  1
+    Q_5_11  COST  14.5
+    Q_5_11  BAL_5_11  -1
+    Q_5_11  LINK_5_11  1
+    Q_5_12  COST  11.5
+    Q_5_12  BAL_5_12  -1
+    Q_5_12  LINK_5_12  1
+    Q_5_13  COST  12.6
+    Q_5_13  BAL_5_13  -1
+    Q_5_13  LINK_5_13  1
+    Q_5_14  COST  10.9
+    Q_5_14  BAL_5_14  -1
+    Q_5_14  LINK_5_14  1
+    Q_5_15  COST  10.8
+    Q_5_15  BAL_5_15  -1
+    Q_5_15  LINK_5_15  1
+    Q_5_16  COST  11.6
+    Q_5_16  BAL_5_16  -1
+    Q_5_16  LINK_5_16  1
+    Q_5_17  COST  11.2
+    Q_5_17  BAL_5_17  -1
+    Q_5_17  LINK_5_17  1
+    Q_5_18  COST  12.6
+    Q_5_18  BAL_5_18  -1
+    Q_5_18  LINK_5_18  1
+    Q_5_19  COST  13.5
+    Q_5_19  BAL_5_19  -1
+    Q_5_19  LINK_5_19  1
+    Q_5_20  COST  14
+    Q_5_20  BAL_5_20  -1
+    Q_5_20  LINK_5_20  1
+    Q_5_21  COST  13.8
+    Q_5_21  BAL_5_21  -1
+    Q_5_21  LINK_5_21  1
+    Q_5_22  COST  15.7
+    Q_5_22  BAL_5_22  -1
+    Q_5_22  LINK_5_22  1
+    Q_5_23  COST  10.3
+    Q_5_23  BAL_5_23  -1
+    Q_5_23  LINK_5_23  1
+    Q_5_24  COST  13.4
+    Q_5_24  BAL_5_24  -1
+    Q_5_24  LINK_5_24  1
+    Q_5_25  COST  15.3
+    Q_5_25  BAL_5_25  -1
+    Q_5_25  LINK_5_25  1
+    Q_5_26  COST  13.8
+    Q_5_26  BAL_5_26  -1
+    Q_5_26  LINK_5_26  1
+    Q_5_27  COST  13.2
+    Q_5_27  BAL_5_27  -1
+    Q_5_27  LINK_5_27  1
+    Q_5_28  COST  10.9
+    Q_5_28  BAL_5_28  -1
+    Q_5_28  LINK_5_28  1
+    Q_5_29  COST  16
+    Q_5_29  BAL_5_29  -1
+    Q_5_29  LINK_5_29  1
+    Q_5_30  COST  12.6
+    Q_5_30  BAL_5_30  -1
+    Q_5_30  LINK_5_30  1
+    Q_5_31  COST  11.7
+    Q_5_31  BAL_5_31  -1
+    Q_5_31  LINK_5_31  1
+    Q_5_32  COST  11.7
+    Q_5_32  BAL_5_32  -1
+    Q_5_32  LINK_5_32  1
+    Q_5_33  COST  13
+    Q_5_33  BAL_5_33  -1
+    Q_5_33  LINK_5_33  1
+    Q_5_34  COST  14.4
+    Q_5_34  BAL_5_34  -1
+    Q_5_34  LINK_5_34  1
+    Q_5_35  COST  11.9
+    Q_5_35  BAL_5_35  -1
+    Q_5_35  LINK_5_35  1
+    Q_5_36  COST  11.7
+    Q_5_36  BAL_5_36  -1
+    Q_5_36  LINK_5_36  1
+    Q_5_37  COST  13.1
+    Q_5_37  BAL_5_37  -1
+    Q_5_37  LINK_5_37  1
+    Q_5_38  COST  11.3
+    Q_5_38  BAL_5_38  -1
+    Q_5_38  LINK_5_38  1
+    Q_5_39  COST  13.1
+    Q_5_39  BAL_5_39  -1
+    Q_5_39  LINK_5_39  1
+    Q_5_40  COST  12.3
+    Q_5_40  BAL_5_40  -1
+    Q_5_40  LINK_5_40  1
+    Q_5_41  COST  13.8
+    Q_5_41  BAL_5_41  -1
+    Q_5_41  LINK_5_41  1
+    Q_5_42  COST  13
+    Q_5_42  BAL_5_42  -1
+    Q_5_42  LINK_5_42  1
+    Q_5_43  COST  11.5
+    Q_5_43  BAL_5_43  -1
+    Q_5_43  LINK_5_43  1
+    Q_5_44  COST  12.1
+    Q_5_44  BAL_5_44  -1
+    Q_5_44  LINK_5_44  1
+    Q_5_45  COST  11.1
+    Q_5_45  BAL_5_45  -1
+    Q_5_45  LINK_5_45  1
+    Q_5_46  COST  13.8
+    Q_5_46  BAL_5_46  -1
+    Q_5_46  LINK_5_46  1
+    Q_5_47  COST  14.8
+    Q_5_47  BAL_5_47  -1
+    Q_5_47  LINK_5_47  1
+    Q_5_48  COST  11.1
+    Q_5_48  BAL_5_48  -1
+    Q_5_48  LINK_5_48  1
+    Q_5_49  COST  14.7
+    Q_5_49  BAL_5_49  -1
+    Q_5_49  LINK_5_49  1
+    Q_5_50  COST  15.6
+    Q_5_50  BAL_5_50  -1
+    Q_5_50  LINK_5_50  1
+    Q_5_51  COST  13.7
+    Q_5_51  BAL_5_51  -1
+    Q_5_51  LINK_5_51  1
+    Q_5_52  COST  14.4
+    Q_5_52  BAL_5_52  -1
+    Q_5_52  LINK_5_52  1
+    Q_5_53  COST  12.8
+    Q_5_53  BAL_5_53  -1
+    Q_5_53  LINK_5_53  1
+    Q_5_54  COST  13.4
+    Q_5_54  BAL_5_54  -1
+    Q_5_54  LINK_5_54  1
+    Q_5_55  COST  10.9
+    Q_5_55  BAL_5_55  -1
+    Q_5_55  LINK_5_55  1
+    Q_5_56  COST  10.3
+    Q_5_56  BAL_5_56  -1
+    Q_5_56  LINK_5_56  1
+    Q_5_57  COST  13.2
+    Q_5_57  BAL_5_57  -1
+    Q_5_57  LINK_5_57  1
+    Q_5_58  COST  12
+    Q_5_58  BAL_5_58  -1
+    Q_5_58  LINK_5_58  1
+    Q_5_59  COST  13.3
+    Q_5_59  BAL_5_59  -1
+    Q_5_59  LINK_5_59  1
+    Q_5_60  COST  14.4
+    Q_5_60  BAL_5_60  -1
+    Q_5_60  LINK_5_60  1
+    Q_5_61  COST  10.8
+    Q_5_61  BAL_5_61  -1
+    Q_5_61  LINK_5_61  1
+    Q_5_62  COST  14.1
+    Q_5_62  BAL_5_62  -1
+    Q_5_62  LINK_5_62  1
+    Q_5_63  COST  14.8
+    Q_5_63  BAL_5_63  -1
+    Q_5_63  LINK_5_63  1
+    Q_5_64  COST  15.1
+    Q_5_64  BAL_5_64  -1
+    Q_5_64  LINK_5_64  1
+    Q_5_65  COST  15.7
+    Q_5_65  BAL_5_65  -1
+    Q_5_65  LINK_5_65  1
+    Q_5_66  COST  11.3
+    Q_5_66  BAL_5_66  -1
+    Q_5_66  LINK_5_66  1
+    Q_5_67  COST  12
+    Q_5_67  BAL_5_67  -1
+    Q_5_67  LINK_5_67  1
+    Q_5_68  COST  13.9
+    Q_5_68  BAL_5_68  -1
+    Q_5_68  LINK_5_68  1
+    Q_5_69  COST  13.1
+    Q_5_69  BAL_5_69  -1
+    Q_5_69  LINK_5_69  1
+    Q_5_70  COST  13
+    Q_5_70  BAL_5_70  -1
+    Q_5_70  LINK_5_70  1
+    Q_5_71  COST  12.1
+    Q_5_71  BAL_5_71  -1
+    Q_5_71  LINK_5_71  1
+    Q_5_72  COST  10.7
+    Q_5_72  BAL_5_72  -1
+    Q_5_72  LINK_5_72  1
+    Q_5_73  COST  10.8
+    Q_5_73  BAL_5_73  -1
+    Q_5_73  LINK_5_73  1
+    Q_5_74  COST  15.6
+    Q_5_74  BAL_5_74  -1
+    Q_5_74  LINK_5_74  1
+    Q_5_75  COST  10.8
+    Q_5_75  BAL_5_75  -1
+    Q_5_75  LINK_5_75  1
+    Q_5_76  COST  14.4
+    Q_5_76  BAL_5_76  -1
+    Q_5_76  LINK_5_76  1
+    Q_5_77  COST  11.6
+    Q_5_77  BAL_5_77  -1
+    Q_5_77  LINK_5_77  1
+    Q_5_78  COST  11.4
+    Q_5_78  BAL_5_78  -1
+    Q_5_78  LINK_5_78  1
+    Q_5_79  COST  10.5
+    Q_5_79  BAL_5_79  -1
+    Q_5_79  LINK_5_79  1
+    Q_5_80  COST  14
+    Q_5_80  BAL_5_80  -1
+    Q_5_80  LINK_5_80  1
+    Q_5_81  COST  13.4
+    Q_5_81  BAL_5_81  -1
+    Q_5_81  LINK_5_81  1
+    Q_5_82  COST  15.3
+    Q_5_82  BAL_5_82  -1
+    Q_5_82  LINK_5_82  1
+    Q_5_83  COST  14.4
+    Q_5_83  BAL_5_83  -1
+    Q_5_83  LINK_5_83  1
+    Q_5_84  COST  10.3
+    Q_5_84  BAL_5_84  -1
+    Q_5_84  LINK_5_84  1
+    Q_5_85  COST  13.6
+    Q_5_85  BAL_5_85  -1
+    Q_5_85  LINK_5_85  1
+    Q_5_86  COST  11.1
+    Q_5_86  BAL_5_86  -1
+    Q_5_86  LINK_5_86  1
+    Q_5_87  COST  14.3
+    Q_5_87  BAL_5_87  -1
+    Q_5_87  LINK_5_87  1
+    Q_5_88  COST  10.7
+    Q_5_88  BAL_5_88  -1
+    Q_5_88  LINK_5_88  1
+    Q_5_89  COST  11.4
+    Q_5_89  BAL_5_89  -1
+    Q_5_89  LINK_5_89  1
+    I_5_0  COST  2.3
+    I_5_0  BAL_5_0  1
+    I_5_0  BAL_5_1  -1
+    I_5_1  COST  2.3
+    I_5_1  BAL_5_1  1
+    I_5_1  BAL_5_2  -1
+    I_5_2  COST  2.3
+    I_5_2  BAL_5_2  1
+    I_5_2  BAL_5_3  -1
+    I_5_3  COST  2.3
+    I_5_3  BAL_5_3  1
+    I_5_3  BAL_5_4  -1
+    I_5_4  COST  2.3
+    I_5_4  BAL_5_4  1
+    I_5_4  BAL_5_5  -1
+    I_5_5  COST  2.3
+    I_5_5  BAL_5_5  1
+    I_5_5  BAL_5_6  -1
+    I_5_6  COST  2.3
+    I_5_6  BAL_5_6  1
+    I_5_6  BAL_5_7  -1
+    I_5_7  COST  2.3
+    I_5_7  BAL_5_7  1
+    I_5_7  BAL_5_8  -1
+    I_5_8  COST  2.3
+    I_5_8  BAL_5_8  1
+    I_5_8  BAL_5_9  -1
+    I_5_9  COST  2.3
+    I_5_9  BAL_5_9  1
+    I_5_9  BAL_5_10  -1
+    I_5_10  COST  2.3
+    I_5_10  BAL_5_10  1
+    I_5_10  BAL_5_11  -1
+    I_5_11  COST  2.3
+    I_5_11  BAL_5_11  1
+    I_5_11  BAL_5_12  -1
+    I_5_12  COST  2.3
+    I_5_12  BAL_5_12  1
+    I_5_12  BAL_5_13  -1
+    I_5_13  COST  2.3
+    I_5_13  BAL_5_13  1
+    I_5_13  BAL_5_14  -1
+    I_5_14  COST  2.3
+    I_5_14  BAL_5_14  1
+    I_5_14  BAL_5_15  -1
+    I_5_15  COST  2.3
+    I_5_15  BAL_5_15  1
+    I_5_15  BAL_5_16  -1
+    I_5_16  COST  2.3
+    I_5_16  BAL_5_16  1
+    I_5_16  BAL_5_17  -1
+    I_5_17  COST  2.3
+    I_5_17  BAL_5_17  1
+    I_5_17  BAL_5_18  -1
+    I_5_18  COST  2.3
+    I_5_18  BAL_5_18  1
+    I_5_18  BAL_5_19  -1
+    I_5_19  COST  2.3
+    I_5_19  BAL_5_19  1
+    I_5_19  BAL_5_20  -1
+    I_5_20  COST  2.3
+    I_5_20  BAL_5_20  1
+    I_5_20  BAL_5_21  -1
+    I_5_21  COST  2.3
+    I_5_21  BAL_5_21  1
+    I_5_21  BAL_5_22  -1
+    I_5_22  COST  2.3
+    I_5_22  BAL_5_22  1
+    I_5_22  BAL_5_23  -1
+    I_5_23  COST  2.3
+    I_5_23  BAL_5_23  1
+    I_5_23  BAL_5_24  -1
+    I_5_24  COST  2.3
+    I_5_24  BAL_5_24  1
+    I_5_24  BAL_5_25  -1
+    I_5_25  COST  2.3
+    I_5_25  BAL_5_25  1
+    I_5_25  BAL_5_26  -1
+    I_5_26  COST  2.3
+    I_5_26  BAL_5_26  1
+    I_5_26  BAL_5_27  -1
+    I_5_27  COST  2.3
+    I_5_27  BAL_5_27  1
+    I_5_27  BAL_5_28  -1
+    I_5_28  COST  2.3
+    I_5_28  BAL_5_28  1
+    I_5_28  BAL_5_29  -1
+    I_5_29  COST  2.3
+    I_5_29  BAL_5_29  1
+    I_5_29  BAL_5_30  -1
+    I_5_30  COST  2.3
+    I_5_30  BAL_5_30  1
+    I_5_30  BAL_5_31  -1
+    I_5_31  COST  2.3
+    I_5_31  BAL_5_31  1
+    I_5_31  BAL_5_32  -1
+    I_5_32  COST  2.3
+    I_5_32  BAL_5_32  1
+    I_5_32  BAL_5_33  -1
+    I_5_33  COST  2.3
+    I_5_33  BAL_5_33  1
+    I_5_33  BAL_5_34  -1
+    I_5_34  COST  2.3
+    I_5_34  BAL_5_34  1
+    I_5_34  BAL_5_35  -1
+    I_5_35  COST  2.3
+    I_5_35  BAL_5_35  1
+    I_5_35  BAL_5_36  -1
+    I_5_36  COST  2.3
+    I_5_36  BAL_5_36  1
+    I_5_36  BAL_5_37  -1
+    I_5_37  COST  2.3
+    I_5_37  BAL_5_37  1
+    I_5_37  BAL_5_38  -1
+    I_5_38  COST  2.3
+    I_5_38  BAL_5_38  1
+    I_5_38  BAL_5_39  -1
+    I_5_39  COST  2.3
+    I_5_39  BAL_5_39  1
+    I_5_39  BAL_5_40  -1
+    I_5_40  COST  2.3
+    I_5_40  BAL_5_40  1
+    I_5_40  BAL_5_41  -1
+    I_5_41  COST  2.3
+    I_5_41  BAL_5_41  1
+    I_5_41  BAL_5_42  -1
+    I_5_42  COST  2.3
+    I_5_42  BAL_5_42  1
+    I_5_42  BAL_5_43  -1
+    I_5_43  COST  2.3
+    I_5_43  BAL_5_43  1
+    I_5_43  BAL_5_44  -1
+    I_5_44  COST  2.3
+    I_5_44  BAL_5_44  1
+    I_5_44  BAL_5_45  -1
+    I_5_45  COST  2.3
+    I_5_45  BAL_5_45  1
+    I_5_45  BAL_5_46  -1
+    I_5_46  COST  2.3
+    I_5_46  BAL_5_46  1
+    I_5_46  BAL_5_47  -1
+    I_5_47  COST  2.3
+    I_5_47  BAL_5_47  1
+    I_5_47  BAL_5_48  -1
+    I_5_48  COST  2.3
+    I_5_48  BAL_5_48  1
+    I_5_48  BAL_5_49  -1
+    I_5_49  COST  2.3
+    I_5_49  BAL_5_49  1
+    I_5_49  BAL_5_50  -1
+    I_5_50  COST  2.3
+    I_5_50  BAL_5_50  1
+    I_5_50  BAL_5_51  -1
+    I_5_51  COST  2.3
+    I_5_51  BAL_5_51  1
+    I_5_51  BAL_5_52  -1
+    I_5_52  COST  2.3
+    I_5_52  BAL_5_52  1
+    I_5_52  BAL_5_53  -1
+    I_5_53  COST  2.3
+    I_5_53  BAL_5_53  1
+    I_5_53  BAL_5_54  -1
+    I_5_54  COST  2.3
+    I_5_54  BAL_5_54  1
+    I_5_54  BAL_5_55  -1
+    I_5_55  COST  2.3
+    I_5_55  BAL_5_55  1
+    I_5_55  BAL_5_56  -1
+    I_5_56  COST  2.3
+    I_5_56  BAL_5_56  1
+    I_5_56  BAL_5_57  -1
+    I_5_57  COST  2.3
+    I_5_57  BAL_5_57  1
+    I_5_57  BAL_5_58  -1
+    I_5_58  COST  2.3
+    I_5_58  BAL_5_58  1
+    I_5_58  BAL_5_59  -1
+    I_5_59  COST  2.3
+    I_5_59  BAL_5_59  1
+    I_5_59  BAL_5_60  -1
+    I_5_60  COST  2.3
+    I_5_60  BAL_5_60  1
+    I_5_60  BAL_5_61  -1
+    I_5_61  COST  2.3
+    I_5_61  BAL_5_61  1
+    I_5_61  BAL_5_62  -1
+    I_5_62  COST  2.3
+    I_5_62  BAL_5_62  1
+    I_5_62  BAL_5_63  -1
+    I_5_63  COST  2.3
+    I_5_63  BAL_5_63  1
+    I_5_63  BAL_5_64  -1
+    I_5_64  COST  2.3
+    I_5_64  BAL_5_64  1
+    I_5_64  BAL_5_65  -1
+    I_5_65  COST  2.3
+    I_5_65  BAL_5_65  1
+    I_5_65  BAL_5_66  -1
+    I_5_66  COST  2.3
+    I_5_66  BAL_5_66  1
+    I_5_66  BAL_5_67  -1
+    I_5_67  COST  2.3
+    I_5_67  BAL_5_67  1
+    I_5_67  BAL_5_68  -1
+    I_5_68  COST  2.3
+    I_5_68  BAL_5_68  1
+    I_5_68  BAL_5_69  -1
+    I_5_69  COST  2.3
+    I_5_69  BAL_5_69  1
+    I_5_69  BAL_5_70  -1
+    I_5_70  COST  2.3
+    I_5_70  BAL_5_70  1
+    I_5_70  BAL_5_71  -1
+    I_5_71  COST  2.3
+    I_5_71  BAL_5_71  1
+    I_5_71  BAL_5_72  -1
+    I_5_72  COST  2.3
+    I_5_72  BAL_5_72  1
+    I_5_72  BAL_5_73  -1
+    I_5_73  COST  2.3
+    I_5_73  BAL_5_73  1
+    I_5_73  BAL_5_74  -1
+    I_5_74  COST  2.3
+    I_5_74  BAL_5_74  1
+    I_5_74  BAL_5_75  -1
+    I_5_75  COST  2.3
+    I_5_75  BAL_5_75  1
+    I_5_75  BAL_5_76  -1
+    I_5_76  COST  2.3
+    I_5_76  BAL_5_76  1
+    I_5_76  BAL_5_77  -1
+    I_5_77  COST  2.3
+    I_5_77  BAL_5_77  1
+    I_5_77  BAL_5_78  -1
+    I_5_78  COST  2.3
+    I_5_78  BAL_5_78  1
+    I_5_78  BAL_5_79  -1
+    I_5_79  COST  2.3
+    I_5_79  BAL_5_79  1
+    I_5_79  BAL_5_80  -1
+    I_5_80  COST  2.3
+    I_5_80  BAL_5_80  1
+    I_5_80  BAL_5_81  -1
+    I_5_81  COST  2.3
+    I_5_81  BAL_5_81  1
+    I_5_81  BAL_5_82  -1
+    I_5_82  COST  2.3
+    I_5_82  BAL_5_82  1
+    I_5_82  BAL_5_83  -1
+    I_5_83  COST  2.3
+    I_5_83  BAL_5_83  1
+    I_5_83  BAL_5_84  -1
+    I_5_84  COST  2.3
+    I_5_84  BAL_5_84  1
+    I_5_84  BAL_5_85  -1
+    I_5_85  COST  2.3
+    I_5_85  BAL_5_85  1
+    I_5_85  BAL_5_86  -1
+    I_5_86  COST  2.3
+    I_5_86  BAL_5_86  1
+    I_5_86  BAL_5_87  -1
+    I_5_87  COST  2.3
+    I_5_87  BAL_5_87  1
+    I_5_87  BAL_5_88  -1
+    I_5_88  COST  2.3
+    I_5_88  BAL_5_88  1
+    I_5_88  BAL_5_89  -1
+    I_5_89  COST  2.3
+    I_5_89  BAL_5_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_5_0  COST  159
+    Z_5_0  LINK_5_0  -2844
+    Z_5_1  COST  347
+    Z_5_1  LINK_5_1  -2794
+    Z_5_2  COST  281
+    Z_5_2  LINK_5_2  -2757
+    Z_5_3  COST  174
+    Z_5_3  LINK_5_3  -2720
+    Z_5_4  COST  312
+    Z_5_4  LINK_5_4  -2693
+    Z_5_5  COST  175
+    Z_5_5  LINK_5_5  -2691
+    Z_5_6  COST  109
+    Z_5_6  LINK_5_6  -2669
+    Z_5_7  COST  188
+    Z_5_7  LINK_5_7  -2615
+    Z_5_8  COST  233
+    Z_5_8  LINK_5_8  -2586
+    Z_5_9  COST  288
+    Z_5_9  LINK_5_9  -2586
+    Z_5_10  COST  165
+    Z_5_10  LINK_5_10  -2574
+    Z_5_11  COST  247
+    Z_5_11  LINK_5_11  -2555
+    Z_5_12  COST  311
+    Z_5_12  LINK_5_12  -2511
+    Z_5_13  COST  232
+    Z_5_13  LINK_5_13  -2467
+    Z_5_14  COST  363
+    Z_5_14  LINK_5_14  -2426
+    Z_5_15  COST  247
+    Z_5_15  LINK_5_15  -2426
+    Z_5_16  COST  315
+    Z_5_16  LINK_5_16  -2392
+    Z_5_17  COST  240
+    Z_5_17  LINK_5_17  -2385
+    Z_5_18  COST  321
+    Z_5_18  LINK_5_18  -2333
+    Z_5_19  COST  271
+    Z_5_19  LINK_5_19  -2314
+    Z_5_20  COST  348
+    Z_5_20  LINK_5_20  -2282
+    Z_5_21  COST  210
+    Z_5_21  LINK_5_21  -2226
+    Z_5_22  COST  351
+    Z_5_22  LINK_5_22  -2179
+    Z_5_23  COST  305
+    Z_5_23  LINK_5_23  -2159
+    Z_5_24  COST  317
+    Z_5_24  LINK_5_24  -2110
+    Z_5_25  COST  146
+    Z_5_25  LINK_5_25  -2076
+    Z_5_26  COST  132
+    Z_5_26  LINK_5_26  -2035
+    Z_5_27  COST  166
+    Z_5_27  LINK_5_27  -1999
+    Z_5_28  COST  205
+    Z_5_28  LINK_5_28  -1964
+    Z_5_29  COST  176
+    Z_5_29  LINK_5_29  -1946
+    Z_5_30  COST  217
+    Z_5_30  LINK_5_30  -1913
+    Z_5_31  COST  113
+    Z_5_31  LINK_5_31  -1887
+    Z_5_32  COST  152
+    Z_5_32  LINK_5_32  -1853
+    Z_5_33  COST  229
+    Z_5_33  LINK_5_33  -1793
+    Z_5_34  COST  179
+    Z_5_34  LINK_5_34  -1741
+    Z_5_35  COST  345
+    Z_5_35  LINK_5_35  -1682
+    Z_5_36  COST  150
+    Z_5_36  LINK_5_36  -1649
+    Z_5_37  COST  304
+    Z_5_37  LINK_5_37  -1623
+    Z_5_38  COST  195
+    Z_5_38  LINK_5_38  -1585
+    Z_5_39  COST  101
+    Z_5_39  LINK_5_39  -1545
+    Z_5_40  COST  145
+    Z_5_40  LINK_5_40  -1508
+    Z_5_41  COST  318
+    Z_5_41  LINK_5_41  -1489
+    Z_5_42  COST  126
+    Z_5_42  LINK_5_42  -1461
+    Z_5_43  COST  381
+    Z_5_43  LINK_5_43  -1442
+    Z_5_44  COST  211
+    Z_5_44  LINK_5_44  -1434
+    Z_5_45  COST  373
+    Z_5_45  LINK_5_45  -1402
+    Z_5_46  COST  316
+    Z_5_46  LINK_5_46  -1374
+    Z_5_47  COST  277
+    Z_5_47  LINK_5_47  -1337
+    Z_5_48  COST  124
+    Z_5_48  LINK_5_48  -1329
+    Z_5_49  COST  152
+    Z_5_49  LINK_5_49  -1294
+    Z_5_50  COST  383
+    Z_5_50  LINK_5_50  -1245
+    Z_5_51  COST  314
+    Z_5_51  LINK_5_51  -1235
+    Z_5_52  COST  160
+    Z_5_52  LINK_5_52  -1219
+    Z_5_53  COST  235
+    Z_5_53  LINK_5_53  -1179
+    Z_5_54  COST  242
+    Z_5_54  LINK_5_54  -1179
+    Z_5_55  COST  191
+    Z_5_55  LINK_5_55  -1152
+    Z_5_56  COST  345
+    Z_5_56  LINK_5_56  -1105
+    Z_5_57  COST  124
+    Z_5_57  LINK_5_57  -1063
+    Z_5_58  COST  209
+    Z_5_58  LINK_5_58  -1027
+    Z_5_59  COST  144
+    Z_5_59  LINK_5_59  -1025
+    Z_5_60  COST  299
+    Z_5_60  LINK_5_60  -1002
+    Z_5_61  COST  163
+    Z_5_61  LINK_5_61  -976
+    Z_5_62  COST  329
+    Z_5_62  LINK_5_62  -951
+    Z_5_63  COST  250
+    Z_5_63  LINK_5_63  -933
+    Z_5_64  COST  360
+    Z_5_64  LINK_5_64  -874
+    Z_5_65  COST  354
+    Z_5_65  LINK_5_65  -832
+    Z_5_66  COST  301
+    Z_5_66  LINK_5_66  -775
+    Z_5_67  COST  159
+    Z_5_67  LINK_5_67  -727
+    Z_5_68  COST  345
+    Z_5_68  LINK_5_68  -685
+    Z_5_69  COST  154
+    Z_5_69  LINK_5_69  -684
+    Z_5_70  COST  176
+    Z_5_70  LINK_5_70  -627
+    Z_5_71  COST  297
+    Z_5_71  LINK_5_71  -622
+    Z_5_72  COST  203
+    Z_5_72  LINK_5_72  -563
+    Z_5_73  COST  185
+    Z_5_73  LINK_5_73  -558
+    Z_5_74  COST  366
+    Z_5_74  LINK_5_74  -504
+    Z_5_75  COST  231
+    Z_5_75  LINK_5_75  -504
+    Z_5_76  COST  313
+    Z_5_76  LINK_5_76  -480
+    Z_5_77  COST  374
+    Z_5_77  LINK_5_77  -463
+    Z_5_78  COST  247
+    Z_5_78  LINK_5_78  -434
+    Z_5_79  COST  352
+    Z_5_79  LINK_5_79  -417
+    Z_5_80  COST  378
+    Z_5_80  LINK_5_80  -367
+    Z_5_81  COST  209
+    Z_5_81  LINK_5_81  -317
+    Z_5_82  COST  272
+    Z_5_82  LINK_5_82  -294
+    Z_5_83  COST  348
+    Z_5_83  LINK_5_83  -254
+    Z_5_84  COST  152
+    Z_5_84  LINK_5_84  -207
+    Z_5_85  COST  104
+    Z_5_85  LINK_5_85  -153
+    Z_5_86  COST  277
+    Z_5_86  LINK_5_86  -123
+    Z_5_87  COST  236
+    Z_5_87  LINK_5_87  -74
+    Z_5_88  COST  128
+    Z_5_88  LINK_5_88  -53
+    Z_5_89  COST  376
+    Z_5_89  LINK_5_89  -29
+    MARKER  'MARKER'  'INTEND'
+    Q_6_0  COST  11.7
+    Q_6_0  BAL_6_0  -1
+    Q_6_0  LINK_6_0  1
+    Q_6_1  COST  15
+    Q_6_1  BAL_6_1  -1
+    Q_6_1  LINK_6_1  1
+    Q_6_2  COST  13.6
+    Q_6_2  BAL_6_2  -1
+    Q_6_2  LINK_6_2  1
+    Q_6_3  COST  15.8
+    Q_6_3  BAL_6_3  -1
+    Q_6_3  LINK_6_3  1
+    Q_6_4  COST  14.1
+    Q_6_4  BAL_6_4  -1
+    Q_6_4  LINK_6_4  1
+    Q_6_5  COST  12.2
+    Q_6_5  BAL_6_5  -1
+    Q_6_5  LINK_6_5  1
+    Q_6_6  COST  15.1
+    Q_6_6  BAL_6_6  -1
+    Q_6_6  LINK_6_6  1
+    Q_6_7  COST  13
+    Q_6_7  BAL_6_7  -1
+    Q_6_7  LINK_6_7  1
+    Q_6_8  COST  15.2
+    Q_6_8  BAL_6_8  -1
+    Q_6_8  LINK_6_8  1
+    Q_6_9  COST  14.4
+    Q_6_9  BAL_6_9  -1
+    Q_6_9  LINK_6_9  1
+    Q_6_10  COST  11.5
+    Q_6_10  BAL_6_10  -1
+    Q_6_10  LINK_6_10  1
+    Q_6_11  COST  15.9
+    Q_6_11  BAL_6_11  -1
+    Q_6_11  LINK_6_11  1
+    Q_6_12  COST  15.1
+    Q_6_12  BAL_6_12  -1
+    Q_6_12  LINK_6_12  1
+    Q_6_13  COST  13.9
+    Q_6_13  BAL_6_13  -1
+    Q_6_13  LINK_6_13  1
+    Q_6_14  COST  11.5
+    Q_6_14  BAL_6_14  -1
+    Q_6_14  LINK_6_14  1
+    Q_6_15  COST  10.6
+    Q_6_15  BAL_6_15  -1
+    Q_6_15  LINK_6_15  1
+    Q_6_16  COST  13.5
+    Q_6_16  BAL_6_16  -1
+    Q_6_16  LINK_6_16  1
+    Q_6_17  COST  16
+    Q_6_17  BAL_6_17  -1
+    Q_6_17  LINK_6_17  1
+    Q_6_18  COST  12.2
+    Q_6_18  BAL_6_18  -1
+    Q_6_18  LINK_6_18  1
+    Q_6_19  COST  15.5
+    Q_6_19  BAL_6_19  -1
+    Q_6_19  LINK_6_19  1
+    Q_6_20  COST  11
+    Q_6_20  BAL_6_20  -1
+    Q_6_20  LINK_6_20  1
+    Q_6_21  COST  10.7
+    Q_6_21  BAL_6_21  -1
+    Q_6_21  LINK_6_21  1
+    Q_6_22  COST  14.9
+    Q_6_22  BAL_6_22  -1
+    Q_6_22  LINK_6_22  1
+    Q_6_23  COST  10.2
+    Q_6_23  BAL_6_23  -1
+    Q_6_23  LINK_6_23  1
+    Q_6_24  COST  15.8
+    Q_6_24  BAL_6_24  -1
+    Q_6_24  LINK_6_24  1
+    Q_6_25  COST  14.5
+    Q_6_25  BAL_6_25  -1
+    Q_6_25  LINK_6_25  1
+    Q_6_26  COST  12
+    Q_6_26  BAL_6_26  -1
+    Q_6_26  LINK_6_26  1
+    Q_6_27  COST  12.7
+    Q_6_27  BAL_6_27  -1
+    Q_6_27  LINK_6_27  1
+    Q_6_28  COST  15.6
+    Q_6_28  BAL_6_28  -1
+    Q_6_28  LINK_6_28  1
+    Q_6_29  COST  14.6
+    Q_6_29  BAL_6_29  -1
+    Q_6_29  LINK_6_29  1
+    Q_6_30  COST  12.2
+    Q_6_30  BAL_6_30  -1
+    Q_6_30  LINK_6_30  1
+    Q_6_31  COST  11.6
+    Q_6_31  BAL_6_31  -1
+    Q_6_31  LINK_6_31  1
+    Q_6_32  COST  14.2
+    Q_6_32  BAL_6_32  -1
+    Q_6_32  LINK_6_32  1
+    Q_6_33  COST  14
+    Q_6_33  BAL_6_33  -1
+    Q_6_33  LINK_6_33  1
+    Q_6_34  COST  15.7
+    Q_6_34  BAL_6_34  -1
+    Q_6_34  LINK_6_34  1
+    Q_6_35  COST  14.9
+    Q_6_35  BAL_6_35  -1
+    Q_6_35  LINK_6_35  1
+    Q_6_36  COST  15.8
+    Q_6_36  BAL_6_36  -1
+    Q_6_36  LINK_6_36  1
+    Q_6_37  COST  10.3
+    Q_6_37  BAL_6_37  -1
+    Q_6_37  LINK_6_37  1
+    Q_6_38  COST  13.9
+    Q_6_38  BAL_6_38  -1
+    Q_6_38  LINK_6_38  1
+    Q_6_39  COST  12.7
+    Q_6_39  BAL_6_39  -1
+    Q_6_39  LINK_6_39  1
+    Q_6_40  COST  12.6
+    Q_6_40  BAL_6_40  -1
+    Q_6_40  LINK_6_40  1
+    Q_6_41  COST  12.4
+    Q_6_41  BAL_6_41  -1
+    Q_6_41  LINK_6_41  1
+    Q_6_42  COST  12.2
+    Q_6_42  BAL_6_42  -1
+    Q_6_42  LINK_6_42  1
+    Q_6_43  COST  11.8
+    Q_6_43  BAL_6_43  -1
+    Q_6_43  LINK_6_43  1
+    Q_6_44  COST  14.8
+    Q_6_44  BAL_6_44  -1
+    Q_6_44  LINK_6_44  1
+    Q_6_45  COST  15.2
+    Q_6_45  BAL_6_45  -1
+    Q_6_45  LINK_6_45  1
+    Q_6_46  COST  12.1
+    Q_6_46  BAL_6_46  -1
+    Q_6_46  LINK_6_46  1
+    Q_6_47  COST  12.8
+    Q_6_47  BAL_6_47  -1
+    Q_6_47  LINK_6_47  1
+    Q_6_48  COST  15.1
+    Q_6_48  BAL_6_48  -1
+    Q_6_48  LINK_6_48  1
+    Q_6_49  COST  14.4
+    Q_6_49  BAL_6_49  -1
+    Q_6_49  LINK_6_49  1
+    Q_6_50  COST  11.5
+    Q_6_50  BAL_6_50  -1
+    Q_6_50  LINK_6_50  1
+    Q_6_51  COST  14
+    Q_6_51  BAL_6_51  -1
+    Q_6_51  LINK_6_51  1
+    Q_6_52  COST  13.9
+    Q_6_52  BAL_6_52  -1
+    Q_6_52  LINK_6_52  1
+    Q_6_53  COST  13.3
+    Q_6_53  BAL_6_53  -1
+    Q_6_53  LINK_6_53  1
+    Q_6_54  COST  10.9
+    Q_6_54  BAL_6_54  -1
+    Q_6_54  LINK_6_54  1
+    Q_6_55  COST  10.3
+    Q_6_55  BAL_6_55  -1
+    Q_6_55  LINK_6_55  1
+    Q_6_56  COST  12.1
+    Q_6_56  BAL_6_56  -1
+    Q_6_56  LINK_6_56  1
+    Q_6_57  COST  14.3
+    Q_6_57  BAL_6_57  -1
+    Q_6_57  LINK_6_57  1
+    Q_6_58  COST  10.7
+    Q_6_58  BAL_6_58  -1
+    Q_6_58  LINK_6_58  1
+    Q_6_59  COST  15.7
+    Q_6_59  BAL_6_59  -1
+    Q_6_59  LINK_6_59  1
+    Q_6_60  COST  13.2
+    Q_6_60  BAL_6_60  -1
+    Q_6_60  LINK_6_60  1
+    Q_6_61  COST  11.1
+    Q_6_61  BAL_6_61  -1
+    Q_6_61  LINK_6_61  1
+    Q_6_62  COST  13.4
+    Q_6_62  BAL_6_62  -1
+    Q_6_62  LINK_6_62  1
+    Q_6_63  COST  14.1
+    Q_6_63  BAL_6_63  -1
+    Q_6_63  LINK_6_63  1
+    Q_6_64  COST  14
+    Q_6_64  BAL_6_64  -1
+    Q_6_64  LINK_6_64  1
+    Q_6_65  COST  13.1
+    Q_6_65  BAL_6_65  -1
+    Q_6_65  LINK_6_65  1
+    Q_6_66  COST  15.7
+    Q_6_66  BAL_6_66  -1
+    Q_6_66  LINK_6_66  1
+    Q_6_67  COST  12.1
+    Q_6_67  BAL_6_67  -1
+    Q_6_67  LINK_6_67  1
+    Q_6_68  COST  14.8
+    Q_6_68  BAL_6_68  -1
+    Q_6_68  LINK_6_68  1
+    Q_6_69  COST  14.5
+    Q_6_69  BAL_6_69  -1
+    Q_6_69  LINK_6_69  1
+    Q_6_70  COST  10.7
+    Q_6_70  BAL_6_70  -1
+    Q_6_70  LINK_6_70  1
+    Q_6_71  COST  13.7
+    Q_6_71  BAL_6_71  -1
+    Q_6_71  LINK_6_71  1
+    Q_6_72  COST  10.1
+    Q_6_72  BAL_6_72  -1
+    Q_6_72  LINK_6_72  1
+    Q_6_73  COST  13
+    Q_6_73  BAL_6_73  -1
+    Q_6_73  LINK_6_73  1
+    Q_6_74  COST  15.7
+    Q_6_74  BAL_6_74  -1
+    Q_6_74  LINK_6_74  1
+    Q_6_75  COST  11.3
+    Q_6_75  BAL_6_75  -1
+    Q_6_75  LINK_6_75  1
+    Q_6_76  COST  12.4
+    Q_6_76  BAL_6_76  -1
+    Q_6_76  LINK_6_76  1
+    Q_6_77  COST  14
+    Q_6_77  BAL_6_77  -1
+    Q_6_77  LINK_6_77  1
+    Q_6_78  COST  15.3
+    Q_6_78  BAL_6_78  -1
+    Q_6_78  LINK_6_78  1
+    Q_6_79  COST  16
+    Q_6_79  BAL_6_79  -1
+    Q_6_79  LINK_6_79  1
+    Q_6_80  COST  11.1
+    Q_6_80  BAL_6_80  -1
+    Q_6_80  LINK_6_80  1
+    Q_6_81  COST  12.5
+    Q_6_81  BAL_6_81  -1
+    Q_6_81  LINK_6_81  1
+    Q_6_82  COST  14.5
+    Q_6_82  BAL_6_82  -1
+    Q_6_82  LINK_6_82  1
+    Q_6_83  COST  11.4
+    Q_6_83  BAL_6_83  -1
+    Q_6_83  LINK_6_83  1
+    Q_6_84  COST  10.6
+    Q_6_84  BAL_6_84  -1
+    Q_6_84  LINK_6_84  1
+    Q_6_85  COST  11.5
+    Q_6_85  BAL_6_85  -1
+    Q_6_85  LINK_6_85  1
+    Q_6_86  COST  12.1
+    Q_6_86  BAL_6_86  -1
+    Q_6_86  LINK_6_86  1
+    Q_6_87  COST  12.1
+    Q_6_87  BAL_6_87  -1
+    Q_6_87  LINK_6_87  1
+    Q_6_88  COST  14.2
+    Q_6_88  BAL_6_88  -1
+    Q_6_88  LINK_6_88  1
+    Q_6_89  COST  11.5
+    Q_6_89  BAL_6_89  -1
+    Q_6_89  LINK_6_89  1
+    I_6_0  COST  3
+    I_6_0  BAL_6_0  1
+    I_6_0  BAL_6_1  -1
+    I_6_1  COST  3
+    I_6_1  BAL_6_1  1
+    I_6_1  BAL_6_2  -1
+    I_6_2  COST  3
+    I_6_2  BAL_6_2  1
+    I_6_2  BAL_6_3  -1
+    I_6_3  COST  3
+    I_6_3  BAL_6_3  1
+    I_6_3  BAL_6_4  -1
+    I_6_4  COST  3
+    I_6_4  BAL_6_4  1
+    I_6_4  BAL_6_5  -1
+    I_6_5  COST  3
+    I_6_5  BAL_6_5  1
+    I_6_5  BAL_6_6  -1
+    I_6_6  COST  3
+    I_6_6  BAL_6_6  1
+    I_6_6  BAL_6_7  -1
+    I_6_7  COST  3
+    I_6_7  BAL_6_7  1
+    I_6_7  BAL_6_8  -1
+    I_6_8  COST  3
+    I_6_8  BAL_6_8  1
+    I_6_8  BAL_6_9  -1
+    I_6_9  COST  3
+    I_6_9  BAL_6_9  1
+    I_6_9  BAL_6_10  -1
+    I_6_10  COST  3
+    I_6_10  BAL_6_10  1
+    I_6_10  BAL_6_11  -1
+    I_6_11  COST  3
+    I_6_11  BAL_6_11  1
+    I_6_11  BAL_6_12  -1
+    I_6_12  COST  3
+    I_6_12  BAL_6_12  1
+    I_6_12  BAL_6_13  -1
+    I_6_13  COST  3
+    I_6_13  BAL_6_13  1
+    I_6_13  BAL_6_14  -1
+    I_6_14  COST  3
+    I_6_14  BAL_6_14  1
+    I_6_14  BAL_6_15  -1
+    I_6_15  COST  3
+    I_6_15  BAL_6_15  1
+    I_6_15  BAL_6_16  -1
+    I_6_16  COST  3
+    I_6_16  BAL_6_16  1
+    I_6_16  BAL_6_17  -1
+    I_6_17  COST  3
+    I_6_17  BAL_6_17  1
+    I_6_17  BAL_6_18  -1
+    I_6_18  COST  3
+    I_6_18  BAL_6_18  1
+    I_6_18  BAL_6_19  -1
+    I_6_19  COST  3
+    I_6_19  BAL_6_19  1
+    I_6_19  BAL_6_20  -1
+    I_6_20  COST  3
+    I_6_20  BAL_6_20  1
+    I_6_20  BAL_6_21  -1
+    I_6_21  COST  3
+    I_6_21  BAL_6_21  1
+    I_6_21  BAL_6_22  -1
+    I_6_22  COST  3
+    I_6_22  BAL_6_22  1
+    I_6_22  BAL_6_23  -1
+    I_6_23  COST  3
+    I_6_23  BAL_6_23  1
+    I_6_23  BAL_6_24  -1
+    I_6_24  COST  3
+    I_6_24  BAL_6_24  1
+    I_6_24  BAL_6_25  -1
+    I_6_25  COST  3
+    I_6_25  BAL_6_25  1
+    I_6_25  BAL_6_26  -1
+    I_6_26  COST  3
+    I_6_26  BAL_6_26  1
+    I_6_26  BAL_6_27  -1
+    I_6_27  COST  3
+    I_6_27  BAL_6_27  1
+    I_6_27  BAL_6_28  -1
+    I_6_28  COST  3
+    I_6_28  BAL_6_28  1
+    I_6_28  BAL_6_29  -1
+    I_6_29  COST  3
+    I_6_29  BAL_6_29  1
+    I_6_29  BAL_6_30  -1
+    I_6_30  COST  3
+    I_6_30  BAL_6_30  1
+    I_6_30  BAL_6_31  -1
+    I_6_31  COST  3
+    I_6_31  BAL_6_31  1
+    I_6_31  BAL_6_32  -1
+    I_6_32  COST  3
+    I_6_32  BAL_6_32  1
+    I_6_32  BAL_6_33  -1
+    I_6_33  COST  3
+    I_6_33  BAL_6_33  1
+    I_6_33  BAL_6_34  -1
+    I_6_34  COST  3
+    I_6_34  BAL_6_34  1
+    I_6_34  BAL_6_35  -1
+    I_6_35  COST  3
+    I_6_35  BAL_6_35  1
+    I_6_35  BAL_6_36  -1
+    I_6_36  COST  3
+    I_6_36  BAL_6_36  1
+    I_6_36  BAL_6_37  -1
+    I_6_37  COST  3
+    I_6_37  BAL_6_37  1
+    I_6_37  BAL_6_38  -1
+    I_6_38  COST  3
+    I_6_38  BAL_6_38  1
+    I_6_38  BAL_6_39  -1
+    I_6_39  COST  3
+    I_6_39  BAL_6_39  1
+    I_6_39  BAL_6_40  -1
+    I_6_40  COST  3
+    I_6_40  BAL_6_40  1
+    I_6_40  BAL_6_41  -1
+    I_6_41  COST  3
+    I_6_41  BAL_6_41  1
+    I_6_41  BAL_6_42  -1
+    I_6_42  COST  3
+    I_6_42  BAL_6_42  1
+    I_6_42  BAL_6_43  -1
+    I_6_43  COST  3
+    I_6_43  BAL_6_43  1
+    I_6_43  BAL_6_44  -1
+    I_6_44  COST  3
+    I_6_44  BAL_6_44  1
+    I_6_44  BAL_6_45  -1
+    I_6_45  COST  3
+    I_6_45  BAL_6_45  1
+    I_6_45  BAL_6_46  -1
+    I_6_46  COST  3
+    I_6_46  BAL_6_46  1
+    I_6_46  BAL_6_47  -1
+    I_6_47  COST  3
+    I_6_47  BAL_6_47  1
+    I_6_47  BAL_6_48  -1
+    I_6_48  COST  3
+    I_6_48  BAL_6_48  1
+    I_6_48  BAL_6_49  -1
+    I_6_49  COST  3
+    I_6_49  BAL_6_49  1
+    I_6_49  BAL_6_50  -1
+    I_6_50  COST  3
+    I_6_50  BAL_6_50  1
+    I_6_50  BAL_6_51  -1
+    I_6_51  COST  3
+    I_6_51  BAL_6_51  1
+    I_6_51  BAL_6_52  -1
+    I_6_52  COST  3
+    I_6_52  BAL_6_52  1
+    I_6_52  BAL_6_53  -1
+    I_6_53  COST  3
+    I_6_53  BAL_6_53  1
+    I_6_53  BAL_6_54  -1
+    I_6_54  COST  3
+    I_6_54  BAL_6_54  1
+    I_6_54  BAL_6_55  -1
+    I_6_55  COST  3
+    I_6_55  BAL_6_55  1
+    I_6_55  BAL_6_56  -1
+    I_6_56  COST  3
+    I_6_56  BAL_6_56  1
+    I_6_56  BAL_6_57  -1
+    I_6_57  COST  3
+    I_6_57  BAL_6_57  1
+    I_6_57  BAL_6_58  -1
+    I_6_58  COST  3
+    I_6_58  BAL_6_58  1
+    I_6_58  BAL_6_59  -1
+    I_6_59  COST  3
+    I_6_59  BAL_6_59  1
+    I_6_59  BAL_6_60  -1
+    I_6_60  COST  3
+    I_6_60  BAL_6_60  1
+    I_6_60  BAL_6_61  -1
+    I_6_61  COST  3
+    I_6_61  BAL_6_61  1
+    I_6_61  BAL_6_62  -1
+    I_6_62  COST  3
+    I_6_62  BAL_6_62  1
+    I_6_62  BAL_6_63  -1
+    I_6_63  COST  3
+    I_6_63  BAL_6_63  1
+    I_6_63  BAL_6_64  -1
+    I_6_64  COST  3
+    I_6_64  BAL_6_64  1
+    I_6_64  BAL_6_65  -1
+    I_6_65  COST  3
+    I_6_65  BAL_6_65  1
+    I_6_65  BAL_6_66  -1
+    I_6_66  COST  3
+    I_6_66  BAL_6_66  1
+    I_6_66  BAL_6_67  -1
+    I_6_67  COST  3
+    I_6_67  BAL_6_67  1
+    I_6_67  BAL_6_68  -1
+    I_6_68  COST  3
+    I_6_68  BAL_6_68  1
+    I_6_68  BAL_6_69  -1
+    I_6_69  COST  3
+    I_6_69  BAL_6_69  1
+    I_6_69  BAL_6_70  -1
+    I_6_70  COST  3
+    I_6_70  BAL_6_70  1
+    I_6_70  BAL_6_71  -1
+    I_6_71  COST  3
+    I_6_71  BAL_6_71  1
+    I_6_71  BAL_6_72  -1
+    I_6_72  COST  3
+    I_6_72  BAL_6_72  1
+    I_6_72  BAL_6_73  -1
+    I_6_73  COST  3
+    I_6_73  BAL_6_73  1
+    I_6_73  BAL_6_74  -1
+    I_6_74  COST  3
+    I_6_74  BAL_6_74  1
+    I_6_74  BAL_6_75  -1
+    I_6_75  COST  3
+    I_6_75  BAL_6_75  1
+    I_6_75  BAL_6_76  -1
+    I_6_76  COST  3
+    I_6_76  BAL_6_76  1
+    I_6_76  BAL_6_77  -1
+    I_6_77  COST  3
+    I_6_77  BAL_6_77  1
+    I_6_77  BAL_6_78  -1
+    I_6_78  COST  3
+    I_6_78  BAL_6_78  1
+    I_6_78  BAL_6_79  -1
+    I_6_79  COST  3
+    I_6_79  BAL_6_79  1
+    I_6_79  BAL_6_80  -1
+    I_6_80  COST  3
+    I_6_80  BAL_6_80  1
+    I_6_80  BAL_6_81  -1
+    I_6_81  COST  3
+    I_6_81  BAL_6_81  1
+    I_6_81  BAL_6_82  -1
+    I_6_82  COST  3
+    I_6_82  BAL_6_82  1
+    I_6_82  BAL_6_83  -1
+    I_6_83  COST  3
+    I_6_83  BAL_6_83  1
+    I_6_83  BAL_6_84  -1
+    I_6_84  COST  3
+    I_6_84  BAL_6_84  1
+    I_6_84  BAL_6_85  -1
+    I_6_85  COST  3
+    I_6_85  BAL_6_85  1
+    I_6_85  BAL_6_86  -1
+    I_6_86  COST  3
+    I_6_86  BAL_6_86  1
+    I_6_86  BAL_6_87  -1
+    I_6_87  COST  3
+    I_6_87  BAL_6_87  1
+    I_6_87  BAL_6_88  -1
+    I_6_88  COST  3
+    I_6_88  BAL_6_88  1
+    I_6_88  BAL_6_89  -1
+    I_6_89  COST  3
+    I_6_89  BAL_6_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_6_0  COST  395
+    Z_6_0  LINK_6_0  -2520
+    Z_6_1  COST  370
+    Z_6_1  LINK_6_1  -2508
+    Z_6_2  COST  343
+    Z_6_2  LINK_6_2  -2476
+    Z_6_3  COST  388
+    Z_6_3  LINK_6_3  -2440
+    Z_6_4  COST  314
+    Z_6_4  LINK_6_4  -2398
+    Z_6_5  COST  374
+    Z_6_5  LINK_6_5  -2342
+    Z_6_6  COST  301
+    Z_6_6  LINK_6_6  -2323
+    Z_6_7  COST  254
+    Z_6_7  LINK_6_7  -2296
+    Z_6_8  COST  212
+    Z_6_8  LINK_6_8  -2276
+    Z_6_9  COST  254
+    Z_6_9  LINK_6_9  -2276
+    Z_6_10  COST  381
+    Z_6_10  LINK_6_10  -2227
+    Z_6_11  COST  168
+    Z_6_11  LINK_6_11  -2226
+    Z_6_12  COST  127
+    Z_6_12  LINK_6_12  -2174
+    Z_6_13  COST  360
+    Z_6_13  LINK_6_13  -2155
+    Z_6_14  COST  156
+    Z_6_14  LINK_6_14  -2103
+    Z_6_15  COST  189
+    Z_6_15  LINK_6_15  -2064
+    Z_6_16  COST  223
+    Z_6_16  LINK_6_16  -2050
+    Z_6_17  COST  210
+    Z_6_17  LINK_6_17  -2045
+    Z_6_18  COST  322
+    Z_6_18  LINK_6_18  -1998
+    Z_6_19  COST  240
+    Z_6_19  LINK_6_19  -1984
+    Z_6_20  COST  379
+    Z_6_20  LINK_6_20  -1967
+    Z_6_21  COST  110
+    Z_6_21  LINK_6_21  -1924
+    Z_6_22  COST  228
+    Z_6_22  LINK_6_22  -1884
+    Z_6_23  COST  375
+    Z_6_23  LINK_6_23  -1829
+    Z_6_24  COST  238
+    Z_6_24  LINK_6_24  -1808
+    Z_6_25  COST  371
+    Z_6_25  LINK_6_25  -1791
+    Z_6_26  COST  234
+    Z_6_26  LINK_6_26  -1753
+    Z_6_27  COST  342
+    Z_6_27  LINK_6_27  -1707
+    Z_6_28  COST  164
+    Z_6_28  LINK_6_28  -1674
+    Z_6_29  COST  306
+    Z_6_29  LINK_6_29  -1650
+    Z_6_30  COST  153
+    Z_6_30  LINK_6_30  -1649
+    Z_6_31  COST  291
+    Z_6_31  LINK_6_31  -1642
+    Z_6_32  COST  135
+    Z_6_32  LINK_6_32  -1621
+    Z_6_33  COST  378
+    Z_6_33  LINK_6_33  -1599
+    Z_6_34  COST  285
+    Z_6_34  LINK_6_34  -1591
+    Z_6_35  COST  378
+    Z_6_35  LINK_6_35  -1584
+    Z_6_36  COST  384
+    Z_6_36  LINK_6_36  -1568
+    Z_6_37  COST  359
+    Z_6_37  LINK_6_37  -1511
+    Z_6_38  COST  397
+    Z_6_38  LINK_6_38  -1462
+    Z_6_39  COST  115
+    Z_6_39  LINK_6_39  -1453
+    Z_6_40  COST  257
+    Z_6_40  LINK_6_40  -1410
+    Z_6_41  COST  328
+    Z_6_41  LINK_6_41  -1374
+    Z_6_42  COST  167
+    Z_6_42  LINK_6_42  -1372
+    Z_6_43  COST  179
+    Z_6_43  LINK_6_43  -1350
+    Z_6_44  COST  138
+    Z_6_44  LINK_6_44  -1346
+    Z_6_45  COST  396
+    Z_6_45  LINK_6_45  -1341
+    Z_6_46  COST  172
+    Z_6_46  LINK_6_46  -1295
+    Z_6_47  COST  210
+    Z_6_47  LINK_6_47  -1289
+    Z_6_48  COST  347
+    Z_6_48  LINK_6_48  -1270
+    Z_6_49  COST  271
+    Z_6_49  LINK_6_49  -1250
+    Z_6_50  COST  286
+    Z_6_50  LINK_6_50  -1235
+    Z_6_51  COST  249
+    Z_6_51  LINK_6_51  -1218
+    Z_6_52  COST  181
+    Z_6_52  LINK_6_52  -1185
+    Z_6_53  COST  179
+    Z_6_53  LINK_6_53  -1182
+    Z_6_54  COST  295
+    Z_6_54  LINK_6_54  -1159
+    Z_6_55  COST  325
+    Z_6_55  LINK_6_55  -1158
+    Z_6_56  COST  307
+    Z_6_56  LINK_6_56  -1153
+    Z_6_57  COST  160
+    Z_6_57  LINK_6_57  -1145
+    Z_6_58  COST  174
+    Z_6_58  LINK_6_58  -1086
+    Z_6_59  COST  238
+    Z_6_59  LINK_6_59  -1061
+    Z_6_60  COST  251
+    Z_6_60  LINK_6_60  -1038
+    Z_6_61  COST  104
+    Z_6_61  LINK_6_61  -979
+    Z_6_62  COST  375
+    Z_6_62  LINK_6_62  -933
+    Z_6_63  COST  104
+    Z_6_63  LINK_6_63  -893
+    Z_6_64  COST  167
+    Z_6_64  LINK_6_64  -849
+    Z_6_65  COST  294
+    Z_6_65  LINK_6_65  -834
+    Z_6_66  COST  387
+    Z_6_66  LINK_6_66  -828
+    Z_6_67  COST  151
+    Z_6_67  LINK_6_67  -785
+    Z_6_68  COST  335
+    Z_6_68  LINK_6_68  -764
+    Z_6_69  COST  115
+    Z_6_69  LINK_6_69  -747
+    Z_6_70  COST  321
+    Z_6_70  LINK_6_70  -747
+    Z_6_71  COST  316
+    Z_6_71  LINK_6_71  -715
+    Z_6_72  COST  241
+    Z_6_72  LINK_6_72  -659
+    Z_6_73  COST  289
+    Z_6_73  LINK_6_73  -639
+    Z_6_74  COST  309
+    Z_6_74  LINK_6_74  -579
+    Z_6_75  COST  307
+    Z_6_75  LINK_6_75  -572
+    Z_6_76  COST  336
+    Z_6_76  LINK_6_76  -550
+    Z_6_77  COST  127
+    Z_6_77  LINK_6_77  -491
+    Z_6_78  COST  150
+    Z_6_78  LINK_6_78  -440
+    Z_6_79  COST  341
+    Z_6_79  LINK_6_79  -390
+    Z_6_80  COST  119
+    Z_6_80  LINK_6_80  -349
+    Z_6_81  COST  100
+    Z_6_81  LINK_6_81  -303
+    Z_6_82  COST  121
+    Z_6_82  LINK_6_82  -250
+    Z_6_83  COST  156
+    Z_6_83  LINK_6_83  -242
+    Z_6_84  COST  400
+    Z_6_84  LINK_6_84  -204
+    Z_6_85  COST  171
+    Z_6_85  LINK_6_85  -145
+    Z_6_86  COST  371
+    Z_6_86  LINK_6_86  -90
+    Z_6_87  COST  360
+    Z_6_87  LINK_6_87  -73
+    Z_6_88  COST  282
+    Z_6_88  LINK_6_88  -48
+    Z_6_89  COST  382
+    Z_6_89  LINK_6_89  -43
+    MARKER  'MARKER'  'INTEND'
+    Q_7_0  COST  10.4
+    Q_7_0  BAL_7_0  -1
+    Q_7_0  LINK_7_0  1
+    Q_7_1  COST  15.9
+    Q_7_1  BAL_7_1  -1
+    Q_7_1  LINK_7_1  1
+    Q_7_2  COST  11.5
+    Q_7_2  BAL_7_2  -1
+    Q_7_2  LINK_7_2  1
+    Q_7_3  COST  15.4
+    Q_7_3  BAL_7_3  -1
+    Q_7_3  LINK_7_3  1
+    Q_7_4  COST  12.4
+    Q_7_4  BAL_7_4  -1
+    Q_7_4  LINK_7_4  1
+    Q_7_5  COST  10.8
+    Q_7_5  BAL_7_5  -1
+    Q_7_5  LINK_7_5  1
+    Q_7_6  COST  11.8
+    Q_7_6  BAL_7_6  -1
+    Q_7_6  LINK_7_6  1
+    Q_7_7  COST  11.2
+    Q_7_7  BAL_7_7  -1
+    Q_7_7  LINK_7_7  1
+    Q_7_8  COST  14.2
+    Q_7_8  BAL_7_8  -1
+    Q_7_8  LINK_7_8  1
+    Q_7_9  COST  14.6
+    Q_7_9  BAL_7_9  -1
+    Q_7_9  LINK_7_9  1
+    Q_7_10  COST  12.5
+    Q_7_10  BAL_7_10  -1
+    Q_7_10  LINK_7_10  1
+    Q_7_11  COST  12.2
+    Q_7_11  BAL_7_11  -1
+    Q_7_11  LINK_7_11  1
+    Q_7_12  COST  14.7
+    Q_7_12  BAL_7_12  -1
+    Q_7_12  LINK_7_12  1
+    Q_7_13  COST  15.3
+    Q_7_13  BAL_7_13  -1
+    Q_7_13  LINK_7_13  1
+    Q_7_14  COST  11.1
+    Q_7_14  BAL_7_14  -1
+    Q_7_14  LINK_7_14  1
+    Q_7_15  COST  11.4
+    Q_7_15  BAL_7_15  -1
+    Q_7_15  LINK_7_15  1
+    Q_7_16  COST  11.9
+    Q_7_16  BAL_7_16  -1
+    Q_7_16  LINK_7_16  1
+    Q_7_17  COST  14.5
+    Q_7_17  BAL_7_17  -1
+    Q_7_17  LINK_7_17  1
+    Q_7_18  COST  10.9
+    Q_7_18  BAL_7_18  -1
+    Q_7_18  LINK_7_18  1
+    Q_7_19  COST  12.2
+    Q_7_19  BAL_7_19  -1
+    Q_7_19  LINK_7_19  1
+    Q_7_20  COST  13.1
+    Q_7_20  BAL_7_20  -1
+    Q_7_20  LINK_7_20  1
+    Q_7_21  COST  13.4
+    Q_7_21  BAL_7_21  -1
+    Q_7_21  LINK_7_21  1
+    Q_7_22  COST  11.8
+    Q_7_22  BAL_7_22  -1
+    Q_7_22  LINK_7_22  1
+    Q_7_23  COST  10.5
+    Q_7_23  BAL_7_23  -1
+    Q_7_23  LINK_7_23  1
+    Q_7_24  COST  13.2
+    Q_7_24  BAL_7_24  -1
+    Q_7_24  LINK_7_24  1
+    Q_7_25  COST  15.2
+    Q_7_25  BAL_7_25  -1
+    Q_7_25  LINK_7_25  1
+    Q_7_26  COST  11.9
+    Q_7_26  BAL_7_26  -1
+    Q_7_26  LINK_7_26  1
+    Q_7_27  COST  11.3
+    Q_7_27  BAL_7_27  -1
+    Q_7_27  LINK_7_27  1
+    Q_7_28  COST  14.5
+    Q_7_28  BAL_7_28  -1
+    Q_7_28  LINK_7_28  1
+    Q_7_29  COST  12.9
+    Q_7_29  BAL_7_29  -1
+    Q_7_29  LINK_7_29  1
+    Q_7_30  COST  10.1
+    Q_7_30  BAL_7_30  -1
+    Q_7_30  LINK_7_30  1
+    Q_7_31  COST  11.8
+    Q_7_31  BAL_7_31  -1
+    Q_7_31  LINK_7_31  1
+    Q_7_32  COST  15.1
+    Q_7_32  BAL_7_32  -1
+    Q_7_32  LINK_7_32  1
+    Q_7_33  COST  15.1
+    Q_7_33  BAL_7_33  -1
+    Q_7_33  LINK_7_33  1
+    Q_7_34  COST  13.9
+    Q_7_34  BAL_7_34  -1
+    Q_7_34  LINK_7_34  1
+    Q_7_35  COST  13.7
+    Q_7_35  BAL_7_35  -1
+    Q_7_35  LINK_7_35  1
+    Q_7_36  COST  10.6
+    Q_7_36  BAL_7_36  -1
+    Q_7_36  LINK_7_36  1
+    Q_7_37  COST  13.9
+    Q_7_37  BAL_7_37  -1
+    Q_7_37  LINK_7_37  1
+    Q_7_38  COST  12.3
+    Q_7_38  BAL_7_38  -1
+    Q_7_38  LINK_7_38  1
+    Q_7_39  COST  14.8
+    Q_7_39  BAL_7_39  -1
+    Q_7_39  LINK_7_39  1
+    Q_7_40  COST  12.8
+    Q_7_40  BAL_7_40  -1
+    Q_7_40  LINK_7_40  1
+    Q_7_41  COST  11.6
+    Q_7_41  BAL_7_41  -1
+    Q_7_41  LINK_7_41  1
+    Q_7_42  COST  13.9
+    Q_7_42  BAL_7_42  -1
+    Q_7_42  LINK_7_42  1
+    Q_7_43  COST  10.3
+    Q_7_43  BAL_7_43  -1
+    Q_7_43  LINK_7_43  1
+    Q_7_44  COST  10.3
+    Q_7_44  BAL_7_44  -1
+    Q_7_44  LINK_7_44  1
+    Q_7_45  COST  15.3
+    Q_7_45  BAL_7_45  -1
+    Q_7_45  LINK_7_45  1
+    Q_7_46  COST  15
+    Q_7_46  BAL_7_46  -1
+    Q_7_46  LINK_7_46  1
+    Q_7_47  COST  12
+    Q_7_47  BAL_7_47  -1
+    Q_7_47  LINK_7_47  1
+    Q_7_48  COST  11
+    Q_7_48  BAL_7_48  -1
+    Q_7_48  LINK_7_48  1
+    Q_7_49  COST  15.1
+    Q_7_49  BAL_7_49  -1
+    Q_7_49  LINK_7_49  1
+    Q_7_50  COST  10.8
+    Q_7_50  BAL_7_50  -1
+    Q_7_50  LINK_7_50  1
+    Q_7_51  COST  15.9
+    Q_7_51  BAL_7_51  -1
+    Q_7_51  LINK_7_51  1
+    Q_7_52  COST  14
+    Q_7_52  BAL_7_52  -1
+    Q_7_52  LINK_7_52  1
+    Q_7_53  COST  15.2
+    Q_7_53  BAL_7_53  -1
+    Q_7_53  LINK_7_53  1
+    Q_7_54  COST  10.6
+    Q_7_54  BAL_7_54  -1
+    Q_7_54  LINK_7_54  1
+    Q_7_55  COST  10.7
+    Q_7_55  BAL_7_55  -1
+    Q_7_55  LINK_7_55  1
+    Q_7_56  COST  15.4
+    Q_7_56  BAL_7_56  -1
+    Q_7_56  LINK_7_56  1
+    Q_7_57  COST  12.7
+    Q_7_57  BAL_7_57  -1
+    Q_7_57  LINK_7_57  1
+    Q_7_58  COST  14
+    Q_7_58  BAL_7_58  -1
+    Q_7_58  LINK_7_58  1
+    Q_7_59  COST  13.7
+    Q_7_59  BAL_7_59  -1
+    Q_7_59  LINK_7_59  1
+    Q_7_60  COST  11.5
+    Q_7_60  BAL_7_60  -1
+    Q_7_60  LINK_7_60  1
+    Q_7_61  COST  14.7
+    Q_7_61  BAL_7_61  -1
+    Q_7_61  LINK_7_61  1
+    Q_7_62  COST  11.3
+    Q_7_62  BAL_7_62  -1
+    Q_7_62  LINK_7_62  1
+    Q_7_63  COST  13.2
+    Q_7_63  BAL_7_63  -1
+    Q_7_63  LINK_7_63  1
+    Q_7_64  COST  13.2
+    Q_7_64  BAL_7_64  -1
+    Q_7_64  LINK_7_64  1
+    Q_7_65  COST  12.5
+    Q_7_65  BAL_7_65  -1
+    Q_7_65  LINK_7_65  1
+    Q_7_66  COST  10.7
+    Q_7_66  BAL_7_66  -1
+    Q_7_66  LINK_7_66  1
+    Q_7_67  COST  15.8
+    Q_7_67  BAL_7_67  -1
+    Q_7_67  LINK_7_67  1
+    Q_7_68  COST  15.7
+    Q_7_68  BAL_7_68  -1
+    Q_7_68  LINK_7_68  1
+    Q_7_69  COST  14.5
+    Q_7_69  BAL_7_69  -1
+    Q_7_69  LINK_7_69  1
+    Q_7_70  COST  11.3
+    Q_7_70  BAL_7_70  -1
+    Q_7_70  LINK_7_70  1
+    Q_7_71  COST  15.2
+    Q_7_71  BAL_7_71  -1
+    Q_7_71  LINK_7_71  1
+    Q_7_72  COST  16
+    Q_7_72  BAL_7_72  -1
+    Q_7_72  LINK_7_72  1
+    Q_7_73  COST  12.4
+    Q_7_73  BAL_7_73  -1
+    Q_7_73  LINK_7_73  1
+    Q_7_74  COST  14.2
+    Q_7_74  BAL_7_74  -1
+    Q_7_74  LINK_7_74  1
+    Q_7_75  COST  15.9
+    Q_7_75  BAL_7_75  -1
+    Q_7_75  LINK_7_75  1
+    Q_7_76  COST  13.3
+    Q_7_76  BAL_7_76  -1
+    Q_7_76  LINK_7_76  1
+    Q_7_77  COST  10.8
+    Q_7_77  BAL_7_77  -1
+    Q_7_77  LINK_7_77  1
+    Q_7_78  COST  15.2
+    Q_7_78  BAL_7_78  -1
+    Q_7_78  LINK_7_78  1
+    Q_7_79  COST  14.5
+    Q_7_79  BAL_7_79  -1
+    Q_7_79  LINK_7_79  1
+    Q_7_80  COST  13.7
+    Q_7_80  BAL_7_80  -1
+    Q_7_80  LINK_7_80  1
+    Q_7_81  COST  11.6
+    Q_7_81  BAL_7_81  -1
+    Q_7_81  LINK_7_81  1
+    Q_7_82  COST  14.6
+    Q_7_82  BAL_7_82  -1
+    Q_7_82  LINK_7_82  1
+    Q_7_83  COST  10
+    Q_7_83  BAL_7_83  -1
+    Q_7_83  LINK_7_83  1
+    Q_7_84  COST  14.5
+    Q_7_84  BAL_7_84  -1
+    Q_7_84  LINK_7_84  1
+    Q_7_85  COST  10.7
+    Q_7_85  BAL_7_85  -1
+    Q_7_85  LINK_7_85  1
+    Q_7_86  COST  15.1
+    Q_7_86  BAL_7_86  -1
+    Q_7_86  LINK_7_86  1
+    Q_7_87  COST  11.2
+    Q_7_87  BAL_7_87  -1
+    Q_7_87  LINK_7_87  1
+    Q_7_88  COST  14.8
+    Q_7_88  BAL_7_88  -1
+    Q_7_88  LINK_7_88  1
+    Q_7_89  COST  13.6
+    Q_7_89  BAL_7_89  -1
+    Q_7_89  LINK_7_89  1
+    I_7_0  COST  1.7
+    I_7_0  BAL_7_0  1
+    I_7_0  BAL_7_1  -1
+    I_7_1  COST  1.7
+    I_7_1  BAL_7_1  1
+    I_7_1  BAL_7_2  -1
+    I_7_2  COST  1.7
+    I_7_2  BAL_7_2  1
+    I_7_2  BAL_7_3  -1
+    I_7_3  COST  1.7
+    I_7_3  BAL_7_3  1
+    I_7_3  BAL_7_4  -1
+    I_7_4  COST  1.7
+    I_7_4  BAL_7_4  1
+    I_7_4  BAL_7_5  -1
+    I_7_5  COST  1.7
+    I_7_5  BAL_7_5  1
+    I_7_5  BAL_7_6  -1
+    I_7_6  COST  1.7
+    I_7_6  BAL_7_6  1
+    I_7_6  BAL_7_7  -1
+    I_7_7  COST  1.7
+    I_7_7  BAL_7_7  1
+    I_7_7  BAL_7_8  -1
+    I_7_8  COST  1.7
+    I_7_8  BAL_7_8  1
+    I_7_8  BAL_7_9  -1
+    I_7_9  COST  1.7
+    I_7_9  BAL_7_9  1
+    I_7_9  BAL_7_10  -1
+    I_7_10  COST  1.7
+    I_7_10  BAL_7_10  1
+    I_7_10  BAL_7_11  -1
+    I_7_11  COST  1.7
+    I_7_11  BAL_7_11  1
+    I_7_11  BAL_7_12  -1
+    I_7_12  COST  1.7
+    I_7_12  BAL_7_12  1
+    I_7_12  BAL_7_13  -1
+    I_7_13  COST  1.7
+    I_7_13  BAL_7_13  1
+    I_7_13  BAL_7_14  -1
+    I_7_14  COST  1.7
+    I_7_14  BAL_7_14  1
+    I_7_14  BAL_7_15  -1
+    I_7_15  COST  1.7
+    I_7_15  BAL_7_15  1
+    I_7_15  BAL_7_16  -1
+    I_7_16  COST  1.7
+    I_7_16  BAL_7_16  1
+    I_7_16  BAL_7_17  -1
+    I_7_17  COST  1.7
+    I_7_17  BAL_7_17  1
+    I_7_17  BAL_7_18  -1
+    I_7_18  COST  1.7
+    I_7_18  BAL_7_18  1
+    I_7_18  BAL_7_19  -1
+    I_7_19  COST  1.7
+    I_7_19  BAL_7_19  1
+    I_7_19  BAL_7_20  -1
+    I_7_20  COST  1.7
+    I_7_20  BAL_7_20  1
+    I_7_20  BAL_7_21  -1
+    I_7_21  COST  1.7
+    I_7_21  BAL_7_21  1
+    I_7_21  BAL_7_22  -1
+    I_7_22  COST  1.7
+    I_7_22  BAL_7_22  1
+    I_7_22  BAL_7_23  -1
+    I_7_23  COST  1.7
+    I_7_23  BAL_7_23  1
+    I_7_23  BAL_7_24  -1
+    I_7_24  COST  1.7
+    I_7_24  BAL_7_24  1
+    I_7_24  BAL_7_25  -1
+    I_7_25  COST  1.7
+    I_7_25  BAL_7_25  1
+    I_7_25  BAL_7_26  -1
+    I_7_26  COST  1.7
+    I_7_26  BAL_7_26  1
+    I_7_26  BAL_7_27  -1
+    I_7_27  COST  1.7
+    I_7_27  BAL_7_27  1
+    I_7_27  BAL_7_28  -1
+    I_7_28  COST  1.7
+    I_7_28  BAL_7_28  1
+    I_7_28  BAL_7_29  -1
+    I_7_29  COST  1.7
+    I_7_29  BAL_7_29  1
+    I_7_29  BAL_7_30  -1
+    I_7_30  COST  1.7
+    I_7_30  BAL_7_30  1
+    I_7_30  BAL_7_31  -1
+    I_7_31  COST  1.7
+    I_7_31  BAL_7_31  1
+    I_7_31  BAL_7_32  -1
+    I_7_32  COST  1.7
+    I_7_32  BAL_7_32  1
+    I_7_32  BAL_7_33  -1
+    I_7_33  COST  1.7
+    I_7_33  BAL_7_33  1
+    I_7_33  BAL_7_34  -1
+    I_7_34  COST  1.7
+    I_7_34  BAL_7_34  1
+    I_7_34  BAL_7_35  -1
+    I_7_35  COST  1.7
+    I_7_35  BAL_7_35  1
+    I_7_35  BAL_7_36  -1
+    I_7_36  COST  1.7
+    I_7_36  BAL_7_36  1
+    I_7_36  BAL_7_37  -1
+    I_7_37  COST  1.7
+    I_7_37  BAL_7_37  1
+    I_7_37  BAL_7_38  -1
+    I_7_38  COST  1.7
+    I_7_38  BAL_7_38  1
+    I_7_38  BAL_7_39  -1
+    I_7_39  COST  1.7
+    I_7_39  BAL_7_39  1
+    I_7_39  BAL_7_40  -1
+    I_7_40  COST  1.7
+    I_7_40  BAL_7_40  1
+    I_7_40  BAL_7_41  -1
+    I_7_41  COST  1.7
+    I_7_41  BAL_7_41  1
+    I_7_41  BAL_7_42  -1
+    I_7_42  COST  1.7
+    I_7_42  BAL_7_42  1
+    I_7_42  BAL_7_43  -1
+    I_7_43  COST  1.7
+    I_7_43  BAL_7_43  1
+    I_7_43  BAL_7_44  -1
+    I_7_44  COST  1.7
+    I_7_44  BAL_7_44  1
+    I_7_44  BAL_7_45  -1
+    I_7_45  COST  1.7
+    I_7_45  BAL_7_45  1
+    I_7_45  BAL_7_46  -1
+    I_7_46  COST  1.7
+    I_7_46  BAL_7_46  1
+    I_7_46  BAL_7_47  -1
+    I_7_47  COST  1.7
+    I_7_47  BAL_7_47  1
+    I_7_47  BAL_7_48  -1
+    I_7_48  COST  1.7
+    I_7_48  BAL_7_48  1
+    I_7_48  BAL_7_49  -1
+    I_7_49  COST  1.7
+    I_7_49  BAL_7_49  1
+    I_7_49  BAL_7_50  -1
+    I_7_50  COST  1.7
+    I_7_50  BAL_7_50  1
+    I_7_50  BAL_7_51  -1
+    I_7_51  COST  1.7
+    I_7_51  BAL_7_51  1
+    I_7_51  BAL_7_52  -1
+    I_7_52  COST  1.7
+    I_7_52  BAL_7_52  1
+    I_7_52  BAL_7_53  -1
+    I_7_53  COST  1.7
+    I_7_53  BAL_7_53  1
+    I_7_53  BAL_7_54  -1
+    I_7_54  COST  1.7
+    I_7_54  BAL_7_54  1
+    I_7_54  BAL_7_55  -1
+    I_7_55  COST  1.7
+    I_7_55  BAL_7_55  1
+    I_7_55  BAL_7_56  -1
+    I_7_56  COST  1.7
+    I_7_56  BAL_7_56  1
+    I_7_56  BAL_7_57  -1
+    I_7_57  COST  1.7
+    I_7_57  BAL_7_57  1
+    I_7_57  BAL_7_58  -1
+    I_7_58  COST  1.7
+    I_7_58  BAL_7_58  1
+    I_7_58  BAL_7_59  -1
+    I_7_59  COST  1.7
+    I_7_59  BAL_7_59  1
+    I_7_59  BAL_7_60  -1
+    I_7_60  COST  1.7
+    I_7_60  BAL_7_60  1
+    I_7_60  BAL_7_61  -1
+    I_7_61  COST  1.7
+    I_7_61  BAL_7_61  1
+    I_7_61  BAL_7_62  -1
+    I_7_62  COST  1.7
+    I_7_62  BAL_7_62  1
+    I_7_62  BAL_7_63  -1
+    I_7_63  COST  1.7
+    I_7_63  BAL_7_63  1
+    I_7_63  BAL_7_64  -1
+    I_7_64  COST  1.7
+    I_7_64  BAL_7_64  1
+    I_7_64  BAL_7_65  -1
+    I_7_65  COST  1.7
+    I_7_65  BAL_7_65  1
+    I_7_65  BAL_7_66  -1
+    I_7_66  COST  1.7
+    I_7_66  BAL_7_66  1
+    I_7_66  BAL_7_67  -1
+    I_7_67  COST  1.7
+    I_7_67  BAL_7_67  1
+    I_7_67  BAL_7_68  -1
+    I_7_68  COST  1.7
+    I_7_68  BAL_7_68  1
+    I_7_68  BAL_7_69  -1
+    I_7_69  COST  1.7
+    I_7_69  BAL_7_69  1
+    I_7_69  BAL_7_70  -1
+    I_7_70  COST  1.7
+    I_7_70  BAL_7_70  1
+    I_7_70  BAL_7_71  -1
+    I_7_71  COST  1.7
+    I_7_71  BAL_7_71  1
+    I_7_71  BAL_7_72  -1
+    I_7_72  COST  1.7
+    I_7_72  BAL_7_72  1
+    I_7_72  BAL_7_73  -1
+    I_7_73  COST  1.7
+    I_7_73  BAL_7_73  1
+    I_7_73  BAL_7_74  -1
+    I_7_74  COST  1.7
+    I_7_74  BAL_7_74  1
+    I_7_74  BAL_7_75  -1
+    I_7_75  COST  1.7
+    I_7_75  BAL_7_75  1
+    I_7_75  BAL_7_76  -1
+    I_7_76  COST  1.7
+    I_7_76  BAL_7_76  1
+    I_7_76  BAL_7_77  -1
+    I_7_77  COST  1.7
+    I_7_77  BAL_7_77  1
+    I_7_77  BAL_7_78  -1
+    I_7_78  COST  1.7
+    I_7_78  BAL_7_78  1
+    I_7_78  BAL_7_79  -1
+    I_7_79  COST  1.7
+    I_7_79  BAL_7_79  1
+    I_7_79  BAL_7_80  -1
+    I_7_80  COST  1.7
+    I_7_80  BAL_7_80  1
+    I_7_80  BAL_7_81  -1
+    I_7_81  COST  1.7
+    I_7_81  BAL_7_81  1
+    I_7_81  BAL_7_82  -1
+    I_7_82  COST  1.7
+    I_7_82  BAL_7_82  1
+    I_7_82  BAL_7_83  -1
+    I_7_83  COST  1.7
+    I_7_83  BAL_7_83  1
+    I_7_83  BAL_7_84  -1
+    I_7_84  COST  1.7
+    I_7_84  BAL_7_84  1
+    I_7_84  BAL_7_85  -1
+    I_7_85  COST  1.7
+    I_7_85  BAL_7_85  1
+    I_7_85  BAL_7_86  -1
+    I_7_86  COST  1.7
+    I_7_86  BAL_7_86  1
+    I_7_86  BAL_7_87  -1
+    I_7_87  COST  1.7
+    I_7_87  BAL_7_87  1
+    I_7_87  BAL_7_88  -1
+    I_7_88  COST  1.7
+    I_7_88  BAL_7_88  1
+    I_7_88  BAL_7_89  -1
+    I_7_89  COST  1.7
+    I_7_89  BAL_7_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_7_0  COST  120
+    Z_7_0  LINK_7_0  -2740
+    Z_7_1  COST  364
+    Z_7_1  LINK_7_1  -2697
+    Z_7_2  COST  197
+    Z_7_2  LINK_7_2  -2668
+    Z_7_3  COST  358
+    Z_7_3  LINK_7_3  -2621
+    Z_7_4  COST  374
+    Z_7_4  LINK_7_4  -2591
+    Z_7_5  COST  139
+    Z_7_5  LINK_7_5  -2568
+    Z_7_6  COST  226
+    Z_7_6  LINK_7_6  -2537
+    Z_7_7  COST  303
+    Z_7_7  LINK_7_7  -2496
+    Z_7_8  COST  338
+    Z_7_8  LINK_7_8  -2447
+    Z_7_9  COST  160
+    Z_7_9  LINK_7_9  -2405
+    Z_7_10  COST  390
+    Z_7_10  LINK_7_10  -2359
+    Z_7_11  COST  124
+    Z_7_11  LINK_7_11  -2300
+    Z_7_12  COST  298
+    Z_7_12  LINK_7_12  -2288
+    Z_7_13  COST  145
+    Z_7_13  LINK_7_13  -2261
+    Z_7_14  COST  386
+    Z_7_14  LINK_7_14  -2233
+    Z_7_15  COST  148
+    Z_7_15  LINK_7_15  -2208
+    Z_7_16  COST  345
+    Z_7_16  LINK_7_16  -2174
+    Z_7_17  COST  123
+    Z_7_17  LINK_7_17  -2167
+    Z_7_18  COST  365
+    Z_7_18  LINK_7_18  -2131
+    Z_7_19  COST  222
+    Z_7_19  LINK_7_19  -2100
+    Z_7_20  COST  106
+    Z_7_20  LINK_7_20  -2041
+    Z_7_21  COST  110
+    Z_7_21  LINK_7_21  -2024
+    Z_7_22  COST  259
+    Z_7_22  LINK_7_22  -1971
+    Z_7_23  COST  338
+    Z_7_23  LINK_7_23  -1963
+    Z_7_24  COST  242
+    Z_7_24  LINK_7_24  -1954
+    Z_7_25  COST  312
+    Z_7_25  LINK_7_25  -1954
+    Z_7_26  COST  185
+    Z_7_26  LINK_7_26  -1930
+    Z_7_27  COST  168
+    Z_7_27  LINK_7_27  -1904
+    Z_7_28  COST  387
+    Z_7_28  LINK_7_28  -1898
+    Z_7_29  COST  262
+    Z_7_29  LINK_7_29  -1847
+    Z_7_30  COST  373
+    Z_7_30  LINK_7_30  -1846
+    Z_7_31  COST  329
+    Z_7_31  LINK_7_31  -1805
+    Z_7_32  COST  356
+    Z_7_32  LINK_7_32  -1801
+    Z_7_33  COST  313
+    Z_7_33  LINK_7_33  -1741
+    Z_7_34  COST  383
+    Z_7_34  LINK_7_34  -1730
+    Z_7_35  COST  185
+    Z_7_35  LINK_7_35  -1701
+    Z_7_36  COST  302
+    Z_7_36  LINK_7_36  -1652
+    Z_7_37  COST  299
+    Z_7_37  LINK_7_37  -1628
+    Z_7_38  COST  202
+    Z_7_38  LINK_7_38  -1586
+    Z_7_39  COST  353
+    Z_7_39  LINK_7_39  -1554
+    Z_7_40  COST  242
+    Z_7_40  LINK_7_40  -1503
+    Z_7_41  COST  284
+    Z_7_41  LINK_7_41  -1451
+    Z_7_42  COST  177
+    Z_7_42  LINK_7_42  -1433
+    Z_7_43  COST  232
+    Z_7_43  LINK_7_43  -1375
+    Z_7_44  COST  390
+    Z_7_44  LINK_7_44  -1366
+    Z_7_45  COST  243
+    Z_7_45  LINK_7_45  -1357
+    Z_7_46  COST  189
+    Z_7_46  LINK_7_46  -1324
+    Z_7_47  COST  142
+    Z_7_47  LINK_7_47  -1272
+    Z_7_48  COST  284
+    Z_7_48  LINK_7_48  -1266
+    Z_7_49  COST  272
+    Z_7_49  LINK_7_49  -1206
+    Z_7_50  COST  173
+    Z_7_50  LINK_7_50  -1190
+    Z_7_51  COST  232
+    Z_7_51  LINK_7_51  -1189
+    Z_7_52  COST  230
+    Z_7_52  LINK_7_52  -1160
+    Z_7_53  COST  229
+    Z_7_53  LINK_7_53  -1135
+    Z_7_54  COST  278
+    Z_7_54  LINK_7_54  -1084
+    Z_7_55  COST  296
+    Z_7_55  LINK_7_55  -1044
+    Z_7_56  COST  242
+    Z_7_56  LINK_7_56  -999
+    Z_7_57  COST  389
+    Z_7_57  LINK_7_57  -952
+    Z_7_58  COST  339
+    Z_7_58  LINK_7_58  -902
+    Z_7_59  COST  106
+    Z_7_59  LINK_7_59  -844
+    Z_7_60  COST  176
+    Z_7_60  LINK_7_60  -830
+    Z_7_61  COST  166
+    Z_7_61  LINK_7_61  -796
+    Z_7_62  COST  229
+    Z_7_62  LINK_7_62  -752
+    Z_7_63  COST  215
+    Z_7_63  LINK_7_63  -727
+    Z_7_64  COST  200
+    Z_7_64  LINK_7_64  -727
+    Z_7_65  COST  136
+    Z_7_65  LINK_7_65  -693
+    Z_7_66  COST  396
+    Z_7_66  LINK_7_66  -642
+    Z_7_67  COST  375
+    Z_7_67  LINK_7_67  -627
+    Z_7_68  COST  201
+    Z_7_68  LINK_7_68  -600
+    Z_7_69  COST  378
+    Z_7_69  LINK_7_69  -542
+    Z_7_70  COST  319
+    Z_7_70  LINK_7_70  -532
+    Z_7_71  COST  222
+    Z_7_71  LINK_7_71  -490
+    Z_7_72  COST  395
+    Z_7_72  LINK_7_72  -479
+    Z_7_73  COST  171
+    Z_7_73  LINK_7_73  -458
+    Z_7_74  COST  383
+    Z_7_74  LINK_7_74  -416
+    Z_7_75  COST  335
+    Z_7_75  LINK_7_75  -401
+    Z_7_76  COST  300
+    Z_7_76  LINK_7_76  -397
+    Z_7_77  COST  200
+    Z_7_77  LINK_7_77  -348
+    Z_7_78  COST  142
+    Z_7_78  LINK_7_78  -314
+    Z_7_79  COST  139
+    Z_7_79  LINK_7_79  -255
+    Z_7_80  COST  178
+    Z_7_80  LINK_7_80  -220
+    Z_7_81  COST  129
+    Z_7_81  LINK_7_81  -210
+    Z_7_82  COST  115
+    Z_7_82  LINK_7_82  -199
+    Z_7_83  COST  307
+    Z_7_83  LINK_7_83  -175
+    Z_7_84  COST  295
+    Z_7_84  LINK_7_84  -138
+    Z_7_85  COST  313
+    Z_7_85  LINK_7_85  -137
+    Z_7_86  COST  170
+    Z_7_86  LINK_7_86  -105
+    Z_7_87  COST  166
+    Z_7_87  LINK_7_87  -92
+    Z_7_88  COST  375
+    Z_7_88  LINK_7_88  -65
+    Z_7_89  COST  379
+    Z_7_89  LINK_7_89  -50
+    MARKER  'MARKER'  'INTEND'
+    Q_8_0  COST  10.6
+    Q_8_0  BAL_8_0  -1
+    Q_8_0  LINK_8_0  1
+    Q_8_1  COST  11.7
+    Q_8_1  BAL_8_1  -1
+    Q_8_1  LINK_8_1  1
+    Q_8_2  COST  14.6
+    Q_8_2  BAL_8_2  -1
+    Q_8_2  LINK_8_2  1
+    Q_8_3  COST  13
+    Q_8_3  BAL_8_3  -1
+    Q_8_3  LINK_8_3  1
+    Q_8_4  COST  10.3
+    Q_8_4  BAL_8_4  -1
+    Q_8_4  LINK_8_4  1
+    Q_8_5  COST  14.7
+    Q_8_5  BAL_8_5  -1
+    Q_8_5  LINK_8_5  1
+    Q_8_6  COST  13.2
+    Q_8_6  BAL_8_6  -1
+    Q_8_6  LINK_8_6  1
+    Q_8_7  COST  11.9
+    Q_8_7  BAL_8_7  -1
+    Q_8_7  LINK_8_7  1
+    Q_8_8  COST  15
+    Q_8_8  BAL_8_8  -1
+    Q_8_8  LINK_8_8  1
+    Q_8_9  COST  15.5
+    Q_8_9  BAL_8_9  -1
+    Q_8_9  LINK_8_9  1
+    Q_8_10  COST  15.1
+    Q_8_10  BAL_8_10  -1
+    Q_8_10  LINK_8_10  1
+    Q_8_11  COST  11.3
+    Q_8_11  BAL_8_11  -1
+    Q_8_11  LINK_8_11  1
+    Q_8_12  COST  15.2
+    Q_8_12  BAL_8_12  -1
+    Q_8_12  LINK_8_12  1
+    Q_8_13  COST  13.4
+    Q_8_13  BAL_8_13  -1
+    Q_8_13  LINK_8_13  1
+    Q_8_14  COST  10.4
+    Q_8_14  BAL_8_14  -1
+    Q_8_14  LINK_8_14  1
+    Q_8_15  COST  13.5
+    Q_8_15  BAL_8_15  -1
+    Q_8_15  LINK_8_15  1
+    Q_8_16  COST  12
+    Q_8_16  BAL_8_16  -1
+    Q_8_16  LINK_8_16  1
+    Q_8_17  COST  12.1
+    Q_8_17  BAL_8_17  -1
+    Q_8_17  LINK_8_17  1
+    Q_8_18  COST  15.9
+    Q_8_18  BAL_8_18  -1
+    Q_8_18  LINK_8_18  1
+    Q_8_19  COST  11.8
+    Q_8_19  BAL_8_19  -1
+    Q_8_19  LINK_8_19  1
+    Q_8_20  COST  15.5
+    Q_8_20  BAL_8_20  -1
+    Q_8_20  LINK_8_20  1
+    Q_8_21  COST  13.3
+    Q_8_21  BAL_8_21  -1
+    Q_8_21  LINK_8_21  1
+    Q_8_22  COST  10.8
+    Q_8_22  BAL_8_22  -1
+    Q_8_22  LINK_8_22  1
+    Q_8_23  COST  10.2
+    Q_8_23  BAL_8_23  -1
+    Q_8_23  LINK_8_23  1
+    Q_8_24  COST  12.8
+    Q_8_24  BAL_8_24  -1
+    Q_8_24  LINK_8_24  1
+    Q_8_25  COST  15.2
+    Q_8_25  BAL_8_25  -1
+    Q_8_25  LINK_8_25  1
+    Q_8_26  COST  12.3
+    Q_8_26  BAL_8_26  -1
+    Q_8_26  LINK_8_26  1
+    Q_8_27  COST  15.1
+    Q_8_27  BAL_8_27  -1
+    Q_8_27  LINK_8_27  1
+    Q_8_28  COST  14.7
+    Q_8_28  BAL_8_28  -1
+    Q_8_28  LINK_8_28  1
+    Q_8_29  COST  10.2
+    Q_8_29  BAL_8_29  -1
+    Q_8_29  LINK_8_29  1
+    Q_8_30  COST  10.1
+    Q_8_30  BAL_8_30  -1
+    Q_8_30  LINK_8_30  1
+    Q_8_31  COST  12
+    Q_8_31  BAL_8_31  -1
+    Q_8_31  LINK_8_31  1
+    Q_8_32  COST  12.6
+    Q_8_32  BAL_8_32  -1
+    Q_8_32  LINK_8_32  1
+    Q_8_33  COST  14.7
+    Q_8_33  BAL_8_33  -1
+    Q_8_33  LINK_8_33  1
+    Q_8_34  COST  11
+    Q_8_34  BAL_8_34  -1
+    Q_8_34  LINK_8_34  1
+    Q_8_35  COST  15.6
+    Q_8_35  BAL_8_35  -1
+    Q_8_35  LINK_8_35  1
+    Q_8_36  COST  13.5
+    Q_8_36  BAL_8_36  -1
+    Q_8_36  LINK_8_36  1
+    Q_8_37  COST  10.2
+    Q_8_37  BAL_8_37  -1
+    Q_8_37  LINK_8_37  1
+    Q_8_38  COST  14.5
+    Q_8_38  BAL_8_38  -1
+    Q_8_38  LINK_8_38  1
+    Q_8_39  COST  13.7
+    Q_8_39  BAL_8_39  -1
+    Q_8_39  LINK_8_39  1
+    Q_8_40  COST  14.4
+    Q_8_40  BAL_8_40  -1
+    Q_8_40  LINK_8_40  1
+    Q_8_41  COST  14.2
+    Q_8_41  BAL_8_41  -1
+    Q_8_41  LINK_8_41  1
+    Q_8_42  COST  14
+    Q_8_42  BAL_8_42  -1
+    Q_8_42  LINK_8_42  1
+    Q_8_43  COST  15.5
+    Q_8_43  BAL_8_43  -1
+    Q_8_43  LINK_8_43  1
+    Q_8_44  COST  13.3
+    Q_8_44  BAL_8_44  -1
+    Q_8_44  LINK_8_44  1
+    Q_8_45  COST  12.7
+    Q_8_45  BAL_8_45  -1
+    Q_8_45  LINK_8_45  1
+    Q_8_46  COST  11.1
+    Q_8_46  BAL_8_46  -1
+    Q_8_46  LINK_8_46  1
+    Q_8_47  COST  15.7
+    Q_8_47  BAL_8_47  -1
+    Q_8_47  LINK_8_47  1
+    Q_8_48  COST  11.2
+    Q_8_48  BAL_8_48  -1
+    Q_8_48  LINK_8_48  1
+    Q_8_49  COST  11.4
+    Q_8_49  BAL_8_49  -1
+    Q_8_49  LINK_8_49  1
+    Q_8_50  COST  10.7
+    Q_8_50  BAL_8_50  -1
+    Q_8_50  LINK_8_50  1
+    Q_8_51  COST  13.7
+    Q_8_51  BAL_8_51  -1
+    Q_8_51  LINK_8_51  1
+    Q_8_52  COST  10.8
+    Q_8_52  BAL_8_52  -1
+    Q_8_52  LINK_8_52  1
+    Q_8_53  COST  13.7
+    Q_8_53  BAL_8_53  -1
+    Q_8_53  LINK_8_53  1
+    Q_8_54  COST  13.2
+    Q_8_54  BAL_8_54  -1
+    Q_8_54  LINK_8_54  1
+    Q_8_55  COST  10.7
+    Q_8_55  BAL_8_55  -1
+    Q_8_55  LINK_8_55  1
+    Q_8_56  COST  14.6
+    Q_8_56  BAL_8_56  -1
+    Q_8_56  LINK_8_56  1
+    Q_8_57  COST  11.7
+    Q_8_57  BAL_8_57  -1
+    Q_8_57  LINK_8_57  1
+    Q_8_58  COST  12.9
+    Q_8_58  BAL_8_58  -1
+    Q_8_58  LINK_8_58  1
+    Q_8_59  COST  11.2
+    Q_8_59  BAL_8_59  -1
+    Q_8_59  LINK_8_59  1
+    Q_8_60  COST  15
+    Q_8_60  BAL_8_60  -1
+    Q_8_60  LINK_8_60  1
+    Q_8_61  COST  10.3
+    Q_8_61  BAL_8_61  -1
+    Q_8_61  LINK_8_61  1
+    Q_8_62  COST  12.3
+    Q_8_62  BAL_8_62  -1
+    Q_8_62  LINK_8_62  1
+    Q_8_63  COST  12.9
+    Q_8_63  BAL_8_63  -1
+    Q_8_63  LINK_8_63  1
+    Q_8_64  COST  12.1
+    Q_8_64  BAL_8_64  -1
+    Q_8_64  LINK_8_64  1
+    Q_8_65  COST  15.9
+    Q_8_65  BAL_8_65  -1
+    Q_8_65  LINK_8_65  1
+    Q_8_66  COST  13.9
+    Q_8_66  BAL_8_66  -1
+    Q_8_66  LINK_8_66  1
+    Q_8_67  COST  14.6
+    Q_8_67  BAL_8_67  -1
+    Q_8_67  LINK_8_67  1
+    Q_8_68  COST  12.2
+    Q_8_68  BAL_8_68  -1
+    Q_8_68  LINK_8_68  1
+    Q_8_69  COST  11.4
+    Q_8_69  BAL_8_69  -1
+    Q_8_69  LINK_8_69  1
+    Q_8_70  COST  15.9
+    Q_8_70  BAL_8_70  -1
+    Q_8_70  LINK_8_70  1
+    Q_8_71  COST  15.9
+    Q_8_71  BAL_8_71  -1
+    Q_8_71  LINK_8_71  1
+    Q_8_72  COST  14
+    Q_8_72  BAL_8_72  -1
+    Q_8_72  LINK_8_72  1
+    Q_8_73  COST  10
+    Q_8_73  BAL_8_73  -1
+    Q_8_73  LINK_8_73  1
+    Q_8_74  COST  10
+    Q_8_74  BAL_8_74  -1
+    Q_8_74  LINK_8_74  1
+    Q_8_75  COST  13.1
+    Q_8_75  BAL_8_75  -1
+    Q_8_75  LINK_8_75  1
+    Q_8_76  COST  10.2
+    Q_8_76  BAL_8_76  -1
+    Q_8_76  LINK_8_76  1
+    Q_8_77  COST  11
+    Q_8_77  BAL_8_77  -1
+    Q_8_77  LINK_8_77  1
+    Q_8_78  COST  11.6
+    Q_8_78  BAL_8_78  -1
+    Q_8_78  LINK_8_78  1
+    Q_8_79  COST  15.7
+    Q_8_79  BAL_8_79  -1
+    Q_8_79  LINK_8_79  1
+    Q_8_80  COST  13.5
+    Q_8_80  BAL_8_80  -1
+    Q_8_80  LINK_8_80  1
+    Q_8_81  COST  10.2
+    Q_8_81  BAL_8_81  -1
+    Q_8_81  LINK_8_81  1
+    Q_8_82  COST  10
+    Q_8_82  BAL_8_82  -1
+    Q_8_82  LINK_8_82  1
+    Q_8_83  COST  11.4
+    Q_8_83  BAL_8_83  -1
+    Q_8_83  LINK_8_83  1
+    Q_8_84  COST  14.8
+    Q_8_84  BAL_8_84  -1
+    Q_8_84  LINK_8_84  1
+    Q_8_85  COST  15.6
+    Q_8_85  BAL_8_85  -1
+    Q_8_85  LINK_8_85  1
+    Q_8_86  COST  10.5
+    Q_8_86  BAL_8_86  -1
+    Q_8_86  LINK_8_86  1
+    Q_8_87  COST  13.3
+    Q_8_87  BAL_8_87  -1
+    Q_8_87  LINK_8_87  1
+    Q_8_88  COST  15.2
+    Q_8_88  BAL_8_88  -1
+    Q_8_88  LINK_8_88  1
+    Q_8_89  COST  11.1
+    Q_8_89  BAL_8_89  -1
+    Q_8_89  LINK_8_89  1
+    I_8_0  COST  0.6
+    I_8_0  BAL_8_0  1
+    I_8_0  BAL_8_1  -1
+    I_8_1  COST  0.6
+    I_8_1  BAL_8_1  1
+    I_8_1  BAL_8_2  -1
+    I_8_2  COST  0.6
+    I_8_2  BAL_8_2  1
+    I_8_2  BAL_8_3  -1
+    I_8_3  COST  0.6
+    I_8_3  BAL_8_3  1
+    I_8_3  BAL_8_4  -1
+    I_8_4  COST  0.6
+    I_8_4  BAL_8_4  1
+    I_8_4  BAL_8_5  -1
+    I_8_5  COST  0.6
+    I_8_5  BAL_8_5  1
+    I_8_5  BAL_8_6  -1
+    I_8_6  COST  0.6
+    I_8_6  BAL_8_6  1
+    I_8_6  BAL_8_7  -1
+    I_8_7  COST  0.6
+    I_8_7  BAL_8_7  1
+    I_8_7  BAL_8_8  -1
+    I_8_8  COST  0.6
+    I_8_8  BAL_8_8  1
+    I_8_8  BAL_8_9  -1
+    I_8_9  COST  0.6
+    I_8_9  BAL_8_9  1
+    I_8_9  BAL_8_10  -1
+    I_8_10  COST  0.6
+    I_8_10  BAL_8_10  1
+    I_8_10  BAL_8_11  -1
+    I_8_11  COST  0.6
+    I_8_11  BAL_8_11  1
+    I_8_11  BAL_8_12  -1
+    I_8_12  COST  0.6
+    I_8_12  BAL_8_12  1
+    I_8_12  BAL_8_13  -1
+    I_8_13  COST  0.6
+    I_8_13  BAL_8_13  1
+    I_8_13  BAL_8_14  -1
+    I_8_14  COST  0.6
+    I_8_14  BAL_8_14  1
+    I_8_14  BAL_8_15  -1
+    I_8_15  COST  0.6
+    I_8_15  BAL_8_15  1
+    I_8_15  BAL_8_16  -1
+    I_8_16  COST  0.6
+    I_8_16  BAL_8_16  1
+    I_8_16  BAL_8_17  -1
+    I_8_17  COST  0.6
+    I_8_17  BAL_8_17  1
+    I_8_17  BAL_8_18  -1
+    I_8_18  COST  0.6
+    I_8_18  BAL_8_18  1
+    I_8_18  BAL_8_19  -1
+    I_8_19  COST  0.6
+    I_8_19  BAL_8_19  1
+    I_8_19  BAL_8_20  -1
+    I_8_20  COST  0.6
+    I_8_20  BAL_8_20  1
+    I_8_20  BAL_8_21  -1
+    I_8_21  COST  0.6
+    I_8_21  BAL_8_21  1
+    I_8_21  BAL_8_22  -1
+    I_8_22  COST  0.6
+    I_8_22  BAL_8_22  1
+    I_8_22  BAL_8_23  -1
+    I_8_23  COST  0.6
+    I_8_23  BAL_8_23  1
+    I_8_23  BAL_8_24  -1
+    I_8_24  COST  0.6
+    I_8_24  BAL_8_24  1
+    I_8_24  BAL_8_25  -1
+    I_8_25  COST  0.6
+    I_8_25  BAL_8_25  1
+    I_8_25  BAL_8_26  -1
+    I_8_26  COST  0.6
+    I_8_26  BAL_8_26  1
+    I_8_26  BAL_8_27  -1
+    I_8_27  COST  0.6
+    I_8_27  BAL_8_27  1
+    I_8_27  BAL_8_28  -1
+    I_8_28  COST  0.6
+    I_8_28  BAL_8_28  1
+    I_8_28  BAL_8_29  -1
+    I_8_29  COST  0.6
+    I_8_29  BAL_8_29  1
+    I_8_29  BAL_8_30  -1
+    I_8_30  COST  0.6
+    I_8_30  BAL_8_30  1
+    I_8_30  BAL_8_31  -1
+    I_8_31  COST  0.6
+    I_8_31  BAL_8_31  1
+    I_8_31  BAL_8_32  -1
+    I_8_32  COST  0.6
+    I_8_32  BAL_8_32  1
+    I_8_32  BAL_8_33  -1
+    I_8_33  COST  0.6
+    I_8_33  BAL_8_33  1
+    I_8_33  BAL_8_34  -1
+    I_8_34  COST  0.6
+    I_8_34  BAL_8_34  1
+    I_8_34  BAL_8_35  -1
+    I_8_35  COST  0.6
+    I_8_35  BAL_8_35  1
+    I_8_35  BAL_8_36  -1
+    I_8_36  COST  0.6
+    I_8_36  BAL_8_36  1
+    I_8_36  BAL_8_37  -1
+    I_8_37  COST  0.6
+    I_8_37  BAL_8_37  1
+    I_8_37  BAL_8_38  -1
+    I_8_38  COST  0.6
+    I_8_38  BAL_8_38  1
+    I_8_38  BAL_8_39  -1
+    I_8_39  COST  0.6
+    I_8_39  BAL_8_39  1
+    I_8_39  BAL_8_40  -1
+    I_8_40  COST  0.6
+    I_8_40  BAL_8_40  1
+    I_8_40  BAL_8_41  -1
+    I_8_41  COST  0.6
+    I_8_41  BAL_8_41  1
+    I_8_41  BAL_8_42  -1
+    I_8_42  COST  0.6
+    I_8_42  BAL_8_42  1
+    I_8_42  BAL_8_43  -1
+    I_8_43  COST  0.6
+    I_8_43  BAL_8_43  1
+    I_8_43  BAL_8_44  -1
+    I_8_44  COST  0.6
+    I_8_44  BAL_8_44  1
+    I_8_44  BAL_8_45  -1
+    I_8_45  COST  0.6
+    I_8_45  BAL_8_45  1
+    I_8_45  BAL_8_46  -1
+    I_8_46  COST  0.6
+    I_8_46  BAL_8_46  1
+    I_8_46  BAL_8_47  -1
+    I_8_47  COST  0.6
+    I_8_47  BAL_8_47  1
+    I_8_47  BAL_8_48  -1
+    I_8_48  COST  0.6
+    I_8_48  BAL_8_48  1
+    I_8_48  BAL_8_49  -1
+    I_8_49  COST  0.6
+    I_8_49  BAL_8_49  1
+    I_8_49  BAL_8_50  -1
+    I_8_50  COST  0.6
+    I_8_50  BAL_8_50  1
+    I_8_50  BAL_8_51  -1
+    I_8_51  COST  0.6
+    I_8_51  BAL_8_51  1
+    I_8_51  BAL_8_52  -1
+    I_8_52  COST  0.6
+    I_8_52  BAL_8_52  1
+    I_8_52  BAL_8_53  -1
+    I_8_53  COST  0.6
+    I_8_53  BAL_8_53  1
+    I_8_53  BAL_8_54  -1
+    I_8_54  COST  0.6
+    I_8_54  BAL_8_54  1
+    I_8_54  BAL_8_55  -1
+    I_8_55  COST  0.6
+    I_8_55  BAL_8_55  1
+    I_8_55  BAL_8_56  -1
+    I_8_56  COST  0.6
+    I_8_56  BAL_8_56  1
+    I_8_56  BAL_8_57  -1
+    I_8_57  COST  0.6
+    I_8_57  BAL_8_57  1
+    I_8_57  BAL_8_58  -1
+    I_8_58  COST  0.6
+    I_8_58  BAL_8_58  1
+    I_8_58  BAL_8_59  -1
+    I_8_59  COST  0.6
+    I_8_59  BAL_8_59  1
+    I_8_59  BAL_8_60  -1
+    I_8_60  COST  0.6
+    I_8_60  BAL_8_60  1
+    I_8_60  BAL_8_61  -1
+    I_8_61  COST  0.6
+    I_8_61  BAL_8_61  1
+    I_8_61  BAL_8_62  -1
+    I_8_62  COST  0.6
+    I_8_62  BAL_8_62  1
+    I_8_62  BAL_8_63  -1
+    I_8_63  COST  0.6
+    I_8_63  BAL_8_63  1
+    I_8_63  BAL_8_64  -1
+    I_8_64  COST  0.6
+    I_8_64  BAL_8_64  1
+    I_8_64  BAL_8_65  -1
+    I_8_65  COST  0.6
+    I_8_65  BAL_8_65  1
+    I_8_65  BAL_8_66  -1
+    I_8_66  COST  0.6
+    I_8_66  BAL_8_66  1
+    I_8_66  BAL_8_67  -1
+    I_8_67  COST  0.6
+    I_8_67  BAL_8_67  1
+    I_8_67  BAL_8_68  -1
+    I_8_68  COST  0.6
+    I_8_68  BAL_8_68  1
+    I_8_68  BAL_8_69  -1
+    I_8_69  COST  0.6
+    I_8_69  BAL_8_69  1
+    I_8_69  BAL_8_70  -1
+    I_8_70  COST  0.6
+    I_8_70  BAL_8_70  1
+    I_8_70  BAL_8_71  -1
+    I_8_71  COST  0.6
+    I_8_71  BAL_8_71  1
+    I_8_71  BAL_8_72  -1
+    I_8_72  COST  0.6
+    I_8_72  BAL_8_72  1
+    I_8_72  BAL_8_73  -1
+    I_8_73  COST  0.6
+    I_8_73  BAL_8_73  1
+    I_8_73  BAL_8_74  -1
+    I_8_74  COST  0.6
+    I_8_74  BAL_8_74  1
+    I_8_74  BAL_8_75  -1
+    I_8_75  COST  0.6
+    I_8_75  BAL_8_75  1
+    I_8_75  BAL_8_76  -1
+    I_8_76  COST  0.6
+    I_8_76  BAL_8_76  1
+    I_8_76  BAL_8_77  -1
+    I_8_77  COST  0.6
+    I_8_77  BAL_8_77  1
+    I_8_77  BAL_8_78  -1
+    I_8_78  COST  0.6
+    I_8_78  BAL_8_78  1
+    I_8_78  BAL_8_79  -1
+    I_8_79  COST  0.6
+    I_8_79  BAL_8_79  1
+    I_8_79  BAL_8_80  -1
+    I_8_80  COST  0.6
+    I_8_80  BAL_8_80  1
+    I_8_80  BAL_8_81  -1
+    I_8_81  COST  0.6
+    I_8_81  BAL_8_81  1
+    I_8_81  BAL_8_82  -1
+    I_8_82  COST  0.6
+    I_8_82  BAL_8_82  1
+    I_8_82  BAL_8_83  -1
+    I_8_83  COST  0.6
+    I_8_83  BAL_8_83  1
+    I_8_83  BAL_8_84  -1
+    I_8_84  COST  0.6
+    I_8_84  BAL_8_84  1
+    I_8_84  BAL_8_85  -1
+    I_8_85  COST  0.6
+    I_8_85  BAL_8_85  1
+    I_8_85  BAL_8_86  -1
+    I_8_86  COST  0.6
+    I_8_86  BAL_8_86  1
+    I_8_86  BAL_8_87  -1
+    I_8_87  COST  0.6
+    I_8_87  BAL_8_87  1
+    I_8_87  BAL_8_88  -1
+    I_8_88  COST  0.6
+    I_8_88  BAL_8_88  1
+    I_8_88  BAL_8_89  -1
+    I_8_89  COST  0.6
+    I_8_89  BAL_8_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_8_0  COST  398
+    Z_8_0  LINK_8_0  -2755
+    Z_8_1  COST  356
+    Z_8_1  LINK_8_1  -2713
+    Z_8_2  COST  133
+    Z_8_2  LINK_8_2  -2683
+    Z_8_3  COST  389
+    Z_8_3  LINK_8_3  -2649
+    Z_8_4  COST  302
+    Z_8_4  LINK_8_4  -2610
+    Z_8_5  COST  147
+    Z_8_5  LINK_8_5  -2596
+    Z_8_6  COST  304
+    Z_8_6  LINK_8_6  -2579
+    Z_8_7  COST  362
+    Z_8_7  LINK_8_7  -2577
+    Z_8_8  COST  393
+    Z_8_8  LINK_8_8  -2537
+    Z_8_9  COST  254
+    Z_8_9  LINK_8_9  -2527
+    Z_8_10  COST  301
+    Z_8_10  LINK_8_10  -2485
+    Z_8_11  COST  237
+    Z_8_11  LINK_8_11  -2443
+    Z_8_12  COST  280
+    Z_8_12  LINK_8_12  -2385
+    Z_8_13  COST  340
+    Z_8_13  LINK_8_13  -2350
+    Z_8_14  COST  125
+    Z_8_14  LINK_8_14  -2318
+    Z_8_15  COST  382
+    Z_8_15  LINK_8_15  -2304
+    Z_8_16  COST  344
+    Z_8_16  LINK_8_16  -2250
+    Z_8_17  COST  108
+    Z_8_17  LINK_8_17  -2224
+    Z_8_18  COST  318
+    Z_8_18  LINK_8_18  -2207
+    Z_8_19  COST  255
+    Z_8_19  LINK_8_19  -2158
+    Z_8_20  COST  262
+    Z_8_20  LINK_8_20  -2116
+    Z_8_21  COST  176
+    Z_8_21  LINK_8_21  -2090
+    Z_8_22  COST  384
+    Z_8_22  LINK_8_22  -2065
+    Z_8_23  COST  242
+    Z_8_23  LINK_8_23  -2048
+    Z_8_24  COST  133
+    Z_8_24  LINK_8_24  -2017
+    Z_8_25  COST  284
+    Z_8_25  LINK_8_25  -2011
+    Z_8_26  COST  312
+    Z_8_26  LINK_8_26  -1969
+    Z_8_27  COST  300
+    Z_8_27  LINK_8_27  -1916
+    Z_8_28  COST  366
+    Z_8_28  LINK_8_28  -1863
+    Z_8_29  COST  112
+    Z_8_29  LINK_8_29  -1855
+    Z_8_30  COST  394
+    Z_8_30  LINK_8_30  -1844
+    Z_8_31  COST  397
+    Z_8_31  LINK_8_31  -1809
+    Z_8_32  COST  158
+    Z_8_32  LINK_8_32  -1808
+    Z_8_33  COST  118
+    Z_8_33  LINK_8_33  -1779
+    Z_8_34  COST  393
+    Z_8_34  LINK_8_34  -1731
+    Z_8_35  COST  371
+    Z_8_35  LINK_8_35  -1729
+    Z_8_36  COST  107
+    Z_8_36  LINK_8_36  -1698
+    Z_8_37  COST  151
+    Z_8_37  LINK_8_37  -1685
+    Z_8_38  COST  270
+    Z_8_38  LINK_8_38  -1660
+    Z_8_39  COST  272
+    Z_8_39  LINK_8_39  -1608
+    Z_8_40  COST  288
+    Z_8_40  LINK_8_40  -1562
+    Z_8_41  COST  382
+    Z_8_41  LINK_8_41  -1528
+    Z_8_42  COST  117
+    Z_8_42  LINK_8_42  -1476
+    Z_8_43  COST  289
+    Z_8_43  LINK_8_43  -1417
+    Z_8_44  COST  398
+    Z_8_44  LINK_8_44  -1396
+    Z_8_45  COST  137
+    Z_8_45  LINK_8_45  -1338
+    Z_8_46  COST  348
+    Z_8_46  LINK_8_46  -1323
+    Z_8_47  COST  142
+    Z_8_47  LINK_8_47  -1317
+    Z_8_48  COST  376
+    Z_8_48  LINK_8_48  -1313
+    Z_8_49  COST  328
+    Z_8_49  LINK_8_49  -1270
+    Z_8_50  COST  271
+    Z_8_50  LINK_8_50  -1223
+    Z_8_51  COST  356
+    Z_8_51  LINK_8_51  -1221
+    Z_8_52  COST  378
+    Z_8_52  LINK_8_52  -1167
+    Z_8_53  COST  101
+    Z_8_53  LINK_8_53  -1140
+    Z_8_54  COST  182
+    Z_8_54  LINK_8_54  -1087
+    Z_8_55  COST  266
+    Z_8_55  LINK_8_55  -1059
+    Z_8_56  COST  284
+    Z_8_56  LINK_8_56  -1047
+    Z_8_57  COST  209
+    Z_8_57  LINK_8_57  -1036
+    Z_8_58  COST  174
+    Z_8_58  LINK_8_58  -998
+    Z_8_59  COST  397
+    Z_8_59  LINK_8_59  -966
+    Z_8_60  COST  175
+    Z_8_60  LINK_8_60  -954
+    Z_8_61  COST  155
+    Z_8_61  LINK_8_61  -900
+    Z_8_62  COST  306
+    Z_8_62  LINK_8_62  -868
+    Z_8_63  COST  262
+    Z_8_63  LINK_8_63  -844
+    Z_8_64  COST  360
+    Z_8_64  LINK_8_64  -811
+    Z_8_65  COST  315
+    Z_8_65  LINK_8_65  -788
+    Z_8_66  COST  284
+    Z_8_66  LINK_8_66  -776
+    Z_8_67  COST  274
+    Z_8_67  LINK_8_67  -762
+    Z_8_68  COST  233
+    Z_8_68  LINK_8_68  -739
+    Z_8_69  COST  288
+    Z_8_69  LINK_8_69  -697
+    Z_8_70  COST  119
+    Z_8_70  LINK_8_70  -641
+    Z_8_71  COST  132
+    Z_8_71  LINK_8_71  -604
+    Z_8_72  COST  226
+    Z_8_72  LINK_8_72  -556
+    Z_8_73  COST  235
+    Z_8_73  LINK_8_73  -507
+    Z_8_74  COST  303
+    Z_8_74  LINK_8_74  -503
+    Z_8_75  COST  381
+    Z_8_75  LINK_8_75  -482
+    Z_8_76  COST  245
+    Z_8_76  LINK_8_76  -425
+    Z_8_77  COST  393
+    Z_8_77  LINK_8_77  -422
+    Z_8_78  COST  142
+    Z_8_78  LINK_8_78  -393
+    Z_8_79  COST  138
+    Z_8_79  LINK_8_79  -391
+    Z_8_80  COST  187
+    Z_8_80  LINK_8_80  -338
+    Z_8_81  COST  236
+    Z_8_81  LINK_8_81  -299
+    Z_8_82  COST  311
+    Z_8_82  LINK_8_82  -288
+    Z_8_83  COST  142
+    Z_8_83  LINK_8_83  -231
+    Z_8_84  COST  164
+    Z_8_84  LINK_8_84  -222
+    Z_8_85  COST  244
+    Z_8_85  LINK_8_85  -168
+    Z_8_86  COST  382
+    Z_8_86  LINK_8_86  -110
+    Z_8_87  COST  234
+    Z_8_87  LINK_8_87  -50
+    Z_8_88  COST  220
+    Z_8_88  LINK_8_88  -32
+    Z_8_89  COST  207
+    Z_8_89  LINK_8_89  -2
+    MARKER  'MARKER'  'INTEND'
+    Q_9_0  COST  11.4
+    Q_9_0  BAL_9_0  -1
+    Q_9_0  LINK_9_0  1
+    Q_9_1  COST  15.5
+    Q_9_1  BAL_9_1  -1
+    Q_9_1  LINK_9_1  1
+    Q_9_2  COST  13.8
+    Q_9_2  BAL_9_2  -1
+    Q_9_2  LINK_9_2  1
+    Q_9_3  COST  14.7
+    Q_9_3  BAL_9_3  -1
+    Q_9_3  LINK_9_3  1
+    Q_9_4  COST  14.1
+    Q_9_4  BAL_9_4  -1
+    Q_9_4  LINK_9_4  1
+    Q_9_5  COST  14.7
+    Q_9_5  BAL_9_5  -1
+    Q_9_5  LINK_9_5  1
+    Q_9_6  COST  15.9
+    Q_9_6  BAL_9_6  -1
+    Q_9_6  LINK_9_6  1
+    Q_9_7  COST  11.6
+    Q_9_7  BAL_9_7  -1
+    Q_9_7  LINK_9_7  1
+    Q_9_8  COST  12.7
+    Q_9_8  BAL_9_8  -1
+    Q_9_8  LINK_9_8  1
+    Q_9_9  COST  12.3
+    Q_9_9  BAL_9_9  -1
+    Q_9_9  LINK_9_9  1
+    Q_9_10  COST  15
+    Q_9_10  BAL_9_10  -1
+    Q_9_10  LINK_9_10  1
+    Q_9_11  COST  11.4
+    Q_9_11  BAL_9_11  -1
+    Q_9_11  LINK_9_11  1
+    Q_9_12  COST  10.3
+    Q_9_12  BAL_9_12  -1
+    Q_9_12  LINK_9_12  1
+    Q_9_13  COST  10.6
+    Q_9_13  BAL_9_13  -1
+    Q_9_13  LINK_9_13  1
+    Q_9_14  COST  13.8
+    Q_9_14  BAL_9_14  -1
+    Q_9_14  LINK_9_14  1
+    Q_9_15  COST  13.2
+    Q_9_15  BAL_9_15  -1
+    Q_9_15  LINK_9_15  1
+    Q_9_16  COST  13.2
+    Q_9_16  BAL_9_16  -1
+    Q_9_16  LINK_9_16  1
+    Q_9_17  COST  13.2
+    Q_9_17  BAL_9_17  -1
+    Q_9_17  LINK_9_17  1
+    Q_9_18  COST  11
+    Q_9_18  BAL_9_18  -1
+    Q_9_18  LINK_9_18  1
+    Q_9_19  COST  10.8
+    Q_9_19  BAL_9_19  -1
+    Q_9_19  LINK_9_19  1
+    Q_9_20  COST  11.8
+    Q_9_20  BAL_9_20  -1
+    Q_9_20  LINK_9_20  1
+    Q_9_21  COST  15.9
+    Q_9_21  BAL_9_21  -1
+    Q_9_21  LINK_9_21  1
+    Q_9_22  COST  10.3
+    Q_9_22  BAL_9_22  -1
+    Q_9_22  LINK_9_22  1
+    Q_9_23  COST  15.6
+    Q_9_23  BAL_9_23  -1
+    Q_9_23  LINK_9_23  1
+    Q_9_24  COST  10.4
+    Q_9_24  BAL_9_24  -1
+    Q_9_24  LINK_9_24  1
+    Q_9_25  COST  11.3
+    Q_9_25  BAL_9_25  -1
+    Q_9_25  LINK_9_25  1
+    Q_9_26  COST  10
+    Q_9_26  BAL_9_26  -1
+    Q_9_26  LINK_9_26  1
+    Q_9_27  COST  14.3
+    Q_9_27  BAL_9_27  -1
+    Q_9_27  LINK_9_27  1
+    Q_9_28  COST  10.3
+    Q_9_28  BAL_9_28  -1
+    Q_9_28  LINK_9_28  1
+    Q_9_29  COST  12.7
+    Q_9_29  BAL_9_29  -1
+    Q_9_29  LINK_9_29  1
+    Q_9_30  COST  14.6
+    Q_9_30  BAL_9_30  -1
+    Q_9_30  LINK_9_30  1
+    Q_9_31  COST  14.5
+    Q_9_31  BAL_9_31  -1
+    Q_9_31  LINK_9_31  1
+    Q_9_32  COST  15.4
+    Q_9_32  BAL_9_32  -1
+    Q_9_32  LINK_9_32  1
+    Q_9_33  COST  10.1
+    Q_9_33  BAL_9_33  -1
+    Q_9_33  LINK_9_33  1
+    Q_9_34  COST  10.4
+    Q_9_34  BAL_9_34  -1
+    Q_9_34  LINK_9_34  1
+    Q_9_35  COST  10.3
+    Q_9_35  BAL_9_35  -1
+    Q_9_35  LINK_9_35  1
+    Q_9_36  COST  10
+    Q_9_36  BAL_9_36  -1
+    Q_9_36  LINK_9_36  1
+    Q_9_37  COST  10.2
+    Q_9_37  BAL_9_37  -1
+    Q_9_37  LINK_9_37  1
+    Q_9_38  COST  13.4
+    Q_9_38  BAL_9_38  -1
+    Q_9_38  LINK_9_38  1
+    Q_9_39  COST  12.1
+    Q_9_39  BAL_9_39  -1
+    Q_9_39  LINK_9_39  1
+    Q_9_40  COST  12.1
+    Q_9_40  BAL_9_40  -1
+    Q_9_40  LINK_9_40  1
+    Q_9_41  COST  15
+    Q_9_41  BAL_9_41  -1
+    Q_9_41  LINK_9_41  1
+    Q_9_42  COST  10.1
+    Q_9_42  BAL_9_42  -1
+    Q_9_42  LINK_9_42  1
+    Q_9_43  COST  13.9
+    Q_9_43  BAL_9_43  -1
+    Q_9_43  LINK_9_43  1
+    Q_9_44  COST  10
+    Q_9_44  BAL_9_44  -1
+    Q_9_44  LINK_9_44  1
+    Q_9_45  COST  13.5
+    Q_9_45  BAL_9_45  -1
+    Q_9_45  LINK_9_45  1
+    Q_9_46  COST  11.3
+    Q_9_46  BAL_9_46  -1
+    Q_9_46  LINK_9_46  1
+    Q_9_47  COST  13
+    Q_9_47  BAL_9_47  -1
+    Q_9_47  LINK_9_47  1
+    Q_9_48  COST  11.2
+    Q_9_48  BAL_9_48  -1
+    Q_9_48  LINK_9_48  1
+    Q_9_49  COST  11.7
+    Q_9_49  BAL_9_49  -1
+    Q_9_49  LINK_9_49  1
+    Q_9_50  COST  11.8
+    Q_9_50  BAL_9_50  -1
+    Q_9_50  LINK_9_50  1
+    Q_9_51  COST  13.7
+    Q_9_51  BAL_9_51  -1
+    Q_9_51  LINK_9_51  1
+    Q_9_52  COST  13.5
+    Q_9_52  BAL_9_52  -1
+    Q_9_52  LINK_9_52  1
+    Q_9_53  COST  13.3
+    Q_9_53  BAL_9_53  -1
+    Q_9_53  LINK_9_53  1
+    Q_9_54  COST  11.6
+    Q_9_54  BAL_9_54  -1
+    Q_9_54  LINK_9_54  1
+    Q_9_55  COST  15.6
+    Q_9_55  BAL_9_55  -1
+    Q_9_55  LINK_9_55  1
+    Q_9_56  COST  11.4
+    Q_9_56  BAL_9_56  -1
+    Q_9_56  LINK_9_56  1
+    Q_9_57  COST  11.1
+    Q_9_57  BAL_9_57  -1
+    Q_9_57  LINK_9_57  1
+    Q_9_58  COST  11.3
+    Q_9_58  BAL_9_58  -1
+    Q_9_58  LINK_9_58  1
+    Q_9_59  COST  12.5
+    Q_9_59  BAL_9_59  -1
+    Q_9_59  LINK_9_59  1
+    Q_9_60  COST  15.6
+    Q_9_60  BAL_9_60  -1
+    Q_9_60  LINK_9_60  1
+    Q_9_61  COST  10.3
+    Q_9_61  BAL_9_61  -1
+    Q_9_61  LINK_9_61  1
+    Q_9_62  COST  11.5
+    Q_9_62  BAL_9_62  -1
+    Q_9_62  LINK_9_62  1
+    Q_9_63  COST  13.5
+    Q_9_63  BAL_9_63  -1
+    Q_9_63  LINK_9_63  1
+    Q_9_64  COST  14.4
+    Q_9_64  BAL_9_64  -1
+    Q_9_64  LINK_9_64  1
+    Q_9_65  COST  12.8
+    Q_9_65  BAL_9_65  -1
+    Q_9_65  LINK_9_65  1
+    Q_9_66  COST  10.2
+    Q_9_66  BAL_9_66  -1
+    Q_9_66  LINK_9_66  1
+    Q_9_67  COST  12.1
+    Q_9_67  BAL_9_67  -1
+    Q_9_67  LINK_9_67  1
+    Q_9_68  COST  12
+    Q_9_68  BAL_9_68  -1
+    Q_9_68  LINK_9_68  1
+    Q_9_69  COST  12.6
+    Q_9_69  BAL_9_69  -1
+    Q_9_69  LINK_9_69  1
+    Q_9_70  COST  10.7
+    Q_9_70  BAL_9_70  -1
+    Q_9_70  LINK_9_70  1
+    Q_9_71  COST  10.1
+    Q_9_71  BAL_9_71  -1
+    Q_9_71  LINK_9_71  1
+    Q_9_72  COST  13.6
+    Q_9_72  BAL_9_72  -1
+    Q_9_72  LINK_9_72  1
+    Q_9_73  COST  11.1
+    Q_9_73  BAL_9_73  -1
+    Q_9_73  LINK_9_73  1
+    Q_9_74  COST  13.2
+    Q_9_74  BAL_9_74  -1
+    Q_9_74  LINK_9_74  1
+    Q_9_75  COST  14
+    Q_9_75  BAL_9_75  -1
+    Q_9_75  LINK_9_75  1
+    Q_9_76  COST  10.5
+    Q_9_76  BAL_9_76  -1
+    Q_9_76  LINK_9_76  1
+    Q_9_77  COST  14.8
+    Q_9_77  BAL_9_77  -1
+    Q_9_77  LINK_9_77  1
+    Q_9_78  COST  11.1
+    Q_9_78  BAL_9_78  -1
+    Q_9_78  LINK_9_78  1
+    Q_9_79  COST  11.3
+    Q_9_79  BAL_9_79  -1
+    Q_9_79  LINK_9_79  1
+    Q_9_80  COST  11.4
+    Q_9_80  BAL_9_80  -1
+    Q_9_80  LINK_9_80  1
+    Q_9_81  COST  11.1
+    Q_9_81  BAL_9_81  -1
+    Q_9_81  LINK_9_81  1
+    Q_9_82  COST  11.9
+    Q_9_82  BAL_9_82  -1
+    Q_9_82  LINK_9_82  1
+    Q_9_83  COST  15.7
+    Q_9_83  BAL_9_83  -1
+    Q_9_83  LINK_9_83  1
+    Q_9_84  COST  15.1
+    Q_9_84  BAL_9_84  -1
+    Q_9_84  LINK_9_84  1
+    Q_9_85  COST  10.6
+    Q_9_85  BAL_9_85  -1
+    Q_9_85  LINK_9_85  1
+    Q_9_86  COST  10.3
+    Q_9_86  BAL_9_86  -1
+    Q_9_86  LINK_9_86  1
+    Q_9_87  COST  15
+    Q_9_87  BAL_9_87  -1
+    Q_9_87  LINK_9_87  1
+    Q_9_88  COST  12
+    Q_9_88  BAL_9_88  -1
+    Q_9_88  LINK_9_88  1
+    Q_9_89  COST  15.6
+    Q_9_89  BAL_9_89  -1
+    Q_9_89  LINK_9_89  1
+    I_9_0  COST  2.8
+    I_9_0  BAL_9_0  1
+    I_9_0  BAL_9_1  -1
+    I_9_1  COST  2.8
+    I_9_1  BAL_9_1  1
+    I_9_1  BAL_9_2  -1
+    I_9_2  COST  2.8
+    I_9_2  BAL_9_2  1
+    I_9_2  BAL_9_3  -1
+    I_9_3  COST  2.8
+    I_9_3  BAL_9_3  1
+    I_9_3  BAL_9_4  -1
+    I_9_4  COST  2.8
+    I_9_4  BAL_9_4  1
+    I_9_4  BAL_9_5  -1
+    I_9_5  COST  2.8
+    I_9_5  BAL_9_5  1
+    I_9_5  BAL_9_6  -1
+    I_9_6  COST  2.8
+    I_9_6  BAL_9_6  1
+    I_9_6  BAL_9_7  -1
+    I_9_7  COST  2.8
+    I_9_7  BAL_9_7  1
+    I_9_7  BAL_9_8  -1
+    I_9_8  COST  2.8
+    I_9_8  BAL_9_8  1
+    I_9_8  BAL_9_9  -1
+    I_9_9  COST  2.8
+    I_9_9  BAL_9_9  1
+    I_9_9  BAL_9_10  -1
+    I_9_10  COST  2.8
+    I_9_10  BAL_9_10  1
+    I_9_10  BAL_9_11  -1
+    I_9_11  COST  2.8
+    I_9_11  BAL_9_11  1
+    I_9_11  BAL_9_12  -1
+    I_9_12  COST  2.8
+    I_9_12  BAL_9_12  1
+    I_9_12  BAL_9_13  -1
+    I_9_13  COST  2.8
+    I_9_13  BAL_9_13  1
+    I_9_13  BAL_9_14  -1
+    I_9_14  COST  2.8
+    I_9_14  BAL_9_14  1
+    I_9_14  BAL_9_15  -1
+    I_9_15  COST  2.8
+    I_9_15  BAL_9_15  1
+    I_9_15  BAL_9_16  -1
+    I_9_16  COST  2.8
+    I_9_16  BAL_9_16  1
+    I_9_16  BAL_9_17  -1
+    I_9_17  COST  2.8
+    I_9_17  BAL_9_17  1
+    I_9_17  BAL_9_18  -1
+    I_9_18  COST  2.8
+    I_9_18  BAL_9_18  1
+    I_9_18  BAL_9_19  -1
+    I_9_19  COST  2.8
+    I_9_19  BAL_9_19  1
+    I_9_19  BAL_9_20  -1
+    I_9_20  COST  2.8
+    I_9_20  BAL_9_20  1
+    I_9_20  BAL_9_21  -1
+    I_9_21  COST  2.8
+    I_9_21  BAL_9_21  1
+    I_9_21  BAL_9_22  -1
+    I_9_22  COST  2.8
+    I_9_22  BAL_9_22  1
+    I_9_22  BAL_9_23  -1
+    I_9_23  COST  2.8
+    I_9_23  BAL_9_23  1
+    I_9_23  BAL_9_24  -1
+    I_9_24  COST  2.8
+    I_9_24  BAL_9_24  1
+    I_9_24  BAL_9_25  -1
+    I_9_25  COST  2.8
+    I_9_25  BAL_9_25  1
+    I_9_25  BAL_9_26  -1
+    I_9_26  COST  2.8
+    I_9_26  BAL_9_26  1
+    I_9_26  BAL_9_27  -1
+    I_9_27  COST  2.8
+    I_9_27  BAL_9_27  1
+    I_9_27  BAL_9_28  -1
+    I_9_28  COST  2.8
+    I_9_28  BAL_9_28  1
+    I_9_28  BAL_9_29  -1
+    I_9_29  COST  2.8
+    I_9_29  BAL_9_29  1
+    I_9_29  BAL_9_30  -1
+    I_9_30  COST  2.8
+    I_9_30  BAL_9_30  1
+    I_9_30  BAL_9_31  -1
+    I_9_31  COST  2.8
+    I_9_31  BAL_9_31  1
+    I_9_31  BAL_9_32  -1
+    I_9_32  COST  2.8
+    I_9_32  BAL_9_32  1
+    I_9_32  BAL_9_33  -1
+    I_9_33  COST  2.8
+    I_9_33  BAL_9_33  1
+    I_9_33  BAL_9_34  -1
+    I_9_34  COST  2.8
+    I_9_34  BAL_9_34  1
+    I_9_34  BAL_9_35  -1
+    I_9_35  COST  2.8
+    I_9_35  BAL_9_35  1
+    I_9_35  BAL_9_36  -1
+    I_9_36  COST  2.8
+    I_9_36  BAL_9_36  1
+    I_9_36  BAL_9_37  -1
+    I_9_37  COST  2.8
+    I_9_37  BAL_9_37  1
+    I_9_37  BAL_9_38  -1
+    I_9_38  COST  2.8
+    I_9_38  BAL_9_38  1
+    I_9_38  BAL_9_39  -1
+    I_9_39  COST  2.8
+    I_9_39  BAL_9_39  1
+    I_9_39  BAL_9_40  -1
+    I_9_40  COST  2.8
+    I_9_40  BAL_9_40  1
+    I_9_40  BAL_9_41  -1
+    I_9_41  COST  2.8
+    I_9_41  BAL_9_41  1
+    I_9_41  BAL_9_42  -1
+    I_9_42  COST  2.8
+    I_9_42  BAL_9_42  1
+    I_9_42  BAL_9_43  -1
+    I_9_43  COST  2.8
+    I_9_43  BAL_9_43  1
+    I_9_43  BAL_9_44  -1
+    I_9_44  COST  2.8
+    I_9_44  BAL_9_44  1
+    I_9_44  BAL_9_45  -1
+    I_9_45  COST  2.8
+    I_9_45  BAL_9_45  1
+    I_9_45  BAL_9_46  -1
+    I_9_46  COST  2.8
+    I_9_46  BAL_9_46  1
+    I_9_46  BAL_9_47  -1
+    I_9_47  COST  2.8
+    I_9_47  BAL_9_47  1
+    I_9_47  BAL_9_48  -1
+    I_9_48  COST  2.8
+    I_9_48  BAL_9_48  1
+    I_9_48  BAL_9_49  -1
+    I_9_49  COST  2.8
+    I_9_49  BAL_9_49  1
+    I_9_49  BAL_9_50  -1
+    I_9_50  COST  2.8
+    I_9_50  BAL_9_50  1
+    I_9_50  BAL_9_51  -1
+    I_9_51  COST  2.8
+    I_9_51  BAL_9_51  1
+    I_9_51  BAL_9_52  -1
+    I_9_52  COST  2.8
+    I_9_52  BAL_9_52  1
+    I_9_52  BAL_9_53  -1
+    I_9_53  COST  2.8
+    I_9_53  BAL_9_53  1
+    I_9_53  BAL_9_54  -1
+    I_9_54  COST  2.8
+    I_9_54  BAL_9_54  1
+    I_9_54  BAL_9_55  -1
+    I_9_55  COST  2.8
+    I_9_55  BAL_9_55  1
+    I_9_55  BAL_9_56  -1
+    I_9_56  COST  2.8
+    I_9_56  BAL_9_56  1
+    I_9_56  BAL_9_57  -1
+    I_9_57  COST  2.8
+    I_9_57  BAL_9_57  1
+    I_9_57  BAL_9_58  -1
+    I_9_58  COST  2.8
+    I_9_58  BAL_9_58  1
+    I_9_58  BAL_9_59  -1
+    I_9_59  COST  2.8
+    I_9_59  BAL_9_59  1
+    I_9_59  BAL_9_60  -1
+    I_9_60  COST  2.8
+    I_9_60  BAL_9_60  1
+    I_9_60  BAL_9_61  -1
+    I_9_61  COST  2.8
+    I_9_61  BAL_9_61  1
+    I_9_61  BAL_9_62  -1
+    I_9_62  COST  2.8
+    I_9_62  BAL_9_62  1
+    I_9_62  BAL_9_63  -1
+    I_9_63  COST  2.8
+    I_9_63  BAL_9_63  1
+    I_9_63  BAL_9_64  -1
+    I_9_64  COST  2.8
+    I_9_64  BAL_9_64  1
+    I_9_64  BAL_9_65  -1
+    I_9_65  COST  2.8
+    I_9_65  BAL_9_65  1
+    I_9_65  BAL_9_66  -1
+    I_9_66  COST  2.8
+    I_9_66  BAL_9_66  1
+    I_9_66  BAL_9_67  -1
+    I_9_67  COST  2.8
+    I_9_67  BAL_9_67  1
+    I_9_67  BAL_9_68  -1
+    I_9_68  COST  2.8
+    I_9_68  BAL_9_68  1
+    I_9_68  BAL_9_69  -1
+    I_9_69  COST  2.8
+    I_9_69  BAL_9_69  1
+    I_9_69  BAL_9_70  -1
+    I_9_70  COST  2.8
+    I_9_70  BAL_9_70  1
+    I_9_70  BAL_9_71  -1
+    I_9_71  COST  2.8
+    I_9_71  BAL_9_71  1
+    I_9_71  BAL_9_72  -1
+    I_9_72  COST  2.8
+    I_9_72  BAL_9_72  1
+    I_9_72  BAL_9_73  -1
+    I_9_73  COST  2.8
+    I_9_73  BAL_9_73  1
+    I_9_73  BAL_9_74  -1
+    I_9_74  COST  2.8
+    I_9_74  BAL_9_74  1
+    I_9_74  BAL_9_75  -1
+    I_9_75  COST  2.8
+    I_9_75  BAL_9_75  1
+    I_9_75  BAL_9_76  -1
+    I_9_76  COST  2.8
+    I_9_76  BAL_9_76  1
+    I_9_76  BAL_9_77  -1
+    I_9_77  COST  2.8
+    I_9_77  BAL_9_77  1
+    I_9_77  BAL_9_78  -1
+    I_9_78  COST  2.8
+    I_9_78  BAL_9_78  1
+    I_9_78  BAL_9_79  -1
+    I_9_79  COST  2.8
+    I_9_79  BAL_9_79  1
+    I_9_79  BAL_9_80  -1
+    I_9_80  COST  2.8
+    I_9_80  BAL_9_80  1
+    I_9_80  BAL_9_81  -1
+    I_9_81  COST  2.8
+    I_9_81  BAL_9_81  1
+    I_9_81  BAL_9_82  -1
+    I_9_82  COST  2.8
+    I_9_82  BAL_9_82  1
+    I_9_82  BAL_9_83  -1
+    I_9_83  COST  2.8
+    I_9_83  BAL_9_83  1
+    I_9_83  BAL_9_84  -1
+    I_9_84  COST  2.8
+    I_9_84  BAL_9_84  1
+    I_9_84  BAL_9_85  -1
+    I_9_85  COST  2.8
+    I_9_85  BAL_9_85  1
+    I_9_85  BAL_9_86  -1
+    I_9_86  COST  2.8
+    I_9_86  BAL_9_86  1
+    I_9_86  BAL_9_87  -1
+    I_9_87  COST  2.8
+    I_9_87  BAL_9_87  1
+    I_9_87  BAL_9_88  -1
+    I_9_88  COST  2.8
+    I_9_88  BAL_9_88  1
+    I_9_88  BAL_9_89  -1
+    I_9_89  COST  2.8
+    I_9_89  BAL_9_89  1
+    MARKER  'MARKER'  'INTORG'
+    Z_9_0  COST  258
+    Z_9_0  LINK_9_0  -3063
+    Z_9_1  COST  107
+    Z_9_1  LINK_9_1  -3003
+    Z_9_2  COST  123
+    Z_9_2  LINK_9_2  -2970
+    Z_9_3  COST  334
+    Z_9_3  LINK_9_3  -2958
+    Z_9_4  COST  334
+    Z_9_4  LINK_9_4  -2945
+    Z_9_5  COST  282
+    Z_9_5  LINK_9_5  -2917
+    Z_9_6  COST  218
+    Z_9_6  LINK_9_6  -2899
+    Z_9_7  COST  360
+    Z_9_7  LINK_9_7  -2884
+    Z_9_8  COST  327
+    Z_9_8  LINK_9_8  -2853
+    Z_9_9  COST  207
+    Z_9_9  LINK_9_9  -2821
+    Z_9_10  COST  343
+    Z_9_10  LINK_9_10  -2798
+    Z_9_11  COST  271
+    Z_9_11  LINK_9_11  -2778
+    Z_9_12  COST  174
+    Z_9_12  LINK_9_12  -2753
+    Z_9_13  COST  296
+    Z_9_13  LINK_9_13  -2693
+    Z_9_14  COST  323
+    Z_9_14  LINK_9_14  -2652
+    Z_9_15  COST  127
+    Z_9_15  LINK_9_15  -2648
+    Z_9_16  COST  156
+    Z_9_16  LINK_9_16  -2636
+    Z_9_17  COST  282
+    Z_9_17  LINK_9_17  -2598
+    Z_9_18  COST  104
+    Z_9_18  LINK_9_18  -2587
+    Z_9_19  COST  230
+    Z_9_19  LINK_9_19  -2575
+    Z_9_20  COST  377
+    Z_9_20  LINK_9_20  -2532
+    Z_9_21  COST  127
+    Z_9_21  LINK_9_21  -2493
+    Z_9_22  COST  256
+    Z_9_22  LINK_9_22  -2474
+    Z_9_23  COST  293
+    Z_9_23  LINK_9_23  -2415
+    Z_9_24  COST  107
+    Z_9_24  LINK_9_24  -2378
+    Z_9_25  COST  266
+    Z_9_25  LINK_9_25  -2351
+    Z_9_26  COST  273
+    Z_9_26  LINK_9_26  -2312
+    Z_9_27  COST  258
+    Z_9_27  LINK_9_27  -2282
+    Z_9_28  COST  125
+    Z_9_28  LINK_9_28  -2259
+    Z_9_29  COST  206
+    Z_9_29  LINK_9_29  -2258
+    Z_9_30  COST  141
+    Z_9_30  LINK_9_30  -2227
+    Z_9_31  COST  268
+    Z_9_31  LINK_9_31  -2226
+    Z_9_32  COST  161
+    Z_9_32  LINK_9_32  -2167
+    Z_9_33  COST  133
+    Z_9_33  LINK_9_33  -2161
+    Z_9_34  COST  165
+    Z_9_34  LINK_9_34  -2119
+    Z_9_35  COST  250
+    Z_9_35  LINK_9_35  -2079
+    Z_9_36  COST  309
+    Z_9_36  LINK_9_36  -2043
+    Z_9_37  COST  274
+    Z_9_37  LINK_9_37  -2001
+    Z_9_38  COST  219
+    Z_9_38  LINK_9_38  -1962
+    Z_9_39  COST  113
+    Z_9_39  LINK_9_39  -1902
+    Z_9_40  COST  193
+    Z_9_40  LINK_9_40  -1848
+    Z_9_41  COST  358
+    Z_9_41  LINK_9_41  -1821
+    Z_9_42  COST  393
+    Z_9_42  LINK_9_42  -1769
+    Z_9_43  COST  287
+    Z_9_43  LINK_9_43  -1724
+    Z_9_44  COST  254
+    Z_9_44  LINK_9_44  -1687
+    Z_9_45  COST  250
+    Z_9_45  LINK_9_45  -1666
+    Z_9_46  COST  293
+    Z_9_46  LINK_9_46  -1645
+    Z_9_47  COST  315
+    Z_9_47  LINK_9_47  -1641
+    Z_9_48  COST  369
+    Z_9_48  LINK_9_48  -1600
+    Z_9_49  COST  336
+    Z_9_49  LINK_9_49  -1574
+    Z_9_50  COST  137
+    Z_9_50  LINK_9_50  -1562
+    Z_9_51  COST  201
+    Z_9_51  LINK_9_51  -1518
+    Z_9_52  COST  308
+    Z_9_52  LINK_9_52  -1486
+    Z_9_53  COST  218
+    Z_9_53  LINK_9_53  -1435
+    Z_9_54  COST  121
+    Z_9_54  LINK_9_54  -1404
+    Z_9_55  COST  223
+    Z_9_55  LINK_9_55  -1344
+    Z_9_56  COST  214
+    Z_9_56  LINK_9_56  -1291
+    Z_9_57  COST  224
+    Z_9_57  LINK_9_57  -1238
+    Z_9_58  COST  302
+    Z_9_58  LINK_9_58  -1200
+    Z_9_59  COST  294
+    Z_9_59  LINK_9_59  -1164
+    Z_9_60  COST  207
+    Z_9_60  LINK_9_60  -1122
+    Z_9_61  COST  177
+    Z_9_61  LINK_9_61  -1087
+    Z_9_62  COST  253
+    Z_9_62  LINK_9_62  -1027
+    Z_9_63  COST  284
+    Z_9_63  LINK_9_63  -995
+    Z_9_64  COST  100
+    Z_9_64  LINK_9_64  -941
+    Z_9_65  COST  257
+    Z_9_65  LINK_9_65  -911
+    Z_9_66  COST  327
+    Z_9_66  LINK_9_66  -873
+    Z_9_67  COST  354
+    Z_9_67  LINK_9_67  -830
+    Z_9_68  COST  187
+    Z_9_68  LINK_9_68  -783
+    Z_9_69  COST  174
+    Z_9_69  LINK_9_69  -747
+    Z_9_70  COST  115
+    Z_9_70  LINK_9_70  -690
+    Z_9_71  COST  289
+    Z_9_71  LINK_9_71  -636
+    Z_9_72  COST  323
+    Z_9_72  LINK_9_72  -587
+    Z_9_73  COST  383
+    Z_9_73  LINK_9_73  -559
+    Z_9_74  COST  275
+    Z_9_74  LINK_9_74  -521
+    Z_9_75  COST  362
+    Z_9_75  LINK_9_75  -491
+    Z_9_76  COST  350
+    Z_9_76  LINK_9_76  -481
+    Z_9_77  COST  262
+    Z_9_77  LINK_9_77  -428
+    Z_9_78  COST  157
+    Z_9_78  LINK_9_78  -411
+    Z_9_79  COST  398
+    Z_9_79  LINK_9_79  -368
+    Z_9_80  COST  249
+    Z_9_80  LINK_9_80  -316
+    Z_9_81  COST  380
+    Z_9_81  LINK_9_81  -283
+    Z_9_82  COST  241
+    Z_9_82  LINK_9_82  -264
+    Z_9_83  COST  319
+    Z_9_83  LINK_9_83  -228
+    Z_9_84  COST  105
+    Z_9_84  LINK_9_84  -180
+    Z_9_85  COST  259
+    Z_9_85  LINK_9_85  -129
+    Z_9_86  COST  144
+    Z_9_86  LINK_9_86  -104
+    Z_9_87  COST  351
+    Z_9_87  LINK_9_87  -66
+    Z_9_88  COST  158
+    Z_9_88  LINK_9_88  -32
+    Z_9_89  COST  356
+    Z_9_89  LINK_9_89  -16
+    MARKER  'MARKER'  'INTEND'
+RHS
+    RHS  BAL_0_0  -8
+    RHS  BAL_0_1  -36
+    RHS  BAL_0_2  -54
+    RHS  BAL_0_3  -51
+    RHS  BAL_0_4  -48
+    RHS  BAL_0_5  -4
+    RHS  BAL_0_6  -16
+    RHS  BAL_0_7  -7
+    RHS  BAL_0_8  -31
+    RHS  BAL_0_9  -48
+    RHS  BAL_0_10  -28
+    RHS  BAL_0_11  -30
+    RHS  BAL_0_12  -41
+    RHS  BAL_0_13  -24
+    RHS  BAL_0_14  -50
+    RHS  BAL_0_15  -13
+    RHS  BAL_0_16  -6
+    RHS  BAL_0_17  -31
+    RHS  BAL_0_18  -1
+    RHS  BAL_0_19  -57
+    RHS  BAL_0_20  -53
+    RHS  BAL_0_21  -24
+    RHS  BAL_0_22  -27
+    RHS  BAL_0_23  -38
+    RHS  BAL_0_24  -48
+    RHS  BAL_0_25  -49
+    RHS  BAL_0_27  -44
+    RHS  BAL_0_28  -28
+    RHS  BAL_0_29  -17
+    RHS  BAL_0_30  -46
+    RHS  BAL_0_31  -51
+    RHS  BAL_0_32  -14
+    RHS  BAL_0_33  -37
+    RHS  BAL_0_34  -60
+    RHS  BAL_0_35  -6
+    RHS  BAL_0_36  -57
+    RHS  BAL_0_37  -20
+    RHS  BAL_0_38  -1
+    RHS  BAL_0_39  -1
+    RHS  BAL_0_40  -1
+    RHS  BAL_0_41  -41
+    RHS  BAL_0_42  -34
+    RHS  BAL_0_44  -60
+    RHS  BAL_0_45  -56
+    RHS  BAL_0_46  -24
+    RHS  BAL_0_47  -43
+    RHS  BAL_0_48  -13
+    RHS  BAL_0_49  -27
+    RHS  BAL_0_50  -46
+    RHS  BAL_0_51  -1
+    RHS  BAL_0_52  -33
+    RHS  BAL_0_53  -14
+    RHS  BAL_0_54  -48
+    RHS  BAL_0_55  -28
+    RHS  BAL_0_56  -60
+    RHS  BAL_0_57  -31
+    RHS  BAL_0_58  -35
+    RHS  BAL_0_59  -14
+    RHS  BAL_0_60  -22
+    RHS  BAL_0_61  -14
+    RHS  BAL_0_62  -43
+    RHS  BAL_0_63  -14
+    RHS  BAL_0_64  -48
+    RHS  BAL_0_65  -29
+    RHS  BAL_0_66  -60
+    RHS  BAL_0_67  -18
+    RHS  BAL_0_68  -59
+    RHS  BAL_0_69  -1
+    RHS  BAL_0_70  -26
+    RHS  BAL_0_71  -53
+    RHS  BAL_0_72  -58
+    RHS  BAL_0_73  -35
+    RHS  BAL_0_74  -59
+    RHS  BAL_0_75  -41
+    RHS  BAL_0_76  -6
+    RHS  BAL_0_77  -11
+    RHS  BAL_0_78  -40
+    RHS  BAL_0_79  -46
+    RHS  BAL_0_80  -55
+    RHS  BAL_0_81  -18
+    RHS  BAL_0_82  -7
+    RHS  BAL_0_83  -47
+    RHS  BAL_0_84  -21
+    RHS  BAL_0_85  -57
+    RHS  BAL_0_86  -46
+    RHS  BAL_0_87  -45
+    RHS  BAL_0_88  -32
+    RHS  BAL_0_89  -59
+    RHS  BAL_1_0  -58
+    RHS  BAL_1_1  -60
+    RHS  BAL_1_2  -19
+    RHS  BAL_1_3  -47
+    RHS  BAL_1_4  -10
+    RHS  BAL_1_5  -26
+    RHS  BAL_1_6  -36
+    RHS  BAL_1_7  -16
+    RHS  BAL_1_8  -8
+    RHS  BAL_1_10  -35
+    RHS  BAL_1_11  -56
+    RHS  BAL_1_12  -54
+    RHS  BAL_1_13  -2
+    RHS  BAL_1_14  -37
+    RHS  BAL_1_15  -52
+    RHS  BAL_1_16  -13
+    RHS  BAL_1_17  -57
+    RHS  BAL_1_18  -36
+    RHS  BAL_1_19  -29
+    RHS  BAL_1_20  -10
+    RHS  BAL_1_21  -52
+    RHS  BAL_1_22  -55
+    RHS  BAL_1_23  -55
+    RHS  BAL_1_24  -49
+    RHS  BAL_1_25  -45
+    RHS  BAL_1_26  -39
+    RHS  BAL_1_27  -32
+    RHS  BAL_1_28  -2
+    RHS  BAL_1_29  -24
+    RHS  BAL_1_30  -12
+    RHS  BAL_1_31  -22
+    RHS  BAL_1_32  -6
+    RHS  BAL_1_33  -13
+    RHS  BAL_1_34  -36
+    RHS  BAL_1_35  -43
+    RHS  BAL_1_36  -57
+    RHS  BAL_1_37  -27
+    RHS  BAL_1_38  -37
+    RHS  BAL_1_39  -12
+    RHS  BAL_1_40  -31
+    RHS  BAL_1_41  -6
+    RHS  BAL_1_42  -60
+    RHS  BAL_1_43  -42
+    RHS  BAL_1_44  -24
+    RHS  BAL_1_45  -18
+    RHS  BAL_1_46  -32
+    RHS  BAL_1_47  -31
+    RHS  BAL_1_48  -1
+    RHS  BAL_1_49  -20
+    RHS  BAL_1_50  -39
+    RHS  BAL_1_51  -55
+    RHS  BAL_1_52  -25
+    RHS  BAL_1_53  -57
+    RHS  BAL_1_54  -18
+    RHS  BAL_1_55  -1
+    RHS  BAL_1_56  -10
+    RHS  BAL_1_57  -12
+    RHS  BAL_1_58  -54
+    RHS  BAL_1_59  -20
+    RHS  BAL_1_60  -51
+    RHS  BAL_1_61  -36
+    RHS  BAL_1_62  -50
+    RHS  BAL_1_63  -8
+    RHS  BAL_1_64  -21
+    RHS  BAL_1_65  -27
+    RHS  BAL_1_66  -13
+    RHS  BAL_1_67  -17
+    RHS  BAL_1_68  -43
+    RHS  BAL_1_69  -6
+    RHS  BAL_1_70  -53
+    RHS  BAL_1_71  -24
+    RHS  BAL_1_72  -59
+    RHS  BAL_1_73  -35
+    RHS  BAL_1_74  -22
+    RHS  BAL_1_75  -58
+    RHS  BAL_1_76  -56
+    RHS  BAL_1_77  -53
+    RHS  BAL_1_78  -43
+    RHS  BAL_1_79  -34
+    RHS  BAL_1_80  -31
+    RHS  BAL_1_81  -49
+    RHS  BAL_1_82  -34
+    RHS  BAL_1_83  -15
+    RHS  BAL_1_84  -4
+    RHS  BAL_1_85  -46
+    RHS  BAL_1_86  -2
+    RHS  BAL_1_87  -5
+    RHS  BAL_1_88  -8
+    RHS  BAL_1_89  -10
+    RHS  BAL_2_0  -52
+    RHS  BAL_2_1  -55
+    RHS  BAL_2_2  -20
+    RHS  BAL_2_3  -19
+    RHS  BAL_2_4  -6
+    RHS  BAL_2_5  -45
+    RHS  BAL_2_6  -32
+    RHS  BAL_2_7  -53
+    RHS  BAL_2_8  -58
+    RHS  BAL_2_9  -38
+    RHS  BAL_2_10  -18
+    RHS  BAL_2_11  -8
+    RHS  BAL_2_12  -57
+    RHS  BAL_2_13  -13
+    RHS  BAL_2_14  -9
+    RHS  BAL_2_15  -34
+    RHS  BAL_2_16  -58
+    RHS  BAL_2_17  -46
+    RHS  BAL_2_18  -2
+    RHS  BAL_2_19  -49
+    RHS  BAL_2_20  -20
+    RHS  BAL_2_21  -52
+    RHS  BAL_2_22  -57
+    RHS  BAL_2_23  -39
+    RHS  BAL_2_24  -51
+    RHS  BAL_2_25  -43
+    RHS  BAL_2_26  -58
+    RHS  BAL_2_27  -35
+    RHS  BAL_2_28  -53
+    RHS  BAL_2_29  -60
+    RHS  BAL_2_30  -47
+    RHS  BAL_2_31  -44
+    RHS  BAL_2_32  -13
+    RHS  BAL_2_33  -11
+    RHS  BAL_2_34  -19
+    RHS  BAL_2_35  -27
+    RHS  BAL_2_36  -34
+    RHS  BAL_2_37  -10
+    RHS  BAL_2_38  -3
+    RHS  BAL_2_39  -45
+    RHS  BAL_2_40  -55
+    RHS  BAL_2_41  -42
+    RHS  BAL_2_42  -15
+    RHS  BAL_2_43  -16
+    RHS  BAL_2_44  -49
+    RHS  BAL_2_45  -4
+    RHS  BAL_2_46  -43
+    RHS  BAL_2_47  -28
+    RHS  BAL_2_48  -51
+    RHS  BAL_2_49  -27
+    RHS  BAL_2_50  -35
+    RHS  BAL_2_51  -16
+    RHS  BAL_2_52  -34
+    RHS  BAL_2_53  -28
+    RHS  BAL_2_54  -54
+    RHS  BAL_2_55  -34
+    RHS  BAL_2_56  -29
+    RHS  BAL_2_58  -25
+    RHS  BAL_2_59  -53
+    RHS  BAL_2_60  -21
+    RHS  BAL_2_61  -10
+    RHS  BAL_2_62  -16
+    RHS  BAL_2_63  -31
+    RHS  BAL_2_64  -1
+    RHS  BAL_2_65  -50
+    RHS  BAL_2_66  -41
+    RHS  BAL_2_67  -59
+    RHS  BAL_2_68  -26
+    RHS  BAL_2_69  -36
+    RHS  BAL_2_70  -1
+    RHS  BAL_2_71  -3
+    RHS  BAL_2_72  -44
+    RHS  BAL_2_73  -22
+    RHS  BAL_2_74  -37
+    RHS  BAL_2_75  -8
+    RHS  BAL_2_76  -37
+    RHS  BAL_2_77  -8
+    RHS  BAL_2_78  -8
+    RHS  BAL_2_79  -16
+    RHS  BAL_2_80  -53
+    RHS  BAL_2_81  -17
+    RHS  BAL_2_82  -25
+    RHS  BAL_2_83  -36
+    RHS  BAL_2_84  -25
+    RHS  BAL_2_85  -11
+    RHS  BAL_2_86  -39
+    RHS  BAL_2_87  -5
+    RHS  BAL_2_88  -14
+    RHS  BAL_2_89  -31
+    RHS  BAL_3_0  -32
+    RHS  BAL_3_1  -12
+    RHS  BAL_3_2  -59
+    RHS  BAL_3_3  -29
+    RHS  BAL_3_4  -38
+    RHS  BAL_3_5  -53
+    RHS  BAL_3_6  -33
+    RHS  BAL_3_7  -26
+    RHS  BAL_3_8  -59
+    RHS  BAL_3_9  -47
+    RHS  BAL_3_10  -45
+    RHS  BAL_3_11  -19
+    RHS  BAL_3_12  -44
+    RHS  BAL_3_13  -10
+    RHS  BAL_3_14  -28
+    RHS  BAL_3_15  -39
+    RHS  BAL_3_16  -42
+    RHS  BAL_3_17  -33
+    RHS  BAL_3_18  -12
+    RHS  BAL_3_19  -23
+    RHS  BAL_3_20  -33
+    RHS  BAL_3_22  -43
+    RHS  BAL_3_23  -24
+    RHS  BAL_3_24  -37
+    RHS  BAL_3_25  -27
+    RHS  BAL_3_26  -25
+    RHS  BAL_3_27  -21
+    RHS  BAL_3_28  -55
+    RHS  BAL_3_29  -39
+    RHS  BAL_3_30  -37
+    RHS  BAL_3_31  -46
+    RHS  BAL_3_32  -44
+    RHS  BAL_3_33  -57
+    RHS  BAL_3_34  -47
+    RHS  BAL_3_35  -4
+    RHS  BAL_3_36  -31
+    RHS  BAL_3_37  -47
+    RHS  BAL_3_38  -15
+    RHS  BAL_3_39  -40
+    RHS  BAL_3_40  -41
+    RHS  BAL_3_41  -18
+    RHS  BAL_3_42  -40
+    RHS  BAL_3_43  -1
+    RHS  BAL_3_44  -26
+    RHS  BAL_3_45  -46
+    RHS  BAL_3_46  -40
+    RHS  BAL_3_47  -9
+    RHS  BAL_3_48  -40
+    RHS  BAL_3_49  -49
+    RHS  BAL_3_50  -59
+    RHS  BAL_3_51  -25
+    RHS  BAL_3_52  -50
+    RHS  BAL_3_53  -17
+    RHS  BAL_3_54  -54
+    RHS  BAL_3_55  -11
+    RHS  BAL_3_56  -49
+    RHS  BAL_3_57  -4
+    RHS  BAL_3_58  -52
+    RHS  BAL_3_59  -49
+    RHS  BAL_3_60  -38
+    RHS  BAL_3_62  -22
+    RHS  BAL_3_63  -58
+    RHS  BAL_3_64  -16
+    RHS  BAL_3_65  -51
+    RHS  BAL_3_66  -45
+    RHS  BAL_3_67  -26
+    RHS  BAL_3_68  -55
+    RHS  BAL_3_69  -43
+    RHS  BAL_3_70  -34
+    RHS  BAL_3_71  -19
+    RHS  BAL_3_72  -9
+    RHS  BAL_3_73  -29
+    RHS  BAL_3_74  -53
+    RHS  BAL_3_75  -16
+    RHS  BAL_3_76  -31
+    RHS  BAL_3_77  -10
+    RHS  BAL_3_78  -29
+    RHS  BAL_3_79  -32
+    RHS  BAL_3_80  -2
+    RHS  BAL_3_81  -17
+    RHS  BAL_3_82  -32
+    RHS  BAL_3_83  -6
+    RHS  BAL_3_84  -47
+    RHS  BAL_3_85  -37
+    RHS  BAL_3_86  -27
+    RHS  BAL_3_87  -4
+    RHS  BAL_3_88  -22
+    RHS  BAL_3_89  -4
+    RHS  BAL_4_0  -28
+    RHS  BAL_4_1  -24
+    RHS  BAL_4_2  -21
+    RHS  BAL_4_3  -40
+    RHS  BAL_4_4  -17
+    RHS  BAL_4_5  -16
+    RHS  BAL_4_6  -41
+    RHS  BAL_4_7  -40
+    RHS  BAL_4_8  -15
+    RHS  BAL_4_9  -15
+    RHS  BAL_4_10  -3
+    RHS  BAL_4_11  -37
+    RHS  BAL_4_12  -59
+    RHS  BAL_4_13  -50
+    RHS  BAL_4_14  -37
+    RHS  BAL_4_15  -11
+    RHS  BAL_4_16  -22
+    RHS  BAL_4_17  -27
+    RHS  BAL_4_18  -38
+    RHS  BAL_4_19  -44
+    RHS  BAL_4_20  -35
+    RHS  BAL_4_21  -40
+    RHS  BAL_4_22  -33
+    RHS  BAL_4_23  -3
+    RHS  BAL_4_24  -57
+    RHS  BAL_4_25  -22
+    RHS  BAL_4_26  -35
+    RHS  BAL_4_27  -26
+    RHS  BAL_4_28  -34
+    RHS  BAL_4_29  -12
+    RHS  BAL_4_30  -45
+    RHS  BAL_4_31  -56
+    RHS  BAL_4_32  -34
+    RHS  BAL_4_33  -27
+    RHS  BAL_4_34  -58
+    RHS  BAL_4_35  -42
+    RHS  BAL_4_36  -4
+    RHS  BAL_4_37  -45
+    RHS  BAL_4_38  -17
+    RHS  BAL_4_39  -47
+    RHS  BAL_4_40  -39
+    RHS  BAL_4_41  -46
+    RHS  BAL_4_42  -48
+    RHS  BAL_4_43  -4
+    RHS  BAL_4_44  -16
+    RHS  BAL_4_45  -11
+    RHS  BAL_4_46  -6
+    RHS  BAL_4_47  -9
+    RHS  BAL_4_48  -3
+    RHS  BAL_4_49  -58
+    RHS  BAL_4_50  -13
+    RHS  BAL_4_51  -54
+    RHS  BAL_4_52  -27
+    RHS  BAL_4_53  -54
+    RHS  BAL_4_54  -2
+    RHS  BAL_4_55  -3
+    RHS  BAL_4_56  -40
+    RHS  BAL_4_57  -5
+    RHS  BAL_4_58  -58
+    RHS  BAL_4_59  -52
+    RHS  BAL_4_60  -32
+    RHS  BAL_4_61  -30
+    RHS  BAL_4_62  -32
+    RHS  BAL_4_63  -23
+    RHS  BAL_4_64  -6
+    RHS  BAL_4_65  -20
+    RHS  BAL_4_66  -2
+    RHS  BAL_4_67  -8
+    RHS  BAL_4_68  -34
+    RHS  BAL_4_69  -2
+    RHS  BAL_4_70  -28
+    RHS  BAL_4_71  -42
+    RHS  BAL_4_72  -8
+    RHS  BAL_4_73  -57
+    RHS  BAL_4_74  -25
+    RHS  BAL_4_75  -48
+    RHS  BAL_4_76  -45
+    RHS  BAL_4_77  -57
+    RHS  BAL_4_78  -56
+    RHS  BAL_4_79  -28
+    RHS  BAL_4_80  -1
+    RHS  BAL_4_81  -47
+    RHS  BAL_4_82  -33
+    RHS  BAL_4_83  -17
+    RHS  BAL_4_84  -5
+    RHS  BAL_4_85  -16
+    RHS  BAL_4_86  -51
+    RHS  BAL_4_87  -20
+    RHS  BAL_4_88  -5
+    RHS  BAL_4_89  -19
+    RHS  BAL_5_0  -50
+    RHS  BAL_5_1  -37
+    RHS  BAL_5_2  -37
+    RHS  BAL_5_3  -27
+    RHS  BAL_5_4  -2
+    RHS  BAL_5_5  -22
+    RHS  BAL_5_6  -54
+    RHS  BAL_5_7  -29
+    RHS  BAL_5_9  -12
+    RHS  BAL_5_10  -19
+    RHS  BAL_5_11  -44
+    RHS  BAL_5_12  -44
+    RHS  BAL_5_13  -41
+    RHS  BAL_5_15  -34
+    RHS  BAL_5_16  -7
+    RHS  BAL_5_17  -52
+    RHS  BAL_5_18  -19
+    RHS  BAL_5_19  -32
+    RHS  BAL_5_20  -56
+    RHS  BAL_5_21  -47
+    RHS  BAL_5_22  -20
+    RHS  BAL_5_23  -49
+    RHS  BAL_5_24  -34
+    RHS  BAL_5_25  -41
+    RHS  BAL_5_26  -36
+    RHS  BAL_5_27  -35
+    RHS  BAL_5_28  -18
+    RHS  BAL_5_29  -33
+    RHS  BAL_5_30  -26
+    RHS  BAL_5_31  -34
+    RHS  BAL_5_32  -60
+    RHS  BAL_5_33  -52
+    RHS  BAL_5_34  -59
+    RHS  BAL_5_35  -33
+    RHS  BAL_5_36  -26
+    RHS  BAL_5_37  -38
+    RHS  BAL_5_38  -40
+    RHS  BAL_5_39  -37
+    RHS  BAL_5_40  -19
+    RHS  BAL_5_41  -28
+    RHS  BAL_5_42  -19
+    RHS  BAL_5_43  -8
+    RHS  BAL_5_44  -32
+    RHS  BAL_5_45  -28
+    RHS  BAL_5_46  -37
+    RHS  BAL_5_47  -8
+    RHS  BAL_5_48  -35
+    RHS  BAL_5_49  -49
+    RHS  BAL_5_50  -10
+    RHS  BAL_5_51  -16
+    RHS  BAL_5_52  -40
+    RHS  BAL_5_54  -27
+    RHS  BAL_5_55  -47
+    RHS  BAL_5_56  -42
+    RHS  BAL_5_57  -36
+    RHS  BAL_5_58  -2
+    RHS  BAL_5_59  -23
+    RHS  BAL_5_60  -26
+    RHS  BAL_5_61  -25
+    RHS  BAL_5_62  -18
+    RHS  BAL_5_63  -59
+    RHS  BAL_5_64  -42
+    RHS  BAL_5_65  -57
+    RHS  BAL_5_66  -48
+    RHS  BAL_5_67  -42
+    RHS  BAL_5_68  -1
+    RHS  BAL_5_69  -57
+    RHS  BAL_5_70  -5
+    RHS  BAL_5_71  -59
+    RHS  BAL_5_72  -5
+    RHS  BAL_5_73  -54
+    RHS  BAL_5_75  -24
+    RHS  BAL_5_76  -17
+    RHS  BAL_5_77  -29
+    RHS  BAL_5_78  -17
+    RHS  BAL_5_79  -50
+    RHS  BAL_5_80  -50
+    RHS  BAL_5_81  -23
+    RHS  BAL_5_82  -40
+    RHS  BAL_5_83  -47
+    RHS  BAL_5_84  -54
+    RHS  BAL_5_85  -30
+    RHS  BAL_5_86  -49
+    RHS  BAL_5_87  -21
+    RHS  BAL_5_88  -24
+    RHS  BAL_5_89  -29
+    RHS  BAL_6_0  -12
+    RHS  BAL_6_1  -32
+    RHS  BAL_6_2  -36
+    RHS  BAL_6_3  -42
+    RHS  BAL_6_4  -56
+    RHS  BAL_6_5  -19
+    RHS  BAL_6_6  -27
+    RHS  BAL_6_7  -20
+    RHS  BAL_6_9  -49
+    RHS  BAL_6_10  -1
+    RHS  BAL_6_11  -52
+    RHS  BAL_6_12  -19
+    RHS  BAL_6_13  -52
+    RHS  BAL_6_14  -39
+    RHS  BAL_6_15  -14
+    RHS  BAL_6_16  -5
+    RHS  BAL_6_17  -47
+    RHS  BAL_6_18  -14
+    RHS  BAL_6_19  -17
+    RHS  BAL_6_20  -43
+    RHS  BAL_6_21  -40
+    RHS  BAL_6_22  -55
+    RHS  BAL_6_23  -21
+    RHS  BAL_6_24  -17
+    RHS  BAL_6_25  -38
+    RHS  BAL_6_26  -46
+    RHS  BAL_6_27  -33
+    RHS  BAL_6_28  -24
+    RHS  BAL_6_29  -1
+    RHS  BAL_6_30  -7
+    RHS  BAL_6_31  -21
+    RHS  BAL_6_32  -22
+    RHS  BAL_6_33  -8
+    RHS  BAL_6_34  -7
+    RHS  BAL_6_35  -16
+    RHS  BAL_6_36  -57
+    RHS  BAL_6_37  -49
+    RHS  BAL_6_38  -9
+    RHS  BAL_6_39  -43
+    RHS  BAL_6_40  -36
+    RHS  BAL_6_41  -2
+    RHS  BAL_6_42  -22
+    RHS  BAL_6_43  -4
+    RHS  BAL_6_44  -5
+    RHS  BAL_6_45  -46
+    RHS  BAL_6_46  -6
+    RHS  BAL_6_47  -19
+    RHS  BAL_6_48  -20
+    RHS  BAL_6_49  -15
+    RHS  BAL_6_50  -17
+    RHS  BAL_6_51  -33
+    RHS  BAL_6_52  -3
+    RHS  BAL_6_53  -23
+    RHS  BAL_6_54  -1
+    RHS  BAL_6_55  -5
+    RHS  BAL_6_56  -8
+    RHS  BAL_6_57  -59
+    RHS  BAL_6_58  -25
+    RHS  BAL_6_59  -23
+    RHS  BAL_6_60  -59
+    RHS  BAL_6_61  -46
+    RHS  BAL_6_62  -40
+    RHS  BAL_6_63  -44
+    RHS  BAL_6_64  -15
+    RHS  BAL_6_65  -6
+    RHS  BAL_6_66  -43
+    RHS  BAL_6_67  -21
+    RHS  BAL_6_68  -17
+    RHS  BAL_6_70  -32
+    RHS  BAL_6_71  -56
+    RHS  BAL_6_72  -20
+    RHS  BAL_6_73  -60
+    RHS  BAL_6_74  -7
+    RHS  BAL_6_75  -22
+    RHS  BAL_6_76  -59
+    RHS  BAL_6_77  -51
+    RHS  BAL_6_78  -50
+    RHS  BAL_6_79  -41
+    RHS  BAL_6_80  -46
+    RHS  BAL_6_81  -53
+    RHS  BAL_6_82  -8
+    RHS  BAL_6_83  -38
+    RHS  BAL_6_84  -59
+    RHS  BAL_6_85  -55
+    RHS  BAL_6_86  -17
+    RHS  BAL_6_87  -25
+    RHS  BAL_6_88  -5
+    RHS  BAL_6_89  -43
+    RHS  BAL_7_0  -43
+    RHS  BAL_7_1  -29
+    RHS  BAL_7_2  -47
+    RHS  BAL_7_3  -30
+    RHS  BAL_7_4  -23
+    RHS  BAL_7_5  -31
+    RHS  BAL_7_6  -41
+    RHS  BAL_7_7  -49
+    RHS  BAL_7_8  -42
+    RHS  BAL_7_9  -46
+    RHS  BAL_7_10  -59
+    RHS  BAL_7_11  -12
+    RHS  BAL_7_12  -27
+    RHS  BAL_7_13  -28
+    RHS  BAL_7_14  -25
+    RHS  BAL_7_15  -34
+    RHS  BAL_7_16  -7
+    RHS  BAL_7_17  -36
+    RHS  BAL_7_18  -31
+    RHS  BAL_7_19  -59
+    RHS  BAL_7_20  -17
+    RHS  BAL_7_21  -53
+    RHS  BAL_7_22  -8
+    RHS  BAL_7_23  -9
+    RHS  BAL_7_25  -24
+    RHS  BAL_7_26  -26
+    RHS  BAL_7_27  -6
+    RHS  BAL_7_28  -51
+    RHS  BAL_7_29  -1
+    RHS  BAL_7_30  -41
+    RHS  BAL_7_31  -4
+    RHS  BAL_7_32  -60
+    RHS  BAL_7_33  -11
+    RHS  BAL_7_34  -29
+    RHS  BAL_7_35  -49
+    RHS  BAL_7_36  -24
+    RHS  BAL_7_37  -42
+    RHS  BAL_7_38  -32
+    RHS  BAL_7_39  -51
+    RHS  BAL_7_40  -52
+    RHS  BAL_7_41  -18
+    RHS  BAL_7_42  -58
+    RHS  BAL_7_43  -9
+    RHS  BAL_7_44  -9
+    RHS  BAL_7_45  -33
+    RHS  BAL_7_46  -52
+    RHS  BAL_7_47  -6
+    RHS  BAL_7_48  -60
+    RHS  BAL_7_49  -16
+    RHS  BAL_7_50  -1
+    RHS  BAL_7_51  -29
+    RHS  BAL_7_52  -25
+    RHS  BAL_7_53  -51
+    RHS  BAL_7_54  -40
+    RHS  BAL_7_55  -45
+    RHS  BAL_7_56  -47
+    RHS  BAL_7_57  -50
+    RHS  BAL_7_58  -58
+    RHS  BAL_7_59  -14
+    RHS  BAL_7_60  -34
+    RHS  BAL_7_61  -44
+    RHS  BAL_7_62  -25
+    RHS  BAL_7_64  -34
+    RHS  BAL_7_65  -51
+    RHS  BAL_7_66  -15
+    RHS  BAL_7_67  -27
+    RHS  BAL_7_68  -58
+    RHS  BAL_7_69  -10
+    RHS  BAL_7_70  -42
+    RHS  BAL_7_71  -11
+    RHS  BAL_7_72  -21
+    RHS  BAL_7_73  -42
+    RHS  BAL_7_74  -15
+    RHS  BAL_7_75  -4
+    RHS  BAL_7_76  -49
+    RHS  BAL_7_77  -34
+    RHS  BAL_7_78  -59
+    RHS  BAL_7_79  -35
+    RHS  BAL_7_80  -10
+    RHS  BAL_7_81  -11
+    RHS  BAL_7_82  -24
+    RHS  BAL_7_83  -37
+    RHS  BAL_7_84  -1
+    RHS  BAL_7_85  -32
+    RHS  BAL_7_86  -13
+    RHS  BAL_7_87  -27
+    RHS  BAL_7_88  -15
+    RHS  BAL_7_89  -50
+    RHS  BAL_8_0  -42
+    RHS  BAL_8_1  -30
+    RHS  BAL_8_2  -34
+    RHS  BAL_8_3  -39
+    RHS  BAL_8_4  -14
+    RHS  BAL_8_5  -17
+    RHS  BAL_8_6  -2
+    RHS  BAL_8_7  -40
+    RHS  BAL_8_8  -10
+    RHS  BAL_8_9  -42
+    RHS  BAL_8_10  -42
+    RHS  BAL_8_11  -58
+    RHS  BAL_8_12  -35
+    RHS  BAL_8_13  -32
+    RHS  BAL_8_14  -14
+    RHS  BAL_8_15  -54
+    RHS  BAL_8_16  -26
+    RHS  BAL_8_17  -17
+    RHS  BAL_8_18  -49
+    RHS  BAL_8_19  -42
+    RHS  BAL_8_20  -26
+    RHS  BAL_8_21  -25
+    RHS  BAL_8_22  -17
+    RHS  BAL_8_23  -31
+    RHS  BAL_8_24  -6
+    RHS  BAL_8_25  -42
+    RHS  BAL_8_26  -53
+    RHS  BAL_8_27  -53
+    RHS  BAL_8_28  -8
+    RHS  BAL_8_29  -11
+    RHS  BAL_8_30  -35
+    RHS  BAL_8_31  -1
+    RHS  BAL_8_32  -29
+    RHS  BAL_8_33  -48
+    RHS  BAL_8_34  -2
+    RHS  BAL_8_35  -31
+    RHS  BAL_8_36  -13
+    RHS  BAL_8_37  -25
+    RHS  BAL_8_38  -52
+    RHS  BAL_8_39  -46
+    RHS  BAL_8_40  -34
+    RHS  BAL_8_41  -52
+    RHS  BAL_8_42  -59
+    RHS  BAL_8_43  -21
+    RHS  BAL_8_44  -58
+    RHS  BAL_8_45  -15
+    RHS  BAL_8_46  -6
+    RHS  BAL_8_47  -4
+    RHS  BAL_8_48  -43
+    RHS  BAL_8_49  -47
+    RHS  BAL_8_50  -2
+    RHS  BAL_8_51  -54
+    RHS  BAL_8_52  -27
+    RHS  BAL_8_53  -53
+    RHS  BAL_8_54  -28
+    RHS  BAL_8_55  -12
+    RHS  BAL_8_56  -11
+    RHS  BAL_8_57  -38
+    RHS  BAL_8_58  -32
+    RHS  BAL_8_59  -12
+    RHS  BAL_8_60  -54
+    RHS  BAL_8_61  -32
+    RHS  BAL_8_62  -24
+    RHS  BAL_8_63  -33
+    RHS  BAL_8_64  -23
+    RHS  BAL_8_65  -12
+    RHS  BAL_8_66  -14
+    RHS  BAL_8_67  -23
+    RHS  BAL_8_68  -42
+    RHS  BAL_8_69  -56
+    RHS  BAL_8_70  -37
+    RHS  BAL_8_71  -48
+    RHS  BAL_8_72  -49
+    RHS  BAL_8_73  -4
+    RHS  BAL_8_74  -21
+    RHS  BAL_8_75  -57
+    RHS  BAL_8_76  -3
+    RHS  BAL_8_77  -29
+    RHS  BAL_8_78  -2
+    RHS  BAL_8_79  -53
+    RHS  BAL_8_80  -39
+    RHS  BAL_8_81  -11
+    RHS  BAL_8_82  -57
+    RHS  BAL_8_83  -9
+    RHS  BAL_8_84  -54
+    RHS  BAL_8_85  -58
+    RHS  BAL_8_86  -60
+    RHS  BAL_8_87  -18
+    RHS  BAL_8_88  -30
+    RHS  BAL_8_89  -2
+    RHS  BAL_9_0  -60
+    RHS  BAL_9_1  -33
+    RHS  BAL_9_2  -12
+    RHS  BAL_9_3  -13
+    RHS  BAL_9_4  -28
+    RHS  BAL_9_5  -18
+    RHS  BAL_9_6  -15
+    RHS  BAL_9_7  -31
+    RHS  BAL_9_8  -32
+    RHS  BAL_9_9  -23
+    RHS  BAL_9_10  -20
+    RHS  BAL_9_11  -25
+    RHS  BAL_9_12  -60
+    RHS  BAL_9_13  -41
+    RHS  BAL_9_14  -4
+    RHS  BAL_9_15  -12
+    RHS  BAL_9_16  -38
+    RHS  BAL_9_17  -11
+    RHS  BAL_9_18  -12
+    RHS  BAL_9_19  -43
+    RHS  BAL_9_20  -39
+    RHS  BAL_9_21  -19
+    RHS  BAL_9_22  -59
+    RHS  BAL_9_23  -37
+    RHS  BAL_9_24  -27
+    RHS  BAL_9_25  -39
+    RHS  BAL_9_26  -30
+    RHS  BAL_9_27  -23
+    RHS  BAL_9_28  -1
+    RHS  BAL_9_29  -31
+    RHS  BAL_9_30  -1
+    RHS  BAL_9_31  -59
+    RHS  BAL_9_32  -6
+    RHS  BAL_9_33  -42
+    RHS  BAL_9_34  -40
+    RHS  BAL_9_35  -36
+    RHS  BAL_9_36  -42
+    RHS  BAL_9_37  -39
+    RHS  BAL_9_38  -60
+    RHS  BAL_9_39  -54
+    RHS  BAL_9_40  -27
+    RHS  BAL_9_41  -52
+    RHS  BAL_9_42  -45
+    RHS  BAL_9_43  -37
+    RHS  BAL_9_44  -21
+    RHS  BAL_9_45  -21
+    RHS  BAL_9_46  -4
+    RHS  BAL_9_47  -41
+    RHS  BAL_9_48  -26
+    RHS  BAL_9_49  -12
+    RHS  BAL_9_50  -44
+    RHS  BAL_9_51  -32
+    RHS  BAL_9_52  -51
+    RHS  BAL_9_53  -31
+    RHS  BAL_9_54  -60
+    RHS  BAL_9_55  -53
+    RHS  BAL_9_56  -53
+    RHS  BAL_9_57  -38
+    RHS  BAL_9_58  -36
+    RHS  BAL_9_59  -42
+    RHS  BAL_9_60  -35
+    RHS  BAL_9_61  -60
+    RHS  BAL_9_62  -32
+    RHS  BAL_9_63  -54
+    RHS  BAL_9_64  -30
+    RHS  BAL_9_65  -38
+    RHS  BAL_9_66  -43
+    RHS  BAL_9_67  -47
+    RHS  BAL_9_68  -36
+    RHS  BAL_9_69  -57
+    RHS  BAL_9_70  -54
+    RHS  BAL_9_71  -49
+    RHS  BAL_9_72  -28
+    RHS  BAL_9_73  -38
+    RHS  BAL_9_74  -30
+    RHS  BAL_9_75  -10
+    RHS  BAL_9_76  -53
+    RHS  BAL_9_77  -17
+    RHS  BAL_9_78  -43
+    RHS  BAL_9_79  -52
+    RHS  BAL_9_80  -33
+    RHS  BAL_9_81  -19
+    RHS  BAL_9_82  -36
+    RHS  BAL_9_83  -48
+    RHS  BAL_9_84  -51
+    RHS  BAL_9_85  -25
+    RHS  BAL_9_86  -38
+    RHS  BAL_9_87  -34
+    RHS  BAL_9_88  -16
+    RHS  BAL_9_89  -16
+BOUNDS
+ BV BND  Z_0_0
+ BV BND  Z_0_1
+ BV BND  Z_0_2
+ BV BND  Z_0_3
+ BV BND  Z_0_4
+ BV BND  Z_0_5
+ BV BND  Z_0_6
+ BV BND  Z_0_7
+ BV BND  Z_0_8
+ BV BND  Z_0_9
+ BV BND  Z_0_10
+ BV BND  Z_0_11
+ BV BND  Z_0_12
+ BV BND  Z_0_13
+ BV BND  Z_0_14
+ BV BND  Z_0_15
+ BV BND  Z_0_16
+ BV BND  Z_0_17
+ BV BND  Z_0_18
+ BV BND  Z_0_19
+ BV BND  Z_0_20
+ BV BND  Z_0_21
+ BV BND  Z_0_22
+ BV BND  Z_0_23
+ BV BND  Z_0_24
+ BV BND  Z_0_25
+ BV BND  Z_0_26
+ BV BND  Z_0_27
+ BV BND  Z_0_28
+ BV BND  Z_0_29
+ BV BND  Z_0_30
+ BV BND  Z_0_31
+ BV BND  Z_0_32
+ BV BND  Z_0_33
+ BV BND  Z_0_34
+ BV BND  Z_0_35
+ BV BND  Z_0_36
+ BV BND  Z_0_37
+ BV BND  Z_0_38
+ BV BND  Z_0_39
+ BV BND  Z_0_40
+ BV BND  Z_0_41
+ BV BND  Z_0_42
+ BV BND  Z_0_43
+ BV BND  Z_0_44
+ BV BND  Z_0_45
+ BV BND  Z_0_46
+ BV BND  Z_0_47
+ BV BND  Z_0_48
+ BV BND  Z_0_49
+ BV BND  Z_0_50
+ BV BND  Z_0_51
+ BV BND  Z_0_52
+ BV BND  Z_0_53
+ BV BND  Z_0_54
+ BV BND  Z_0_55
+ BV BND  Z_0_56
+ BV BND  Z_0_57
+ BV BND  Z_0_58
+ BV BND  Z_0_59
+ BV BND  Z_0_60
+ BV BND  Z_0_61
+ BV BND  Z_0_62
+ BV BND  Z_0_63
+ BV BND  Z_0_64
+ BV BND  Z_0_65
+ BV BND  Z_0_66
+ BV BND  Z_0_67
+ BV BND  Z_0_68
+ BV BND  Z_0_69
+ BV BND  Z_0_70
+ BV BND  Z_0_71
+ BV BND  Z_0_72
+ BV BND  Z_0_73
+ BV BND  Z_0_74
+ BV BND  Z_0_75
+ BV BND  Z_0_76
+ BV BND  Z_0_77
+ BV BND  Z_0_78
+ BV BND  Z_0_79
+ BV BND  Z_0_80
+ BV BND  Z_0_81
+ BV BND  Z_0_82
+ BV BND  Z_0_83
+ BV BND  Z_0_84
+ BV BND  Z_0_85
+ BV BND  Z_0_86
+ BV BND  Z_0_87
+ BV BND  Z_0_88
+ BV BND  Z_0_89
+ BV BND  Z_1_0
+ BV BND  Z_1_1
+ BV BND  Z_1_2
+ BV BND  Z_1_3
+ BV BND  Z_1_4
+ BV BND  Z_1_5
+ BV BND  Z_1_6
+ BV BND  Z_1_7
+ BV BND  Z_1_8
+ BV BND  Z_1_9
+ BV BND  Z_1_10
+ BV BND  Z_1_11
+ BV BND  Z_1_12
+ BV BND  Z_1_13
+ BV BND  Z_1_14
+ BV BND  Z_1_15
+ BV BND  Z_1_16
+ BV BND  Z_1_17
+ BV BND  Z_1_18
+ BV BND  Z_1_19
+ BV BND  Z_1_20
+ BV BND  Z_1_21
+ BV BND  Z_1_22
+ BV BND  Z_1_23
+ BV BND  Z_1_24
+ BV BND  Z_1_25
+ BV BND  Z_1_26
+ BV BND  Z_1_27
+ BV BND  Z_1_28
+ BV BND  Z_1_29
+ BV BND  Z_1_30
+ BV BND  Z_1_31
+ BV BND  Z_1_32
+ BV BND  Z_1_33
+ BV BND  Z_1_34
+ BV BND  Z_1_35
+ BV BND  Z_1_36
+ BV BND  Z_1_37
+ BV BND  Z_1_38
+ BV BND  Z_1_39
+ BV BND  Z_1_40
+ BV BND  Z_1_41
+ BV BND  Z_1_42
+ BV BND  Z_1_43
+ BV BND  Z_1_44
+ BV BND  Z_1_45
+ BV BND  Z_1_46
+ BV BND  Z_1_47
+ BV BND  Z_1_48
+ BV BND  Z_1_49
+ BV BND  Z_1_50
+ BV BND  Z_1_51
+ BV BND  Z_1_52
+ BV BND  Z_1_53
+ BV BND  Z_1_54
+ BV BND  Z_1_55
+ BV BND  Z_1_56
+ BV BND  Z_1_57
+ BV BND  Z_1_58
+ BV BND  Z_1_59
+ BV BND  Z_1_60
+ BV BND  Z_1_61
+ BV BND  Z_1_62
+ BV BND  Z_1_63
+ BV BND  Z_1_64
+ BV BND  Z_1_65
+ BV BND  Z_1_66
+ BV BND  Z_1_67
+ BV BND  Z_1_68
+ BV BND  Z_1_69
+ BV BND  Z_1_70
+ BV BND  Z_1_71
+ BV BND  Z_1_72
+ BV BND  Z_1_73
+ BV BND  Z_1_74
+ BV BND  Z_1_75
+ BV BND  Z_1_76
+ BV BND  Z_1_77
+ BV BND  Z_1_78
+ BV BND  Z_1_79
+ BV BND  Z_1_80
+ BV BND  Z_1_81
+ BV BND  Z_1_82
+ BV BND  Z_1_83
+ BV BND  Z_1_84
+ BV BND  Z_1_85
+ BV BND  Z_1_86
+ BV BND  Z_1_87
+ BV BND  Z_1_88
+ BV BND  Z_1_89
+ BV BND  Z_2_0
+ BV BND  Z_2_1
+ BV BND  Z_2_2
+ BV BND  Z_2_3
+ BV BND  Z_2_4
+ BV BND  Z_2_5
+ BV BND  Z_2_6
+ BV BND  Z_2_7
+ BV BND  Z_2_8
+ BV BND  Z_2_9
+ BV BND  Z_2_10
+ BV BND  Z_2_11
+ BV BND  Z_2_12
+ BV BND  Z_2_13
+ BV BND  Z_2_14
+ BV BND  Z_2_15
+ BV BND  Z_2_16
+ BV BND  Z_2_17
+ BV BND  Z_2_18
+ BV BND  Z_2_19
+ BV BND  Z_2_20
+ BV BND  Z_2_21
+ BV BND  Z_2_22
+ BV BND  Z_2_23
+ BV BND  Z_2_24
+ BV BND  Z_2_25
+ BV BND  Z_2_26
+ BV BND  Z_2_27
+ BV BND  Z_2_28
+ BV BND  Z_2_29
+ BV BND  Z_2_30
+ BV BND  Z_2_31
+ BV BND  Z_2_32
+ BV BND  Z_2_33
+ BV BND  Z_2_34
+ BV BND  Z_2_35
+ BV BND  Z_2_36
+ BV BND  Z_2_37
+ BV BND  Z_2_38
+ BV BND  Z_2_39
+ BV BND  Z_2_40
+ BV BND  Z_2_41
+ BV BND  Z_2_42
+ BV BND  Z_2_43
+ BV BND  Z_2_44
+ BV BND  Z_2_45
+ BV BND  Z_2_46
+ BV BND  Z_2_47
+ BV BND  Z_2_48
+ BV BND  Z_2_49
+ BV BND  Z_2_50
+ BV BND  Z_2_51
+ BV BND  Z_2_52
+ BV BND  Z_2_53
+ BV BND  Z_2_54
+ BV BND  Z_2_55
+ BV BND  Z_2_56
+ BV BND  Z_2_57
+ BV BND  Z_2_58
+ BV BND  Z_2_59
+ BV BND  Z_2_60
+ BV BND  Z_2_61
+ BV BND  Z_2_62
+ BV BND  Z_2_63
+ BV BND  Z_2_64
+ BV BND  Z_2_65
+ BV BND  Z_2_66
+ BV BND  Z_2_67
+ BV BND  Z_2_68
+ BV BND  Z_2_69
+ BV BND  Z_2_70
+ BV BND  Z_2_71
+ BV BND  Z_2_72
+ BV BND  Z_2_73
+ BV BND  Z_2_74
+ BV BND  Z_2_75
+ BV BND  Z_2_76
+ BV BND  Z_2_77
+ BV BND  Z_2_78
+ BV BND  Z_2_79
+ BV BND  Z_2_80
+ BV BND  Z_2_81
+ BV BND  Z_2_82
+ BV BND  Z_2_83
+ BV BND  Z_2_84
+ BV BND  Z_2_85
+ BV BND  Z_2_86
+ BV BND  Z_2_87
+ BV BND  Z_2_88
+ BV BND  Z_2_89
+ BV BND  Z_3_0
+ BV BND  Z_3_1
+ BV BND  Z_3_2
+ BV BND  Z_3_3
+ BV BND  Z_3_4
+ BV BND  Z_3_5
+ BV BND  Z_3_6
+ BV BND  Z_3_7
+ BV BND  Z_3_8
+ BV BND  Z_3_9
+ BV BND  Z_3_10
+ BV BND  Z_3_11
+ BV BND  Z_3_12
+ BV BND  Z_3_13
+ BV BND  Z_3_14
+ BV BND  Z_3_15
+ BV BND  Z_3_16
+ BV BND  Z_3_17
+ BV BND  Z_3_18
+ BV BND  Z_3_19
+ BV BND  Z_3_20
+ BV BND  Z_3_21
+ BV BND  Z_3_22
+ BV BND  Z_3_23
+ BV BND  Z_3_24
+ BV BND  Z_3_25
+ BV BND  Z_3_26
+ BV BND  Z_3_27
+ BV BND  Z_3_28
+ BV BND  Z_3_29
+ BV BND  Z_3_30
+ BV BND  Z_3_31
+ BV BND  Z_3_32
+ BV BND  Z_3_33
+ BV BND  Z_3_34
+ BV BND  Z_3_35
+ BV BND  Z_3_36
+ BV BND  Z_3_37
+ BV BND  Z_3_38
+ BV BND  Z_3_39
+ BV BND  Z_3_40
+ BV BND  Z_3_41
+ BV BND  Z_3_42
+ BV BND  Z_3_43
+ BV BND  Z_3_44
+ BV BND  Z_3_45
+ BV BND  Z_3_46
+ BV BND  Z_3_47
+ BV BND  Z_3_48
+ BV BND  Z_3_49
+ BV BND  Z_3_50
+ BV BND  Z_3_51
+ BV BND  Z_3_52
+ BV BND  Z_3_53
+ BV BND  Z_3_54
+ BV BND  Z_3_55
+ BV BND  Z_3_56
+ BV BND  Z_3_57
+ BV BND  Z_3_58
+ BV BND  Z_3_59
+ BV BND  Z_3_60
+ BV BND  Z_3_61
+ BV BND  Z_3_62
+ BV BND  Z_3_63
+ BV BND  Z_3_64
+ BV BND  Z_3_65
+ BV BND  Z_3_66
+ BV BND  Z_3_67
+ BV BND  Z_3_68
+ BV BND  Z_3_69
+ BV BND  Z_3_70
+ BV BND  Z_3_71
+ BV BND  Z_3_72
+ BV BND  Z_3_73
+ BV BND  Z_3_74
+ BV BND  Z_3_75
+ BV BND  Z_3_76
+ BV BND  Z_3_77
+ BV BND  Z_3_78
+ BV BND  Z_3_79
+ BV BND  Z_3_80
+ BV BND  Z_3_81
+ BV BND  Z_3_82
+ BV BND  Z_3_83
+ BV BND  Z_3_84
+ BV BND  Z_3_85
+ BV BND  Z_3_86
+ BV BND  Z_3_87
+ BV BND  Z_3_88
+ BV BND  Z_3_89
+ BV BND  Z_4_0
+ BV BND  Z_4_1
+ BV BND  Z_4_2
+ BV BND  Z_4_3
+ BV BND  Z_4_4
+ BV BND  Z_4_5
+ BV BND  Z_4_6
+ BV BND  Z_4_7
+ BV BND  Z_4_8
+ BV BND  Z_4_9
+ BV BND  Z_4_10
+ BV BND  Z_4_11
+ BV BND  Z_4_12
+ BV BND  Z_4_13
+ BV BND  Z_4_14
+ BV BND  Z_4_15
+ BV BND  Z_4_16
+ BV BND  Z_4_17
+ BV BND  Z_4_18
+ BV BND  Z_4_19
+ BV BND  Z_4_20
+ BV BND  Z_4_21
+ BV BND  Z_4_22
+ BV BND  Z_4_23
+ BV BND  Z_4_24
+ BV BND  Z_4_25
+ BV BND  Z_4_26
+ BV BND  Z_4_27
+ BV BND  Z_4_28
+ BV BND  Z_4_29
+ BV BND  Z_4_30
+ BV BND  Z_4_31
+ BV BND  Z_4_32
+ BV BND  Z_4_33
+ BV BND  Z_4_34
+ BV BND  Z_4_35
+ BV BND  Z_4_36
+ BV BND  Z_4_37
+ BV BND  Z_4_38
+ BV BND  Z_4_39
+ BV BND  Z_4_40
+ BV BND  Z_4_41
+ BV BND  Z_4_42
+ BV BND  Z_4_43
+ BV BND  Z_4_44
+ BV BND  Z_4_45
+ BV BND  Z_4_46
+ BV BND  Z_4_47
+ BV BND  Z_4_48
+ BV BND  Z_4_49
+ BV BND  Z_4_50
+ BV BND  Z_4_51
+ BV BND  Z_4_52
+ BV BND  Z_4_53
+ BV BND  Z_4_54
+ BV BND  Z_4_55
+ BV BND  Z_4_56
+ BV BND  Z_4_57
+ BV BND  Z_4_58
+ BV BND  Z_4_59
+ BV BND  Z_4_60
+ BV BND  Z_4_61
+ BV BND  Z_4_62
+ BV BND  Z_4_63
+ BV BND  Z_4_64
+ BV BND  Z_4_65
+ BV BND  Z_4_66
+ BV BND  Z_4_67
+ BV BND  Z_4_68
+ BV BND  Z_4_69
+ BV BND  Z_4_70
+ BV BND  Z_4_71
+ BV BND  Z_4_72
+ BV BND  Z_4_73
+ BV BND  Z_4_74
+ BV BND  Z_4_75
+ BV BND  Z_4_76
+ BV BND  Z_4_77
+ BV BND  Z_4_78
+ BV BND  Z_4_79
+ BV BND  Z_4_80
+ BV BND  Z_4_81
+ BV BND  Z_4_82
+ BV BND  Z_4_83
+ BV BND  Z_4_84
+ BV BND  Z_4_85
+ BV BND  Z_4_86
+ BV BND  Z_4_87
+ BV BND  Z_4_88
+ BV BND  Z_4_89
+ BV BND  Z_5_0
+ BV BND  Z_5_1
+ BV BND  Z_5_2
+ BV BND  Z_5_3
+ BV BND  Z_5_4
+ BV BND  Z_5_5
+ BV BND  Z_5_6
+ BV BND  Z_5_7
+ BV BND  Z_5_8
+ BV BND  Z_5_9
+ BV BND  Z_5_10
+ BV BND  Z_5_11
+ BV BND  Z_5_12
+ BV BND  Z_5_13
+ BV BND  Z_5_14
+ BV BND  Z_5_15
+ BV BND  Z_5_16
+ BV BND  Z_5_17
+ BV BND  Z_5_18
+ BV BND  Z_5_19
+ BV BND  Z_5_20
+ BV BND  Z_5_21
+ BV BND  Z_5_22
+ BV BND  Z_5_23
+ BV BND  Z_5_24
+ BV BND  Z_5_25
+ BV BND  Z_5_26
+ BV BND  Z_5_27
+ BV BND  Z_5_28
+ BV BND  Z_5_29
+ BV BND  Z_5_30
+ BV BND  Z_5_31
+ BV BND  Z_5_32
+ BV BND  Z_5_33
+ BV BND  Z_5_34
+ BV BND  Z_5_35
+ BV BND  Z_5_36
+ BV BND  Z_5_37
+ BV BND  Z_5_38
+ BV BND  Z_5_39
+ BV BND  Z_5_40
+ BV BND  Z_5_41
+ BV BND  Z_5_42
+ BV BND  Z_5_43
+ BV BND  Z_5_44
+ BV BND  Z_5_45
+ BV BND  Z_5_46
+ BV BND  Z_5_47
+ BV BND  Z_5_48
+ BV BND  Z_5_49
+ BV BND  Z_5_50
+ BV BND  Z_5_51
+ BV BND  Z_5_52
+ BV BND  Z_5_53
+ BV BND  Z_5_54
+ BV BND  Z_5_55
+ BV BND  Z_5_56
+ BV BND  Z_5_57
+ BV BND  Z_5_58
+ BV BND  Z_5_59
+ BV BND  Z_5_60
+ BV BND  Z_5_61
+ BV BND  Z_5_62
+ BV BND  Z_5_63
+ BV BND  Z_5_64
+ BV BND  Z_5_65
+ BV BND  Z_5_66
+ BV BND  Z_5_67
+ BV BND  Z_5_68
+ BV BND  Z_5_69
+ BV BND  Z_5_70
+ BV BND  Z_5_71
+ BV BND  Z_5_72
+ BV BND  Z_5_73
+ BV BND  Z_5_74
+ BV BND  Z_5_75
+ BV BND  Z_5_76
+ BV BND  Z_5_77
+ BV BND  Z_5_78
+ BV BND  Z_5_79
+ BV BND  Z_5_80
+ BV BND  Z_5_81
+ BV BND  Z_5_82
+ BV BND  Z_5_83
+ BV BND  Z_5_84
+ BV BND  Z_5_85
+ BV BND  Z_5_86
+ BV BND  Z_5_87
+ BV BND  Z_5_88
+ BV BND  Z_5_89
+ BV BND  Z_6_0
+ BV BND  Z_6_1
+ BV BND  Z_6_2
+ BV BND  Z_6_3
+ BV BND  Z_6_4
+ BV BND  Z_6_5
+ BV BND  Z_6_6
+ BV BND  Z_6_7
+ BV BND  Z_6_8
+ BV BND  Z_6_9
+ BV BND  Z_6_10
+ BV BND  Z_6_11
+ BV BND  Z_6_12
+ BV BND  Z_6_13
+ BV BND  Z_6_14
+ BV BND  Z_6_15
+ BV BND  Z_6_16
+ BV BND  Z_6_17
+ BV BND  Z_6_18
+ BV BND  Z_6_19
+ BV BND  Z_6_20
+ BV BND  Z_6_21
+ BV BND  Z_6_22
+ BV BND  Z_6_23
+ BV BND  Z_6_24
+ BV BND  Z_6_25
+ BV BND  Z_6_26
+ BV BND  Z_6_27
+ BV BND  Z_6_28
+ BV BND  Z_6_29
+ BV BND  Z_6_30
+ BV BND  Z_6_31
+ BV BND  Z_6_32
+ BV BND  Z_6_33
+ BV BND  Z_6_34
+ BV BND  Z_6_35
+ BV BND  Z_6_36
+ BV BND  Z_6_37
+ BV BND  Z_6_38
+ BV BND  Z_6_39
+ BV BND  Z_6_40
+ BV BND  Z_6_41
+ BV BND  Z_6_42
+ BV BND  Z_6_43
+ BV BND  Z_6_44
+ BV BND  Z_6_45
+ BV BND  Z_6_46
+ BV BND  Z_6_47
+ BV BND  Z_6_48
+ BV BND  Z_6_49
+ BV BND  Z_6_50
+ BV BND  Z_6_51
+ BV BND  Z_6_52
+ BV BND  Z_6_53
+ BV BND  Z_6_54
+ BV BND  Z_6_55
+ BV BND  Z_6_56
+ BV BND  Z_6_57
+ BV BND  Z_6_58
+ BV BND  Z_6_59
+ BV BND  Z_6_60
+ BV BND  Z_6_61
+ BV BND  Z_6_62
+ BV BND  Z_6_63
+ BV BND  Z_6_64
+ BV BND  Z_6_65
+ BV BND  Z_6_66
+ BV BND  Z_6_67
+ BV BND  Z_6_68
+ BV BND  Z_6_69
+ BV BND  Z_6_70
+ BV BND  Z_6_71
+ BV BND  Z_6_72
+ BV BND  Z_6_73
+ BV BND  Z_6_74
+ BV BND  Z_6_75
+ BV BND  Z_6_76
+ BV BND  Z_6_77
+ BV BND  Z_6_78
+ BV BND  Z_6_79
+ BV BND  Z_6_80
+ BV BND  Z_6_81
+ BV BND  Z_6_82
+ BV BND  Z_6_83
+ BV BND  Z_6_84
+ BV BND  Z_6_85
+ BV BND  Z_6_86
+ BV BND  Z_6_87
+ BV BND  Z_6_88
+ BV BND  Z_6_89
+ BV BND  Z_7_0
+ BV BND  Z_7_1
+ BV BND  Z_7_2
+ BV BND  Z_7_3
+ BV BND  Z_7_4
+ BV BND  Z_7_5
+ BV BND  Z_7_6
+ BV BND  Z_7_7
+ BV BND  Z_7_8
+ BV BND  Z_7_9
+ BV BND  Z_7_10
+ BV BND  Z_7_11
+ BV BND  Z_7_12
+ BV BND  Z_7_13
+ BV BND  Z_7_14
+ BV BND  Z_7_15
+ BV BND  Z_7_16
+ BV BND  Z_7_17
+ BV BND  Z_7_18
+ BV BND  Z_7_19
+ BV BND  Z_7_20
+ BV BND  Z_7_21
+ BV BND  Z_7_22
+ BV BND  Z_7_23
+ BV BND  Z_7_24
+ BV BND  Z_7_25
+ BV BND  Z_7_26
+ BV BND  Z_7_27
+ BV BND  Z_7_28
+ BV BND  Z_7_29
+ BV BND  Z_7_30
+ BV BND  Z_7_31
+ BV BND  Z_7_32
+ BV BND  Z_7_33
+ BV BND  Z_7_34
+ BV BND  Z_7_35
+ BV BND  Z_7_36
+ BV BND  Z_7_37
+ BV BND  Z_7_38
+ BV BND  Z_7_39
+ BV BND  Z_7_40
+ BV BND  Z_7_41
+ BV BND  Z_7_42
+ BV BND  Z_7_43
+ BV BND  Z_7_44
+ BV BND  Z_7_45
+ BV BND  Z_7_46
+ BV BND  Z_7_47
+ BV BND  Z_7_48
+ BV BND  Z_7_49
+ BV BND  Z_7_50
+ BV BND  Z_7_51
+ BV BND  Z_7_52
+ BV BND  Z_7_53
+ BV BND  Z_7_54
+ BV BND  Z_7_55
+ BV BND  Z_7_56
+ BV BND  Z_7_57
+ BV BND  Z_7_58
+ BV BND  Z_7_59
+ BV BND  Z_7_60
+ BV BND  Z_7_61
+ BV BND  Z_7_62
+ BV BND  Z_7_63
+ BV BND  Z_7_64
+ BV BND  Z_7_65
+ BV BND  Z_7_66
+ BV BND  Z_7_67
+ BV BND  Z_7_68
+ BV BND  Z_7_69
+ BV BND  Z_7_70
+ BV BND  Z_7_71
+ BV BND  Z_7_72
+ BV BND  Z_7_73
+ BV BND  Z_7_74
+ BV BND  Z_7_75
+ BV BND  Z_7_76
+ BV BND  Z_7_77
+ BV BND  Z_7_78
+ BV BND  Z_7_79
+ BV BND  Z_7_80
+ BV BND  Z_7_81
+ BV BND  Z_7_82
+ BV BND  Z_7_83
+ BV BND  Z_7_84
+ BV BND  Z_7_85
+ BV BND  Z_7_86
+ BV BND  Z_7_87
+ BV BND  Z_7_88
+ BV BND  Z_7_89
+ BV BND  Z_8_0
+ BV BND  Z_8_1
+ BV BND  Z_8_2
+ BV BND  Z_8_3
+ BV BND  Z_8_4
+ BV BND  Z_8_5
+ BV BND  Z_8_6
+ BV BND  Z_8_7
+ BV BND  Z_8_8
+ BV BND  Z_8_9
+ BV BND  Z_8_10
+ BV BND  Z_8_11
+ BV BND  Z_8_12
+ BV BND  Z_8_13
+ BV BND  Z_8_14
+ BV BND  Z_8_15
+ BV BND  Z_8_16
+ BV BND  Z_8_17
+ BV BND  Z_8_18
+ BV BND  Z_8_19
+ BV BND  Z_8_20
+ BV BND  Z_8_21
+ BV BND  Z_8_22
+ BV BND  Z_8_23
+ BV BND  Z_8_24
+ BV BND  Z_8_25
+ BV BND  Z_8_26
+ BV BND  Z_8_27
+ BV BND  Z_8_28
+ BV BND  Z_8_29
+ BV BND  Z_8_30
+ BV BND  Z_8_31
+ BV BND  Z_8_32
+ BV BND  Z_8_33
+ BV BND  Z_8_34
+ BV BND  Z_8_35
+ BV BND  Z_8_36
+ BV BND  Z_8_37
+ BV BND  Z_8_38
+ BV BND  Z_8_39
+ BV BND  Z_8_40
+ BV BND  Z_8_41
+ BV BND  Z_8_42
+ BV BND  Z_8_43
+ BV BND  Z_8_44
+ BV BND  Z_8_45
+ BV BND  Z_8_46
+ BV BND  Z_8_47
+ BV BND  Z_8_48
+ BV BND  Z_8_49
+ BV BND  Z_8_50
+ BV BND  Z_8_51
+ BV BND  Z_8_52
+ BV BND  Z_8_53
+ BV BND  Z_8_54
+ BV BND  Z_8_55
+ BV BND  Z_8_56
+ BV BND  Z_8_57
+ BV BND  Z_8_58
+ BV BND  Z_8_59
+ BV BND  Z_8_60
+ BV BND  Z_8_61
+ BV BND  Z_8_62
+ BV BND  Z_8_63
+ BV BND  Z_8_64
+ BV BND  Z_8_65
+ BV BND  Z_8_66
+ BV BND  Z_8_67
+ BV BND  Z_8_68
+ BV BND  Z_8_69
+ BV BND  Z_8_70
+ BV BND  Z_8_71
+ BV BND  Z_8_72
+ BV BND  Z_8_73
+ BV BND  Z_8_74
+ BV BND  Z_8_75
+ BV BND  Z_8_76
+ BV BND  Z_8_77
+ BV BND  Z_8_78
+ BV BND  Z_8_79
+ BV BND  Z_8_80
+ BV BND  Z_8_81
+ BV BND  Z_8_82
+ BV BND  Z_8_83
+ BV BND  Z_8_84
+ BV BND  Z_8_85
+ BV BND  Z_8_86
+ BV BND  Z_8_87
+ BV BND  Z_8_88
+ BV BND  Z_8_89
+ BV BND  Z_9_0
+ BV BND  Z_9_1
+ BV BND  Z_9_2
+ BV BND  Z_9_3
+ BV BND  Z_9_4
+ BV BND  Z_9_5
+ BV BND  Z_9_6
+ BV BND  Z_9_7
+ BV BND  Z_9_8
+ BV BND  Z_9_9
+ BV BND  Z_9_10
+ BV BND  Z_9_11
+ BV BND  Z_9_12
+ BV BND  Z_9_13
+ BV BND  Z_9_14
+ BV BND  Z_9_15
+ BV BND  Z_9_16
+ BV BND  Z_9_17
+ BV BND  Z_9_18
+ BV BND  Z_9_19
+ BV BND  Z_9_20
+ BV BND  Z_9_21
+ BV BND  Z_9_22
+ BV BND  Z_9_23
+ BV BND  Z_9_24
+ BV BND  Z_9_25
+ BV BND  Z_9_26
+ BV BND  Z_9_27
+ BV BND  Z_9_28
+ BV BND  Z_9_29
+ BV BND  Z_9_30
+ BV BND  Z_9_31
+ BV BND  Z_9_32
+ BV BND  Z_9_33
+ BV BND  Z_9_34
+ BV BND  Z_9_35
+ BV BND  Z_9_36
+ BV BND  Z_9_37
+ BV BND  Z_9_38
+ BV BND  Z_9_39
+ BV BND  Z_9_40
+ BV BND  Z_9_41
+ BV BND  Z_9_42
+ BV BND  Z_9_43
+ BV BND  Z_9_44
+ BV BND  Z_9_45
+ BV BND  Z_9_46
+ BV BND  Z_9_47
+ BV BND  Z_9_48
+ BV BND  Z_9_49
+ BV BND  Z_9_50
+ BV BND  Z_9_51
+ BV BND  Z_9_52
+ BV BND  Z_9_53
+ BV BND  Z_9_54
+ BV BND  Z_9_55
+ BV BND  Z_9_56
+ BV BND  Z_9_57
+ BV BND  Z_9_58
+ BV BND  Z_9_59
+ BV BND  Z_9_60
+ BV BND  Z_9_61
+ BV BND  Z_9_62
+ BV BND  Z_9_63
+ BV BND  Z_9_64
+ BV BND  Z_9_65
+ BV BND  Z_9_66
+ BV BND  Z_9_67
+ BV BND  Z_9_68
+ BV BND  Z_9_69
+ BV BND  Z_9_70
+ BV BND  Z_9_71
+ BV BND  Z_9_72
+ BV BND  Z_9_73
+ BV BND  Z_9_74
+ BV BND  Z_9_75
+ BV BND  Z_9_76
+ BV BND  Z_9_77
+ BV BND  Z_9_78
+ BV BND  Z_9_79
+ BV BND  Z_9_80
+ BV BND  Z_9_81
+ BV BND  Z_9_82
+ BV BND  Z_9_83
+ BV BND  Z_9_84
+ BV BND  Z_9_85
+ BV BND  Z_9_86
+ BV BND  Z_9_87
+ BV BND  Z_9_88
+ BV BND  Z_9_89
+ENDATA

@@ -1,0 +1,10874 @@
+NAME          PLAN30_MEDIUM_S1
+* model 7: 30-day multi-period production planning LP
+* source: Floudas and Lin, Annals of OR 139 (2005); Pochet and Wolsey (2006) ch. 1
+* 30 days, 8 crudes, 10 products, 6 units, 5 quality budgets, 4 committed products
+* exact optimum: -70480.476 (kkt-construction)
+* suite: bench/refinery/generate.py, seed 1
+* rows 1020  columns 1620  nonzeros 6942  integer 0  semi-continuous 0
+ROWS
+ N  COST
+ E  CBAL_0_0
+ E  CBAL_1_0
+ E  CBAL_2_0
+ E  CBAL_3_0
+ E  CBAL_4_0
+ E  CBAL_5_0
+ E  CBAL_6_0
+ E  CBAL_7_0
+ L  CDU_0
+ E  PBAL_0_0
+ E  PBAL_1_0
+ E  PBAL_2_0
+ E  PBAL_3_0
+ E  PBAL_4_0
+ E  PBAL_5_0
+ E  PBAL_6_0
+ E  PBAL_7_0
+ E  PBAL_8_0
+ E  PBAL_9_0
+ L  UNIT_0_0
+ L  UNIT_1_0
+ L  UNIT_2_0
+ L  UNIT_3_0
+ L  UNIT_4_0
+ L  UNIT_5_0
+ L  SPEC_0_0
+ L  SPEC_1_0
+ L  SPEC_2_0
+ L  SPEC_3_0
+ L  SPEC_4_0
+ G  COMMIT_4_0
+ G  COMMIT_5_0
+ G  COMMIT_7_0
+ G  COMMIT_9_0
+ E  CBAL_0_1
+ E  CBAL_1_1
+ E  CBAL_2_1
+ E  CBAL_3_1
+ E  CBAL_4_1
+ E  CBAL_5_1
+ E  CBAL_6_1
+ E  CBAL_7_1
+ L  CDU_1
+ E  PBAL_0_1
+ E  PBAL_1_1
+ E  PBAL_2_1
+ E  PBAL_3_1
+ E  PBAL_4_1
+ E  PBAL_5_1
+ E  PBAL_6_1
+ E  PBAL_7_1
+ E  PBAL_8_1
+ E  PBAL_9_1
+ L  UNIT_0_1
+ L  UNIT_1_1
+ L  UNIT_2_1
+ L  UNIT_3_1
+ L  UNIT_4_1
+ L  UNIT_5_1
+ L  SPEC_0_1
+ L  SPEC_1_1
+ L  SPEC_2_1
+ L  SPEC_3_1
+ L  SPEC_4_1
+ G  COMMIT_4_1
+ G  COMMIT_5_1
+ G  COMMIT_7_1
+ G  COMMIT_9_1
+ E  CBAL_0_2
+ E  CBAL_1_2
+ E  CBAL_2_2
+ E  CBAL_3_2
+ E  CBAL_4_2
+ E  CBAL_5_2
+ E  CBAL_6_2
+ E  CBAL_7_2
+ L  CDU_2
+ E  PBAL_0_2
+ E  PBAL_1_2
+ E  PBAL_2_2
+ E  PBAL_3_2
+ E  PBAL_4_2
+ E  PBAL_5_2
+ E  PBAL_6_2
+ E  PBAL_7_2
+ E  PBAL_8_2
+ E  PBAL_9_2
+ L  UNIT_0_2
+ L  UNIT_1_2
+ L  UNIT_2_2
+ L  UNIT_3_2
+ L  UNIT_4_2
+ L  UNIT_5_2
+ L  SPEC_0_2
+ L  SPEC_1_2
+ L  SPEC_2_2
+ L  SPEC_3_2
+ L  SPEC_4_2
+ G  COMMIT_4_2
+ G  COMMIT_5_2
+ G  COMMIT_7_2
+ G  COMMIT_9_2
+ E  CBAL_0_3
+ E  CBAL_1_3
+ E  CBAL_2_3
+ E  CBAL_3_3
+ E  CBAL_4_3
+ E  CBAL_5_3
+ E  CBAL_6_3
+ E  CBAL_7_3
+ L  CDU_3
+ E  PBAL_0_3
+ E  PBAL_1_3
+ E  PBAL_2_3
+ E  PBAL_3_3
+ E  PBAL_4_3
+ E  PBAL_5_3
+ E  PBAL_6_3
+ E  PBAL_7_3
+ E  PBAL_8_3
+ E  PBAL_9_3
+ L  UNIT_0_3
+ L  UNIT_1_3
+ L  UNIT_2_3
+ L  UNIT_3_3
+ L  UNIT_4_3
+ L  UNIT_5_3
+ L  SPEC_0_3
+ L  SPEC_1_3
+ L  SPEC_2_3
+ L  SPEC_3_3
+ L  SPEC_4_3
+ G  COMMIT_4_3
+ G  COMMIT_5_3
+ G  COMMIT_7_3
+ G  COMMIT_9_3
+ E  CBAL_0_4
+ E  CBAL_1_4
+ E  CBAL_2_4
+ E  CBAL_3_4
+ E  CBAL_4_4
+ E  CBAL_5_4
+ E  CBAL_6_4
+ E  CBAL_7_4
+ L  CDU_4
+ E  PBAL_0_4
+ E  PBAL_1_4
+ E  PBAL_2_4
+ E  PBAL_3_4
+ E  PBAL_4_4
+ E  PBAL_5_4
+ E  PBAL_6_4
+ E  PBAL_7_4
+ E  PBAL_8_4
+ E  PBAL_9_4
+ L  UNIT_0_4
+ L  UNIT_1_4
+ L  UNIT_2_4
+ L  UNIT_3_4
+ L  UNIT_4_4
+ L  UNIT_5_4
+ L  SPEC_0_4
+ L  SPEC_1_4
+ L  SPEC_2_4
+ L  SPEC_3_4
+ L  SPEC_4_4
+ G  COMMIT_4_4
+ G  COMMIT_5_4
+ G  COMMIT_7_4
+ G  COMMIT_9_4
+ E  CBAL_0_5
+ E  CBAL_1_5
+ E  CBAL_2_5
+ E  CBAL_3_5
+ E  CBAL_4_5
+ E  CBAL_5_5
+ E  CBAL_6_5
+ E  CBAL_7_5
+ L  CDU_5
+ E  PBAL_0_5
+ E  PBAL_1_5
+ E  PBAL_2_5
+ E  PBAL_3_5
+ E  PBAL_4_5
+ E  PBAL_5_5
+ E  PBAL_6_5
+ E  PBAL_7_5
+ E  PBAL_8_5
+ E  PBAL_9_5
+ L  UNIT_0_5
+ L  UNIT_1_5
+ L  UNIT_2_5
+ L  UNIT_3_5
+ L  UNIT_4_5
+ L  UNIT_5_5
+ L  SPEC_0_5
+ L  SPEC_1_5
+ L  SPEC_2_5
+ L  SPEC_3_5
+ L  SPEC_4_5
+ G  COMMIT_4_5
+ G  COMMIT_5_5
+ G  COMMIT_7_5
+ G  COMMIT_9_5
+ E  CBAL_0_6
+ E  CBAL_1_6
+ E  CBAL_2_6
+ E  CBAL_3_6
+ E  CBAL_4_6
+ E  CBAL_5_6
+ E  CBAL_6_6
+ E  CBAL_7_6
+ L  CDU_6
+ E  PBAL_0_6
+ E  PBAL_1_6
+ E  PBAL_2_6
+ E  PBAL_3_6
+ E  PBAL_4_6
+ E  PBAL_5_6
+ E  PBAL_6_6
+ E  PBAL_7_6
+ E  PBAL_8_6
+ E  PBAL_9_6
+ L  UNIT_0_6
+ L  UNIT_1_6
+ L  UNIT_2_6
+ L  UNIT_3_6
+ L  UNIT_4_6
+ L  UNIT_5_6
+ L  SPEC_0_6
+ L  SPEC_1_6
+ L  SPEC_2_6
+ L  SPEC_3_6
+ L  SPEC_4_6
+ G  COMMIT_4_6
+ G  COMMIT_5_6
+ G  COMMIT_7_6
+ G  COMMIT_9_6
+ E  CBAL_0_7
+ E  CBAL_1_7
+ E  CBAL_2_7
+ E  CBAL_3_7
+ E  CBAL_4_7
+ E  CBAL_5_7
+ E  CBAL_6_7
+ E  CBAL_7_7
+ L  CDU_7
+ E  PBAL_0_7
+ E  PBAL_1_7
+ E  PBAL_2_7
+ E  PBAL_3_7
+ E  PBAL_4_7
+ E  PBAL_5_7
+ E  PBAL_6_7
+ E  PBAL_7_7
+ E  PBAL_8_7
+ E  PBAL_9_7
+ L  UNIT_0_7
+ L  UNIT_1_7
+ L  UNIT_2_7
+ L  UNIT_3_7
+ L  UNIT_4_7
+ L  UNIT_5_7
+ L  SPEC_0_7
+ L  SPEC_1_7
+ L  SPEC_2_7
+ L  SPEC_3_7
+ L  SPEC_4_7
+ G  COMMIT_4_7
+ G  COMMIT_5_7
+ G  COMMIT_7_7
+ G  COMMIT_9_7
+ E  CBAL_0_8
+ E  CBAL_1_8
+ E  CBAL_2_8
+ E  CBAL_3_8
+ E  CBAL_4_8
+ E  CBAL_5_8
+ E  CBAL_6_8
+ E  CBAL_7_8
+ L  CDU_8
+ E  PBAL_0_8
+ E  PBAL_1_8
+ E  PBAL_2_8
+ E  PBAL_3_8
+ E  PBAL_4_8
+ E  PBAL_5_8
+ E  PBAL_6_8
+ E  PBAL_7_8
+ E  PBAL_8_8
+ E  PBAL_9_8
+ L  UNIT_0_8
+ L  UNIT_1_8
+ L  UNIT_2_8
+ L  UNIT_3_8
+ L  UNIT_4_8
+ L  UNIT_5_8
+ L  SPEC_0_8
+ L  SPEC_1_8
+ L  SPEC_2_8
+ L  SPEC_3_8
+ L  SPEC_4_8
+ G  COMMIT_4_8
+ G  COMMIT_5_8
+ G  COMMIT_7_8
+ G  COMMIT_9_8
+ E  CBAL_0_9
+ E  CBAL_1_9
+ E  CBAL_2_9
+ E  CBAL_3_9
+ E  CBAL_4_9
+ E  CBAL_5_9
+ E  CBAL_6_9
+ E  CBAL_7_9
+ L  CDU_9
+ E  PBAL_0_9
+ E  PBAL_1_9
+ E  PBAL_2_9
+ E  PBAL_3_9
+ E  PBAL_4_9
+ E  PBAL_5_9
+ E  PBAL_6_9
+ E  PBAL_7_9
+ E  PBAL_8_9
+ E  PBAL_9_9
+ L  UNIT_0_9
+ L  UNIT_1_9
+ L  UNIT_2_9
+ L  UNIT_3_9
+ L  UNIT_4_9
+ L  UNIT_5_9
+ L  SPEC_0_9
+ L  SPEC_1_9
+ L  SPEC_2_9
+ L  SPEC_3_9
+ L  SPEC_4_9
+ G  COMMIT_4_9
+ G  COMMIT_5_9
+ G  COMMIT_7_9
+ G  COMMIT_9_9
+ E  CBAL_0_10
+ E  CBAL_1_10
+ E  CBAL_2_10
+ E  CBAL_3_10
+ E  CBAL_4_10
+ E  CBAL_5_10
+ E  CBAL_6_10
+ E  CBAL_7_10
+ L  CDU_10
+ E  PBAL_0_10
+ E  PBAL_1_10
+ E  PBAL_2_10
+ E  PBAL_3_10
+ E  PBAL_4_10
+ E  PBAL_5_10
+ E  PBAL_6_10
+ E  PBAL_7_10
+ E  PBAL_8_10
+ E  PBAL_9_10
+ L  UNIT_0_10
+ L  UNIT_1_10
+ L  UNIT_2_10
+ L  UNIT_3_10
+ L  UNIT_4_10
+ L  UNIT_5_10
+ L  SPEC_0_10
+ L  SPEC_1_10
+ L  SPEC_2_10
+ L  SPEC_3_10
+ L  SPEC_4_10
+ G  COMMIT_4_10
+ G  COMMIT_5_10
+ G  COMMIT_7_10
+ G  COMMIT_9_10
+ E  CBAL_0_11
+ E  CBAL_1_11
+ E  CBAL_2_11
+ E  CBAL_3_11
+ E  CBAL_4_11
+ E  CBAL_5_11
+ E  CBAL_6_11
+ E  CBAL_7_11
+ L  CDU_11
+ E  PBAL_0_11
+ E  PBAL_1_11
+ E  PBAL_2_11
+ E  PBAL_3_11
+ E  PBAL_4_11
+ E  PBAL_5_11
+ E  PBAL_6_11
+ E  PBAL_7_11
+ E  PBAL_8_11
+ E  PBAL_9_11
+ L  UNIT_0_11
+ L  UNIT_1_11
+ L  UNIT_2_11
+ L  UNIT_3_11
+ L  UNIT_4_11
+ L  UNIT_5_11
+ L  SPEC_0_11
+ L  SPEC_1_11
+ L  SPEC_2_11
+ L  SPEC_3_11
+ L  SPEC_4_11
+ G  COMMIT_4_11
+ G  COMMIT_5_11
+ G  COMMIT_7_11
+ G  COMMIT_9_11
+ E  CBAL_0_12
+ E  CBAL_1_12
+ E  CBAL_2_12
+ E  CBAL_3_12
+ E  CBAL_4_12
+ E  CBAL_5_12
+ E  CBAL_6_12
+ E  CBAL_7_12
+ L  CDU_12
+ E  PBAL_0_12
+ E  PBAL_1_12
+ E  PBAL_2_12
+ E  PBAL_3_12
+ E  PBAL_4_12
+ E  PBAL_5_12
+ E  PBAL_6_12
+ E  PBAL_7_12
+ E  PBAL_8_12
+ E  PBAL_9_12
+ L  UNIT_0_12
+ L  UNIT_1_12
+ L  UNIT_2_12
+ L  UNIT_3_12
+ L  UNIT_4_12
+ L  UNIT_5_12
+ L  SPEC_0_12
+ L  SPEC_1_12
+ L  SPEC_2_12
+ L  SPEC_3_12
+ L  SPEC_4_12
+ G  COMMIT_4_12
+ G  COMMIT_5_12
+ G  COMMIT_7_12
+ G  COMMIT_9_12
+ E  CBAL_0_13
+ E  CBAL_1_13
+ E  CBAL_2_13
+ E  CBAL_3_13
+ E  CBAL_4_13
+ E  CBAL_5_13
+ E  CBAL_6_13
+ E  CBAL_7_13
+ L  CDU_13
+ E  PBAL_0_13
+ E  PBAL_1_13
+ E  PBAL_2_13
+ E  PBAL_3_13
+ E  PBAL_4_13
+ E  PBAL_5_13
+ E  PBAL_6_13
+ E  PBAL_7_13
+ E  PBAL_8_13
+ E  PBAL_9_13
+ L  UNIT_0_13
+ L  UNIT_1_13
+ L  UNIT_2_13
+ L  UNIT_3_13
+ L  UNIT_4_13
+ L  UNIT_5_13
+ L  SPEC_0_13
+ L  SPEC_1_13
+ L  SPEC_2_13
+ L  SPEC_3_13
+ L  SPEC_4_13
+ G  COMMIT_4_13
+ G  COMMIT_5_13
+ G  COMMIT_7_13
+ G  COMMIT_9_13
+ E  CBAL_0_14
+ E  CBAL_1_14
+ E  CBAL_2_14
+ E  CBAL_3_14
+ E  CBAL_4_14
+ E  CBAL_5_14
+ E  CBAL_6_14
+ E  CBAL_7_14
+ L  CDU_14
+ E  PBAL_0_14
+ E  PBAL_1_14
+ E  PBAL_2_14
+ E  PBAL_3_14
+ E  PBAL_4_14
+ E  PBAL_5_14
+ E  PBAL_6_14
+ E  PBAL_7_14
+ E  PBAL_8_14
+ E  PBAL_9_14
+ L  UNIT_0_14
+ L  UNIT_1_14
+ L  UNIT_2_14
+ L  UNIT_3_14
+ L  UNIT_4_14
+ L  UNIT_5_14
+ L  SPEC_0_14
+ L  SPEC_1_14
+ L  SPEC_2_14
+ L  SPEC_3_14
+ L  SPEC_4_14
+ G  COMMIT_4_14
+ G  COMMIT_5_14
+ G  COMMIT_7_14
+ G  COMMIT_9_14
+ E  CBAL_0_15
+ E  CBAL_1_15
+ E  CBAL_2_15
+ E  CBAL_3_15
+ E  CBAL_4_15
+ E  CBAL_5_15
+ E  CBAL_6_15
+ E  CBAL_7_15
+ L  CDU_15
+ E  PBAL_0_15
+ E  PBAL_1_15
+ E  PBAL_2_15
+ E  PBAL_3_15
+ E  PBAL_4_15
+ E  PBAL_5_15
+ E  PBAL_6_15
+ E  PBAL_7_15
+ E  PBAL_8_15
+ E  PBAL_9_15
+ L  UNIT_0_15
+ L  UNIT_1_15
+ L  UNIT_2_15
+ L  UNIT_3_15
+ L  UNIT_4_15
+ L  UNIT_5_15
+ L  SPEC_0_15
+ L  SPEC_1_15
+ L  SPEC_2_15
+ L  SPEC_3_15
+ L  SPEC_4_15
+ G  COMMIT_4_15
+ G  COMMIT_5_15
+ G  COMMIT_7_15
+ G  COMMIT_9_15
+ E  CBAL_0_16
+ E  CBAL_1_16
+ E  CBAL_2_16
+ E  CBAL_3_16
+ E  CBAL_4_16
+ E  CBAL_5_16
+ E  CBAL_6_16
+ E  CBAL_7_16
+ L  CDU_16
+ E  PBAL_0_16
+ E  PBAL_1_16
+ E  PBAL_2_16
+ E  PBAL_3_16
+ E  PBAL_4_16
+ E  PBAL_5_16
+ E  PBAL_6_16
+ E  PBAL_7_16
+ E  PBAL_8_16
+ E  PBAL_9_16
+ L  UNIT_0_16
+ L  UNIT_1_16
+ L  UNIT_2_16
+ L  UNIT_3_16
+ L  UNIT_4_16
+ L  UNIT_5_16
+ L  SPEC_0_16
+ L  SPEC_1_16
+ L  SPEC_2_16
+ L  SPEC_3_16
+ L  SPEC_4_16
+ G  COMMIT_4_16
+ G  COMMIT_5_16
+ G  COMMIT_7_16
+ G  COMMIT_9_16
+ E  CBAL_0_17
+ E  CBAL_1_17
+ E  CBAL_2_17
+ E  CBAL_3_17
+ E  CBAL_4_17
+ E  CBAL_5_17
+ E  CBAL_6_17
+ E  CBAL_7_17
+ L  CDU_17
+ E  PBAL_0_17
+ E  PBAL_1_17
+ E  PBAL_2_17
+ E  PBAL_3_17
+ E  PBAL_4_17
+ E  PBAL_5_17
+ E  PBAL_6_17
+ E  PBAL_7_17
+ E  PBAL_8_17
+ E  PBAL_9_17
+ L  UNIT_0_17
+ L  UNIT_1_17
+ L  UNIT_2_17
+ L  UNIT_3_17
+ L  UNIT_4_17
+ L  UNIT_5_17
+ L  SPEC_0_17
+ L  SPEC_1_17
+ L  SPEC_2_17
+ L  SPEC_3_17
+ L  SPEC_4_17
+ G  COMMIT_4_17
+ G  COMMIT_5_17
+ G  COMMIT_7_17
+ G  COMMIT_9_17
+ E  CBAL_0_18
+ E  CBAL_1_18
+ E  CBAL_2_18
+ E  CBAL_3_18
+ E  CBAL_4_18
+ E  CBAL_5_18
+ E  CBAL_6_18
+ E  CBAL_7_18
+ L  CDU_18
+ E  PBAL_0_18
+ E  PBAL_1_18
+ E  PBAL_2_18
+ E  PBAL_3_18
+ E  PBAL_4_18
+ E  PBAL_5_18
+ E  PBAL_6_18
+ E  PBAL_7_18
+ E  PBAL_8_18
+ E  PBAL_9_18
+ L  UNIT_0_18
+ L  UNIT_1_18
+ L  UNIT_2_18
+ L  UNIT_3_18
+ L  UNIT_4_18
+ L  UNIT_5_18
+ L  SPEC_0_18
+ L  SPEC_1_18
+ L  SPEC_2_18
+ L  SPEC_3_18
+ L  SPEC_4_18
+ G  COMMIT_4_18
+ G  COMMIT_5_18
+ G  COMMIT_7_18
+ G  COMMIT_9_18
+ E  CBAL_0_19
+ E  CBAL_1_19
+ E  CBAL_2_19
+ E  CBAL_3_19
+ E  CBAL_4_19
+ E  CBAL_5_19
+ E  CBAL_6_19
+ E  CBAL_7_19
+ L  CDU_19
+ E  PBAL_0_19
+ E  PBAL_1_19
+ E  PBAL_2_19
+ E  PBAL_3_19
+ E  PBAL_4_19
+ E  PBAL_5_19
+ E  PBAL_6_19
+ E  PBAL_7_19
+ E  PBAL_8_19
+ E  PBAL_9_19
+ L  UNIT_0_19
+ L  UNIT_1_19
+ L  UNIT_2_19
+ L  UNIT_3_19
+ L  UNIT_4_19
+ L  UNIT_5_19
+ L  SPEC_0_19
+ L  SPEC_1_19
+ L  SPEC_2_19
+ L  SPEC_3_19
+ L  SPEC_4_19
+ G  COMMIT_4_19
+ G  COMMIT_5_19
+ G  COMMIT_7_19
+ G  COMMIT_9_19
+ E  CBAL_0_20
+ E  CBAL_1_20
+ E  CBAL_2_20
+ E  CBAL_3_20
+ E  CBAL_4_20
+ E  CBAL_5_20
+ E  CBAL_6_20
+ E  CBAL_7_20
+ L  CDU_20
+ E  PBAL_0_20
+ E  PBAL_1_20
+ E  PBAL_2_20
+ E  PBAL_3_20
+ E  PBAL_4_20
+ E  PBAL_5_20
+ E  PBAL_6_20
+ E  PBAL_7_20
+ E  PBAL_8_20
+ E  PBAL_9_20
+ L  UNIT_0_20
+ L  UNIT_1_20
+ L  UNIT_2_20
+ L  UNIT_3_20
+ L  UNIT_4_20
+ L  UNIT_5_20
+ L  SPEC_0_20
+ L  SPEC_1_20
+ L  SPEC_2_20
+ L  SPEC_3_20
+ L  SPEC_4_20
+ G  COMMIT_4_20
+ G  COMMIT_5_20
+ G  COMMIT_7_20
+ G  COMMIT_9_20
+ E  CBAL_0_21
+ E  CBAL_1_21
+ E  CBAL_2_21
+ E  CBAL_3_21
+ E  CBAL_4_21
+ E  CBAL_5_21
+ E  CBAL_6_21
+ E  CBAL_7_21
+ L  CDU_21
+ E  PBAL_0_21
+ E  PBAL_1_21
+ E  PBAL_2_21
+ E  PBAL_3_21
+ E  PBAL_4_21
+ E  PBAL_5_21
+ E  PBAL_6_21
+ E  PBAL_7_21
+ E  PBAL_8_21
+ E  PBAL_9_21
+ L  UNIT_0_21
+ L  UNIT_1_21
+ L  UNIT_2_21
+ L  UNIT_3_21
+ L  UNIT_4_21
+ L  UNIT_5_21
+ L  SPEC_0_21
+ L  SPEC_1_21
+ L  SPEC_2_21
+ L  SPEC_3_21
+ L  SPEC_4_21
+ G  COMMIT_4_21
+ G  COMMIT_5_21
+ G  COMMIT_7_21
+ G  COMMIT_9_21
+ E  CBAL_0_22
+ E  CBAL_1_22
+ E  CBAL_2_22
+ E  CBAL_3_22
+ E  CBAL_4_22
+ E  CBAL_5_22
+ E  CBAL_6_22
+ E  CBAL_7_22
+ L  CDU_22
+ E  PBAL_0_22
+ E  PBAL_1_22
+ E  PBAL_2_22
+ E  PBAL_3_22
+ E  PBAL_4_22
+ E  PBAL_5_22
+ E  PBAL_6_22
+ E  PBAL_7_22
+ E  PBAL_8_22
+ E  PBAL_9_22
+ L  UNIT_0_22
+ L  UNIT_1_22
+ L  UNIT_2_22
+ L  UNIT_3_22
+ L  UNIT_4_22
+ L  UNIT_5_22
+ L  SPEC_0_22
+ L  SPEC_1_22
+ L  SPEC_2_22
+ L  SPEC_3_22
+ L  SPEC_4_22
+ G  COMMIT_4_22
+ G  COMMIT_5_22
+ G  COMMIT_7_22
+ G  COMMIT_9_22
+ E  CBAL_0_23
+ E  CBAL_1_23
+ E  CBAL_2_23
+ E  CBAL_3_23
+ E  CBAL_4_23
+ E  CBAL_5_23
+ E  CBAL_6_23
+ E  CBAL_7_23
+ L  CDU_23
+ E  PBAL_0_23
+ E  PBAL_1_23
+ E  PBAL_2_23
+ E  PBAL_3_23
+ E  PBAL_4_23
+ E  PBAL_5_23
+ E  PBAL_6_23
+ E  PBAL_7_23
+ E  PBAL_8_23
+ E  PBAL_9_23
+ L  UNIT_0_23
+ L  UNIT_1_23
+ L  UNIT_2_23
+ L  UNIT_3_23
+ L  UNIT_4_23
+ L  UNIT_5_23
+ L  SPEC_0_23
+ L  SPEC_1_23
+ L  SPEC_2_23
+ L  SPEC_3_23
+ L  SPEC_4_23
+ G  COMMIT_4_23
+ G  COMMIT_5_23
+ G  COMMIT_7_23
+ G  COMMIT_9_23
+ E  CBAL_0_24
+ E  CBAL_1_24
+ E  CBAL_2_24
+ E  CBAL_3_24
+ E  CBAL_4_24
+ E  CBAL_5_24
+ E  CBAL_6_24
+ E  CBAL_7_24
+ L  CDU_24
+ E  PBAL_0_24
+ E  PBAL_1_24
+ E  PBAL_2_24
+ E  PBAL_3_24
+ E  PBAL_4_24
+ E  PBAL_5_24
+ E  PBAL_6_24
+ E  PBAL_7_24
+ E  PBAL_8_24
+ E  PBAL_9_24
+ L  UNIT_0_24
+ L  UNIT_1_24
+ L  UNIT_2_24
+ L  UNIT_3_24
+ L  UNIT_4_24
+ L  UNIT_5_24
+ L  SPEC_0_24
+ L  SPEC_1_24
+ L  SPEC_2_24
+ L  SPEC_3_24
+ L  SPEC_4_24
+ G  COMMIT_4_24
+ G  COMMIT_5_24
+ G  COMMIT_7_24
+ G  COMMIT_9_24
+ E  CBAL_0_25
+ E  CBAL_1_25
+ E  CBAL_2_25
+ E  CBAL_3_25
+ E  CBAL_4_25
+ E  CBAL_5_25
+ E  CBAL_6_25
+ E  CBAL_7_25
+ L  CDU_25
+ E  PBAL_0_25
+ E  PBAL_1_25
+ E  PBAL_2_25
+ E  PBAL_3_25
+ E  PBAL_4_25
+ E  PBAL_5_25
+ E  PBAL_6_25
+ E  PBAL_7_25
+ E  PBAL_8_25
+ E  PBAL_9_25
+ L  UNIT_0_25
+ L  UNIT_1_25
+ L  UNIT_2_25
+ L  UNIT_3_25
+ L  UNIT_4_25
+ L  UNIT_5_25
+ L  SPEC_0_25
+ L  SPEC_1_25
+ L  SPEC_2_25
+ L  SPEC_3_25
+ L  SPEC_4_25
+ G  COMMIT_4_25
+ G  COMMIT_5_25
+ G  COMMIT_7_25
+ G  COMMIT_9_25
+ E  CBAL_0_26
+ E  CBAL_1_26
+ E  CBAL_2_26
+ E  CBAL_3_26
+ E  CBAL_4_26
+ E  CBAL_5_26
+ E  CBAL_6_26
+ E  CBAL_7_26
+ L  CDU_26
+ E  PBAL_0_26
+ E  PBAL_1_26
+ E  PBAL_2_26
+ E  PBAL_3_26
+ E  PBAL_4_26
+ E  PBAL_5_26
+ E  PBAL_6_26
+ E  PBAL_7_26
+ E  PBAL_8_26
+ E  PBAL_9_26
+ L  UNIT_0_26
+ L  UNIT_1_26
+ L  UNIT_2_26
+ L  UNIT_3_26
+ L  UNIT_4_26
+ L  UNIT_5_26
+ L  SPEC_0_26
+ L  SPEC_1_26
+ L  SPEC_2_26
+ L  SPEC_3_26
+ L  SPEC_4_26
+ G  COMMIT_4_26
+ G  COMMIT_5_26
+ G  COMMIT_7_26
+ G  COMMIT_9_26
+ E  CBAL_0_27
+ E  CBAL_1_27
+ E  CBAL_2_27
+ E  CBAL_3_27
+ E  CBAL_4_27
+ E  CBAL_5_27
+ E  CBAL_6_27
+ E  CBAL_7_27
+ L  CDU_27
+ E  PBAL_0_27
+ E  PBAL_1_27
+ E  PBAL_2_27
+ E  PBAL_3_27
+ E  PBAL_4_27
+ E  PBAL_5_27
+ E  PBAL_6_27
+ E  PBAL_7_27
+ E  PBAL_8_27
+ E  PBAL_9_27
+ L  UNIT_0_27
+ L  UNIT_1_27
+ L  UNIT_2_27
+ L  UNIT_3_27
+ L  UNIT_4_27
+ L  UNIT_5_27
+ L  SPEC_0_27
+ L  SPEC_1_27
+ L  SPEC_2_27
+ L  SPEC_3_27
+ L  SPEC_4_27
+ G  COMMIT_4_27
+ G  COMMIT_5_27
+ G  COMMIT_7_27
+ G  COMMIT_9_27
+ E  CBAL_0_28
+ E  CBAL_1_28
+ E  CBAL_2_28
+ E  CBAL_3_28
+ E  CBAL_4_28
+ E  CBAL_5_28
+ E  CBAL_6_28
+ E  CBAL_7_28
+ L  CDU_28
+ E  PBAL_0_28
+ E  PBAL_1_28
+ E  PBAL_2_28
+ E  PBAL_3_28
+ E  PBAL_4_28
+ E  PBAL_5_28
+ E  PBAL_6_28
+ E  PBAL_7_28
+ E  PBAL_8_28
+ E  PBAL_9_28
+ L  UNIT_0_28
+ L  UNIT_1_28
+ L  UNIT_2_28
+ L  UNIT_3_28
+ L  UNIT_4_28
+ L  UNIT_5_28
+ L  SPEC_0_28
+ L  SPEC_1_28
+ L  SPEC_2_28
+ L  SPEC_3_28
+ L  SPEC_4_28
+ G  COMMIT_4_28
+ G  COMMIT_5_28
+ G  COMMIT_7_28
+ G  COMMIT_9_28
+ E  CBAL_0_29
+ E  CBAL_1_29
+ E  CBAL_2_29
+ E  CBAL_3_29
+ E  CBAL_4_29
+ E  CBAL_5_29
+ E  CBAL_6_29
+ E  CBAL_7_29
+ L  CDU_29
+ E  PBAL_0_29
+ E  PBAL_1_29
+ E  PBAL_2_29
+ E  PBAL_3_29
+ E  PBAL_4_29
+ E  PBAL_5_29
+ E  PBAL_6_29
+ E  PBAL_7_29
+ E  PBAL_8_29
+ E  PBAL_9_29
+ L  UNIT_0_29
+ L  UNIT_1_29
+ L  UNIT_2_29
+ L  UNIT_3_29
+ L  UNIT_4_29
+ L  UNIT_5_29
+ L  SPEC_0_29
+ L  SPEC_1_29
+ L  SPEC_2_29
+ L  SPEC_3_29
+ L  SPEC_4_29
+ G  COMMIT_4_29
+ G  COMMIT_5_29
+ G  COMMIT_7_29
+ G  COMMIT_9_29
+COLUMNS
+    BUY_0_0  COST  -4
+    BUY_0_0  CBAL_0_0  -1
+    BUY_0_1  COST  -7
+    BUY_0_1  CBAL_0_1  -1
+    BUY_0_2  COST  -2
+    BUY_0_2  CBAL_0_2  -1
+    BUY_0_3  COST  -4
+    BUY_0_3  CBAL_0_3  -1
+    BUY_0_4  COST  7
+    BUY_0_4  CBAL_0_4  -1
+    BUY_0_5  COST  2
+    BUY_0_5  CBAL_0_5  -1
+    BUY_0_6  COST  4
+    BUY_0_6  CBAL_0_6  -1
+    BUY_0_7  COST  1
+    BUY_0_7  CBAL_0_7  -1
+    BUY_0_8  COST  -5
+    BUY_0_8  CBAL_0_8  -1
+    BUY_0_9  CBAL_0_9  -1
+    BUY_0_10  COST  -3
+    BUY_0_10  CBAL_0_10  -1
+    BUY_0_11  COST  -3
+    BUY_0_11  CBAL_0_11  -1
+    BUY_0_12  COST  4
+    BUY_0_12  CBAL_0_12  -1
+    BUY_0_13  COST  -3
+    BUY_0_13  CBAL_0_13  -1
+    BUY_0_14  COST  -3
+    BUY_0_14  CBAL_0_14  -1
+    BUY_0_15  COST  -7
+    BUY_0_15  CBAL_0_15  -1
+    BUY_0_16  COST  6
+    BUY_0_16  CBAL_0_16  -1
+    BUY_0_17  COST  7
+    BUY_0_17  CBAL_0_17  -1
+    BUY_0_18  COST  3
+    BUY_0_18  CBAL_0_18  -1
+    BUY_0_19  COST  -7
+    BUY_0_19  CBAL_0_19  -1
+    BUY_0_20  CBAL_0_20  -1
+    BUY_0_21  COST  3
+    BUY_0_21  CBAL_0_21  -1
+    BUY_0_22  COST  7
+    BUY_0_22  CBAL_0_22  -1
+    BUY_0_23  COST  3
+    BUY_0_23  CBAL_0_23  -1
+    BUY_0_24  COST  -4
+    BUY_0_24  CBAL_0_24  -1
+    BUY_0_25  COST  9
+    BUY_0_25  CBAL_0_25  -1
+    BUY_0_26  COST  3
+    BUY_0_26  CBAL_0_26  -1
+    BUY_0_27  CBAL_0_27  -1
+    BUY_0_28  COST  3
+    BUY_0_28  CBAL_0_28  -1
+    BUY_0_29  COST  6
+    BUY_0_29  CBAL_0_29  -1
+    BUY_1_0  COST  -8
+    BUY_1_0  CBAL_1_0  -1
+    BUY_1_1  COST  -1
+    BUY_1_1  CBAL_1_1  -1
+    BUY_1_2  COST  7
+    BUY_1_2  CBAL_1_2  -1
+    BUY_1_3  COST  5
+    BUY_1_3  CBAL_1_3  -1
+    BUY_1_4  COST  7
+    BUY_1_4  CBAL_1_4  -1
+    BUY_1_5  CBAL_1_5  -1
+    BUY_1_6  COST  -8
+    BUY_1_6  CBAL_1_6  -1
+    BUY_1_7  COST  1
+    BUY_1_7  CBAL_1_7  -1
+    BUY_1_8  COST  11
+    BUY_1_8  CBAL_1_8  -1
+    BUY_1_9  COST  7
+    BUY_1_9  CBAL_1_9  -1
+    BUY_1_10  COST  -4
+    BUY_1_10  CBAL_1_10  -1
+    BUY_1_11  COST  8
+    BUY_1_11  CBAL_1_11  -1
+    BUY_1_12  COST  3
+    BUY_1_12  CBAL_1_12  -1
+    BUY_1_13  COST  8
+    BUY_1_13  CBAL_1_13  -1
+    BUY_1_14  COST  -9
+    BUY_1_14  CBAL_1_14  -1
+    BUY_1_15  COST  -9
+    BUY_1_15  CBAL_1_15  -1
+    BUY_1_16  COST  1
+    BUY_1_16  CBAL_1_16  -1
+    BUY_1_17  COST  -4
+    BUY_1_17  CBAL_1_17  -1
+    BUY_1_18  CBAL_1_18  -1
+    BUY_1_19  COST  -4
+    BUY_1_19  CBAL_1_19  -1
+    BUY_1_20  COST  9
+    BUY_1_20  CBAL_1_20  -1
+    BUY_1_21  COST  -7
+    BUY_1_21  CBAL_1_21  -1
+    BUY_1_22  COST  1
+    BUY_1_22  CBAL_1_22  -1
+    BUY_1_23  COST  5
+    BUY_1_23  CBAL_1_23  -1
+    BUY_1_24  COST  -6
+    BUY_1_24  CBAL_1_24  -1
+    BUY_1_25  COST  -5
+    BUY_1_25  CBAL_1_25  -1
+    BUY_1_26  COST  4
+    BUY_1_26  CBAL_1_26  -1
+    BUY_1_27  COST  2
+    BUY_1_27  CBAL_1_27  -1
+    BUY_1_28  COST  5
+    BUY_1_28  CBAL_1_28  -1
+    BUY_1_29  COST  -8
+    BUY_1_29  CBAL_1_29  -1
+    BUY_2_0  COST  -3
+    BUY_2_0  CBAL_2_0  -1
+    BUY_2_1  COST  -9
+    BUY_2_1  CBAL_2_1  -1
+    BUY_2_2  COST  -5
+    BUY_2_2  CBAL_2_2  -1
+    BUY_2_3  COST  8
+    BUY_2_3  CBAL_2_3  -1
+    BUY_2_4  COST  8
+    BUY_2_4  CBAL_2_4  -1
+    BUY_2_5  COST  -7
+    BUY_2_5  CBAL_2_5  -1
+    BUY_2_6  COST  9
+    BUY_2_6  CBAL_2_6  -1
+    BUY_2_7  CBAL_2_7  -1
+    BUY_2_8  COST  -5
+    BUY_2_8  CBAL_2_8  -1
+    BUY_2_9  COST  11
+    BUY_2_9  CBAL_2_9  -1
+    BUY_2_10  COST  6
+    BUY_2_10  CBAL_2_10  -1
+    BUY_2_11  COST  4
+    BUY_2_11  CBAL_2_11  -1
+    BUY_2_12  CBAL_2_12  -1
+    BUY_2_13  CBAL_2_13  -1
+    BUY_2_14  COST  -8
+    BUY_2_14  CBAL_2_14  -1
+    BUY_2_15  COST  7
+    BUY_2_15  CBAL_2_15  -1
+    BUY_2_16  COST  15
+    BUY_2_16  CBAL_2_16  -1
+    BUY_2_17  COST  -2
+    BUY_2_17  CBAL_2_17  -1
+    BUY_2_18  COST  -2
+    BUY_2_18  CBAL_2_18  -1
+    BUY_2_19  COST  2
+    BUY_2_19  CBAL_2_19  -1
+    BUY_2_20  COST  1
+    BUY_2_20  CBAL_2_20  -1
+    BUY_2_21  COST  1
+    BUY_2_21  CBAL_2_21  -1
+    BUY_2_22  COST  7
+    BUY_2_22  CBAL_2_22  -1
+    BUY_2_23  COST  6
+    BUY_2_23  CBAL_2_23  -1
+    BUY_2_24  COST  -7
+    BUY_2_24  CBAL_2_24  -1
+    BUY_2_25  COST  -1
+    BUY_2_25  CBAL_2_25  -1
+    BUY_2_26  COST  9
+    BUY_2_26  CBAL_2_26  -1
+    BUY_2_27  COST  -1
+    BUY_2_27  CBAL_2_27  -1
+    BUY_2_28  COST  10
+    BUY_2_28  CBAL_2_28  -1
+    BUY_2_29  COST  10
+    BUY_2_29  CBAL_2_29  -1
+    BUY_3_0  COST  -6
+    BUY_3_0  CBAL_3_0  -1
+    BUY_3_1  COST  8
+    BUY_3_1  CBAL_3_1  -1
+    BUY_3_2  COST  -1
+    BUY_3_2  CBAL_3_2  -1
+    BUY_3_3  COST  4
+    BUY_3_3  CBAL_3_3  -1
+    BUY_3_4  COST  -3
+    BUY_3_4  CBAL_3_4  -1
+    BUY_3_5  COST  -4
+    BUY_3_5  CBAL_3_5  -1
+    BUY_3_6  COST  2
+    BUY_3_6  CBAL_3_6  -1
+    BUY_3_7  COST  10
+    BUY_3_7  CBAL_3_7  -1
+    BUY_3_8  COST  1
+    BUY_3_8  CBAL_3_8  -1
+    BUY_3_9  COST  -5
+    BUY_3_9  CBAL_3_9  -1
+    BUY_3_10  COST  -7
+    BUY_3_10  CBAL_3_10  -1
+    BUY_3_11  COST  7
+    BUY_3_11  CBAL_3_11  -1
+    BUY_3_12  COST  4
+    BUY_3_12  CBAL_3_12  -1
+    BUY_3_13  COST  -2
+    BUY_3_13  CBAL_3_13  -1
+    BUY_3_14  COST  11
+    BUY_3_14  CBAL_3_14  -1
+    BUY_3_15  COST  -1
+    BUY_3_15  CBAL_3_15  -1
+    BUY_3_16  COST  -7
+    BUY_3_16  CBAL_3_16  -1
+    BUY_3_17  COST  -2
+    BUY_3_17  CBAL_3_17  -1
+    BUY_3_18  COST  8
+    BUY_3_18  CBAL_3_18  -1
+    BUY_3_19  COST  -7
+    BUY_3_19  CBAL_3_19  -1
+    BUY_3_20  COST  7
+    BUY_3_20  CBAL_3_20  -1
+    BUY_3_21  COST  -3
+    BUY_3_21  CBAL_3_21  -1
+    BUY_3_22  COST  -4
+    BUY_3_22  CBAL_3_22  -1
+    BUY_3_23  COST  1
+    BUY_3_23  CBAL_3_23  -1
+    BUY_3_24  COST  -8
+    BUY_3_24  CBAL_3_24  -1
+    BUY_3_25  COST  -4
+    BUY_3_25  CBAL_3_25  -1
+    BUY_3_26  COST  3
+    BUY_3_26  CBAL_3_26  -1
+    BUY_3_27  COST  -1
+    BUY_3_27  CBAL_3_27  -1
+    BUY_3_28  COST  6
+    BUY_3_28  CBAL_3_28  -1
+    BUY_3_29  COST  11
+    BUY_3_29  CBAL_3_29  -1
+    BUY_4_0  COST  2
+    BUY_4_0  CBAL_4_0  -1
+    BUY_4_1  COST  3
+    BUY_4_1  CBAL_4_1  -1
+    BUY_4_2  COST  3
+    BUY_4_2  CBAL_4_2  -1
+    BUY_4_3  CBAL_4_3  -1
+    BUY_4_4  COST  6
+    BUY_4_4  CBAL_4_4  -1
+    BUY_4_5  COST  6
+    BUY_4_5  CBAL_4_5  -1
+    BUY_4_6  COST  5
+    BUY_4_6  CBAL_4_6  -1
+    BUY_4_7  COST  -8
+    BUY_4_7  CBAL_4_7  -1
+    BUY_4_8  COST  -3
+    BUY_4_8  CBAL_4_8  -1
+    BUY_4_9  COST  -2
+    BUY_4_9  CBAL_4_9  -1
+    BUY_4_10  COST  -4
+    BUY_4_10  CBAL_4_10  -1
+    BUY_4_11  COST  6
+    BUY_4_11  CBAL_4_11  -1
+    BUY_4_12  COST  5
+    BUY_4_12  CBAL_4_12  -1
+    BUY_4_13  COST  9
+    BUY_4_13  CBAL_4_13  -1
+    BUY_4_14  COST  -7
+    BUY_4_14  CBAL_4_14  -1
+    BUY_4_15  COST  2
+    BUY_4_15  CBAL_4_15  -1
+    BUY_4_16  COST  5
+    BUY_4_16  CBAL_4_16  -1
+    BUY_4_17  COST  3
+    BUY_4_17  CBAL_4_17  -1
+    BUY_4_18  COST  8
+    BUY_4_18  CBAL_4_18  -1
+    BUY_4_19  COST  15
+    BUY_4_19  CBAL_4_19  -1
+    BUY_4_20  COST  4
+    BUY_4_20  CBAL_4_20  -1
+    BUY_4_21  COST  4
+    BUY_4_21  CBAL_4_21  -1
+    BUY_4_22  COST  3
+    BUY_4_22  CBAL_4_22  -1
+    BUY_4_23  COST  -8
+    BUY_4_23  CBAL_4_23  -1
+    BUY_4_24  COST  2
+    BUY_4_24  CBAL_4_24  -1
+    BUY_4_25  COST  2
+    BUY_4_25  CBAL_4_25  -1
+    BUY_4_26  COST  -7
+    BUY_4_26  CBAL_4_26  -1
+    BUY_4_27  COST  3
+    BUY_4_27  CBAL_4_27  -1
+    BUY_4_28  COST  5
+    BUY_4_28  CBAL_4_28  -1
+    BUY_4_29  COST  2
+    BUY_4_29  CBAL_4_29  -1
+    BUY_5_0  CBAL_5_0  -1
+    BUY_5_1  COST  7
+    BUY_5_1  CBAL_5_1  -1
+    BUY_5_2  COST  2
+    BUY_5_2  CBAL_5_2  -1
+    BUY_5_3  COST  1
+    BUY_5_3  CBAL_5_3  -1
+    BUY_5_4  COST  -2
+    BUY_5_4  CBAL_5_4  -1
+    BUY_5_5  COST  10
+    BUY_5_5  CBAL_5_5  -1
+    BUY_5_6  COST  7
+    BUY_5_6  CBAL_5_6  -1
+    BUY_5_7  COST  11
+    BUY_5_7  CBAL_5_7  -1
+    BUY_5_8  COST  -2
+    BUY_5_8  CBAL_5_8  -1
+    BUY_5_9  COST  -3
+    BUY_5_9  CBAL_5_9  -1
+    BUY_5_10  COST  1
+    BUY_5_10  CBAL_5_10  -1
+    BUY_5_11  COST  -5
+    BUY_5_11  CBAL_5_11  -1
+    BUY_5_12  COST  -3
+    BUY_5_12  CBAL_5_12  -1
+    BUY_5_13  COST  3
+    BUY_5_13  CBAL_5_13  -1
+    BUY_5_14  COST  7
+    BUY_5_14  CBAL_5_14  -1
+    BUY_5_15  COST  15
+    BUY_5_15  CBAL_5_15  -1
+    BUY_5_16  COST  -7
+    BUY_5_16  CBAL_5_16  -1
+    BUY_5_17  COST  12
+    BUY_5_17  CBAL_5_17  -1
+    BUY_5_18  COST  8
+    BUY_5_18  CBAL_5_18  -1
+    BUY_5_19  COST  8
+    BUY_5_19  CBAL_5_19  -1
+    BUY_5_20  COST  1
+    BUY_5_20  CBAL_5_20  -1
+    BUY_5_21  CBAL_5_21  -1
+    BUY_5_22  COST  -5
+    BUY_5_22  CBAL_5_22  -1
+    BUY_5_23  COST  9
+    BUY_5_23  CBAL_5_23  -1
+    BUY_5_24  COST  11
+    BUY_5_24  CBAL_5_24  -1
+    BUY_5_25  COST  8
+    BUY_5_25  CBAL_5_25  -1
+    BUY_5_26  COST  -1
+    BUY_5_26  CBAL_5_26  -1
+    BUY_5_27  COST  8
+    BUY_5_27  CBAL_5_27  -1
+    BUY_5_28  COST  11
+    BUY_5_28  CBAL_5_28  -1
+    BUY_5_29  COST  -8
+    BUY_5_29  CBAL_5_29  -1
+    BUY_6_0  COST  9
+    BUY_6_0  CBAL_6_0  -1
+    BUY_6_1  COST  8
+    BUY_6_1  CBAL_6_1  -1
+    BUY_6_2  COST  1
+    BUY_6_2  CBAL_6_2  -1
+    BUY_6_3  COST  6
+    BUY_6_3  CBAL_6_3  -1
+    BUY_6_4  CBAL_6_4  -1
+    BUY_6_5  COST  7
+    BUY_6_5  CBAL_6_5  -1
+    BUY_6_6  COST  9
+    BUY_6_6  CBAL_6_6  -1
+    BUY_6_7  COST  3
+    BUY_6_7  CBAL_6_7  -1
+    BUY_6_8  COST  -3
+    BUY_6_8  CBAL_6_8  -1
+    BUY_6_9  COST  -5
+    BUY_6_9  CBAL_6_9  -1
+    BUY_6_10  COST  -5
+    BUY_6_10  CBAL_6_10  -1
+    BUY_6_11  COST  -8
+    BUY_6_11  CBAL_6_11  -1
+    BUY_6_12  COST  -4
+    BUY_6_12  CBAL_6_12  -1
+    BUY_6_13  COST  -1
+    BUY_6_13  CBAL_6_13  -1
+    BUY_6_14  COST  -9
+    BUY_6_14  CBAL_6_14  -1
+    BUY_6_15  COST  8
+    BUY_6_15  CBAL_6_15  -1
+    BUY_6_16  COST  2
+    BUY_6_16  CBAL_6_16  -1
+    BUY_6_17  COST  9
+    BUY_6_17  CBAL_6_17  -1
+    BUY_6_18  COST  5
+    BUY_6_18  CBAL_6_18  -1
+    BUY_6_19  COST  -1
+    BUY_6_19  CBAL_6_19  -1
+    BUY_6_20  COST  -5
+    BUY_6_20  CBAL_6_20  -1
+    BUY_6_21  COST  1
+    BUY_6_21  CBAL_6_21  -1
+    BUY_6_22  COST  8
+    BUY_6_22  CBAL_6_22  -1
+    BUY_6_23  COST  9
+    BUY_6_23  CBAL_6_23  -1
+    BUY_6_24  COST  -8
+    BUY_6_24  CBAL_6_24  -1
+    BUY_6_25  COST  4
+    BUY_6_25  CBAL_6_25  -1
+    BUY_6_26  CBAL_6_26  -1
+    BUY_6_27  COST  8
+    BUY_6_27  CBAL_6_27  -1
+    BUY_6_28  COST  1
+    BUY_6_28  CBAL_6_28  -1
+    BUY_6_29  COST  -8
+    BUY_6_29  CBAL_6_29  -1
+    BUY_7_0  COST  7
+    BUY_7_0  CBAL_7_0  -1
+    BUY_7_1  COST  6
+    BUY_7_1  CBAL_7_1  -1
+    BUY_7_2  COST  5
+    BUY_7_2  CBAL_7_2  -1
+    BUY_7_3  COST  3
+    BUY_7_3  CBAL_7_3  -1
+    BUY_7_4  COST  7
+    BUY_7_4  CBAL_7_4  -1
+    BUY_7_5  COST  7
+    BUY_7_5  CBAL_7_5  -1
+    BUY_7_6  COST  13
+    BUY_7_6  CBAL_7_6  -1
+    BUY_7_7  COST  3
+    BUY_7_7  CBAL_7_7  -1
+    BUY_7_8  COST  -9
+    BUY_7_8  CBAL_7_8  -1
+    BUY_7_9  COST  -6
+    BUY_7_9  CBAL_7_9  -1
+    BUY_7_10  COST  -1
+    BUY_7_10  CBAL_7_10  -1
+    BUY_7_11  COST  -5
+    BUY_7_11  CBAL_7_11  -1
+    BUY_7_12  COST  -6
+    BUY_7_12  CBAL_7_12  -1
+    BUY_7_13  COST  -9
+    BUY_7_13  CBAL_7_13  -1
+    BUY_7_14  COST  -3
+    BUY_7_14  CBAL_7_14  -1
+    BUY_7_15  COST  9
+    BUY_7_15  CBAL_7_15  -1
+    BUY_7_16  COST  3
+    BUY_7_16  CBAL_7_16  -1
+    BUY_7_17  COST  -3
+    BUY_7_17  CBAL_7_17  -1
+    BUY_7_18  COST  1
+    BUY_7_18  CBAL_7_18  -1
+    BUY_7_19  COST  11
+    BUY_7_19  CBAL_7_19  -1
+    BUY_7_20  COST  -4
+    BUY_7_20  CBAL_7_20  -1
+    BUY_7_21  COST  13
+    BUY_7_21  CBAL_7_21  -1
+    BUY_7_22  COST  9
+    BUY_7_22  CBAL_7_22  -1
+    BUY_7_23  COST  -2
+    BUY_7_23  CBAL_7_23  -1
+    BUY_7_24  COST  -9
+    BUY_7_24  CBAL_7_24  -1
+    BUY_7_25  COST  -7
+    BUY_7_25  CBAL_7_25  -1
+    BUY_7_26  COST  -6
+    BUY_7_26  CBAL_7_26  -1
+    BUY_7_27  COST  11
+    BUY_7_27  CBAL_7_27  -1
+    BUY_7_28  COST  9
+    BUY_7_28  CBAL_7_28  -1
+    BUY_7_29  COST  -1
+    BUY_7_29  CBAL_7_29  -1
+    RUN_0_0  COST  0.546
+    RUN_0_0  CBAL_0_0  1
+    RUN_0_0  CDU_0  1
+    RUN_0_0  PBAL_0_0  -0.04
+    RUN_0_0  PBAL_1_0  -0.18
+    RUN_0_0  PBAL_2_0  -0.27
+    RUN_0_0  PBAL_3_0  -0.25
+    RUN_0_0  PBAL_4_0  -0.24
+    RUN_0_0  PBAL_5_0  -0.02
+    RUN_0_0  PBAL_6_0  -0.08
+    RUN_0_0  PBAL_7_0  -0.03
+    RUN_0_0  PBAL_8_0  -0.15
+    RUN_0_0  PBAL_9_0  -0.24
+    RUN_0_0  UNIT_0_0  0.37
+    RUN_0_0  UNIT_1_0  0.36
+    RUN_0_0  UNIT_2_0  0.31
+    RUN_0_0  UNIT_3_0  0.56
+    RUN_0_0  UNIT_4_0  0.03
+    RUN_0_0  UNIT_5_0  0.21
+    RUN_0_0  SPEC_0_0  0.014
+    RUN_0_0  SPEC_1_0  0.042
+    RUN_0_0  SPEC_2_0  0.032
+    RUN_0_0  SPEC_3_0  0.03
+    RUN_0_0  SPEC_4_0  0.022
+    RUN_0_1  COST  3.244
+    RUN_0_1  CBAL_0_1  1
+    RUN_0_1  CDU_1  1
+    RUN_0_1  PBAL_0_1  -0.04
+    RUN_0_1  PBAL_1_1  -0.18
+    RUN_0_1  PBAL_2_1  -0.27
+    RUN_0_1  PBAL_3_1  -0.25
+    RUN_0_1  PBAL_4_1  -0.24
+    RUN_0_1  PBAL_5_1  -0.02
+    RUN_0_1  PBAL_6_1  -0.08
+    RUN_0_1  PBAL_7_1  -0.03
+    RUN_0_1  PBAL_8_1  -0.15
+    RUN_0_1  PBAL_9_1  -0.24
+    RUN_0_1  UNIT_0_1  0.37
+    RUN_0_1  UNIT_1_1  0.36
+    RUN_0_1  UNIT_2_1  0.31
+    RUN_0_1  UNIT_3_1  0.56
+    RUN_0_1  UNIT_4_1  0.03
+    RUN_0_1  UNIT_5_1  0.21
+    RUN_0_1  SPEC_0_1  0.014
+    RUN_0_1  SPEC_1_1  0.042
+    RUN_0_1  SPEC_2_1  0.032
+    RUN_0_1  SPEC_3_1  0.03
+    RUN_0_1  SPEC_4_1  0.022
+    RUN_0_2  COST  -1.406
+    RUN_0_2  CBAL_0_2  1
+    RUN_0_2  CDU_2  1
+    RUN_0_2  PBAL_0_2  -0.04
+    RUN_0_2  PBAL_1_2  -0.18
+    RUN_0_2  PBAL_2_2  -0.27
+    RUN_0_2  PBAL_3_2  -0.25
+    RUN_0_2  PBAL_4_2  -0.24
+    RUN_0_2  PBAL_5_2  -0.02
+    RUN_0_2  PBAL_6_2  -0.08
+    RUN_0_2  PBAL_7_2  -0.03
+    RUN_0_2  PBAL_8_2  -0.15
+    RUN_0_2  PBAL_9_2  -0.24
+    RUN_0_2  UNIT_0_2  0.37
+    RUN_0_2  UNIT_1_2  0.36
+    RUN_0_2  UNIT_2_2  0.31
+    RUN_0_2  UNIT_3_2  0.56
+    RUN_0_2  UNIT_4_2  0.03
+    RUN_0_2  UNIT_5_2  0.21
+    RUN_0_2  SPEC_0_2  0.014
+    RUN_0_2  SPEC_1_2  0.042
+    RUN_0_2  SPEC_2_2  0.032
+    RUN_0_2  SPEC_3_2  0.03
+    RUN_0_2  SPEC_4_2  0.022
+    RUN_0_3  COST  2.34
+    RUN_0_3  CBAL_0_3  1
+    RUN_0_3  CDU_3  1
+    RUN_0_3  PBAL_0_3  -0.04
+    RUN_0_3  PBAL_1_3  -0.18
+    RUN_0_3  PBAL_2_3  -0.27
+    RUN_0_3  PBAL_3_3  -0.25
+    RUN_0_3  PBAL_4_3  -0.24
+    RUN_0_3  PBAL_5_3  -0.02
+    RUN_0_3  PBAL_6_3  -0.08
+    RUN_0_3  PBAL_7_3  -0.03
+    RUN_0_3  PBAL_8_3  -0.15
+    RUN_0_3  PBAL_9_3  -0.24
+    RUN_0_3  UNIT_0_3  0.37
+    RUN_0_3  UNIT_1_3  0.36
+    RUN_0_3  UNIT_2_3  0.31
+    RUN_0_3  UNIT_3_3  0.56
+    RUN_0_3  UNIT_4_3  0.03
+    RUN_0_3  UNIT_5_3  0.21
+    RUN_0_3  SPEC_0_3  0.014
+    RUN_0_3  SPEC_1_3  0.042
+    RUN_0_3  SPEC_2_3  0.032
+    RUN_0_3  SPEC_3_3  0.03
+    RUN_0_3  SPEC_4_3  0.022
+    RUN_0_4  COST  -15.22
+    RUN_0_4  CBAL_0_4  1
+    RUN_0_4  CDU_4  1
+    RUN_0_4  PBAL_0_4  -0.04
+    RUN_0_4  PBAL_1_4  -0.18
+    RUN_0_4  PBAL_2_4  -0.27
+    RUN_0_4  PBAL_3_4  -0.25
+    RUN_0_4  PBAL_4_4  -0.24
+    RUN_0_4  PBAL_5_4  -0.02
+    RUN_0_4  PBAL_6_4  -0.08
+    RUN_0_4  PBAL_7_4  -0.03
+    RUN_0_4  PBAL_8_4  -0.15
+    RUN_0_4  PBAL_9_4  -0.24
+    RUN_0_4  UNIT_0_4  0.37
+    RUN_0_4  UNIT_1_4  0.36
+    RUN_0_4  UNIT_2_4  0.31
+    RUN_0_4  UNIT_3_4  0.56
+    RUN_0_4  UNIT_4_4  0.03
+    RUN_0_4  UNIT_5_4  0.21
+    RUN_0_4  SPEC_0_4  0.014
+    RUN_0_4  SPEC_1_4  0.042
+    RUN_0_4  SPEC_2_4  0.032
+    RUN_0_4  SPEC_3_4  0.03
+    RUN_0_4  SPEC_4_4  0.022
+    RUN_0_5  COST  -13.342
+    RUN_0_5  CBAL_0_5  1
+    RUN_0_5  CDU_5  1
+    RUN_0_5  PBAL_0_5  -0.04
+    RUN_0_5  PBAL_1_5  -0.18
+    RUN_0_5  PBAL_2_5  -0.27
+    RUN_0_5  PBAL_3_5  -0.25
+    RUN_0_5  PBAL_4_5  -0.24
+    RUN_0_5  PBAL_5_5  -0.02
+    RUN_0_5  PBAL_6_5  -0.08
+    RUN_0_5  PBAL_7_5  -0.03
+    RUN_0_5  PBAL_8_5  -0.15
+    RUN_0_5  PBAL_9_5  -0.24
+    RUN_0_5  UNIT_0_5  0.37
+    RUN_0_5  UNIT_1_5  0.36
+    RUN_0_5  UNIT_2_5  0.31
+    RUN_0_5  UNIT_3_5  0.56
+    RUN_0_5  UNIT_4_5  0.03
+    RUN_0_5  UNIT_5_5  0.21
+    RUN_0_5  SPEC_0_5  0.014
+    RUN_0_5  SPEC_1_5  0.042
+    RUN_0_5  SPEC_2_5  0.032
+    RUN_0_5  SPEC_3_5  0.03
+    RUN_0_5  SPEC_4_5  0.022
+    RUN_0_6  COST  -11.084
+    RUN_0_6  CBAL_0_6  1
+    RUN_0_6  CDU_6  1
+    RUN_0_6  PBAL_0_6  -0.04
+    RUN_0_6  PBAL_1_6  -0.18
+    RUN_0_6  PBAL_2_6  -0.27
+    RUN_0_6  PBAL_3_6  -0.25
+    RUN_0_6  PBAL_4_6  -0.24
+    RUN_0_6  PBAL_5_6  -0.02
+    RUN_0_6  PBAL_6_6  -0.08
+    RUN_0_6  PBAL_7_6  -0.03
+    RUN_0_6  PBAL_8_6  -0.15
+    RUN_0_6  PBAL_9_6  -0.24
+    RUN_0_6  UNIT_0_6  0.37
+    RUN_0_6  UNIT_1_6  0.36
+    RUN_0_6  UNIT_2_6  0.31
+    RUN_0_6  UNIT_3_6  0.56
+    RUN_0_6  UNIT_4_6  0.03
+    RUN_0_6  UNIT_5_6  0.21
+    RUN_0_6  SPEC_0_6  0.014
+    RUN_0_6  SPEC_1_6  0.042
+    RUN_0_6  SPEC_2_6  0.032
+    RUN_0_6  SPEC_3_6  0.03
+    RUN_0_6  SPEC_4_6  0.022
+    RUN_0_7  COST  0.104
+    RUN_0_7  CBAL_0_7  1
+    RUN_0_7  CDU_7  1
+    RUN_0_7  PBAL_0_7  -0.04
+    RUN_0_7  PBAL_1_7  -0.18
+    RUN_0_7  PBAL_2_7  -0.27
+    RUN_0_7  PBAL_3_7  -0.25
+    RUN_0_7  PBAL_4_7  -0.24
+    RUN_0_7  PBAL_5_7  -0.02
+    RUN_0_7  PBAL_6_7  -0.08
+    RUN_0_7  PBAL_7_7  -0.03
+    RUN_0_7  PBAL_8_7  -0.15
+    RUN_0_7  PBAL_9_7  -0.24
+    RUN_0_7  UNIT_0_7  0.37
+    RUN_0_7  UNIT_1_7  0.36
+    RUN_0_7  UNIT_2_7  0.31
+    RUN_0_7  UNIT_3_7  0.56
+    RUN_0_7  UNIT_4_7  0.03
+    RUN_0_7  UNIT_5_7  0.21
+    RUN_0_7  SPEC_0_7  0.014
+    RUN_0_7  SPEC_1_7  0.042
+    RUN_0_7  SPEC_2_7  0.032
+    RUN_0_7  SPEC_3_7  0.03
+    RUN_0_7  SPEC_4_7  0.022
+    RUN_0_8  COST  9.49
+    RUN_0_8  CBAL_0_8  1
+    RUN_0_8  CDU_8  1
+    RUN_0_8  PBAL_0_8  -0.04
+    RUN_0_8  PBAL_1_8  -0.18
+    RUN_0_8  PBAL_2_8  -0.27
+    RUN_0_8  PBAL_3_8  -0.25
+    RUN_0_8  PBAL_4_8  -0.24
+    RUN_0_8  PBAL_5_8  -0.02
+    RUN_0_8  PBAL_6_8  -0.08
+    RUN_0_8  PBAL_7_8  -0.03
+    RUN_0_8  PBAL_8_8  -0.15
+    RUN_0_8  PBAL_9_8  -0.24
+    RUN_0_8  UNIT_0_8  0.37
+    RUN_0_8  UNIT_1_8  0.36
+    RUN_0_8  UNIT_2_8  0.31
+    RUN_0_8  UNIT_3_8  0.56
+    RUN_0_8  UNIT_4_8  0.03
+    RUN_0_8  UNIT_5_8  0.21
+    RUN_0_8  SPEC_0_8  0.014
+    RUN_0_8  SPEC_1_8  0.042
+    RUN_0_8  SPEC_2_8  0.032
+    RUN_0_8  SPEC_3_8  0.03
+    RUN_0_8  SPEC_4_8  0.022
+    RUN_0_9  COST  -9.662
+    RUN_0_9  CBAL_0_9  1
+    RUN_0_9  CDU_9  1
+    RUN_0_9  PBAL_0_9  -0.04
+    RUN_0_9  PBAL_1_9  -0.18
+    RUN_0_9  PBAL_2_9  -0.27
+    RUN_0_9  PBAL_3_9  -0.25
+    RUN_0_9  PBAL_4_9  -0.24
+    RUN_0_9  PBAL_5_9  -0.02
+    RUN_0_9  PBAL_6_9  -0.08
+    RUN_0_9  PBAL_7_9  -0.03
+    RUN_0_9  PBAL_8_9  -0.15
+    RUN_0_9  PBAL_9_9  -0.24
+    RUN_0_9  UNIT_0_9  0.37
+    RUN_0_9  UNIT_1_9  0.36
+    RUN_0_9  UNIT_2_9  0.31
+    RUN_0_9  UNIT_3_9  0.56
+    RUN_0_9  UNIT_4_9  0.03
+    RUN_0_9  UNIT_5_9  0.21
+    RUN_0_9  SPEC_0_9  0.014
+    RUN_0_9  SPEC_1_9  0.042
+    RUN_0_9  SPEC_2_9  0.032
+    RUN_0_9  SPEC_3_9  0.03
+    RUN_0_9  SPEC_4_9  0.022
+    RUN_0_10  COST  -5.352
+    RUN_0_10  CBAL_0_10  1
+    RUN_0_10  CDU_10  1
+    RUN_0_10  PBAL_0_10  -0.04
+    RUN_0_10  PBAL_1_10  -0.18
+    RUN_0_10  PBAL_2_10  -0.27
+    RUN_0_10  PBAL_3_10  -0.25
+    RUN_0_10  PBAL_4_10  -0.24
+    RUN_0_10  PBAL_5_10  -0.02
+    RUN_0_10  PBAL_6_10  -0.08
+    RUN_0_10  PBAL_7_10  -0.03
+    RUN_0_10  PBAL_8_10  -0.15
+    RUN_0_10  PBAL_9_10  -0.24
+    RUN_0_10  UNIT_0_10  0.37
+    RUN_0_10  UNIT_1_10  0.36
+    RUN_0_10  UNIT_2_10  0.31
+    RUN_0_10  UNIT_3_10  0.56
+    RUN_0_10  UNIT_4_10  0.03
+    RUN_0_10  UNIT_5_10  0.21
+    RUN_0_10  SPEC_0_10  0.014
+    RUN_0_10  SPEC_1_10  0.042
+    RUN_0_10  SPEC_2_10  0.032
+    RUN_0_10  SPEC_3_10  0.03
+    RUN_0_10  SPEC_4_10  0.022
+    RUN_0_11  COST  -0.756
+    RUN_0_11  CBAL_0_11  1
+    RUN_0_11  CDU_11  1
+    RUN_0_11  PBAL_0_11  -0.04
+    RUN_0_11  PBAL_1_11  -0.18
+    RUN_0_11  PBAL_2_11  -0.27
+    RUN_0_11  PBAL_3_11  -0.25
+    RUN_0_11  PBAL_4_11  -0.24
+    RUN_0_11  PBAL_5_11  -0.02
+    RUN_0_11  PBAL_6_11  -0.08
+    RUN_0_11  PBAL_7_11  -0.03
+    RUN_0_11  PBAL_8_11  -0.15
+    RUN_0_11  PBAL_9_11  -0.24
+    RUN_0_11  UNIT_0_11  0.37
+    RUN_0_11  UNIT_1_11  0.36
+    RUN_0_11  UNIT_2_11  0.31
+    RUN_0_11  UNIT_3_11  0.56
+    RUN_0_11  UNIT_4_11  0.03
+    RUN_0_11  UNIT_5_11  0.21
+    RUN_0_11  SPEC_0_11  0.014
+    RUN_0_11  SPEC_1_11  0.042
+    RUN_0_11  SPEC_2_11  0.032
+    RUN_0_11  SPEC_3_11  0.03
+    RUN_0_11  SPEC_4_11  0.022
+    RUN_0_12  COST  -0.154
+    RUN_0_12  CBAL_0_12  1
+    RUN_0_12  CDU_12  1
+    RUN_0_12  PBAL_0_12  -0.04
+    RUN_0_12  PBAL_1_12  -0.18
+    RUN_0_12  PBAL_2_12  -0.27
+    RUN_0_12  PBAL_3_12  -0.25
+    RUN_0_12  PBAL_4_12  -0.24
+    RUN_0_12  PBAL_5_12  -0.02
+    RUN_0_12  PBAL_6_12  -0.08
+    RUN_0_12  PBAL_7_12  -0.03
+    RUN_0_12  PBAL_8_12  -0.15
+    RUN_0_12  PBAL_9_12  -0.24
+    RUN_0_12  UNIT_0_12  0.37
+    RUN_0_12  UNIT_1_12  0.36
+    RUN_0_12  UNIT_2_12  0.31
+    RUN_0_12  UNIT_3_12  0.56
+    RUN_0_12  UNIT_4_12  0.03
+    RUN_0_12  UNIT_5_12  0.21
+    RUN_0_12  SPEC_0_12  0.014
+    RUN_0_12  SPEC_1_12  0.042
+    RUN_0_12  SPEC_2_12  0.032
+    RUN_0_12  SPEC_3_12  0.03
+    RUN_0_12  SPEC_4_12  0.022
+    RUN_0_13  COST  -13.434
+    RUN_0_13  CBAL_0_13  1
+    RUN_0_13  CDU_13  1
+    RUN_0_13  PBAL_0_13  -0.04
+    RUN_0_13  PBAL_1_13  -0.18
+    RUN_0_13  PBAL_2_13  -0.27
+    RUN_0_13  PBAL_3_13  -0.25
+    RUN_0_13  PBAL_4_13  -0.24
+    RUN_0_13  PBAL_5_13  -0.02
+    RUN_0_13  PBAL_6_13  -0.08
+    RUN_0_13  PBAL_7_13  -0.03
+    RUN_0_13  PBAL_8_13  -0.15
+    RUN_0_13  PBAL_9_13  -0.24
+    RUN_0_13  UNIT_0_13  0.37
+    RUN_0_13  UNIT_1_13  0.36
+    RUN_0_13  UNIT_2_13  0.31
+    RUN_0_13  UNIT_3_13  0.56
+    RUN_0_13  UNIT_4_13  0.03
+    RUN_0_13  UNIT_5_13  0.21
+    RUN_0_13  SPEC_0_13  0.014
+    RUN_0_13  SPEC_1_13  0.042
+    RUN_0_13  SPEC_2_13  0.032
+    RUN_0_13  SPEC_3_13  0.03
+    RUN_0_13  SPEC_4_13  0.022
+    RUN_0_14  COST  -4.586
+    RUN_0_14  CBAL_0_14  1
+    RUN_0_14  CDU_14  1
+    RUN_0_14  PBAL_0_14  -0.04
+    RUN_0_14  PBAL_1_14  -0.18
+    RUN_0_14  PBAL_2_14  -0.27
+    RUN_0_14  PBAL_3_14  -0.25
+    RUN_0_14  PBAL_4_14  -0.24
+    RUN_0_14  PBAL_5_14  -0.02
+    RUN_0_14  PBAL_6_14  -0.08
+    RUN_0_14  PBAL_7_14  -0.03
+    RUN_0_14  PBAL_8_14  -0.15
+    RUN_0_14  PBAL_9_14  -0.24
+    RUN_0_14  UNIT_0_14  0.37
+    RUN_0_14  UNIT_1_14  0.36
+    RUN_0_14  UNIT_2_14  0.31
+    RUN_0_14  UNIT_3_14  0.56
+    RUN_0_14  UNIT_4_14  0.03
+    RUN_0_14  UNIT_5_14  0.21
+    RUN_0_14  SPEC_0_14  0.014
+    RUN_0_14  SPEC_1_14  0.042
+    RUN_0_14  SPEC_2_14  0.032
+    RUN_0_14  SPEC_3_14  0.03
+    RUN_0_14  SPEC_4_14  0.022
+    RUN_0_15  COST  6.82
+    RUN_0_15  CBAL_0_15  1
+    RUN_0_15  CDU_15  1
+    RUN_0_15  PBAL_0_15  -0.04
+    RUN_0_15  PBAL_1_15  -0.18
+    RUN_0_15  PBAL_2_15  -0.27
+    RUN_0_15  PBAL_3_15  -0.25
+    RUN_0_15  PBAL_4_15  -0.24
+    RUN_0_15  PBAL_5_15  -0.02
+    RUN_0_15  PBAL_6_15  -0.08
+    RUN_0_15  PBAL_7_15  -0.03
+    RUN_0_15  PBAL_8_15  -0.15
+    RUN_0_15  PBAL_9_15  -0.24
+    RUN_0_15  UNIT_0_15  0.37
+    RUN_0_15  UNIT_1_15  0.36
+    RUN_0_15  UNIT_2_15  0.31
+    RUN_0_15  UNIT_3_15  0.56
+    RUN_0_15  UNIT_4_15  0.03
+    RUN_0_15  UNIT_5_15  0.21
+    RUN_0_15  SPEC_0_15  0.014
+    RUN_0_15  SPEC_1_15  0.042
+    RUN_0_15  SPEC_2_15  0.032
+    RUN_0_15  SPEC_3_15  0.03
+    RUN_0_15  SPEC_4_15  0.022
+    RUN_0_16  COST  -14.634
+    RUN_0_16  CBAL_0_16  1
+    RUN_0_16  CDU_16  1
+    RUN_0_16  PBAL_0_16  -0.04
+    RUN_0_16  PBAL_1_16  -0.18
+    RUN_0_16  PBAL_2_16  -0.27
+    RUN_0_16  PBAL_3_16  -0.25
+    RUN_0_16  PBAL_4_16  -0.24
+    RUN_0_16  PBAL_5_16  -0.02
+    RUN_0_16  PBAL_6_16  -0.08
+    RUN_0_16  PBAL_7_16  -0.03
+    RUN_0_16  PBAL_8_16  -0.15
+    RUN_0_16  PBAL_9_16  -0.24
+    RUN_0_16  UNIT_0_16  0.37
+    RUN_0_16  UNIT_1_16  0.36
+    RUN_0_16  UNIT_2_16  0.31
+    RUN_0_16  UNIT_3_16  0.56
+    RUN_0_16  UNIT_4_16  0.03
+    RUN_0_16  UNIT_5_16  0.21
+    RUN_0_16  SPEC_0_16  0.014
+    RUN_0_16  SPEC_1_16  0.042
+    RUN_0_16  SPEC_2_16  0.032
+    RUN_0_16  SPEC_3_16  0.03
+    RUN_0_16  SPEC_4_16  0.022
+    RUN_0_17  COST  -19.288
+    RUN_0_17  CBAL_0_17  1
+    RUN_0_17  CDU_17  1
+    RUN_0_17  PBAL_0_17  -0.04
+    RUN_0_17  PBAL_1_17  -0.18
+    RUN_0_17  PBAL_2_17  -0.27
+    RUN_0_17  PBAL_3_17  -0.25
+    RUN_0_17  PBAL_4_17  -0.24
+    RUN_0_17  PBAL_5_17  -0.02
+    RUN_0_17  PBAL_6_17  -0.08
+    RUN_0_17  PBAL_7_17  -0.03
+    RUN_0_17  PBAL_8_17  -0.15
+    RUN_0_17  PBAL_9_17  -0.24
+    RUN_0_17  UNIT_0_17  0.37
+    RUN_0_17  UNIT_1_17  0.36
+    RUN_0_17  UNIT_2_17  0.31
+    RUN_0_17  UNIT_3_17  0.56
+    RUN_0_17  UNIT_4_17  0.03
+    RUN_0_17  UNIT_5_17  0.21
+    RUN_0_17  SPEC_0_17  0.014
+    RUN_0_17  SPEC_1_17  0.042
+    RUN_0_17  SPEC_2_17  0.032
+    RUN_0_17  SPEC_3_17  0.03
+    RUN_0_17  SPEC_4_17  0.022
+    RUN_0_18  COST  -9.148
+    RUN_0_18  CBAL_0_18  1
+    RUN_0_18  CDU_18  1
+    RUN_0_18  PBAL_0_18  -0.04
+    RUN_0_18  PBAL_1_18  -0.18
+    RUN_0_18  PBAL_2_18  -0.27
+    RUN_0_18  PBAL_3_18  -0.25
+    RUN_0_18  PBAL_4_18  -0.24
+    RUN_0_18  PBAL_5_18  -0.02
+    RUN_0_18  PBAL_6_18  -0.08
+    RUN_0_18  PBAL_7_18  -0.03
+    RUN_0_18  PBAL_8_18  -0.15
+    RUN_0_18  PBAL_9_18  -0.24
+    RUN_0_18  UNIT_0_18  0.37
+    RUN_0_18  UNIT_1_18  0.36
+    RUN_0_18  UNIT_2_18  0.31
+    RUN_0_18  UNIT_3_18  0.56
+    RUN_0_18  UNIT_4_18  0.03
+    RUN_0_18  UNIT_5_18  0.21
+    RUN_0_18  SPEC_0_18  0.014
+    RUN_0_18  SPEC_1_18  0.042
+    RUN_0_18  SPEC_2_18  0.032
+    RUN_0_18  SPEC_3_18  0.03
+    RUN_0_18  SPEC_4_18  0.022
+    RUN_0_19  COST  2.416
+    RUN_0_19  CBAL_0_19  1
+    RUN_0_19  CDU_19  1
+    RUN_0_19  PBAL_0_19  -0.04
+    RUN_0_19  PBAL_1_19  -0.18
+    RUN_0_19  PBAL_2_19  -0.27
+    RUN_0_19  PBAL_3_19  -0.25
+    RUN_0_19  PBAL_4_19  -0.24
+    RUN_0_19  PBAL_5_19  -0.02
+    RUN_0_19  PBAL_6_19  -0.08
+    RUN_0_19  PBAL_7_19  -0.03
+    RUN_0_19  PBAL_8_19  -0.15
+    RUN_0_19  PBAL_9_19  -0.24
+    RUN_0_19  UNIT_0_19  0.37
+    RUN_0_19  UNIT_1_19  0.36
+    RUN_0_19  UNIT_2_19  0.31
+    RUN_0_19  UNIT_3_19  0.56
+    RUN_0_19  UNIT_4_19  0.03
+    RUN_0_19  UNIT_5_19  0.21
+    RUN_0_19  SPEC_0_19  0.014
+    RUN_0_19  SPEC_1_19  0.042
+    RUN_0_19  SPEC_2_19  0.032
+    RUN_0_19  SPEC_3_19  0.03
+    RUN_0_19  SPEC_4_19  0.022
+    RUN_0_20  COST  -18.122
+    RUN_0_20  CBAL_0_20  1
+    RUN_0_20  CDU_20  1
+    RUN_0_20  PBAL_0_20  -0.04
+    RUN_0_20  PBAL_1_20  -0.18
+    RUN_0_20  PBAL_2_20  -0.27
+    RUN_0_20  PBAL_3_20  -0.25
+    RUN_0_20  PBAL_4_20  -0.24
+    RUN_0_20  PBAL_5_20  -0.02
+    RUN_0_20  PBAL_6_20  -0.08
+    RUN_0_20  PBAL_7_20  -0.03
+    RUN_0_20  PBAL_8_20  -0.15
+    RUN_0_20  PBAL_9_20  -0.24
+    RUN_0_20  UNIT_0_20  0.37
+    RUN_0_20  UNIT_1_20  0.36
+    RUN_0_20  UNIT_2_20  0.31
+    RUN_0_20  UNIT_3_20  0.56
+    RUN_0_20  UNIT_4_20  0.03
+    RUN_0_20  UNIT_5_20  0.21
+    RUN_0_20  SPEC_0_20  0.014
+    RUN_0_20  SPEC_1_20  0.042
+    RUN_0_20  SPEC_2_20  0.032
+    RUN_0_20  SPEC_3_20  0.03
+    RUN_0_20  SPEC_4_20  0.022
+    RUN_0_21  COST  -9.6
+    RUN_0_21  CBAL_0_21  1
+    RUN_0_21  CDU_21  1
+    RUN_0_21  PBAL_0_21  -0.04
+    RUN_0_21  PBAL_1_21  -0.18
+    RUN_0_21  PBAL_2_21  -0.27
+    RUN_0_21  PBAL_3_21  -0.25
+    RUN_0_21  PBAL_4_21  -0.24
+    RUN_0_21  PBAL_5_21  -0.02
+    RUN_0_21  PBAL_6_21  -0.08
+    RUN_0_21  PBAL_7_21  -0.03
+    RUN_0_21  PBAL_8_21  -0.15
+    RUN_0_21  PBAL_9_21  -0.24
+    RUN_0_21  UNIT_0_21  0.37
+    RUN_0_21  UNIT_1_21  0.36
+    RUN_0_21  UNIT_2_21  0.31
+    RUN_0_21  UNIT_3_21  0.56
+    RUN_0_21  UNIT_4_21  0.03
+    RUN_0_21  UNIT_5_21  0.21
+    RUN_0_21  SPEC_0_21  0.014
+    RUN_0_21  SPEC_1_21  0.042
+    RUN_0_21  SPEC_2_21  0.032
+    RUN_0_21  SPEC_3_21  0.03
+    RUN_0_21  SPEC_4_21  0.022
+    RUN_0_22  COST  -12.232
+    RUN_0_22  CBAL_0_22  1
+    RUN_0_22  CDU_22  1
+    RUN_0_22  PBAL_0_22  -0.04
+    RUN_0_22  PBAL_1_22  -0.18
+    RUN_0_22  PBAL_2_22  -0.27
+    RUN_0_22  PBAL_3_22  -0.25
+    RUN_0_22  PBAL_4_22  -0.24
+    RUN_0_22  PBAL_5_22  -0.02
+    RUN_0_22  PBAL_6_22  -0.08
+    RUN_0_22  PBAL_7_22  -0.03
+    RUN_0_22  PBAL_8_22  -0.15
+    RUN_0_22  PBAL_9_22  -0.24
+    RUN_0_22  UNIT_0_22  0.37
+    RUN_0_22  UNIT_1_22  0.36
+    RUN_0_22  UNIT_2_22  0.31
+    RUN_0_22  UNIT_3_22  0.56
+    RUN_0_22  UNIT_4_22  0.03
+    RUN_0_22  UNIT_5_22  0.21
+    RUN_0_22  SPEC_0_22  0.014
+    RUN_0_22  SPEC_1_22  0.042
+    RUN_0_22  SPEC_2_22  0.032
+    RUN_0_22  SPEC_3_22  0.03
+    RUN_0_22  SPEC_4_22  0.022
+    RUN_0_23  COST  1.682
+    RUN_0_23  CBAL_0_23  1
+    RUN_0_23  CDU_23  1
+    RUN_0_23  PBAL_0_23  -0.04
+    RUN_0_23  PBAL_1_23  -0.18
+    RUN_0_23  PBAL_2_23  -0.27
+    RUN_0_23  PBAL_3_23  -0.25
+    RUN_0_23  PBAL_4_23  -0.24
+    RUN_0_23  PBAL_5_23  -0.02
+    RUN_0_23  PBAL_6_23  -0.08
+    RUN_0_23  PBAL_7_23  -0.03
+    RUN_0_23  PBAL_8_23  -0.15
+    RUN_0_23  PBAL_9_23  -0.24
+    RUN_0_23  UNIT_0_23  0.37
+    RUN_0_23  UNIT_1_23  0.36
+    RUN_0_23  UNIT_2_23  0.31
+    RUN_0_23  UNIT_3_23  0.56
+    RUN_0_23  UNIT_4_23  0.03
+    RUN_0_23  UNIT_5_23  0.21
+    RUN_0_23  SPEC_0_23  0.014
+    RUN_0_23  SPEC_1_23  0.042
+    RUN_0_23  SPEC_2_23  0.032
+    RUN_0_23  SPEC_3_23  0.03
+    RUN_0_23  SPEC_4_23  0.022
+    RUN_0_24  COST  -6.928
+    RUN_0_24  CBAL_0_24  1
+    RUN_0_24  CDU_24  1
+    RUN_0_24  PBAL_0_24  -0.04
+    RUN_0_24  PBAL_1_24  -0.18
+    RUN_0_24  PBAL_2_24  -0.27
+    RUN_0_24  PBAL_3_24  -0.25
+    RUN_0_24  PBAL_4_24  -0.24
+    RUN_0_24  PBAL_5_24  -0.02
+    RUN_0_24  PBAL_6_24  -0.08
+    RUN_0_24  PBAL_7_24  -0.03
+    RUN_0_24  PBAL_8_24  -0.15
+    RUN_0_24  PBAL_9_24  -0.24
+    RUN_0_24  UNIT_0_24  0.37
+    RUN_0_24  UNIT_1_24  0.36
+    RUN_0_24  UNIT_2_24  0.31
+    RUN_0_24  UNIT_3_24  0.56
+    RUN_0_24  UNIT_4_24  0.03
+    RUN_0_24  UNIT_5_24  0.21
+    RUN_0_24  SPEC_0_24  0.014
+    RUN_0_24  SPEC_1_24  0.042
+    RUN_0_24  SPEC_2_24  0.032
+    RUN_0_24  SPEC_3_24  0.03
+    RUN_0_24  SPEC_4_24  0.022
+    RUN_0_25  COST  -16.086
+    RUN_0_25  CBAL_0_25  1
+    RUN_0_25  CDU_25  1
+    RUN_0_25  PBAL_0_25  -0.04
+    RUN_0_25  PBAL_1_25  -0.18
+    RUN_0_25  PBAL_2_25  -0.27
+    RUN_0_25  PBAL_3_25  -0.25
+    RUN_0_25  PBAL_4_25  -0.24
+    RUN_0_25  PBAL_5_25  -0.02
+    RUN_0_25  PBAL_6_25  -0.08
+    RUN_0_25  PBAL_7_25  -0.03
+    RUN_0_25  PBAL_8_25  -0.15
+    RUN_0_25  PBAL_9_25  -0.24
+    RUN_0_25  UNIT_0_25  0.37
+    RUN_0_25  UNIT_1_25  0.36
+    RUN_0_25  UNIT_2_25  0.31
+    RUN_0_25  UNIT_3_25  0.56
+    RUN_0_25  UNIT_4_25  0.03
+    RUN_0_25  UNIT_5_25  0.21
+    RUN_0_25  SPEC_0_25  0.014
+    RUN_0_25  SPEC_1_25  0.042
+    RUN_0_25  SPEC_2_25  0.032
+    RUN_0_25  SPEC_3_25  0.03
+    RUN_0_25  SPEC_4_25  0.022
+    RUN_0_26  COST  -7.524
+    RUN_0_26  CBAL_0_26  1
+    RUN_0_26  CDU_26  1
+    RUN_0_26  PBAL_0_26  -0.04
+    RUN_0_26  PBAL_1_26  -0.18
+    RUN_0_26  PBAL_2_26  -0.27
+    RUN_0_26  PBAL_3_26  -0.25
+    RUN_0_26  PBAL_4_26  -0.24
+    RUN_0_26  PBAL_5_26  -0.02
+    RUN_0_26  PBAL_6_26  -0.08
+    RUN_0_26  PBAL_7_26  -0.03
+    RUN_0_26  PBAL_8_26  -0.15
+    RUN_0_26  PBAL_9_26  -0.24
+    RUN_0_26  UNIT_0_26  0.37
+    RUN_0_26  UNIT_1_26  0.36
+    RUN_0_26  UNIT_2_26  0.31
+    RUN_0_26  UNIT_3_26  0.56
+    RUN_0_26  UNIT_4_26  0.03
+    RUN_0_26  UNIT_5_26  0.21
+    RUN_0_26  SPEC_0_26  0.014
+    RUN_0_26  SPEC_1_26  0.042
+    RUN_0_26  SPEC_2_26  0.032
+    RUN_0_26  SPEC_3_26  0.03
+    RUN_0_26  SPEC_4_26  0.022
+    RUN_0_27  COST  -7.656
+    RUN_0_27  CBAL_0_27  1
+    RUN_0_27  CDU_27  1
+    RUN_0_27  PBAL_0_27  -0.04
+    RUN_0_27  PBAL_1_27  -0.18
+    RUN_0_27  PBAL_2_27  -0.27
+    RUN_0_27  PBAL_3_27  -0.25
+    RUN_0_27  PBAL_4_27  -0.24
+    RUN_0_27  PBAL_5_27  -0.02
+    RUN_0_27  PBAL_6_27  -0.08
+    RUN_0_27  PBAL_7_27  -0.03
+    RUN_0_27  PBAL_8_27  -0.15
+    RUN_0_27  PBAL_9_27  -0.24
+    RUN_0_27  UNIT_0_27  0.37
+    RUN_0_27  UNIT_1_27  0.36
+    RUN_0_27  UNIT_2_27  0.31
+    RUN_0_27  UNIT_3_27  0.56
+    RUN_0_27  UNIT_4_27  0.03
+    RUN_0_27  UNIT_5_27  0.21
+    RUN_0_27  SPEC_0_27  0.014
+    RUN_0_27  SPEC_1_27  0.042
+    RUN_0_27  SPEC_2_27  0.032
+    RUN_0_27  SPEC_3_27  0.03
+    RUN_0_27  SPEC_4_27  0.022
+    RUN_0_28  COST  -15.604
+    RUN_0_28  CBAL_0_28  1
+    RUN_0_28  CDU_28  1
+    RUN_0_28  PBAL_0_28  -0.04
+    RUN_0_28  PBAL_1_28  -0.18
+    RUN_0_28  PBAL_2_28  -0.27
+    RUN_0_28  PBAL_3_28  -0.25
+    RUN_0_28  PBAL_4_28  -0.24
+    RUN_0_28  PBAL_5_28  -0.02
+    RUN_0_28  PBAL_6_28  -0.08
+    RUN_0_28  PBAL_7_28  -0.03
+    RUN_0_28  PBAL_8_28  -0.15
+    RUN_0_28  PBAL_9_28  -0.24
+    RUN_0_28  UNIT_0_28  0.37
+    RUN_0_28  UNIT_1_28  0.36
+    RUN_0_28  UNIT_2_28  0.31
+    RUN_0_28  UNIT_3_28  0.56
+    RUN_0_28  UNIT_4_28  0.03
+    RUN_0_28  UNIT_5_28  0.21
+    RUN_0_28  SPEC_0_28  0.014
+    RUN_0_28  SPEC_1_28  0.042
+    RUN_0_28  SPEC_2_28  0.032
+    RUN_0_28  SPEC_3_28  0.03
+    RUN_0_28  SPEC_4_28  0.022
+    RUN_0_29  COST  -9.662
+    RUN_0_29  CBAL_0_29  1
+    RUN_0_29  CDU_29  1
+    RUN_0_29  PBAL_0_29  -0.04
+    RUN_0_29  PBAL_1_29  -0.18
+    RUN_0_29  PBAL_2_29  -0.27
+    RUN_0_29  PBAL_3_29  -0.25
+    RUN_0_29  PBAL_4_29  -0.24
+    RUN_0_29  PBAL_5_29  -0.02
+    RUN_0_29  PBAL_6_29  -0.08
+    RUN_0_29  PBAL_7_29  -0.03
+    RUN_0_29  PBAL_8_29  -0.15
+    RUN_0_29  PBAL_9_29  -0.24
+    RUN_0_29  UNIT_0_29  0.37
+    RUN_0_29  UNIT_1_29  0.36
+    RUN_0_29  UNIT_2_29  0.31
+    RUN_0_29  UNIT_3_29  0.56
+    RUN_0_29  UNIT_4_29  0.03
+    RUN_0_29  UNIT_5_29  0.21
+    RUN_0_29  SPEC_0_29  0.014
+    RUN_0_29  SPEC_1_29  0.042
+    RUN_0_29  SPEC_2_29  0.032
+    RUN_0_29  SPEC_3_29  0.03
+    RUN_0_29  SPEC_4_29  0.022
+    RUN_1_0  COST  4.463
+    RUN_1_0  CBAL_1_0  1
+    RUN_1_0  CDU_0  1
+    RUN_1_0  PBAL_0_0  -0.14
+    RUN_1_0  PBAL_1_0  -0.15
+    RUN_1_0  PBAL_2_0  -0.2
+    RUN_1_0  PBAL_3_0  -0.12
+    RUN_1_0  PBAL_4_0  -0.25
+    RUN_1_0  PBAL_5_0  -0.06
+    RUN_1_0  PBAL_6_0  -0.03
+    RUN_1_0  PBAL_7_0  -0.15
+    RUN_1_0  PBAL_9_0  -0.28
+    RUN_1_0  UNIT_0_0  0.15
+    RUN_1_0  UNIT_1_0  0.75
+    RUN_1_0  UNIT_2_0  0.51
+    RUN_1_0  UNIT_3_0  0.65
+    RUN_1_0  UNIT_4_0  0.6
+    RUN_1_0  UNIT_5_0  0.21
+    RUN_1_0  SPEC_0_0  0.025
+    RUN_1_0  SPEC_1_0  0.035
+    RUN_1_0  SPEC_2_0  0.008
+    RUN_1_0  SPEC_3_0  0.023
+    RUN_1_0  SPEC_4_0  0.026
+    RUN_1_1  COST  -2.148
+    RUN_1_1  CBAL_1_1  1
+    RUN_1_1  CDU_1  1
+    RUN_1_1  PBAL_0_1  -0.14
+    RUN_1_1  PBAL_1_1  -0.15
+    RUN_1_1  PBAL_2_1  -0.2
+    RUN_1_1  PBAL_3_1  -0.12
+    RUN_1_1  PBAL_4_1  -0.25
+    RUN_1_1  PBAL_5_1  -0.06
+    RUN_1_1  PBAL_6_1  -0.03
+    RUN_1_1  PBAL_7_1  -0.15
+    RUN_1_1  PBAL_9_1  -0.28
+    RUN_1_1  UNIT_0_1  0.15
+    RUN_1_1  UNIT_1_1  0.75
+    RUN_1_1  UNIT_2_1  0.51
+    RUN_1_1  UNIT_3_1  0.65
+    RUN_1_1  UNIT_4_1  0.6
+    RUN_1_1  UNIT_5_1  0.21
+    RUN_1_1  SPEC_0_1  0.025
+    RUN_1_1  SPEC_1_1  0.035
+    RUN_1_1  SPEC_2_1  0.008
+    RUN_1_1  SPEC_3_1  0.023
+    RUN_1_1  SPEC_4_1  0.026
+    RUN_1_2  COST  -12.864
+    RUN_1_2  CBAL_1_2  1
+    RUN_1_2  CDU_2  1
+    RUN_1_2  PBAL_0_2  -0.14
+    RUN_1_2  PBAL_1_2  -0.15
+    RUN_1_2  PBAL_2_2  -0.2
+    RUN_1_2  PBAL_3_2  -0.12
+    RUN_1_2  PBAL_4_2  -0.25
+    RUN_1_2  PBAL_5_2  -0.06
+    RUN_1_2  PBAL_6_2  -0.03
+    RUN_1_2  PBAL_7_2  -0.15
+    RUN_1_2  PBAL_9_2  -0.28
+    RUN_1_2  UNIT_0_2  0.15
+    RUN_1_2  UNIT_1_2  0.75
+    RUN_1_2  UNIT_2_2  0.51
+    RUN_1_2  UNIT_3_2  0.65
+    RUN_1_2  UNIT_4_2  0.6
+    RUN_1_2  UNIT_5_2  0.21
+    RUN_1_2  SPEC_0_2  0.025
+    RUN_1_2  SPEC_1_2  0.035
+    RUN_1_2  SPEC_2_2  0.008
+    RUN_1_2  SPEC_3_2  0.023
+    RUN_1_2  SPEC_4_2  0.026
+    RUN_1_3  COST  -12.11
+    RUN_1_3  CBAL_1_3  1
+    RUN_1_3  CDU_3  1
+    RUN_1_3  PBAL_0_3  -0.14
+    RUN_1_3  PBAL_1_3  -0.15
+    RUN_1_3  PBAL_2_3  -0.2
+    RUN_1_3  PBAL_3_3  -0.12
+    RUN_1_3  PBAL_4_3  -0.25
+    RUN_1_3  PBAL_5_3  -0.06
+    RUN_1_3  PBAL_6_3  -0.03
+    RUN_1_3  PBAL_7_3  -0.15
+    RUN_1_3  PBAL_9_3  -0.28
+    RUN_1_3  UNIT_0_3  0.15
+    RUN_1_3  UNIT_1_3  0.75
+    RUN_1_3  UNIT_2_3  0.51
+    RUN_1_3  UNIT_3_3  0.65
+    RUN_1_3  UNIT_4_3  0.6
+    RUN_1_3  UNIT_5_3  0.21
+    RUN_1_3  SPEC_0_3  0.025
+    RUN_1_3  SPEC_1_3  0.035
+    RUN_1_3  SPEC_2_3  0.008
+    RUN_1_3  SPEC_3_3  0.023
+    RUN_1_3  SPEC_4_3  0.026
+    RUN_1_4  COST  -16.974
+    RUN_1_4  CBAL_1_4  1
+    RUN_1_4  CDU_4  1
+    RUN_1_4  PBAL_0_4  -0.14
+    RUN_1_4  PBAL_1_4  -0.15
+    RUN_1_4  PBAL_2_4  -0.2
+    RUN_1_4  PBAL_3_4  -0.12
+    RUN_1_4  PBAL_4_4  -0.25
+    RUN_1_4  PBAL_5_4  -0.06
+    RUN_1_4  PBAL_6_4  -0.03
+    RUN_1_4  PBAL_7_4  -0.15
+    RUN_1_4  PBAL_9_4  -0.28
+    RUN_1_4  UNIT_0_4  0.15
+    RUN_1_4  UNIT_1_4  0.75
+    RUN_1_4  UNIT_2_4  0.51
+    RUN_1_4  UNIT_3_4  0.65
+    RUN_1_4  UNIT_4_4  0.6
+    RUN_1_4  UNIT_5_4  0.21
+    RUN_1_4  SPEC_0_4  0.025
+    RUN_1_4  SPEC_1_4  0.035
+    RUN_1_4  SPEC_2_4  0.008
+    RUN_1_4  SPEC_3_4  0.023
+    RUN_1_4  SPEC_4_4  0.026
+    RUN_1_5  COST  -12.83
+    RUN_1_5  CBAL_1_5  1
+    RUN_1_5  CDU_5  1
+    RUN_1_5  PBAL_0_5  -0.14
+    RUN_1_5  PBAL_1_5  -0.15
+    RUN_1_5  PBAL_2_5  -0.2
+    RUN_1_5  PBAL_3_5  -0.12
+    RUN_1_5  PBAL_4_5  -0.25
+    RUN_1_5  PBAL_5_5  -0.06
+    RUN_1_5  PBAL_6_5  -0.03
+    RUN_1_5  PBAL_7_5  -0.15
+    RUN_1_5  PBAL_9_5  -0.28
+    RUN_1_5  UNIT_0_5  0.15
+    RUN_1_5  UNIT_1_5  0.75
+    RUN_1_5  UNIT_2_5  0.51
+    RUN_1_5  UNIT_3_5  0.65
+    RUN_1_5  UNIT_4_5  0.6
+    RUN_1_5  UNIT_5_5  0.21
+    RUN_1_5  SPEC_0_5  0.025
+    RUN_1_5  SPEC_1_5  0.035
+    RUN_1_5  SPEC_2_5  0.008
+    RUN_1_5  SPEC_3_5  0.023
+    RUN_1_5  SPEC_4_5  0.026
+    RUN_1_6  COST  1.151
+    RUN_1_6  CBAL_1_6  1
+    RUN_1_6  CDU_6  1
+    RUN_1_6  PBAL_0_6  -0.14
+    RUN_1_6  PBAL_1_6  -0.15
+    RUN_1_6  PBAL_2_6  -0.2
+    RUN_1_6  PBAL_3_6  -0.12
+    RUN_1_6  PBAL_4_6  -0.25
+    RUN_1_6  PBAL_5_6  -0.06
+    RUN_1_6  PBAL_6_6  -0.03
+    RUN_1_6  PBAL_7_6  -0.15
+    RUN_1_6  PBAL_9_6  -0.28
+    RUN_1_6  UNIT_0_6  0.15
+    RUN_1_6  UNIT_1_6  0.75
+    RUN_1_6  UNIT_2_6  0.51
+    RUN_1_6  UNIT_3_6  0.65
+    RUN_1_6  UNIT_4_6  0.6
+    RUN_1_6  UNIT_5_6  0.21
+    RUN_1_6  SPEC_0_6  0.025
+    RUN_1_6  SPEC_1_6  0.035
+    RUN_1_6  SPEC_2_6  0.008
+    RUN_1_6  SPEC_3_6  0.023
+    RUN_1_6  SPEC_4_6  0.026
+    RUN_1_7  COST  -6.725
+    RUN_1_7  CBAL_1_7  1
+    RUN_1_7  CDU_7  1
+    RUN_1_7  PBAL_0_7  -0.14
+    RUN_1_7  PBAL_1_7  -0.15
+    RUN_1_7  PBAL_2_7  -0.2
+    RUN_1_7  PBAL_3_7  -0.12
+    RUN_1_7  PBAL_4_7  -0.25
+    RUN_1_7  PBAL_5_7  -0.06
+    RUN_1_7  PBAL_6_7  -0.03
+    RUN_1_7  PBAL_7_7  -0.15
+    RUN_1_7  PBAL_9_7  -0.28
+    RUN_1_7  UNIT_0_7  0.15
+    RUN_1_7  UNIT_1_7  0.75
+    RUN_1_7  UNIT_2_7  0.51
+    RUN_1_7  UNIT_3_7  0.65
+    RUN_1_7  UNIT_4_7  0.6
+    RUN_1_7  UNIT_5_7  0.21
+    RUN_1_7  SPEC_0_7  0.025
+    RUN_1_7  SPEC_1_7  0.035
+    RUN_1_7  SPEC_2_7  0.008
+    RUN_1_7  SPEC_3_7  0.023
+    RUN_1_7  SPEC_4_7  0.026
+    RUN_1_8  COST  -10.555
+    RUN_1_8  CBAL_1_8  1
+    RUN_1_8  CDU_8  1
+    RUN_1_8  PBAL_0_8  -0.14
+    RUN_1_8  PBAL_1_8  -0.15
+    RUN_1_8  PBAL_2_8  -0.2
+    RUN_1_8  PBAL_3_8  -0.12
+    RUN_1_8  PBAL_4_8  -0.25
+    RUN_1_8  PBAL_5_8  -0.06
+    RUN_1_8  PBAL_6_8  -0.03
+    RUN_1_8  PBAL_7_8  -0.15
+    RUN_1_8  PBAL_9_8  -0.28
+    RUN_1_8  UNIT_0_8  0.15
+    RUN_1_8  UNIT_1_8  0.75
+    RUN_1_8  UNIT_2_8  0.51
+    RUN_1_8  UNIT_3_8  0.65
+    RUN_1_8  UNIT_4_8  0.6
+    RUN_1_8  UNIT_5_8  0.21
+    RUN_1_8  SPEC_0_8  0.025
+    RUN_1_8  SPEC_1_8  0.035
+    RUN_1_8  SPEC_2_8  0.008
+    RUN_1_8  SPEC_3_8  0.023
+    RUN_1_8  SPEC_4_8  0.026
+    RUN_1_9  COST  -21.28
+    RUN_1_9  CBAL_1_9  1
+    RUN_1_9  CDU_9  1
+    RUN_1_9  PBAL_0_9  -0.14
+    RUN_1_9  PBAL_1_9  -0.15
+    RUN_1_9  PBAL_2_9  -0.2
+    RUN_1_9  PBAL_3_9  -0.12
+    RUN_1_9  PBAL_4_9  -0.25
+    RUN_1_9  PBAL_5_9  -0.06
+    RUN_1_9  PBAL_6_9  -0.03
+    RUN_1_9  PBAL_7_9  -0.15
+    RUN_1_9  PBAL_9_9  -0.28
+    RUN_1_9  UNIT_0_9  0.15
+    RUN_1_9  UNIT_1_9  0.75
+    RUN_1_9  UNIT_2_9  0.51
+    RUN_1_9  UNIT_3_9  0.65
+    RUN_1_9  UNIT_4_9  0.6
+    RUN_1_9  UNIT_5_9  0.21
+    RUN_1_9  SPEC_0_9  0.025
+    RUN_1_9  SPEC_1_9  0.035
+    RUN_1_9  SPEC_2_9  0.008
+    RUN_1_9  SPEC_3_9  0.023
+    RUN_1_9  SPEC_4_9  0.026
+    RUN_1_10  COST  -4.565
+    RUN_1_10  CBAL_1_10  1
+    RUN_1_10  CDU_10  1
+    RUN_1_10  PBAL_0_10  -0.14
+    RUN_1_10  PBAL_1_10  -0.15
+    RUN_1_10  PBAL_2_10  -0.2
+    RUN_1_10  PBAL_3_10  -0.12
+    RUN_1_10  PBAL_4_10  -0.25
+    RUN_1_10  PBAL_5_10  -0.06
+    RUN_1_10  PBAL_6_10  -0.03
+    RUN_1_10  PBAL_7_10  -0.15
+    RUN_1_10  PBAL_9_10  -0.28
+    RUN_1_10  UNIT_0_10  0.15
+    RUN_1_10  UNIT_1_10  0.75
+    RUN_1_10  UNIT_2_10  0.51
+    RUN_1_10  UNIT_3_10  0.65
+    RUN_1_10  UNIT_4_10  0.6
+    RUN_1_10  UNIT_5_10  0.21
+    RUN_1_10  SPEC_0_10  0.025
+    RUN_1_10  SPEC_1_10  0.035
+    RUN_1_10  SPEC_2_10  0.008
+    RUN_1_10  SPEC_3_10  0.023
+    RUN_1_10  SPEC_4_10  0.026
+    RUN_1_11  COST  -15.115
+    RUN_1_11  CBAL_1_11  1
+    RUN_1_11  CDU_11  1
+    RUN_1_11  PBAL_0_11  -0.14
+    RUN_1_11  PBAL_1_11  -0.15
+    RUN_1_11  PBAL_2_11  -0.2
+    RUN_1_11  PBAL_3_11  -0.12
+    RUN_1_11  PBAL_4_11  -0.25
+    RUN_1_11  PBAL_5_11  -0.06
+    RUN_1_11  PBAL_6_11  -0.03
+    RUN_1_11  PBAL_7_11  -0.15
+    RUN_1_11  PBAL_9_11  -0.28
+    RUN_1_11  UNIT_0_11  0.15
+    RUN_1_11  UNIT_1_11  0.75
+    RUN_1_11  UNIT_2_11  0.51
+    RUN_1_11  UNIT_3_11  0.65
+    RUN_1_11  UNIT_4_11  0.6
+    RUN_1_11  UNIT_5_11  0.21
+    RUN_1_11  SPEC_0_11  0.025
+    RUN_1_11  SPEC_1_11  0.035
+    RUN_1_11  SPEC_2_11  0.008
+    RUN_1_11  SPEC_3_11  0.023
+    RUN_1_11  SPEC_4_11  0.026
+    RUN_1_12  COST  -5.176
+    RUN_1_12  CBAL_1_12  1
+    RUN_1_12  CDU_12  1
+    RUN_1_12  PBAL_0_12  -0.14
+    RUN_1_12  PBAL_1_12  -0.15
+    RUN_1_12  PBAL_2_12  -0.2
+    RUN_1_12  PBAL_3_12  -0.12
+    RUN_1_12  PBAL_4_12  -0.25
+    RUN_1_12  PBAL_5_12  -0.06
+    RUN_1_12  PBAL_6_12  -0.03
+    RUN_1_12  PBAL_7_12  -0.15
+    RUN_1_12  PBAL_9_12  -0.28
+    RUN_1_12  UNIT_0_12  0.15
+    RUN_1_12  UNIT_1_12  0.75
+    RUN_1_12  UNIT_2_12  0.51
+    RUN_1_12  UNIT_3_12  0.65
+    RUN_1_12  UNIT_4_12  0.6
+    RUN_1_12  UNIT_5_12  0.21
+    RUN_1_12  SPEC_0_12  0.025
+    RUN_1_12  SPEC_1_12  0.035
+    RUN_1_12  SPEC_2_12  0.008
+    RUN_1_12  SPEC_3_12  0.023
+    RUN_1_12  SPEC_4_12  0.026
+    RUN_1_13  COST  -22.551
+    RUN_1_13  CBAL_1_13  1
+    RUN_1_13  CDU_13  1
+    RUN_1_13  PBAL_0_13  -0.14
+    RUN_1_13  PBAL_1_13  -0.15
+    RUN_1_13  PBAL_2_13  -0.2
+    RUN_1_13  PBAL_3_13  -0.12
+    RUN_1_13  PBAL_4_13  -0.25
+    RUN_1_13  PBAL_5_13  -0.06
+    RUN_1_13  PBAL_6_13  -0.03
+    RUN_1_13  PBAL_7_13  -0.15
+    RUN_1_13  PBAL_9_13  -0.28
+    RUN_1_13  UNIT_0_13  0.15
+    RUN_1_13  UNIT_1_13  0.75
+    RUN_1_13  UNIT_2_13  0.51
+    RUN_1_13  UNIT_3_13  0.65
+    RUN_1_13  UNIT_4_13  0.6
+    RUN_1_13  UNIT_5_13  0.21
+    RUN_1_13  SPEC_0_13  0.025
+    RUN_1_13  SPEC_1_13  0.035
+    RUN_1_13  SPEC_2_13  0.008
+    RUN_1_13  SPEC_3_13  0.023
+    RUN_1_13  SPEC_4_13  0.026
+    RUN_1_14  COST  -2.696
+    RUN_1_14  CBAL_1_14  1
+    RUN_1_14  CDU_14  1
+    RUN_1_14  PBAL_0_14  -0.14
+    RUN_1_14  PBAL_1_14  -0.15
+    RUN_1_14  PBAL_2_14  -0.2
+    RUN_1_14  PBAL_3_14  -0.12
+    RUN_1_14  PBAL_4_14  -0.25
+    RUN_1_14  PBAL_5_14  -0.06
+    RUN_1_14  PBAL_6_14  -0.03
+    RUN_1_14  PBAL_7_14  -0.15
+    RUN_1_14  PBAL_9_14  -0.28
+    RUN_1_14  UNIT_0_14  0.15
+    RUN_1_14  UNIT_1_14  0.75
+    RUN_1_14  UNIT_2_14  0.51
+    RUN_1_14  UNIT_3_14  0.65
+    RUN_1_14  UNIT_4_14  0.6
+    RUN_1_14  UNIT_5_14  0.21
+    RUN_1_14  SPEC_0_14  0.025
+    RUN_1_14  SPEC_1_14  0.035
+    RUN_1_14  SPEC_2_14  0.008
+    RUN_1_14  SPEC_3_14  0.023
+    RUN_1_14  SPEC_4_14  0.026
+    RUN_1_15  COST  5.259
+    RUN_1_15  CBAL_1_15  1
+    RUN_1_15  CDU_15  1
+    RUN_1_15  PBAL_0_15  -0.14
+    RUN_1_15  PBAL_1_15  -0.15
+    RUN_1_15  PBAL_2_15  -0.2
+    RUN_1_15  PBAL_3_15  -0.12
+    RUN_1_15  PBAL_4_15  -0.25
+    RUN_1_15  PBAL_5_15  -0.06
+    RUN_1_15  PBAL_6_15  -0.03
+    RUN_1_15  PBAL_7_15  -0.15
+    RUN_1_15  PBAL_9_15  -0.28
+    RUN_1_15  UNIT_0_15  0.15
+    RUN_1_15  UNIT_1_15  0.75
+    RUN_1_15  UNIT_2_15  0.51
+    RUN_1_15  UNIT_3_15  0.65
+    RUN_1_15  UNIT_4_15  0.6
+    RUN_1_15  UNIT_5_15  0.21
+    RUN_1_15  SPEC_0_15  0.025
+    RUN_1_15  SPEC_1_15  0.035
+    RUN_1_15  SPEC_2_15  0.008
+    RUN_1_15  SPEC_3_15  0.023
+    RUN_1_15  SPEC_4_15  0.026
+    RUN_1_16  COST  -11.17
+    RUN_1_16  CBAL_1_16  1
+    RUN_1_16  CDU_16  1
+    RUN_1_16  PBAL_0_16  -0.14
+    RUN_1_16  PBAL_1_16  -0.15
+    RUN_1_16  PBAL_2_16  -0.2
+    RUN_1_16  PBAL_3_16  -0.12
+    RUN_1_16  PBAL_4_16  -0.25
+    RUN_1_16  PBAL_5_16  -0.06
+    RUN_1_16  PBAL_6_16  -0.03
+    RUN_1_16  PBAL_7_16  -0.15
+    RUN_1_16  PBAL_9_16  -0.28
+    RUN_1_16  UNIT_0_16  0.15
+    RUN_1_16  UNIT_1_16  0.75
+    RUN_1_16  UNIT_2_16  0.51
+    RUN_1_16  UNIT_3_16  0.65
+    RUN_1_16  UNIT_4_16  0.6
+    RUN_1_16  UNIT_5_16  0.21
+    RUN_1_16  SPEC_0_16  0.025
+    RUN_1_16  SPEC_1_16  0.035
+    RUN_1_16  SPEC_2_16  0.008
+    RUN_1_16  SPEC_3_16  0.023
+    RUN_1_16  SPEC_4_16  0.026
+    RUN_1_17  COST  -8.304
+    RUN_1_17  CBAL_1_17  1
+    RUN_1_17  CDU_17  1
+    RUN_1_17  PBAL_0_17  -0.14
+    RUN_1_17  PBAL_1_17  -0.15
+    RUN_1_17  PBAL_2_17  -0.2
+    RUN_1_17  PBAL_3_17  -0.12
+    RUN_1_17  PBAL_4_17  -0.25
+    RUN_1_17  PBAL_5_17  -0.06
+    RUN_1_17  PBAL_6_17  -0.03
+    RUN_1_17  PBAL_7_17  -0.15
+    RUN_1_17  PBAL_9_17  -0.28
+    RUN_1_17  UNIT_0_17  0.15
+    RUN_1_17  UNIT_1_17  0.75
+    RUN_1_17  UNIT_2_17  0.51
+    RUN_1_17  UNIT_3_17  0.65
+    RUN_1_17  UNIT_4_17  0.6
+    RUN_1_17  UNIT_5_17  0.21
+    RUN_1_17  SPEC_0_17  0.025
+    RUN_1_17  SPEC_1_17  0.035
+    RUN_1_17  SPEC_2_17  0.008
+    RUN_1_17  SPEC_3_17  0.023
+    RUN_1_17  SPEC_4_17  0.026
+    RUN_1_18  COST  -7.282
+    RUN_1_18  CBAL_1_18  1
+    RUN_1_18  CDU_18  1
+    RUN_1_18  PBAL_0_18  -0.14
+    RUN_1_18  PBAL_1_18  -0.15
+    RUN_1_18  PBAL_2_18  -0.2
+    RUN_1_18  PBAL_3_18  -0.12
+    RUN_1_18  PBAL_4_18  -0.25
+    RUN_1_18  PBAL_5_18  -0.06
+    RUN_1_18  PBAL_6_18  -0.03
+    RUN_1_18  PBAL_7_18  -0.15
+    RUN_1_18  PBAL_9_18  -0.28
+    RUN_1_18  UNIT_0_18  0.15
+    RUN_1_18  UNIT_1_18  0.75
+    RUN_1_18  UNIT_2_18  0.51
+    RUN_1_18  UNIT_3_18  0.65
+    RUN_1_18  UNIT_4_18  0.6
+    RUN_1_18  UNIT_5_18  0.21
+    RUN_1_18  SPEC_0_18  0.025
+    RUN_1_18  SPEC_1_18  0.035
+    RUN_1_18  SPEC_2_18  0.008
+    RUN_1_18  SPEC_3_18  0.023
+    RUN_1_18  SPEC_4_18  0.026
+    RUN_1_19  COST  0.364
+    RUN_1_19  CBAL_1_19  1
+    RUN_1_19  CDU_19  1
+    RUN_1_19  PBAL_0_19  -0.14
+    RUN_1_19  PBAL_1_19  -0.15
+    RUN_1_19  PBAL_2_19  -0.2
+    RUN_1_19  PBAL_3_19  -0.12
+    RUN_1_19  PBAL_4_19  -0.25
+    RUN_1_19  PBAL_5_19  -0.06
+    RUN_1_19  PBAL_6_19  -0.03
+    RUN_1_19  PBAL_7_19  -0.15
+    RUN_1_19  PBAL_9_19  -0.28
+    RUN_1_19  UNIT_0_19  0.15
+    RUN_1_19  UNIT_1_19  0.75
+    RUN_1_19  UNIT_2_19  0.51
+    RUN_1_19  UNIT_3_19  0.65
+    RUN_1_19  UNIT_4_19  0.6
+    RUN_1_19  UNIT_5_19  0.21
+    RUN_1_19  SPEC_0_19  0.025
+    RUN_1_19  SPEC_1_19  0.035
+    RUN_1_19  SPEC_2_19  0.008
+    RUN_1_19  SPEC_3_19  0.023
+    RUN_1_19  SPEC_4_19  0.026
+    RUN_1_20  COST  -30.877
+    RUN_1_20  CBAL_1_20  1
+    RUN_1_20  CDU_20  1
+    RUN_1_20  PBAL_0_20  -0.14
+    RUN_1_20  PBAL_1_20  -0.15
+    RUN_1_20  PBAL_2_20  -0.2
+    RUN_1_20  PBAL_3_20  -0.12
+    RUN_1_20  PBAL_4_20  -0.25
+    RUN_1_20  PBAL_5_20  -0.06
+    RUN_1_20  PBAL_6_20  -0.03
+    RUN_1_20  PBAL_7_20  -0.15
+    RUN_1_20  PBAL_9_20  -0.28
+    RUN_1_20  UNIT_0_20  0.15
+    RUN_1_20  UNIT_1_20  0.75
+    RUN_1_20  UNIT_2_20  0.51
+    RUN_1_20  UNIT_3_20  0.65
+    RUN_1_20  UNIT_4_20  0.6
+    RUN_1_20  UNIT_5_20  0.21
+    RUN_1_20  SPEC_0_20  0.025
+    RUN_1_20  SPEC_1_20  0.035
+    RUN_1_20  SPEC_2_20  0.008
+    RUN_1_20  SPEC_3_20  0.023
+    RUN_1_20  SPEC_4_20  0.026
+    RUN_1_21  COST  2.762
+    RUN_1_21  CBAL_1_21  1
+    RUN_1_21  CDU_21  1
+    RUN_1_21  PBAL_0_21  -0.14
+    RUN_1_21  PBAL_1_21  -0.15
+    RUN_1_21  PBAL_2_21  -0.2
+    RUN_1_21  PBAL_3_21  -0.12
+    RUN_1_21  PBAL_4_21  -0.25
+    RUN_1_21  PBAL_5_21  -0.06
+    RUN_1_21  PBAL_6_21  -0.03
+    RUN_1_21  PBAL_7_21  -0.15
+    RUN_1_21  PBAL_9_21  -0.28
+    RUN_1_21  UNIT_0_21  0.15
+    RUN_1_21  UNIT_1_21  0.75
+    RUN_1_21  UNIT_2_21  0.51
+    RUN_1_21  UNIT_3_21  0.65
+    RUN_1_21  UNIT_4_21  0.6
+    RUN_1_21  UNIT_5_21  0.21
+    RUN_1_21  SPEC_0_21  0.025
+    RUN_1_21  SPEC_1_21  0.035
+    RUN_1_21  SPEC_2_21  0.008
+    RUN_1_21  SPEC_3_21  0.023
+    RUN_1_21  SPEC_4_21  0.026
+    RUN_1_22  COST  -3.3
+    RUN_1_22  CBAL_1_22  1
+    RUN_1_22  CDU_22  1
+    RUN_1_22  PBAL_0_22  -0.14
+    RUN_1_22  PBAL_1_22  -0.15
+    RUN_1_22  PBAL_2_22  -0.2
+    RUN_1_22  PBAL_3_22  -0.12
+    RUN_1_22  PBAL_4_22  -0.25
+    RUN_1_22  PBAL_5_22  -0.06
+    RUN_1_22  PBAL_6_22  -0.03
+    RUN_1_22  PBAL_7_22  -0.15
+    RUN_1_22  PBAL_9_22  -0.28
+    RUN_1_22  UNIT_0_22  0.15
+    RUN_1_22  UNIT_1_22  0.75
+    RUN_1_22  UNIT_2_22  0.51
+    RUN_1_22  UNIT_3_22  0.65
+    RUN_1_22  UNIT_4_22  0.6
+    RUN_1_22  UNIT_5_22  0.21
+    RUN_1_22  SPEC_0_22  0.025
+    RUN_1_22  SPEC_1_22  0.035
+    RUN_1_22  SPEC_2_22  0.008
+    RUN_1_22  SPEC_3_22  0.023
+    RUN_1_22  SPEC_4_22  0.026
+    RUN_1_23  COST  -4.41
+    RUN_1_23  CBAL_1_23  1
+    RUN_1_23  CDU_23  1
+    RUN_1_23  PBAL_0_23  -0.14
+    RUN_1_23  PBAL_1_23  -0.15
+    RUN_1_23  PBAL_2_23  -0.2
+    RUN_1_23  PBAL_3_23  -0.12
+    RUN_1_23  PBAL_4_23  -0.25
+    RUN_1_23  PBAL_5_23  -0.06
+    RUN_1_23  PBAL_6_23  -0.03
+    RUN_1_23  PBAL_7_23  -0.15
+    RUN_1_23  PBAL_9_23  -0.28
+    RUN_1_23  UNIT_0_23  0.15
+    RUN_1_23  UNIT_1_23  0.75
+    RUN_1_23  UNIT_2_23  0.51
+    RUN_1_23  UNIT_3_23  0.65
+    RUN_1_23  UNIT_4_23  0.6
+    RUN_1_23  UNIT_5_23  0.21
+    RUN_1_23  SPEC_0_23  0.025
+    RUN_1_23  SPEC_1_23  0.035
+    RUN_1_23  SPEC_2_23  0.008
+    RUN_1_23  SPEC_3_23  0.023
+    RUN_1_23  SPEC_4_23  0.026
+    RUN_1_24  COST  -8.116
+    RUN_1_24  CBAL_1_24  1
+    RUN_1_24  CDU_24  1
+    RUN_1_24  PBAL_0_24  -0.14
+    RUN_1_24  PBAL_1_24  -0.15
+    RUN_1_24  PBAL_2_24  -0.2
+    RUN_1_24  PBAL_3_24  -0.12
+    RUN_1_24  PBAL_4_24  -0.25
+    RUN_1_24  PBAL_5_24  -0.06
+    RUN_1_24  PBAL_6_24  -0.03
+    RUN_1_24  PBAL_7_24  -0.15
+    RUN_1_24  PBAL_9_24  -0.28
+    RUN_1_24  UNIT_0_24  0.15
+    RUN_1_24  UNIT_1_24  0.75
+    RUN_1_24  UNIT_2_24  0.51
+    RUN_1_24  UNIT_3_24  0.65
+    RUN_1_24  UNIT_4_24  0.6
+    RUN_1_24  UNIT_5_24  0.21
+    RUN_1_24  SPEC_0_24  0.025
+    RUN_1_24  SPEC_1_24  0.035
+    RUN_1_24  SPEC_2_24  0.008
+    RUN_1_24  SPEC_3_24  0.023
+    RUN_1_24  SPEC_4_24  0.026
+    RUN_1_25  COST  -7.318
+    RUN_1_25  CBAL_1_25  1
+    RUN_1_25  CDU_25  1
+    RUN_1_25  PBAL_0_25  -0.14
+    RUN_1_25  PBAL_1_25  -0.15
+    RUN_1_25  PBAL_2_25  -0.2
+    RUN_1_25  PBAL_3_25  -0.12
+    RUN_1_25  PBAL_4_25  -0.25
+    RUN_1_25  PBAL_5_25  -0.06
+    RUN_1_25  PBAL_6_25  -0.03
+    RUN_1_25  PBAL_7_25  -0.15
+    RUN_1_25  PBAL_9_25  -0.28
+    RUN_1_25  UNIT_0_25  0.15
+    RUN_1_25  UNIT_1_25  0.75
+    RUN_1_25  UNIT_2_25  0.51
+    RUN_1_25  UNIT_3_25  0.65
+    RUN_1_25  UNIT_4_25  0.6
+    RUN_1_25  UNIT_5_25  0.21
+    RUN_1_25  SPEC_0_25  0.025
+    RUN_1_25  SPEC_1_25  0.035
+    RUN_1_25  SPEC_2_25  0.008
+    RUN_1_25  SPEC_3_25  0.023
+    RUN_1_25  SPEC_4_25  0.026
+    RUN_1_26  COST  -9.004
+    RUN_1_26  CBAL_1_26  1
+    RUN_1_26  CDU_26  1
+    RUN_1_26  PBAL_0_26  -0.14
+    RUN_1_26  PBAL_1_26  -0.15
+    RUN_1_26  PBAL_2_26  -0.2
+    RUN_1_26  PBAL_3_26  -0.12
+    RUN_1_26  PBAL_4_26  -0.25
+    RUN_1_26  PBAL_5_26  -0.06
+    RUN_1_26  PBAL_6_26  -0.03
+    RUN_1_26  PBAL_7_26  -0.15
+    RUN_1_26  PBAL_9_26  -0.28
+    RUN_1_26  UNIT_0_26  0.15
+    RUN_1_26  UNIT_1_26  0.75
+    RUN_1_26  UNIT_2_26  0.51
+    RUN_1_26  UNIT_3_26  0.65
+    RUN_1_26  UNIT_4_26  0.6
+    RUN_1_26  UNIT_5_26  0.21
+    RUN_1_26  SPEC_0_26  0.025
+    RUN_1_26  SPEC_1_26  0.035
+    RUN_1_26  SPEC_2_26  0.008
+    RUN_1_26  SPEC_3_26  0.023
+    RUN_1_26  SPEC_4_26  0.026
+    RUN_1_27  COST  -12.925
+    RUN_1_27  CBAL_1_27  1
+    RUN_1_27  CDU_27  1
+    RUN_1_27  PBAL_0_27  -0.14
+    RUN_1_27  PBAL_1_27  -0.15
+    RUN_1_27  PBAL_2_27  -0.2
+    RUN_1_27  PBAL_3_27  -0.12
+    RUN_1_27  PBAL_4_27  -0.25
+    RUN_1_27  PBAL_5_27  -0.06
+    RUN_1_27  PBAL_6_27  -0.03
+    RUN_1_27  PBAL_7_27  -0.15
+    RUN_1_27  PBAL_9_27  -0.28
+    RUN_1_27  UNIT_0_27  0.15
+    RUN_1_27  UNIT_1_27  0.75
+    RUN_1_27  UNIT_2_27  0.51
+    RUN_1_27  UNIT_3_27  0.65
+    RUN_1_27  UNIT_4_27  0.6
+    RUN_1_27  UNIT_5_27  0.21
+    RUN_1_27  SPEC_0_27  0.025
+    RUN_1_27  SPEC_1_27  0.035
+    RUN_1_27  SPEC_2_27  0.008
+    RUN_1_27  SPEC_3_27  0.023
+    RUN_1_27  SPEC_4_27  0.026
+    RUN_1_28  COST  -20.536
+    RUN_1_28  CBAL_1_28  1
+    RUN_1_28  CDU_28  1
+    RUN_1_28  PBAL_0_28  -0.14
+    RUN_1_28  PBAL_1_28  -0.15
+    RUN_1_28  PBAL_2_28  -0.2
+    RUN_1_28  PBAL_3_28  -0.12
+    RUN_1_28  PBAL_4_28  -0.25
+    RUN_1_28  PBAL_5_28  -0.06
+    RUN_1_28  PBAL_6_28  -0.03
+    RUN_1_28  PBAL_7_28  -0.15
+    RUN_1_28  PBAL_9_28  -0.28
+    RUN_1_28  UNIT_0_28  0.15
+    RUN_1_28  UNIT_1_28  0.75
+    RUN_1_28  UNIT_2_28  0.51
+    RUN_1_28  UNIT_3_28  0.65
+    RUN_1_28  UNIT_4_28  0.6
+    RUN_1_28  UNIT_5_28  0.21
+    RUN_1_28  SPEC_0_28  0.025
+    RUN_1_28  SPEC_1_28  0.035
+    RUN_1_28  SPEC_2_28  0.008
+    RUN_1_28  SPEC_3_28  0.023
+    RUN_1_28  SPEC_4_28  0.026
+    RUN_1_29  COST  4.558
+    RUN_1_29  CBAL_1_29  1
+    RUN_1_29  CDU_29  1
+    RUN_1_29  PBAL_0_29  -0.14
+    RUN_1_29  PBAL_1_29  -0.15
+    RUN_1_29  PBAL_2_29  -0.2
+    RUN_1_29  PBAL_3_29  -0.12
+    RUN_1_29  PBAL_4_29  -0.25
+    RUN_1_29  PBAL_5_29  -0.06
+    RUN_1_29  PBAL_6_29  -0.03
+    RUN_1_29  PBAL_7_29  -0.15
+    RUN_1_29  PBAL_9_29  -0.28
+    RUN_1_29  UNIT_0_29  0.15
+    RUN_1_29  UNIT_1_29  0.75
+    RUN_1_29  UNIT_2_29  0.51
+    RUN_1_29  UNIT_3_29  0.65
+    RUN_1_29  UNIT_4_29  0.6
+    RUN_1_29  UNIT_5_29  0.21
+    RUN_1_29  SPEC_0_29  0.025
+    RUN_1_29  SPEC_1_29  0.035
+    RUN_1_29  SPEC_2_29  0.008
+    RUN_1_29  SPEC_3_29  0.023
+    RUN_1_29  SPEC_4_29  0.026
+    RUN_2_0  COST  -0.744
+    RUN_2_0  CBAL_2_0  1
+    RUN_2_0  CDU_0  1
+    RUN_2_0  PBAL_0_0  -0.26
+    RUN_2_0  PBAL_1_0  -0.12
+    RUN_2_0  PBAL_2_0  -0.13
+    RUN_2_0  PBAL_3_0  -0.19
+    RUN_2_0  PBAL_4_0  -0.24
+    RUN_2_0  PBAL_5_0  -0.24
+    RUN_2_0  PBAL_7_0  -0.22
+    RUN_2_0  PBAL_8_0  -0.14
+    RUN_2_0  PBAL_9_0  -0.08
+    RUN_2_0  UNIT_0_0  0.42
+    RUN_2_0  UNIT_1_0  0.63
+    RUN_2_0  UNIT_2_0  0.53
+    RUN_2_0  UNIT_3_0  0.13
+    RUN_2_0  UNIT_4_0  0.05
+    RUN_2_0  UNIT_5_0  0.64
+    RUN_2_0  SPEC_0_0  0.032
+    RUN_2_0  SPEC_1_0  0.038
+    RUN_2_0  SPEC_2_0  0.033
+    RUN_2_0  SPEC_3_0  0.036
+    RUN_2_0  SPEC_4_0  0.022
+    RUN_2_1  COST  -0.909
+    RUN_2_1  CBAL_2_1  1
+    RUN_2_1  CDU_1  1
+    RUN_2_1  PBAL_0_1  -0.26
+    RUN_2_1  PBAL_1_1  -0.12
+    RUN_2_1  PBAL_2_1  -0.13
+    RUN_2_1  PBAL_3_1  -0.19
+    RUN_2_1  PBAL_4_1  -0.24
+    RUN_2_1  PBAL_5_1  -0.24
+    RUN_2_1  PBAL_7_1  -0.22
+    RUN_2_1  PBAL_8_1  -0.14
+    RUN_2_1  PBAL_9_1  -0.08
+    RUN_2_1  UNIT_0_1  0.42
+    RUN_2_1  UNIT_1_1  0.63
+    RUN_2_1  UNIT_2_1  0.53
+    RUN_2_1  UNIT_3_1  0.13
+    RUN_2_1  UNIT_4_1  0.05
+    RUN_2_1  UNIT_5_1  0.64
+    RUN_2_1  SPEC_0_1  0.032
+    RUN_2_1  SPEC_1_1  0.038
+    RUN_2_1  SPEC_2_1  0.033
+    RUN_2_1  SPEC_3_1  0.036
+    RUN_2_1  SPEC_4_1  0.022
+    RUN_2_2  COST  3.054
+    RUN_2_2  CBAL_2_2  1
+    RUN_2_2  CDU_2  1
+    RUN_2_2  PBAL_0_2  -0.26
+    RUN_2_2  PBAL_1_2  -0.12
+    RUN_2_2  PBAL_2_2  -0.13
+    RUN_2_2  PBAL_3_2  -0.19
+    RUN_2_2  PBAL_4_2  -0.24
+    RUN_2_2  PBAL_5_2  -0.24
+    RUN_2_2  PBAL_7_2  -0.22
+    RUN_2_2  PBAL_8_2  -0.14
+    RUN_2_2  PBAL_9_2  -0.08
+    RUN_2_2  UNIT_0_2  0.42
+    RUN_2_2  UNIT_1_2  0.63
+    RUN_2_2  UNIT_2_2  0.53
+    RUN_2_2  UNIT_3_2  0.13
+    RUN_2_2  UNIT_4_2  0.05
+    RUN_2_2  UNIT_5_2  0.64
+    RUN_2_2  SPEC_0_2  0.032
+    RUN_2_2  SPEC_1_2  0.038
+    RUN_2_2  SPEC_2_2  0.033
+    RUN_2_2  SPEC_3_2  0.036
+    RUN_2_2  SPEC_4_2  0.022
+    RUN_2_3  COST  -12.22
+    RUN_2_3  CBAL_2_3  1
+    RUN_2_3  CDU_3  1
+    RUN_2_3  PBAL_0_3  -0.26
+    RUN_2_3  PBAL_1_3  -0.12
+    RUN_2_3  PBAL_2_3  -0.13
+    RUN_2_3  PBAL_3_3  -0.19
+    RUN_2_3  PBAL_4_3  -0.24
+    RUN_2_3  PBAL_5_3  -0.24
+    RUN_2_3  PBAL_7_3  -0.22
+    RUN_2_3  PBAL_8_3  -0.14
+    RUN_2_3  PBAL_9_3  -0.08
+    RUN_2_3  UNIT_0_3  0.42
+    RUN_2_3  UNIT_1_3  0.63
+    RUN_2_3  UNIT_2_3  0.53
+    RUN_2_3  UNIT_3_3  0.13
+    RUN_2_3  UNIT_4_3  0.05
+    RUN_2_3  UNIT_5_3  0.64
+    RUN_2_3  SPEC_0_3  0.032
+    RUN_2_3  SPEC_1_3  0.038
+    RUN_2_3  SPEC_2_3  0.033
+    RUN_2_3  SPEC_3_3  0.036
+    RUN_2_3  SPEC_4_3  0.022
+    RUN_2_4  COST  -8.243
+    RUN_2_4  CBAL_2_4  1
+    RUN_2_4  CDU_4  1
+    RUN_2_4  PBAL_0_4  -0.26
+    RUN_2_4  PBAL_1_4  -0.12
+    RUN_2_4  PBAL_2_4  -0.13
+    RUN_2_4  PBAL_3_4  -0.19
+    RUN_2_4  PBAL_4_4  -0.24
+    RUN_2_4  PBAL_5_4  -0.24
+    RUN_2_4  PBAL_7_4  -0.22
+    RUN_2_4  PBAL_8_4  -0.14
+    RUN_2_4  PBAL_9_4  -0.08
+    RUN_2_4  UNIT_0_4  0.42
+    RUN_2_4  UNIT_1_4  0.63
+    RUN_2_4  UNIT_2_4  0.53
+    RUN_2_4  UNIT_3_4  0.13
+    RUN_2_4  UNIT_4_4  0.05
+    RUN_2_4  UNIT_5_4  0.64
+    RUN_2_4  SPEC_0_4  0.032
+    RUN_2_4  SPEC_1_4  0.038
+    RUN_2_4  SPEC_2_4  0.033
+    RUN_2_4  SPEC_3_4  0.036
+    RUN_2_4  SPEC_4_4  0.022
+    RUN_2_5  COST  -5.031
+    RUN_2_5  CBAL_2_5  1
+    RUN_2_5  CDU_5  1
+    RUN_2_5  PBAL_0_5  -0.26
+    RUN_2_5  PBAL_1_5  -0.12
+    RUN_2_5  PBAL_2_5  -0.13
+    RUN_2_5  PBAL_3_5  -0.19
+    RUN_2_5  PBAL_4_5  -0.24
+    RUN_2_5  PBAL_5_5  -0.24
+    RUN_2_5  PBAL_7_5  -0.22
+    RUN_2_5  PBAL_8_5  -0.14
+    RUN_2_5  PBAL_9_5  -0.08
+    RUN_2_5  UNIT_0_5  0.42
+    RUN_2_5  UNIT_1_5  0.63
+    RUN_2_5  UNIT_2_5  0.53
+    RUN_2_5  UNIT_3_5  0.13
+    RUN_2_5  UNIT_4_5  0.05
+    RUN_2_5  UNIT_5_5  0.64
+    RUN_2_5  SPEC_0_5  0.032
+    RUN_2_5  SPEC_1_5  0.038
+    RUN_2_5  SPEC_2_5  0.033
+    RUN_2_5  SPEC_3_5  0.036
+    RUN_2_5  SPEC_4_5  0.022
+    RUN_2_6  COST  -15.248
+    RUN_2_6  CBAL_2_6  1
+    RUN_2_6  CDU_6  1
+    RUN_2_6  PBAL_0_6  -0.26
+    RUN_2_6  PBAL_1_6  -0.12
+    RUN_2_6  PBAL_2_6  -0.13
+    RUN_2_6  PBAL_3_6  -0.19
+    RUN_2_6  PBAL_4_6  -0.24
+    RUN_2_6  PBAL_5_6  -0.24
+    RUN_2_6  PBAL_7_6  -0.22
+    RUN_2_6  PBAL_8_6  -0.14
+    RUN_2_6  PBAL_9_6  -0.08
+    RUN_2_6  UNIT_0_6  0.42
+    RUN_2_6  UNIT_1_6  0.63
+    RUN_2_6  UNIT_2_6  0.53
+    RUN_2_6  UNIT_3_6  0.13
+    RUN_2_6  UNIT_4_6  0.05
+    RUN_2_6  UNIT_5_6  0.64
+    RUN_2_6  SPEC_0_6  0.032
+    RUN_2_6  SPEC_1_6  0.038
+    RUN_2_6  SPEC_2_6  0.033
+    RUN_2_6  SPEC_3_6  0.036
+    RUN_2_6  SPEC_4_6  0.022
+    RUN_2_7  COST  -4.284
+    RUN_2_7  CBAL_2_7  1
+    RUN_2_7  CDU_7  1
+    RUN_2_7  PBAL_0_7  -0.26
+    RUN_2_7  PBAL_1_7  -0.12
+    RUN_2_7  PBAL_2_7  -0.13
+    RUN_2_7  PBAL_3_7  -0.19
+    RUN_2_7  PBAL_4_7  -0.24
+    RUN_2_7  PBAL_5_7  -0.24
+    RUN_2_7  PBAL_7_7  -0.22
+    RUN_2_7  PBAL_8_7  -0.14
+    RUN_2_7  PBAL_9_7  -0.08
+    RUN_2_7  UNIT_0_7  0.42
+    RUN_2_7  UNIT_1_7  0.63
+    RUN_2_7  UNIT_2_7  0.53
+    RUN_2_7  UNIT_3_7  0.13
+    RUN_2_7  UNIT_4_7  0.05
+    RUN_2_7  UNIT_5_7  0.64
+    RUN_2_7  SPEC_0_7  0.032
+    RUN_2_7  SPEC_1_7  0.038
+    RUN_2_7  SPEC_2_7  0.033
+    RUN_2_7  SPEC_3_7  0.036
+    RUN_2_7  SPEC_4_7  0.022
+    RUN_2_8  COST  -4.746
+    RUN_2_8  CBAL_2_8  1
+    RUN_2_8  CDU_8  1
+    RUN_2_8  PBAL_0_8  -0.26
+    RUN_2_8  PBAL_1_8  -0.12
+    RUN_2_8  PBAL_2_8  -0.13
+    RUN_2_8  PBAL_3_8  -0.19
+    RUN_2_8  PBAL_4_8  -0.24
+    RUN_2_8  PBAL_5_8  -0.24
+    RUN_2_8  PBAL_7_8  -0.22
+    RUN_2_8  PBAL_8_8  -0.14
+    RUN_2_8  PBAL_9_8  -0.08
+    RUN_2_8  UNIT_0_8  0.42
+    RUN_2_8  UNIT_1_8  0.63
+    RUN_2_8  UNIT_2_8  0.53
+    RUN_2_8  UNIT_3_8  0.13
+    RUN_2_8  UNIT_4_8  0.05
+    RUN_2_8  UNIT_5_8  0.64
+    RUN_2_8  SPEC_0_8  0.032
+    RUN_2_8  SPEC_1_8  0.038
+    RUN_2_8  SPEC_2_8  0.033
+    RUN_2_8  SPEC_3_8  0.036
+    RUN_2_8  SPEC_4_8  0.022
+    RUN_2_9  COST  -14.073
+    RUN_2_9  CBAL_2_9  1
+    RUN_2_9  CDU_9  1
+    RUN_2_9  PBAL_0_9  -0.26
+    RUN_2_9  PBAL_1_9  -0.12
+    RUN_2_9  PBAL_2_9  -0.13
+    RUN_2_9  PBAL_3_9  -0.19
+    RUN_2_9  PBAL_4_9  -0.24
+    RUN_2_9  PBAL_5_9  -0.24
+    RUN_2_9  PBAL_7_9  -0.22
+    RUN_2_9  PBAL_8_9  -0.14
+    RUN_2_9  PBAL_9_9  -0.08
+    RUN_2_9  UNIT_0_9  0.42
+    RUN_2_9  UNIT_1_9  0.63
+    RUN_2_9  UNIT_2_9  0.53
+    RUN_2_9  UNIT_3_9  0.13
+    RUN_2_9  UNIT_4_9  0.05
+    RUN_2_9  UNIT_5_9  0.64
+    RUN_2_9  SPEC_0_9  0.032
+    RUN_2_9  SPEC_1_9  0.038
+    RUN_2_9  SPEC_2_9  0.033
+    RUN_2_9  SPEC_3_9  0.036
+    RUN_2_9  SPEC_4_9  0.022
+    RUN_2_10  COST  -4.955
+    RUN_2_10  CBAL_2_10  1
+    RUN_2_10  CDU_10  1
+    RUN_2_10  PBAL_0_10  -0.26
+    RUN_2_10  PBAL_1_10  -0.12
+    RUN_2_10  PBAL_2_10  -0.13
+    RUN_2_10  PBAL_3_10  -0.19
+    RUN_2_10  PBAL_4_10  -0.24
+    RUN_2_10  PBAL_5_10  -0.24
+    RUN_2_10  PBAL_7_10  -0.22
+    RUN_2_10  PBAL_8_10  -0.14
+    RUN_2_10  PBAL_9_10  -0.08
+    RUN_2_10  UNIT_0_10  0.42
+    RUN_2_10  UNIT_1_10  0.63
+    RUN_2_10  UNIT_2_10  0.53
+    RUN_2_10  UNIT_3_10  0.13
+    RUN_2_10  UNIT_4_10  0.05
+    RUN_2_10  UNIT_5_10  0.64
+    RUN_2_10  SPEC_0_10  0.032
+    RUN_2_10  SPEC_1_10  0.038
+    RUN_2_10  SPEC_2_10  0.033
+    RUN_2_10  SPEC_3_10  0.036
+    RUN_2_10  SPEC_4_10  0.022
+    RUN_2_11  COST  -6.62
+    RUN_2_11  CBAL_2_11  1
+    RUN_2_11  CDU_11  1
+    RUN_2_11  PBAL_0_11  -0.26
+    RUN_2_11  PBAL_1_11  -0.12
+    RUN_2_11  PBAL_2_11  -0.13
+    RUN_2_11  PBAL_3_11  -0.19
+    RUN_2_11  PBAL_4_11  -0.24
+    RUN_2_11  PBAL_5_11  -0.24
+    RUN_2_11  PBAL_7_11  -0.22
+    RUN_2_11  PBAL_8_11  -0.14
+    RUN_2_11  PBAL_9_11  -0.08
+    RUN_2_11  UNIT_0_11  0.42
+    RUN_2_11  UNIT_1_11  0.63
+    RUN_2_11  UNIT_2_11  0.53
+    RUN_2_11  UNIT_3_11  0.13
+    RUN_2_11  UNIT_4_11  0.05
+    RUN_2_11  UNIT_5_11  0.64
+    RUN_2_11  SPEC_0_11  0.032
+    RUN_2_11  SPEC_1_11  0.038
+    RUN_2_11  SPEC_2_11  0.033
+    RUN_2_11  SPEC_3_11  0.036
+    RUN_2_11  SPEC_4_11  0.022
+    RUN_2_12  COST  1.338
+    RUN_2_12  CBAL_2_12  1
+    RUN_2_12  CDU_12  1
+    RUN_2_12  PBAL_0_12  -0.26
+    RUN_2_12  PBAL_1_12  -0.12
+    RUN_2_12  PBAL_2_12  -0.13
+    RUN_2_12  PBAL_3_12  -0.19
+    RUN_2_12  PBAL_4_12  -0.24
+    RUN_2_12  PBAL_5_12  -0.24
+    RUN_2_12  PBAL_7_12  -0.22
+    RUN_2_12  PBAL_8_12  -0.14
+    RUN_2_12  PBAL_9_12  -0.08
+    RUN_2_12  UNIT_0_12  0.42
+    RUN_2_12  UNIT_1_12  0.63
+    RUN_2_12  UNIT_2_12  0.53
+    RUN_2_12  UNIT_3_12  0.13
+    RUN_2_12  UNIT_4_12  0.05
+    RUN_2_12  UNIT_5_12  0.64
+    RUN_2_12  SPEC_0_12  0.032
+    RUN_2_12  SPEC_1_12  0.038
+    RUN_2_12  SPEC_2_12  0.033
+    RUN_2_12  SPEC_3_12  0.036
+    RUN_2_12  SPEC_4_12  0.022
+    RUN_2_13  COST  -16.758
+    RUN_2_13  CBAL_2_13  1
+    RUN_2_13  CDU_13  1
+    RUN_2_13  PBAL_0_13  -0.26
+    RUN_2_13  PBAL_1_13  -0.12
+    RUN_2_13  PBAL_2_13  -0.13
+    RUN_2_13  PBAL_3_13  -0.19
+    RUN_2_13  PBAL_4_13  -0.24
+    RUN_2_13  PBAL_5_13  -0.24
+    RUN_2_13  PBAL_7_13  -0.22
+    RUN_2_13  PBAL_8_13  -0.14
+    RUN_2_13  PBAL_9_13  -0.08
+    RUN_2_13  UNIT_0_13  0.42
+    RUN_2_13  UNIT_1_13  0.63
+    RUN_2_13  UNIT_2_13  0.53
+    RUN_2_13  UNIT_3_13  0.13
+    RUN_2_13  UNIT_4_13  0.05
+    RUN_2_13  UNIT_5_13  0.64
+    RUN_2_13  SPEC_0_13  0.032
+    RUN_2_13  SPEC_1_13  0.038
+    RUN_2_13  SPEC_2_13  0.033
+    RUN_2_13  SPEC_3_13  0.036
+    RUN_2_13  SPEC_4_13  0.022
+    RUN_2_14  COST  -0.466
+    RUN_2_14  CBAL_2_14  1
+    RUN_2_14  CDU_14  1
+    RUN_2_14  PBAL_0_14  -0.26
+    RUN_2_14  PBAL_1_14  -0.12
+    RUN_2_14  PBAL_2_14  -0.13
+    RUN_2_14  PBAL_3_14  -0.19
+    RUN_2_14  PBAL_4_14  -0.24
+    RUN_2_14  PBAL_5_14  -0.24
+    RUN_2_14  PBAL_7_14  -0.22
+    RUN_2_14  PBAL_8_14  -0.14
+    RUN_2_14  PBAL_9_14  -0.08
+    RUN_2_14  UNIT_0_14  0.42
+    RUN_2_14  UNIT_1_14  0.63
+    RUN_2_14  UNIT_2_14  0.53
+    RUN_2_14  UNIT_3_14  0.13
+    RUN_2_14  UNIT_4_14  0.05
+    RUN_2_14  UNIT_5_14  0.64
+    RUN_2_14  SPEC_0_14  0.032
+    RUN_2_14  SPEC_1_14  0.038
+    RUN_2_14  SPEC_2_14  0.033
+    RUN_2_14  SPEC_3_14  0.036
+    RUN_2_14  SPEC_4_14  0.022
+    RUN_2_15  COST  -7.218
+    RUN_2_15  CBAL_2_15  1
+    RUN_2_15  CDU_15  1
+    RUN_2_15  PBAL_0_15  -0.26
+    RUN_2_15  PBAL_1_15  -0.12
+    RUN_2_15  PBAL_2_15  -0.13
+    RUN_2_15  PBAL_3_15  -0.19
+    RUN_2_15  PBAL_4_15  -0.24
+    RUN_2_15  PBAL_5_15  -0.24
+    RUN_2_15  PBAL_7_15  -0.22
+    RUN_2_15  PBAL_8_15  -0.14
+    RUN_2_15  PBAL_9_15  -0.08
+    RUN_2_15  UNIT_0_15  0.42
+    RUN_2_15  UNIT_1_15  0.63
+    RUN_2_15  UNIT_2_15  0.53
+    RUN_2_15  UNIT_3_15  0.13
+    RUN_2_15  UNIT_4_15  0.05
+    RUN_2_15  UNIT_5_15  0.64
+    RUN_2_15  SPEC_0_15  0.032
+    RUN_2_15  SPEC_1_15  0.038
+    RUN_2_15  SPEC_2_15  0.033
+    RUN_2_15  SPEC_3_15  0.036
+    RUN_2_15  SPEC_4_15  0.022
+    RUN_2_16  COST  -16.882
+    RUN_2_16  CBAL_2_16  1
+    RUN_2_16  CDU_16  1
+    RUN_2_16  PBAL_0_16  -0.26
+    RUN_2_16  PBAL_1_16  -0.12
+    RUN_2_16  PBAL_2_16  -0.13
+    RUN_2_16  PBAL_3_16  -0.19
+    RUN_2_16  PBAL_4_16  -0.24
+    RUN_2_16  PBAL_5_16  -0.24
+    RUN_2_16  PBAL_7_16  -0.22
+    RUN_2_16  PBAL_8_16  -0.14
+    RUN_2_16  PBAL_9_16  -0.08
+    RUN_2_16  UNIT_0_16  0.42
+    RUN_2_16  UNIT_1_16  0.63
+    RUN_2_16  UNIT_2_16  0.53
+    RUN_2_16  UNIT_3_16  0.13
+    RUN_2_16  UNIT_4_16  0.05
+    RUN_2_16  UNIT_5_16  0.64
+    RUN_2_16  SPEC_0_16  0.032
+    RUN_2_16  SPEC_1_16  0.038
+    RUN_2_16  SPEC_2_16  0.033
+    RUN_2_16  SPEC_3_16  0.036
+    RUN_2_16  SPEC_4_16  0.022
+    RUN_2_17  COST  -10.547
+    RUN_2_17  CBAL_2_17  1
+    RUN_2_17  CDU_17  1
+    RUN_2_17  PBAL_0_17  -0.26
+    RUN_2_17  PBAL_1_17  -0.12
+    RUN_2_17  PBAL_2_17  -0.13
+    RUN_2_17  PBAL_3_17  -0.19
+    RUN_2_17  PBAL_4_17  -0.24
+    RUN_2_17  PBAL_5_17  -0.24
+    RUN_2_17  PBAL_7_17  -0.22
+    RUN_2_17  PBAL_8_17  -0.14
+    RUN_2_17  PBAL_9_17  -0.08
+    RUN_2_17  UNIT_0_17  0.42
+    RUN_2_17  UNIT_1_17  0.63
+    RUN_2_17  UNIT_2_17  0.53
+    RUN_2_17  UNIT_3_17  0.13
+    RUN_2_17  UNIT_4_17  0.05
+    RUN_2_17  UNIT_5_17  0.64
+    RUN_2_17  SPEC_0_17  0.032
+    RUN_2_17  SPEC_1_17  0.038
+    RUN_2_17  SPEC_2_17  0.033
+    RUN_2_17  SPEC_3_17  0.036
+    RUN_2_17  SPEC_4_17  0.022
+    RUN_2_18  COST  -6.572
+    RUN_2_18  CBAL_2_18  1
+    RUN_2_18  CDU_18  1
+    RUN_2_18  PBAL_0_18  -0.26
+    RUN_2_18  PBAL_1_18  -0.12
+    RUN_2_18  PBAL_2_18  -0.13
+    RUN_2_18  PBAL_3_18  -0.19
+    RUN_2_18  PBAL_4_18  -0.24
+    RUN_2_18  PBAL_5_18  -0.24
+    RUN_2_18  PBAL_7_18  -0.22
+    RUN_2_18  PBAL_8_18  -0.14
+    RUN_2_18  PBAL_9_18  -0.08
+    RUN_2_18  UNIT_0_18  0.42
+    RUN_2_18  UNIT_1_18  0.63
+    RUN_2_18  UNIT_2_18  0.53
+    RUN_2_18  UNIT_3_18  0.13
+    RUN_2_18  UNIT_4_18  0.05
+    RUN_2_18  UNIT_5_18  0.64
+    RUN_2_18  SPEC_0_18  0.032
+    RUN_2_18  SPEC_1_18  0.038
+    RUN_2_18  SPEC_2_18  0.033
+    RUN_2_18  SPEC_3_18  0.036
+    RUN_2_18  SPEC_4_18  0.022
+    RUN_2_19  COST  -4.631
+    RUN_2_19  CBAL_2_19  1
+    RUN_2_19  CDU_19  1
+    RUN_2_19  PBAL_0_19  -0.26
+    RUN_2_19  PBAL_1_19  -0.12
+    RUN_2_19  PBAL_2_19  -0.13
+    RUN_2_19  PBAL_3_19  -0.19
+    RUN_2_19  PBAL_4_19  -0.24
+    RUN_2_19  PBAL_5_19  -0.24
+    RUN_2_19  PBAL_7_19  -0.22
+    RUN_2_19  PBAL_8_19  -0.14
+    RUN_2_19  PBAL_9_19  -0.08
+    RUN_2_19  UNIT_0_19  0.42
+    RUN_2_19  UNIT_1_19  0.63
+    RUN_2_19  UNIT_2_19  0.53
+    RUN_2_19  UNIT_3_19  0.13
+    RUN_2_19  UNIT_4_19  0.05
+    RUN_2_19  UNIT_5_19  0.64
+    RUN_2_19  SPEC_0_19  0.032
+    RUN_2_19  SPEC_1_19  0.038
+    RUN_2_19  SPEC_2_19  0.033
+    RUN_2_19  SPEC_3_19  0.036
+    RUN_2_19  SPEC_4_19  0.022
+    RUN_2_20  COST  -16.518
+    RUN_2_20  CBAL_2_20  1
+    RUN_2_20  CDU_20  1
+    RUN_2_20  PBAL_0_20  -0.26
+    RUN_2_20  PBAL_1_20  -0.12
+    RUN_2_20  PBAL_2_20  -0.13
+    RUN_2_20  PBAL_3_20  -0.19
+    RUN_2_20  PBAL_4_20  -0.24
+    RUN_2_20  PBAL_5_20  -0.24
+    RUN_2_20  PBAL_7_20  -0.22
+    RUN_2_20  PBAL_8_20  -0.14
+    RUN_2_20  PBAL_9_20  -0.08
+    RUN_2_20  UNIT_0_20  0.42
+    RUN_2_20  UNIT_1_20  0.63
+    RUN_2_20  UNIT_2_20  0.53
+    RUN_2_20  UNIT_3_20  0.13
+    RUN_2_20  UNIT_4_20  0.05
+    RUN_2_20  UNIT_5_20  0.64
+    RUN_2_20  SPEC_0_20  0.032
+    RUN_2_20  SPEC_1_20  0.038
+    RUN_2_20  SPEC_2_20  0.033
+    RUN_2_20  SPEC_3_20  0.036
+    RUN_2_20  SPEC_4_20  0.022
+    RUN_2_21  COST  -4.066
+    RUN_2_21  CBAL_2_21  1
+    RUN_2_21  CDU_21  1
+    RUN_2_21  PBAL_0_21  -0.26
+    RUN_2_21  PBAL_1_21  -0.12
+    RUN_2_21  PBAL_2_21  -0.13
+    RUN_2_21  PBAL_3_21  -0.19
+    RUN_2_21  PBAL_4_21  -0.24
+    RUN_2_21  PBAL_5_21  -0.24
+    RUN_2_21  PBAL_7_21  -0.22
+    RUN_2_21  PBAL_8_21  -0.14
+    RUN_2_21  PBAL_9_21  -0.08
+    RUN_2_21  UNIT_0_21  0.42
+    RUN_2_21  UNIT_1_21  0.63
+    RUN_2_21  UNIT_2_21  0.53
+    RUN_2_21  UNIT_3_21  0.13
+    RUN_2_21  UNIT_4_21  0.05
+    RUN_2_21  UNIT_5_21  0.64
+    RUN_2_21  SPEC_0_21  0.032
+    RUN_2_21  SPEC_1_21  0.038
+    RUN_2_21  SPEC_2_21  0.033
+    RUN_2_21  SPEC_3_21  0.036
+    RUN_2_21  SPEC_4_21  0.022
+    RUN_2_22  COST  -17.749
+    RUN_2_22  CBAL_2_22  1
+    RUN_2_22  CDU_22  1
+    RUN_2_22  PBAL_0_22  -0.26
+    RUN_2_22  PBAL_1_22  -0.12
+    RUN_2_22  PBAL_2_22  -0.13
+    RUN_2_22  PBAL_3_22  -0.19
+    RUN_2_22  PBAL_4_22  -0.24
+    RUN_2_22  PBAL_5_22  -0.24
+    RUN_2_22  PBAL_7_22  -0.22
+    RUN_2_22  PBAL_8_22  -0.14
+    RUN_2_22  PBAL_9_22  -0.08
+    RUN_2_22  UNIT_0_22  0.42
+    RUN_2_22  UNIT_1_22  0.63
+    RUN_2_22  UNIT_2_22  0.53
+    RUN_2_22  UNIT_3_22  0.13
+    RUN_2_22  UNIT_4_22  0.05
+    RUN_2_22  UNIT_5_22  0.64
+    RUN_2_22  SPEC_0_22  0.032
+    RUN_2_22  SPEC_1_22  0.038
+    RUN_2_22  SPEC_2_22  0.033
+    RUN_2_22  SPEC_3_22  0.036
+    RUN_2_22  SPEC_4_22  0.022
+    RUN_2_23  COST  -5.764
+    RUN_2_23  CBAL_2_23  1
+    RUN_2_23  CDU_23  1
+    RUN_2_23  PBAL_0_23  -0.26
+    RUN_2_23  PBAL_1_23  -0.12
+    RUN_2_23  PBAL_2_23  -0.13
+    RUN_2_23  PBAL_3_23  -0.19
+    RUN_2_23  PBAL_4_23  -0.24
+    RUN_2_23  PBAL_5_23  -0.24
+    RUN_2_23  PBAL_7_23  -0.22
+    RUN_2_23  PBAL_8_23  -0.14
+    RUN_2_23  PBAL_9_23  -0.08
+    RUN_2_23  UNIT_0_23  0.42
+    RUN_2_23  UNIT_1_23  0.63
+    RUN_2_23  UNIT_2_23  0.53
+    RUN_2_23  UNIT_3_23  0.13
+    RUN_2_23  UNIT_4_23  0.05
+    RUN_2_23  UNIT_5_23  0.64
+    RUN_2_23  SPEC_0_23  0.032
+    RUN_2_23  SPEC_1_23  0.038
+    RUN_2_23  SPEC_2_23  0.033
+    RUN_2_23  SPEC_3_23  0.036
+    RUN_2_23  SPEC_4_23  0.022
+    RUN_2_24  COST  -2.176
+    RUN_2_24  CBAL_2_24  1
+    RUN_2_24  CDU_24  1
+    RUN_2_24  PBAL_0_24  -0.26
+    RUN_2_24  PBAL_1_24  -0.12
+    RUN_2_24  PBAL_2_24  -0.13
+    RUN_2_24  PBAL_3_24  -0.19
+    RUN_2_24  PBAL_4_24  -0.24
+    RUN_2_24  PBAL_5_24  -0.24
+    RUN_2_24  PBAL_7_24  -0.22
+    RUN_2_24  PBAL_8_24  -0.14
+    RUN_2_24  PBAL_9_24  -0.08
+    RUN_2_24  UNIT_0_24  0.42
+    RUN_2_24  UNIT_1_24  0.63
+    RUN_2_24  UNIT_2_24  0.53
+    RUN_2_24  UNIT_3_24  0.13
+    RUN_2_24  UNIT_4_24  0.05
+    RUN_2_24  UNIT_5_24  0.64
+    RUN_2_24  SPEC_0_24  0.032
+    RUN_2_24  SPEC_1_24  0.038
+    RUN_2_24  SPEC_2_24  0.033
+    RUN_2_24  SPEC_3_24  0.036
+    RUN_2_24  SPEC_4_24  0.022
+    RUN_2_25  COST  -7.969
+    RUN_2_25  CBAL_2_25  1
+    RUN_2_25  CDU_25  1
+    RUN_2_25  PBAL_0_25  -0.26
+    RUN_2_25  PBAL_1_25  -0.12
+    RUN_2_25  PBAL_2_25  -0.13
+    RUN_2_25  PBAL_3_25  -0.19
+    RUN_2_25  PBAL_4_25  -0.24
+    RUN_2_25  PBAL_5_25  -0.24
+    RUN_2_25  PBAL_7_25  -0.22
+    RUN_2_25  PBAL_8_25  -0.14
+    RUN_2_25  PBAL_9_25  -0.08
+    RUN_2_25  UNIT_0_25  0.42
+    RUN_2_25  UNIT_1_25  0.63
+    RUN_2_25  UNIT_2_25  0.53
+    RUN_2_25  UNIT_3_25  0.13
+    RUN_2_25  UNIT_4_25  0.05
+    RUN_2_25  UNIT_5_25  0.64
+    RUN_2_25  SPEC_0_25  0.032
+    RUN_2_25  SPEC_1_25  0.038
+    RUN_2_25  SPEC_2_25  0.033
+    RUN_2_25  SPEC_3_25  0.036
+    RUN_2_25  SPEC_4_25  0.022
+    RUN_2_26  COST  -7.876
+    RUN_2_26  CBAL_2_26  1
+    RUN_2_26  CDU_26  1
+    RUN_2_26  PBAL_0_26  -0.26
+    RUN_2_26  PBAL_1_26  -0.12
+    RUN_2_26  PBAL_2_26  -0.13
+    RUN_2_26  PBAL_3_26  -0.19
+    RUN_2_26  PBAL_4_26  -0.24
+    RUN_2_26  PBAL_5_26  -0.24
+    RUN_2_26  PBAL_7_26  -0.22
+    RUN_2_26  PBAL_8_26  -0.14
+    RUN_2_26  PBAL_9_26  -0.08
+    RUN_2_26  UNIT_0_26  0.42
+    RUN_2_26  UNIT_1_26  0.63
+    RUN_2_26  UNIT_2_26  0.53
+    RUN_2_26  UNIT_3_26  0.13
+    RUN_2_26  UNIT_4_26  0.05
+    RUN_2_26  UNIT_5_26  0.64
+    RUN_2_26  SPEC_0_26  0.032
+    RUN_2_26  SPEC_1_26  0.038
+    RUN_2_26  SPEC_2_26  0.033
+    RUN_2_26  SPEC_3_26  0.036
+    RUN_2_26  SPEC_4_26  0.022
+    RUN_2_27  COST  -10.554
+    RUN_2_27  CBAL_2_27  1
+    RUN_2_27  CDU_27  1
+    RUN_2_27  PBAL_0_27  -0.26
+    RUN_2_27  PBAL_1_27  -0.12
+    RUN_2_27  PBAL_2_27  -0.13
+    RUN_2_27  PBAL_3_27  -0.19
+    RUN_2_27  PBAL_4_27  -0.24
+    RUN_2_27  PBAL_5_27  -0.24
+    RUN_2_27  PBAL_7_27  -0.22
+    RUN_2_27  PBAL_8_27  -0.14
+    RUN_2_27  PBAL_9_27  -0.08
+    RUN_2_27  UNIT_0_27  0.42
+    RUN_2_27  UNIT_1_27  0.63
+    RUN_2_27  UNIT_2_27  0.53
+    RUN_2_27  UNIT_3_27  0.13
+    RUN_2_27  UNIT_4_27  0.05
+    RUN_2_27  UNIT_5_27  0.64
+    RUN_2_27  SPEC_0_27  0.032
+    RUN_2_27  SPEC_1_27  0.038
+    RUN_2_27  SPEC_2_27  0.033
+    RUN_2_27  SPEC_3_27  0.036
+    RUN_2_27  SPEC_4_27  0.022
+    RUN_2_28  COST  -11.819
+    RUN_2_28  CBAL_2_28  1
+    RUN_2_28  CDU_28  1
+    RUN_2_28  PBAL_0_28  -0.26
+    RUN_2_28  PBAL_1_28  -0.12
+    RUN_2_28  PBAL_2_28  -0.13
+    RUN_2_28  PBAL_3_28  -0.19
+    RUN_2_28  PBAL_4_28  -0.24
+    RUN_2_28  PBAL_5_28  -0.24
+    RUN_2_28  PBAL_7_28  -0.22
+    RUN_2_28  PBAL_8_28  -0.14
+    RUN_2_28  PBAL_9_28  -0.08
+    RUN_2_28  UNIT_0_28  0.42
+    RUN_2_28  UNIT_1_28  0.63
+    RUN_2_28  UNIT_2_28  0.53
+    RUN_2_28  UNIT_3_28  0.13
+    RUN_2_28  UNIT_4_28  0.05
+    RUN_2_28  UNIT_5_28  0.64
+    RUN_2_28  SPEC_0_28  0.032
+    RUN_2_28  SPEC_1_28  0.038
+    RUN_2_28  SPEC_2_28  0.033
+    RUN_2_28  SPEC_3_28  0.036
+    RUN_2_28  SPEC_4_28  0.022
+    RUN_2_29  COST  -2.754
+    RUN_2_29  CBAL_2_29  1
+    RUN_2_29  CDU_29  1
+    RUN_2_29  PBAL_0_29  -0.26
+    RUN_2_29  PBAL_1_29  -0.12
+    RUN_2_29  PBAL_2_29  -0.13
+    RUN_2_29  PBAL_3_29  -0.19
+    RUN_2_29  PBAL_4_29  -0.24
+    RUN_2_29  PBAL_5_29  -0.24
+    RUN_2_29  PBAL_7_29  -0.22
+    RUN_2_29  PBAL_8_29  -0.14
+    RUN_2_29  PBAL_9_29  -0.08
+    RUN_2_29  UNIT_0_29  0.42
+    RUN_2_29  UNIT_1_29  0.63
+    RUN_2_29  UNIT_2_29  0.53
+    RUN_2_29  UNIT_3_29  0.13
+    RUN_2_29  UNIT_4_29  0.05
+    RUN_2_29  UNIT_5_29  0.64
+    RUN_2_29  SPEC_0_29  0.032
+    RUN_2_29  SPEC_1_29  0.038
+    RUN_2_29  SPEC_2_29  0.033
+    RUN_2_29  SPEC_3_29  0.036
+    RUN_2_29  SPEC_4_29  0.022
+    RUN_3_0  COST  9.48
+    RUN_3_0  CBAL_3_0  1
+    RUN_3_0  CDU_0  1
+    RUN_3_0  PBAL_0_0  -0.23
+    RUN_3_0  PBAL_1_0  -0.25
+    RUN_3_0  PBAL_2_0  -0.07
+    RUN_3_0  PBAL_3_0  -0.18
+    RUN_3_0  PBAL_4_0  -0.3
+    RUN_3_0  PBAL_5_0  -0.03
+    RUN_3_0  PBAL_6_0  -0.28
+    RUN_3_0  PBAL_7_0  -0.1
+    RUN_3_0  UNIT_0_0  0.64
+    RUN_3_0  UNIT_1_0  0.64
+    RUN_3_0  UNIT_2_0  0.22
+    RUN_3_0  UNIT_3_0  0.2
+    RUN_3_0  UNIT_4_0  0.39
+    RUN_3_0  UNIT_5_0  0.29
+    RUN_3_0  SPEC_0_0  0.022
+    RUN_3_0  SPEC_1_0  0.046
+    RUN_3_0  SPEC_2_0  0.049
+    RUN_3_0  SPEC_3_0  0.035
+    RUN_3_1  COST  -10.271
+    RUN_3_1  CBAL_3_1  1
+    RUN_3_1  CDU_1  1
+    RUN_3_1  PBAL_0_1  -0.23
+    RUN_3_1  PBAL_1_1  -0.25
+    RUN_3_1  PBAL_2_1  -0.07
+    RUN_3_1  PBAL_3_1  -0.18
+    RUN_3_1  PBAL_4_1  -0.3
+    RUN_3_1  PBAL_5_1  -0.03
+    RUN_3_1  PBAL_6_1  -0.28
+    RUN_3_1  PBAL_7_1  -0.1
+    RUN_3_1  UNIT_0_1  0.64
+    RUN_3_1  UNIT_1_1  0.64
+    RUN_3_1  UNIT_2_1  0.22
+    RUN_3_1  UNIT_3_1  0.2
+    RUN_3_1  UNIT_4_1  0.39
+    RUN_3_1  UNIT_5_1  0.29
+    RUN_3_1  SPEC_0_1  0.022
+    RUN_3_1  SPEC_1_1  0.046
+    RUN_3_1  SPEC_2_1  0.049
+    RUN_3_1  SPEC_3_1  0.035
+    RUN_3_2  COST  -0.954
+    RUN_3_2  CBAL_3_2  1
+    RUN_3_2  CDU_2  1
+    RUN_3_2  PBAL_0_2  -0.23
+    RUN_3_2  PBAL_1_2  -0.25
+    RUN_3_2  PBAL_2_2  -0.07
+    RUN_3_2  PBAL_3_2  -0.18
+    RUN_3_2  PBAL_4_2  -0.3
+    RUN_3_2  PBAL_5_2  -0.03
+    RUN_3_2  PBAL_6_2  -0.28
+    RUN_3_2  PBAL_7_2  -0.1
+    RUN_3_2  UNIT_0_2  0.64
+    RUN_3_2  UNIT_1_2  0.64
+    RUN_3_2  UNIT_2_2  0.22
+    RUN_3_2  UNIT_3_2  0.2
+    RUN_3_2  UNIT_4_2  0.39
+    RUN_3_2  UNIT_5_2  0.29
+    RUN_3_2  SPEC_0_2  0.022
+    RUN_3_2  SPEC_1_2  0.046
+    RUN_3_2  SPEC_2_2  0.049
+    RUN_3_2  SPEC_3_2  0.035
+    RUN_3_3  COST  -7.71
+    RUN_3_3  CBAL_3_3  1
+    RUN_3_3  CDU_3  1
+    RUN_3_3  PBAL_0_3  -0.23
+    RUN_3_3  PBAL_1_3  -0.25
+    RUN_3_3  PBAL_2_3  -0.07
+    RUN_3_3  PBAL_3_3  -0.18
+    RUN_3_3  PBAL_4_3  -0.3
+    RUN_3_3  PBAL_5_3  -0.03
+    RUN_3_3  PBAL_6_3  -0.28
+    RUN_3_3  PBAL_7_3  -0.1
+    RUN_3_3  UNIT_0_3  0.64
+    RUN_3_3  UNIT_1_3  0.64
+    RUN_3_3  UNIT_2_3  0.22
+    RUN_3_3  UNIT_3_3  0.2
+    RUN_3_3  UNIT_4_3  0.39
+    RUN_3_3  UNIT_5_3  0.29
+    RUN_3_3  SPEC_0_3  0.022
+    RUN_3_3  SPEC_1_3  0.046
+    RUN_3_3  SPEC_2_3  0.049
+    RUN_3_3  SPEC_3_3  0.035
+    RUN_3_4  COST  -1.055
+    RUN_3_4  CBAL_3_4  1
+    RUN_3_4  CDU_4  1
+    RUN_3_4  PBAL_0_4  -0.23
+    RUN_3_4  PBAL_1_4  -0.25
+    RUN_3_4  PBAL_2_4  -0.07
+    RUN_3_4  PBAL_3_4  -0.18
+    RUN_3_4  PBAL_4_4  -0.3
+    RUN_3_4  PBAL_5_4  -0.03
+    RUN_3_4  PBAL_6_4  -0.28
+    RUN_3_4  PBAL_7_4  -0.1
+    RUN_3_4  UNIT_0_4  0.64
+    RUN_3_4  UNIT_1_4  0.64
+    RUN_3_4  UNIT_2_4  0.22
+    RUN_3_4  UNIT_3_4  0.2
+    RUN_3_4  UNIT_4_4  0.39
+    RUN_3_4  UNIT_5_4  0.29
+    RUN_3_4  SPEC_0_4  0.022
+    RUN_3_4  SPEC_1_4  0.046
+    RUN_3_4  SPEC_2_4  0.049
+    RUN_3_4  SPEC_3_4  0.035
+    RUN_3_5  COST  -8.907
+    RUN_3_5  CBAL_3_5  1
+    RUN_3_5  CDU_5  1
+    RUN_3_5  PBAL_0_5  -0.23
+    RUN_3_5  PBAL_1_5  -0.25
+    RUN_3_5  PBAL_2_5  -0.07
+    RUN_3_5  PBAL_3_5  -0.18
+    RUN_3_5  PBAL_4_5  -0.3
+    RUN_3_5  PBAL_5_5  -0.03
+    RUN_3_5  PBAL_6_5  -0.28
+    RUN_3_5  PBAL_7_5  -0.1
+    RUN_3_5  UNIT_0_5  0.64
+    RUN_3_5  UNIT_1_5  0.64
+    RUN_3_5  UNIT_2_5  0.22
+    RUN_3_5  UNIT_3_5  0.2
+    RUN_3_5  UNIT_4_5  0.39
+    RUN_3_5  UNIT_5_5  0.29
+    RUN_3_5  SPEC_0_5  0.022
+    RUN_3_5  SPEC_1_5  0.046
+    RUN_3_5  SPEC_2_5  0.049
+    RUN_3_5  SPEC_3_5  0.035
+    RUN_3_6  COST  -12.345
+    RUN_3_6  CBAL_3_6  1
+    RUN_3_6  CDU_6  1
+    RUN_3_6  PBAL_0_6  -0.23
+    RUN_3_6  PBAL_1_6  -0.25
+    RUN_3_6  PBAL_2_6  -0.07
+    RUN_3_6  PBAL_3_6  -0.18
+    RUN_3_6  PBAL_4_6  -0.3
+    RUN_3_6  PBAL_5_6  -0.03
+    RUN_3_6  PBAL_6_6  -0.28
+    RUN_3_6  PBAL_7_6  -0.1
+    RUN_3_6  UNIT_0_6  0.64
+    RUN_3_6  UNIT_1_6  0.64
+    RUN_3_6  UNIT_2_6  0.22
+    RUN_3_6  UNIT_3_6  0.2
+    RUN_3_6  UNIT_4_6  0.39
+    RUN_3_6  UNIT_5_6  0.29
+    RUN_3_6  SPEC_0_6  0.022
+    RUN_3_6  SPEC_1_6  0.046
+    RUN_3_6  SPEC_2_6  0.049
+    RUN_3_6  SPEC_3_6  0.035
+    RUN_3_7  COST  -17.408
+    RUN_3_7  CBAL_3_7  1
+    RUN_3_7  CDU_7  1
+    RUN_3_7  PBAL_0_7  -0.23
+    RUN_3_7  PBAL_1_7  -0.25
+    RUN_3_7  PBAL_2_7  -0.07
+    RUN_3_7  PBAL_3_7  -0.18
+    RUN_3_7  PBAL_4_7  -0.3
+    RUN_3_7  PBAL_5_7  -0.03
+    RUN_3_7  PBAL_6_7  -0.28
+    RUN_3_7  PBAL_7_7  -0.1
+    RUN_3_7  UNIT_0_7  0.64
+    RUN_3_7  UNIT_1_7  0.64
+    RUN_3_7  UNIT_2_7  0.22
+    RUN_3_7  UNIT_3_7  0.2
+    RUN_3_7  UNIT_4_7  0.39
+    RUN_3_7  UNIT_5_7  0.29
+    RUN_3_7  SPEC_0_7  0.022
+    RUN_3_7  SPEC_1_7  0.046
+    RUN_3_7  SPEC_2_7  0.049
+    RUN_3_7  SPEC_3_7  0.035
+    RUN_3_8  COST  -10.441
+    RUN_3_8  CBAL_3_8  1
+    RUN_3_8  CDU_8  1
+    RUN_3_8  PBAL_0_8  -0.23
+    RUN_3_8  PBAL_1_8  -0.25
+    RUN_3_8  PBAL_2_8  -0.07
+    RUN_3_8  PBAL_3_8  -0.18
+    RUN_3_8  PBAL_4_8  -0.3
+    RUN_3_8  PBAL_5_8  -0.03
+    RUN_3_8  PBAL_6_8  -0.28
+    RUN_3_8  PBAL_7_8  -0.1
+    RUN_3_8  UNIT_0_8  0.64
+    RUN_3_8  UNIT_1_8  0.64
+    RUN_3_8  UNIT_2_8  0.22
+    RUN_3_8  UNIT_3_8  0.2
+    RUN_3_8  UNIT_4_8  0.39
+    RUN_3_8  UNIT_5_8  0.29
+    RUN_3_8  SPEC_0_8  0.022
+    RUN_3_8  SPEC_1_8  0.046
+    RUN_3_8  SPEC_2_8  0.049
+    RUN_3_8  SPEC_3_8  0.035
+    RUN_3_9  COST  1.45
+    RUN_3_9  CBAL_3_9  1
+    RUN_3_9  CDU_9  1
+    RUN_3_9  PBAL_0_9  -0.23
+    RUN_3_9  PBAL_1_9  -0.25
+    RUN_3_9  PBAL_2_9  -0.07
+    RUN_3_9  PBAL_3_9  -0.18
+    RUN_3_9  PBAL_4_9  -0.3
+    RUN_3_9  PBAL_5_9  -0.03
+    RUN_3_9  PBAL_6_9  -0.28
+    RUN_3_9  PBAL_7_9  -0.1
+    RUN_3_9  UNIT_0_9  0.64
+    RUN_3_9  UNIT_1_9  0.64
+    RUN_3_9  UNIT_2_9  0.22
+    RUN_3_9  UNIT_3_9  0.2
+    RUN_3_9  UNIT_4_9  0.39
+    RUN_3_9  UNIT_5_9  0.29
+    RUN_3_9  SPEC_0_9  0.022
+    RUN_3_9  SPEC_1_9  0.046
+    RUN_3_9  SPEC_2_9  0.049
+    RUN_3_9  SPEC_3_9  0.035
+    RUN_3_10  COST  0.803
+    RUN_3_10  CBAL_3_10  1
+    RUN_3_10  CDU_10  1
+    RUN_3_10  PBAL_0_10  -0.23
+    RUN_3_10  PBAL_1_10  -0.25
+    RUN_3_10  PBAL_2_10  -0.07
+    RUN_3_10  PBAL_3_10  -0.18
+    RUN_3_10  PBAL_4_10  -0.3
+    RUN_3_10  PBAL_5_10  -0.03
+    RUN_3_10  PBAL_6_10  -0.28
+    RUN_3_10  PBAL_7_10  -0.1
+    RUN_3_10  UNIT_0_10  0.64
+    RUN_3_10  UNIT_1_10  0.64
+    RUN_3_10  UNIT_2_10  0.22
+    RUN_3_10  UNIT_3_10  0.2
+    RUN_3_10  UNIT_4_10  0.39
+    RUN_3_10  UNIT_5_10  0.29
+    RUN_3_10  SPEC_0_10  0.022
+    RUN_3_10  SPEC_1_10  0.046
+    RUN_3_10  SPEC_2_10  0.049
+    RUN_3_10  SPEC_3_10  0.035
+    RUN_3_11  COST  -11.888
+    RUN_3_11  CBAL_3_11  1
+    RUN_3_11  CDU_11  1
+    RUN_3_11  PBAL_0_11  -0.23
+    RUN_3_11  PBAL_1_11  -0.25
+    RUN_3_11  PBAL_2_11  -0.07
+    RUN_3_11  PBAL_3_11  -0.18
+    RUN_3_11  PBAL_4_11  -0.3
+    RUN_3_11  PBAL_5_11  -0.03
+    RUN_3_11  PBAL_6_11  -0.28
+    RUN_3_11  PBAL_7_11  -0.1
+    RUN_3_11  UNIT_0_11  0.64
+    RUN_3_11  UNIT_1_11  0.64
+    RUN_3_11  UNIT_2_11  0.22
+    RUN_3_11  UNIT_3_11  0.2
+    RUN_3_11  UNIT_4_11  0.39
+    RUN_3_11  UNIT_5_11  0.29
+    RUN_3_11  SPEC_0_11  0.022
+    RUN_3_11  SPEC_1_11  0.046
+    RUN_3_11  SPEC_2_11  0.049
+    RUN_3_11  SPEC_3_11  0.035
+    RUN_3_12  COST  -3.711
+    RUN_3_12  CBAL_3_12  1
+    RUN_3_12  CDU_12  1
+    RUN_3_12  PBAL_0_12  -0.23
+    RUN_3_12  PBAL_1_12  -0.25
+    RUN_3_12  PBAL_2_12  -0.07
+    RUN_3_12  PBAL_3_12  -0.18
+    RUN_3_12  PBAL_4_12  -0.3
+    RUN_3_12  PBAL_5_12  -0.03
+    RUN_3_12  PBAL_6_12  -0.28
+    RUN_3_12  PBAL_7_12  -0.1
+    RUN_3_12  UNIT_0_12  0.64
+    RUN_3_12  UNIT_1_12  0.64
+    RUN_3_12  UNIT_2_12  0.22
+    RUN_3_12  UNIT_3_12  0.2
+    RUN_3_12  UNIT_4_12  0.39
+    RUN_3_12  UNIT_5_12  0.29
+    RUN_3_12  SPEC_0_12  0.022
+    RUN_3_12  SPEC_1_12  0.046
+    RUN_3_12  SPEC_2_12  0.049
+    RUN_3_12  SPEC_3_12  0.035
+    RUN_3_13  COST  -19.756
+    RUN_3_13  CBAL_3_13  1
+    RUN_3_13  CDU_13  1
+    RUN_3_13  PBAL_0_13  -0.23
+    RUN_3_13  PBAL_1_13  -0.25
+    RUN_3_13  PBAL_2_13  -0.07
+    RUN_3_13  PBAL_3_13  -0.18
+    RUN_3_13  PBAL_4_13  -0.3
+    RUN_3_13  PBAL_5_13  -0.03
+    RUN_3_13  PBAL_6_13  -0.28
+    RUN_3_13  PBAL_7_13  -0.1
+    RUN_3_13  UNIT_0_13  0.64
+    RUN_3_13  UNIT_1_13  0.64
+    RUN_3_13  UNIT_2_13  0.22
+    RUN_3_13  UNIT_3_13  0.2
+    RUN_3_13  UNIT_4_13  0.39
+    RUN_3_13  UNIT_5_13  0.29
+    RUN_3_13  SPEC_0_13  0.022
+    RUN_3_13  SPEC_1_13  0.046
+    RUN_3_13  SPEC_2_13  0.049
+    RUN_3_13  SPEC_3_13  0.035
+    RUN_3_14  COST  -14.153
+    RUN_3_14  CBAL_3_14  1
+    RUN_3_14  CDU_14  1
+    RUN_3_14  PBAL_0_14  -0.23
+    RUN_3_14  PBAL_1_14  -0.25
+    RUN_3_14  PBAL_2_14  -0.07
+    RUN_3_14  PBAL_3_14  -0.18
+    RUN_3_14  PBAL_4_14  -0.3
+    RUN_3_14  PBAL_5_14  -0.03
+    RUN_3_14  PBAL_6_14  -0.28
+    RUN_3_14  PBAL_7_14  -0.1
+    RUN_3_14  UNIT_0_14  0.64
+    RUN_3_14  UNIT_1_14  0.64
+    RUN_3_14  UNIT_2_14  0.22
+    RUN_3_14  UNIT_3_14  0.2
+    RUN_3_14  UNIT_4_14  0.39
+    RUN_3_14  UNIT_5_14  0.29
+    RUN_3_14  SPEC_0_14  0.022
+    RUN_3_14  SPEC_1_14  0.046
+    RUN_3_14  SPEC_2_14  0.049
+    RUN_3_14  SPEC_3_14  0.035
+    RUN_3_15  COST  -4.237
+    RUN_3_15  CBAL_3_15  1
+    RUN_3_15  CDU_15  1
+    RUN_3_15  PBAL_0_15  -0.23
+    RUN_3_15  PBAL_1_15  -0.25
+    RUN_3_15  PBAL_2_15  -0.07
+    RUN_3_15  PBAL_3_15  -0.18
+    RUN_3_15  PBAL_4_15  -0.3
+    RUN_3_15  PBAL_5_15  -0.03
+    RUN_3_15  PBAL_6_15  -0.28
+    RUN_3_15  PBAL_7_15  -0.1
+    RUN_3_15  UNIT_0_15  0.64
+    RUN_3_15  UNIT_1_15  0.64
+    RUN_3_15  UNIT_2_15  0.22
+    RUN_3_15  UNIT_3_15  0.2
+    RUN_3_15  UNIT_4_15  0.39
+    RUN_3_15  UNIT_5_15  0.29
+    RUN_3_15  SPEC_0_15  0.022
+    RUN_3_15  SPEC_1_15  0.046
+    RUN_3_15  SPEC_2_15  0.049
+    RUN_3_15  SPEC_3_15  0.035
+    RUN_3_16  COST  -0.917
+    RUN_3_16  CBAL_3_16  1
+    RUN_3_16  CDU_16  1
+    RUN_3_16  PBAL_0_16  -0.23
+    RUN_3_16  PBAL_1_16  -0.25
+    RUN_3_16  PBAL_2_16  -0.07
+    RUN_3_16  PBAL_3_16  -0.18
+    RUN_3_16  PBAL_4_16  -0.3
+    RUN_3_16  PBAL_5_16  -0.03
+    RUN_3_16  PBAL_6_16  -0.28
+    RUN_3_16  PBAL_7_16  -0.1
+    RUN_3_16  UNIT_0_16  0.64
+    RUN_3_16  UNIT_1_16  0.64
+    RUN_3_16  UNIT_2_16  0.22
+    RUN_3_16  UNIT_3_16  0.2
+    RUN_3_16  UNIT_4_16  0.39
+    RUN_3_16  UNIT_5_16  0.29
+    RUN_3_16  SPEC_0_16  0.022
+    RUN_3_16  SPEC_1_16  0.046
+    RUN_3_16  SPEC_2_16  0.049
+    RUN_3_16  SPEC_3_16  0.035
+    RUN_3_17  COST  -2.633
+    RUN_3_17  CBAL_3_17  1
+    RUN_3_17  CDU_17  1
+    RUN_3_17  PBAL_0_17  -0.23
+    RUN_3_17  PBAL_1_17  -0.25
+    RUN_3_17  PBAL_2_17  -0.07
+    RUN_3_17  PBAL_3_17  -0.18
+    RUN_3_17  PBAL_4_17  -0.3
+    RUN_3_17  PBAL_5_17  -0.03
+    RUN_3_17  PBAL_6_17  -0.28
+    RUN_3_17  PBAL_7_17  -0.1
+    RUN_3_17  UNIT_0_17  0.64
+    RUN_3_17  UNIT_1_17  0.64
+    RUN_3_17  UNIT_2_17  0.22
+    RUN_3_17  UNIT_3_17  0.2
+    RUN_3_17  UNIT_4_17  0.39
+    RUN_3_17  UNIT_5_17  0.29
+    RUN_3_17  SPEC_0_17  0.022
+    RUN_3_17  SPEC_1_17  0.046
+    RUN_3_17  SPEC_2_17  0.049
+    RUN_3_17  SPEC_3_17  0.035
+    RUN_3_18  COST  -20.376
+    RUN_3_18  CBAL_3_18  1
+    RUN_3_18  CDU_18  1
+    RUN_3_18  PBAL_0_18  -0.23
+    RUN_3_18  PBAL_1_18  -0.25
+    RUN_3_18  PBAL_2_18  -0.07
+    RUN_3_18  PBAL_3_18  -0.18
+    RUN_3_18  PBAL_4_18  -0.3
+    RUN_3_18  PBAL_5_18  -0.03
+    RUN_3_18  PBAL_6_18  -0.28
+    RUN_3_18  PBAL_7_18  -0.1
+    RUN_3_18  UNIT_0_18  0.64
+    RUN_3_18  UNIT_1_18  0.64
+    RUN_3_18  UNIT_2_18  0.22
+    RUN_3_18  UNIT_3_18  0.2
+    RUN_3_18  UNIT_4_18  0.39
+    RUN_3_18  UNIT_5_18  0.29
+    RUN_3_18  SPEC_0_18  0.022
+    RUN_3_18  SPEC_1_18  0.046
+    RUN_3_18  SPEC_2_18  0.049
+    RUN_3_18  SPEC_3_18  0.035
+    RUN_3_19  COST  6.617
+    RUN_3_19  CBAL_3_19  1
+    RUN_3_19  CDU_19  1
+    RUN_3_19  PBAL_0_19  -0.23
+    RUN_3_19  PBAL_1_19  -0.25
+    RUN_3_19  PBAL_2_19  -0.07
+    RUN_3_19  PBAL_3_19  -0.18
+    RUN_3_19  PBAL_4_19  -0.3
+    RUN_3_19  PBAL_5_19  -0.03
+    RUN_3_19  PBAL_6_19  -0.28
+    RUN_3_19  PBAL_7_19  -0.1
+    RUN_3_19  UNIT_0_19  0.64
+    RUN_3_19  UNIT_1_19  0.64
+    RUN_3_19  UNIT_2_19  0.22
+    RUN_3_19  UNIT_3_19  0.2
+    RUN_3_19  UNIT_4_19  0.39
+    RUN_3_19  UNIT_5_19  0.29
+    RUN_3_19  SPEC_0_19  0.022
+    RUN_3_19  SPEC_1_19  0.046
+    RUN_3_19  SPEC_2_19  0.049
+    RUN_3_19  SPEC_3_19  0.035
+    RUN_3_20  COST  -26.334
+    RUN_3_20  CBAL_3_20  1
+    RUN_3_20  CDU_20  1
+    RUN_3_20  PBAL_0_20  -0.23
+    RUN_3_20  PBAL_1_20  -0.25
+    RUN_3_20  PBAL_2_20  -0.07
+    RUN_3_20  PBAL_3_20  -0.18
+    RUN_3_20  PBAL_4_20  -0.3
+    RUN_3_20  PBAL_5_20  -0.03
+    RUN_3_20  PBAL_6_20  -0.28
+    RUN_3_20  PBAL_7_20  -0.1
+    RUN_3_20  UNIT_0_20  0.64
+    RUN_3_20  UNIT_1_20  0.64
+    RUN_3_20  UNIT_2_20  0.22
+    RUN_3_20  UNIT_3_20  0.2
+    RUN_3_20  UNIT_4_20  0.39
+    RUN_3_20  UNIT_5_20  0.29
+    RUN_3_20  SPEC_0_20  0.022
+    RUN_3_20  SPEC_1_20  0.046
+    RUN_3_20  SPEC_2_20  0.049
+    RUN_3_20  SPEC_3_20  0.035
+    RUN_3_21  COST  -6.33
+    RUN_3_21  CBAL_3_21  1
+    RUN_3_21  CDU_21  1
+    RUN_3_21  PBAL_0_21  -0.23
+    RUN_3_21  PBAL_1_21  -0.25
+    RUN_3_21  PBAL_2_21  -0.07
+    RUN_3_21  PBAL_3_21  -0.18
+    RUN_3_21  PBAL_4_21  -0.3
+    RUN_3_21  PBAL_5_21  -0.03
+    RUN_3_21  PBAL_6_21  -0.28
+    RUN_3_21  PBAL_7_21  -0.1
+    RUN_3_21  UNIT_0_21  0.64
+    RUN_3_21  UNIT_1_21  0.64
+    RUN_3_21  UNIT_2_21  0.22
+    RUN_3_21  UNIT_3_21  0.2
+    RUN_3_21  UNIT_4_21  0.39
+    RUN_3_21  UNIT_5_21  0.29
+    RUN_3_21  SPEC_0_21  0.022
+    RUN_3_21  SPEC_1_21  0.046
+    RUN_3_21  SPEC_2_21  0.049
+    RUN_3_21  SPEC_3_21  0.035
+    RUN_3_22  COST  -2.915
+    RUN_3_22  CBAL_3_22  1
+    RUN_3_22  CDU_22  1
+    RUN_3_22  PBAL_0_22  -0.23
+    RUN_3_22  PBAL_1_22  -0.25
+    RUN_3_22  PBAL_2_22  -0.07
+    RUN_3_22  PBAL_3_22  -0.18
+    RUN_3_22  PBAL_4_22  -0.3
+    RUN_3_22  PBAL_5_22  -0.03
+    RUN_3_22  PBAL_6_22  -0.28
+    RUN_3_22  PBAL_7_22  -0.1
+    RUN_3_22  UNIT_0_22  0.64
+    RUN_3_22  UNIT_1_22  0.64
+    RUN_3_22  UNIT_2_22  0.22
+    RUN_3_22  UNIT_3_22  0.2
+    RUN_3_22  UNIT_4_22  0.39
+    RUN_3_22  UNIT_5_22  0.29
+    RUN_3_22  SPEC_0_22  0.022
+    RUN_3_22  SPEC_1_22  0.046
+    RUN_3_22  SPEC_2_22  0.049
+    RUN_3_22  SPEC_3_22  0.035
+    RUN_3_23  COST  -5.214
+    RUN_3_23  CBAL_3_23  1
+    RUN_3_23  CDU_23  1
+    RUN_3_23  PBAL_0_23  -0.23
+    RUN_3_23  PBAL_1_23  -0.25
+    RUN_3_23  PBAL_2_23  -0.07
+    RUN_3_23  PBAL_3_23  -0.18
+    RUN_3_23  PBAL_4_23  -0.3
+    RUN_3_23  PBAL_5_23  -0.03
+    RUN_3_23  PBAL_6_23  -0.28
+    RUN_3_23  PBAL_7_23  -0.1
+    RUN_3_23  UNIT_0_23  0.64
+    RUN_3_23  UNIT_1_23  0.64
+    RUN_3_23  UNIT_2_23  0.22
+    RUN_3_23  UNIT_3_23  0.2
+    RUN_3_23  UNIT_4_23  0.39
+    RUN_3_23  UNIT_5_23  0.29
+    RUN_3_23  SPEC_0_23  0.022
+    RUN_3_23  SPEC_1_23  0.046
+    RUN_3_23  SPEC_2_23  0.049
+    RUN_3_23  SPEC_3_23  0.035
+    RUN_3_24  COST  -8.54
+    RUN_3_24  CBAL_3_24  1
+    RUN_3_24  CDU_24  1
+    RUN_3_24  PBAL_0_24  -0.23
+    RUN_3_24  PBAL_1_24  -0.25
+    RUN_3_24  PBAL_2_24  -0.07
+    RUN_3_24  PBAL_3_24  -0.18
+    RUN_3_24  PBAL_4_24  -0.3
+    RUN_3_24  PBAL_5_24  -0.03
+    RUN_3_24  PBAL_6_24  -0.28
+    RUN_3_24  PBAL_7_24  -0.1
+    RUN_3_24  UNIT_0_24  0.64
+    RUN_3_24  UNIT_1_24  0.64
+    RUN_3_24  UNIT_2_24  0.22
+    RUN_3_24  UNIT_3_24  0.2
+    RUN_3_24  UNIT_4_24  0.39
+    RUN_3_24  UNIT_5_24  0.29
+    RUN_3_24  SPEC_0_24  0.022
+    RUN_3_24  SPEC_1_24  0.046
+    RUN_3_24  SPEC_2_24  0.049
+    RUN_3_24  SPEC_3_24  0.035
+    RUN_3_25  COST  -10.045
+    RUN_3_25  CBAL_3_25  1
+    RUN_3_25  CDU_25  1
+    RUN_3_25  PBAL_0_25  -0.23
+    RUN_3_25  PBAL_1_25  -0.25
+    RUN_3_25  PBAL_2_25  -0.07
+    RUN_3_25  PBAL_3_25  -0.18
+    RUN_3_25  PBAL_4_25  -0.3
+    RUN_3_25  PBAL_5_25  -0.03
+    RUN_3_25  PBAL_6_25  -0.28
+    RUN_3_25  PBAL_7_25  -0.1
+    RUN_3_25  UNIT_0_25  0.64
+    RUN_3_25  UNIT_1_25  0.64
+    RUN_3_25  UNIT_2_25  0.22
+    RUN_3_25  UNIT_3_25  0.2
+    RUN_3_25  UNIT_4_25  0.39
+    RUN_3_25  UNIT_5_25  0.29
+    RUN_3_25  SPEC_0_25  0.022
+    RUN_3_25  SPEC_1_25  0.046
+    RUN_3_25  SPEC_2_25  0.049
+    RUN_3_25  SPEC_3_25  0.035
+    RUN_3_26  COST  -13.338
+    RUN_3_26  CBAL_3_26  1
+    RUN_3_26  CDU_26  1
+    RUN_3_26  PBAL_0_26  -0.23
+    RUN_3_26  PBAL_1_26  -0.25
+    RUN_3_26  PBAL_2_26  -0.07
+    RUN_3_26  PBAL_3_26  -0.18
+    RUN_3_26  PBAL_4_26  -0.3
+    RUN_3_26  PBAL_5_26  -0.03
+    RUN_3_26  PBAL_6_26  -0.28
+    RUN_3_26  PBAL_7_26  -0.1
+    RUN_3_26  UNIT_0_26  0.64
+    RUN_3_26  UNIT_1_26  0.64
+    RUN_3_26  UNIT_2_26  0.22
+    RUN_3_26  UNIT_3_26  0.2
+    RUN_3_26  UNIT_4_26  0.39
+    RUN_3_26  UNIT_5_26  0.29
+    RUN_3_26  SPEC_0_26  0.022
+    RUN_3_26  SPEC_1_26  0.046
+    RUN_3_26  SPEC_2_26  0.049
+    RUN_3_26  SPEC_3_26  0.035
+    RUN_3_27  COST  -13.168
+    RUN_3_27  CBAL_3_27  1
+    RUN_3_27  CDU_27  1
+    RUN_3_27  PBAL_0_27  -0.23
+    RUN_3_27  PBAL_1_27  -0.25
+    RUN_3_27  PBAL_2_27  -0.07
+    RUN_3_27  PBAL_3_27  -0.18
+    RUN_3_27  PBAL_4_27  -0.3
+    RUN_3_27  PBAL_5_27  -0.03
+    RUN_3_27  PBAL_6_27  -0.28
+    RUN_3_27  PBAL_7_27  -0.1
+    RUN_3_27  UNIT_0_27  0.64
+    RUN_3_27  UNIT_1_27  0.64
+    RUN_3_27  UNIT_2_27  0.22
+    RUN_3_27  UNIT_3_27  0.2
+    RUN_3_27  UNIT_4_27  0.39
+    RUN_3_27  UNIT_5_27  0.29
+    RUN_3_27  SPEC_0_27  0.022
+    RUN_3_27  SPEC_1_27  0.046
+    RUN_3_27  SPEC_2_27  0.049
+    RUN_3_27  SPEC_3_27  0.035
+    RUN_3_28  COST  -14.063
+    RUN_3_28  CBAL_3_28  1
+    RUN_3_28  CDU_28  1
+    RUN_3_28  PBAL_0_28  -0.23
+    RUN_3_28  PBAL_1_28  -0.25
+    RUN_3_28  PBAL_2_28  -0.07
+    RUN_3_28  PBAL_3_28  -0.18
+    RUN_3_28  PBAL_4_28  -0.3
+    RUN_3_28  PBAL_5_28  -0.03
+    RUN_3_28  PBAL_6_28  -0.28
+    RUN_3_28  PBAL_7_28  -0.1
+    RUN_3_28  UNIT_0_28  0.64
+    RUN_3_28  UNIT_1_28  0.64
+    RUN_3_28  UNIT_2_28  0.22
+    RUN_3_28  UNIT_3_28  0.2
+    RUN_3_28  UNIT_4_28  0.39
+    RUN_3_28  UNIT_5_28  0.29
+    RUN_3_28  SPEC_0_28  0.022
+    RUN_3_28  SPEC_1_28  0.046
+    RUN_3_28  SPEC_2_28  0.049
+    RUN_3_28  SPEC_3_28  0.035
+    RUN_3_29  COST  -5.92
+    RUN_3_29  CBAL_3_29  1
+    RUN_3_29  CDU_29  1
+    RUN_3_29  PBAL_0_29  -0.23
+    RUN_3_29  PBAL_1_29  -0.25
+    RUN_3_29  PBAL_2_29  -0.07
+    RUN_3_29  PBAL_3_29  -0.18
+    RUN_3_29  PBAL_4_29  -0.3
+    RUN_3_29  PBAL_5_29  -0.03
+    RUN_3_29  PBAL_6_29  -0.28
+    RUN_3_29  PBAL_7_29  -0.1
+    RUN_3_29  UNIT_0_29  0.64
+    RUN_3_29  UNIT_1_29  0.64
+    RUN_3_29  UNIT_2_29  0.22
+    RUN_3_29  UNIT_3_29  0.2
+    RUN_3_29  UNIT_4_29  0.39
+    RUN_3_29  UNIT_5_29  0.29
+    RUN_3_29  SPEC_0_29  0.022
+    RUN_3_29  SPEC_1_29  0.046
+    RUN_3_29  SPEC_2_29  0.049
+    RUN_3_29  SPEC_3_29  0.035
+    RUN_4_0  COST  -5.608
+    RUN_4_0  CBAL_4_0  1
+    RUN_4_0  CDU_0  1
+    RUN_4_0  PBAL_1_0  -0.2
+    RUN_4_0  PBAL_2_0  -0.17
+    RUN_4_0  PBAL_4_0  -0.3
+    RUN_4_0  PBAL_5_0  -0.28
+    RUN_4_0  PBAL_6_0  -0.12
+    RUN_4_0  PBAL_7_0  -0.21
+    RUN_4_0  PBAL_8_0  -0.06
+    RUN_4_0  PBAL_9_0  -0.13
+    RUN_4_0  UNIT_0_0  0.54
+    RUN_4_0  UNIT_1_0  0.5
+    RUN_4_0  UNIT_2_0  0.46
+    RUN_4_0  UNIT_3_0  0.66
+    RUN_4_0  UNIT_4_0  0.78
+    RUN_4_0  UNIT_5_0  0.01
+    RUN_4_0  SPEC_0_0  0.036
+    RUN_4_0  SPEC_2_0  0.035
+    RUN_4_0  SPEC_3_0  0.012
+    RUN_4_0  SPEC_4_0  0.034
+    RUN_4_1  COST  -10.835
+    RUN_4_1  CBAL_4_1  1
+    RUN_4_1  CDU_1  1
+    RUN_4_1  PBAL_1_1  -0.2
+    RUN_4_1  PBAL_2_1  -0.17
+    RUN_4_1  PBAL_4_1  -0.3
+    RUN_4_1  PBAL_5_1  -0.28
+    RUN_4_1  PBAL_6_1  -0.12
+    RUN_4_1  PBAL_7_1  -0.21
+    RUN_4_1  PBAL_8_1  -0.06
+    RUN_4_1  PBAL_9_1  -0.13
+    RUN_4_1  UNIT_0_1  0.54
+    RUN_4_1  UNIT_1_1  0.5
+    RUN_4_1  UNIT_2_1  0.46
+    RUN_4_1  UNIT_3_1  0.66
+    RUN_4_1  UNIT_4_1  0.78
+    RUN_4_1  UNIT_5_1  0.01
+    RUN_4_1  SPEC_0_1  0.036
+    RUN_4_1  SPEC_2_1  0.035
+    RUN_4_1  SPEC_3_1  0.012
+    RUN_4_1  SPEC_4_1  0.034
+    RUN_4_2  COST  -9.768
+    RUN_4_2  CBAL_4_2  1
+    RUN_4_2  CDU_2  1
+    RUN_4_2  PBAL_1_2  -0.2
+    RUN_4_2  PBAL_2_2  -0.17
+    RUN_4_2  PBAL_4_2  -0.3
+    RUN_4_2  PBAL_5_2  -0.28
+    RUN_4_2  PBAL_6_2  -0.12
+    RUN_4_2  PBAL_7_2  -0.21
+    RUN_4_2  PBAL_8_2  -0.06
+    RUN_4_2  PBAL_9_2  -0.13
+    RUN_4_2  UNIT_0_2  0.54
+    RUN_4_2  UNIT_1_2  0.5
+    RUN_4_2  UNIT_2_2  0.46
+    RUN_4_2  UNIT_3_2  0.66
+    RUN_4_2  UNIT_4_2  0.78
+    RUN_4_2  UNIT_5_2  0.01
+    RUN_4_2  SPEC_0_2  0.036
+    RUN_4_2  SPEC_2_2  0.035
+    RUN_4_2  SPEC_3_2  0.012
+    RUN_4_2  SPEC_4_2  0.034
+    RUN_4_3  COST  -3.03
+    RUN_4_3  CBAL_4_3  1
+    RUN_4_3  CDU_3  1
+    RUN_4_3  PBAL_1_3  -0.2
+    RUN_4_3  PBAL_2_3  -0.17
+    RUN_4_3  PBAL_4_3  -0.3
+    RUN_4_3  PBAL_5_3  -0.28
+    RUN_4_3  PBAL_6_3  -0.12
+    RUN_4_3  PBAL_7_3  -0.21
+    RUN_4_3  PBAL_8_3  -0.06
+    RUN_4_3  PBAL_9_3  -0.13
+    RUN_4_3  UNIT_0_3  0.54
+    RUN_4_3  UNIT_1_3  0.5
+    RUN_4_3  UNIT_2_3  0.46
+    RUN_4_3  UNIT_3_3  0.66
+    RUN_4_3  UNIT_4_3  0.78
+    RUN_4_3  UNIT_5_3  0.01
+    RUN_4_3  SPEC_0_3  0.036
+    RUN_4_3  SPEC_2_3  0.035
+    RUN_4_3  SPEC_3_3  0.012
+    RUN_4_3  SPEC_4_3  0.034
+    RUN_4_4  COST  -11.943
+    RUN_4_4  CBAL_4_4  1
+    RUN_4_4  CDU_4  1
+    RUN_4_4  PBAL_1_4  -0.2
+    RUN_4_4  PBAL_2_4  -0.17
+    RUN_4_4  PBAL_4_4  -0.3
+    RUN_4_4  PBAL_5_4  -0.28
+    RUN_4_4  PBAL_6_4  -0.12
+    RUN_4_4  PBAL_7_4  -0.21
+    RUN_4_4  PBAL_8_4  -0.06
+    RUN_4_4  PBAL_9_4  -0.13
+    RUN_4_4  UNIT_0_4  0.54
+    RUN_4_4  UNIT_1_4  0.5
+    RUN_4_4  UNIT_2_4  0.46
+    RUN_4_4  UNIT_3_4  0.66
+    RUN_4_4  UNIT_4_4  0.78
+    RUN_4_4  UNIT_5_4  0.01
+    RUN_4_4  SPEC_0_4  0.036
+    RUN_4_4  SPEC_2_4  0.035
+    RUN_4_4  SPEC_3_4  0.012
+    RUN_4_4  SPEC_4_4  0.034
+    RUN_4_5  COST  -10.425
+    RUN_4_5  CBAL_4_5  1
+    RUN_4_5  CDU_5  1
+    RUN_4_5  PBAL_1_5  -0.2
+    RUN_4_5  PBAL_2_5  -0.17
+    RUN_4_5  PBAL_4_5  -0.3
+    RUN_4_5  PBAL_5_5  -0.28
+    RUN_4_5  PBAL_6_5  -0.12
+    RUN_4_5  PBAL_7_5  -0.21
+    RUN_4_5  PBAL_8_5  -0.06
+    RUN_4_5  PBAL_9_5  -0.13
+    RUN_4_5  UNIT_0_5  0.54
+    RUN_4_5  UNIT_1_5  0.5
+    RUN_4_5  UNIT_2_5  0.46
+    RUN_4_5  UNIT_3_5  0.66
+    RUN_4_5  UNIT_4_5  0.78
+    RUN_4_5  UNIT_5_5  0.01
+    RUN_4_5  SPEC_0_5  0.036
+    RUN_4_5  SPEC_2_5  0.035
+    RUN_4_5  SPEC_3_5  0.012
+    RUN_4_5  SPEC_4_5  0.034
+    RUN_4_6  COST  -9.864
+    RUN_4_6  CBAL_4_6  1
+    RUN_4_6  CDU_6  1
+    RUN_4_6  PBAL_1_6  -0.2
+    RUN_4_6  PBAL_2_6  -0.17
+    RUN_4_6  PBAL_4_6  -0.3
+    RUN_4_6  PBAL_5_6  -0.28
+    RUN_4_6  PBAL_6_6  -0.12
+    RUN_4_6  PBAL_7_6  -0.21
+    RUN_4_6  PBAL_8_6  -0.06
+    RUN_4_6  PBAL_9_6  -0.13
+    RUN_4_6  UNIT_0_6  0.54
+    RUN_4_6  UNIT_1_6  0.5
+    RUN_4_6  UNIT_2_6  0.46
+    RUN_4_6  UNIT_3_6  0.66
+    RUN_4_6  UNIT_4_6  0.78
+    RUN_4_6  UNIT_5_6  0.01
+    RUN_4_6  SPEC_0_6  0.036
+    RUN_4_6  SPEC_2_6  0.035
+    RUN_4_6  SPEC_3_6  0.012
+    RUN_4_6  SPEC_4_6  0.034
+    RUN_4_7  COST  -3.34
+    RUN_4_7  CBAL_4_7  1
+    RUN_4_7  CDU_7  1
+    RUN_4_7  PBAL_1_7  -0.2
+    RUN_4_7  PBAL_2_7  -0.17
+    RUN_4_7  PBAL_4_7  -0.3
+    RUN_4_7  PBAL_5_7  -0.28
+    RUN_4_7  PBAL_6_7  -0.12
+    RUN_4_7  PBAL_7_7  -0.21
+    RUN_4_7  PBAL_8_7  -0.06
+    RUN_4_7  PBAL_9_7  -0.13
+    RUN_4_7  UNIT_0_7  0.54
+    RUN_4_7  UNIT_1_7  0.5
+    RUN_4_7  UNIT_2_7  0.46
+    RUN_4_7  UNIT_3_7  0.66
+    RUN_4_7  UNIT_4_7  0.78
+    RUN_4_7  UNIT_5_7  0.01
+    RUN_4_7  SPEC_0_7  0.036
+    RUN_4_7  SPEC_2_7  0.035
+    RUN_4_7  SPEC_3_7  0.012
+    RUN_4_7  SPEC_4_7  0.034
+    RUN_4_8  COST  -8.248
+    RUN_4_8  CBAL_4_8  1
+    RUN_4_8  CDU_8  1
+    RUN_4_8  PBAL_1_8  -0.2
+    RUN_4_8  PBAL_2_8  -0.17
+    RUN_4_8  PBAL_4_8  -0.3
+    RUN_4_8  PBAL_5_8  -0.28
+    RUN_4_8  PBAL_6_8  -0.12
+    RUN_4_8  PBAL_7_8  -0.21
+    RUN_4_8  PBAL_8_8  -0.06
+    RUN_4_8  PBAL_9_8  -0.13
+    RUN_4_8  UNIT_0_8  0.54
+    RUN_4_8  UNIT_1_8  0.5
+    RUN_4_8  UNIT_2_8  0.46
+    RUN_4_8  UNIT_3_8  0.66
+    RUN_4_8  UNIT_4_8  0.78
+    RUN_4_8  UNIT_5_8  0.01
+    RUN_4_8  SPEC_0_8  0.036
+    RUN_4_8  SPEC_2_8  0.035
+    RUN_4_8  SPEC_3_8  0.012
+    RUN_4_8  SPEC_4_8  0.034
+    RUN_4_9  COST  -8.781
+    RUN_4_9  CBAL_4_9  1
+    RUN_4_9  CDU_9  1
+    RUN_4_9  PBAL_1_9  -0.2
+    RUN_4_9  PBAL_2_9  -0.17
+    RUN_4_9  PBAL_4_9  -0.3
+    RUN_4_9  PBAL_5_9  -0.28
+    RUN_4_9  PBAL_6_9  -0.12
+    RUN_4_9  PBAL_7_9  -0.21
+    RUN_4_9  PBAL_8_9  -0.06
+    RUN_4_9  PBAL_9_9  -0.13
+    RUN_4_9  UNIT_0_9  0.54
+    RUN_4_9  UNIT_1_9  0.5
+    RUN_4_9  UNIT_2_9  0.46
+    RUN_4_9  UNIT_3_9  0.66
+    RUN_4_9  UNIT_4_9  0.78
+    RUN_4_9  UNIT_5_9  0.01
+    RUN_4_9  SPEC_0_9  0.036
+    RUN_4_9  SPEC_2_9  0.035
+    RUN_4_9  SPEC_3_9  0.012
+    RUN_4_9  SPEC_4_9  0.034
+    RUN_4_10  COST  1.883
+    RUN_4_10  CBAL_4_10  1
+    RUN_4_10  CDU_10  1
+    RUN_4_10  PBAL_1_10  -0.2
+    RUN_4_10  PBAL_2_10  -0.17
+    RUN_4_10  PBAL_4_10  -0.3
+    RUN_4_10  PBAL_5_10  -0.28
+    RUN_4_10  PBAL_6_10  -0.12
+    RUN_4_10  PBAL_7_10  -0.21
+    RUN_4_10  PBAL_8_10  -0.06
+    RUN_4_10  PBAL_9_10  -0.13
+    RUN_4_10  UNIT_0_10  0.54
+    RUN_4_10  UNIT_1_10  0.5
+    RUN_4_10  UNIT_2_10  0.46
+    RUN_4_10  UNIT_3_10  0.66
+    RUN_4_10  UNIT_4_10  0.78
+    RUN_4_10  UNIT_5_10  0.01
+    RUN_4_10  SPEC_0_10  0.036
+    RUN_4_10  SPEC_2_10  0.035
+    RUN_4_10  SPEC_3_10  0.012
+    RUN_4_10  SPEC_4_10  0.034
+    RUN_4_11  COST  -12.276
+    RUN_4_11  CBAL_4_11  1
+    RUN_4_11  CDU_11  1
+    RUN_4_11  PBAL_1_11  -0.2
+    RUN_4_11  PBAL_2_11  -0.17
+    RUN_4_11  PBAL_4_11  -0.3
+    RUN_4_11  PBAL_5_11  -0.28
+    RUN_4_11  PBAL_6_11  -0.12
+    RUN_4_11  PBAL_7_11  -0.21
+    RUN_4_11  PBAL_8_11  -0.06
+    RUN_4_11  PBAL_9_11  -0.13
+    RUN_4_11  UNIT_0_11  0.54
+    RUN_4_11  UNIT_1_11  0.5
+    RUN_4_11  UNIT_2_11  0.46
+    RUN_4_11  UNIT_3_11  0.66
+    RUN_4_11  UNIT_4_11  0.78
+    RUN_4_11  UNIT_5_11  0.01
+    RUN_4_11  SPEC_0_11  0.036
+    RUN_4_11  SPEC_2_11  0.035
+    RUN_4_11  SPEC_3_11  0.012
+    RUN_4_11  SPEC_4_11  0.034
+    RUN_4_12  COST  -3.67
+    RUN_4_12  CBAL_4_12  1
+    RUN_4_12  CDU_12  1
+    RUN_4_12  PBAL_1_12  -0.2
+    RUN_4_12  PBAL_2_12  -0.17
+    RUN_4_12  PBAL_4_12  -0.3
+    RUN_4_12  PBAL_5_12  -0.28
+    RUN_4_12  PBAL_6_12  -0.12
+    RUN_4_12  PBAL_7_12  -0.21
+    RUN_4_12  PBAL_8_12  -0.06
+    RUN_4_12  PBAL_9_12  -0.13
+    RUN_4_12  UNIT_0_12  0.54
+    RUN_4_12  UNIT_1_12  0.5
+    RUN_4_12  UNIT_2_12  0.46
+    RUN_4_12  UNIT_3_12  0.66
+    RUN_4_12  UNIT_4_12  0.78
+    RUN_4_12  UNIT_5_12  0.01
+    RUN_4_12  SPEC_0_12  0.036
+    RUN_4_12  SPEC_2_12  0.035
+    RUN_4_12  SPEC_3_12  0.012
+    RUN_4_12  SPEC_4_12  0.034
+    RUN_4_13  COST  -28.182
+    RUN_4_13  CBAL_4_13  1
+    RUN_4_13  CDU_13  1
+    RUN_4_13  PBAL_1_13  -0.2
+    RUN_4_13  PBAL_2_13  -0.17
+    RUN_4_13  PBAL_4_13  -0.3
+    RUN_4_13  PBAL_5_13  -0.28
+    RUN_4_13  PBAL_6_13  -0.12
+    RUN_4_13  PBAL_7_13  -0.21
+    RUN_4_13  PBAL_8_13  -0.06
+    RUN_4_13  PBAL_9_13  -0.13
+    RUN_4_13  UNIT_0_13  0.54
+    RUN_4_13  UNIT_1_13  0.5
+    RUN_4_13  UNIT_2_13  0.46
+    RUN_4_13  UNIT_3_13  0.66
+    RUN_4_13  UNIT_4_13  0.78
+    RUN_4_13  UNIT_5_13  0.01
+    RUN_4_13  SPEC_0_13  0.036
+    RUN_4_13  SPEC_2_13  0.035
+    RUN_4_13  SPEC_3_13  0.012
+    RUN_4_13  SPEC_4_13  0.034
+    RUN_4_14  COST  -4.994
+    RUN_4_14  CBAL_4_14  1
+    RUN_4_14  CDU_14  1
+    RUN_4_14  PBAL_1_14  -0.2
+    RUN_4_14  PBAL_2_14  -0.17
+    RUN_4_14  PBAL_4_14  -0.3
+    RUN_4_14  PBAL_5_14  -0.28
+    RUN_4_14  PBAL_6_14  -0.12
+    RUN_4_14  PBAL_7_14  -0.21
+    RUN_4_14  PBAL_8_14  -0.06
+    RUN_4_14  PBAL_9_14  -0.13
+    RUN_4_14  UNIT_0_14  0.54
+    RUN_4_14  UNIT_1_14  0.5
+    RUN_4_14  UNIT_2_14  0.46
+    RUN_4_14  UNIT_3_14  0.66
+    RUN_4_14  UNIT_4_14  0.78
+    RUN_4_14  UNIT_5_14  0.01
+    RUN_4_14  SPEC_0_14  0.036
+    RUN_4_14  SPEC_2_14  0.035
+    RUN_4_14  SPEC_3_14  0.012
+    RUN_4_14  SPEC_4_14  0.034
+    RUN_4_15  COST  -0.446
+    RUN_4_15  CBAL_4_15  1
+    RUN_4_15  CDU_15  1
+    RUN_4_15  PBAL_1_15  -0.2
+    RUN_4_15  PBAL_2_15  -0.17
+    RUN_4_15  PBAL_4_15  -0.3
+    RUN_4_15  PBAL_5_15  -0.28
+    RUN_4_15  PBAL_6_15  -0.12
+    RUN_4_15  PBAL_7_15  -0.21
+    RUN_4_15  PBAL_8_15  -0.06
+    RUN_4_15  PBAL_9_15  -0.13
+    RUN_4_15  UNIT_0_15  0.54
+    RUN_4_15  UNIT_1_15  0.5
+    RUN_4_15  UNIT_2_15  0.46
+    RUN_4_15  UNIT_3_15  0.66
+    RUN_4_15  UNIT_4_15  0.78
+    RUN_4_15  UNIT_5_15  0.01
+    RUN_4_15  SPEC_0_15  0.036
+    RUN_4_15  SPEC_2_15  0.035
+    RUN_4_15  SPEC_3_15  0.012
+    RUN_4_15  SPEC_4_15  0.034
+    RUN_4_16  COST  -10.416
+    RUN_4_16  CBAL_4_16  1
+    RUN_4_16  CDU_16  1
+    RUN_4_16  PBAL_1_16  -0.2
+    RUN_4_16  PBAL_2_16  -0.17
+    RUN_4_16  PBAL_4_16  -0.3
+    RUN_4_16  PBAL_5_16  -0.28
+    RUN_4_16  PBAL_6_16  -0.12
+    RUN_4_16  PBAL_7_16  -0.21
+    RUN_4_16  PBAL_8_16  -0.06
+    RUN_4_16  PBAL_9_16  -0.13
+    RUN_4_16  UNIT_0_16  0.54
+    RUN_4_16  UNIT_1_16  0.5
+    RUN_4_16  UNIT_2_16  0.46
+    RUN_4_16  UNIT_3_16  0.66
+    RUN_4_16  UNIT_4_16  0.78
+    RUN_4_16  UNIT_5_16  0.01
+    RUN_4_16  SPEC_0_16  0.036
+    RUN_4_16  SPEC_2_16  0.035
+    RUN_4_16  SPEC_3_16  0.012
+    RUN_4_16  SPEC_4_16  0.034
+    RUN_4_17  COST  -14.525
+    RUN_4_17  CBAL_4_17  1
+    RUN_4_17  CDU_17  1
+    RUN_4_17  PBAL_1_17  -0.2
+    RUN_4_17  PBAL_2_17  -0.17
+    RUN_4_17  PBAL_4_17  -0.3
+    RUN_4_17  PBAL_5_17  -0.28
+    RUN_4_17  PBAL_6_17  -0.12
+    RUN_4_17  PBAL_7_17  -0.21
+    RUN_4_17  PBAL_8_17  -0.06
+    RUN_4_17  PBAL_9_17  -0.13
+    RUN_4_17  UNIT_0_17  0.54
+    RUN_4_17  UNIT_1_17  0.5
+    RUN_4_17  UNIT_2_17  0.46
+    RUN_4_17  UNIT_3_17  0.66
+    RUN_4_17  UNIT_4_17  0.78
+    RUN_4_17  UNIT_5_17  0.01
+    RUN_4_17  SPEC_0_17  0.036
+    RUN_4_17  SPEC_2_17  0.035
+    RUN_4_17  SPEC_3_17  0.012
+    RUN_4_17  SPEC_4_17  0.034
+    RUN_4_18  COST  -5.89
+    RUN_4_18  CBAL_4_18  1
+    RUN_4_18  CDU_18  1
+    RUN_4_18  PBAL_1_18  -0.2
+    RUN_4_18  PBAL_2_18  -0.17
+    RUN_4_18  PBAL_4_18  -0.3
+    RUN_4_18  PBAL_5_18  -0.28
+    RUN_4_18  PBAL_6_18  -0.12
+    RUN_4_18  PBAL_7_18  -0.21
+    RUN_4_18  PBAL_8_18  -0.06
+    RUN_4_18  PBAL_9_18  -0.13
+    RUN_4_18  UNIT_0_18  0.54
+    RUN_4_18  UNIT_1_18  0.5
+    RUN_4_18  UNIT_2_18  0.46
+    RUN_4_18  UNIT_3_18  0.66
+    RUN_4_18  UNIT_4_18  0.78
+    RUN_4_18  UNIT_5_18  0.01
+    RUN_4_18  SPEC_0_18  0.036
+    RUN_4_18  SPEC_2_18  0.035
+    RUN_4_18  SPEC_3_18  0.012
+    RUN_4_18  SPEC_4_18  0.034
+    RUN_4_19  COST  -6.825
+    RUN_4_19  CBAL_4_19  1
+    RUN_4_19  CDU_19  1
+    RUN_4_19  PBAL_1_19  -0.2
+    RUN_4_19  PBAL_2_19  -0.17
+    RUN_4_19  PBAL_4_19  -0.3
+    RUN_4_19  PBAL_5_19  -0.28
+    RUN_4_19  PBAL_6_19  -0.12
+    RUN_4_19  PBAL_7_19  -0.21
+    RUN_4_19  PBAL_8_19  -0.06
+    RUN_4_19  PBAL_9_19  -0.13
+    RUN_4_19  UNIT_0_19  0.54
+    RUN_4_19  UNIT_1_19  0.5
+    RUN_4_19  UNIT_2_19  0.46
+    RUN_4_19  UNIT_3_19  0.66
+    RUN_4_19  UNIT_4_19  0.78
+    RUN_4_19  UNIT_5_19  0.01
+    RUN_4_19  SPEC_0_19  0.036
+    RUN_4_19  SPEC_2_19  0.035
+    RUN_4_19  SPEC_3_19  0.012
+    RUN_4_19  SPEC_4_19  0.034
+    RUN_4_20  COST  -29.27
+    RUN_4_20  CBAL_4_20  1
+    RUN_4_20  CDU_20  1
+    RUN_4_20  PBAL_1_20  -0.2
+    RUN_4_20  PBAL_2_20  -0.17
+    RUN_4_20  PBAL_4_20  -0.3
+    RUN_4_20  PBAL_5_20  -0.28
+    RUN_4_20  PBAL_6_20  -0.12
+    RUN_4_20  PBAL_7_20  -0.21
+    RUN_4_20  PBAL_8_20  -0.06
+    RUN_4_20  PBAL_9_20  -0.13
+    RUN_4_20  UNIT_0_20  0.54
+    RUN_4_20  UNIT_1_20  0.5
+    RUN_4_20  UNIT_2_20  0.46
+    RUN_4_20  UNIT_3_20  0.66
+    RUN_4_20  UNIT_4_20  0.78
+    RUN_4_20  UNIT_5_20  0.01
+    RUN_4_20  SPEC_0_20  0.036
+    RUN_4_20  SPEC_2_20  0.035
+    RUN_4_20  SPEC_3_20  0.012
+    RUN_4_20  SPEC_4_20  0.034
+    RUN_4_21  COST  -6.972
+    RUN_4_21  CBAL_4_21  1
+    RUN_4_21  CDU_21  1
+    RUN_4_21  PBAL_1_21  -0.2
+    RUN_4_21  PBAL_2_21  -0.17
+    RUN_4_21  PBAL_4_21  -0.3
+    RUN_4_21  PBAL_5_21  -0.28
+    RUN_4_21  PBAL_6_21  -0.12
+    RUN_4_21  PBAL_7_21  -0.21
+    RUN_4_21  PBAL_8_21  -0.06
+    RUN_4_21  PBAL_9_21  -0.13
+    RUN_4_21  UNIT_0_21  0.54
+    RUN_4_21  UNIT_1_21  0.5
+    RUN_4_21  UNIT_2_21  0.46
+    RUN_4_21  UNIT_3_21  0.66
+    RUN_4_21  UNIT_4_21  0.78
+    RUN_4_21  UNIT_5_21  0.01
+    RUN_4_21  SPEC_0_21  0.036
+    RUN_4_21  SPEC_2_21  0.035
+    RUN_4_21  SPEC_3_21  0.012
+    RUN_4_21  SPEC_4_21  0.034
+    RUN_4_22  COST  -14.193
+    RUN_4_22  CBAL_4_22  1
+    RUN_4_22  CDU_22  1
+    RUN_4_22  PBAL_1_22  -0.2
+    RUN_4_22  PBAL_2_22  -0.17
+    RUN_4_22  PBAL_4_22  -0.3
+    RUN_4_22  PBAL_5_22  -0.28
+    RUN_4_22  PBAL_6_22  -0.12
+    RUN_4_22  PBAL_7_22  -0.21
+    RUN_4_22  PBAL_8_22  -0.06
+    RUN_4_22  PBAL_9_22  -0.13
+    RUN_4_22  UNIT_0_22  0.54
+    RUN_4_22  UNIT_1_22  0.5
+    RUN_4_22  UNIT_2_22  0.46
+    RUN_4_22  UNIT_3_22  0.66
+    RUN_4_22  UNIT_4_22  0.78
+    RUN_4_22  UNIT_5_22  0.01
+    RUN_4_22  SPEC_0_22  0.036
+    RUN_4_22  SPEC_2_22  0.035
+    RUN_4_22  SPEC_3_22  0.012
+    RUN_4_22  SPEC_4_22  0.034
+    RUN_4_23  COST  4.628
+    RUN_4_23  CBAL_4_23  1
+    RUN_4_23  CDU_23  1
+    RUN_4_23  PBAL_1_23  -0.2
+    RUN_4_23  PBAL_2_23  -0.17
+    RUN_4_23  PBAL_4_23  -0.3
+    RUN_4_23  PBAL_5_23  -0.28
+    RUN_4_23  PBAL_6_23  -0.12
+    RUN_4_23  PBAL_7_23  -0.21
+    RUN_4_23  PBAL_8_23  -0.06
+    RUN_4_23  PBAL_9_23  -0.13
+    RUN_4_23  UNIT_0_23  0.54
+    RUN_4_23  UNIT_1_23  0.5
+    RUN_4_23  UNIT_2_23  0.46
+    RUN_4_23  UNIT_3_23  0.66
+    RUN_4_23  UNIT_4_23  0.78
+    RUN_4_23  UNIT_5_23  0.01
+    RUN_4_23  SPEC_0_23  0.036
+    RUN_4_23  SPEC_2_23  0.035
+    RUN_4_23  SPEC_3_23  0.012
+    RUN_4_23  SPEC_4_23  0.034
+    RUN_4_24  COST  -20.044
+    RUN_4_24  CBAL_4_24  1
+    RUN_4_24  CDU_24  1
+    RUN_4_24  PBAL_1_24  -0.2
+    RUN_4_24  PBAL_2_24  -0.17
+    RUN_4_24  PBAL_4_24  -0.3
+    RUN_4_24  PBAL_5_24  -0.28
+    RUN_4_24  PBAL_6_24  -0.12
+    RUN_4_24  PBAL_7_24  -0.21
+    RUN_4_24  PBAL_8_24  -0.06
+    RUN_4_24  PBAL_9_24  -0.13
+    RUN_4_24  UNIT_0_24  0.54
+    RUN_4_24  UNIT_1_24  0.5
+    RUN_4_24  UNIT_2_24  0.46
+    RUN_4_24  UNIT_3_24  0.66
+    RUN_4_24  UNIT_4_24  0.78
+    RUN_4_24  UNIT_5_24  0.01
+    RUN_4_24  SPEC_0_24  0.036
+    RUN_4_24  SPEC_2_24  0.035
+    RUN_4_24  SPEC_3_24  0.012
+    RUN_4_24  SPEC_4_24  0.034
+    RUN_4_25  COST  -15.167
+    RUN_4_25  CBAL_4_25  1
+    RUN_4_25  CDU_25  1
+    RUN_4_25  PBAL_1_25  -0.2
+    RUN_4_25  PBAL_2_25  -0.17
+    RUN_4_25  PBAL_4_25  -0.3
+    RUN_4_25  PBAL_5_25  -0.28
+    RUN_4_25  PBAL_6_25  -0.12
+    RUN_4_25  PBAL_7_25  -0.21
+    RUN_4_25  PBAL_8_25  -0.06
+    RUN_4_25  PBAL_9_25  -0.13
+    RUN_4_25  UNIT_0_25  0.54
+    RUN_4_25  UNIT_1_25  0.5
+    RUN_4_25  UNIT_2_25  0.46
+    RUN_4_25  UNIT_3_25  0.66
+    RUN_4_25  UNIT_4_25  0.78
+    RUN_4_25  UNIT_5_25  0.01
+    RUN_4_25  SPEC_0_25  0.036
+    RUN_4_25  SPEC_2_25  0.035
+    RUN_4_25  SPEC_3_25  0.012
+    RUN_4_25  SPEC_4_25  0.034
+    RUN_4_26  COST  1.24
+    RUN_4_26  CBAL_4_26  1
+    RUN_4_26  CDU_26  1
+    RUN_4_26  PBAL_1_26  -0.2
+    RUN_4_26  PBAL_2_26  -0.17
+    RUN_4_26  PBAL_4_26  -0.3
+    RUN_4_26  PBAL_5_26  -0.28
+    RUN_4_26  PBAL_6_26  -0.12
+    RUN_4_26  PBAL_7_26  -0.21
+    RUN_4_26  PBAL_8_26  -0.06
+    RUN_4_26  PBAL_9_26  -0.13
+    RUN_4_26  UNIT_0_26  0.54
+    RUN_4_26  UNIT_1_26  0.5
+    RUN_4_26  UNIT_2_26  0.46
+    RUN_4_26  UNIT_3_26  0.66
+    RUN_4_26  UNIT_4_26  0.78
+    RUN_4_26  UNIT_5_26  0.01
+    RUN_4_26  SPEC_0_26  0.036
+    RUN_4_26  SPEC_2_26  0.035
+    RUN_4_26  SPEC_3_26  0.012
+    RUN_4_26  SPEC_4_26  0.034
+    RUN_4_27  COST  -11.94
+    RUN_4_27  CBAL_4_27  1
+    RUN_4_27  CDU_27  1
+    RUN_4_27  PBAL_1_27  -0.2
+    RUN_4_27  PBAL_2_27  -0.17
+    RUN_4_27  PBAL_4_27  -0.3
+    RUN_4_27  PBAL_5_27  -0.28
+    RUN_4_27  PBAL_6_27  -0.12
+    RUN_4_27  PBAL_7_27  -0.21
+    RUN_4_27  PBAL_8_27  -0.06
+    RUN_4_27  PBAL_9_27  -0.13
+    RUN_4_27  UNIT_0_27  0.54
+    RUN_4_27  UNIT_1_27  0.5
+    RUN_4_27  UNIT_2_27  0.46
+    RUN_4_27  UNIT_3_27  0.66
+    RUN_4_27  UNIT_4_27  0.78
+    RUN_4_27  UNIT_5_27  0.01
+    RUN_4_27  SPEC_0_27  0.036
+    RUN_4_27  SPEC_2_27  0.035
+    RUN_4_27  SPEC_3_27  0.012
+    RUN_4_27  SPEC_4_27  0.034
+    RUN_4_28  COST  -18.363
+    RUN_4_28  CBAL_4_28  1
+    RUN_4_28  CDU_28  1
+    RUN_4_28  PBAL_1_28  -0.2
+    RUN_4_28  PBAL_2_28  -0.17
+    RUN_4_28  PBAL_4_28  -0.3
+    RUN_4_28  PBAL_5_28  -0.28
+    RUN_4_28  PBAL_6_28  -0.12
+    RUN_4_28  PBAL_7_28  -0.21
+    RUN_4_28  PBAL_8_28  -0.06
+    RUN_4_28  PBAL_9_28  -0.13
+    RUN_4_28  UNIT_0_28  0.54
+    RUN_4_28  UNIT_1_28  0.5
+    RUN_4_28  UNIT_2_28  0.46
+    RUN_4_28  UNIT_3_28  0.66
+    RUN_4_28  UNIT_4_28  0.78
+    RUN_4_28  UNIT_5_28  0.01
+    RUN_4_28  SPEC_0_28  0.036
+    RUN_4_28  SPEC_2_28  0.035
+    RUN_4_28  SPEC_3_28  0.012
+    RUN_4_28  SPEC_4_28  0.034
+    RUN_4_29  COST  0.872
+    RUN_4_29  CBAL_4_29  1
+    RUN_4_29  CDU_29  1
+    RUN_4_29  PBAL_1_29  -0.2
+    RUN_4_29  PBAL_2_29  -0.17
+    RUN_4_29  PBAL_4_29  -0.3
+    RUN_4_29  PBAL_5_29  -0.28
+    RUN_4_29  PBAL_6_29  -0.12
+    RUN_4_29  PBAL_7_29  -0.21
+    RUN_4_29  PBAL_8_29  -0.06
+    RUN_4_29  PBAL_9_29  -0.13
+    RUN_4_29  UNIT_0_29  0.54
+    RUN_4_29  UNIT_1_29  0.5
+    RUN_4_29  UNIT_2_29  0.46
+    RUN_4_29  UNIT_3_29  0.66
+    RUN_4_29  UNIT_4_29  0.78
+    RUN_4_29  UNIT_5_29  0.01
+    RUN_4_29  SPEC_0_29  0.036
+    RUN_4_29  SPEC_2_29  0.035
+    RUN_4_29  SPEC_3_29  0.012
+    RUN_4_29  SPEC_4_29  0.034
+    RUN_5_0  COST  0.492
+    RUN_5_0  CBAL_5_0  1
+    RUN_5_0  CDU_0  1
+    RUN_5_0  PBAL_0_0  -0.23
+    RUN_5_0  PBAL_2_0  -0.16
+    RUN_5_0  PBAL_3_0  -0.07
+    RUN_5_0  PBAL_4_0  -0.24
+    RUN_5_0  PBAL_5_0  -0.14
+    RUN_5_0  PBAL_6_0  -0.3
+    RUN_5_0  PBAL_7_0  -0.15
+    RUN_5_0  PBAL_8_0  -0.17
+    RUN_5_0  PBAL_9_0  -0.07
+    RUN_5_0  UNIT_0_0  0.64
+    RUN_5_0  UNIT_1_0  0.75
+    RUN_5_0  UNIT_2_0  0.7
+    RUN_5_0  UNIT_3_0  0.5
+    RUN_5_0  UNIT_4_0  0.75
+    RUN_5_0  UNIT_5_0  0.25
+    RUN_5_0  SPEC_0_0  0.022
+    RUN_5_0  SPEC_1_0  0.024
+    RUN_5_0  SPEC_2_0  0.013
+    RUN_5_0  SPEC_3_0  0.032
+    RUN_5_0  SPEC_4_0  0.034
+    RUN_5_1  COST  -12.601
+    RUN_5_1  CBAL_5_1  1
+    RUN_5_1  CDU_1  1
+    RUN_5_1  PBAL_0_1  -0.23
+    RUN_5_1  PBAL_2_1  -0.16
+    RUN_5_1  PBAL_3_1  -0.07
+    RUN_5_1  PBAL_4_1  -0.24
+    RUN_5_1  PBAL_5_1  -0.14
+    RUN_5_1  PBAL_6_1  -0.3
+    RUN_5_1  PBAL_7_1  -0.15
+    RUN_5_1  PBAL_8_1  -0.17
+    RUN_5_1  PBAL_9_1  -0.07
+    RUN_5_1  UNIT_0_1  0.64
+    RUN_5_1  UNIT_1_1  0.75
+    RUN_5_1  UNIT_2_1  0.7
+    RUN_5_1  UNIT_3_1  0.5
+    RUN_5_1  UNIT_4_1  0.75
+    RUN_5_1  UNIT_5_1  0.25
+    RUN_5_1  SPEC_0_1  0.022
+    RUN_5_1  SPEC_1_1  0.024
+    RUN_5_1  SPEC_2_1  0.013
+    RUN_5_1  SPEC_3_1  0.032
+    RUN_5_1  SPEC_4_1  0.034
+    RUN_5_2  COST  -4.446
+    RUN_5_2  CBAL_5_2  1
+    RUN_5_2  CDU_2  1
+    RUN_5_2  PBAL_0_2  -0.23
+    RUN_5_2  PBAL_2_2  -0.16
+    RUN_5_2  PBAL_3_2  -0.07
+    RUN_5_2  PBAL_4_2  -0.24
+    RUN_5_2  PBAL_5_2  -0.14
+    RUN_5_2  PBAL_6_2  -0.3
+    RUN_5_2  PBAL_7_2  -0.15
+    RUN_5_2  PBAL_8_2  -0.17
+    RUN_5_2  PBAL_9_2  -0.07
+    RUN_5_2  UNIT_0_2  0.64
+    RUN_5_2  UNIT_1_2  0.75
+    RUN_5_2  UNIT_2_2  0.7
+    RUN_5_2  UNIT_3_2  0.5
+    RUN_5_2  UNIT_4_2  0.75
+    RUN_5_2  UNIT_5_2  0.25
+    RUN_5_2  SPEC_0_2  0.022
+    RUN_5_2  SPEC_1_2  0.024
+    RUN_5_2  SPEC_2_2  0.013
+    RUN_5_2  SPEC_3_2  0.032
+    RUN_5_2  SPEC_4_2  0.034
+    RUN_5_3  COST  -1.36
+    RUN_5_3  CBAL_5_3  1
+    RUN_5_3  CDU_3  1
+    RUN_5_3  PBAL_0_3  -0.23
+    RUN_5_3  PBAL_2_3  -0.16
+    RUN_5_3  PBAL_3_3  -0.07
+    RUN_5_3  PBAL_4_3  -0.24
+    RUN_5_3  PBAL_5_3  -0.14
+    RUN_5_3  PBAL_6_3  -0.3
+    RUN_5_3  PBAL_7_3  -0.15
+    RUN_5_3  PBAL_8_3  -0.17
+    RUN_5_3  PBAL_9_3  -0.07
+    RUN_5_3  UNIT_0_3  0.64
+    RUN_5_3  UNIT_1_3  0.75
+    RUN_5_3  UNIT_2_3  0.7
+    RUN_5_3  UNIT_3_3  0.5
+    RUN_5_3  UNIT_4_3  0.75
+    RUN_5_3  UNIT_5_3  0.25
+    RUN_5_3  SPEC_0_3  0.022
+    RUN_5_3  SPEC_1_3  0.024
+    RUN_5_3  SPEC_2_3  0.013
+    RUN_5_3  SPEC_3_3  0.032
+    RUN_5_3  SPEC_4_3  0.034
+    RUN_5_4  COST  -10.461
+    RUN_5_4  CBAL_5_4  1
+    RUN_5_4  CDU_4  1
+    RUN_5_4  PBAL_0_4  -0.23
+    RUN_5_4  PBAL_2_4  -0.16
+    RUN_5_4  PBAL_3_4  -0.07
+    RUN_5_4  PBAL_4_4  -0.24
+    RUN_5_4  PBAL_5_4  -0.14
+    RUN_5_4  PBAL_6_4  -0.3
+    RUN_5_4  PBAL_7_4  -0.15
+    RUN_5_4  PBAL_8_4  -0.17
+    RUN_5_4  PBAL_9_4  -0.07
+    RUN_5_4  UNIT_0_4  0.64
+    RUN_5_4  UNIT_1_4  0.75
+    RUN_5_4  UNIT_2_4  0.7
+    RUN_5_4  UNIT_3_4  0.5
+    RUN_5_4  UNIT_4_4  0.75
+    RUN_5_4  UNIT_5_4  0.25
+    RUN_5_4  SPEC_0_4  0.022
+    RUN_5_4  SPEC_1_4  0.024
+    RUN_5_4  SPEC_2_4  0.013
+    RUN_5_4  SPEC_3_4  0.032
+    RUN_5_4  SPEC_4_4  0.034
+    RUN_5_5  COST  -24.183
+    RUN_5_5  CBAL_5_5  1
+    RUN_5_5  CDU_5  1
+    RUN_5_5  PBAL_0_5  -0.23
+    RUN_5_5  PBAL_2_5  -0.16
+    RUN_5_5  PBAL_3_5  -0.07
+    RUN_5_5  PBAL_4_5  -0.24
+    RUN_5_5  PBAL_5_5  -0.14
+    RUN_5_5  PBAL_6_5  -0.3
+    RUN_5_5  PBAL_7_5  -0.15
+    RUN_5_5  PBAL_8_5  -0.17
+    RUN_5_5  PBAL_9_5  -0.07
+    RUN_5_5  UNIT_0_5  0.64
+    RUN_5_5  UNIT_1_5  0.75
+    RUN_5_5  UNIT_2_5  0.7
+    RUN_5_5  UNIT_3_5  0.5
+    RUN_5_5  UNIT_4_5  0.75
+    RUN_5_5  UNIT_5_5  0.25
+    RUN_5_5  SPEC_0_5  0.022
+    RUN_5_5  SPEC_1_5  0.024
+    RUN_5_5  SPEC_2_5  0.013
+    RUN_5_5  SPEC_3_5  0.032
+    RUN_5_5  SPEC_4_5  0.034
+    RUN_5_6  COST  -15.166
+    RUN_5_6  CBAL_5_6  1
+    RUN_5_6  CDU_6  1
+    RUN_5_6  PBAL_0_6  -0.23
+    RUN_5_6  PBAL_2_6  -0.16
+    RUN_5_6  PBAL_3_6  -0.07
+    RUN_5_6  PBAL_4_6  -0.24
+    RUN_5_6  PBAL_5_6  -0.14
+    RUN_5_6  PBAL_6_6  -0.3
+    RUN_5_6  PBAL_7_6  -0.15
+    RUN_5_6  PBAL_8_6  -0.17
+    RUN_5_6  PBAL_9_6  -0.07
+    RUN_5_6  UNIT_0_6  0.64
+    RUN_5_6  UNIT_1_6  0.75
+    RUN_5_6  UNIT_2_6  0.7
+    RUN_5_6  UNIT_3_6  0.5
+    RUN_5_6  UNIT_4_6  0.75
+    RUN_5_6  UNIT_5_6  0.25
+    RUN_5_6  SPEC_0_6  0.022
+    RUN_5_6  SPEC_1_6  0.024
+    RUN_5_6  SPEC_2_6  0.013
+    RUN_5_6  SPEC_3_6  0.032
+    RUN_5_6  SPEC_4_6  0.034
+    RUN_5_7  COST  -15.942
+    RUN_5_7  CBAL_5_7  1
+    RUN_5_7  CDU_7  1
+    RUN_5_7  PBAL_0_7  -0.23
+    RUN_5_7  PBAL_2_7  -0.16
+    RUN_5_7  PBAL_3_7  -0.07
+    RUN_5_7  PBAL_4_7  -0.24
+    RUN_5_7  PBAL_5_7  -0.14
+    RUN_5_7  PBAL_6_7  -0.3
+    RUN_5_7  PBAL_7_7  -0.15
+    RUN_5_7  PBAL_8_7  -0.17
+    RUN_5_7  PBAL_9_7  -0.07
+    RUN_5_7  UNIT_0_7  0.64
+    RUN_5_7  UNIT_1_7  0.75
+    RUN_5_7  UNIT_2_7  0.7
+    RUN_5_7  UNIT_3_7  0.5
+    RUN_5_7  UNIT_4_7  0.75
+    RUN_5_7  UNIT_5_7  0.25
+    RUN_5_7  SPEC_0_7  0.022
+    RUN_5_7  SPEC_1_7  0.024
+    RUN_5_7  SPEC_2_7  0.013
+    RUN_5_7  SPEC_3_7  0.032
+    RUN_5_7  SPEC_4_7  0.034
+    RUN_5_8  COST  -4.246
+    RUN_5_8  CBAL_5_8  1
+    RUN_5_8  CDU_8  1
+    RUN_5_8  PBAL_0_8  -0.23
+    RUN_5_8  PBAL_2_8  -0.16
+    RUN_5_8  PBAL_3_8  -0.07
+    RUN_5_8  PBAL_4_8  -0.24
+    RUN_5_8  PBAL_5_8  -0.14
+    RUN_5_8  PBAL_6_8  -0.3
+    RUN_5_8  PBAL_7_8  -0.15
+    RUN_5_8  PBAL_8_8  -0.17
+    RUN_5_8  PBAL_9_8  -0.07
+    RUN_5_8  UNIT_0_8  0.64
+    RUN_5_8  UNIT_1_8  0.75
+    RUN_5_8  UNIT_2_8  0.7
+    RUN_5_8  UNIT_3_8  0.5
+    RUN_5_8  UNIT_4_8  0.75
+    RUN_5_8  UNIT_5_8  0.25
+    RUN_5_8  SPEC_0_8  0.022
+    RUN_5_8  SPEC_1_8  0.024
+    RUN_5_8  SPEC_2_8  0.013
+    RUN_5_8  SPEC_3_8  0.032
+    RUN_5_8  SPEC_4_8  0.034
+    RUN_5_9  COST  -12.577
+    RUN_5_9  CBAL_5_9  1
+    RUN_5_9  CDU_9  1
+    RUN_5_9  PBAL_0_9  -0.23
+    RUN_5_9  PBAL_2_9  -0.16
+    RUN_5_9  PBAL_3_9  -0.07
+    RUN_5_9  PBAL_4_9  -0.24
+    RUN_5_9  PBAL_5_9  -0.14
+    RUN_5_9  PBAL_6_9  -0.3
+    RUN_5_9  PBAL_7_9  -0.15
+    RUN_5_9  PBAL_8_9  -0.17
+    RUN_5_9  PBAL_9_9  -0.07
+    RUN_5_9  UNIT_0_9  0.64
+    RUN_5_9  UNIT_1_9  0.75
+    RUN_5_9  UNIT_2_9  0.7
+    RUN_5_9  UNIT_3_9  0.5
+    RUN_5_9  UNIT_4_9  0.75
+    RUN_5_9  UNIT_5_9  0.25
+    RUN_5_9  SPEC_0_9  0.022
+    RUN_5_9  SPEC_1_9  0.024
+    RUN_5_9  SPEC_2_9  0.013
+    RUN_5_9  SPEC_3_9  0.032
+    RUN_5_9  SPEC_4_9  0.034
+    RUN_5_10  COST  -10.929
+    RUN_5_10  CBAL_5_10  1
+    RUN_5_10  CDU_10  1
+    RUN_5_10  PBAL_0_10  -0.23
+    RUN_5_10  PBAL_2_10  -0.16
+    RUN_5_10  PBAL_3_10  -0.07
+    RUN_5_10  PBAL_4_10  -0.24
+    RUN_5_10  PBAL_5_10  -0.14
+    RUN_5_10  PBAL_6_10  -0.3
+    RUN_5_10  PBAL_7_10  -0.15
+    RUN_5_10  PBAL_8_10  -0.17
+    RUN_5_10  PBAL_9_10  -0.07
+    RUN_5_10  UNIT_0_10  0.64
+    RUN_5_10  UNIT_1_10  0.75
+    RUN_5_10  UNIT_2_10  0.7
+    RUN_5_10  UNIT_3_10  0.5
+    RUN_5_10  UNIT_4_10  0.75
+    RUN_5_10  UNIT_5_10  0.25
+    RUN_5_10  SPEC_0_10  0.022
+    RUN_5_10  SPEC_1_10  0.024
+    RUN_5_10  SPEC_2_10  0.013
+    RUN_5_10  SPEC_3_10  0.032
+    RUN_5_10  SPEC_4_10  0.034
+    RUN_5_11  COST  3.874
+    RUN_5_11  CBAL_5_11  1
+    RUN_5_11  CDU_11  1
+    RUN_5_11  PBAL_0_11  -0.23
+    RUN_5_11  PBAL_2_11  -0.16
+    RUN_5_11  PBAL_3_11  -0.07
+    RUN_5_11  PBAL_4_11  -0.24
+    RUN_5_11  PBAL_5_11  -0.14
+    RUN_5_11  PBAL_6_11  -0.3
+    RUN_5_11  PBAL_7_11  -0.15
+    RUN_5_11  PBAL_8_11  -0.17
+    RUN_5_11  PBAL_9_11  -0.07
+    RUN_5_11  UNIT_0_11  0.64
+    RUN_5_11  UNIT_1_11  0.75
+    RUN_5_11  UNIT_2_11  0.7
+    RUN_5_11  UNIT_3_11  0.5
+    RUN_5_11  UNIT_4_11  0.75
+    RUN_5_11  UNIT_5_11  0.25
+    RUN_5_11  SPEC_0_11  0.022
+    RUN_5_11  SPEC_1_11  0.024
+    RUN_5_11  SPEC_2_11  0.013
+    RUN_5_11  SPEC_3_11  0.032
+    RUN_5_11  SPEC_4_11  0.034
+    RUN_5_12  COST  0.694
+    RUN_5_12  CBAL_5_12  1
+    RUN_5_12  CDU_12  1
+    RUN_5_12  PBAL_0_12  -0.23
+    RUN_5_12  PBAL_2_12  -0.16
+    RUN_5_12  PBAL_3_12  -0.07
+    RUN_5_12  PBAL_4_12  -0.24
+    RUN_5_12  PBAL_5_12  -0.14
+    RUN_5_12  PBAL_6_12  -0.3
+    RUN_5_12  PBAL_7_12  -0.15
+    RUN_5_12  PBAL_8_12  -0.17
+    RUN_5_12  PBAL_9_12  -0.07
+    RUN_5_12  UNIT_0_12  0.64
+    RUN_5_12  UNIT_1_12  0.75
+    RUN_5_12  UNIT_2_12  0.7
+    RUN_5_12  UNIT_3_12  0.5
+    RUN_5_12  UNIT_4_12  0.75
+    RUN_5_12  UNIT_5_12  0.25
+    RUN_5_12  SPEC_0_12  0.022
+    RUN_5_12  SPEC_1_12  0.024
+    RUN_5_12  SPEC_2_12  0.013
+    RUN_5_12  SPEC_3_12  0.032
+    RUN_5_12  SPEC_4_12  0.034
+    RUN_5_13  COST  -8.3
+    RUN_5_13  CBAL_5_13  1
+    RUN_5_13  CDU_13  1
+    RUN_5_13  PBAL_0_13  -0.23
+    RUN_5_13  PBAL_2_13  -0.16
+    RUN_5_13  PBAL_3_13  -0.07
+    RUN_5_13  PBAL_4_13  -0.24
+    RUN_5_13  PBAL_5_13  -0.14
+    RUN_5_13  PBAL_6_13  -0.3
+    RUN_5_13  PBAL_7_13  -0.15
+    RUN_5_13  PBAL_8_13  -0.17
+    RUN_5_13  PBAL_9_13  -0.07
+    RUN_5_13  UNIT_0_13  0.64
+    RUN_5_13  UNIT_1_13  0.75
+    RUN_5_13  UNIT_2_13  0.7
+    RUN_5_13  UNIT_3_13  0.5
+    RUN_5_13  UNIT_4_13  0.75
+    RUN_5_13  UNIT_5_13  0.25
+    RUN_5_13  SPEC_0_13  0.022
+    RUN_5_13  SPEC_1_13  0.024
+    RUN_5_13  SPEC_2_13  0.013
+    RUN_5_13  SPEC_3_13  0.032
+    RUN_5_13  SPEC_4_13  0.034
+    RUN_5_14  COST  -16.976
+    RUN_5_14  CBAL_5_14  1
+    RUN_5_14  CDU_14  1
+    RUN_5_14  PBAL_0_14  -0.23
+    RUN_5_14  PBAL_2_14  -0.16
+    RUN_5_14  PBAL_3_14  -0.07
+    RUN_5_14  PBAL_4_14  -0.24
+    RUN_5_14  PBAL_5_14  -0.14
+    RUN_5_14  PBAL_6_14  -0.3
+    RUN_5_14  PBAL_7_14  -0.15
+    RUN_5_14  PBAL_8_14  -0.17
+    RUN_5_14  PBAL_9_14  -0.07
+    RUN_5_14  UNIT_0_14  0.64
+    RUN_5_14  UNIT_1_14  0.75
+    RUN_5_14  UNIT_2_14  0.7
+    RUN_5_14  UNIT_3_14  0.5
+    RUN_5_14  UNIT_4_14  0.75
+    RUN_5_14  UNIT_5_14  0.25
+    RUN_5_14  SPEC_0_14  0.022
+    RUN_5_14  SPEC_1_14  0.024
+    RUN_5_14  SPEC_2_14  0.013
+    RUN_5_14  SPEC_3_14  0.032
+    RUN_5_14  SPEC_4_14  0.034
+    RUN_5_15  COST  -14.092
+    RUN_5_15  CBAL_5_15  1
+    RUN_5_15  CDU_15  1
+    RUN_5_15  PBAL_0_15  -0.23
+    RUN_5_15  PBAL_2_15  -0.16
+    RUN_5_15  PBAL_3_15  -0.07
+    RUN_5_15  PBAL_4_15  -0.24
+    RUN_5_15  PBAL_5_15  -0.14
+    RUN_5_15  PBAL_6_15  -0.3
+    RUN_5_15  PBAL_7_15  -0.15
+    RUN_5_15  PBAL_8_15  -0.17
+    RUN_5_15  PBAL_9_15  -0.07
+    RUN_5_15  UNIT_0_15  0.64
+    RUN_5_15  UNIT_1_15  0.75
+    RUN_5_15  UNIT_2_15  0.7
+    RUN_5_15  UNIT_3_15  0.5
+    RUN_5_15  UNIT_4_15  0.75
+    RUN_5_15  UNIT_5_15  0.25
+    RUN_5_15  SPEC_0_15  0.022
+    RUN_5_15  SPEC_1_15  0.024
+    RUN_5_15  SPEC_2_15  0.013
+    RUN_5_15  SPEC_3_15  0.032
+    RUN_5_15  SPEC_4_15  0.034
+    RUN_5_16  COST  -6.382
+    RUN_5_16  CBAL_5_16  1
+    RUN_5_16  CDU_16  1
+    RUN_5_16  PBAL_0_16  -0.23
+    RUN_5_16  PBAL_2_16  -0.16
+    RUN_5_16  PBAL_3_16  -0.07
+    RUN_5_16  PBAL_4_16  -0.24
+    RUN_5_16  PBAL_5_16  -0.14
+    RUN_5_16  PBAL_6_16  -0.3
+    RUN_5_16  PBAL_7_16  -0.15
+    RUN_5_16  PBAL_8_16  -0.17
+    RUN_5_16  PBAL_9_16  -0.07
+    RUN_5_16  UNIT_0_16  0.64
+    RUN_5_16  UNIT_1_16  0.75
+    RUN_5_16  UNIT_2_16  0.7
+    RUN_5_16  UNIT_3_16  0.5
+    RUN_5_16  UNIT_4_16  0.75
+    RUN_5_16  UNIT_5_16  0.25
+    RUN_5_16  SPEC_0_16  0.022
+    RUN_5_16  SPEC_1_16  0.024
+    RUN_5_16  SPEC_2_16  0.013
+    RUN_5_16  SPEC_3_16  0.032
+    RUN_5_16  SPEC_4_16  0.034
+    RUN_5_17  COST  -21.433
+    RUN_5_17  CBAL_5_17  1
+    RUN_5_17  CDU_17  1
+    RUN_5_17  PBAL_0_17  -0.23
+    RUN_5_17  PBAL_2_17  -0.16
+    RUN_5_17  PBAL_3_17  -0.07
+    RUN_5_17  PBAL_4_17  -0.24
+    RUN_5_17  PBAL_5_17  -0.14
+    RUN_5_17  PBAL_6_17  -0.3
+    RUN_5_17  PBAL_7_17  -0.15
+    RUN_5_17  PBAL_8_17  -0.17
+    RUN_5_17  PBAL_9_17  -0.07
+    RUN_5_17  UNIT_0_17  0.64
+    RUN_5_17  UNIT_1_17  0.75
+    RUN_5_17  UNIT_2_17  0.7
+    RUN_5_17  UNIT_3_17  0.5
+    RUN_5_17  UNIT_4_17  0.75
+    RUN_5_17  UNIT_5_17  0.25
+    RUN_5_17  SPEC_0_17  0.022
+    RUN_5_17  SPEC_1_17  0.024
+    RUN_5_17  SPEC_2_17  0.013
+    RUN_5_17  SPEC_3_17  0.032
+    RUN_5_17  SPEC_4_17  0.034
+    RUN_5_18  COST  -5.492
+    RUN_5_18  CBAL_5_18  1
+    RUN_5_18  CDU_18  1
+    RUN_5_18  PBAL_0_18  -0.23
+    RUN_5_18  PBAL_2_18  -0.16
+    RUN_5_18  PBAL_3_18  -0.07
+    RUN_5_18  PBAL_4_18  -0.24
+    RUN_5_18  PBAL_5_18  -0.14
+    RUN_5_18  PBAL_6_18  -0.3
+    RUN_5_18  PBAL_7_18  -0.15
+    RUN_5_18  PBAL_8_18  -0.17
+    RUN_5_18  PBAL_9_18  -0.07
+    RUN_5_18  UNIT_0_18  0.64
+    RUN_5_18  UNIT_1_18  0.75
+    RUN_5_18  UNIT_2_18  0.7
+    RUN_5_18  UNIT_3_18  0.5
+    RUN_5_18  UNIT_4_18  0.75
+    RUN_5_18  UNIT_5_18  0.25
+    RUN_5_18  SPEC_0_18  0.022
+    RUN_5_18  SPEC_1_18  0.024
+    RUN_5_18  SPEC_2_18  0.013
+    RUN_5_18  SPEC_3_18  0.032
+    RUN_5_18  SPEC_4_18  0.034
+    RUN_5_19  COST  -10.941
+    RUN_5_19  CBAL_5_19  1
+    RUN_5_19  CDU_19  1
+    RUN_5_19  PBAL_0_19  -0.23
+    RUN_5_19  PBAL_2_19  -0.16
+    RUN_5_19  PBAL_3_19  -0.07
+    RUN_5_19  PBAL_4_19  -0.24
+    RUN_5_19  PBAL_5_19  -0.14
+    RUN_5_19  PBAL_6_19  -0.3
+    RUN_5_19  PBAL_7_19  -0.15
+    RUN_5_19  PBAL_8_19  -0.17
+    RUN_5_19  PBAL_9_19  -0.07
+    RUN_5_19  UNIT_0_19  0.64
+    RUN_5_19  UNIT_1_19  0.75
+    RUN_5_19  UNIT_2_19  0.7
+    RUN_5_19  UNIT_3_19  0.5
+    RUN_5_19  UNIT_4_19  0.75
+    RUN_5_19  UNIT_5_19  0.25
+    RUN_5_19  SPEC_0_19  0.022
+    RUN_5_19  SPEC_1_19  0.024
+    RUN_5_19  SPEC_2_19  0.013
+    RUN_5_19  SPEC_3_19  0.032
+    RUN_5_19  SPEC_4_19  0.034
+    RUN_5_20  COST  -25.472
+    RUN_5_20  CBAL_5_20  1
+    RUN_5_20  CDU_20  1
+    RUN_5_20  PBAL_0_20  -0.23
+    RUN_5_20  PBAL_2_20  -0.16
+    RUN_5_20  PBAL_3_20  -0.07
+    RUN_5_20  PBAL_4_20  -0.24
+    RUN_5_20  PBAL_5_20  -0.14
+    RUN_5_20  PBAL_6_20  -0.3
+    RUN_5_20  PBAL_7_20  -0.15
+    RUN_5_20  PBAL_8_20  -0.17
+    RUN_5_20  PBAL_9_20  -0.07
+    RUN_5_20  UNIT_0_20  0.64
+    RUN_5_20  UNIT_1_20  0.75
+    RUN_5_20  UNIT_2_20  0.7
+    RUN_5_20  UNIT_3_20  0.5
+    RUN_5_20  UNIT_4_20  0.75
+    RUN_5_20  UNIT_5_20  0.25
+    RUN_5_20  SPEC_0_20  0.022
+    RUN_5_20  SPEC_1_20  0.024
+    RUN_5_20  SPEC_2_20  0.013
+    RUN_5_20  SPEC_3_20  0.032
+    RUN_5_20  SPEC_4_20  0.034
+    RUN_5_21  COST  -0.742
+    RUN_5_21  CBAL_5_21  1
+    RUN_5_21  CDU_21  1
+    RUN_5_21  PBAL_0_21  -0.23
+    RUN_5_21  PBAL_2_21  -0.16
+    RUN_5_21  PBAL_3_21  -0.07
+    RUN_5_21  PBAL_4_21  -0.24
+    RUN_5_21  PBAL_5_21  -0.14
+    RUN_5_21  PBAL_6_21  -0.3
+    RUN_5_21  PBAL_7_21  -0.15
+    RUN_5_21  PBAL_8_21  -0.17
+    RUN_5_21  PBAL_9_21  -0.07
+    RUN_5_21  UNIT_0_21  0.64
+    RUN_5_21  UNIT_1_21  0.75
+    RUN_5_21  UNIT_2_21  0.7
+    RUN_5_21  UNIT_3_21  0.5
+    RUN_5_21  UNIT_4_21  0.75
+    RUN_5_21  UNIT_5_21  0.25
+    RUN_5_21  SPEC_0_21  0.022
+    RUN_5_21  SPEC_1_21  0.024
+    RUN_5_21  SPEC_2_21  0.013
+    RUN_5_21  SPEC_3_21  0.032
+    RUN_5_21  SPEC_4_21  0.034
+    RUN_5_22  COST  -6.271
+    RUN_5_22  CBAL_5_22  1
+    RUN_5_22  CDU_22  1
+    RUN_5_22  PBAL_0_22  -0.23
+    RUN_5_22  PBAL_2_22  -0.16
+    RUN_5_22  PBAL_3_22  -0.07
+    RUN_5_22  PBAL_4_22  -0.24
+    RUN_5_22  PBAL_5_22  -0.14
+    RUN_5_22  PBAL_6_22  -0.3
+    RUN_5_22  PBAL_7_22  -0.15
+    RUN_5_22  PBAL_8_22  -0.17
+    RUN_5_22  PBAL_9_22  -0.07
+    RUN_5_22  UNIT_0_22  0.64
+    RUN_5_22  UNIT_1_22  0.75
+    RUN_5_22  UNIT_2_22  0.7
+    RUN_5_22  UNIT_3_22  0.5
+    RUN_5_22  UNIT_4_22  0.75
+    RUN_5_22  UNIT_5_22  0.25
+    RUN_5_22  SPEC_0_22  0.022
+    RUN_5_22  SPEC_1_22  0.024
+    RUN_5_22  SPEC_2_22  0.013
+    RUN_5_22  SPEC_3_22  0.032
+    RUN_5_22  SPEC_4_22  0.034
+    RUN_5_23  COST  -13.154
+    RUN_5_23  CBAL_5_23  1
+    RUN_5_23  CDU_23  1
+    RUN_5_23  PBAL_0_23  -0.23
+    RUN_5_23  PBAL_2_23  -0.16
+    RUN_5_23  PBAL_3_23  -0.07
+    RUN_5_23  PBAL_4_23  -0.24
+    RUN_5_23  PBAL_5_23  -0.14
+    RUN_5_23  PBAL_6_23  -0.3
+    RUN_5_23  PBAL_7_23  -0.15
+    RUN_5_23  PBAL_8_23  -0.17
+    RUN_5_23  PBAL_9_23  -0.07
+    RUN_5_23  UNIT_0_23  0.64
+    RUN_5_23  UNIT_1_23  0.75
+    RUN_5_23  UNIT_2_23  0.7
+    RUN_5_23  UNIT_3_23  0.5
+    RUN_5_23  UNIT_4_23  0.75
+    RUN_5_23  UNIT_5_23  0.25
+    RUN_5_23  SPEC_0_23  0.022
+    RUN_5_23  SPEC_1_23  0.024
+    RUN_5_23  SPEC_2_23  0.013
+    RUN_5_23  SPEC_3_23  0.032
+    RUN_5_23  SPEC_4_23  0.034
+    RUN_5_24  COST  -24.51
+    RUN_5_24  CBAL_5_24  1
+    RUN_5_24  CDU_24  1
+    RUN_5_24  PBAL_0_24  -0.23
+    RUN_5_24  PBAL_2_24  -0.16
+    RUN_5_24  PBAL_3_24  -0.07
+    RUN_5_24  PBAL_4_24  -0.24
+    RUN_5_24  PBAL_5_24  -0.14
+    RUN_5_24  PBAL_6_24  -0.3
+    RUN_5_24  PBAL_7_24  -0.15
+    RUN_5_24  PBAL_8_24  -0.17
+    RUN_5_24  PBAL_9_24  -0.07
+    RUN_5_24  UNIT_0_24  0.64
+    RUN_5_24  UNIT_1_24  0.75
+    RUN_5_24  UNIT_2_24  0.7
+    RUN_5_24  UNIT_3_24  0.5
+    RUN_5_24  UNIT_4_24  0.75
+    RUN_5_24  UNIT_5_24  0.25
+    RUN_5_24  SPEC_0_24  0.022
+    RUN_5_24  SPEC_1_24  0.024
+    RUN_5_24  SPEC_2_24  0.013
+    RUN_5_24  SPEC_3_24  0.032
+    RUN_5_24  SPEC_4_24  0.034
+    RUN_5_25  COST  -20.719
+    RUN_5_25  CBAL_5_25  1
+    RUN_5_25  CDU_25  1
+    RUN_5_25  PBAL_0_25  -0.23
+    RUN_5_25  PBAL_2_25  -0.16
+    RUN_5_25  PBAL_3_25  -0.07
+    RUN_5_25  PBAL_4_25  -0.24
+    RUN_5_25  PBAL_5_25  -0.14
+    RUN_5_25  PBAL_6_25  -0.3
+    RUN_5_25  PBAL_7_25  -0.15
+    RUN_5_25  PBAL_8_25  -0.17
+    RUN_5_25  PBAL_9_25  -0.07
+    RUN_5_25  UNIT_0_25  0.64
+    RUN_5_25  UNIT_1_25  0.75
+    RUN_5_25  UNIT_2_25  0.7
+    RUN_5_25  UNIT_3_25  0.5
+    RUN_5_25  UNIT_4_25  0.75
+    RUN_5_25  UNIT_5_25  0.25
+    RUN_5_25  SPEC_0_25  0.022
+    RUN_5_25  SPEC_1_25  0.024
+    RUN_5_25  SPEC_2_25  0.013
+    RUN_5_25  SPEC_3_25  0.032
+    RUN_5_25  SPEC_4_25  0.034
+    RUN_5_26  COST  -9.494
+    RUN_5_26  CBAL_5_26  1
+    RUN_5_26  CDU_26  1
+    RUN_5_26  PBAL_0_26  -0.23
+    RUN_5_26  PBAL_2_26  -0.16
+    RUN_5_26  PBAL_3_26  -0.07
+    RUN_5_26  PBAL_4_26  -0.24
+    RUN_5_26  PBAL_5_26  -0.14
+    RUN_5_26  PBAL_6_26  -0.3
+    RUN_5_26  PBAL_7_26  -0.15
+    RUN_5_26  PBAL_8_26  -0.17
+    RUN_5_26  PBAL_9_26  -0.07
+    RUN_5_26  UNIT_0_26  0.64
+    RUN_5_26  UNIT_1_26  0.75
+    RUN_5_26  UNIT_2_26  0.7
+    RUN_5_26  UNIT_3_26  0.5
+    RUN_5_26  UNIT_4_26  0.75
+    RUN_5_26  UNIT_5_26  0.25
+    RUN_5_26  SPEC_0_26  0.022
+    RUN_5_26  SPEC_1_26  0.024
+    RUN_5_26  SPEC_2_26  0.013
+    RUN_5_26  SPEC_3_26  0.032
+    RUN_5_26  SPEC_4_26  0.034
+    RUN_5_27  COST  -24.072
+    RUN_5_27  CBAL_5_27  1
+    RUN_5_27  CDU_27  1
+    RUN_5_27  PBAL_0_27  -0.23
+    RUN_5_27  PBAL_2_27  -0.16
+    RUN_5_27  PBAL_3_27  -0.07
+    RUN_5_27  PBAL_4_27  -0.24
+    RUN_5_27  PBAL_5_27  -0.14
+    RUN_5_27  PBAL_6_27  -0.3
+    RUN_5_27  PBAL_7_27  -0.15
+    RUN_5_27  PBAL_8_27  -0.17
+    RUN_5_27  PBAL_9_27  -0.07
+    RUN_5_27  UNIT_0_27  0.64
+    RUN_5_27  UNIT_1_27  0.75
+    RUN_5_27  UNIT_2_27  0.7
+    RUN_5_27  UNIT_3_27  0.5
+    RUN_5_27  UNIT_4_27  0.75
+    RUN_5_27  UNIT_5_27  0.25
+    RUN_5_27  SPEC_0_27  0.022
+    RUN_5_27  SPEC_1_27  0.024
+    RUN_5_27  SPEC_2_27  0.013
+    RUN_5_27  SPEC_3_27  0.032
+    RUN_5_27  SPEC_4_27  0.034
+    RUN_5_28  COST  -22.613
+    RUN_5_28  CBAL_5_28  1
+    RUN_5_28  CDU_28  1
+    RUN_5_28  PBAL_0_28  -0.23
+    RUN_5_28  PBAL_2_28  -0.16
+    RUN_5_28  PBAL_3_28  -0.07
+    RUN_5_28  PBAL_4_28  -0.24
+    RUN_5_28  PBAL_5_28  -0.14
+    RUN_5_28  PBAL_6_28  -0.3
+    RUN_5_28  PBAL_7_28  -0.15
+    RUN_5_28  PBAL_8_28  -0.17
+    RUN_5_28  PBAL_9_28  -0.07
+    RUN_5_28  UNIT_0_28  0.64
+    RUN_5_28  UNIT_1_28  0.75
+    RUN_5_28  UNIT_2_28  0.7
+    RUN_5_28  UNIT_3_28  0.5
+    RUN_5_28  UNIT_4_28  0.75
+    RUN_5_28  UNIT_5_28  0.25
+    RUN_5_28  SPEC_0_28  0.022
+    RUN_5_28  SPEC_1_28  0.024
+    RUN_5_28  SPEC_2_28  0.013
+    RUN_5_28  SPEC_3_28  0.032
+    RUN_5_28  SPEC_4_28  0.034
+    RUN_5_29  COST  3.712
+    RUN_5_29  CBAL_5_29  1
+    RUN_5_29  CDU_29  1
+    RUN_5_29  PBAL_0_29  -0.23
+    RUN_5_29  PBAL_2_29  -0.16
+    RUN_5_29  PBAL_3_29  -0.07
+    RUN_5_29  PBAL_4_29  -0.24
+    RUN_5_29  PBAL_5_29  -0.14
+    RUN_5_29  PBAL_6_29  -0.3
+    RUN_5_29  PBAL_7_29  -0.15
+    RUN_5_29  PBAL_8_29  -0.17
+    RUN_5_29  PBAL_9_29  -0.07
+    RUN_5_29  UNIT_0_29  0.64
+    RUN_5_29  UNIT_1_29  0.75
+    RUN_5_29  UNIT_2_29  0.7
+    RUN_5_29  UNIT_3_29  0.5
+    RUN_5_29  UNIT_4_29  0.75
+    RUN_5_29  UNIT_5_29  0.25
+    RUN_5_29  SPEC_0_29  0.022
+    RUN_5_29  SPEC_1_29  0.024
+    RUN_5_29  SPEC_2_29  0.013
+    RUN_5_29  SPEC_3_29  0.032
+    RUN_5_29  SPEC_4_29  0.034
+    RUN_6_0  COST  -10.748
+    RUN_6_0  CBAL_6_0  1
+    RUN_6_0  CDU_0  1
+    RUN_6_0  PBAL_0_0  -0.11
+    RUN_6_0  PBAL_1_0  -0.07
+    RUN_6_0  PBAL_2_0  -0.21
+    RUN_6_0  PBAL_3_0  -0.07
+    RUN_6_0  PBAL_4_0  -0.24
+    RUN_6_0  PBAL_5_0  -0.14
+    RUN_6_0  PBAL_6_0  -0.3
+    RUN_6_0  PBAL_7_0  -0.09
+    RUN_6_0  PBAL_8_0  -0.29
+    RUN_6_0  UNIT_0_0  0.24
+    RUN_6_0  UNIT_1_0  0.04
+    RUN_6_0  UNIT_2_0  0.47
+    RUN_6_0  UNIT_3_0  0.47
+    RUN_6_0  UNIT_4_0  0.74
+    RUN_6_0  UNIT_5_0  0.69
+    RUN_6_0  SPEC_0_0  0.029
+    RUN_6_0  SPEC_1_0  0.05
+    RUN_6_0  SPEC_2_0  0.027
+    RUN_6_0  SPEC_3_0  0.026
+    RUN_6_0  SPEC_4_0  0.039
+    RUN_6_1  COST  -14.437
+    RUN_6_1  CBAL_6_1  1
+    RUN_6_1  CDU_1  1
+    RUN_6_1  PBAL_0_1  -0.11
+    RUN_6_1  PBAL_1_1  -0.07
+    RUN_6_1  PBAL_2_1  -0.21
+    RUN_6_1  PBAL_3_1  -0.07
+    RUN_6_1  PBAL_4_1  -0.24
+    RUN_6_1  PBAL_5_1  -0.14
+    RUN_6_1  PBAL_6_1  -0.3
+    RUN_6_1  PBAL_7_1  -0.09
+    RUN_6_1  PBAL_8_1  -0.29
+    RUN_6_1  UNIT_0_1  0.24
+    RUN_6_1  UNIT_1_1  0.04
+    RUN_6_1  UNIT_2_1  0.47
+    RUN_6_1  UNIT_3_1  0.47
+    RUN_6_1  UNIT_4_1  0.74
+    RUN_6_1  UNIT_5_1  0.69
+    RUN_6_1  SPEC_0_1  0.029
+    RUN_6_1  SPEC_1_1  0.05
+    RUN_6_1  SPEC_2_1  0.027
+    RUN_6_1  SPEC_3_1  0.026
+    RUN_6_1  SPEC_4_1  0.039
+    RUN_6_2  COST  -6.624
+    RUN_6_2  CBAL_6_2  1
+    RUN_6_2  CDU_2  1
+    RUN_6_2  PBAL_0_2  -0.11
+    RUN_6_2  PBAL_1_2  -0.07
+    RUN_6_2  PBAL_2_2  -0.21
+    RUN_6_2  PBAL_3_2  -0.07
+    RUN_6_2  PBAL_4_2  -0.24
+    RUN_6_2  PBAL_5_2  -0.14
+    RUN_6_2  PBAL_6_2  -0.3
+    RUN_6_2  PBAL_7_2  -0.09
+    RUN_6_2  PBAL_8_2  -0.29
+    RUN_6_2  UNIT_0_2  0.24
+    RUN_6_2  UNIT_1_2  0.04
+    RUN_6_2  UNIT_2_2  0.47
+    RUN_6_2  UNIT_3_2  0.47
+    RUN_6_2  UNIT_4_2  0.74
+    RUN_6_2  UNIT_5_2  0.69
+    RUN_6_2  SPEC_0_2  0.029
+    RUN_6_2  SPEC_1_2  0.05
+    RUN_6_2  SPEC_2_2  0.027
+    RUN_6_2  SPEC_3_2  0.026
+    RUN_6_2  SPEC_4_2  0.039
+    RUN_6_3  COST  -18.92
+    RUN_6_3  CBAL_6_3  1
+    RUN_6_3  CDU_3  1
+    RUN_6_3  PBAL_0_3  -0.11
+    RUN_6_3  PBAL_1_3  -0.07
+    RUN_6_3  PBAL_2_3  -0.21
+    RUN_6_3  PBAL_3_3  -0.07
+    RUN_6_3  PBAL_4_3  -0.24
+    RUN_6_3  PBAL_5_3  -0.14
+    RUN_6_3  PBAL_6_3  -0.3
+    RUN_6_3  PBAL_7_3  -0.09
+    RUN_6_3  PBAL_8_3  -0.29
+    RUN_6_3  UNIT_0_3  0.24
+    RUN_6_3  UNIT_1_3  0.04
+    RUN_6_3  UNIT_2_3  0.47
+    RUN_6_3  UNIT_3_3  0.47
+    RUN_6_3  UNIT_4_3  0.74
+    RUN_6_3  UNIT_5_3  0.69
+    RUN_6_3  SPEC_0_3  0.029
+    RUN_6_3  SPEC_1_3  0.05
+    RUN_6_3  SPEC_2_3  0.027
+    RUN_6_3  SPEC_3_3  0.026
+    RUN_6_3  SPEC_4_3  0.039
+    RUN_6_4  COST  -11.926
+    RUN_6_4  CBAL_6_4  1
+    RUN_6_4  CDU_4  1
+    RUN_6_4  PBAL_0_4  -0.11
+    RUN_6_4  PBAL_1_4  -0.07
+    RUN_6_4  PBAL_2_4  -0.21
+    RUN_6_4  PBAL_3_4  -0.07
+    RUN_6_4  PBAL_4_4  -0.24
+    RUN_6_4  PBAL_5_4  -0.14
+    RUN_6_4  PBAL_6_4  -0.3
+    RUN_6_4  PBAL_7_4  -0.09
+    RUN_6_4  PBAL_8_4  -0.29
+    RUN_6_4  UNIT_0_4  0.24
+    RUN_6_4  UNIT_1_4  0.04
+    RUN_6_4  UNIT_2_4  0.47
+    RUN_6_4  UNIT_3_4  0.47
+    RUN_6_4  UNIT_4_4  0.74
+    RUN_6_4  UNIT_5_4  0.69
+    RUN_6_4  SPEC_0_4  0.029
+    RUN_6_4  SPEC_1_4  0.05
+    RUN_6_4  SPEC_2_4  0.027
+    RUN_6_4  SPEC_3_4  0.026
+    RUN_6_4  SPEC_4_4  0.039
+    RUN_6_5  COST  -17.623
+    RUN_6_5  CBAL_6_5  1
+    RUN_6_5  CDU_5  1
+    RUN_6_5  PBAL_0_5  -0.11
+    RUN_6_5  PBAL_1_5  -0.07
+    RUN_6_5  PBAL_2_5  -0.21
+    RUN_6_5  PBAL_3_5  -0.07
+    RUN_6_5  PBAL_4_5  -0.24
+    RUN_6_5  PBAL_5_5  -0.14
+    RUN_6_5  PBAL_6_5  -0.3
+    RUN_6_5  PBAL_7_5  -0.09
+    RUN_6_5  PBAL_8_5  -0.29
+    RUN_6_5  UNIT_0_5  0.24
+    RUN_6_5  UNIT_1_5  0.04
+    RUN_6_5  UNIT_2_5  0.47
+    RUN_6_5  UNIT_3_5  0.47
+    RUN_6_5  UNIT_4_5  0.74
+    RUN_6_5  UNIT_5_5  0.69
+    RUN_6_5  SPEC_0_5  0.029
+    RUN_6_5  SPEC_1_5  0.05
+    RUN_6_5  SPEC_2_5  0.027
+    RUN_6_5  SPEC_3_5  0.026
+    RUN_6_5  SPEC_4_5  0.039
+    RUN_6_6  COST  -19.074
+    RUN_6_6  CBAL_6_6  1
+    RUN_6_6  CDU_6  1
+    RUN_6_6  PBAL_0_6  -0.11
+    RUN_6_6  PBAL_1_6  -0.07
+    RUN_6_6  PBAL_2_6  -0.21
+    RUN_6_6  PBAL_3_6  -0.07
+    RUN_6_6  PBAL_4_6  -0.24
+    RUN_6_6  PBAL_5_6  -0.14
+    RUN_6_6  PBAL_6_6  -0.3
+    RUN_6_6  PBAL_7_6  -0.09
+    RUN_6_6  PBAL_8_6  -0.29
+    RUN_6_6  UNIT_0_6  0.24
+    RUN_6_6  UNIT_1_6  0.04
+    RUN_6_6  UNIT_2_6  0.47
+    RUN_6_6  UNIT_3_6  0.47
+    RUN_6_6  UNIT_4_6  0.74
+    RUN_6_6  UNIT_5_6  0.69
+    RUN_6_6  SPEC_0_6  0.029
+    RUN_6_6  SPEC_1_6  0.05
+    RUN_6_6  SPEC_2_6  0.027
+    RUN_6_6  SPEC_3_6  0.026
+    RUN_6_6  SPEC_4_6  0.039
+    RUN_6_7  COST  -16.55
+    RUN_6_7  CBAL_6_7  1
+    RUN_6_7  CDU_7  1
+    RUN_6_7  PBAL_0_7  -0.11
+    RUN_6_7  PBAL_1_7  -0.07
+    RUN_6_7  PBAL_2_7  -0.21
+    RUN_6_7  PBAL_3_7  -0.07
+    RUN_6_7  PBAL_4_7  -0.24
+    RUN_6_7  PBAL_5_7  -0.14
+    RUN_6_7  PBAL_6_7  -0.3
+    RUN_6_7  PBAL_7_7  -0.09
+    RUN_6_7  PBAL_8_7  -0.29
+    RUN_6_7  UNIT_0_7  0.24
+    RUN_6_7  UNIT_1_7  0.04
+    RUN_6_7  UNIT_2_7  0.47
+    RUN_6_7  UNIT_3_7  0.47
+    RUN_6_7  UNIT_4_7  0.74
+    RUN_6_7  UNIT_5_7  0.69
+    RUN_6_7  SPEC_0_7  0.029
+    RUN_6_7  SPEC_1_7  0.05
+    RUN_6_7  SPEC_2_7  0.027
+    RUN_6_7  SPEC_3_7  0.026
+    RUN_6_7  SPEC_4_7  0.039
+    RUN_6_8  COST  -5.4
+    RUN_6_8  CBAL_6_8  1
+    RUN_6_8  CDU_8  1
+    RUN_6_8  PBAL_0_8  -0.11
+    RUN_6_8  PBAL_1_8  -0.07
+    RUN_6_8  PBAL_2_8  -0.21
+    RUN_6_8  PBAL_3_8  -0.07
+    RUN_6_8  PBAL_4_8  -0.24
+    RUN_6_8  PBAL_5_8  -0.14
+    RUN_6_8  PBAL_6_8  -0.3
+    RUN_6_8  PBAL_7_8  -0.09
+    RUN_6_8  PBAL_8_8  -0.29
+    RUN_6_8  UNIT_0_8  0.24
+    RUN_6_8  UNIT_1_8  0.04
+    RUN_6_8  UNIT_2_8  0.47
+    RUN_6_8  UNIT_3_8  0.47
+    RUN_6_8  UNIT_4_8  0.74
+    RUN_6_8  UNIT_5_8  0.69
+    RUN_6_8  SPEC_0_8  0.029
+    RUN_6_8  SPEC_1_8  0.05
+    RUN_6_8  SPEC_2_8  0.027
+    RUN_6_8  SPEC_3_8  0.026
+    RUN_6_8  SPEC_4_8  0.039
+    RUN_6_9  COST  -4.201
+    RUN_6_9  CBAL_6_9  1
+    RUN_6_9  CDU_9  1
+    RUN_6_9  PBAL_0_9  -0.11
+    RUN_6_9  PBAL_1_9  -0.07
+    RUN_6_9  PBAL_2_9  -0.21
+    RUN_6_9  PBAL_3_9  -0.07
+    RUN_6_9  PBAL_4_9  -0.24
+    RUN_6_9  PBAL_5_9  -0.14
+    RUN_6_9  PBAL_6_9  -0.3
+    RUN_6_9  PBAL_7_9  -0.09
+    RUN_6_9  PBAL_8_9  -0.29
+    RUN_6_9  UNIT_0_9  0.24
+    RUN_6_9  UNIT_1_9  0.04
+    RUN_6_9  UNIT_2_9  0.47
+    RUN_6_9  UNIT_3_9  0.47
+    RUN_6_9  UNIT_4_9  0.74
+    RUN_6_9  UNIT_5_9  0.69
+    RUN_6_9  SPEC_0_9  0.029
+    RUN_6_9  SPEC_1_9  0.05
+    RUN_6_9  SPEC_2_9  0.027
+    RUN_6_9  SPEC_3_9  0.026
+    RUN_6_9  SPEC_4_9  0.039
+    RUN_6_10  COST  -6.811
+    RUN_6_10  CBAL_6_10  1
+    RUN_6_10  CDU_10  1
+    RUN_6_10  PBAL_0_10  -0.11
+    RUN_6_10  PBAL_1_10  -0.07
+    RUN_6_10  PBAL_2_10  -0.21
+    RUN_6_10  PBAL_3_10  -0.07
+    RUN_6_10  PBAL_4_10  -0.24
+    RUN_6_10  PBAL_5_10  -0.14
+    RUN_6_10  PBAL_6_10  -0.3
+    RUN_6_10  PBAL_7_10  -0.09
+    RUN_6_10  PBAL_8_10  -0.29
+    RUN_6_10  UNIT_0_10  0.24
+    RUN_6_10  UNIT_1_10  0.04
+    RUN_6_10  UNIT_2_10  0.47
+    RUN_6_10  UNIT_3_10  0.47
+    RUN_6_10  UNIT_4_10  0.74
+    RUN_6_10  UNIT_5_10  0.69
+    RUN_6_10  SPEC_0_10  0.029
+    RUN_6_10  SPEC_1_10  0.05
+    RUN_6_10  SPEC_2_10  0.027
+    RUN_6_10  SPEC_3_10  0.026
+    RUN_6_10  SPEC_4_10  0.039
+    RUN_6_11  COST  0.301
+    RUN_6_11  CBAL_6_11  1
+    RUN_6_11  CDU_11  1
+    RUN_6_11  PBAL_0_11  -0.11
+    RUN_6_11  PBAL_1_11  -0.07
+    RUN_6_11  PBAL_2_11  -0.21
+    RUN_6_11  PBAL_3_11  -0.07
+    RUN_6_11  PBAL_4_11  -0.24
+    RUN_6_11  PBAL_5_11  -0.14
+    RUN_6_11  PBAL_6_11  -0.3
+    RUN_6_11  PBAL_7_11  -0.09
+    RUN_6_11  PBAL_8_11  -0.29
+    RUN_6_11  UNIT_0_11  0.24
+    RUN_6_11  UNIT_1_11  0.04
+    RUN_6_11  UNIT_2_11  0.47
+    RUN_6_11  UNIT_3_11  0.47
+    RUN_6_11  UNIT_4_11  0.74
+    RUN_6_11  UNIT_5_11  0.69
+    RUN_6_11  SPEC_0_11  0.029
+    RUN_6_11  SPEC_1_11  0.05
+    RUN_6_11  SPEC_2_11  0.027
+    RUN_6_11  SPEC_3_11  0.026
+    RUN_6_11  SPEC_4_11  0.039
+    RUN_6_12  COST  3.492
+    RUN_6_12  CBAL_6_12  1
+    RUN_6_12  CDU_12  1
+    RUN_6_12  PBAL_0_12  -0.11
+    RUN_6_12  PBAL_1_12  -0.07
+    RUN_6_12  PBAL_2_12  -0.21
+    RUN_6_12  PBAL_3_12  -0.07
+    RUN_6_12  PBAL_4_12  -0.24
+    RUN_6_12  PBAL_5_12  -0.14
+    RUN_6_12  PBAL_6_12  -0.3
+    RUN_6_12  PBAL_7_12  -0.09
+    RUN_6_12  PBAL_8_12  -0.29
+    RUN_6_12  UNIT_0_12  0.24
+    RUN_6_12  UNIT_1_12  0.04
+    RUN_6_12  UNIT_2_12  0.47
+    RUN_6_12  UNIT_3_12  0.47
+    RUN_6_12  UNIT_4_12  0.74
+    RUN_6_12  UNIT_5_12  0.69
+    RUN_6_12  SPEC_0_12  0.029
+    RUN_6_12  SPEC_1_12  0.05
+    RUN_6_12  SPEC_2_12  0.027
+    RUN_6_12  SPEC_3_12  0.026
+    RUN_6_12  SPEC_4_12  0.039
+    RUN_6_13  COST  -11.016
+    RUN_6_13  CBAL_6_13  1
+    RUN_6_13  CDU_13  1
+    RUN_6_13  PBAL_0_13  -0.11
+    RUN_6_13  PBAL_1_13  -0.07
+    RUN_6_13  PBAL_2_13  -0.21
+    RUN_6_13  PBAL_3_13  -0.07
+    RUN_6_13  PBAL_4_13  -0.24
+    RUN_6_13  PBAL_5_13  -0.14
+    RUN_6_13  PBAL_6_13  -0.3
+    RUN_6_13  PBAL_7_13  -0.09
+    RUN_6_13  PBAL_8_13  -0.29
+    RUN_6_13  UNIT_0_13  0.24
+    RUN_6_13  UNIT_1_13  0.04
+    RUN_6_13  UNIT_2_13  0.47
+    RUN_6_13  UNIT_3_13  0.47
+    RUN_6_13  UNIT_4_13  0.74
+    RUN_6_13  UNIT_5_13  0.69
+    RUN_6_13  SPEC_0_13  0.029
+    RUN_6_13  SPEC_1_13  0.05
+    RUN_6_13  SPEC_2_13  0.027
+    RUN_6_13  SPEC_3_13  0.026
+    RUN_6_13  SPEC_4_13  0.039
+    RUN_6_14  COST  1.958
+    RUN_6_14  CBAL_6_14  1
+    RUN_6_14  CDU_14  1
+    RUN_6_14  PBAL_0_14  -0.11
+    RUN_6_14  PBAL_1_14  -0.07
+    RUN_6_14  PBAL_2_14  -0.21
+    RUN_6_14  PBAL_3_14  -0.07
+    RUN_6_14  PBAL_4_14  -0.24
+    RUN_6_14  PBAL_5_14  -0.14
+    RUN_6_14  PBAL_6_14  -0.3
+    RUN_6_14  PBAL_7_14  -0.09
+    RUN_6_14  PBAL_8_14  -0.29
+    RUN_6_14  UNIT_0_14  0.24
+    RUN_6_14  UNIT_1_14  0.04
+    RUN_6_14  UNIT_2_14  0.47
+    RUN_6_14  UNIT_3_14  0.47
+    RUN_6_14  UNIT_4_14  0.74
+    RUN_6_14  UNIT_5_14  0.69
+    RUN_6_14  SPEC_0_14  0.029
+    RUN_6_14  SPEC_1_14  0.05
+    RUN_6_14  SPEC_2_14  0.027
+    RUN_6_14  SPEC_3_14  0.026
+    RUN_6_14  SPEC_4_14  0.039
+    RUN_6_15  COST  -21.666
+    RUN_6_15  CBAL_6_15  1
+    RUN_6_15  CDU_15  1
+    RUN_6_15  PBAL_0_15  -0.11
+    RUN_6_15  PBAL_1_15  -0.07
+    RUN_6_15  PBAL_2_15  -0.21
+    RUN_6_15  PBAL_3_15  -0.07
+    RUN_6_15  PBAL_4_15  -0.24
+    RUN_6_15  PBAL_5_15  -0.14
+    RUN_6_15  PBAL_6_15  -0.3
+    RUN_6_15  PBAL_7_15  -0.09
+    RUN_6_15  PBAL_8_15  -0.29
+    RUN_6_15  UNIT_0_15  0.24
+    RUN_6_15  UNIT_1_15  0.04
+    RUN_6_15  UNIT_2_15  0.47
+    RUN_6_15  UNIT_3_15  0.47
+    RUN_6_15  UNIT_4_15  0.74
+    RUN_6_15  UNIT_5_15  0.69
+    RUN_6_15  SPEC_0_15  0.029
+    RUN_6_15  SPEC_1_15  0.05
+    RUN_6_15  SPEC_2_15  0.027
+    RUN_6_15  SPEC_3_15  0.026
+    RUN_6_15  SPEC_4_15  0.039
+    RUN_6_16  COST  -7.284
+    RUN_6_16  CBAL_6_16  1
+    RUN_6_16  CDU_16  1
+    RUN_6_16  PBAL_0_16  -0.11
+    RUN_6_16  PBAL_1_16  -0.07
+    RUN_6_16  PBAL_2_16  -0.21
+    RUN_6_16  PBAL_3_16  -0.07
+    RUN_6_16  PBAL_4_16  -0.24
+    RUN_6_16  PBAL_5_16  -0.14
+    RUN_6_16  PBAL_6_16  -0.3
+    RUN_6_16  PBAL_7_16  -0.09
+    RUN_6_16  PBAL_8_16  -0.29
+    RUN_6_16  UNIT_0_16  0.24
+    RUN_6_16  UNIT_1_16  0.04
+    RUN_6_16  UNIT_2_16  0.47
+    RUN_6_16  UNIT_3_16  0.47
+    RUN_6_16  UNIT_4_16  0.74
+    RUN_6_16  UNIT_5_16  0.69
+    RUN_6_16  SPEC_0_16  0.029
+    RUN_6_16  SPEC_1_16  0.05
+    RUN_6_16  SPEC_2_16  0.027
+    RUN_6_16  SPEC_3_16  0.026
+    RUN_6_16  SPEC_4_16  0.039
+    RUN_6_17  COST  -23.546
+    RUN_6_17  CBAL_6_17  1
+    RUN_6_17  CDU_17  1
+    RUN_6_17  PBAL_0_17  -0.11
+    RUN_6_17  PBAL_1_17  -0.07
+    RUN_6_17  PBAL_2_17  -0.21
+    RUN_6_17  PBAL_3_17  -0.07
+    RUN_6_17  PBAL_4_17  -0.24
+    RUN_6_17  PBAL_5_17  -0.14
+    RUN_6_17  PBAL_6_17  -0.3
+    RUN_6_17  PBAL_7_17  -0.09
+    RUN_6_17  PBAL_8_17  -0.29
+    RUN_6_17  UNIT_0_17  0.24
+    RUN_6_17  UNIT_1_17  0.04
+    RUN_6_17  UNIT_2_17  0.47
+    RUN_6_17  UNIT_3_17  0.47
+    RUN_6_17  UNIT_4_17  0.74
+    RUN_6_17  UNIT_5_17  0.69
+    RUN_6_17  SPEC_0_17  0.029
+    RUN_6_17  SPEC_1_17  0.05
+    RUN_6_17  SPEC_2_17  0.027
+    RUN_6_17  SPEC_3_17  0.026
+    RUN_6_17  SPEC_4_17  0.039
+    RUN_6_18  COST  -15.183
+    RUN_6_18  CBAL_6_18  1
+    RUN_6_18  CDU_18  1
+    RUN_6_18  PBAL_0_18  -0.11
+    RUN_6_18  PBAL_1_18  -0.07
+    RUN_6_18  PBAL_2_18  -0.21
+    RUN_6_18  PBAL_3_18  -0.07
+    RUN_6_18  PBAL_4_18  -0.24
+    RUN_6_18  PBAL_5_18  -0.14
+    RUN_6_18  PBAL_6_18  -0.3
+    RUN_6_18  PBAL_7_18  -0.09
+    RUN_6_18  PBAL_8_18  -0.29
+    RUN_6_18  UNIT_0_18  0.24
+    RUN_6_18  UNIT_1_18  0.04
+    RUN_6_18  UNIT_2_18  0.47
+    RUN_6_18  UNIT_3_18  0.47
+    RUN_6_18  UNIT_4_18  0.74
+    RUN_6_18  UNIT_5_18  0.69
+    RUN_6_18  SPEC_0_18  0.029
+    RUN_6_18  SPEC_1_18  0.05
+    RUN_6_18  SPEC_2_18  0.027
+    RUN_6_18  SPEC_3_18  0.026
+    RUN_6_18  SPEC_4_18  0.039
+    RUN_6_19  COST  -5.199
+    RUN_6_19  CBAL_6_19  1
+    RUN_6_19  CDU_19  1
+    RUN_6_19  PBAL_0_19  -0.11
+    RUN_6_19  PBAL_1_19  -0.07
+    RUN_6_19  PBAL_2_19  -0.21
+    RUN_6_19  PBAL_3_19  -0.07
+    RUN_6_19  PBAL_4_19  -0.24
+    RUN_6_19  PBAL_5_19  -0.14
+    RUN_6_19  PBAL_6_19  -0.3
+    RUN_6_19  PBAL_7_19  -0.09
+    RUN_6_19  PBAL_8_19  -0.29
+    RUN_6_19  UNIT_0_19  0.24
+    RUN_6_19  UNIT_1_19  0.04
+    RUN_6_19  UNIT_2_19  0.47
+    RUN_6_19  UNIT_3_19  0.47
+    RUN_6_19  UNIT_4_19  0.74
+    RUN_6_19  UNIT_5_19  0.69
+    RUN_6_19  SPEC_0_19  0.029
+    RUN_6_19  SPEC_1_19  0.05
+    RUN_6_19  SPEC_2_19  0.027
+    RUN_6_19  SPEC_3_19  0.026
+    RUN_6_19  SPEC_4_19  0.039
+    RUN_6_20  COST  -11.106
+    RUN_6_20  CBAL_6_20  1
+    RUN_6_20  CDU_20  1
+    RUN_6_20  PBAL_0_20  -0.11
+    RUN_6_20  PBAL_1_20  -0.07
+    RUN_6_20  PBAL_2_20  -0.21
+    RUN_6_20  PBAL_3_20  -0.07
+    RUN_6_20  PBAL_4_20  -0.24
+    RUN_6_20  PBAL_5_20  -0.14
+    RUN_6_20  PBAL_6_20  -0.3
+    RUN_6_20  PBAL_7_20  -0.09
+    RUN_6_20  PBAL_8_20  -0.29
+    RUN_6_20  UNIT_0_20  0.24
+    RUN_6_20  UNIT_1_20  0.04
+    RUN_6_20  UNIT_2_20  0.47
+    RUN_6_20  UNIT_3_20  0.47
+    RUN_6_20  UNIT_4_20  0.74
+    RUN_6_20  UNIT_5_20  0.69
+    RUN_6_20  SPEC_0_20  0.029
+    RUN_6_20  SPEC_1_20  0.05
+    RUN_6_20  SPEC_2_20  0.027
+    RUN_6_20  SPEC_3_20  0.026
+    RUN_6_20  SPEC_4_20  0.039
+    RUN_6_21  COST  -5.286
+    RUN_6_21  CBAL_6_21  1
+    RUN_6_21  CDU_21  1
+    RUN_6_21  PBAL_0_21  -0.11
+    RUN_6_21  PBAL_1_21  -0.07
+    RUN_6_21  PBAL_2_21  -0.21
+    RUN_6_21  PBAL_3_21  -0.07
+    RUN_6_21  PBAL_4_21  -0.24
+    RUN_6_21  PBAL_5_21  -0.14
+    RUN_6_21  PBAL_6_21  -0.3
+    RUN_6_21  PBAL_7_21  -0.09
+    RUN_6_21  PBAL_8_21  -0.29
+    RUN_6_21  UNIT_0_21  0.24
+    RUN_6_21  UNIT_1_21  0.04
+    RUN_6_21  UNIT_2_21  0.47
+    RUN_6_21  UNIT_3_21  0.47
+    RUN_6_21  UNIT_4_21  0.74
+    RUN_6_21  UNIT_5_21  0.69
+    RUN_6_21  SPEC_0_21  0.029
+    RUN_6_21  SPEC_1_21  0.05
+    RUN_6_21  SPEC_2_21  0.027
+    RUN_6_21  SPEC_3_21  0.026
+    RUN_6_21  SPEC_4_21  0.039
+    RUN_6_22  COST  -3.899
+    RUN_6_22  CBAL_6_22  1
+    RUN_6_22  CDU_22  1
+    RUN_6_22  PBAL_0_22  -0.11
+    RUN_6_22  PBAL_1_22  -0.07
+    RUN_6_22  PBAL_2_22  -0.21
+    RUN_6_22  PBAL_3_22  -0.07
+    RUN_6_22  PBAL_4_22  -0.24
+    RUN_6_22  PBAL_5_22  -0.14
+    RUN_6_22  PBAL_6_22  -0.3
+    RUN_6_22  PBAL_7_22  -0.09
+    RUN_6_22  PBAL_8_22  -0.29
+    RUN_6_22  UNIT_0_22  0.24
+    RUN_6_22  UNIT_1_22  0.04
+    RUN_6_22  UNIT_2_22  0.47
+    RUN_6_22  UNIT_3_22  0.47
+    RUN_6_22  UNIT_4_22  0.74
+    RUN_6_22  UNIT_5_22  0.69
+    RUN_6_22  SPEC_0_22  0.029
+    RUN_6_22  SPEC_1_22  0.05
+    RUN_6_22  SPEC_2_22  0.027
+    RUN_6_22  SPEC_3_22  0.026
+    RUN_6_22  SPEC_4_22  0.039
+    RUN_6_23  COST  -12.268
+    RUN_6_23  CBAL_6_23  1
+    RUN_6_23  CDU_23  1
+    RUN_6_23  PBAL_0_23  -0.11
+    RUN_6_23  PBAL_1_23  -0.07
+    RUN_6_23  PBAL_2_23  -0.21
+    RUN_6_23  PBAL_3_23  -0.07
+    RUN_6_23  PBAL_4_23  -0.24
+    RUN_6_23  PBAL_5_23  -0.14
+    RUN_6_23  PBAL_6_23  -0.3
+    RUN_6_23  PBAL_7_23  -0.09
+    RUN_6_23  PBAL_8_23  -0.29
+    RUN_6_23  UNIT_0_23  0.24
+    RUN_6_23  UNIT_1_23  0.04
+    RUN_6_23  UNIT_2_23  0.47
+    RUN_6_23  UNIT_3_23  0.47
+    RUN_6_23  UNIT_4_23  0.74
+    RUN_6_23  UNIT_5_23  0.69
+    RUN_6_23  SPEC_0_23  0.029
+    RUN_6_23  SPEC_1_23  0.05
+    RUN_6_23  SPEC_2_23  0.027
+    RUN_6_23  SPEC_3_23  0.026
+    RUN_6_23  SPEC_4_23  0.039
+    RUN_6_24  COST  -8.89
+    RUN_6_24  CBAL_6_24  1
+    RUN_6_24  CDU_24  1
+    RUN_6_24  PBAL_0_24  -0.11
+    RUN_6_24  PBAL_1_24  -0.07
+    RUN_6_24  PBAL_2_24  -0.21
+    RUN_6_24  PBAL_3_24  -0.07
+    RUN_6_24  PBAL_4_24  -0.24
+    RUN_6_24  PBAL_5_24  -0.14
+    RUN_6_24  PBAL_6_24  -0.3
+    RUN_6_24  PBAL_7_24  -0.09
+    RUN_6_24  PBAL_8_24  -0.29
+    RUN_6_24  UNIT_0_24  0.24
+    RUN_6_24  UNIT_1_24  0.04
+    RUN_6_24  UNIT_2_24  0.47
+    RUN_6_24  UNIT_3_24  0.47
+    RUN_6_24  UNIT_4_24  0.74
+    RUN_6_24  UNIT_5_24  0.69
+    RUN_6_24  SPEC_0_24  0.029
+    RUN_6_24  SPEC_1_24  0.05
+    RUN_6_24  SPEC_2_24  0.027
+    RUN_6_24  SPEC_3_24  0.026
+    RUN_6_24  SPEC_4_24  0.039
+    RUN_6_25  COST  -17.252
+    RUN_6_25  CBAL_6_25  1
+    RUN_6_25  CDU_25  1
+    RUN_6_25  PBAL_0_25  -0.11
+    RUN_6_25  PBAL_1_25  -0.07
+    RUN_6_25  PBAL_2_25  -0.21
+    RUN_6_25  PBAL_3_25  -0.07
+    RUN_6_25  PBAL_4_25  -0.24
+    RUN_6_25  PBAL_5_25  -0.14
+    RUN_6_25  PBAL_6_25  -0.3
+    RUN_6_25  PBAL_7_25  -0.09
+    RUN_6_25  PBAL_8_25  -0.29
+    RUN_6_25  UNIT_0_25  0.24
+    RUN_6_25  UNIT_1_25  0.04
+    RUN_6_25  UNIT_2_25  0.47
+    RUN_6_25  UNIT_3_25  0.47
+    RUN_6_25  UNIT_4_25  0.74
+    RUN_6_25  UNIT_5_25  0.69
+    RUN_6_25  SPEC_0_25  0.029
+    RUN_6_25  SPEC_1_25  0.05
+    RUN_6_25  SPEC_2_25  0.027
+    RUN_6_25  SPEC_3_25  0.026
+    RUN_6_25  SPEC_4_25  0.039
+    RUN_6_26  COST  -8.372
+    RUN_6_26  CBAL_6_26  1
+    RUN_6_26  CDU_26  1
+    RUN_6_26  PBAL_0_26  -0.11
+    RUN_6_26  PBAL_1_26  -0.07
+    RUN_6_26  PBAL_2_26  -0.21
+    RUN_6_26  PBAL_3_26  -0.07
+    RUN_6_26  PBAL_4_26  -0.24
+    RUN_6_26  PBAL_5_26  -0.14
+    RUN_6_26  PBAL_6_26  -0.3
+    RUN_6_26  PBAL_7_26  -0.09
+    RUN_6_26  PBAL_8_26  -0.29
+    RUN_6_26  UNIT_0_26  0.24
+    RUN_6_26  UNIT_1_26  0.04
+    RUN_6_26  UNIT_2_26  0.47
+    RUN_6_26  UNIT_3_26  0.47
+    RUN_6_26  UNIT_4_26  0.74
+    RUN_6_26  UNIT_5_26  0.69
+    RUN_6_26  SPEC_0_26  0.029
+    RUN_6_26  SPEC_1_26  0.05
+    RUN_6_26  SPEC_2_26  0.027
+    RUN_6_26  SPEC_3_26  0.026
+    RUN_6_26  SPEC_4_26  0.039
+    RUN_6_27  COST  -14.88
+    RUN_6_27  CBAL_6_27  1
+    RUN_6_27  CDU_27  1
+    RUN_6_27  PBAL_0_27  -0.11
+    RUN_6_27  PBAL_1_27  -0.07
+    RUN_6_27  PBAL_2_27  -0.21
+    RUN_6_27  PBAL_3_27  -0.07
+    RUN_6_27  PBAL_4_27  -0.24
+    RUN_6_27  PBAL_5_27  -0.14
+    RUN_6_27  PBAL_6_27  -0.3
+    RUN_6_27  PBAL_7_27  -0.09
+    RUN_6_27  PBAL_8_27  -0.29
+    RUN_6_27  UNIT_0_27  0.24
+    RUN_6_27  UNIT_1_27  0.04
+    RUN_6_27  UNIT_2_27  0.47
+    RUN_6_27  UNIT_3_27  0.47
+    RUN_6_27  UNIT_4_27  0.74
+    RUN_6_27  UNIT_5_27  0.69
+    RUN_6_27  SPEC_0_27  0.029
+    RUN_6_27  SPEC_1_27  0.05
+    RUN_6_27  SPEC_2_27  0.027
+    RUN_6_27  SPEC_3_27  0.026
+    RUN_6_27  SPEC_4_27  0.039
+    RUN_6_28  COST  -10.361
+    RUN_6_28  CBAL_6_28  1
+    RUN_6_28  CDU_28  1
+    RUN_6_28  PBAL_0_28  -0.11
+    RUN_6_28  PBAL_1_28  -0.07
+    RUN_6_28  PBAL_2_28  -0.21
+    RUN_6_28  PBAL_3_28  -0.07
+    RUN_6_28  PBAL_4_28  -0.24
+    RUN_6_28  PBAL_5_28  -0.14
+    RUN_6_28  PBAL_6_28  -0.3
+    RUN_6_28  PBAL_7_28  -0.09
+    RUN_6_28  PBAL_8_28  -0.29
+    RUN_6_28  UNIT_0_28  0.24
+    RUN_6_28  UNIT_1_28  0.04
+    RUN_6_28  UNIT_2_28  0.47
+    RUN_6_28  UNIT_3_28  0.47
+    RUN_6_28  UNIT_4_28  0.74
+    RUN_6_28  UNIT_5_28  0.69
+    RUN_6_28  SPEC_0_28  0.029
+    RUN_6_28  SPEC_1_28  0.05
+    RUN_6_28  SPEC_2_28  0.027
+    RUN_6_28  SPEC_3_28  0.026
+    RUN_6_28  SPEC_4_28  0.039
+    RUN_6_29  COST  3.619
+    RUN_6_29  CBAL_6_29  1
+    RUN_6_29  CDU_29  1
+    RUN_6_29  PBAL_0_29  -0.11
+    RUN_6_29  PBAL_1_29  -0.07
+    RUN_6_29  PBAL_2_29  -0.21
+    RUN_6_29  PBAL_3_29  -0.07
+    RUN_6_29  PBAL_4_29  -0.24
+    RUN_6_29  PBAL_5_29  -0.14
+    RUN_6_29  PBAL_6_29  -0.3
+    RUN_6_29  PBAL_7_29  -0.09
+    RUN_6_29  PBAL_8_29  -0.29
+    RUN_6_29  UNIT_0_29  0.24
+    RUN_6_29  UNIT_1_29  0.04
+    RUN_6_29  UNIT_2_29  0.47
+    RUN_6_29  UNIT_3_29  0.47
+    RUN_6_29  UNIT_4_29  0.74
+    RUN_6_29  UNIT_5_29  0.69
+    RUN_6_29  SPEC_0_29  0.029
+    RUN_6_29  SPEC_1_29  0.05
+    RUN_6_29  SPEC_2_29  0.027
+    RUN_6_29  SPEC_3_29  0.026
+    RUN_6_29  SPEC_4_29  0.039
+    RUN_7_0  COST  -12.565
+    RUN_7_0  CBAL_7_0  1
+    RUN_7_0  CDU_0  1
+    RUN_7_0  PBAL_0_0  -0.13
+    RUN_7_0  PBAL_1_0  -0.26
+    RUN_7_0  PBAL_2_0  -0.29
+    RUN_7_0  PBAL_3_0  -0.17
+    RUN_7_0  PBAL_4_0  -0.29
+    RUN_7_0  PBAL_5_0  -0.2
+    RUN_7_0  PBAL_6_0  -0.03
+    RUN_7_0  PBAL_7_0  -0.05
+    RUN_7_0  PBAL_8_0  -0.2
+    RUN_7_0  PBAL_9_0  -0.23
+    RUN_7_0  UNIT_0_0  0.38
+    RUN_7_0  UNIT_1_0  0.61
+    RUN_7_0  UNIT_2_0  0.11
+    RUN_7_0  UNIT_3_0  0.62
+    RUN_7_0  UNIT_4_0  0.5
+    RUN_7_0  UNIT_5_0  0.7
+    RUN_7_0  SPEC_0_0  0.017
+    RUN_7_0  SPEC_1_0  0.047
+    RUN_7_0  SPEC_2_0  0.003
+    RUN_7_0  SPEC_3_0  0.031
+    RUN_7_0  SPEC_4_0  0.05
+    RUN_7_1  COST  -8.797
+    RUN_7_1  CBAL_7_1  1
+    RUN_7_1  CDU_1  1
+    RUN_7_1  PBAL_0_1  -0.13
+    RUN_7_1  PBAL_1_1  -0.26
+    RUN_7_1  PBAL_2_1  -0.29
+    RUN_7_1  PBAL_3_1  -0.17
+    RUN_7_1  PBAL_4_1  -0.29
+    RUN_7_1  PBAL_5_1  -0.2
+    RUN_7_1  PBAL_6_1  -0.03
+    RUN_7_1  PBAL_7_1  -0.05
+    RUN_7_1  PBAL_8_1  -0.2
+    RUN_7_1  PBAL_9_1  -0.23
+    RUN_7_1  UNIT_0_1  0.38
+    RUN_7_1  UNIT_1_1  0.61
+    RUN_7_1  UNIT_2_1  0.11
+    RUN_7_1  UNIT_3_1  0.62
+    RUN_7_1  UNIT_4_1  0.5
+    RUN_7_1  UNIT_5_1  0.7
+    RUN_7_1  SPEC_0_1  0.017
+    RUN_7_1  SPEC_1_1  0.047
+    RUN_7_1  SPEC_2_1  0.003
+    RUN_7_1  SPEC_3_1  0.031
+    RUN_7_1  SPEC_4_1  0.05
+    RUN_7_2  COST  -6.552
+    RUN_7_2  CBAL_7_2  1
+    RUN_7_2  CDU_2  1
+    RUN_7_2  PBAL_0_2  -0.13
+    RUN_7_2  PBAL_1_2  -0.26
+    RUN_7_2  PBAL_2_2  -0.29
+    RUN_7_2  PBAL_3_2  -0.17
+    RUN_7_2  PBAL_4_2  -0.29
+    RUN_7_2  PBAL_5_2  -0.2
+    RUN_7_2  PBAL_6_2  -0.03
+    RUN_7_2  PBAL_7_2  -0.05
+    RUN_7_2  PBAL_8_2  -0.2
+    RUN_7_2  PBAL_9_2  -0.23
+    RUN_7_2  UNIT_0_2  0.38
+    RUN_7_2  UNIT_1_2  0.61
+    RUN_7_2  UNIT_2_2  0.11
+    RUN_7_2  UNIT_3_2  0.62
+    RUN_7_2  UNIT_4_2  0.5
+    RUN_7_2  UNIT_5_2  0.7
+    RUN_7_2  SPEC_0_2  0.017
+    RUN_7_2  SPEC_1_2  0.047
+    RUN_7_2  SPEC_2_2  0.003
+    RUN_7_2  SPEC_3_2  0.031
+    RUN_7_2  SPEC_4_2  0.05
+    RUN_7_3  COST  -4.99
+    RUN_7_3  CBAL_7_3  1
+    RUN_7_3  CDU_3  1
+    RUN_7_3  PBAL_0_3  -0.13
+    RUN_7_3  PBAL_1_3  -0.26
+    RUN_7_3  PBAL_2_3  -0.29
+    RUN_7_3  PBAL_3_3  -0.17
+    RUN_7_3  PBAL_4_3  -0.29
+    RUN_7_3  PBAL_5_3  -0.2
+    RUN_7_3  PBAL_6_3  -0.03
+    RUN_7_3  PBAL_7_3  -0.05
+    RUN_7_3  PBAL_8_3  -0.2
+    RUN_7_3  PBAL_9_3  -0.23
+    RUN_7_3  UNIT_0_3  0.38
+    RUN_7_3  UNIT_1_3  0.61
+    RUN_7_3  UNIT_2_3  0.11
+    RUN_7_3  UNIT_3_3  0.62
+    RUN_7_3  UNIT_4_3  0.5
+    RUN_7_3  UNIT_5_3  0.7
+    RUN_7_3  SPEC_0_3  0.017
+    RUN_7_3  SPEC_1_3  0.047
+    RUN_7_3  SPEC_2_3  0.003
+    RUN_7_3  SPEC_3_3  0.031
+    RUN_7_3  SPEC_4_3  0.05
+    RUN_7_4  COST  -13.395
+    RUN_7_4  CBAL_7_4  1
+    RUN_7_4  CDU_4  1
+    RUN_7_4  PBAL_0_4  -0.13
+    RUN_7_4  PBAL_1_4  -0.26
+    RUN_7_4  PBAL_2_4  -0.29
+    RUN_7_4  PBAL_3_4  -0.17
+    RUN_7_4  PBAL_4_4  -0.29
+    RUN_7_4  PBAL_5_4  -0.2
+    RUN_7_4  PBAL_6_4  -0.03
+    RUN_7_4  PBAL_7_4  -0.05
+    RUN_7_4  PBAL_8_4  -0.2
+    RUN_7_4  PBAL_9_4  -0.23
+    RUN_7_4  UNIT_0_4  0.38
+    RUN_7_4  UNIT_1_4  0.61
+    RUN_7_4  UNIT_2_4  0.11
+    RUN_7_4  UNIT_3_4  0.62
+    RUN_7_4  UNIT_4_4  0.5
+    RUN_7_4  UNIT_5_4  0.7
+    RUN_7_4  SPEC_0_4  0.017
+    RUN_7_4  SPEC_1_4  0.047
+    RUN_7_4  SPEC_2_4  0.003
+    RUN_7_4  SPEC_3_4  0.031
+    RUN_7_4  SPEC_4_4  0.05
+    RUN_7_5  COST  -19.841
+    RUN_7_5  CBAL_7_5  1
+    RUN_7_5  CDU_5  1
+    RUN_7_5  PBAL_0_5  -0.13
+    RUN_7_5  PBAL_1_5  -0.26
+    RUN_7_5  PBAL_2_5  -0.29
+    RUN_7_5  PBAL_3_5  -0.17
+    RUN_7_5  PBAL_4_5  -0.29
+    RUN_7_5  PBAL_5_5  -0.2
+    RUN_7_5  PBAL_6_5  -0.03
+    RUN_7_5  PBAL_7_5  -0.05
+    RUN_7_5  PBAL_8_5  -0.2
+    RUN_7_5  PBAL_9_5  -0.23
+    RUN_7_5  UNIT_0_5  0.38
+    RUN_7_5  UNIT_1_5  0.61
+    RUN_7_5  UNIT_2_5  0.11
+    RUN_7_5  UNIT_3_5  0.62
+    RUN_7_5  UNIT_4_5  0.5
+    RUN_7_5  UNIT_5_5  0.7
+    RUN_7_5  SPEC_0_5  0.017
+    RUN_7_5  SPEC_1_5  0.047
+    RUN_7_5  SPEC_2_5  0.003
+    RUN_7_5  SPEC_3_5  0.031
+    RUN_7_5  SPEC_4_5  0.05
+    RUN_7_6  COST  -13.797
+    RUN_7_6  CBAL_7_6  1
+    RUN_7_6  CDU_6  1
+    RUN_7_6  PBAL_0_6  -0.13
+    RUN_7_6  PBAL_1_6  -0.26
+    RUN_7_6  PBAL_2_6  -0.29
+    RUN_7_6  PBAL_3_6  -0.17
+    RUN_7_6  PBAL_4_6  -0.29
+    RUN_7_6  PBAL_5_6  -0.2
+    RUN_7_6  PBAL_6_6  -0.03
+    RUN_7_6  PBAL_7_6  -0.05
+    RUN_7_6  PBAL_8_6  -0.2
+    RUN_7_6  PBAL_9_6  -0.23
+    RUN_7_6  UNIT_0_6  0.38
+    RUN_7_6  UNIT_1_6  0.61
+    RUN_7_6  UNIT_2_6  0.11
+    RUN_7_6  UNIT_3_6  0.62
+    RUN_7_6  UNIT_4_6  0.5
+    RUN_7_6  UNIT_5_6  0.7
+    RUN_7_6  SPEC_0_6  0.017
+    RUN_7_6  SPEC_1_6  0.047
+    RUN_7_6  SPEC_2_6  0.003
+    RUN_7_6  SPEC_3_6  0.031
+    RUN_7_6  SPEC_4_6  0.05
+    RUN_7_7  COST  -5.391
+    RUN_7_7  CBAL_7_7  1
+    RUN_7_7  CDU_7  1
+    RUN_7_7  PBAL_0_7  -0.13
+    RUN_7_7  PBAL_1_7  -0.26
+    RUN_7_7  PBAL_2_7  -0.29
+    RUN_7_7  PBAL_3_7  -0.17
+    RUN_7_7  PBAL_4_7  -0.29
+    RUN_7_7  PBAL_5_7  -0.2
+    RUN_7_7  PBAL_6_7  -0.03
+    RUN_7_7  PBAL_7_7  -0.05
+    RUN_7_7  PBAL_8_7  -0.2
+    RUN_7_7  PBAL_9_7  -0.23
+    RUN_7_7  UNIT_0_7  0.38
+    RUN_7_7  UNIT_1_7  0.61
+    RUN_7_7  UNIT_2_7  0.11
+    RUN_7_7  UNIT_3_7  0.62
+    RUN_7_7  UNIT_4_7  0.5
+    RUN_7_7  UNIT_5_7  0.7
+    RUN_7_7  SPEC_0_7  0.017
+    RUN_7_7  SPEC_1_7  0.047
+    RUN_7_7  SPEC_2_7  0.003
+    RUN_7_7  SPEC_3_7  0.031
+    RUN_7_7  SPEC_4_7  0.05
+    RUN_7_8  COST  7.097
+    RUN_7_8  CBAL_7_8  1
+    RUN_7_8  CDU_8  1
+    RUN_7_8  PBAL_0_8  -0.13
+    RUN_7_8  PBAL_1_8  -0.26
+    RUN_7_8  PBAL_2_8  -0.29
+    RUN_7_8  PBAL_3_8  -0.17
+    RUN_7_8  PBAL_4_8  -0.29
+    RUN_7_8  PBAL_5_8  -0.2
+    RUN_7_8  PBAL_6_8  -0.03
+    RUN_7_8  PBAL_7_8  -0.05
+    RUN_7_8  PBAL_8_8  -0.2
+    RUN_7_8  PBAL_9_8  -0.23
+    RUN_7_8  UNIT_0_8  0.38
+    RUN_7_8  UNIT_1_8  0.61
+    RUN_7_8  UNIT_2_8  0.11
+    RUN_7_8  UNIT_3_8  0.62
+    RUN_7_8  UNIT_4_8  0.5
+    RUN_7_8  UNIT_5_8  0.7
+    RUN_7_8  SPEC_0_8  0.017
+    RUN_7_8  SPEC_1_8  0.047
+    RUN_7_8  SPEC_2_8  0.003
+    RUN_7_8  SPEC_3_8  0.031
+    RUN_7_8  SPEC_4_8  0.05
+    RUN_7_9  COST  -9.635
+    RUN_7_9  CBAL_7_9  1
+    RUN_7_9  CDU_9  1
+    RUN_7_9  PBAL_0_9  -0.13
+    RUN_7_9  PBAL_1_9  -0.26
+    RUN_7_9  PBAL_2_9  -0.29
+    RUN_7_9  PBAL_3_9  -0.17
+    RUN_7_9  PBAL_4_9  -0.29
+    RUN_7_9  PBAL_5_9  -0.2
+    RUN_7_9  PBAL_6_9  -0.03
+    RUN_7_9  PBAL_7_9  -0.05
+    RUN_7_9  PBAL_8_9  -0.2
+    RUN_7_9  PBAL_9_9  -0.23
+    RUN_7_9  UNIT_0_9  0.38
+    RUN_7_9  UNIT_1_9  0.61
+    RUN_7_9  UNIT_2_9  0.11
+    RUN_7_9  UNIT_3_9  0.62
+    RUN_7_9  UNIT_4_9  0.5
+    RUN_7_9  UNIT_5_9  0.7
+    RUN_7_9  SPEC_0_9  0.017
+    RUN_7_9  SPEC_1_9  0.047
+    RUN_7_9  SPEC_2_9  0.003
+    RUN_7_9  SPEC_3_9  0.031
+    RUN_7_9  SPEC_4_9  0.05
+    RUN_7_10  COST  -8.056
+    RUN_7_10  CBAL_7_10  1
+    RUN_7_10  CDU_10  1
+    RUN_7_10  PBAL_0_10  -0.13
+    RUN_7_10  PBAL_1_10  -0.26
+    RUN_7_10  PBAL_2_10  -0.29
+    RUN_7_10  PBAL_3_10  -0.17
+    RUN_7_10  PBAL_4_10  -0.29
+    RUN_7_10  PBAL_5_10  -0.2
+    RUN_7_10  PBAL_6_10  -0.03
+    RUN_7_10  PBAL_7_10  -0.05
+    RUN_7_10  PBAL_8_10  -0.2
+    RUN_7_10  PBAL_9_10  -0.23
+    RUN_7_10  UNIT_0_10  0.38
+    RUN_7_10  UNIT_1_10  0.61
+    RUN_7_10  UNIT_2_10  0.11
+    RUN_7_10  UNIT_3_10  0.62
+    RUN_7_10  UNIT_4_10  0.5
+    RUN_7_10  UNIT_5_10  0.7
+    RUN_7_10  SPEC_0_10  0.017
+    RUN_7_10  SPEC_1_10  0.047
+    RUN_7_10  SPEC_2_10  0.003
+    RUN_7_10  SPEC_3_10  0.031
+    RUN_7_10  SPEC_4_10  0.05
+    RUN_7_11  COST  4.111
+    RUN_7_11  CBAL_7_11  1
+    RUN_7_11  CDU_11  1
+    RUN_7_11  PBAL_0_11  -0.13
+    RUN_7_11  PBAL_1_11  -0.26
+    RUN_7_11  PBAL_2_11  -0.29
+    RUN_7_11  PBAL_3_11  -0.17
+    RUN_7_11  PBAL_4_11  -0.29
+    RUN_7_11  PBAL_5_11  -0.2
+    RUN_7_11  PBAL_6_11  -0.03
+    RUN_7_11  PBAL_7_11  -0.05
+    RUN_7_11  PBAL_8_11  -0.2
+    RUN_7_11  PBAL_9_11  -0.23
+    RUN_7_11  UNIT_0_11  0.38
+    RUN_7_11  UNIT_1_11  0.61
+    RUN_7_11  UNIT_2_11  0.11
+    RUN_7_11  UNIT_3_11  0.62
+    RUN_7_11  UNIT_4_11  0.5
+    RUN_7_11  UNIT_5_11  0.7
+    RUN_7_11  SPEC_0_11  0.017
+    RUN_7_11  SPEC_1_11  0.047
+    RUN_7_11  SPEC_2_11  0.003
+    RUN_7_11  SPEC_3_11  0.031
+    RUN_7_11  SPEC_4_11  0.05
+    RUN_7_12  COST  5.768
+    RUN_7_12  CBAL_7_12  1
+    RUN_7_12  CDU_12  1
+    RUN_7_12  PBAL_0_12  -0.13
+    RUN_7_12  PBAL_1_12  -0.26
+    RUN_7_12  PBAL_2_12  -0.29
+    RUN_7_12  PBAL_3_12  -0.17
+    RUN_7_12  PBAL_4_12  -0.29
+    RUN_7_12  PBAL_5_12  -0.2
+    RUN_7_12  PBAL_6_12  -0.03
+    RUN_7_12  PBAL_7_12  -0.05
+    RUN_7_12  PBAL_8_12  -0.2
+    RUN_7_12  PBAL_9_12  -0.23
+    RUN_7_12  UNIT_0_12  0.38
+    RUN_7_12  UNIT_1_12  0.61
+    RUN_7_12  UNIT_2_12  0.11
+    RUN_7_12  UNIT_3_12  0.62
+    RUN_7_12  UNIT_4_12  0.5
+    RUN_7_12  UNIT_5_12  0.7
+    RUN_7_12  SPEC_0_12  0.017
+    RUN_7_12  SPEC_1_12  0.047
+    RUN_7_12  SPEC_2_12  0.003
+    RUN_7_12  SPEC_3_12  0.031
+    RUN_7_12  SPEC_4_12  0.05
+    RUN_7_13  COST  -10.221
+    RUN_7_13  CBAL_7_13  1
+    RUN_7_13  CDU_13  1
+    RUN_7_13  PBAL_0_13  -0.13
+    RUN_7_13  PBAL_1_13  -0.26
+    RUN_7_13  PBAL_2_13  -0.29
+    RUN_7_13  PBAL_3_13  -0.17
+    RUN_7_13  PBAL_4_13  -0.29
+    RUN_7_13  PBAL_5_13  -0.2
+    RUN_7_13  PBAL_6_13  -0.03
+    RUN_7_13  PBAL_7_13  -0.05
+    RUN_7_13  PBAL_8_13  -0.2
+    RUN_7_13  PBAL_9_13  -0.23
+    RUN_7_13  UNIT_0_13  0.38
+    RUN_7_13  UNIT_1_13  0.61
+    RUN_7_13  UNIT_2_13  0.11
+    RUN_7_13  UNIT_3_13  0.62
+    RUN_7_13  UNIT_4_13  0.5
+    RUN_7_13  UNIT_5_13  0.7
+    RUN_7_13  SPEC_0_13  0.017
+    RUN_7_13  SPEC_1_13  0.047
+    RUN_7_13  SPEC_2_13  0.003
+    RUN_7_13  SPEC_3_13  0.031
+    RUN_7_13  SPEC_4_13  0.05
+    RUN_7_14  COST  -4.758
+    RUN_7_14  CBAL_7_14  1
+    RUN_7_14  CDU_14  1
+    RUN_7_14  PBAL_0_14  -0.13
+    RUN_7_14  PBAL_1_14  -0.26
+    RUN_7_14  PBAL_2_14  -0.29
+    RUN_7_14  PBAL_3_14  -0.17
+    RUN_7_14  PBAL_4_14  -0.29
+    RUN_7_14  PBAL_5_14  -0.2
+    RUN_7_14  PBAL_6_14  -0.03
+    RUN_7_14  PBAL_7_14  -0.05
+    RUN_7_14  PBAL_8_14  -0.2
+    RUN_7_14  PBAL_9_14  -0.23
+    RUN_7_14  UNIT_0_14  0.38
+    RUN_7_14  UNIT_1_14  0.61
+    RUN_7_14  UNIT_2_14  0.11
+    RUN_7_14  UNIT_3_14  0.62
+    RUN_7_14  UNIT_4_14  0.5
+    RUN_7_14  UNIT_5_14  0.7
+    RUN_7_14  SPEC_0_14  0.017
+    RUN_7_14  SPEC_1_14  0.047
+    RUN_7_14  SPEC_2_14  0.003
+    RUN_7_14  SPEC_3_14  0.031
+    RUN_7_14  SPEC_4_14  0.05
+    RUN_7_15  COST  -15.627
+    RUN_7_15  CBAL_7_15  1
+    RUN_7_15  CDU_15  1
+    RUN_7_15  PBAL_0_15  -0.13
+    RUN_7_15  PBAL_1_15  -0.26
+    RUN_7_15  PBAL_2_15  -0.29
+    RUN_7_15  PBAL_3_15  -0.17
+    RUN_7_15  PBAL_4_15  -0.29
+    RUN_7_15  PBAL_5_15  -0.2
+    RUN_7_15  PBAL_6_15  -0.03
+    RUN_7_15  PBAL_7_15  -0.05
+    RUN_7_15  PBAL_8_15  -0.2
+    RUN_7_15  PBAL_9_15  -0.23
+    RUN_7_15  UNIT_0_15  0.38
+    RUN_7_15  UNIT_1_15  0.61
+    RUN_7_15  UNIT_2_15  0.11
+    RUN_7_15  UNIT_3_15  0.62
+    RUN_7_15  UNIT_4_15  0.5
+    RUN_7_15  UNIT_5_15  0.7
+    RUN_7_15  SPEC_0_15  0.017
+    RUN_7_15  SPEC_1_15  0.047
+    RUN_7_15  SPEC_2_15  0.003
+    RUN_7_15  SPEC_3_15  0.031
+    RUN_7_15  SPEC_4_15  0.05
+    RUN_7_16  COST  -17.062
+    RUN_7_16  CBAL_7_16  1
+    RUN_7_16  CDU_16  1
+    RUN_7_16  PBAL_0_16  -0.13
+    RUN_7_16  PBAL_1_16  -0.26
+    RUN_7_16  PBAL_2_16  -0.29
+    RUN_7_16  PBAL_3_16  -0.17
+    RUN_7_16  PBAL_4_16  -0.29
+    RUN_7_16  PBAL_5_16  -0.2
+    RUN_7_16  PBAL_6_16  -0.03
+    RUN_7_16  PBAL_7_16  -0.05
+    RUN_7_16  PBAL_8_16  -0.2
+    RUN_7_16  PBAL_9_16  -0.23
+    RUN_7_16  UNIT_0_16  0.38
+    RUN_7_16  UNIT_1_16  0.61
+    RUN_7_16  UNIT_2_16  0.11
+    RUN_7_16  UNIT_3_16  0.62
+    RUN_7_16  UNIT_4_16  0.5
+    RUN_7_16  UNIT_5_16  0.7
+    RUN_7_16  SPEC_0_16  0.017
+    RUN_7_16  SPEC_1_16  0.047
+    RUN_7_16  SPEC_2_16  0.003
+    RUN_7_16  SPEC_3_16  0.031
+    RUN_7_16  SPEC_4_16  0.05
+    RUN_7_17  COST  -1.071
+    RUN_7_17  CBAL_7_17  1
+    RUN_7_17  CDU_17  1
+    RUN_7_17  PBAL_0_17  -0.13
+    RUN_7_17  PBAL_1_17  -0.26
+    RUN_7_17  PBAL_2_17  -0.29
+    RUN_7_17  PBAL_3_17  -0.17
+    RUN_7_17  PBAL_4_17  -0.29
+    RUN_7_17  PBAL_5_17  -0.2
+    RUN_7_17  PBAL_6_17  -0.03
+    RUN_7_17  PBAL_7_17  -0.05
+    RUN_7_17  PBAL_8_17  -0.2
+    RUN_7_17  PBAL_9_17  -0.23
+    RUN_7_17  UNIT_0_17  0.38
+    RUN_7_17  UNIT_1_17  0.61
+    RUN_7_17  UNIT_2_17  0.11
+    RUN_7_17  UNIT_3_17  0.62
+    RUN_7_17  UNIT_4_17  0.5
+    RUN_7_17  UNIT_5_17  0.7
+    RUN_7_17  SPEC_0_17  0.017
+    RUN_7_17  SPEC_1_17  0.047
+    RUN_7_17  SPEC_2_17  0.003
+    RUN_7_17  SPEC_3_17  0.031
+    RUN_7_17  SPEC_4_17  0.05
+    RUN_7_18  COST  -12.682
+    RUN_7_18  CBAL_7_18  1
+    RUN_7_18  CDU_18  1
+    RUN_7_18  PBAL_0_18  -0.13
+    RUN_7_18  PBAL_1_18  -0.26
+    RUN_7_18  PBAL_2_18  -0.29
+    RUN_7_18  PBAL_3_18  -0.17
+    RUN_7_18  PBAL_4_18  -0.29
+    RUN_7_18  PBAL_5_18  -0.2
+    RUN_7_18  PBAL_6_18  -0.03
+    RUN_7_18  PBAL_7_18  -0.05
+    RUN_7_18  PBAL_8_18  -0.2
+    RUN_7_18  PBAL_9_18  -0.23
+    RUN_7_18  UNIT_0_18  0.38
+    RUN_7_18  UNIT_1_18  0.61
+    RUN_7_18  UNIT_2_18  0.11
+    RUN_7_18  UNIT_3_18  0.62
+    RUN_7_18  UNIT_4_18  0.5
+    RUN_7_18  UNIT_5_18  0.7
+    RUN_7_18  SPEC_0_18  0.017
+    RUN_7_18  SPEC_1_18  0.047
+    RUN_7_18  SPEC_2_18  0.003
+    RUN_7_18  SPEC_3_18  0.031
+    RUN_7_18  SPEC_4_18  0.05
+    RUN_7_19  COST  -14.871
+    RUN_7_19  CBAL_7_19  1
+    RUN_7_19  CDU_19  1
+    RUN_7_19  PBAL_0_19  -0.13
+    RUN_7_19  PBAL_1_19  -0.26
+    RUN_7_19  PBAL_2_19  -0.29
+    RUN_7_19  PBAL_3_19  -0.17
+    RUN_7_19  PBAL_4_19  -0.29
+    RUN_7_19  PBAL_5_19  -0.2
+    RUN_7_19  PBAL_6_19  -0.03
+    RUN_7_19  PBAL_7_19  -0.05
+    RUN_7_19  PBAL_8_19  -0.2
+    RUN_7_19  PBAL_9_19  -0.23
+    RUN_7_19  UNIT_0_19  0.38
+    RUN_7_19  UNIT_1_19  0.61
+    RUN_7_19  UNIT_2_19  0.11
+    RUN_7_19  UNIT_3_19  0.62
+    RUN_7_19  UNIT_4_19  0.5
+    RUN_7_19  UNIT_5_19  0.7
+    RUN_7_19  SPEC_0_19  0.017
+    RUN_7_19  SPEC_1_19  0.047
+    RUN_7_19  SPEC_2_19  0.003
+    RUN_7_19  SPEC_3_19  0.031
+    RUN_7_19  SPEC_4_19  0.05
+    RUN_7_20  COST  -15.489
+    RUN_7_20  CBAL_7_20  1
+    RUN_7_20  CDU_20  1
+    RUN_7_20  PBAL_0_20  -0.13
+    RUN_7_20  PBAL_1_20  -0.26
+    RUN_7_20  PBAL_2_20  -0.29
+    RUN_7_20  PBAL_3_20  -0.17
+    RUN_7_20  PBAL_4_20  -0.29
+    RUN_7_20  PBAL_5_20  -0.2
+    RUN_7_20  PBAL_6_20  -0.03
+    RUN_7_20  PBAL_7_20  -0.05
+    RUN_7_20  PBAL_8_20  -0.2
+    RUN_7_20  PBAL_9_20  -0.23
+    RUN_7_20  UNIT_0_20  0.38
+    RUN_7_20  UNIT_1_20  0.61
+    RUN_7_20  UNIT_2_20  0.11
+    RUN_7_20  UNIT_3_20  0.62
+    RUN_7_20  UNIT_4_20  0.5
+    RUN_7_20  UNIT_5_20  0.7
+    RUN_7_20  SPEC_0_20  0.017
+    RUN_7_20  SPEC_1_20  0.047
+    RUN_7_20  SPEC_2_20  0.003
+    RUN_7_20  SPEC_3_20  0.031
+    RUN_7_20  SPEC_4_20  0.05
+    RUN_7_21  COST  -8.476
+    RUN_7_21  CBAL_7_21  1
+    RUN_7_21  CDU_21  1
+    RUN_7_21  PBAL_0_21  -0.13
+    RUN_7_21  PBAL_1_21  -0.26
+    RUN_7_21  PBAL_2_21  -0.29
+    RUN_7_21  PBAL_3_21  -0.17
+    RUN_7_21  PBAL_4_21  -0.29
+    RUN_7_21  PBAL_5_21  -0.2
+    RUN_7_21  PBAL_6_21  -0.03
+    RUN_7_21  PBAL_7_21  -0.05
+    RUN_7_21  PBAL_8_21  -0.2
+    RUN_7_21  PBAL_9_21  -0.23
+    RUN_7_21  UNIT_0_21  0.38
+    RUN_7_21  UNIT_1_21  0.61
+    RUN_7_21  UNIT_2_21  0.11
+    RUN_7_21  UNIT_3_21  0.62
+    RUN_7_21  UNIT_4_21  0.5
+    RUN_7_21  UNIT_5_21  0.7
+    RUN_7_21  SPEC_0_21  0.017
+    RUN_7_21  SPEC_1_21  0.047
+    RUN_7_21  SPEC_2_21  0.003
+    RUN_7_21  SPEC_3_21  0.031
+    RUN_7_21  SPEC_4_21  0.05
+    RUN_7_22  COST  -21.589
+    RUN_7_22  CBAL_7_22  1
+    RUN_7_22  CDU_22  1
+    RUN_7_22  PBAL_0_22  -0.13
+    RUN_7_22  PBAL_1_22  -0.26
+    RUN_7_22  PBAL_2_22  -0.29
+    RUN_7_22  PBAL_3_22  -0.17
+    RUN_7_22  PBAL_4_22  -0.29
+    RUN_7_22  PBAL_5_22  -0.2
+    RUN_7_22  PBAL_6_22  -0.03
+    RUN_7_22  PBAL_7_22  -0.05
+    RUN_7_22  PBAL_8_22  -0.2
+    RUN_7_22  PBAL_9_22  -0.23
+    RUN_7_22  UNIT_0_22  0.38
+    RUN_7_22  UNIT_1_22  0.61
+    RUN_7_22  UNIT_2_22  0.11
+    RUN_7_22  UNIT_3_22  0.62
+    RUN_7_22  UNIT_4_22  0.5
+    RUN_7_22  UNIT_5_22  0.7
+    RUN_7_22  SPEC_0_22  0.017
+    RUN_7_22  SPEC_1_22  0.047
+    RUN_7_22  SPEC_2_22  0.003
+    RUN_7_22  SPEC_3_22  0.031
+    RUN_7_22  SPEC_4_22  0.05
+    RUN_7_23  COST  3.496
+    RUN_7_23  CBAL_7_23  1
+    RUN_7_23  CDU_23  1
+    RUN_7_23  PBAL_0_23  -0.13
+    RUN_7_23  PBAL_1_23  -0.26
+    RUN_7_23  PBAL_2_23  -0.29
+    RUN_7_23  PBAL_3_23  -0.17
+    RUN_7_23  PBAL_4_23  -0.29
+    RUN_7_23  PBAL_5_23  -0.2
+    RUN_7_23  PBAL_6_23  -0.03
+    RUN_7_23  PBAL_7_23  -0.05
+    RUN_7_23  PBAL_8_23  -0.2
+    RUN_7_23  PBAL_9_23  -0.23
+    RUN_7_23  UNIT_0_23  0.38
+    RUN_7_23  UNIT_1_23  0.61
+    RUN_7_23  UNIT_2_23  0.11
+    RUN_7_23  UNIT_3_23  0.62
+    RUN_7_23  UNIT_4_23  0.5
+    RUN_7_23  UNIT_5_23  0.7
+    RUN_7_23  SPEC_0_23  0.017
+    RUN_7_23  SPEC_1_23  0.047
+    RUN_7_23  SPEC_2_23  0.003
+    RUN_7_23  SPEC_3_23  0.031
+    RUN_7_23  SPEC_4_23  0.05
+    RUN_7_24  COST  -3.212
+    RUN_7_24  CBAL_7_24  1
+    RUN_7_24  CDU_24  1
+    RUN_7_24  PBAL_0_24  -0.13
+    RUN_7_24  PBAL_1_24  -0.26
+    RUN_7_24  PBAL_2_24  -0.29
+    RUN_7_24  PBAL_3_24  -0.17
+    RUN_7_24  PBAL_4_24  -0.29
+    RUN_7_24  PBAL_5_24  -0.2
+    RUN_7_24  PBAL_6_24  -0.03
+    RUN_7_24  PBAL_7_24  -0.05
+    RUN_7_24  PBAL_8_24  -0.2
+    RUN_7_24  PBAL_9_24  -0.23
+    RUN_7_24  UNIT_0_24  0.38
+    RUN_7_24  UNIT_1_24  0.61
+    RUN_7_24  UNIT_2_24  0.11
+    RUN_7_24  UNIT_3_24  0.62
+    RUN_7_24  UNIT_4_24  0.5
+    RUN_7_24  UNIT_5_24  0.7
+    RUN_7_24  SPEC_0_24  0.017
+    RUN_7_24  SPEC_1_24  0.047
+    RUN_7_24  SPEC_2_24  0.003
+    RUN_7_24  SPEC_3_24  0.031
+    RUN_7_24  SPEC_4_24  0.05
+    RUN_7_25  COST  -5.791
+    RUN_7_25  CBAL_7_25  1
+    RUN_7_25  CDU_25  1
+    RUN_7_25  PBAL_0_25  -0.13
+    RUN_7_25  PBAL_1_25  -0.26
+    RUN_7_25  PBAL_2_25  -0.29
+    RUN_7_25  PBAL_3_25  -0.17
+    RUN_7_25  PBAL_4_25  -0.29
+    RUN_7_25  PBAL_5_25  -0.2
+    RUN_7_25  PBAL_6_25  -0.03
+    RUN_7_25  PBAL_7_25  -0.05
+    RUN_7_25  PBAL_8_25  -0.2
+    RUN_7_25  PBAL_9_25  -0.23
+    RUN_7_25  UNIT_0_25  0.38
+    RUN_7_25  UNIT_1_25  0.61
+    RUN_7_25  UNIT_2_25  0.11
+    RUN_7_25  UNIT_3_25  0.62
+    RUN_7_25  UNIT_4_25  0.5
+    RUN_7_25  UNIT_5_25  0.7
+    RUN_7_25  SPEC_0_25  0.017
+    RUN_7_25  SPEC_1_25  0.047
+    RUN_7_25  SPEC_2_25  0.003
+    RUN_7_25  SPEC_3_25  0.031
+    RUN_7_25  SPEC_4_25  0.05
+    RUN_7_26  COST  -2.538
+    RUN_7_26  CBAL_7_26  1
+    RUN_7_26  CDU_26  1
+    RUN_7_26  PBAL_0_26  -0.13
+    RUN_7_26  PBAL_1_26  -0.26
+    RUN_7_26  PBAL_2_26  -0.29
+    RUN_7_26  PBAL_3_26  -0.17
+    RUN_7_26  PBAL_4_26  -0.29
+    RUN_7_26  PBAL_5_26  -0.2
+    RUN_7_26  PBAL_6_26  -0.03
+    RUN_7_26  PBAL_7_26  -0.05
+    RUN_7_26  PBAL_8_26  -0.2
+    RUN_7_26  PBAL_9_26  -0.23
+    RUN_7_26  UNIT_0_26  0.38
+    RUN_7_26  UNIT_1_26  0.61
+    RUN_7_26  UNIT_2_26  0.11
+    RUN_7_26  UNIT_3_26  0.62
+    RUN_7_26  UNIT_4_26  0.5
+    RUN_7_26  UNIT_5_26  0.7
+    RUN_7_26  SPEC_0_26  0.017
+    RUN_7_26  SPEC_1_26  0.047
+    RUN_7_26  SPEC_2_26  0.003
+    RUN_7_26  SPEC_3_26  0.031
+    RUN_7_26  SPEC_4_26  0.05
+    RUN_7_27  COST  -20.821
+    RUN_7_27  CBAL_7_27  1
+    RUN_7_27  CDU_27  1
+    RUN_7_27  PBAL_0_27  -0.13
+    RUN_7_27  PBAL_1_27  -0.26
+    RUN_7_27  PBAL_2_27  -0.29
+    RUN_7_27  PBAL_3_27  -0.17
+    RUN_7_27  PBAL_4_27  -0.29
+    RUN_7_27  PBAL_5_27  -0.2
+    RUN_7_27  PBAL_6_27  -0.03
+    RUN_7_27  PBAL_7_27  -0.05
+    RUN_7_27  PBAL_8_27  -0.2
+    RUN_7_27  PBAL_9_27  -0.23
+    RUN_7_27  UNIT_0_27  0.38
+    RUN_7_27  UNIT_1_27  0.61
+    RUN_7_27  UNIT_2_27  0.11
+    RUN_7_27  UNIT_3_27  0.62
+    RUN_7_27  UNIT_4_27  0.5
+    RUN_7_27  UNIT_5_27  0.7
+    RUN_7_27  SPEC_0_27  0.017
+    RUN_7_27  SPEC_1_27  0.047
+    RUN_7_27  SPEC_2_27  0.003
+    RUN_7_27  SPEC_3_27  0.031
+    RUN_7_27  SPEC_4_27  0.05
+    RUN_7_28  COST  -14.225
+    RUN_7_28  CBAL_7_28  1
+    RUN_7_28  CDU_28  1
+    RUN_7_28  PBAL_0_28  -0.13
+    RUN_7_28  PBAL_1_28  -0.26
+    RUN_7_28  PBAL_2_28  -0.29
+    RUN_7_28  PBAL_3_28  -0.17
+    RUN_7_28  PBAL_4_28  -0.29
+    RUN_7_28  PBAL_5_28  -0.2
+    RUN_7_28  PBAL_6_28  -0.03
+    RUN_7_28  PBAL_7_28  -0.05
+    RUN_7_28  PBAL_8_28  -0.2
+    RUN_7_28  PBAL_9_28  -0.23
+    RUN_7_28  UNIT_0_28  0.38
+    RUN_7_28  UNIT_1_28  0.61
+    RUN_7_28  UNIT_2_28  0.11
+    RUN_7_28  UNIT_3_28  0.62
+    RUN_7_28  UNIT_4_28  0.5
+    RUN_7_28  UNIT_5_28  0.7
+    RUN_7_28  SPEC_0_28  0.017
+    RUN_7_28  SPEC_1_28  0.047
+    RUN_7_28  SPEC_2_28  0.003
+    RUN_7_28  SPEC_3_28  0.031
+    RUN_7_28  SPEC_4_28  0.05
+    RUN_7_29  COST  0.098
+    RUN_7_29  CBAL_7_29  1
+    RUN_7_29  CDU_29  1
+    RUN_7_29  PBAL_0_29  -0.13
+    RUN_7_29  PBAL_1_29  -0.26
+    RUN_7_29  PBAL_2_29  -0.29
+    RUN_7_29  PBAL_3_29  -0.17
+    RUN_7_29  PBAL_4_29  -0.29
+    RUN_7_29  PBAL_5_29  -0.2
+    RUN_7_29  PBAL_6_29  -0.03
+    RUN_7_29  PBAL_7_29  -0.05
+    RUN_7_29  PBAL_8_29  -0.2
+    RUN_7_29  PBAL_9_29  -0.23
+    RUN_7_29  UNIT_0_29  0.38
+    RUN_7_29  UNIT_1_29  0.61
+    RUN_7_29  UNIT_2_29  0.11
+    RUN_7_29  UNIT_3_29  0.62
+    RUN_7_29  UNIT_4_29  0.5
+    RUN_7_29  UNIT_5_29  0.7
+    RUN_7_29  SPEC_0_29  0.017
+    RUN_7_29  SPEC_1_29  0.047
+    RUN_7_29  SPEC_2_29  0.003
+    RUN_7_29  SPEC_3_29  0.031
+    RUN_7_29  SPEC_4_29  0.05
+    CS_0_0  COST  3
+    CS_0_0  CBAL_0_0  1
+    CS_0_0  CBAL_0_1  -1
+    CS_0_1  COST  -4
+    CS_0_1  CBAL_0_1  1
+    CS_0_1  CBAL_0_2  -1
+    CS_0_2  COST  -2
+    CS_0_2  CBAL_0_2  1
+    CS_0_2  CBAL_0_3  -1
+    CS_0_3  COST  15
+    CS_0_3  CBAL_0_3  1
+    CS_0_3  CBAL_0_4  -1
+    CS_0_4  COST  -12
+    CS_0_4  CBAL_0_4  1
+    CS_0_4  CBAL_0_5  -1
+    CS_0_5  COST  9
+    CS_0_5  CBAL_0_5  1
+    CS_0_5  CBAL_0_6  -1
+    CS_0_6  COST  -7
+    CS_0_6  CBAL_0_6  1
+    CS_0_6  CBAL_0_7  -1
+    CS_0_7  CBAL_0_7  1
+    CS_0_7  CBAL_0_8  -1
+    CS_0_8  COST  18
+    CS_0_8  CBAL_0_8  1
+    CS_0_8  CBAL_0_9  -1
+    CS_0_9  COST  -9
+    CS_0_9  CBAL_0_9  1
+    CS_0_9  CBAL_0_10  -1
+    CS_0_10  CBAL_0_10  1
+    CS_0_10  CBAL_0_11  -1
+    CS_0_11  COST  4
+    CS_0_11  CBAL_0_11  1
+    CS_0_11  CBAL_0_12  -1
+    CS_0_12  COST  -7
+    CS_0_12  CBAL_0_12  1
+    CS_0_12  CBAL_0_13  -1
+    CS_0_13  COST  -7
+    CS_0_13  CBAL_0_13  1
+    CS_0_13  CBAL_0_14  -1
+    CS_0_14  COST  -1
+    CS_0_14  CBAL_0_14  1
+    CS_0_14  CBAL_0_15  -1
+    CS_0_15  COST  10
+    CS_0_15  CBAL_0_15  1
+    CS_0_15  CBAL_0_16  -1
+    CS_0_16  COST  1
+    CS_0_16  CBAL_0_16  1
+    CS_0_16  CBAL_0_17  -1
+    CS_0_17  COST  -10
+    CS_0_17  CBAL_0_17  1
+    CS_0_17  CBAL_0_18  -1
+    CS_0_18  COST  -10
+    CS_0_18  CBAL_0_18  1
+    CS_0_18  CBAL_0_19  -1
+    CS_0_19  COST  3
+    CS_0_19  CBAL_0_19  1
+    CS_0_19  CBAL_0_20  -1
+    CS_0_20  COST  9
+    CS_0_20  CBAL_0_20  1
+    CS_0_20  CBAL_0_21  -1
+    CS_0_21  COST  10
+    CS_0_21  CBAL_0_21  1
+    CS_0_21  CBAL_0_22  -1
+    CS_0_22  COST  -5
+    CS_0_22  CBAL_0_22  1
+    CS_0_22  CBAL_0_23  -1
+    CS_0_23  COST  -11
+    CS_0_23  CBAL_0_23  1
+    CS_0_23  CBAL_0_24  -1
+    CS_0_24  COST  13
+    CS_0_24  CBAL_0_24  1
+    CS_0_24  CBAL_0_25  -1
+    CS_0_25  COST  -14
+    CS_0_25  CBAL_0_25  1
+    CS_0_25  CBAL_0_26  -1
+    CS_0_26  COST  -3
+    CS_0_26  CBAL_0_26  1
+    CS_0_26  CBAL_0_27  -1
+    CS_0_27  COST  5
+    CS_0_27  CBAL_0_27  1
+    CS_0_27  CBAL_0_28  -1
+    CS_0_28  COST  4
+    CS_0_28  CBAL_0_28  1
+    CS_0_28  CBAL_0_29  -1
+    CS_0_29  COST  1
+    CS_0_29  CBAL_0_29  1
+    CS_1_0  COST  5
+    CS_1_0  CBAL_1_0  1
+    CS_1_0  CBAL_1_1  -1
+    CS_1_1  COST  8
+    CS_1_1  CBAL_1_1  1
+    CS_1_1  CBAL_1_2  -1
+    CS_1_2  COST  -2
+    CS_1_2  CBAL_1_2  1
+    CS_1_2  CBAL_1_3  -1
+    CS_1_3  COST  2
+    CS_1_3  CBAL_1_3  1
+    CS_1_3  CBAL_1_4  -1
+    CS_1_4  COST  -7
+    CS_1_4  CBAL_1_4  1
+    CS_1_4  CBAL_1_5  -1
+    CS_1_5  COST  -8
+    CS_1_5  CBAL_1_5  1
+    CS_1_5  CBAL_1_6  -1
+    CS_1_6  COST  5
+    CS_1_6  CBAL_1_6  1
+    CS_1_6  CBAL_1_7  -1
+    CS_1_7  COST  5
+    CS_1_7  CBAL_1_7  1
+    CS_1_7  CBAL_1_8  -1
+    CS_1_8  COST  5
+    CS_1_8  CBAL_1_8  1
+    CS_1_8  CBAL_1_9  -1
+    CS_1_9  COST  -11
+    CS_1_9  CBAL_1_9  1
+    CS_1_9  CBAL_1_10  -1
+    CS_1_10  COST  3
+    CS_1_10  CBAL_1_10  1
+    CS_1_10  CBAL_1_11  -1
+    CS_1_11  COST  -5
+    CS_1_11  CBAL_1_11  1
+    CS_1_11  CBAL_1_12  -1
+    CS_1_12  COST  5
+    CS_1_12  CBAL_1_12  1
+    CS_1_12  CBAL_1_13  -1
+    CS_1_13  COST  -17
+    CS_1_13  CBAL_1_13  1
+    CS_1_13  CBAL_1_14  -1
+    CS_1_14  COST  -3
+    CS_1_14  CBAL_1_14  1
+    CS_1_14  CBAL_1_15  -1
+    CS_1_15  COST  18
+    CS_1_15  CBAL_1_15  1
+    CS_1_15  CBAL_1_16  -1
+    CS_1_16  COST  3
+    CS_1_16  CBAL_1_16  1
+    CS_1_16  CBAL_1_17  -1
+    CS_1_17  COST  4
+    CS_1_17  CBAL_1_17  1
+    CS_1_17  CBAL_1_18  -1
+    CS_1_18  COST  -11
+    CS_1_18  CBAL_1_18  1
+    CS_1_18  CBAL_1_19  -1
+    CS_1_19  COST  8
+    CS_1_19  CBAL_1_19  1
+    CS_1_19  CBAL_1_20  -1
+    CS_1_20  COST  -15
+    CS_1_20  CBAL_1_20  1
+    CS_1_20  CBAL_1_21  -1
+    CS_1_21  COST  12
+    CS_1_21  CBAL_1_21  1
+    CS_1_21  CBAL_1_22  -1
+    CS_1_22  COST  4
+    CS_1_22  CBAL_1_22  1
+    CS_1_22  CBAL_1_23  -1
+    CS_1_23  COST  -20
+    CS_1_23  CBAL_1_23  1
+    CS_1_23  CBAL_1_24  -1
+    CS_1_24  COST  1
+    CS_1_24  CBAL_1_24  1
+    CS_1_24  CBAL_1_25  -1
+    CS_1_25  COST  9
+    CS_1_25  CBAL_1_25  1
+    CS_1_25  CBAL_1_26  -1
+    CS_1_26  COST  -2
+    CS_1_26  CBAL_1_26  1
+    CS_1_26  CBAL_1_27  -1
+    CS_1_27  COST  3
+    CS_1_27  CBAL_1_27  1
+    CS_1_27  CBAL_1_28  -1
+    CS_1_28  COST  -13
+    CS_1_28  CBAL_1_28  1
+    CS_1_28  CBAL_1_29  -1
+    CS_1_29  COST  15
+    CS_1_29  CBAL_1_29  1
+    CS_2_0  COST  -12
+    CS_2_0  CBAL_2_0  1
+    CS_2_0  CBAL_2_1  -1
+    CS_2_1  COST  -5
+    CS_2_1  CBAL_2_1  1
+    CS_2_1  CBAL_2_2  -1
+    CS_2_2  COST  13
+    CS_2_2  CBAL_2_2  1
+    CS_2_2  CBAL_2_3  -1
+    CS_2_3  COST  -5
+    CS_2_3  CBAL_2_3  1
+    CS_2_3  CBAL_2_4  -1
+    CS_2_4  COST  -21
+    CS_2_4  CBAL_2_4  1
+    CS_2_4  CBAL_2_5  -1
+    CS_2_5  COST  11
+    CS_2_5  CBAL_2_5  1
+    CS_2_5  CBAL_2_6  -1
+    CS_2_6  COST  -17
+    CS_2_6  CBAL_2_6  1
+    CS_2_6  CBAL_2_7  -1
+    CS_2_7  COST  3
+    CS_2_7  CBAL_2_7  1
+    CS_2_7  CBAL_2_8  -1
+    CS_2_8  COST  9
+    CS_2_8  CBAL_2_8  1
+    CS_2_8  CBAL_2_9  -1
+    CS_2_9  COST  -10
+    CS_2_9  CBAL_2_9  1
+    CS_2_9  CBAL_2_10  -1
+    CS_2_10  COST  7
+    CS_2_10  CBAL_2_10  1
+    CS_2_10  CBAL_2_11  -1
+    CS_2_11  COST  -8
+    CS_2_11  CBAL_2_11  1
+    CS_2_11  CBAL_2_12  -1
+    CS_2_12  COST  -3
+    CS_2_12  CBAL_2_12  1
+    CS_2_12  CBAL_2_13  -1
+    CS_2_13  COST  -15
+    CS_2_13  CBAL_2_13  1
+    CS_2_13  CBAL_2_14  -1
+    CS_2_14  COST  3
+    CS_2_14  CBAL_2_14  1
+    CS_2_14  CBAL_2_15  -1
+    CS_2_15  COST  -3
+    CS_2_15  CBAL_2_15  1
+    CS_2_15  CBAL_2_16  -1
+    CS_2_16  COST  -14
+    CS_2_16  CBAL_2_16  1
+    CS_2_16  CBAL_2_17  -1
+    CS_2_17  COST  -15
+    CS_2_17  CBAL_2_17  1
+    CS_2_17  CBAL_2_18  -1
+    CS_2_18  COST  4
+    CS_2_18  CBAL_2_18  1
+    CS_2_18  CBAL_2_19  -1
+    CS_2_19  COST  -1
+    CS_2_19  CBAL_2_19  1
+    CS_2_19  CBAL_2_20  -1
+    CS_2_20  CBAL_2_20  1
+    CS_2_20  CBAL_2_21  -1
+    CS_2_21  COST  6
+    CS_2_21  CBAL_2_21  1
+    CS_2_21  CBAL_2_22  -1
+    CS_2_22  COST  -1
+    CS_2_22  CBAL_2_22  1
+    CS_2_22  CBAL_2_23  -1
+    CS_2_23  COST  -15
+    CS_2_23  CBAL_2_23  1
+    CS_2_23  CBAL_2_24  -1
+    CS_2_24  COST  8
+    CS_2_24  CBAL_2_24  1
+    CS_2_24  CBAL_2_25  -1
+    CS_2_25  COST  3
+    CS_2_25  CBAL_2_25  1
+    CS_2_25  CBAL_2_26  -1
+    CS_2_26  COST  -7
+    CS_2_26  CBAL_2_26  1
+    CS_2_26  CBAL_2_27  -1
+    CS_2_27  COST  6
+    CS_2_27  CBAL_2_27  1
+    CS_2_27  CBAL_2_28  -1
+    CS_2_28  COST  -3
+    CS_2_28  CBAL_2_28  1
+    CS_2_28  CBAL_2_29  -1
+    CS_2_29  COST  -2
+    CS_2_29  CBAL_2_29  1
+    CS_3_0  COST  14
+    CS_3_0  CBAL_3_0  1
+    CS_3_0  CBAL_3_1  -1
+    CS_3_1  COST  -9
+    CS_3_1  CBAL_3_1  1
+    CS_3_1  CBAL_3_2  -1
+    CS_3_2  COST  -3
+    CS_3_2  CBAL_3_2  1
+    CS_3_2  CBAL_3_3  -1
+    CS_3_3  COST  -16
+    CS_3_3  CBAL_3_3  1
+    CS_3_3  CBAL_3_4  -1
+    CS_3_4  COST  4
+    CS_3_4  CBAL_3_4  1
+    CS_3_4  CBAL_3_5  -1
+    CS_3_5  COST  7
+    CS_3_5  CBAL_3_5  1
+    CS_3_5  CBAL_3_6  -1
+    CS_3_6  COST  -2
+    CS_3_6  CBAL_3_6  1
+    CS_3_6  CBAL_3_7  -1
+    CS_3_7  COST  -6
+    CS_3_7  CBAL_3_7  1
+    CS_3_7  CBAL_3_8  -1
+    CS_3_8  COST  -5
+    CS_3_8  CBAL_3_8  1
+    CS_3_8  CBAL_3_9  -1
+    CS_3_9  COST  -9
+    CS_3_9  CBAL_3_9  1
+    CS_3_9  CBAL_3_10  -1
+    CS_3_10  COST  14
+    CS_3_10  CBAL_3_10  1
+    CS_3_10  CBAL_3_11  -1
+    CS_3_11  COST  -3
+    CS_3_11  CBAL_3_11  1
+    CS_3_11  CBAL_3_12  -1
+    CS_3_12  COST  -6
+    CS_3_12  CBAL_3_12  1
+    CS_3_12  CBAL_3_13  -1
+    CS_3_13  COST  7
+    CS_3_13  CBAL_3_13  1
+    CS_3_13  CBAL_3_14  -1
+    CS_3_14  COST  -14
+    CS_3_14  CBAL_3_14  1
+    CS_3_14  CBAL_3_15  -1
+    CS_3_15  COST  -9
+    CS_3_15  CBAL_3_15  1
+    CS_3_15  CBAL_3_16  -1
+    CS_3_16  COST  -3
+    CS_3_16  CBAL_3_16  1
+    CS_3_16  CBAL_3_17  -1
+    CS_3_17  COST  10
+    CS_3_17  CBAL_3_17  1
+    CS_3_17  CBAL_3_18  -1
+    CS_3_18  COST  -20
+    CS_3_18  CBAL_3_18  1
+    CS_3_18  CBAL_3_19  -1
+    CS_3_19  COST  14
+    CS_3_19  CBAL_3_19  1
+    CS_3_19  CBAL_3_20  -1
+    CS_3_20  COST  -13
+    CS_3_20  CBAL_3_20  1
+    CS_3_20  CBAL_3_21  -1
+    CS_3_21  COST  -3
+    CS_3_21  CBAL_3_21  1
+    CS_3_21  CBAL_3_22  -1
+    CS_3_22  COST  5
+    CS_3_22  CBAL_3_22  1
+    CS_3_22  CBAL_3_23  -1
+    CS_3_23  COST  -9
+    CS_3_23  CBAL_3_23  1
+    CS_3_23  CBAL_3_24  -1
+    CS_3_24  COST  2
+    CS_3_24  CBAL_3_24  1
+    CS_3_24  CBAL_3_25  -1
+    CS_3_25  COST  3
+    CS_3_25  CBAL_3_25  1
+    CS_3_25  CBAL_3_26  -1
+    CS_3_26  COST  -4
+    CS_3_26  CBAL_3_26  1
+    CS_3_26  CBAL_3_27  -1
+    CS_3_27  COST  7
+    CS_3_27  CBAL_3_27  1
+    CS_3_27  CBAL_3_28  -1
+    CS_3_28  COST  -3
+    CS_3_28  CBAL_3_28  1
+    CS_3_28  CBAL_3_29  -1
+    CS_3_29  COST  -3
+    CS_3_29  CBAL_3_29  1
+    CS_4_0  COST  1
+    CS_4_0  CBAL_4_0  1
+    CS_4_0  CBAL_4_1  -1
+    CS_4_1  CBAL_4_1  1
+    CS_4_1  CBAL_4_2  -1
+    CS_4_2  COST  -9
+    CS_4_2  CBAL_4_2  1
+    CS_4_2  CBAL_4_3  -1
+    CS_4_3  COST  -3
+    CS_4_3  CBAL_4_3  1
+    CS_4_3  CBAL_4_4  -1
+    CS_4_4  COST  -1
+    CS_4_4  CBAL_4_4  1
+    CS_4_4  CBAL_4_5  -1
+    CS_4_5  COST  6
+    CS_4_5  CBAL_4_5  1
+    CS_4_5  CBAL_4_6  -1
+    CS_4_6  COST  -14
+    CS_4_6  CBAL_4_6  1
+    CS_4_6  CBAL_4_7  -1
+    CS_4_7  COST  6
+    CS_4_7  CBAL_4_7  1
+    CS_4_7  CBAL_4_8  -1
+    CS_4_8  COST  -5
+    CS_4_8  CBAL_4_8  1
+    CS_4_8  CBAL_4_9  -1
+    CS_4_9  COST  -2
+    CS_4_9  CBAL_4_9  1
+    CS_4_9  CBAL_4_10  -1
+    CS_4_10  COST  4
+    CS_4_10  CBAL_4_10  1
+    CS_4_10  CBAL_4_11  -1
+    CS_4_11  COST  -4
+    CS_4_11  CBAL_4_11  1
+    CS_4_11  CBAL_4_12  -1
+    CS_4_12  COST  2
+    CS_4_12  CBAL_4_12  1
+    CS_4_12  CBAL_4_13  -1
+    CS_4_13  COST  -17
+    CS_4_13  CBAL_4_13  1
+    CS_4_13  CBAL_4_14  -1
+    CS_4_14  COST  -1
+    CS_4_14  CBAL_4_14  1
+    CS_4_14  CBAL_4_15  -1
+    CS_4_15  COST  5
+    CS_4_15  CBAL_4_15  1
+    CS_4_15  CBAL_4_16  -1
+    CS_4_16  COST  -4
+    CS_4_16  CBAL_4_16  1
+    CS_4_16  CBAL_4_17  -1
+    CS_4_17  COST  -12
+    CS_4_17  CBAL_4_17  1
+    CS_4_17  CBAL_4_18  -1
+    CS_4_18  COST  7
+    CS_4_18  CBAL_4_18  1
+    CS_4_18  CBAL_4_19  -1
+    CS_4_19  COST  -3
+    CS_4_19  CBAL_4_19  1
+    CS_4_19  CBAL_4_20  -1
+    CS_4_20  COST  -8
+    CS_4_20  CBAL_4_20  1
+    CS_4_20  CBAL_4_21  -1
+    CS_4_21  COST  1
+    CS_4_21  CBAL_4_21  1
+    CS_4_21  CBAL_4_22  -1
+    CS_4_22  COST  -14
+    CS_4_22  CBAL_4_22  1
+    CS_4_22  CBAL_4_23  -1
+    CS_4_23  COST  10
+    CS_4_23  CBAL_4_23  1
+    CS_4_23  CBAL_4_24  -1
+    CS_4_24  CBAL_4_24  1
+    CS_4_24  CBAL_4_25  -1
+    CS_4_25  CBAL_4_25  1
+    CS_4_25  CBAL_4_26  -1
+    CS_4_26  COST  4
+    CS_4_26  CBAL_4_26  1
+    CS_4_26  CBAL_4_27  -1
+    CS_4_27  COST  2
+    CS_4_27  CBAL_4_27  1
+    CS_4_27  CBAL_4_28  -1
+    CS_4_28  COST  -6
+    CS_4_28  CBAL_4_28  1
+    CS_4_28  CBAL_4_29  -1
+    CS_4_29  COST  -3
+    CS_4_29  CBAL_4_29  1
+    CS_5_0  COST  4
+    CS_5_0  CBAL_5_0  1
+    CS_5_0  CBAL_5_1  -1
+    CS_5_1  COST  -2
+    CS_5_1  CBAL_5_1  1
+    CS_5_1  CBAL_5_2  -1
+    CS_5_2  COST  -6
+    CS_5_2  CBAL_5_2  1
+    CS_5_2  CBAL_5_3  -1
+    CS_5_3  COST  2
+    CS_5_3  CBAL_5_3  1
+    CS_5_3  CBAL_5_4  -1
+    CS_5_4  COST  5
+    CS_5_4  CBAL_5_4  1
+    CS_5_4  CBAL_5_5  -1
+    CS_5_5  CBAL_5_5  1
+    CS_5_5  CBAL_5_6  -1
+    CS_5_6  COST  -1
+    CS_5_6  CBAL_5_6  1
+    CS_5_6  CBAL_5_7  -1
+    CS_5_7  COST  -10
+    CS_5_7  CBAL_5_7  1
+    CS_5_7  CBAL_5_8  -1
+    CS_5_8  COST  -2
+    CS_5_8  CBAL_5_8  1
+    CS_5_8  CBAL_5_9  -1
+    CS_5_9  COST  -2
+    CS_5_9  CBAL_5_9  1
+    CS_5_9  CBAL_5_10  -1
+    CS_5_10  COST  -10
+    CS_5_10  CBAL_5_10  1
+    CS_5_10  CBAL_5_11  -1
+    CS_5_11  COST  -2
+    CS_5_11  CBAL_5_11  1
+    CS_5_11  CBAL_5_12  -1
+    CS_5_12  COST  -2
+    CS_5_12  CBAL_5_12  1
+    CS_5_12  CBAL_5_13  -1
+    CS_5_13  COST  6
+    CS_5_13  CBAL_5_13  1
+    CS_5_13  CBAL_5_14  -1
+    CS_5_14  COST  -8
+    CS_5_14  CBAL_5_14  1
+    CS_5_14  CBAL_5_15  -1
+    CS_5_15  COST  -14
+    CS_5_15  CBAL_5_15  1
+    CS_5_15  CBAL_5_16  -1
+    CS_5_16  COST  13
+    CS_5_16  CBAL_5_16  1
+    CS_5_16  CBAL_5_17  -1
+    CS_5_17  COST  -8
+    CS_5_17  CBAL_5_17  1
+    CS_5_17  CBAL_5_18  -1
+    CS_5_18  COST  7
+    CS_5_18  CBAL_5_18  1
+    CS_5_18  CBAL_5_19  -1
+    CS_5_19  COST  -9
+    CS_5_19  CBAL_5_19  1
+    CS_5_19  CBAL_5_20  -1
+    CS_5_20  COST  -1
+    CS_5_20  CBAL_5_20  1
+    CS_5_20  CBAL_5_21  -1
+    CS_5_21  COST  -5
+    CS_5_21  CBAL_5_21  1
+    CS_5_21  CBAL_5_22  -1
+    CS_5_22  COST  6
+    CS_5_22  CBAL_5_22  1
+    CS_5_22  CBAL_5_23  -1
+    CS_5_23  COST  -11
+    CS_5_23  CBAL_5_23  1
+    CS_5_23  CBAL_5_24  -1
+    CS_5_24  COST  1
+    CS_5_24  CBAL_5_24  1
+    CS_5_24  CBAL_5_25  -1
+    CS_5_25  COST  -13
+    CS_5_25  CBAL_5_25  1
+    CS_5_25  CBAL_5_26  -1
+    CS_5_26  COST  8
+    CS_5_26  CBAL_5_26  1
+    CS_5_26  CBAL_5_27  -1
+    CS_5_27  CBAL_5_27  1
+    CS_5_27  CBAL_5_28  -1
+    CS_5_28  COST  -16
+    CS_5_28  CBAL_5_28  1
+    CS_5_28  CBAL_5_29  -1
+    CS_5_29  CBAL_5_29  1
+    CS_6_0  COST  -1
+    CS_6_0  CBAL_6_0  1
+    CS_6_0  CBAL_6_1  -1
+    CS_6_1  COST  -7
+    CS_6_1  CBAL_6_1  1
+    CS_6_1  CBAL_6_2  -1
+    CS_6_2  COST  5
+    CS_6_2  CBAL_6_2  1
+    CS_6_2  CBAL_6_3  -1
+    CS_6_3  COST  -11
+    CS_6_3  CBAL_6_3  1
+    CS_6_3  CBAL_6_4  -1
+    CS_6_4  COST  12
+    CS_6_4  CBAL_6_4  1
+    CS_6_4  CBAL_6_5  -1
+    CS_6_5  COST  6
+    CS_6_5  CBAL_6_5  1
+    CS_6_5  CBAL_6_6  -1
+    CS_6_6  COST  -6
+    CS_6_6  CBAL_6_6  1
+    CS_6_6  CBAL_6_7  -1
+    CS_6_7  COST  -10
+    CS_6_7  CBAL_6_7  1
+    CS_6_7  CBAL_6_8  -1
+    CS_6_8  COST  -9
+    CS_6_8  CBAL_6_8  1
+    CS_6_8  CBAL_6_9  -1
+    CS_6_9  CBAL_6_9  1
+    CS_6_9  CBAL_6_10  -1
+    CS_6_10  COST  -8
+    CS_6_10  CBAL_6_10  1
+    CS_6_10  CBAL_6_11  -1
+    CS_6_11  CBAL_6_11  1
+    CS_6_11  CBAL_6_12  -1
+    CS_6_12  COST  3
+    CS_6_12  CBAL_6_12  1
+    CS_6_12  CBAL_6_13  -1
+    CS_6_13  COST  -8
+    CS_6_13  CBAL_6_13  1
+    CS_6_13  CBAL_6_14  -1
+    CS_6_14  COST  17
+    CS_6_14  CBAL_6_14  1
+    CS_6_14  CBAL_6_15  -1
+    CS_6_15  COST  -1
+    CS_6_15  CBAL_6_15  1
+    CS_6_15  CBAL_6_16  -1
+    CS_6_16  COST  7
+    CS_6_16  CBAL_6_16  1
+    CS_6_16  CBAL_6_17  -1
+    CS_6_17  CBAL_6_17  1
+    CS_6_17  CBAL_6_18  -1
+    CS_6_18  COST  -7
+    CS_6_18  CBAL_6_18  1
+    CS_6_18  CBAL_6_19  -1
+    CS_6_19  COST  -8
+    CS_6_19  CBAL_6_19  1
+    CS_6_19  CBAL_6_20  -1
+    CS_6_20  COST  6
+    CS_6_20  CBAL_6_20  1
+    CS_6_20  CBAL_6_21  -1
+    CS_6_21  COST  -5
+    CS_6_21  CBAL_6_21  1
+    CS_6_21  CBAL_6_22  -1
+    CS_6_22  COST  9
+    CS_6_22  CBAL_6_22  1
+    CS_6_22  CBAL_6_23  -1
+    CS_6_23  COST  -17
+    CS_6_23  CBAL_6_23  1
+    CS_6_23  CBAL_6_24  -1
+    CS_6_24  COST  12
+    CS_6_24  CBAL_6_24  1
+    CS_6_24  CBAL_6_25  -1
+    CS_6_25  COST  -12
+    CS_6_25  CBAL_6_25  1
+    CS_6_25  CBAL_6_26  -1
+    CS_6_26  COST  8
+    CS_6_26  CBAL_6_26  1
+    CS_6_26  CBAL_6_27  -1
+    CS_6_27  COST  -2
+    CS_6_27  CBAL_6_27  1
+    CS_6_27  CBAL_6_28  -1
+    CS_6_28  COST  -9
+    CS_6_28  CBAL_6_28  1
+    CS_6_28  CBAL_6_29  -1
+    CS_6_29  COST  16
+    CS_6_29  CBAL_6_29  1
+    CS_7_0  COST  -2
+    CS_7_0  CBAL_7_0  1
+    CS_7_0  CBAL_7_1  -1
+    CS_7_1  COST  -1
+    CS_7_1  CBAL_7_1  1
+    CS_7_1  CBAL_7_2  -1
+    CS_7_2  COST  -4
+    CS_7_2  CBAL_7_2  1
+    CS_7_2  CBAL_7_3  -1
+    CS_7_3  COST  4
+    CS_7_3  CBAL_7_3  1
+    CS_7_3  CBAL_7_4  -1
+    CS_7_4  CBAL_7_4  1
+    CS_7_4  CBAL_7_5  -1
+    CS_7_5  COST  -4
+    CS_7_5  CBAL_7_5  1
+    CS_7_5  CBAL_7_6  -1
+    CS_7_6  COST  -8
+    CS_7_6  CBAL_7_6  1
+    CS_7_6  CBAL_7_7  -1
+    CS_7_7  COST  -17
+    CS_7_7  CBAL_7_7  1
+    CS_7_7  CBAL_7_8  -1
+    CS_7_8  COST  3
+    CS_7_8  CBAL_7_8  1
+    CS_7_8  CBAL_7_9  -1
+    CS_7_9  COST  5
+    CS_7_9  CBAL_7_9  1
+    CS_7_9  CBAL_7_10  -1
+    CS_7_10  COST  -9
+    CS_7_10  CBAL_7_10  1
+    CS_7_10  CBAL_7_11  -1
+    CS_7_11  COST  -1
+    CS_7_11  CBAL_7_11  1
+    CS_7_11  CBAL_7_12  -1
+    CS_7_12  COST  -3
+    CS_7_12  CBAL_7_12  1
+    CS_7_12  CBAL_7_13  -1
+    CS_7_13  COST  -1
+    CS_7_13  CBAL_7_13  1
+    CS_7_13  CBAL_7_14  -1
+    CS_7_14  COST  12
+    CS_7_14  CBAL_7_14  1
+    CS_7_14  CBAL_7_15  -1
+    CS_7_15  COST  -6
+    CS_7_15  CBAL_7_15  1
+    CS_7_15  CBAL_7_16  -1
+    CS_7_16  COST  -8
+    CS_7_16  CBAL_7_16  1
+    CS_7_16  CBAL_7_17  -1
+    CS_7_17  COST  4
+    CS_7_17  CBAL_7_17  1
+    CS_7_17  CBAL_7_18  -1
+    CS_7_18  COST  8
+    CS_7_18  CBAL_7_18  1
+    CS_7_18  CBAL_7_19  -1
+    CS_7_19  COST  -13
+    CS_7_19  CBAL_7_19  1
+    CS_7_19  CBAL_7_20  -1
+    CS_7_20  COST  5
+    CS_7_20  CBAL_7_20  1
+    CS_7_20  CBAL_7_21  -1
+    CS_7_21  COST  3
+    CS_7_21  CBAL_7_21  1
+    CS_7_21  CBAL_7_22  -1
+    CS_7_22  COST  -10
+    CS_7_22  CBAL_7_22  1
+    CS_7_22  CBAL_7_23  -1
+    CS_7_23  COST  -7
+    CS_7_23  CBAL_7_23  1
+    CS_7_23  CBAL_7_24  -1
+    CS_7_24  COST  2
+    CS_7_24  CBAL_7_24  1
+    CS_7_24  CBAL_7_25  -1
+    CS_7_25  COST  -3
+    CS_7_25  CBAL_7_25  1
+    CS_7_25  CBAL_7_26  -1
+    CS_7_26  COST  15
+    CS_7_26  CBAL_7_26  1
+    CS_7_26  CBAL_7_27  -1
+    CS_7_27  COST  -8
+    CS_7_27  CBAL_7_27  1
+    CS_7_27  CBAL_7_28  -1
+    CS_7_28  COST  -6
+    CS_7_28  CBAL_7_28  1
+    CS_7_28  CBAL_7_29  -1
+    CS_7_29  COST  5
+    CS_7_29  CBAL_7_29  1
+    PROD_0_0  COST  0
+    SELL_0_0  COST  -6
+    SELL_0_0  PBAL_0_0  1
+    PS_0_0  COST  -6
+    PS_0_0  PBAL_0_0  1
+    PS_0_0  PBAL_0_1  -1
+    PROD_0_1  COST  0
+    SELL_0_1  COST  17
+    SELL_0_1  PBAL_0_1  1
+    PS_0_1  COST  5
+    PS_0_1  PBAL_0_1  1
+    PS_0_1  PBAL_0_2  -1
+    PROD_0_2  COST  0
+    SELL_0_2  COST  3
+    SELL_0_2  PBAL_0_2  1
+    PS_0_2  COST  -1
+    PS_0_2  PBAL_0_2  1
+    PS_0_2  PBAL_0_3  -1
+    PROD_0_3  COST  0
+    SELL_0_3  COST  -5
+    SELL_0_3  PBAL_0_3  1
+    PS_0_3  COST  2
+    PS_0_3  PBAL_0_3  1
+    PS_0_3  PBAL_0_4  -1
+    PROD_0_4  COST  0
+    SELL_0_4  COST  6
+    SELL_0_4  PBAL_0_4  1
+    PS_0_4  COST  -13
+    PS_0_4  PBAL_0_4  1
+    PS_0_4  PBAL_0_5  -1
+    PROD_0_5  COST  0
+    SELL_0_5  COST  7
+    SELL_0_5  PBAL_0_5  1
+    PS_0_5  COST  5
+    PS_0_5  PBAL_0_5  1
+    PS_0_5  PBAL_0_6  -1
+    PROD_0_6  COST  0
+    SELL_0_6  COST  7
+    SELL_0_6  PBAL_0_6  1
+    PS_0_6  COST  -2
+    PS_0_6  PBAL_0_6  1
+    PS_0_6  PBAL_0_7  -1
+    PROD_0_7  COST  0
+    SELL_0_7  PBAL_0_7  1
+    PS_0_7  COST  12
+    PS_0_7  PBAL_0_7  1
+    PS_0_7  PBAL_0_8  -1
+    PROD_0_8  COST  0
+    SELL_0_8  COST  -10
+    SELL_0_8  PBAL_0_8  1
+    PS_0_8  COST  -12
+    PS_0_8  PBAL_0_8  1
+    PS_0_8  PBAL_0_9  -1
+    PROD_0_9  COST  0
+    SELL_0_9  COST  8
+    SELL_0_9  PBAL_0_9  1
+    PS_0_9  COST  25
+    PS_0_9  PBAL_0_9  1
+    PS_0_9  PBAL_0_10  -1
+    PROD_0_10  COST  0
+    SELL_0_10  COST  -16
+    SELL_0_10  PBAL_0_10  1
+    PS_0_10  COST  -6
+    PS_0_10  PBAL_0_10  1
+    PS_0_10  PBAL_0_11  -1
+    PROD_0_11  COST  0
+    SELL_0_11  COST  -7
+    SELL_0_11  PBAL_0_11  1
+    PS_0_11  COST  -16
+    PS_0_11  PBAL_0_11  1
+    PS_0_11  PBAL_0_12  -1
+    PROD_0_12  COST  0
+    SELL_0_12  COST  8
+    SELL_0_12  PBAL_0_12  1
+    PS_0_12  COST  13
+    PS_0_12  PBAL_0_12  1
+    PS_0_12  PBAL_0_13  -1
+    PROD_0_13  COST  0
+    SELL_0_13  COST  1
+    SELL_0_13  PBAL_0_13  1
+    PS_0_13  COST  6
+    PS_0_13  PBAL_0_13  1
+    PS_0_13  PBAL_0_14  -1
+    PROD_0_14  COST  0
+    SELL_0_14  COST  -13
+    SELL_0_14  PBAL_0_14  1
+    PS_0_14  COST  7
+    PS_0_14  PBAL_0_14  1
+    PS_0_14  PBAL_0_15  -1
+    PROD_0_15  COST  0
+    SELL_0_15  COST  -6
+    SELL_0_15  PBAL_0_15  1
+    PS_0_15  COST  2
+    PS_0_15  PBAL_0_15  1
+    PS_0_15  PBAL_0_16  -1
+    PROD_0_16  COST  0
+    SELL_0_16  COST  -9
+    SELL_0_16  PBAL_0_16  1
+    PS_0_16  COST  2
+    PS_0_16  PBAL_0_16  1
+    PS_0_16  PBAL_0_17  -1
+    PROD_0_17  COST  0
+    SELL_0_17  COST  -1
+    SELL_0_17  PBAL_0_17  1
+    PS_0_17  COST  1
+    PS_0_17  PBAL_0_17  1
+    PS_0_17  PBAL_0_18  -1
+    PROD_0_18  COST  0
+    SELL_0_18  PBAL_0_18  1
+    PS_0_18  COST  6
+    PS_0_18  PBAL_0_18  1
+    PS_0_18  PBAL_0_19  -1
+    PROD_0_19  COST  0
+    SELL_0_19  COST  -11
+    SELL_0_19  PBAL_0_19  1
+    PS_0_19  COST  11
+    PS_0_19  PBAL_0_19  1
+    PS_0_19  PBAL_0_20  -1
+    PROD_0_20  COST  0
+    SELL_0_20  COST  -8
+    SELL_0_20  PBAL_0_20  1
+    PS_0_20  COST  -6
+    PS_0_20  PBAL_0_20  1
+    PS_0_20  PBAL_0_21  -1
+    PROD_0_21  COST  0
+    SELL_0_21  COST  -4
+    SELL_0_21  PBAL_0_21  1
+    PS_0_21  COST  4
+    PS_0_21  PBAL_0_21  1
+    PS_0_21  PBAL_0_22  -1
+    PROD_0_22  COST  0
+    SELL_0_22  COST  6
+    SELL_0_22  PBAL_0_22  1
+    PS_0_22  COST  15
+    PS_0_22  PBAL_0_22  1
+    PS_0_22  PBAL_0_23  -1
+    PROD_0_23  COST  0
+    SELL_0_23  COST  -14
+    SELL_0_23  PBAL_0_23  1
+    PS_0_23  COST  -5
+    PS_0_23  PBAL_0_23  1
+    PS_0_23  PBAL_0_24  -1
+    PROD_0_24  COST  0
+    SELL_0_24  COST  -4
+    SELL_0_24  PBAL_0_24  1
+    PS_0_24  COST  16
+    PS_0_24  PBAL_0_24  1
+    PS_0_24  PBAL_0_25  -1
+    PROD_0_25  COST  0
+    SELL_0_25  COST  -8
+    SELL_0_25  PBAL_0_25  1
+    PS_0_25  COST  -13
+    PS_0_25  PBAL_0_25  1
+    PS_0_25  PBAL_0_26  -1
+    PROD_0_26  COST  0
+    SELL_0_26  COST  8
+    SELL_0_26  PBAL_0_26  1
+    PS_0_26  COST  -4
+    PS_0_26  PBAL_0_26  1
+    PS_0_26  PBAL_0_27  -1
+    PROD_0_27  COST  0
+    SELL_0_27  COST  -1
+    SELL_0_27  PBAL_0_27  1
+    PS_0_27  COST  9
+    PS_0_27  PBAL_0_27  1
+    PS_0_27  PBAL_0_28  -1
+    PROD_0_28  COST  0
+    SELL_0_28  COST  -14
+    SELL_0_28  PBAL_0_28  1
+    PS_0_28  COST  -10
+    PS_0_28  PBAL_0_28  1
+    PS_0_28  PBAL_0_29  -1
+    PROD_0_29  COST  0
+    SELL_0_29  COST  3
+    SELL_0_29  PBAL_0_29  1
+    PS_0_29  COST  -3
+    PS_0_29  PBAL_0_29  1
+    PROD_1_0  COST  0
+    SELL_1_0  COST  2
+    SELL_1_0  PBAL_1_0  1
+    PS_1_0  COST  -10
+    PS_1_0  PBAL_1_0  1
+    PS_1_0  PBAL_1_1  -1
+    PROD_1_1  COST  0
+    SELL_1_1  COST  6
+    SELL_1_1  PBAL_1_1  1
+    PS_1_1  COST  13
+    PS_1_1  PBAL_1_1  1
+    PS_1_1  PBAL_1_2  -1
+    PROD_1_2  COST  0
+    SELL_1_2  COST  -15
+    SELL_1_2  PBAL_1_2  1
+    PS_1_2  COST  -14
+    PS_1_2  PBAL_1_2  1
+    PS_1_2  PBAL_1_3  -1
+    PROD_1_3  COST  0
+    SELL_1_3  COST  -1
+    SELL_1_3  PBAL_1_3  1
+    PS_1_3  COST  -1
+    PS_1_3  PBAL_1_3  1
+    PS_1_3  PBAL_1_4  -1
+    PROD_1_4  COST  0
+    SELL_1_4  PBAL_1_4  1
+    PS_1_4  COST  -1
+    PS_1_4  PBAL_1_4  1
+    PS_1_4  PBAL_1_5  -1
+    PROD_1_5  COST  0
+    SELL_1_5  COST  5
+    SELL_1_5  PBAL_1_5  1
+    PS_1_5  COST  -3
+    PS_1_5  PBAL_1_5  1
+    PS_1_5  PBAL_1_6  -1
+    PROD_1_6  COST  0
+    SELL_1_6  COST  8
+    SELL_1_6  PBAL_1_6  1
+    PS_1_6  COST  10
+    PS_1_6  PBAL_1_6  1
+    PS_1_6  PBAL_1_7  -1
+    PROD_1_7  COST  0
+    SELL_1_7  COST  7
+    SELL_1_7  PBAL_1_7  1
+    PS_1_7  COST  10
+    PS_1_7  PBAL_1_7  1
+    PS_1_7  PBAL_1_8  -1
+    PROD_1_8  COST  0
+    SELL_1_8  COST  2
+    SELL_1_8  PBAL_1_8  1
+    PS_1_8  COST  -2
+    PS_1_8  PBAL_1_8  1
+    PS_1_8  PBAL_1_9  -1
+    PROD_1_9  COST  0
+    SELL_1_9  COST  6
+    SELL_1_9  PBAL_1_9  1
+    PS_1_9  COST  2
+    PS_1_9  PBAL_1_9  1
+    PS_1_9  PBAL_1_10  -1
+    PROD_1_10  COST  0
+    SELL_1_10  COST  6
+    SELL_1_10  PBAL_1_10  1
+    PS_1_10  COST  9
+    PS_1_10  PBAL_1_10  1
+    PS_1_10  PBAL_1_11  -1
+    PROD_1_11  COST  0
+    SELL_1_11  COST  -9
+    SELL_1_11  PBAL_1_11  1
+    PS_1_11  COST  -4
+    PS_1_11  PBAL_1_11  1
+    PS_1_11  PBAL_1_12  -1
+    PROD_1_12  COST  0
+    SELL_1_12  COST  -11
+    SELL_1_12  PBAL_1_12  1
+    PS_1_12  COST  -18
+    PS_1_12  PBAL_1_12  1
+    PS_1_12  PBAL_1_13  -1
+    PROD_1_13  COST  0
+    SELL_1_13  COST  12
+    SELL_1_13  PBAL_1_13  1
+    PS_1_13  COST  3
+    PS_1_13  PBAL_1_13  1
+    PS_1_13  PBAL_1_14  -1
+    PROD_1_14  COST  0
+    SELL_1_14  COST  -1
+    SELL_1_14  PBAL_1_14  1
+    PS_1_14  COST  -5
+    PS_1_14  PBAL_1_14  1
+    PS_1_14  PBAL_1_15  -1
+    PROD_1_15  COST  0
+    SELL_1_15  COST  5
+    SELL_1_15  PBAL_1_15  1
+    PS_1_15  COST  2
+    PS_1_15  PBAL_1_15  1
+    PS_1_15  PBAL_1_16  -1
+    PROD_1_16  COST  0
+    SELL_1_16  COST  3
+    SELL_1_16  PBAL_1_16  1
+    PS_1_16  COST  8
+    PS_1_16  PBAL_1_16  1
+    PS_1_16  PBAL_1_17  -1
+    PROD_1_17  COST  0
+    SELL_1_17  COST  1
+    SELL_1_17  PBAL_1_17  1
+    PS_1_17  COST  4
+    PS_1_17  PBAL_1_17  1
+    PS_1_17  PBAL_1_18  -1
+    PROD_1_18  COST  0
+    SELL_1_18  COST  -1
+    SELL_1_18  PBAL_1_18  1
+    PS_1_18  COST  14
+    PS_1_18  PBAL_1_18  1
+    PS_1_18  PBAL_1_19  -1
+    PROD_1_19  COST  0
+    SELL_1_19  COST  -1
+    SELL_1_19  PBAL_1_19  1
+    PS_1_19  PBAL_1_19  1
+    PS_1_19  PBAL_1_20  -1
+    PROD_1_20  COST  0
+    SELL_1_20  PBAL_1_20  1
+    PS_1_20  COST  -1
+    PS_1_20  PBAL_1_20  1
+    PS_1_20  PBAL_1_21  -1
+    PROD_1_21  COST  0
+    SELL_1_21  COST  1
+    SELL_1_21  PBAL_1_21  1
+    PS_1_21  COST  13
+    PS_1_21  PBAL_1_21  1
+    PS_1_21  PBAL_1_22  -1
+    PROD_1_22  COST  0
+    SELL_1_22  COST  4
+    SELL_1_22  PBAL_1_22  1
+    PS_1_22  COST  11
+    PS_1_22  PBAL_1_22  1
+    PS_1_22  PBAL_1_23  -1
+    PROD_1_23  COST  0
+    SELL_1_23  COST  -2
+    SELL_1_23  PBAL_1_23  1
+    PS_1_23  COST  -4
+    PS_1_23  PBAL_1_23  1
+    PS_1_23  PBAL_1_24  -1
+    PROD_1_24  COST  0
+    SELL_1_24  COST  2
+    SELL_1_24  PBAL_1_24  1
+    PS_1_24  COST  13
+    PS_1_24  PBAL_1_24  1
+    PS_1_24  PBAL_1_25  -1
+    PROD_1_25  COST  0
+    SELL_1_25  COST  -9
+    SELL_1_25  PBAL_1_25  1
+    PS_1_25  COST  -12
+    PS_1_25  PBAL_1_25  1
+    PS_1_25  PBAL_1_26  -1
+    PROD_1_26  COST  0
+    SELL_1_26  COST  7
+    SELL_1_26  PBAL_1_26  1
+    PS_1_26  COST  6
+    PS_1_26  PBAL_1_26  1
+    PS_1_26  PBAL_1_27  -1
+    PROD_1_27  COST  0
+    SELL_1_27  COST  -1
+    SELL_1_27  PBAL_1_27  1
+    PS_1_27  COST  10
+    PS_1_27  PBAL_1_27  1
+    PS_1_27  PBAL_1_28  -1
+    PROD_1_28  COST  0
+    SELL_1_28  COST  -7
+    SELL_1_28  PBAL_1_28  1
+    PS_1_28  COST  -13
+    PS_1_28  PBAL_1_28  1
+    PS_1_28  PBAL_1_29  -1
+    PROD_1_29  COST  0
+    SELL_1_29  COST  7
+    SELL_1_29  PBAL_1_29  1
+    PS_1_29  COST  6
+    PS_1_29  PBAL_1_29  1
+    PROD_2_0  COST  0
+    SELL_2_0  COST  -8
+    SELL_2_0  PBAL_2_0  1
+    PS_2_0  COST  -6
+    PS_2_0  PBAL_2_0  1
+    PS_2_0  PBAL_2_1  -1
+    PROD_2_1  COST  0
+    SELL_2_1  COST  -1
+    SELL_2_1  PBAL_2_1  1
+    PS_2_1  PBAL_2_1  1
+    PS_2_1  PBAL_2_2  -1
+    PROD_2_2  COST  0
+    SELL_2_2  COST  6
+    SELL_2_2  PBAL_2_2  1
+    PS_2_2  COST  -1
+    PS_2_2  PBAL_2_2  1
+    PS_2_2  PBAL_2_3  -1
+    PROD_2_3  COST  0
+    SELL_2_3  COST  -1
+    SELL_2_3  PBAL_2_3  1
+    PS_2_3  COST  19
+    PS_2_3  PBAL_2_3  1
+    PS_2_3  PBAL_2_4  -1
+    PROD_2_4  COST  0
+    SELL_2_4  COST  -10
+    SELL_2_4  PBAL_2_4  1
+    PS_2_4  COST  -6
+    PS_2_4  PBAL_2_4  1
+    PS_2_4  PBAL_2_5  -1
+    PROD_2_5  COST  0
+    SELL_2_5  COST  -1
+    SELL_2_5  PBAL_2_5  1
+    PS_2_5  COST  15
+    PS_2_5  PBAL_2_5  1
+    PS_2_5  PBAL_2_6  -1
+    PROD_2_6  COST  0
+    SELL_2_6  COST  -9
+    SELL_2_6  PBAL_2_6  1
+    PS_2_6  PBAL_2_6  1
+    PS_2_6  PBAL_2_7  -1
+    PROD_2_7  COST  0
+    SELL_2_7  COST  -15
+    SELL_2_7  PBAL_2_7  1
+    PS_2_7  COST  5
+    PS_2_7  PBAL_2_7  1
+    PS_2_7  PBAL_2_8  -1
+    PROD_2_8  COST  0
+    SELL_2_8  COST  -11
+    SELL_2_8  PBAL_2_8  1
+    PS_2_8  COST  -10
+    PS_2_8  PBAL_2_8  1
+    PS_2_8  PBAL_2_9  -1
+    PROD_2_9  COST  0
+    SELL_2_9  COST  7
+    SELL_2_9  PBAL_2_9  1
+    PS_2_9  COST  2
+    PS_2_9  PBAL_2_9  1
+    PS_2_9  PBAL_2_10  -1
+    PROD_2_10  COST  0
+    SELL_2_10  COST  -2
+    SELL_2_10  PBAL_2_10  1
+    PS_2_10  COST  -3
+    PS_2_10  PBAL_2_10  1
+    PS_2_10  PBAL_2_11  -1
+    PROD_2_11  COST  0
+    SELL_2_11  COST  3
+    SELL_2_11  PBAL_2_11  1
+    PS_2_11  COST  11
+    PS_2_11  PBAL_2_11  1
+    PS_2_11  PBAL_2_12  -1
+    PROD_2_12  COST  0
+    SELL_2_12  COST  -9
+    SELL_2_12  PBAL_2_12  1
+    PS_2_12  COST  6
+    PS_2_12  PBAL_2_12  1
+    PS_2_12  PBAL_2_13  -1
+    PROD_2_13  COST  0
+    SELL_2_13  COST  -8
+    SELL_2_13  PBAL_2_13  1
+    PS_2_13  COST  -1
+    PS_2_13  PBAL_2_13  1
+    PS_2_13  PBAL_2_14  -1
+    PROD_2_14  COST  0
+    SELL_2_14  COST  -4
+    SELL_2_14  PBAL_2_14  1
+    PS_2_14  COST  3
+    PS_2_14  PBAL_2_14  1
+    PS_2_14  PBAL_2_15  -1
+    PROD_2_15  COST  0
+    SELL_2_15  COST  -9
+    SELL_2_15  PBAL_2_15  1
+    PS_2_15  COST  -3
+    PS_2_15  PBAL_2_15  1
+    PS_2_15  PBAL_2_16  -1
+    PROD_2_16  COST  0
+    SELL_2_16  COST  2
+    SELL_2_16  PBAL_2_16  1
+    PS_2_16  COST  -2
+    PS_2_16  PBAL_2_16  1
+    PS_2_16  PBAL_2_17  -1
+    PROD_2_17  COST  0
+    SELL_2_17  COST  9
+    SELL_2_17  PBAL_2_17  1
+    PS_2_17  COST  16
+    PS_2_17  PBAL_2_17  1
+    PS_2_17  PBAL_2_18  -1
+    PROD_2_18  COST  0
+    SELL_2_18  COST  -5
+    SELL_2_18  PBAL_2_18  1
+    PS_2_18  COST  -5
+    PS_2_18  PBAL_2_18  1
+    PS_2_18  PBAL_2_19  -1
+    PROD_2_19  COST  0
+    SELL_2_19  COST  -3
+    SELL_2_19  PBAL_2_19  1
+    PS_2_19  COST  -1
+    PS_2_19  PBAL_2_19  1
+    PS_2_19  PBAL_2_20  -1
+    PROD_2_20  COST  0
+    SELL_2_20  COST  -8
+    SELL_2_20  PBAL_2_20  1
+    PS_2_20  COST  -12
+    PS_2_20  PBAL_2_20  1
+    PS_2_20  PBAL_2_21  -1
+    PROD_2_21  COST  0
+    SELL_2_21  COST  -10
+    SELL_2_21  PBAL_2_21  1
+    PS_2_21  COST  -5
+    PS_2_21  PBAL_2_21  1
+    PS_2_21  PBAL_2_22  -1
+    PROD_2_22  COST  0
+    SELL_2_22  COST  -3
+    SELL_2_22  PBAL_2_22  1
+    PS_2_22  COST  9
+    PS_2_22  PBAL_2_22  1
+    PS_2_22  PBAL_2_23  -1
+    PROD_2_23  COST  0
+    SELL_2_23  COST  -5
+    SELL_2_23  PBAL_2_23  1
+    PS_2_23  COST  -3
+    PS_2_23  PBAL_2_23  1
+    PS_2_23  PBAL_2_24  -1
+    PROD_2_24  COST  0
+    SELL_2_24  COST  -7
+    SELL_2_24  PBAL_2_24  1
+    PS_2_24  COST  -11
+    PS_2_24  PBAL_2_24  1
+    PS_2_24  PBAL_2_25  -1
+    PROD_2_25  COST  0
+    SELL_2_25  COST  7
+    SELL_2_25  PBAL_2_25  1
+    PS_2_25  PBAL_2_25  1
+    PS_2_25  PBAL_2_26  -1
+    PROD_2_26  COST  0
+    SELL_2_26  COST  -2
+    SELL_2_26  PBAL_2_26  1
+    PS_2_26  COST  5
+    PS_2_26  PBAL_2_26  1
+    PS_2_26  PBAL_2_27  -1
+    PROD_2_27  COST  0
+    SELL_2_27  COST  -8
+    SELL_2_27  PBAL_2_27  1
+    PS_2_27  COST  -13
+    PS_2_27  PBAL_2_27  1
+    PS_2_27  PBAL_2_28  -1
+    PROD_2_28  COST  0
+    SELL_2_28  COST  5
+    SELL_2_28  PBAL_2_28  1
+    PS_2_28  COST  3
+    PS_2_28  PBAL_2_28  1
+    PS_2_28  PBAL_2_29  -1
+    PROD_2_29  COST  0
+    SELL_2_29  COST  -7
+    SELL_2_29  PBAL_2_29  1
+    PS_2_29  COST  2
+    PS_2_29  PBAL_2_29  1
+    PROD_3_0  COST  0
+    SELL_3_0  COST  -6
+    SELL_3_0  PBAL_3_0  1
+    PS_3_0  COST  3
+    PS_3_0  PBAL_3_0  1
+    PS_3_0  PBAL_3_1  -1
+    PROD_3_1  COST  0
+    SELL_3_1  COST  -10
+    SELL_3_1  PBAL_3_1  1
+    PS_3_1  COST  6
+    PS_3_1  PBAL_3_1  1
+    PS_3_1  PBAL_3_2  -1
+    PROD_3_2  COST  0
+    SELL_3_2  COST  -10
+    SELL_3_2  PBAL_3_2  1
+    PS_3_2  COST  -3
+    PS_3_2  PBAL_3_2  1
+    PS_3_2  PBAL_3_3  -1
+    PROD_3_3  COST  0
+    SELL_3_3  COST  -6
+    SELL_3_3  PBAL_3_3  1
+    PS_3_3  COST  -8
+    PS_3_3  PBAL_3_3  1
+    PS_3_3  PBAL_3_4  -1
+    PROD_3_4  COST  0
+    SELL_3_4  COST  2
+    SELL_3_4  PBAL_3_4  1
+    PS_3_4  COST  -2
+    PS_3_4  PBAL_3_4  1
+    PS_3_4  PBAL_3_5  -1
+    PROD_3_5  COST  0
+    SELL_3_5  COST  4
+    SELL_3_5  PBAL_3_5  1
+    PS_3_5  COST  6
+    PS_3_5  PBAL_3_5  1
+    PS_3_5  PBAL_3_6  -1
+    PROD_3_6  COST  0
+    SELL_3_6  COST  -11
+    SELL_3_6  PBAL_3_6  1
+    PS_3_6  COST  -8
+    PS_3_6  PBAL_3_6  1
+    PS_3_6  PBAL_3_7  -1
+    PROD_3_7  COST  0
+    SELL_3_7  COST  9
+    SELL_3_7  PBAL_3_7  1
+    PS_3_7  COST  18
+    PS_3_7  PBAL_3_7  1
+    PS_3_7  PBAL_3_8  -1
+    PROD_3_8  COST  0
+    SELL_3_8  COST  -9
+    SELL_3_8  PBAL_3_8  1
+    PS_3_8  COST  -5
+    PS_3_8  PBAL_3_8  1
+    PS_3_8  PBAL_3_9  -1
+    PROD_3_9  COST  0
+    SELL_3_9  COST  -13
+    SELL_3_9  PBAL_3_9  1
+    PS_3_9  COST  -2
+    PS_3_9  PBAL_3_9  1
+    PS_3_9  PBAL_3_10  -1
+    PROD_3_10  COST  0
+    SELL_3_10  COST  -8
+    SELL_3_10  PBAL_3_10  1
+    PS_3_10  COST  -5
+    PS_3_10  PBAL_3_10  1
+    PS_3_10  PBAL_3_11  -1
+    PROD_3_11  COST  0
+    SELL_3_11  COST  6
+    SELL_3_11  PBAL_3_11  1
+    PS_3_11  COST  1
+    PS_3_11  PBAL_3_11  1
+    PS_3_11  PBAL_3_12  -1
+    PROD_3_12  COST  0
+    SELL_3_12  COST  2
+    SELL_3_12  PBAL_3_12  1
+    PS_3_12  COST  -9
+    PS_3_12  PBAL_3_12  1
+    PS_3_12  PBAL_3_13  -1
+    PROD_3_13  COST  0
+    SELL_3_13  COST  3
+    SELL_3_13  PBAL_3_13  1
+    PS_3_13  COST  11
+    PS_3_13  PBAL_3_13  1
+    PS_3_13  PBAL_3_14  -1
+    PROD_3_14  COST  0
+    SELL_3_14  COST  -1
+    SELL_3_14  PBAL_3_14  1
+    PS_3_14  COST  13
+    PS_3_14  PBAL_3_14  1
+    PS_3_14  PBAL_3_15  -1
+    PROD_3_15  COST  0
+    SELL_3_15  COST  -10
+    SELL_3_15  PBAL_3_15  1
+    PS_3_15  COST  -8
+    PS_3_15  PBAL_3_15  1
+    PS_3_15  PBAL_3_16  -1
+    PROD_3_16  COST  0
+    SELL_3_16  COST  -1
+    SELL_3_16  PBAL_3_16  1
+    PS_3_16  COST  4
+    PS_3_16  PBAL_3_16  1
+    PS_3_16  PBAL_3_17  -1
+    PROD_3_17  COST  0
+    SELL_3_17  COST  -8
+    SELL_3_17  PBAL_3_17  1
+    PS_3_17  COST  -4
+    PS_3_17  PBAL_3_17  1
+    PS_3_17  PBAL_3_18  -1
+    PROD_3_18  COST  0
+    SELL_3_18  COST  4
+    SELL_3_18  PBAL_3_18  1
+    PS_3_18  PBAL_3_18  1
+    PS_3_18  PBAL_3_19  -1
+    PROD_3_19  COST  0
+    SELL_3_19  COST  -4
+    SELL_3_19  PBAL_3_19  1
+    PS_3_19  COST  6
+    PS_3_19  PBAL_3_19  1
+    PS_3_19  PBAL_3_20  -1
+    PROD_3_20  COST  0
+    SELL_3_20  COST  -1
+    SELL_3_20  PBAL_3_20  1
+    PS_3_20  COST  -8
+    PS_3_20  PBAL_3_20  1
+    PS_3_20  PBAL_3_21  -1
+    PROD_3_21  COST  0
+    SELL_3_21  COST  7
+    SELL_3_21  PBAL_3_21  1
+    PS_3_21  COST  3
+    PS_3_21  PBAL_3_21  1
+    PS_3_21  PBAL_3_22  -1
+    PROD_3_22  COST  0
+    SELL_3_22  COST  2
+    SELL_3_22  PBAL_3_22  1
+    PS_3_22  COST  3
+    PS_3_22  PBAL_3_22  1
+    PS_3_22  PBAL_3_23  -1
+    PROD_3_23  COST  0
+    SELL_3_23  COST  -5
+    SELL_3_23  PBAL_3_23  1
+    PS_3_23  COST  -13
+    PS_3_23  PBAL_3_23  1
+    PS_3_23  PBAL_3_24  -1
+    PROD_3_24  COST  0
+    SELL_3_24  COST  2
+    SELL_3_24  PBAL_3_24  1
+    PS_3_24  COST  -2
+    PS_3_24  PBAL_3_24  1
+    PS_3_24  PBAL_3_25  -1
+    PROD_3_25  COST  0
+    SELL_3_25  COST  4
+    SELL_3_25  PBAL_3_25  1
+    PS_3_25  COST  16
+    PS_3_25  PBAL_3_25  1
+    PS_3_25  PBAL_3_26  -1
+    PROD_3_26  COST  0
+    SELL_3_26  COST  -11
+    SELL_3_26  PBAL_3_26  1
+    PS_3_26  COST  -11
+    PS_3_26  PBAL_3_26  1
+    PS_3_26  PBAL_3_27  -1
+    PROD_3_27  COST  0
+    SELL_3_27  COST  -1
+    SELL_3_27  PBAL_3_27  1
+    PS_3_27  COST  -4
+    PS_3_27  PBAL_3_27  1
+    PS_3_27  PBAL_3_28  -1
+    PROD_3_28  COST  0
+    SELL_3_28  COST  4
+    SELL_3_28  PBAL_3_28  1
+    PS_3_28  COST  8
+    PS_3_28  PBAL_3_28  1
+    PS_3_28  PBAL_3_29  -1
+    PROD_3_29  COST  0
+    SELL_3_29  COST  -4
+    SELL_3_29  PBAL_3_29  1
+    PS_3_29  PBAL_3_29  1
+    PROD_4_0  COST  0
+    SELL_4_0  COST  6
+    SELL_4_0  PBAL_4_0  1
+    SELL_4_0  COMMIT_4_0  1
+    PS_4_0  COST  17
+    PS_4_0  PBAL_4_0  1
+    PS_4_0  PBAL_4_1  -1
+    PROD_4_1  COST  0
+    SELL_4_1  COST  2
+    SELL_4_1  PBAL_4_1  1
+    SELL_4_1  COMMIT_4_1  1
+    PS_4_1  COST  -10
+    PS_4_1  PBAL_4_1  1
+    PS_4_1  PBAL_4_2  -1
+    PROD_4_2  COST  0
+    SELL_4_2  COST  6
+    SELL_4_2  PBAL_4_2  1
+    SELL_4_2  COMMIT_4_2  1
+    PS_4_2  COST  5
+    PS_4_2  PBAL_4_2  1
+    PS_4_2  PBAL_4_3  -1
+    PROD_4_3  COST  0
+    SELL_4_3  COST  1
+    SELL_4_3  PBAL_4_3  1
+    SELL_4_3  COMMIT_4_3  1
+    PS_4_3  COST  -10
+    PS_4_3  PBAL_4_3  1
+    PS_4_3  PBAL_4_4  -1
+    PROD_4_4  COST  0
+    SELL_4_4  COST  7
+    SELL_4_4  PBAL_4_4  1
+    SELL_4_4  COMMIT_4_4  1
+    PS_4_4  COST  18
+    PS_4_4  PBAL_4_4  1
+    PS_4_4  PBAL_4_5  -1
+    PROD_4_5  COST  0
+    SELL_4_5  COST  -9
+    SELL_4_5  PBAL_4_5  1
+    SELL_4_5  COMMIT_4_5  1
+    PS_4_5  COST  -3
+    PS_4_5  PBAL_4_5  1
+    PS_4_5  PBAL_4_6  -1
+    PROD_4_6  COST  0
+    SELL_4_6  COST  7
+    SELL_4_6  PBAL_4_6  1
+    SELL_4_6  COMMIT_4_6  1
+    PS_4_6  COST  4
+    PS_4_6  PBAL_4_6  1
+    PS_4_6  PBAL_4_7  -1
+    PROD_4_7  COST  0
+    SELL_4_7  COST  -1
+    SELL_4_7  PBAL_4_7  1
+    SELL_4_7  COMMIT_4_7  1
+    PS_4_7  COST  -7
+    PS_4_7  PBAL_4_7  1
+    PS_4_7  PBAL_4_8  -1
+    PROD_4_8  COST  0
+    SELL_4_8  COST  5
+    SELL_4_8  PBAL_4_8  1
+    SELL_4_8  COMMIT_4_8  1
+    PS_4_8  COST  6
+    PS_4_8  PBAL_4_8  1
+    PS_4_8  PBAL_4_9  -1
+    PROD_4_9  COST  0
+    SELL_4_9  COST  -4
+    SELL_4_9  PBAL_4_9  1
+    SELL_4_9  COMMIT_4_9  1
+    PS_4_9  COST  -8
+    PS_4_9  PBAL_4_9  1
+    PS_4_9  PBAL_4_10  -1
+    PROD_4_10  COST  0
+    SELL_4_10  PBAL_4_10  1
+    SELL_4_10  COMMIT_4_10  1
+    PS_4_10  COST  14
+    PS_4_10  PBAL_4_10  1
+    PS_4_10  PBAL_4_11  -1
+    PROD_4_11  COST  0
+    SELL_4_11  COST  -8
+    SELL_4_11  PBAL_4_11  1
+    SELL_4_11  COMMIT_4_11  1
+    PS_4_11  COST  2
+    PS_4_11  PBAL_4_11  1
+    PS_4_11  PBAL_4_12  -1
+    PROD_4_12  COST  0
+    SELL_4_12  COST  -3
+    SELL_4_12  PBAL_4_12  1
+    SELL_4_12  COMMIT_4_12  1
+    PS_4_12  COST  -5
+    PS_4_12  PBAL_4_12  1
+    PS_4_12  PBAL_4_13  -1
+    PROD_4_13  COST  0
+    SELL_4_13  COST  1
+    SELL_4_13  PBAL_4_13  1
+    SELL_4_13  COMMIT_4_13  1
+    PS_4_13  COST  -7
+    PS_4_13  PBAL_4_13  1
+    PS_4_13  PBAL_4_14  -1
+    PROD_4_14  COST  0
+    SELL_4_14  PBAL_4_14  1
+    SELL_4_14  COMMIT_4_14  1
+    PS_4_14  COST  7
+    PS_4_14  PBAL_4_14  1
+    PS_4_14  PBAL_4_15  -1
+    PROD_4_15  COST  0
+    SELL_4_15  PBAL_4_15  1
+    SELL_4_15  COMMIT_4_15  1
+    PS_4_15  COST  -1
+    PS_4_15  PBAL_4_15  1
+    PS_4_15  PBAL_4_16  -1
+    PROD_4_16  COST  0
+    SELL_4_16  COST  -9
+    SELL_4_16  PBAL_4_16  1
+    SELL_4_16  COMMIT_4_16  1
+    PS_4_16  COST  -9
+    PS_4_16  PBAL_4_16  1
+    PS_4_16  PBAL_4_17  -1
+    PROD_4_17  COST  0
+    SELL_4_17  COST  -6
+    SELL_4_17  PBAL_4_17  1
+    SELL_4_17  COMMIT_4_17  1
+    PS_4_17  COST  7
+    PS_4_17  PBAL_4_17  1
+    PS_4_17  PBAL_4_18  -1
+    PROD_4_18  COST  0
+    SELL_4_18  COST  3
+    SELL_4_18  PBAL_4_18  1
+    SELL_4_18  COMMIT_4_18  1
+    PS_4_18  COST  -5
+    PS_4_18  PBAL_4_18  1
+    PS_4_18  PBAL_4_19  -1
+    PROD_4_19  COST  0
+    SELL_4_19  PBAL_4_19  1
+    SELL_4_19  COMMIT_4_19  1
+    PS_4_19  COST  -8
+    PS_4_19  PBAL_4_19  1
+    PS_4_19  PBAL_4_20  -1
+    PROD_4_20  COST  0
+    SELL_4_20  COST  5
+    SELL_4_20  PBAL_4_20  1
+    SELL_4_20  COMMIT_4_20  1
+    PS_4_20  COST  1
+    PS_4_20  PBAL_4_20  1
+    PS_4_20  PBAL_4_21  -1
+    PROD_4_21  COST  0
+    SELL_4_21  COST  -7
+    SELL_4_21  PBAL_4_21  1
+    SELL_4_21  COMMIT_4_21  1
+    PS_4_21  COST  -4
+    PS_4_21  PBAL_4_21  1
+    PS_4_21  PBAL_4_22  -1
+    PROD_4_22  COST  0
+    SELL_4_22  PBAL_4_22  1
+    SELL_4_22  COMMIT_4_22  1
+    PS_4_22  COST  5
+    PS_4_22  PBAL_4_22  1
+    PS_4_22  PBAL_4_23  -1
+    PROD_4_23  COST  0
+    SELL_4_23  COST  -8
+    SELL_4_23  PBAL_4_23  1
+    SELL_4_23  COMMIT_4_23  1
+    PS_4_23  COST  -16
+    PS_4_23  PBAL_4_23  1
+    PS_4_23  PBAL_4_24  -1
+    PROD_4_24  COST  0
+    SELL_4_24  COST  5
+    SELL_4_24  PBAL_4_24  1
+    SELL_4_24  COMMIT_4_24  1
+    PS_4_24  COST  -1
+    PS_4_24  PBAL_4_24  1
+    PS_4_24  PBAL_4_25  -1
+    PROD_4_25  COST  0
+    SELL_4_25  COST  6
+    SELL_4_25  PBAL_4_25  1
+    SELL_4_25  COMMIT_4_25  1
+    PS_4_25  COST  6
+    PS_4_25  PBAL_4_25  1
+    PS_4_25  PBAL_4_26  -1
+    PROD_4_26  COST  0
+    SELL_4_26  PBAL_4_26  1
+    SELL_4_26  COMMIT_4_26  1
+    PS_4_26  COST  -3
+    PS_4_26  PBAL_4_26  1
+    PS_4_26  PBAL_4_27  -1
+    PROD_4_27  COST  0
+    SELL_4_27  COST  13
+    SELL_4_27  PBAL_4_27  1
+    SELL_4_27  COMMIT_4_27  1
+    PS_4_27  COST  6
+    PS_4_27  PBAL_4_27  1
+    PS_4_27  PBAL_4_28  -1
+    PROD_4_28  COST  0
+    SELL_4_28  COST  3
+    SELL_4_28  PBAL_4_28  1
+    SELL_4_28  COMMIT_4_28  1
+    PS_4_28  COST  7
+    PS_4_28  PBAL_4_28  1
+    PS_4_28  PBAL_4_29  -1
+    PROD_4_29  COST  0
+    SELL_4_29  COST  1
+    SELL_4_29  PBAL_4_29  1
+    SELL_4_29  COMMIT_4_29  1
+    PS_4_29  COST  -4
+    PS_4_29  PBAL_4_29  1
+    PROD_5_0  COST  0
+    SELL_5_0  COST  -8
+    SELL_5_0  PBAL_5_0  1
+    SELL_5_0  COMMIT_5_0  1
+    PS_5_0  COST  -8
+    PS_5_0  PBAL_5_0  1
+    PS_5_0  PBAL_5_1  -1
+    PROD_5_1  COST  0
+    SELL_5_1  COST  8
+    SELL_5_1  PBAL_5_1  1
+    SELL_5_1  COMMIT_5_1  1
+    PS_5_1  COST  3
+    PS_5_1  PBAL_5_1  1
+    PS_5_1  PBAL_5_2  -1
+    PROD_5_2  COST  0
+    SELL_5_2  COST  9
+    SELL_5_2  PBAL_5_2  1
+    SELL_5_2  COMMIT_5_2  1
+    PS_5_2  COST  9
+    PS_5_2  PBAL_5_2  1
+    PS_5_2  PBAL_5_3  -1
+    PROD_5_3  COST  0
+    SELL_5_3  COST  -7
+    SELL_5_3  PBAL_5_3  1
+    SELL_5_3  COMMIT_5_3  1
+    PS_5_3  COST  1
+    PS_5_3  PBAL_5_3  1
+    PS_5_3  PBAL_5_4  -1
+    PROD_5_4  COST  0
+    SELL_5_4  COST  -2
+    SELL_5_4  PBAL_5_4  1
+    SELL_5_4  COMMIT_5_4  1
+    PS_5_4  COST  3
+    PS_5_4  PBAL_5_4  1
+    PS_5_4  PBAL_5_5  -1
+    PROD_5_5  COST  0
+    SELL_5_5  COST  -4
+    SELL_5_5  PBAL_5_5  1
+    SELL_5_5  COMMIT_5_5  1
+    PS_5_5  COST  9
+    PS_5_5  PBAL_5_5  1
+    PS_5_5  PBAL_5_6  -1
+    PROD_5_6  COST  0
+    SELL_5_6  COST  -17
+    SELL_5_6  PBAL_5_6  1
+    SELL_5_6  COMMIT_5_6  1
+    PS_5_6  COST  -12
+    PS_5_6  PBAL_5_6  1
+    PS_5_6  PBAL_5_7  -1
+    PROD_5_7  COST  0
+    SELL_5_7  COST  3
+    SELL_5_7  PBAL_5_7  1
+    SELL_5_7  COMMIT_5_7  1
+    PS_5_7  COST  -5
+    PS_5_7  PBAL_5_7  1
+    PS_5_7  PBAL_5_8  -1
+    PROD_5_8  COST  0
+    SELL_5_8  COST  11
+    SELL_5_8  PBAL_5_8  1
+    SELL_5_8  COMMIT_5_8  1
+    PS_5_8  COST  20
+    PS_5_8  PBAL_5_8  1
+    PS_5_8  PBAL_5_9  -1
+    PROD_5_9  COST  0
+    SELL_5_9  COST  -4
+    SELL_5_9  PBAL_5_9  1
+    SELL_5_9  COMMIT_5_9  1
+    PS_5_9  COST  -4
+    PS_5_9  PBAL_5_9  1
+    PS_5_9  PBAL_5_10  -1
+    PROD_5_10  COST  0
+    SELL_5_10  COST  -1
+    SELL_5_10  PBAL_5_10  1
+    SELL_5_10  COMMIT_5_10  1
+    PS_5_10  COST  -3
+    PS_5_10  PBAL_5_10  1
+    PS_5_10  PBAL_5_11  -1
+    PROD_5_11  COST  0
+    SELL_5_11  COST  -5
+    SELL_5_11  PBAL_5_11  1
+    SELL_5_11  COMMIT_5_11  1
+    PS_5_11  COST  -2
+    PS_5_11  PBAL_5_11  1
+    PS_5_11  PBAL_5_12  -1
+    PROD_5_12  COST  0
+    SELL_5_12  COST  -5
+    SELL_5_12  PBAL_5_12  1
+    SELL_5_12  COMMIT_5_12  1
+    PS_5_12  COST  -3
+    PS_5_12  PBAL_5_12  1
+    PS_5_12  PBAL_5_13  -1
+    PROD_5_13  COST  0
+    SELL_5_13  COST  -13
+    SELL_5_13  PBAL_5_13  1
+    SELL_5_13  COMMIT_5_13  1
+    PS_5_13  COST  2
+    PS_5_13  PBAL_5_13  1
+    PS_5_13  PBAL_5_14  -1
+    PROD_5_14  COST  0
+    SELL_5_14  COST  7
+    SELL_5_14  PBAL_5_14  1
+    SELL_5_14  COMMIT_5_14  1
+    PS_5_14  COST  2
+    PS_5_14  PBAL_5_14  1
+    PS_5_14  PBAL_5_15  -1
+    PROD_5_15  COST  0
+    SELL_5_15  COST  2
+    SELL_5_15  PBAL_5_15  1
+    SELL_5_15  COMMIT_5_15  1
+    PS_5_15  COST  -11
+    PS_5_15  PBAL_5_15  1
+    PS_5_15  PBAL_5_16  -1
+    PROD_5_16  COST  0
+    SELL_5_16  COST  6
+    SELL_5_16  PBAL_5_16  1
+    SELL_5_16  COMMIT_5_16  1
+    PS_5_16  COST  14
+    PS_5_16  PBAL_5_16  1
+    PS_5_16  PBAL_5_17  -1
+    PROD_5_17  COST  0
+    SELL_5_17  COST  6
+    SELL_5_17  PBAL_5_17  1
+    SELL_5_17  COMMIT_5_17  1
+    PS_5_17  PBAL_5_17  1
+    PS_5_17  PBAL_5_18  -1
+    PROD_5_18  COST  0
+    SELL_5_18  COST  4
+    SELL_5_18  PBAL_5_18  1
+    SELL_5_18  COMMIT_5_18  1
+    PS_5_18  COST  18
+    PS_5_18  PBAL_5_18  1
+    PS_5_18  PBAL_5_19  -1
+    PROD_5_19  COST  0
+    SELL_5_19  COST  -4
+    SELL_5_19  PBAL_5_19  1
+    SELL_5_19  COMMIT_5_19  1
+    PS_5_19  COST  7
+    PS_5_19  PBAL_5_19  1
+    PS_5_19  PBAL_5_20  -1
+    PROD_5_20  COST  0
+    SELL_5_20  COST  -1
+    SELL_5_20  PBAL_5_20  1
+    SELL_5_20  COMMIT_5_20  1
+    PS_5_20  COST  3
+    PS_5_20  PBAL_5_20  1
+    PS_5_20  PBAL_5_21  -1
+    PROD_5_21  COST  0
+    SELL_5_21  PBAL_5_21  1
+    SELL_5_21  COMMIT_5_21  1
+    PS_5_21  COST  -14
+    PS_5_21  PBAL_5_21  1
+    PS_5_21  PBAL_5_22  -1
+    PROD_5_22  COST  0
+    SELL_5_22  COST  8
+    SELL_5_22  PBAL_5_22  1
+    SELL_5_22  COMMIT_5_22  1
+    PS_5_22  COST  7
+    PS_5_22  PBAL_5_22  1
+    PS_5_22  PBAL_5_23  -1
+    PROD_5_23  COST  0
+    SELL_5_23  COST  -4
+    SELL_5_23  PBAL_5_23  1
+    SELL_5_23  COMMIT_5_23  1
+    PS_5_23  COST  -5
+    PS_5_23  PBAL_5_23  1
+    PS_5_23  PBAL_5_24  -1
+    PROD_5_24  COST  0
+    SELL_5_24  COST  -3
+    SELL_5_24  PBAL_5_24  1
+    SELL_5_24  COMMIT_5_24  1
+    PS_5_24  COST  -1
+    PS_5_24  PBAL_5_24  1
+    PS_5_24  PBAL_5_25  -1
+    PROD_5_25  COST  0
+    SELL_5_25  COST  2
+    SELL_5_25  PBAL_5_25  1
+    SELL_5_25  COMMIT_5_25  1
+    PS_5_25  COST  8
+    PS_5_25  PBAL_5_25  1
+    PS_5_25  PBAL_5_26  -1
+    PROD_5_26  COST  0
+    SELL_5_26  COST  -9
+    SELL_5_26  PBAL_5_26  1
+    SELL_5_26  COMMIT_5_26  1
+    PS_5_26  COST  -12
+    PS_5_26  PBAL_5_26  1
+    PS_5_26  PBAL_5_27  -1
+    PROD_5_27  COST  0
+    SELL_5_27  COST  2
+    SELL_5_27  PBAL_5_27  1
+    SELL_5_27  COMMIT_5_27  1
+    PS_5_27  PBAL_5_27  1
+    PS_5_27  PBAL_5_28  -1
+    PROD_5_28  COST  0
+    SELL_5_28  COST  4
+    SELL_5_28  PBAL_5_28  1
+    SELL_5_28  COMMIT_5_28  1
+    PS_5_28  COST  9
+    PS_5_28  PBAL_5_28  1
+    PS_5_28  PBAL_5_29  -1
+    PROD_5_29  COST  0
+    SELL_5_29  COST  -3
+    SELL_5_29  PBAL_5_29  1
+    SELL_5_29  COMMIT_5_29  1
+    PS_5_29  PBAL_5_29  1
+    PROD_6_0  COST  0
+    SELL_6_0  COST  -10
+    SELL_6_0  PBAL_6_0  1
+    PS_6_0  COST  -6
+    PS_6_0  PBAL_6_0  1
+    PS_6_0  PBAL_6_1  -1
+    PROD_6_1  COST  0
+    SELL_6_1  COST  -5
+    SELL_6_1  PBAL_6_1  1
+    PS_6_1  COST  1
+    PS_6_1  PBAL_6_1  1
+    PS_6_1  PBAL_6_2  -1
+    PROD_6_2  COST  0
+    SELL_6_2  COST  -1
+    SELL_6_2  PBAL_6_2  1
+    PS_6_2  COST  -4
+    PS_6_2  PBAL_6_2  1
+    PS_6_2  PBAL_6_3  -1
+    PROD_6_3  COST  0
+    SELL_6_3  COST  1
+    SELL_6_3  PBAL_6_3  1
+    PS_6_3  COST  16
+    PS_6_3  PBAL_6_3  1
+    PS_6_3  PBAL_6_4  -1
+    PROD_6_4  COST  0
+    SELL_6_4  COST  -8
+    SELL_6_4  PBAL_6_4  1
+    PS_6_4  COST  3
+    PS_6_4  PBAL_6_4  1
+    PS_6_4  PBAL_6_5  -1
+    PROD_6_5  COST  0
+    SELL_6_5  COST  5
+    SELL_6_5  PBAL_6_5  1
+    PS_6_5  COST  -1
+    PS_6_5  PBAL_6_5  1
+    PS_6_5  PBAL_6_6  -1
+    PROD_6_6  COST  0
+    SELL_6_6  COST  8
+    SELL_6_6  PBAL_6_6  1
+    PS_6_6  PBAL_6_6  1
+    PS_6_6  PBAL_6_7  -1
+    PROD_6_7  COST  0
+    SELL_6_7  COST  5
+    SELL_6_7  PBAL_6_7  1
+    PS_6_7  COST  2
+    PS_6_7  PBAL_6_7  1
+    PS_6_7  PBAL_6_8  -1
+    PROD_6_8  COST  0
+    SELL_6_8  COST  2
+    SELL_6_8  PBAL_6_8  1
+    PS_6_8  COST  10
+    PS_6_8  PBAL_6_8  1
+    PS_6_8  PBAL_6_9  -1
+    PROD_6_9  COST  0
+    SELL_6_9  COST  -9
+    SELL_6_9  PBAL_6_9  1
+    PS_6_9  COST  -10
+    PS_6_9  PBAL_6_9  1
+    PS_6_9  PBAL_6_10  -1
+    PROD_6_10  COST  0
+    SELL_6_10  COST  7
+    SELL_6_10  PBAL_6_10  1
+    PS_6_10  COST  9
+    PS_6_10  PBAL_6_10  1
+    PS_6_10  PBAL_6_11  -1
+    PROD_6_11  COST  0
+    SELL_6_11  COST  5
+    SELL_6_11  PBAL_6_11  1
+    PS_6_11  COST  11
+    PS_6_11  PBAL_6_11  1
+    PS_6_11  PBAL_6_12  -1
+    PROD_6_12  COST  0
+    SELL_6_12  COST  -8
+    SELL_6_12  PBAL_6_12  1
+    PS_6_12  COST  -13
+    PS_6_12  PBAL_6_12  1
+    PS_6_12  PBAL_6_13  -1
+    PROD_6_13  COST  0
+    SELL_6_13  COST  4
+    SELL_6_13  PBAL_6_13  1
+    PS_6_13  COST  10
+    PS_6_13  PBAL_6_13  1
+    PS_6_13  PBAL_6_14  -1
+    PROD_6_14  COST  0
+    SELL_6_14  COST  -6
+    SELL_6_14  PBAL_6_14  1
+    PS_6_14  COST  -16
+    PS_6_14  PBAL_6_14  1
+    PS_6_14  PBAL_6_15  -1
+    PROD_6_15  COST  0
+    SELL_6_15  COST  8
+    SELL_6_15  PBAL_6_15  1
+    PS_6_15  COST  -2
+    PS_6_15  PBAL_6_15  1
+    PS_6_15  PBAL_6_16  -1
+    PROD_6_16  COST  0
+    SELL_6_16  COST  1
+    SELL_6_16  PBAL_6_16  1
+    PS_6_16  COST  2
+    PS_6_16  PBAL_6_16  1
+    PS_6_16  PBAL_6_17  -1
+    PROD_6_17  COST  0
+    SELL_6_17  COST  -2
+    SELL_6_17  PBAL_6_17  1
+    PS_6_17  COST  1
+    PS_6_17  PBAL_6_17  1
+    PS_6_17  PBAL_6_18  -1
+    PROD_6_18  COST  0
+    SELL_6_18  COST  -4
+    SELL_6_18  PBAL_6_18  1
+    PS_6_18  COST  6
+    PS_6_18  PBAL_6_18  1
+    PS_6_18  PBAL_6_19  -1
+    PROD_6_19  COST  0
+    SELL_6_19  COST  -8
+    SELL_6_19  PBAL_6_19  1
+    PS_6_19  COST  -6
+    PS_6_19  PBAL_6_19  1
+    PS_6_19  PBAL_6_20  -1
+    PROD_6_20  COST  0
+    SELL_6_20  COST  -14
+    SELL_6_20  PBAL_6_20  1
+    PS_6_20  COST  -17
+    PS_6_20  PBAL_6_20  1
+    PS_6_20  PBAL_6_21  -1
+    PROD_6_21  COST  0
+    SELL_6_21  COST  8
+    SELL_6_21  PBAL_6_21  1
+    PS_6_21  COST  15
+    PS_6_21  PBAL_6_21  1
+    PS_6_21  PBAL_6_22  -1
+    PROD_6_22  COST  0
+    SELL_6_22  COST  -5
+    SELL_6_22  PBAL_6_22  1
+    PS_6_22  COST  -11
+    PS_6_22  PBAL_6_22  1
+    PS_6_22  PBAL_6_23  -1
+    PROD_6_23  COST  0
+    SELL_6_23  COST  9
+    SELL_6_23  PBAL_6_23  1
+    PS_6_23  COST  8
+    PS_6_23  PBAL_6_23  1
+    PS_6_23  PBAL_6_24  -1
+    PROD_6_24  COST  0
+    SELL_6_24  COST  1
+    SELL_6_24  PBAL_6_24  1
+    PS_6_24  COST  -2
+    PS_6_24  PBAL_6_24  1
+    PS_6_24  PBAL_6_25  -1
+    PROD_6_25  COST  0
+    SELL_6_25  COST  6
+    SELL_6_25  PBAL_6_25  1
+    PS_6_25  COST  -1
+    PS_6_25  PBAL_6_25  1
+    PS_6_25  PBAL_6_26  -1
+    PROD_6_26  COST  0
+    SELL_6_26  PBAL_6_26  1
+    PS_6_26  COST  16
+    PS_6_26  PBAL_6_26  1
+    PS_6_26  PBAL_6_27  -1
+    PROD_6_27  COST  0
+    SELL_6_27  COST  -1
+    SELL_6_27  PBAL_6_27  1
+    PS_6_27  COST  10
+    PS_6_27  PBAL_6_27  1
+    PS_6_27  PBAL_6_28  -1
+    PROD_6_28  COST  0
+    SELL_6_28  COST  -5
+    SELL_6_28  PBAL_6_28  1
+    PS_6_28  COST  -14
+    PS_6_28  PBAL_6_28  1
+    PS_6_28  PBAL_6_29  -1
+    PROD_6_29  COST  0
+    SELL_6_29  COST  1
+    SELL_6_29  PBAL_6_29  1
+    PS_6_29  COST  2
+    PS_6_29  PBAL_6_29  1
+    PROD_7_0  COST  0
+    SELL_7_0  COST  -6
+    SELL_7_0  PBAL_7_0  1
+    SELL_7_0  COMMIT_7_0  1
+    PS_7_0  COST  -7
+    PS_7_0  PBAL_7_0  1
+    PS_7_0  PBAL_7_1  -1
+    PROD_7_1  COST  0
+    SELL_7_1  COST  -2
+    SELL_7_1  PBAL_7_1  1
+    SELL_7_1  COMMIT_7_1  1
+    PS_7_1  COST  7
+    PS_7_1  PBAL_7_1  1
+    PS_7_1  PBAL_7_2  -1
+    PROD_7_2  COST  0
+    SELL_7_2  PBAL_7_2  1
+    SELL_7_2  COMMIT_7_2  1
+    PS_7_2  COST  -6
+    PS_7_2  PBAL_7_2  1
+    PS_7_2  PBAL_7_3  -1
+    PROD_7_3  COST  0
+    SELL_7_3  COST  9
+    SELL_7_3  PBAL_7_3  1
+    SELL_7_3  COMMIT_7_3  1
+    PS_7_3  COST  2
+    PS_7_3  PBAL_7_3  1
+    PS_7_3  PBAL_7_4  -1
+    PROD_7_4  COST  0
+    SELL_7_4  COST  -1
+    SELL_7_4  PBAL_7_4  1
+    SELL_7_4  COMMIT_7_4  1
+    PS_7_4  COST  -3
+    PS_7_4  PBAL_7_4  1
+    PS_7_4  PBAL_7_5  -1
+    PROD_7_5  COST  0
+    SELL_7_5  COST  5
+    SELL_7_5  PBAL_7_5  1
+    SELL_7_5  COMMIT_7_5  1
+    PS_7_5  COST  7
+    PS_7_5  PBAL_7_5  1
+    PS_7_5  PBAL_7_6  -1
+    PROD_7_6  COST  0
+    SELL_7_6  COST  -4
+    SELL_7_6  PBAL_7_6  1
+    SELL_7_6  COMMIT_7_6  1
+    PS_7_6  COST  -8
+    PS_7_6  PBAL_7_6  1
+    PS_7_6  PBAL_7_7  -1
+    PROD_7_7  COST  0
+    SELL_7_7  COST  10
+    SELL_7_7  PBAL_7_7  1
+    SELL_7_7  COMMIT_7_7  1
+    PS_7_7  COST  13
+    PS_7_7  PBAL_7_7  1
+    PS_7_7  PBAL_7_8  -1
+    PROD_7_8  COST  0
+    SELL_7_8  COST  1
+    SELL_7_8  PBAL_7_8  1
+    SELL_7_8  COMMIT_7_8  1
+    PS_7_8  COST  -7
+    PS_7_8  PBAL_7_8  1
+    PS_7_8  PBAL_7_9  -1
+    PROD_7_9  COST  0
+    SELL_7_9  COST  -1
+    SELL_7_9  PBAL_7_9  1
+    SELL_7_9  COMMIT_7_9  1
+    PS_7_9  COST  -2
+    PS_7_9  PBAL_7_9  1
+    PS_7_9  PBAL_7_10  -1
+    PROD_7_10  COST  0
+    SELL_7_10  COST  1
+    SELL_7_10  PBAL_7_10  1
+    SELL_7_10  COMMIT_7_10  1
+    PS_7_10  COST  22
+    PS_7_10  PBAL_7_10  1
+    PS_7_10  PBAL_7_11  -1
+    PROD_7_11  COST  0
+    SELL_7_11  COST  -6
+    SELL_7_11  PBAL_7_11  1
+    SELL_7_11  COMMIT_7_11  1
+    PS_7_11  COST  -14
+    PS_7_11  PBAL_7_11  1
+    PS_7_11  PBAL_7_12  -1
+    PROD_7_12  COST  0
+    SELL_7_12  COST  9
+    SELL_7_12  PBAL_7_12  1
+    SELL_7_12  COMMIT_7_12  1
+    PS_7_12  COST  -7
+    PS_7_12  PBAL_7_12  1
+    PS_7_12  PBAL_7_13  -1
+    PROD_7_13  COST  0
+    SELL_7_13  COST  6
+    SELL_7_13  PBAL_7_13  1
+    SELL_7_13  COMMIT_7_13  1
+    PS_7_13  COST  -4
+    PS_7_13  PBAL_7_13  1
+    PS_7_13  PBAL_7_14  -1
+    PROD_7_14  COST  0
+    SELL_7_14  COST  -9
+    SELL_7_14  PBAL_7_14  1
+    SELL_7_14  COMMIT_7_14  1
+    PS_7_14  COST  6
+    PS_7_14  PBAL_7_14  1
+    PS_7_14  PBAL_7_15  -1
+    PROD_7_15  COST  0
+    SELL_7_15  COST  6
+    SELL_7_15  PBAL_7_15  1
+    SELL_7_15  COMMIT_7_15  1
+    PS_7_15  COST  14
+    PS_7_15  PBAL_7_15  1
+    PS_7_15  PBAL_7_16  -1
+    PROD_7_16  COST  0
+    SELL_7_16  COST  -10
+    SELL_7_16  PBAL_7_16  1
+    SELL_7_16  COMMIT_7_16  1
+    PS_7_16  COST  2
+    PS_7_16  PBAL_7_16  1
+    PS_7_16  PBAL_7_17  -1
+    PROD_7_17  COST  0
+    SELL_7_17  COST  -12
+    SELL_7_17  PBAL_7_17  1
+    SELL_7_17  COMMIT_7_17  1
+    PS_7_17  COST  -3
+    PS_7_17  PBAL_7_17  1
+    PS_7_17  PBAL_7_18  -1
+    PROD_7_18  COST  0
+    SELL_7_18  COST  -2
+    SELL_7_18  PBAL_7_18  1
+    SELL_7_18  COMMIT_7_18  1
+    PS_7_18  COST  10
+    PS_7_18  PBAL_7_18  1
+    PS_7_18  PBAL_7_19  -1
+    PROD_7_19  COST  0
+    SELL_7_19  COST  -8
+    SELL_7_19  PBAL_7_19  1
+    SELL_7_19  COMMIT_7_19  1
+    PS_7_19  COST  1
+    PS_7_19  PBAL_7_19  1
+    PS_7_19  PBAL_7_20  -1
+    PROD_7_20  COST  0
+    SELL_7_20  COST  -14
+    SELL_7_20  PBAL_7_20  1
+    SELL_7_20  COMMIT_7_20  1
+    PS_7_20  COST  -3
+    PS_7_20  PBAL_7_20  1
+    PS_7_20  PBAL_7_21  -1
+    PROD_7_21  COST  0
+    SELL_7_21  COST  -13
+    SELL_7_21  PBAL_7_21  1
+    SELL_7_21  COMMIT_7_21  1
+    PS_7_21  COST  -13
+    PS_7_21  PBAL_7_21  1
+    PS_7_21  PBAL_7_22  -1
+    PROD_7_22  COST  0
+    SELL_7_22  COST  4
+    SELL_7_22  PBAL_7_22  1
+    SELL_7_22  COMMIT_7_22  1
+    PS_7_22  COST  7
+    PS_7_22  PBAL_7_22  1
+    PS_7_22  PBAL_7_23  -1
+    PROD_7_23  COST  0
+    SELL_7_23  COST  2
+    SELL_7_23  PBAL_7_23  1
+    SELL_7_23  COMMIT_7_23  1
+    PS_7_23  COST  -6
+    PS_7_23  PBAL_7_23  1
+    PS_7_23  PBAL_7_24  -1
+    PROD_7_24  COST  0
+    SELL_7_24  COST  14
+    SELL_7_24  PBAL_7_24  1
+    SELL_7_24  COMMIT_7_24  1
+    PS_7_24  COST  5
+    PS_7_24  PBAL_7_24  1
+    PS_7_24  PBAL_7_25  -1
+    PROD_7_25  COST  0
+    SELL_7_25  COST  13
+    SELL_7_25  PBAL_7_25  1
+    SELL_7_25  COMMIT_7_25  1
+    PS_7_25  COST  6
+    PS_7_25  PBAL_7_25  1
+    PS_7_25  PBAL_7_26  -1
+    PROD_7_26  COST  0
+    SELL_7_26  COST  -7
+    SELL_7_26  PBAL_7_26  1
+    SELL_7_26  COMMIT_7_26  1
+    PS_7_26  COST  2
+    PS_7_26  PBAL_7_26  1
+    PS_7_26  PBAL_7_27  -1
+    PROD_7_27  COST  0
+    SELL_7_27  COST  -4
+    SELL_7_27  PBAL_7_27  1
+    SELL_7_27  COMMIT_7_27  1
+    PS_7_27  COST  -5
+    PS_7_27  PBAL_7_27  1
+    PS_7_27  PBAL_7_28  -1
+    PROD_7_28  COST  0
+    SELL_7_28  PBAL_7_28  1
+    SELL_7_28  COMMIT_7_28  1
+    PS_7_28  COST  15
+    PS_7_28  PBAL_7_28  1
+    PS_7_28  PBAL_7_29  -1
+    PROD_7_29  COST  0
+    SELL_7_29  COST  -3
+    SELL_7_29  PBAL_7_29  1
+    SELL_7_29  COMMIT_7_29  1
+    PS_7_29  COST  -7
+    PS_7_29  PBAL_7_29  1
+    PROD_8_0  COST  0
+    SELL_8_0  COST  7
+    SELL_8_0  PBAL_8_0  1
+    PS_8_0  COST  8
+    PS_8_0  PBAL_8_0  1
+    PS_8_0  PBAL_8_1  -1
+    PROD_8_1  COST  0
+    SELL_8_1  COST  -11
+    SELL_8_1  PBAL_8_1  1
+    PS_8_1  PBAL_8_1  1
+    PS_8_1  PBAL_8_2  -1
+    PROD_8_2  COST  0
+    SELL_8_2  COST  -9
+    SELL_8_2  PBAL_8_2  1
+    PS_8_2  COST  -6
+    PS_8_2  PBAL_8_2  1
+    PS_8_2  PBAL_8_3  -1
+    PROD_8_3  COST  0
+    SELL_8_3  COST  -1
+    SELL_8_3  PBAL_8_3  1
+    PS_8_3  COST  -2
+    PS_8_3  PBAL_8_3  1
+    PS_8_3  PBAL_8_4  -1
+    PROD_8_4  COST  0
+    SELL_8_4  COST  -2
+    SELL_8_4  PBAL_8_4  1
+    PS_8_4  COST  -9
+    PS_8_4  PBAL_8_4  1
+    PS_8_4  PBAL_8_5  -1
+    PROD_8_5  COST  0
+    SELL_8_5  COST  8
+    SELL_8_5  PBAL_8_5  1
+    PS_8_5  COST  3
+    PS_8_5  PBAL_8_5  1
+    PS_8_5  PBAL_8_6  -1
+    PROD_8_6  COST  0
+    SELL_8_6  COST  2
+    SELL_8_6  PBAL_8_6  1
+    PS_8_6  COST  -5
+    PS_8_6  PBAL_8_6  1
+    PS_8_6  PBAL_8_7  -1
+    PROD_8_7  COST  0
+    SELL_8_7  COST  8
+    SELL_8_7  PBAL_8_7  1
+    PS_8_7  COST  12
+    PS_8_7  PBAL_8_7  1
+    PS_8_7  PBAL_8_8  -1
+    PROD_8_8  COST  0
+    SELL_8_8  COST  3
+    SELL_8_8  PBAL_8_8  1
+    PS_8_8  COST  13
+    PS_8_8  PBAL_8_8  1
+    PS_8_8  PBAL_8_9  -1
+    PROD_8_9  COST  0
+    SELL_8_9  COST  -14
+    SELL_8_9  PBAL_8_9  1
+    PS_8_9  COST  -9
+    PS_8_9  PBAL_8_9  1
+    PS_8_9  PBAL_8_10  -1
+    PROD_8_10  COST  0
+    SELL_8_10  COST  -2
+    SELL_8_10  PBAL_8_10  1
+    PS_8_10  COST  6
+    PS_8_10  PBAL_8_10  1
+    PS_8_10  PBAL_8_11  -1
+    PROD_8_11  COST  0
+    SELL_8_11  COST  1
+    SELL_8_11  PBAL_8_11  1
+    PS_8_11  COST  -4
+    PS_8_11  PBAL_8_11  1
+    PS_8_11  PBAL_8_12  -1
+    PROD_8_12  COST  0
+    SELL_8_12  COST  1
+    SELL_8_12  PBAL_8_12  1
+    PS_8_12  COST  11
+    PS_8_12  PBAL_8_12  1
+    PS_8_12  PBAL_8_13  -1
+    PROD_8_13  COST  0
+    SELL_8_13  COST  -15
+    SELL_8_13  PBAL_8_13  1
+    PS_8_13  COST  -2
+    PS_8_13  PBAL_8_13  1
+    PS_8_13  PBAL_8_14  -1
+    PROD_8_14  COST  0
+    SELL_8_14  COST  -10
+    SELL_8_14  PBAL_8_14  1
+    PS_8_14  COST  -19
+    PS_8_14  PBAL_8_14  1
+    PS_8_14  PBAL_8_15  -1
+    PROD_8_15  COST  0
+    SELL_8_15  COST  6
+    SELL_8_15  PBAL_8_15  1
+    PS_8_15  COST  9
+    PS_8_15  PBAL_8_15  1
+    PS_8_15  PBAL_8_16  -1
+    PROD_8_16  COST  0
+    SELL_8_16  COST  -5
+    SELL_8_16  PBAL_8_16  1
+    PS_8_16  PBAL_8_16  1
+    PS_8_16  PBAL_8_17  -1
+    PROD_8_17  COST  0
+    SELL_8_17  COST  2
+    SELL_8_17  PBAL_8_17  1
+    PS_8_17  COST  12
+    PS_8_17  PBAL_8_17  1
+    PS_8_17  PBAL_8_18  -1
+    PROD_8_18  COST  0
+    SELL_8_18  COST  -7
+    SELL_8_18  PBAL_8_18  1
+    PS_8_18  COST  -16
+    PS_8_18  PBAL_8_18  1
+    PS_8_18  PBAL_8_19  -1
+    PROD_8_19  COST  0
+    SELL_8_19  COST  4
+    SELL_8_19  PBAL_8_19  1
+    PS_8_19  COST  3
+    PS_8_19  PBAL_8_19  1
+    PS_8_19  PBAL_8_20  -1
+    PROD_8_20  COST  0
+    SELL_8_20  COST  3
+    SELL_8_20  PBAL_8_20  1
+    PS_8_20  COST  9
+    PS_8_20  PBAL_8_20  1
+    PS_8_20  PBAL_8_21  -1
+    PROD_8_21  COST  0
+    SELL_8_21  COST  -14
+    SELL_8_21  PBAL_8_21  1
+    PS_8_21  COST  -14
+    PS_8_21  PBAL_8_21  1
+    PS_8_21  PBAL_8_22  -1
+    PROD_8_22  COST  0
+    SELL_8_22  COST  1
+    SELL_8_22  PBAL_8_22  1
+    PS_8_22  COST  8
+    PS_8_22  PBAL_8_22  1
+    PS_8_22  PBAL_8_23  -1
+    PROD_8_23  COST  0
+    SELL_8_23  COST  -1
+    SELL_8_23  PBAL_8_23  1
+    PS_8_23  COST  -5
+    PS_8_23  PBAL_8_23  1
+    PS_8_23  PBAL_8_24  -1
+    PROD_8_24  COST  0
+    SELL_8_24  COST  -11
+    SELL_8_24  PBAL_8_24  1
+    PS_8_24  COST  5
+    PS_8_24  PBAL_8_24  1
+    PS_8_24  PBAL_8_25  -1
+    PROD_8_25  COST  0
+    SELL_8_25  COST  -9
+    SELL_8_25  PBAL_8_25  1
+    PS_8_25  COST  6
+    PS_8_25  PBAL_8_25  1
+    PS_8_25  PBAL_8_26  -1
+    PROD_8_26  COST  0
+    SELL_8_26  COST  -8
+    SELL_8_26  PBAL_8_26  1
+    PS_8_26  PBAL_8_26  1
+    PS_8_26  PBAL_8_27  -1
+    PROD_8_27  COST  0
+    SELL_8_27  COST  -2
+    SELL_8_27  PBAL_8_27  1
+    PS_8_27  COST  1
+    PS_8_27  PBAL_8_27  1
+    PS_8_27  PBAL_8_28  -1
+    PROD_8_28  COST  0
+    SELL_8_28  COST  4
+    SELL_8_28  PBAL_8_28  1
+    PS_8_28  COST  -2
+    PS_8_28  PBAL_8_28  1
+    PS_8_28  PBAL_8_29  -1
+    PROD_8_29  COST  0
+    SELL_8_29  PBAL_8_29  1
+    PS_8_29  COST  7
+    PS_8_29  PBAL_8_29  1
+    PROD_9_0  COST  0
+    SELL_9_0  COST  3
+    SELL_9_0  PBAL_9_0  1
+    SELL_9_0  COMMIT_9_0  1
+    PS_9_0  COST  2
+    PS_9_0  PBAL_9_0  1
+    PS_9_0  PBAL_9_1  -1
+    PROD_9_1  COST  0
+    SELL_9_1  COST  -12
+    SELL_9_1  PBAL_9_1  1
+    SELL_9_1  COMMIT_9_1  1
+    PS_9_1  COST  3
+    PS_9_1  PBAL_9_1  1
+    PS_9_1  PBAL_9_2  -1
+    PROD_9_2  COST  0
+    SELL_9_2  COST  -6
+    SELL_9_2  PBAL_9_2  1
+    SELL_9_2  COMMIT_9_2  1
+    PS_9_2  COST  12
+    PS_9_2  PBAL_9_2  1
+    PS_9_2  PBAL_9_3  -1
+    PROD_9_3  COST  0
+    SELL_9_3  COST  -8
+    SELL_9_3  PBAL_9_3  1
+    SELL_9_3  COMMIT_9_3  1
+    PS_9_3  PBAL_9_3  1
+    PS_9_3  PBAL_9_4  -1
+    PROD_9_4  COST  0
+    SELL_9_4  COST  -9
+    SELL_9_4  PBAL_9_4  1
+    SELL_9_4  COMMIT_9_4  1
+    PS_9_4  COST  3
+    PS_9_4  PBAL_9_4  1
+    PS_9_4  PBAL_9_5  -1
+    PROD_9_5  COST  0
+    SELL_9_5  COST  -10
+    SELL_9_5  PBAL_9_5  1
+    SELL_9_5  COMMIT_9_5  1
+    PS_9_5  COST  4
+    PS_9_5  PBAL_9_5  1
+    PS_9_5  PBAL_9_6  -1
+    PROD_9_6  COST  0
+    SELL_9_6  COST  6
+    SELL_9_6  PBAL_9_6  1
+    SELL_9_6  COMMIT_9_6  1
+    PS_9_6  COST  3
+    PS_9_6  PBAL_9_6  1
+    PS_9_6  PBAL_9_7  -1
+    PROD_9_7  COST  0
+    SELL_9_7  COST  -8
+    SELL_9_7  PBAL_9_7  1
+    SELL_9_7  COMMIT_9_7  1
+    PS_9_7  COST  1
+    PS_9_7  PBAL_9_7  1
+    PS_9_7  PBAL_9_8  -1
+    PROD_9_8  COST  0
+    SELL_9_8  COST  -6
+    SELL_9_8  PBAL_9_8  1
+    SELL_9_8  COMMIT_9_8  1
+    PS_9_8  PBAL_9_8  1
+    PS_9_8  PBAL_9_9  -1
+    PROD_9_9  COST  0
+    SELL_9_9  COST  -8
+    SELL_9_9  PBAL_9_9  1
+    SELL_9_9  COMMIT_9_9  1
+    PS_9_9  COST  -17
+    PS_9_9  PBAL_9_9  1
+    PS_9_9  PBAL_9_10  -1
+    PROD_9_10  COST  0
+    SELL_9_10  COST  7
+    SELL_9_10  PBAL_9_10  1
+    SELL_9_10  COMMIT_9_10  1
+    PS_9_10  COST  14
+    PS_9_10  PBAL_9_10  1
+    PS_9_10  PBAL_9_11  -1
+    PROD_9_11  COST  0
+    SELL_9_11  COST  10
+    SELL_9_11  PBAL_9_11  1
+    SELL_9_11  COMMIT_9_11  1
+    PS_9_11  COST  -14
+    PS_9_11  PBAL_9_11  1
+    PS_9_11  PBAL_9_12  -1
+    PROD_9_12  COST  0
+    SELL_9_12  COST  5
+    SELL_9_12  PBAL_9_12  1
+    SELL_9_12  COMMIT_9_12  1
+    PS_9_12  COST  -2
+    PS_9_12  PBAL_9_12  1
+    PS_9_12  PBAL_9_13  -1
+    PROD_9_13  COST  0
+    SELL_9_13  COST  17
+    SELL_9_13  PBAL_9_13  1
+    SELL_9_13  COMMIT_9_13  1
+    PS_9_13  COST  20
+    PS_9_13  PBAL_9_13  1
+    PS_9_13  PBAL_9_14  -1
+    PROD_9_14  COST  0
+    SELL_9_14  PBAL_9_14  1
+    SELL_9_14  COMMIT_9_14  1
+    PS_9_14  COST  -9
+    PS_9_14  PBAL_9_14  1
+    PS_9_14  PBAL_9_15  -1
+    PROD_9_15  COST  0
+    SELL_9_15  COST  3
+    SELL_9_15  PBAL_9_15  1
+    SELL_9_15  COMMIT_9_15  1
+    PS_9_15  COST  -13
+    PS_9_15  PBAL_9_15  1
+    PS_9_15  PBAL_9_16  -1
+    PROD_9_16  COST  0
+    SELL_9_16  COST  6
+    SELL_9_16  PBAL_9_16  1
+    SELL_9_16  COMMIT_9_16  1
+    PS_9_16  PBAL_9_16  1
+    PS_9_16  PBAL_9_17  -1
+    PROD_9_17  COST  0
+    SELL_9_17  COST  -4
+    SELL_9_17  PBAL_9_17  1
+    SELL_9_17  COMMIT_9_17  1
+    PS_9_17  COST  -1
+    PS_9_17  PBAL_9_17  1
+    PS_9_17  PBAL_9_18  -1
+    PROD_9_18  COST  0
+    SELL_9_18  COST  -2
+    SELL_9_18  PBAL_9_18  1
+    SELL_9_18  COMMIT_9_18  1
+    PS_9_18  COST  -3
+    PS_9_18  PBAL_9_18  1
+    PS_9_18  PBAL_9_19  -1
+    PROD_9_19  COST  0
+    SELL_9_19  COST  -3
+    SELL_9_19  PBAL_9_19  1
+    SELL_9_19  COMMIT_9_19  1
+    PS_9_19  COST  2
+    PS_9_19  PBAL_9_19  1
+    PS_9_19  PBAL_9_20  -1
+    PROD_9_20  COST  0
+    SELL_9_20  COST  7
+    SELL_9_20  PBAL_9_20  1
+    SELL_9_20  COMMIT_9_20  1
+    PS_9_20  COST  17
+    PS_9_20  PBAL_9_20  1
+    PS_9_20  PBAL_9_21  -1
+    PROD_9_21  COST  0
+    SELL_9_21  COST  -2
+    SELL_9_21  PBAL_9_21  1
+    SELL_9_21  COMMIT_9_21  1
+    PS_9_21  COST  2
+    PS_9_21  PBAL_9_21  1
+    PS_9_21  PBAL_9_22  -1
+    PROD_9_22  COST  0
+    SELL_9_22  COST  4
+    SELL_9_22  PBAL_9_22  1
+    SELL_9_22  COMMIT_9_22  1
+    PS_9_22  COST  5
+    PS_9_22  PBAL_9_22  1
+    PS_9_22  PBAL_9_23  -1
+    PROD_9_23  COST  0
+    SELL_9_23  COST  1
+    SELL_9_23  PBAL_9_23  1
+    SELL_9_23  COMMIT_9_23  1
+    PS_9_23  COST  8
+    PS_9_23  PBAL_9_23  1
+    PS_9_23  PBAL_9_24  -1
+    PROD_9_24  COST  0
+    SELL_9_24  COST  -14
+    SELL_9_24  PBAL_9_24  1
+    SELL_9_24  COMMIT_9_24  1
+    PS_9_24  COST  -3
+    PS_9_24  PBAL_9_24  1
+    PS_9_24  PBAL_9_25  -1
+    PROD_9_25  COST  0
+    SELL_9_25  COST  12
+    SELL_9_25  PBAL_9_25  1
+    SELL_9_25  COMMIT_9_25  1
+    PS_9_25  COST  4
+    PS_9_25  PBAL_9_25  1
+    PS_9_25  PBAL_9_26  -1
+    PROD_9_26  COST  0
+    SELL_9_26  PBAL_9_26  1
+    SELL_9_26  COMMIT_9_26  1
+    PS_9_26  COST  16
+    PS_9_26  PBAL_9_26  1
+    PS_9_26  PBAL_9_27  -1
+    PROD_9_27  COST  0
+    SELL_9_27  COST  -3
+    SELL_9_27  PBAL_9_27  1
+    SELL_9_27  COMMIT_9_27  1
+    PS_9_27  COST  -3
+    PS_9_27  PBAL_9_27  1
+    PS_9_27  PBAL_9_28  -1
+    PROD_9_28  COST  0
+    SELL_9_28  COST  1
+    SELL_9_28  PBAL_9_28  1
+    SELL_9_28  COMMIT_9_28  1
+    PS_9_28  COST  17
+    PS_9_28  PBAL_9_28  1
+    PS_9_28  PBAL_9_29  -1
+    PROD_9_29  COST  0
+    SELL_9_29  COST  -7
+    SELL_9_29  PBAL_9_29  1
+    SELL_9_29  COMMIT_9_29  1
+    PS_9_29  COST  -9
+    PS_9_29  PBAL_9_29  1
+RHS
+    RHS  CBAL_0_0  4
+    RHS  CBAL_1_0  25
+    RHS  CBAL_2_0  39
+    RHS  CBAL_3_0  32
+    RHS  CBAL_4_0  37
+    RHS  CBAL_5_0  37
+    RHS  CBAL_6_0  27
+    RHS  CBAL_7_0  2
+    RHS  CDU_0  101
+    RHS  PBAL_0_0  22
+    RHS  PBAL_1_0  35
+    RHS  PBAL_2_0  11
+    RHS  PBAL_3_0  25
+    RHS  PBAL_4_0  7
+    RHS  PBAL_5_0  32
+    RHS  PBAL_6_0  21
+    RHS  PBAL_7_0  36
+    RHS  PBAL_8_0  22
+    RHS  PBAL_9_0  39
+    RHS  UNIT_0_0  24.97
+    RHS  UNIT_1_0  39.73
+    RHS  UNIT_2_0  42.27
+    RHS  UNIT_3_0  55.89
+    RHS  UNIT_4_0  55.31
+    RHS  UNIT_5_0  43.56
+    RHS  SPEC_0_0  5.29
+    RHS  SPEC_1_0  4.171
+    RHS  SPEC_2_0  6.794
+    RHS  SPEC_3_0  7.543
+    RHS  SPEC_4_0  3.173
+    RHS  COMMIT_4_0  26.17
+    RHS  COMMIT_5_0  30
+    RHS  COMMIT_7_0  21
+    RHS  COMMIT_9_0  55.13
+    RHS  CDU_1  71
+    RHS  UNIT_0_1  34.09
+    RHS  UNIT_1_1  36.11
+    RHS  UNIT_2_1  30.95
+    RHS  UNIT_3_1  24.8
+    RHS  UNIT_4_1  7.94
+    RHS  UNIT_5_1  28.64
+    RHS  SPEC_0_1  5.704
+    RHS  SPEC_1_1  2.582
+    RHS  SPEC_2_1  2.229
+    RHS  SPEC_3_1  6.238
+    RHS  SPEC_4_1  5.624
+    RHS  COMMIT_4_1  17.04
+    RHS  COMMIT_5_1  14.76
+    RHS  COMMIT_7_1  27.95
+    RHS  COMMIT_9_1  10.41
+    RHS  CDU_2  114
+    RHS  UNIT_0_2  42.64
+    RHS  UNIT_1_2  59.35
+    RHS  UNIT_2_2  50.35
+    RHS  UNIT_3_2  47.86
+    RHS  UNIT_4_2  49.88
+    RHS  UNIT_5_2  46.07
+    RHS  SPEC_0_2  3.056
+    RHS  SPEC_1_2  3.749
+    RHS  SPEC_2_2  2.993
+    RHS  SPEC_3_2  2.928
+    RHS  SPEC_4_2  7.871
+    RHS  COMMIT_4_2  8
+    RHS  COMMIT_5_2  16.55
+    RHS  COMMIT_7_2  15.66
+    RHS  COMMIT_9_2  12.25
+    RHS  CDU_3  82
+    RHS  UNIT_0_3  23.46
+    RHS  UNIT_1_3  39.98
+    RHS  UNIT_2_3  32.07
+    RHS  UNIT_3_3  42.05
+    RHS  UNIT_4_3  27.55
+    RHS  UNIT_5_3  24.58
+    RHS  SPEC_0_3  6.669
+    RHS  SPEC_1_3  7.194
+    RHS  SPEC_2_3  3.862
+    RHS  SPEC_3_3  6.145
+    RHS  SPEC_4_3  5.975
+    RHS  COMMIT_4_3  17
+    RHS  COMMIT_5_3  1.07
+    RHS  COMMIT_7_3  7.21
+    RHS  COMMIT_9_3  15.28
+    RHS  CDU_4  138
+    RHS  UNIT_0_4  47.76
+    RHS  UNIT_1_4  70.49
+    RHS  UNIT_2_4  74.76
+    RHS  UNIT_3_4  75.16
+    RHS  UNIT_4_4  88.25
+    RHS  UNIT_5_4  41.49
+    RHS  SPEC_0_4  4.5
+    RHS  SPEC_1_4  4.18
+    RHS  SPEC_2_4  2.597
+    RHS  SPEC_3_4  8.276
+    RHS  SPEC_4_4  4.276
+    RHS  COMMIT_4_4  46.53
+    RHS  COMMIT_5_4  17.26
+    RHS  COMMIT_7_4  18.15
+    RHS  COMMIT_9_4  14.89
+    RHS  CDU_5  130
+    RHS  UNIT_0_5  51.1
+    RHS  UNIT_1_5  56.54
+    RHS  UNIT_2_5  58.15
+    RHS  UNIT_3_5  49.62
+    RHS  UNIT_4_5  38.94
+    RHS  UNIT_5_5  56.33
+    RHS  SPEC_0_5  7.148
+    RHS  SPEC_1_5  5.259
+    RHS  SPEC_2_5  4.023
+    RHS  SPEC_3_5  3.973
+    RHS  SPEC_4_5  3.129
+    RHS  COMMIT_4_5  30.03
+    RHS  COMMIT_5_5  14.7
+    RHS  COMMIT_7_5  15.29
+    RHS  COMMIT_9_5  10.04
+    RHS  CDU_6  176
+    RHS  UNIT_0_6  76.42
+    RHS  UNIT_1_6  87.65
+    RHS  UNIT_2_6  63.07
+    RHS  UNIT_3_6  90.77
+    RHS  UNIT_4_6  103.65
+    RHS  UNIT_5_6  70.2
+    RHS  SPEC_0_6  9.343
+    RHS  SPEC_1_6  6.422
+    RHS  SPEC_2_6  4.492
+    RHS  SPEC_3_6  4.614
+    RHS  SPEC_4_6  10.425
+    RHS  COMMIT_4_6  25
+    RHS  COMMIT_5_6  24.32
+    RHS  COMMIT_7_6  -1
+    RHS  COMMIT_9_6  21.67
+    RHS  CDU_7  77
+    RHS  UNIT_0_7  36.37
+    RHS  UNIT_1_7  50.8
+    RHS  UNIT_2_7  31.82
+    RHS  UNIT_3_7  25.28
+    RHS  UNIT_4_7  30.09
+    RHS  UNIT_5_7  26.22
+    RHS  SPEC_0_7  5.943
+    RHS  SPEC_1_7  3.075
+    RHS  SPEC_2_7  4.712
+    RHS  SPEC_3_7  3.413
+    RHS  SPEC_4_7  4.926
+    RHS  COMMIT_4_7  20
+    RHS  COMMIT_5_7  6.78
+    RHS  COMMIT_7_7  2
+    RHS  COMMIT_9_7  2.91
+    RHS  CDU_8  114
+    RHS  UNIT_0_8  41.21
+    RHS  UNIT_1_8  53.55
+    RHS  UNIT_2_8  51.64
+    RHS  UNIT_3_8  49.26
+    RHS  UNIT_4_8  61.66
+    RHS  UNIT_5_8  54.76
+    RHS  SPEC_0_8  3.206
+    RHS  SPEC_1_8  4.511
+    RHS  SPEC_2_8  5.181
+    RHS  SPEC_3_8  3.193
+    RHS  SPEC_4_8  2.911
+    RHS  COMMIT_4_8  52.8
+    RHS  COMMIT_5_8  15.54
+    RHS  COMMIT_7_8  39
+    RHS  COMMIT_9_8  8.68
+    RHS  CDU_9  96
+    RHS  UNIT_0_9  39.76
+    RHS  UNIT_1_9  48.16
+    RHS  UNIT_2_9  43.14
+    RHS  UNIT_3_9  53.12
+    RHS  UNIT_4_9  59.68
+    RHS  UNIT_5_9  36.81
+    RHS  SPEC_0_9  2.288
+    RHS  SPEC_1_9  5.156
+    RHS  SPEC_2_9  1.723
+    RHS  SPEC_3_9  2.536
+    RHS  SPEC_4_9  3.442
+    RHS  COMMIT_4_9  24.58
+    RHS  COMMIT_5_9  14.44
+    RHS  COMMIT_7_9  12.19
+    RHS  COMMIT_9_9  12.37
+    RHS  CDU_10  136
+    RHS  UNIT_0_10  56.75
+    RHS  UNIT_1_10  84.55
+    RHS  UNIT_2_10  66.61
+    RHS  UNIT_3_10  59.7
+    RHS  UNIT_4_10  67.43
+    RHS  UNIT_5_10  62.77
+    RHS  SPEC_0_10  3.496
+    RHS  SPEC_1_10  10.048
+    RHS  SPEC_2_10  2.808
+    RHS  SPEC_3_10  5.143
+    RHS  SPEC_4_10  3.966
+    RHS  COMMIT_4_10  33.78
+    RHS  COMMIT_5_10  20.77
+    RHS  COMMIT_7_10  19.1
+    RHS  COMMIT_9_10  15.97
+    RHS  CDU_11  89
+    RHS  UNIT_0_11  33.31
+    RHS  UNIT_1_11  32.05
+    RHS  UNIT_2_11  45.12
+    RHS  UNIT_3_11  46.65
+    RHS  UNIT_4_11  47.42
+    RHS  UNIT_5_11  39.65
+    RHS  SPEC_0_11  2.54
+    RHS  SPEC_1_11  3.068
+    RHS  SPEC_2_11  3.427
+    RHS  SPEC_3_11  5.186
+    RHS  SPEC_4_11  4.778
+    RHS  COMMIT_4_11  22.32
+    RHS  COMMIT_5_11  10.3
+    RHS  COMMIT_7_11  8
+    RHS  COMMIT_9_11  9.06
+    RHS  CDU_12  126
+    RHS  UNIT_0_12  41.79
+    RHS  UNIT_1_12  65.35
+    RHS  UNIT_2_12  52.79
+    RHS  UNIT_3_12  73.99
+    RHS  UNIT_4_12  85.2
+    RHS  UNIT_5_12  59.08
+    RHS  SPEC_0_12  3.139
+    RHS  SPEC_1_12  4.807
+    RHS  SPEC_2_12  1.865
+    RHS  SPEC_3_12  3.183
+    RHS  SPEC_4_12  7.686
+    RHS  COMMIT_4_12  32.11
+    RHS  COMMIT_5_12  3
+    RHS  COMMIT_7_12  16.45
+    RHS  COMMIT_9_12  6
+    RHS  CDU_13  77
+    RHS  UNIT_0_13  37.56
+    RHS  UNIT_1_13  39.87
+    RHS  UNIT_2_13  32.15
+    RHS  UNIT_3_13  35.08
+    RHS  UNIT_4_13  27.69
+    RHS  UNIT_5_13  26.38
+    RHS  SPEC_0_13  2.019
+    RHS  SPEC_1_13  6.189
+    RHS  SPEC_2_13  7.597
+    RHS  SPEC_3_13  7.016
+    RHS  SPEC_4_13  1.892
+    RHS  COMMIT_4_13  16.89
+    RHS  COMMIT_5_13  18.95
+    RHS  COMMIT_7_13  10.72
+    RHS  COMMIT_9_13  25.33
+    RHS  CDU_14  141
+    RHS  UNIT_0_14  57.52
+    RHS  UNIT_1_14  73.41
+    RHS  UNIT_2_14  59.17
+    RHS  UNIT_3_14  74.32
+    RHS  UNIT_4_14  74.81
+    RHS  UNIT_5_14  50.89
+    RHS  SPEC_0_14  4.348
+    RHS  SPEC_1_14  4.911
+    RHS  SPEC_2_14  4.301
+    RHS  SPEC_3_14  3.779
+    RHS  SPEC_4_14  9.063
+    RHS  COMMIT_4_14  34.85
+    RHS  COMMIT_5_14  16.62
+    RHS  COMMIT_7_14  14.15
+    RHS  COMMIT_9_14  20.2
+    RHS  CDU_15  194
+    RHS  UNIT_0_15  71.1
+    RHS  UNIT_1_15  97.01
+    RHS  UNIT_2_15  78.23
+    RHS  UNIT_3_15  82.1
+    RHS  UNIT_4_15  81.19
+    RHS  UNIT_5_15  80.15
+    RHS  SPEC_0_15  6.962
+    RHS  SPEC_1_15  7.421
+    RHS  SPEC_2_15  5.337
+    RHS  SPEC_3_15  5.451
+    RHS  SPEC_4_15  9.839
+    RHS  COMMIT_4_15  27
+    RHS  COMMIT_5_15  25.08
+    RHS  COMMIT_7_15  24.97
+    RHS  COMMIT_9_15  14
+    RHS  CDU_16  130
+    RHS  UNIT_0_16  53.78
+    RHS  UNIT_1_16  85.97
+    RHS  UNIT_2_16  50.62
+    RHS  UNIT_3_16  54
+    RHS  UNIT_4_16  57.9
+    RHS  UNIT_5_16  55.32
+    RHS  SPEC_0_16  3.046
+    RHS  SPEC_1_16  4.988
+    RHS  SPEC_2_16  4.694
+    RHS  SPEC_3_16  3.985
+    RHS  SPEC_4_16  8.374
+    RHS  COMMIT_4_16  53.47
+    RHS  COMMIT_5_16  17.25
+    RHS  COMMIT_7_16  14.11
+    RHS  COMMIT_9_16  20
+    RHS  CDU_17  155
+    RHS  UNIT_0_17  58.97
+    RHS  UNIT_1_17  72.51
+    RHS  UNIT_2_17  72.14
+    RHS  UNIT_3_17  85.27
+    RHS  UNIT_4_17  82.2
+    RHS  UNIT_5_17  52.07
+    RHS  SPEC_0_17  4.183
+    RHS  SPEC_1_17  4.712
+    RHS  SPEC_2_17  3.996
+    RHS  SPEC_3_17  5.732
+    RHS  SPEC_4_17  8.629
+    RHS  COMMIT_4_17  35.8
+    RHS  COMMIT_5_17  22.58
+    RHS  COMMIT_7_17  19.31
+    RHS  COMMIT_9_17  23.92
+    RHS  CDU_18  131
+    RHS  UNIT_0_18  50.41
+    RHS  UNIT_1_18  55.35
+    RHS  UNIT_2_18  37.38
+    RHS  UNIT_3_18  59.81
+    RHS  UNIT_4_18  47.04
+    RHS  UNIT_5_18  61.01
+    RHS  SPEC_0_18  6.63
+    RHS  SPEC_1_18  9.68
+    RHS  SPEC_2_18  3.371
+    RHS  SPEC_3_18  6.904
+    RHS  SPEC_4_18  3.592
+    RHS  COMMIT_4_18  33.16
+    RHS  COMMIT_5_18  11.24
+    RHS  COMMIT_7_18  9.87
+    RHS  COMMIT_9_18  16.8
+    RHS  CDU_19  152
+    RHS  UNIT_0_19  64.29
+    RHS  UNIT_1_19  69.53
+    RHS  UNIT_2_19  58.41
+    RHS  UNIT_3_19  86.31
+    RHS  UNIT_4_19  80.11
+    RHS  UNIT_5_19  46.78
+    RHS  SPEC_0_19  8.664
+    RHS  SPEC_1_19  5.887
+    RHS  SPEC_2_19  3.816
+    RHS  SPEC_3_19  5.731
+    RHS  SPEC_4_19  6.703
+    RHS  COMMIT_4_19  9
+    RHS  COMMIT_5_19  16.56
+    RHS  COMMIT_7_19  14.57
+    RHS  COMMIT_9_19  23.53
+    RHS  CDU_20  137
+    RHS  UNIT_0_20  51.15
+    RHS  UNIT_1_20  82.52
+    RHS  UNIT_2_20  67.25
+    RHS  UNIT_3_20  60.3
+    RHS  UNIT_4_20  50.35
+    RHS  UNIT_5_20  49.47
+    RHS  SPEC_0_20  3.406
+    RHS  SPEC_1_20  5.88
+    RHS  SPEC_2_20  8.214
+    RHS  SPEC_3_20  6.046
+    RHS  SPEC_4_20  3.424
+    RHS  COMMIT_4_20  -1
+    RHS  COMMIT_5_20  16.84
+    RHS  COMMIT_7_20  -3
+    RHS  COMMIT_9_20  18.6
+    RHS  CDU_21  112
+    RHS  UNIT_0_21  41.37
+    RHS  UNIT_1_21  54.67
+    RHS  UNIT_2_21  50.63
+    RHS  UNIT_3_21  62.05
+    RHS  UNIT_4_21  50.42
+    RHS  UNIT_5_21  21.91
+    RHS  SPEC_0_21  6.811
+    RHS  SPEC_1_21  5.897
+    RHS  SPEC_2_21  6.034
+    RHS  SPEC_3_21  2.505
+    RHS  SPEC_4_21  5.99
+    RHS  COMMIT_4_21  41
+    RHS  COMMIT_5_21  15.14
+    RHS  COMMIT_7_21  12
+    RHS  COMMIT_9_21  20.56
+    RHS  CDU_22  110
+    RHS  UNIT_0_22  62.2
+    RHS  UNIT_1_22  73.56
+    RHS  UNIT_2_22  49.67
+    RHS  UNIT_3_22  47.41
+    RHS  UNIT_4_22  55.83
+    RHS  UNIT_5_22  39.45
+    RHS  SPEC_0_22  2.692
+    RHS  SPEC_1_22  7.616
+    RHS  SPEC_2_22  3.012
+    RHS  SPEC_3_22  3.405
+    RHS  SPEC_4_22  5.738
+    RHS  COMMIT_4_22  32
+    RHS  COMMIT_5_22  16.47
+    RHS  COMMIT_7_22  30.76
+    RHS  COMMIT_9_22  2
+    RHS  CDU_23  165
+    RHS  UNIT_0_23  73.25
+    RHS  UNIT_1_23  83.3
+    RHS  UNIT_2_23  70.47
+    RHS  UNIT_3_23  84.95
+    RHS  UNIT_4_23  102.08
+    RHS  UNIT_5_23  68.78
+    RHS  SPEC_0_23  4.402
+    RHS  SPEC_1_23  7.459
+    RHS  SPEC_2_23  9.258
+    RHS  SPEC_3_23  6.354
+    RHS  SPEC_4_23  6.109
+    RHS  COMMIT_4_23  2
+    RHS  COMMIT_5_23  25.91
+    RHS  COMMIT_7_23  21.75
+    RHS  COMMIT_9_23  22.61
+    RHS  CDU_24  131
+    RHS  UNIT_0_24  59.86
+    RHS  UNIT_1_24  73.15
+    RHS  UNIT_2_24  54.84
+    RHS  UNIT_3_24  68.28
+    RHS  UNIT_4_24  62.73
+    RHS  UNIT_5_24  48.88
+    RHS  SPEC_0_24  2.775
+    RHS  SPEC_1_24  4.898
+    RHS  SPEC_2_24  3.177
+    RHS  SPEC_3_24  7.869
+    RHS  SPEC_4_24  6.617
+    RHS  COMMIT_4_24  69
+    RHS  COMMIT_5_24  12.89
+    RHS  COMMIT_7_24  12.72
+    RHS  COMMIT_9_24  12.95
+    RHS  CDU_25  172
+    RHS  UNIT_0_25  77.24
+    RHS  UNIT_1_25  90.17
+    RHS  UNIT_2_25  82.92
+    RHS  UNIT_3_25  89.99
+    RHS  UNIT_4_25  118.32
+    RHS  UNIT_5_25  51.93
+    RHS  SPEC_0_25  4.656
+    RHS  SPEC_1_25  5.103
+    RHS  SPEC_2_25  4.39
+    RHS  SPEC_3_25  4.321
+    RHS  SPEC_4_25  6.021
+    RHS  COMMIT_4_25  76
+    RHS  COMMIT_5_25  22.04
+    RHS  COMMIT_7_25  14
+    RHS  COMMIT_9_25  16.29
+    RHS  CDU_26  141
+    RHS  UNIT_0_26  47.89
+    RHS  UNIT_1_26  67.24
+    RHS  UNIT_2_26  59.74
+    RHS  UNIT_3_26  71.28
+    RHS  UNIT_4_26  50.08
+    RHS  UNIT_5_26  58.09
+    RHS  SPEC_0_26  3.127
+    RHS  SPEC_1_26  9.395
+    RHS  SPEC_2_26  4.175
+    RHS  SPEC_3_26  6.947
+    RHS  SPEC_4_26  4.116
+    RHS  COMMIT_4_26  39.13
+    RHS  COMMIT_5_26  16.04
+    RHS  COMMIT_7_26  24.74
+    RHS  COMMIT_9_26  21.51
+    RHS  CDU_27  136
+    RHS  UNIT_0_27  54.11
+    RHS  UNIT_1_27  66.32
+    RHS  UNIT_2_27  63.18
+    RHS  UNIT_3_27  56
+    RHS  UNIT_4_27  56.42
+    RHS  UNIT_5_27  56.66
+    RHS  SPEC_0_27  4.131
+    RHS  SPEC_1_27  5.015
+    RHS  SPEC_2_27  7.352
+    RHS  SPEC_3_27  6.001
+    RHS  SPEC_4_27  6.502
+    RHS  COMMIT_4_27  32.23
+    RHS  COMMIT_5_27  10.54
+    RHS  COMMIT_7_27  16.19
+    RHS  COMMIT_9_27  14.74
+    RHS  CDU_28  139
+    RHS  UNIT_0_28  59.22
+    RHS  UNIT_1_28  68.93
+    RHS  UNIT_2_28  61.45
+    RHS  UNIT_3_28  76.2
+    RHS  UNIT_4_28  81.48
+    RHS  UNIT_5_28  55.44
+    RHS  SPEC_0_28  3.171
+    RHS  SPEC_1_28  5.031
+    RHS  SPEC_2_28  2.569
+    RHS  SPEC_3_28  8.865
+    RHS  SPEC_4_28  6.84
+    RHS  COMMIT_4_28  7
+    RHS  COMMIT_5_28  18.46
+    RHS  COMMIT_7_28  14.65
+    RHS  COMMIT_9_28  17.85
+    RHS  CDU_29  160
+    RHS  UNIT_0_29  67.59
+    RHS  UNIT_1_29  85.44
+    RHS  UNIT_2_29  72.23
+    RHS  UNIT_3_29  79.72
+    RHS  UNIT_4_29  77.45
+    RHS  UNIT_5_29  74.75
+    RHS  SPEC_0_29  5.514
+    RHS  SPEC_1_29  9.124
+    RHS  SPEC_2_29  6.916
+    RHS  SPEC_3_29  4.784
+    RHS  SPEC_4_29  5.296
+    RHS  COMMIT_4_29  29
+    RHS  COMMIT_5_29  21.26
+    RHS  COMMIT_7_29  5
+    RHS  COMMIT_9_29  14
+BOUNDS
+ UP BND  CS_0_0  0
+ UP BND  CS_0_1  0
+ UP BND  CS_0_2  0
+ UP BND  CS_0_3  5
+ UP BND  CS_0_4  9
+ UP BND  CS_0_5  5
+ UP BND  CS_0_6  1
+ UP BND  CS_0_7  4
+ UP BND  CS_0_8  2
+ UP BND  CS_0_9  0
+ UP BND  CS_0_10  17
+ UP BND  CS_0_11  6
+ UP BND  CS_0_12  21
+ UP BND  CS_0_13  3
+ UP BND  CS_0_14  0
+ UP BND  CS_0_15  0
+ UP BND  CS_0_16  22
+ UP BND  CS_0_17  8
+ UP BND  CS_0_18  2
+ UP BND  CS_0_19  0
+ UP BND  CS_0_20  5
+ UP BND  CS_0_21  5
+ UP BND  CS_0_22  19
+ UP BND  CS_0_23  17
+ UP BND  CS_0_24  18
+ UP BND  CS_0_25  56
+ UP BND  CS_0_26  24
+ UP BND  CS_0_27  3
+ UP BND  CS_0_28  4
+ UP BND  CS_0_29  0
+ UP BND  CS_1_0  24
+ UP BND  CS_1_1  59
+ UP BND  CS_1_2  69
+ UP BND  CS_1_3  77
+ UP BND  CS_1_4  67
+ UP BND  CS_1_5  81
+ UP BND  CS_1_6  95
+ UP BND  CS_1_7  74
+ UP BND  CS_1_8  46
+ UP BND  CS_1_9  43
+ UP BND  CS_1_10  17
+ UP BND  CS_1_11  28
+ UP BND  CS_1_12  14
+ UP BND  CS_1_13  25
+ UP BND  CS_1_14  0
+ UP BND  CS_1_15  3
+ UP BND  CS_1_16  1
+ UP BND  CS_1_17  9
+ UP BND  CS_1_18  45
+ UP BND  CS_1_19  52
+ UP BND  CS_1_20  18
+ UP BND  CS_1_21  2
+ UP BND  CS_1_22  33
+ UP BND  CS_1_23  49
+ UP BND  CS_1_24  38
+ UP BND  CS_1_25  31
+ UP BND  CS_1_26  20
+ UP BND  CS_1_27  31
+ UP BND  CS_1_28  14
+ UP BND  CS_1_29  1
+ UP BND  CS_2_0  76
+ UP BND  CS_2_1  64
+ UP BND  CS_2_2  54
+ UP BND  CS_2_3  73
+ UP BND  CS_2_4  96
+ UP BND  CS_2_5  95
+ UP BND  CS_2_6  133
+ UP BND  CS_2_7  119
+ UP BND  CS_2_8  98
+ UP BND  CS_2_9  95
+ UP BND  CS_2_10  57
+ UP BND  CS_2_11  58
+ UP BND  CS_2_12  97
+ UP BND  CS_2_13  98
+ UP BND  CS_2_14  118
+ UP BND  CS_2_15  78
+ UP BND  CS_2_16  50
+ UP BND  CS_2_17  66
+ UP BND  CS_2_18  53
+ UP BND  CS_2_19  61
+ UP BND  CS_2_20  53
+ UP BND  CS_2_21  44
+ UP BND  CS_2_22  35
+ UP BND  CS_2_23  45
+ UP BND  CS_2_24  44
+ UP BND  CS_2_25  69
+ UP BND  CS_2_26  44
+ UP BND  CS_2_27  57
+ UP BND  CS_2_28  59
+ UP BND  CS_2_29  40
+ UP BND  CS_3_0  73
+ UP BND  CS_3_1  79
+ UP BND  CS_3_2  88
+ UP BND  CS_3_3  85
+ UP BND  CS_3_4  90
+ UP BND  CS_3_5  73
+ UP BND  CS_3_6  40
+ UP BND  CS_3_7  0
+ UP BND  CS_3_8  0
+ UP BND  CS_3_9  3
+ UP BND  CS_3_10  0
+ UP BND  CS_3_11  40
+ UP BND  CS_3_12  51
+ UP BND  CS_3_13  56
+ UP BND  CS_3_14  35
+ UP BND  CS_3_15  33
+ UP BND  CS_3_16  33
+ UP BND  CS_3_17  69
+ UP BND  CS_3_18  65
+ UP BND  CS_3_19  92
+ UP BND  CS_3_20  96
+ UP BND  CS_3_21  100
+ UP BND  CS_3_22  68
+ UP BND  CS_3_23  66
+ UP BND  CS_3_24  64
+ UP BND  CS_3_25  59
+ UP BND  CS_3_26  69
+ UP BND  CS_3_27  96
+ UP BND  CS_3_28  103
+ UP BND  CS_3_29  103
+ UP BND  CS_4_0  76
+ UP BND  CS_4_1  101
+ UP BND  CS_4_2  99
+ UP BND  CS_4_3  99
+ UP BND  CS_4_4  82
+ UP BND  CS_4_5  78
+ UP BND  CS_4_6  65
+ UP BND  CS_4_7  57
+ UP BND  CS_4_8  55
+ UP BND  CS_4_9  67
+ UP BND  CS_4_10  89
+ UP BND  CS_4_11  74
+ UP BND  CS_4_12  82
+ UP BND  CS_4_13  95
+ UP BND  CS_4_14  97
+ UP BND  CS_4_15  81
+ UP BND  CS_4_16  81
+ UP BND  CS_4_17  82
+ UP BND  CS_4_18  87
+ UP BND  CS_4_19  51
+ UP BND  CS_4_20  68
+ UP BND  CS_4_21  37
+ UP BND  CS_4_22  24
+ UP BND  CS_4_23  0
+ UP BND  CS_4_24  15
+ UP BND  CS_4_25  1
+ UP BND  CS_4_26  5
+ UP BND  CS_4_27  6
+ UP BND  CS_4_28  20
+ UP BND  CS_4_29  16
+ UP BND  CS_5_0  49
+ UP BND  CS_5_1  51
+ UP BND  CS_5_2  48
+ UP BND  CS_5_3  48
+ UP BND  CS_5_4  35
+ UP BND  CS_5_5  32
+ UP BND  CS_5_6  64
+ UP BND  CS_5_7  66
+ UP BND  CS_5_8  74
+ UP BND  CS_5_9  51
+ UP BND  CS_5_10  62
+ UP BND  CS_5_11  98
+ UP BND  CS_5_12  109
+ UP BND  CS_5_13  106
+ UP BND  CS_5_14  97
+ UP BND  CS_5_15  97
+ UP BND  CS_5_16  101
+ UP BND  CS_5_17  87
+ UP BND  CS_5_18  87
+ UP BND  CS_5_19  107
+ UP BND  CS_5_20  123
+ UP BND  CS_5_21  160
+ UP BND  CS_5_22  150
+ UP BND  CS_5_23  139
+ UP BND  CS_5_24  107
+ UP BND  CS_5_25  68
+ UP BND  CS_5_26  86
+ UP BND  CS_5_27  61
+ UP BND  CS_5_28  27
+ UP BND  CS_5_29  0
+ UP BND  CS_6_0  3
+ UP BND  CS_6_1  5
+ UP BND  CS_6_2  13
+ UP BND  CS_6_3  7
+ UP BND  CS_6_4  3
+ UP BND  CS_6_5  1
+ UP BND  CS_6_6  5
+ UP BND  CS_6_7  29
+ UP BND  CS_6_8  9
+ UP BND  CS_6_9  3
+ UP BND  CS_6_10  13
+ UP BND  CS_6_11  6
+ UP BND  CS_6_12  17
+ UP BND  CS_6_13  34
+ UP BND  CS_6_14  28
+ UP BND  CS_6_15  0
+ UP BND  CS_6_16  0
+ UP BND  CS_6_17  2
+ UP BND  CS_6_18  0
+ UP BND  CS_6_19  0
+ UP BND  CS_6_20  18
+ UP BND  CS_6_21  34
+ UP BND  CS_6_22  39
+ UP BND  CS_6_23  30
+ UP BND  CS_6_24  19
+ UP BND  CS_6_25  14
+ UP BND  CS_6_26  6
+ UP BND  CS_6_27  2
+ UP BND  CS_6_28  12
+ UP BND  CS_6_29  5
+ UP BND  CS_7_0  17
+ UP BND  CS_7_1  40
+ UP BND  CS_7_2  51
+ UP BND  CS_7_3  59
+ UP BND  CS_7_4  61
+ UP BND  CS_7_5  67
+ UP BND  CS_7_6  27
+ UP BND  CS_7_7  36
+ UP BND  CS_7_8  78
+ UP BND  CS_7_9  67
+ UP BND  CS_7_10  66
+ UP BND  CS_7_11  92
+ UP BND  CS_7_12  90
+ UP BND  CS_7_13  101
+ UP BND  CS_7_14  132
+ UP BND  CS_7_15  132
+ UP BND  CS_7_16  101
+ UP BND  CS_7_17  132
+ UP BND  CS_7_18  116
+ UP BND  CS_7_19  100
+ UP BND  CS_7_20  132
+ UP BND  CS_7_21  132
+ UP BND  CS_7_22  118
+ UP BND  CS_7_23  99
+ UP BND  CS_7_24  84
+ UP BND  CS_7_25  92
+ UP BND  CS_7_26  92
+ UP BND  CS_7_27  88
+ UP BND  CS_7_28  64
+ UP BND  CS_7_29  32
+ UP BND  SELL_0_0  37.72
+ UP BND  PS_0_0  0
+ UP BND  SELL_0_1  3
+ UP BND  PS_0_1  11.69
+ UP BND  SELL_0_2  29
+ UP BND  PS_0_2  5.13
+ UP BND  SELL_0_3  10.21
+ UP BND  PS_0_3  5
+ UP BND  SELL_0_4  0
+ UP BND  PS_0_4  16.79
+ UP BND  SELL_0_5  39.13
+ UP BND  PS_0_5  0
+ UP BND  SELL_0_6  15
+ UP BND  PS_0_6  5.12
+ UP BND  SELL_0_7  23.88
+ UP BND  PS_0_7  1
+ UP BND  SELL_0_8  18.53
+ UP BND  PS_0_8  4
+ UP BND  SELL_0_9  12.24
+ UP BND  PS_0_9  0
+ UP BND  SELL_0_10  26.16
+ UP BND  PS_0_10  5
+ UP BND  SELL_0_11  9.68
+ UP BND  PS_0_11  0
+ UP BND  SELL_0_12  18
+ UP BND  PS_0_12  0
+ UP BND  SELL_0_13  12.14
+ UP BND  PS_0_13  0
+ UP BND  SELL_0_14  17.63
+ UP BND  PS_0_14  0
+ UP BND  SELL_0_15  28.67
+ UP BND  PS_0_15  2
+ UP BND  SELL_0_16  24.78
+ UP BND  PS_0_16  4
+ UP BND  SELL_0_17  15.28
+ UP BND  PS_0_17  0
+ UP BND  SELL_0_18  16.64
+ UP BND  PS_0_18  3
+ UP BND  SELL_0_19  12.9
+ UP BND  PS_0_19  3
+ UP BND  SELL_0_20  25.84
+ UP BND  PS_0_20  1
+ UP BND  SELL_0_21  7.7
+ UP BND  PS_0_21  2
+ UP BND  SELL_0_22  26.22
+ UP BND  PS_0_22  3
+ UP BND  SELL_0_23  22.4
+ UP BND  PS_0_23  4
+ UP BND  SELL_0_24  18.38
+ UP BND  PS_0_24  5
+ UP BND  SELL_0_25  16
+ UP BND  PS_0_25  8.08
+ UP BND  SELL_0_26  24.32
+ UP BND  PS_0_26  0
+ UP BND  SELL_0_27  21.54
+ UP BND  PS_0_27  0
+ UP BND  SELL_0_28  18.33
+ UP BND  PS_0_28  3
+ UP BND  SELL_0_29  17
+ UP BND  PS_0_29  7.2
+ UP BND  SELL_1_0  22
+ UP BND  PS_1_0  28.47
+ UP BND  SELL_1_1  32
+ UP BND  PS_1_1  9.57
+ UP BND  SELL_1_2  1
+ UP BND  PS_1_2  21.38
+ UP BND  SELL_1_3  35.18
+ UP BND  PS_1_3  0
+ UP BND  SELL_1_4  13.82
+ UP BND  PS_1_4  1
+ UP BND  SELL_1_5  5
+ UP BND  PS_1_5  16.72
+ UP BND  SELL_1_6  47.43
+ UP BND  PS_1_6  2
+ UP BND  SELL_1_7  19.25
+ UP BND  PS_1_7  1
+ UP BND  SELL_1_8  18.72
+ UP BND  PS_1_8  3
+ UP BND  SELL_1_9  13.62
+ UP BND  PS_1_9  5
+ UP BND  SELL_1_10  6
+ UP BND  PS_1_10  13.53
+ UP BND  SELL_1_11  11
+ UP BND  PS_1_11  13.73
+ UP BND  SELL_1_12  11
+ UP BND  PS_1_12  22.4
+ UP BND  SELL_1_13  4
+ UP BND  PS_1_13  37.97
+ UP BND  SELL_1_14  49
+ UP BND  PS_1_14  13.11
+ UP BND  SELL_1_15  35
+ UP BND  PS_1_15  10.35
+ UP BND  SELL_1_16  29.74
+ UP BND  PS_1_16  0
+ UP BND  SELL_1_17  25.71
+ UP BND  PS_1_17  5
+ UP BND  SELL_1_18  23.36
+ UP BND  PS_1_18  0
+ UP BND  SELL_1_19  30.25
+ UP BND  PS_1_19  2
+ UP BND  SELL_1_20  17.48
+ UP BND  PS_1_20  0
+ UP BND  SELL_1_21  18.61
+ UP BND  PS_1_21  5
+ UP BND  SELL_1_22  19.55
+ UP BND  PS_1_22  3
+ UP BND  SELL_1_23  14
+ UP BND  PS_1_23  11.05
+ UP BND  SELL_1_24  28.96
+ UP BND  PS_1_24  3
+ UP BND  SELL_1_25  23.29
+ UP BND  PS_1_25  3
+ UP BND  SELL_1_26  23
+ UP BND  PS_1_26  6.7
+ UP BND  SELL_1_27  16.22
+ UP BND  PS_1_27  2
+ UP BND  SELL_1_28  22.1
+ UP BND  PS_1_28  1
+ UP BND  SELL_1_29  2
+ UP BND  PS_1_29  18.18
+ UP BND  SELL_2_0  32.93
+ UP BND  PS_2_0  0
+ UP BND  SELL_2_1  13.41
+ UP BND  PS_2_1  0
+ UP BND  SELL_2_2  17
+ UP BND  PS_2_2  4.24
+ UP BND  SELL_2_3  20.54
+ UP BND  PS_2_3  0
+ UP BND  SELL_2_4  25.66
+ UP BND  PS_2_4  1
+ UP BND  SELL_2_5  23.95
+ UP BND  PS_2_5  2
+ UP BND  SELL_2_6  33
+ UP BND  PS_2_6  1.85
+ UP BND  SELL_2_7  10.91
+ UP BND  PS_2_7  2
+ UP BND  SELL_2_8  18.75
+ UP BND  PS_2_8  0
+ UP BND  SELL_2_9  19.95
+ UP BND  PS_2_9  0
+ UP BND  SELL_2_10  23.64
+ UP BND  PS_2_10  3
+ UP BND  SELL_2_11  16.98
+ UP BND  PS_2_11  0
+ UP BND  SELL_2_12  32.97
+ UP BND  PS_2_12  2
+ UP BND  SELL_2_13  15.95
+ UP BND  PS_2_13  2
+ UP BND  SELL_2_14  31
+ UP BND  PS_2_14  3.72
+ UP BND  SELL_2_15  34.66
+ UP BND  PS_2_15  5
+ UP BND  SELL_2_16  25.23
+ UP BND  PS_2_16  0
+ UP BND  SELL_2_17  30.72
+ UP BND  PS_2_17  0
+ UP BND  SELL_2_18  14
+ UP BND  PS_2_18  16
+ UP BND  SELL_2_19  10
+ UP BND  PS_2_19  40.31
+ UP BND  SELL_2_20  16
+ UP BND  PS_2_20  49.16
+ UP BND  SELL_2_21  26
+ UP BND  PS_2_21  50.74
+ UP BND  SELL_2_22  19
+ UP BND  PS_2_22  47.25
+ UP BND  SELL_2_23  30
+ UP BND  PS_2_23  48.83
+ UP BND  SELL_2_24  3
+ UP BND  PS_2_24  66.74
+ UP BND  SELL_2_25  18
+ UP BND  PS_2_25  82.86
+ UP BND  SELL_2_26  37
+ UP BND  PS_2_26  80.37
+ UP BND  SELL_2_27  23
+ UP BND  PS_2_27  89.51
+ UP BND  SELL_2_28  65
+ UP BND  PS_2_28  59.26
+ UP BND  SELL_2_29  12
+ UP BND  PS_2_29  81.27
+ UP BND  SELL_3_0  23
+ UP BND  PS_3_0  18.65
+ UP BND  SELL_3_1  0
+ UP BND  PS_3_1  33.57
+ UP BND  SELL_3_2  11
+ UP BND  PS_3_2  35.61
+ UP BND  SELL_3_3  46.94
+ UP BND  PS_3_3  2
+ UP BND  SELL_3_4  11.35
+ UP BND  PS_3_4  5
+ UP BND  SELL_3_5  6
+ UP BND  PS_3_5  15.59
+ UP BND  SELL_3_6  36.37
+ UP BND  PS_3_6  4
+ UP BND  SELL_3_7  13.33
+ UP BND  PS_3_7  3
+ UP BND  SELL_3_8  18.87
+ UP BND  PS_3_8  0
+ UP BND  SELL_3_9  9.48
+ UP BND  PS_3_9  0
+ UP BND  SELL_3_10  17.9
+ UP BND  PS_3_10  4
+ UP BND  SELL_3_11  8
+ UP BND  PS_3_11  2.92
+ UP BND  SELL_3_12  16
+ UP BND  PS_3_12  3.18
+ UP BND  SELL_3_13  14.05
+ UP BND  PS_3_13  2
+ UP BND  SELL_3_14  22.5
+ UP BND  PS_3_14  3
+ UP BND  SELL_3_15  15
+ UP BND  PS_3_15  14.08
+ UP BND  SELL_3_16  36.45
+ UP BND  PS_3_16  0
+ UP BND  SELL_3_17  16.93
+ UP BND  PS_3_17  0
+ UP BND  SELL_3_18  26
+ UP BND  PS_3_18  3.3
+ UP BND  SELL_3_19  18.69
+ UP BND  PS_3_19  1
+ UP BND  SELL_3_20  10
+ UP BND  PS_3_20  14.93
+ UP BND  SELL_3_21  27
+ UP BND  PS_3_21  2.87
+ UP BND  SELL_3_22  11
+ UP BND  PS_3_22  4.71
+ UP BND  SELL_3_23  24.83
+ UP BND  PS_3_23  0
+ UP BND  SELL_3_24  15
+ UP BND  PS_3_24  3.7
+ UP BND  SELL_3_25  17.6
+ UP BND  PS_3_25  1
+ UP BND  SELL_3_26  21.67
+ UP BND  PS_3_26  0
+ UP BND  SELL_3_27  24.05
+ UP BND  PS_3_27  0
+ UP BND  SELL_3_28  20.15
+ UP BND  PS_3_28  0
+ UP BND  SELL_3_29  25.85
+ UP BND  PS_3_29  1
+ UP BND  SELL_4_0  31.17
+ UP BND  PS_4_0  0
+ UP BND  SELL_4_1  22.04
+ UP BND  PS_4_1  4
+ UP BND  SELL_4_2  13
+ UP BND  PS_4_2  16.85
+ UP BND  SELL_4_3  21
+ UP BND  PS_4_3  15.01
+ UP BND  SELL_4_4  50.53
+ UP BND  PS_4_4  2
+ UP BND  SELL_4_5  32.03
+ UP BND  PS_4_5  5
+ UP BND  SELL_4_6  25
+ UP BND  PS_4_6  26.36
+ UP BND  SELL_4_7  21
+ UP BND  PS_4_7  23.61
+ UP BND  SELL_4_8  52.8
+ UP BND  PS_4_8  0
+ UP BND  SELL_4_9  24.58
+ UP BND  PS_4_9  4
+ UP BND  SELL_4_10  33.78
+ UP BND  PS_4_10  1
+ UP BND  SELL_4_11  22.32
+ UP BND  PS_4_11  4
+ UP BND  SELL_4_12  33.11
+ UP BND  PS_4_12  5
+ UP BND  SELL_4_13  20.89
+ UP BND  PS_4_13  0
+ UP BND  SELL_4_14  36.85
+ UP BND  PS_4_14  0
+ UP BND  SELL_4_15  30
+ UP BND  PS_4_15  22.55
+ UP BND  SELL_4_16  60.47
+ UP BND  PS_4_16  4
+ UP BND  SELL_4_17  39.8
+ UP BND  PS_4_17  0
+ UP BND  SELL_4_18  35.16
+ UP BND  PS_4_18  0
+ UP BND  SELL_4_19  13
+ UP BND  PS_4_19  30.01
+ UP BND  SELL_4_20  1
+ UP BND  PS_4_20  59.87
+ UP BND  SELL_4_21  44
+ UP BND  PS_4_21  47.42
+ UP BND  SELL_4_22  34
+ UP BND  PS_4_22  40.26
+ UP BND  SELL_4_23  7
+ UP BND  PS_4_23  77.77
+ UP BND  SELL_4_24  69
+ UP BND  PS_4_24  42.41
+ UP BND  SELL_4_25  84
+ UP BND  PS_4_25  12.16
+ UP BND  SELL_4_26  47.13
+ UP BND  PS_4_26  5
+ UP BND  SELL_4_27  35.23
+ UP BND  PS_4_27  0
+ UP BND  SELL_4_28  15
+ UP BND  PS_4_28  24.49
+ UP BND  SELL_4_29  33
+ UP BND  PS_4_29  37.43
+ UP BND  SELL_5_0  35
+ UP BND  PS_5_0  9.48
+ UP BND  SELL_5_1  21.76
+ UP BND  PS_5_1  0
+ UP BND  SELL_5_2  18.55
+ UP BND  PS_5_2  1
+ UP BND  SELL_5_3  5.07
+ UP BND  PS_5_3  1
+ UP BND  SELL_5_4  17.26
+ UP BND  PS_5_4  5
+ UP BND  SELL_5_5  17.7
+ UP BND  PS_5_5  3
+ UP BND  SELL_5_6  25.32
+ UP BND  PS_5_6  0
+ UP BND  SELL_5_7  6.78
+ UP BND  PS_5_7  1
+ UP BND  SELL_5_8  16.54
+ UP BND  PS_5_8  0
+ UP BND  SELL_5_9  14.44
+ UP BND  PS_5_9  5
+ UP BND  SELL_5_10  23.77
+ UP BND  PS_5_10  0
+ UP BND  SELL_5_11  14.3
+ UP BND  PS_5_11  0
+ UP BND  SELL_5_12  11
+ UP BND  PS_5_12  11.38
+ UP BND  SELL_5_13  23.95
+ UP BND  PS_5_13  2
+ UP BND  SELL_5_14  19.62
+ UP BND  PS_5_14  0
+ UP BND  SELL_5_15  28.08
+ UP BND  PS_5_15  0
+ UP BND  SELL_5_16  17.25
+ UP BND  PS_5_16  1
+ UP BND  SELL_5_17  24.58
+ UP BND  PS_5_17  0
+ UP BND  SELL_5_18  14.24
+ UP BND  PS_5_18  0
+ UP BND  SELL_5_19  23.56
+ UP BND  PS_5_19  3
+ UP BND  SELL_5_20  21.84
+ UP BND  PS_5_20  5
+ UP BND  SELL_5_21  17.14
+ UP BND  PS_5_21  0
+ UP BND  SELL_5_22  16.47
+ UP BND  PS_5_22  0
+ UP BND  SELL_5_23  29.91
+ UP BND  PS_5_23  0
+ UP BND  SELL_5_24  12.89
+ UP BND  PS_5_24  0
+ UP BND  SELL_5_25  28.04
+ UP BND  PS_5_25  3
+ UP BND  SELL_5_26  17.04
+ UP BND  PS_5_26  2
+ UP BND  SELL_5_27  15.54
+ UP BND  PS_5_27  0
+ UP BND  SELL_5_28  18.46
+ UP BND  PS_5_28  2
+ UP BND  SELL_5_29  23.26
+ UP BND  PS_5_29  4
+ UP BND  SELL_6_0  22
+ UP BND  PS_6_0  12.21
+ UP BND  SELL_6_1  17.91
+ UP BND  PS_6_1  0
+ UP BND  SELL_6_2  13.33
+ UP BND  PS_6_2  0
+ UP BND  SELL_6_3  8.08
+ UP BND  PS_6_3  5
+ UP BND  SELL_6_4  23.74
+ UP BND  PS_6_4  2
+ UP BND  SELL_6_5  22.59
+ UP BND  PS_6_5  0
+ UP BND  SELL_6_6  21
+ UP BND  PS_6_6  8.84
+ UP BND  SELL_6_7  7
+ UP BND  PS_6_7  14.97
+ UP BND  SELL_6_8  31.28
+ UP BND  PS_6_8  0
+ UP BND  SELL_6_9  18.84
+ UP BND  PS_6_9  0
+ UP BND  SELL_6_10  17.34
+ UP BND  PS_6_10  1
+ UP BND  SELL_6_11  15.44
+ UP BND  PS_6_11  2
+ UP BND  SELL_6_12  15.75
+ UP BND  PS_6_12  0
+ UP BND  SELL_6_13  12.83
+ UP BND  PS_6_13  3
+ UP BND  SELL_6_14  25.01
+ UP BND  PS_6_14  0
+ UP BND  SELL_6_15  25.51
+ UP BND  PS_6_15  0
+ UP BND  SELL_6_16  13.84
+ UP BND  PS_6_16  0
+ UP BND  SELL_6_17  19.84
+ UP BND  PS_6_17  0
+ UP BND  SELL_6_18  15
+ UP BND  PS_6_18  2.12
+ UP BND  SELL_6_19  16
+ UP BND  PS_6_19  6.65
+ UP BND  SELL_6_20  17
+ UP BND  PS_6_20  2.75
+ UP BND  SELL_6_21  12.84
+ UP BND  PS_6_21  1
+ UP BND  SELL_6_22  20.62
+ UP BND  PS_6_22  2
+ UP BND  SELL_6_23  11
+ UP BND  PS_6_23  21.95
+ UP BND  SELL_6_24  45.23
+ UP BND  PS_6_24  2
+ UP BND  SELL_6_25  6
+ UP BND  PS_6_25  32.51
+ UP BND  SELL_6_26  44.18
+ UP BND  PS_6_26  3
+ UP BND  SELL_6_27  24.31
+ UP BND  PS_6_27  0
+ UP BND  SELL_6_28  18
+ UP BND  PS_6_28  10.39
+ UP BND  SELL_6_29  28
+ UP BND  PS_6_29  9.21
+ UP BND  SELL_7_0  27
+ UP BND  PS_7_0  20.31
+ UP BND  SELL_7_1  31.95
+ UP BND  PS_7_1  1
+ UP BND  SELL_7_2  17.66
+ UP BND  PS_7_2  0
+ UP BND  SELL_7_3  10.21
+ UP BND  PS_7_3  0
+ UP BND  SELL_7_4  18.15
+ UP BND  PS_7_4  3
+ UP BND  SELL_7_5  17.29
+ UP BND  PS_7_5  5
+ UP BND  SELL_7_6  0
+ UP BND  PS_7_6  20.94
+ UP BND  SELL_7_7  2
+ UP BND  PS_7_7  27.72
+ UP BND  SELL_7_8  40
+ UP BND  PS_7_8  8.12
+ UP BND  SELL_7_9  19.19
+ UP BND  PS_7_9  3
+ UP BND  SELL_7_10  20.1
+ UP BND  PS_7_10  3
+ UP BND  SELL_7_11  15
+ UP BND  PS_7_11  2.21
+ UP BND  SELL_7_12  20.45
+ UP BND  PS_7_12  0
+ UP BND  SELL_7_13  12.72
+ UP BND  PS_7_13  0
+ UP BND  SELL_7_14  16.15
+ UP BND  PS_7_14  5
+ UP BND  SELL_7_15  28.97
+ UP BND  PS_7_15  0
+ UP BND  SELL_7_16  17.11
+ UP BND  PS_7_16  0
+ UP BND  SELL_7_17  21.31
+ UP BND  PS_7_17  0
+ UP BND  SELL_7_18  11.87
+ UP BND  PS_7_18  5
+ UP BND  SELL_7_19  16.57
+ UP BND  PS_7_19  2
+ UP BND  SELL_7_20  2
+ UP BND  PS_7_20  17.79
+ UP BND  SELL_7_21  15
+ UP BND  PS_7_21  19.44
+ UP BND  SELL_7_22  32.76
+ UP BND  PS_7_22  0
+ UP BND  SELL_7_23  21.75
+ UP BND  PS_7_23  0
+ UP BND  SELL_7_24  16.72
+ UP BND  PS_7_24  2
+ UP BND  SELL_7_25  15
+ UP BND  PS_7_25  10.18
+ UP BND  SELL_7_26  24.74
+ UP BND  PS_7_26  0
+ UP BND  SELL_7_27  21.19
+ UP BND  PS_7_27  0
+ UP BND  SELL_7_28  14.65
+ UP BND  PS_7_28  0
+ UP BND  SELL_7_29  5
+ UP BND  PS_7_29  12.25
+ UP BND  SELL_8_0  13
+ UP BND  PS_8_0  27.9
+ UP BND  SELL_8_1  11
+ UP BND  PS_8_1  26.76
+ UP BND  SELL_8_2  13
+ UP BND  PS_8_2  26.14
+ UP BND  SELL_8_3  38.27
+ UP BND  PS_8_3  0
+ UP BND  SELL_8_4  20.53
+ UP BND  PS_8_4  0
+ UP BND  SELL_8_5  20.79
+ UP BND  PS_8_5  0
+ UP BND  SELL_8_6  25.38
+ UP BND  PS_8_6  4
+ UP BND  SELL_8_7  7.28
+ UP BND  PS_8_7  1
+ UP BND  SELL_8_8  6
+ UP BND  PS_8_8  10.27
+ UP BND  SELL_8_9  24.07
+ UP BND  PS_8_9  3
+ UP BND  SELL_8_10  3
+ UP BND  PS_8_10  18.7
+ UP BND  SELL_8_11  11
+ UP BND  PS_8_11  25.09
+ UP BND  SELL_8_12  17
+ UP BND  PS_8_12  24.55
+ UP BND  SELL_8_13  29.29
+ UP BND  PS_8_13  0
+ UP BND  SELL_8_14  17.1
+ UP BND  PS_8_14  0
+ UP BND  SELL_8_15  22.84
+ UP BND  PS_8_15  1
+ UP BND  SELL_8_16  12
+ UP BND  PS_8_16  5.41
+ UP BND  SELL_8_17  19.8
+ UP BND  PS_8_17  2
+ UP BND  SELL_8_18  20.43
+ UP BND  PS_8_18  0
+ UP BND  SELL_8_19  1
+ UP BND  PS_8_19  22.12
+ UP BND  SELL_8_20  38.57
+ UP BND  PS_8_20  0
+ UP BND  SELL_8_21  10.12
+ UP BND  PS_8_21  0
+ UP BND  SELL_8_22  11.97
+ UP BND  PS_8_22  0
+ UP BND  SELL_8_23  23.91
+ UP BND  PS_8_23  0
+ UP BND  SELL_8_24  16
+ UP BND  PS_8_24  7.39
+ UP BND  SELL_8_25  26.98
+ UP BND  PS_8_25  0
+ UP BND  SELL_8_26  26.4
+ UP BND  PS_8_26  0
+ UP BND  SELL_8_27  21.78
+ UP BND  PS_8_27  0
+ UP BND  SELL_8_28  16
+ UP BND  PS_8_28  12.42
+ UP BND  SELL_8_29  38.81
+ UP BND  PS_8_29  2
+ UP BND  SELL_9_0  58.13
+ UP BND  PS_9_0  0
+ UP BND  SELL_9_1  10.41
+ UP BND  PS_9_1  0
+ UP BND  SELL_9_2  14.25
+ UP BND  PS_9_2  5
+ UP BND  SELL_9_3  18.28
+ UP BND  PS_9_3  5
+ UP BND  SELL_9_4  17.89
+ UP BND  PS_9_4  5
+ UP BND  SELL_9_5  14.04
+ UP BND  PS_9_5  4
+ UP BND  SELL_9_6  23.67
+ UP BND  PS_9_6  4
+ UP BND  SELL_9_7  6.91
+ UP BND  PS_9_7  0
+ UP BND  SELL_9_8  11.68
+ UP BND  PS_9_8  2
+ UP BND  SELL_9_9  12.37
+ UP BND  PS_9_9  0
+ UP BND  SELL_9_10  15.97
+ UP BND  PS_9_10  0
+ UP BND  SELL_9_11  10.06
+ UP BND  PS_9_11  0
+ UP BND  SELL_9_12  6
+ UP BND  PS_9_12  16.85
+ UP BND  SELL_9_13  30.33
+ UP BND  PS_9_13  1
+ UP BND  SELL_9_14  20.2
+ UP BND  PS_9_14  0
+ UP BND  SELL_9_15  14
+ UP BND  PS_9_15  8.88
+ UP BND  SELL_9_16  27
+ UP BND  PS_9_16  5.15
+ UP BND  SELL_9_17  27.92
+ UP BND  PS_9_17  0
+ UP BND  SELL_9_18  20.8
+ UP BND  PS_9_18  2
+ UP BND  SELL_9_19  23.53
+ UP BND  PS_9_19  0
+ UP BND  SELL_9_20  21.6
+ UP BND  PS_9_20  2
+ UP BND  SELL_9_21  23.56
+ UP BND  PS_9_21  2
+ UP BND  SELL_9_22  6
+ UP BND  PS_9_22  8.04
+ UP BND  SELL_9_23  22.61
+ UP BND  PS_9_23  0
+ UP BND  SELL_9_24  16.95
+ UP BND  PS_9_24  5
+ UP BND  SELL_9_25  20.29
+ UP BND  PS_9_25  0
+ UP BND  SELL_9_26  21.51
+ UP BND  PS_9_26  0
+ UP BND  SELL_9_27  16.74
+ UP BND  PS_9_27  0
+ UP BND  SELL_9_28  18.85
+ UP BND  PS_9_28  2
+ UP BND  SELL_9_29  20
+ UP BND  PS_9_29  7.62
+ENDATA

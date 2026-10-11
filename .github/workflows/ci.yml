@@ -511,6 +511,15 @@ jobs:
         if: matrix.name == 'Release'
         run: python3 bench/case_studies/refinery/test_generator.py
 
+      - name: The refinery suite's generators, exact optima and doc section (#1004)
+        # Hermetic: the small instances are generated and checked (KKT conditions, the
+        # rational simplex against enumeration), and the committed files under
+        # data/refinery/ must be what the generators write today, byte for byte.
+        if: matrix.name == 'Release'
+        run: |
+          python3 bench/refinery/test_refinery.py
+          python3 bench/refinery/generate.py --check
+
       - name: An evidence bundle replays - integrity, verifier, re-solve (#526)
         if: matrix.name == 'Release'
         run: python3 tools/test_bundle.py
