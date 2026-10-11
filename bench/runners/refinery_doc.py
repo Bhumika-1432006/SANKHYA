@@ -47,7 +47,7 @@ def load_manifest() -> dict:
 
 def suite_table(manifest: dict) -> list[str]:
     out = ["| # | model | source | size | rows | columns | integer | SC | sha256 | reference "
-           "| known by |", "|--:|---|---|---|---:|---:|---:|---:|---|---:|---|"]
+           "| known by |", "|---:|---|---|---|---:|---:|---:|---:|---|---:|---|"]
     for number, model in enumerate(ORDER, start=1):
         for size in ("small", "medium", "large"):
             e = manifest.get(f"{model}_{size}")
