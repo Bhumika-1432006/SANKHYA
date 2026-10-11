@@ -1187,3 +1187,29 @@ jobs:
           clang-format --version
           find include src apps tests -type f \( -name '*.hpp' -o -name '*.cpp' -o -name '*.h' \) \
             -print0 | xargs -0 clang-format --dry-run --Werror
+
+  jury-docs:
+    # docs/REPORT.pdf and docs/SANKHYA-deck.pptx are what tools/make_report.py renders from
+    # the same CSV slot values as docs/REPORT.md, byte for byte (reportlab's invariant mode,
+    # fixed zip stamps in the deck), so the committed copies are compared with a fresh
+    # render the way the Markdown is in the Release leg. The three libraries are pinned:
+    # a renderer's layout can change between versions and the comparison is exact. The
+    # fresh render is also uploaded, and release.yml attaches the committed files.
+    name: jury report PDF and deck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install reportlab==5.0.1 svglib==2.3.0 python-pptx==1.0.2
+      - name: docs/REPORT.pdf and docs/SANKHYA-deck.pptx are what tools/make_report.py renders
+        run: python3 tools/make_report.py --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sankhya-jury-docs
+          path: |
+            docs/REPORT.md
+            docs/REPORT.pdf
+            docs/SANKHYA-deck.pptx
+            docs/VIDEO.md

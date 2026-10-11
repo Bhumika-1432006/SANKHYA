@@ -153,6 +153,8 @@ that is optimal, at the published optimum and verified counts for time. The meth
 *A tie is two times within 10% of each other, or both under 0.1 s (the coarsest clock here cannot tell those apart). A run that did not count loses to one that did, and an instance on which neither counted is left out. Both medians are over the instances both solvers counted on, and above 1x SANKHYA is the slower one: the first floors each time at 0.1 s as the profile below does, the second takes each solver's clock as recorded, which on instances of a few milliseconds is a ratio of start-up costs and, for a solver that prints 0.0, is left out.*
 
 
+![Dolan-More performance profile, Netlib LP: a curve's height at tau is the fraction of instances on which that solver's run counted and took at most tau times the fastest counted run (`docs/img/profile-netlib.svg`, drawn from the CSV by `bench/runners/perf_profile.py`)](img/profile-netlib.svg)
+
 ### Kennington LP
 
 `bench/results/head-to-head-kennington-1860864.csv`, commit `1860864`, 120 s limit,
@@ -178,6 +180,8 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 *A tie is two times within 10% of each other, or both under 0.1 s (the coarsest clock here cannot tell those apart). A run that did not count loses to one that did, and an instance on which neither counted is left out. Both medians are over the instances both solvers counted on, and above 1x SANKHYA is the slower one: the first floors each time at 0.1 s as the profile below does, the second takes each solver's clock as recorded, which on instances of a few milliseconds is a ratio of start-up costs and, for a solver that prints 0.0, is left out.*
 
 
+![Dolan-More performance profile, Kennington LP (`docs/img/profile-kennington.svg`)](img/profile-kennington.svg)
+
 ### Maros-Meszaros QP
 
 `bench/results/head-to-head-maros-meszaros-1860864.csv`, commit `1860864`, 60 s limit, machine
@@ -201,6 +205,8 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 
 *A tie is two times within 10% of each other, or both under 0.1 s (the coarsest clock here cannot tell those apart). A run that did not count loses to one that did, and an instance on which neither counted is left out. Both medians are over the instances both solvers counted on, and above 1x SANKHYA is the slower one: the first floors each time at 0.1 s as the profile below does, the second takes each solver's clock as recorded, which on instances of a few milliseconds is a ratio of start-up costs and, for a solver that prints 0.0, is left out.*
 
+
+![Dolan-More performance profile, Maros-Meszaros QP (`docs/img/profile-maros-meszaros.svg`)](img/profile-maros-meszaros.svg)
 
 ## 5. Verification: why an answer can be believed
 
@@ -251,6 +257,8 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 | `chromaticindex1024-7` | 67,583 | 1e-08 | 0.5 s | 0.9 s (`cpu-16t`) | feasible | 1.65x |
 | `refinery_year` | 779,640 | 1e-04 | 300.5 s | 300.5 s (`cpu-1t`) | time_limit | 1.00x |
 | `refinery_year` | 779,640 | 1e-08 | 300.5 s | 300.5 s (`cpu-1t`) | time_limit | 1.00x |
+
+![GPU speed-up against nonzeros on the A100, the synthetic ladder and the real models of `docs/BENCHMARKS.md` section 1g.3 (`docs/img/gpu-speedup-a100.svg`, drawn by `bench/runners/gpu_plot.py`)](img/gpu-speedup-a100.svg)
 
 *From `docs/BENCHMARKS.md`, section "6. What these numbers do not say", copied as it stands:*
 

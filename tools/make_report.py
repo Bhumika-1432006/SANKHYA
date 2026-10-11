@@ -9,10 +9,14 @@ stamped in it. The passages on architecture, provenance and limits are copied ve
 the documents that own them. The prose around them, and the jury Q&A, live in this script
 with `{name}` slots for the numbers, so a sentence cannot keep a figure its CSV has lost.
 
-    python tools/make_report.py            # write docs/REPORT.md
-    python tools/make_report.py --check    # exit 1 if the committed file is out of date (CI)
-    python tools/make_report.py --pdf      # also docs/REPORT.pdf, when pandoc and a PDF
-                                           # engine are installed; says so and skips if not
+    python tools/make_report.py            # write docs/REPORT.md, and docs/REPORT.pdf and
+                                           # docs/SANKHYA-deck.pptx when reportlab, svglib
+                                           # and python-pptx are installed (says so if not)
+    python tools/make_report.py --check    # exit 1 if a committed file is out of date (CI)
+
+The PDF (tools/report_pdf.py) and the deck (tools/make_deck.py) are rendered from the same
+slot values and are byte-for-byte reproducible, so --check compares them too wherever the
+three libraries are importable; the ci.yml jury-docs job installs them pinned.
 
 Run it after bench/runners/make_benchmarks_doc.py whenever a results CSV lands.
 """
@@ -21,8 +25,6 @@ from __future__ import annotations
 import argparse
 import csv
 import re
-import shutil
-import subprocess
 import sys
 from pathlib import Path
 
@@ -34,8 +36,9 @@ import make_benchmarks_doc as mbd  # noqa: E402
 from report_qa import CITES, QA  # noqa: E402
 
 OUTPUT = REPO_ROOT / "docs" / "REPORT.md"
-PDF_ENGINES = ("xelatex", "pdflatex", "lualatex", "tectonic", "typst", "wkhtmltopdf",
-               "weasyprint")
+PDF = OUTPUT.with_suffix(".pdf")
+DECK = OUTPUT.with_name("SANKHYA-deck.pptx")
+PDF_TITLE = "SANKHYA - report for the jury"
 EVIDENCE: list[tuple[str, str, str, str]] = []  # (measurement, value, csv, commit)
 F: dict[str, object] = {}  # every number the prose and the Q&A may use
 
@@ -161,7 +164,8 @@ def m_million(rows):
     done = [r for r in rows if r["status"] == "optimal" and r["verified"] == "1"]
     best = "; ".join(f"{r['family']} {int(r['rows']):,} rows by `{r['arm']}` in "
                      f"{float(r['wall_seconds']):,.0f} s" for r in done)
-    slots = {"n": len(rows), "done": len(done), "list": best or "none"}
+    slots = {"n": len(rows), "done": len(done), "list": best or "none",
+             "largest": f"{max((int(r['rows']) for r in done), default=0):,} rows"}
     return (f"A million rows on the CPU: {len(done)} of {len(rows)} engine runs optimal and "
             f"verified ({best})", slots)
 
@@ -360,6 +364,8 @@ that is optimal, at the published optimum and verified counts for time. The meth
 
 {h2h_netlib_table}
 
+![Dolan-More performance profile, Netlib LP: a curve's height at tau is the fraction of instances on which that solver's run counted and took at most tau times the fastest counted run (`docs/img/profile-netlib.svg`, drawn from the CSV by `bench/runners/perf_profile.py`)](img/profile-netlib.svg)
+
 ### Kennington LP
 
 {h2h_kennington_csv}, commit `{h2h_kennington_commit}`, {h2h_kennington_limit} s limit,
@@ -367,12 +373,16 @@ machine `{h2h_kennington_machine}`.
 
 {h2h_kennington_table}
 
+![Dolan-More performance profile, Kennington LP (`docs/img/profile-kennington.svg`)](img/profile-kennington.svg)
+
 ### Maros-Meszaros QP
 
 {h2h_maros_csv}, commit `{h2h_maros_commit}`, {h2h_maros_limit} s limit, machine
 `{h2h_maros_machine}`.
 
 {h2h_maros_table}
+
+![Dolan-More performance profile, Maros-Meszaros QP (`docs/img/profile-maros-meszaros.svg`)](img/profile-maros-meszaros.svg)
 
 ## 5. Verification: why an answer can be believed
 
@@ -417,6 +427,8 @@ machine `{h2h_kennington_machine}`.
 
 {gpu_table}
 
+![GPU speed-up against nonzeros on the A100, the synthetic ladder and the real models of `docs/BENCHMARKS.md` section 1g.3 (`docs/img/gpu-speedup-a100.svg`, drawn by `bench/runners/gpu_plot.py`)](img/gpu-speedup-a100.svg)
+
 """) + passage("docs/BENCHMARKS.md", "6. What these numbers do not say") + "\n"
                 + passage("docs/NEGATIVE-RESULTS.md", "4. Withdrawn claims") + """
 ## 7. Provenance
@@ -435,24 +447,26 @@ section 3.
 """) + qa_section())
 
 
-def write_pdf() -> None:
-    engine = next((e for e in PDF_ENGINES if shutil.which(e)), None)
-    if not shutil.which("pandoc") or engine is None:
-        print("make_report: no pandoc with a PDF engine here; Markdown only")
-        return
-    target = OUTPUT.with_suffix(".pdf")
-    done = subprocess.run(["pandoc", OUTPUT.name, "-o", target.name, f"--pdf-engine={engine}",
-                           "-V", "geometry:margin=2cm"], cwd=OUTPUT.parent)
-    print(f"make_report: {'wrote docs/' + target.name if done.returncode == 0 else 'pandoc failed; Markdown only'}")
+def renderers():
+    """The PDF and deck writers, or None where their libraries are not installed."""
+    try:
+        import make_deck
+        import report_pdf
+    except ImportError as missing:
+        print(f"make_report: {missing.name} is not installed; Markdown only "
+              "(pip install reportlab svglib python-pptx for the PDF and the deck)")
+        return None
+    return report_pdf, make_deck
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--check", action="store_true",
-                        help="exit 1 if docs/REPORT.md is not what this script generates")
-    parser.add_argument("--pdf", action="store_true", help="also write docs/REPORT.pdf")
+                        help="exit 1 if docs/REPORT.md, .pdf or the deck is not what this "
+                             "script generates")
     args = parser.parse_args()
     document = build()
+    rendered = renderers()
     if args.check:
         current = OUTPUT.read_text(encoding="utf-8").replace("\r\n", "\n") if OUTPUT.exists() \
             else ""
@@ -460,11 +474,29 @@ def main() -> int:
             print("FAIL: docs/REPORT.md is out of date; run python tools/make_report.py")
             return 1
         print(f"docs/REPORT.md is current: {len(EVIDENCE)} measurements, {len(QA)} questions")
+        if rendered is None:
+            return 0
+        report_pdf, make_deck = rendered
+        scratch = REPO_ROOT / "build"
+        scratch.mkdir(exist_ok=True)
+        report_pdf.render(OUTPUT, scratch / PDF.name, PDF_TITLE)
+        make_deck.write(F, scratch / DECK.name)
+        stale = [t.name for t in (PDF, DECK)
+                 if not t.exists() or t.read_bytes() != (scratch / t.name).read_bytes()]
+        if stale:
+            print(f"FAIL: docs/{' and docs/'.join(stale)} out of date; run "
+                  "python tools/make_report.py")
+            return 1
+        print("docs/REPORT.pdf and docs/SANKHYA-deck.pptx are current")
         return 0
     OUTPUT.write_text(document, encoding="utf-8", newline="\n")
     print(f"wrote docs/REPORT.md from {len(EVIDENCE)} CSVs")
-    if args.pdf:
-        write_pdf()
+    if rendered is not None:
+        report_pdf, make_deck = rendered
+        report_pdf.render(OUTPUT, PDF, PDF_TITLE)
+        print(f"wrote docs/{PDF.name}")
+        make_deck.write(F, DECK)
+        print(f"wrote docs/{DECK.name}, {make_deck.SLIDES} slides")
     return 0
 
 

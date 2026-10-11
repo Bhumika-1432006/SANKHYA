@@ -31,6 +31,13 @@ Petrochemicals Limited.
 Project site: [sankhya-solver.vercel.app](https://sankhya-solver.vercel.app) — the problem
 statement, what is different, the evidence, how to use it, and the team, on one page.
 
+For the jury, three files generated from the same CSVs as this readme and attached to every
+release: [`docs/REPORT.pdf`](docs/REPORT.pdf), the report with a 25-question Q&A whose every
+answer names its file (`docs/REPORT.md` is the same text); [`docs/SANKHYA-deck.pptx`](docs/SANKHYA-deck.pptx),
+14 slides with the CSV named on each; and [`docs/VIDEO.md`](docs/VIDEO.md), the four-minute
+walkthrough, shot by shot and command by command. `tools/make_report.py` writes the report
+and the deck, and CI fails if a committed copy differs from a fresh render.
+
 > Not built on top of any open-source solver. See [`docs/PROVENANCE.md`](docs/PROVENANCE.md)
 > for the dependency table, the full link line, the linked-library dump, and the CI job that
 > fails the build if a solver library ever appears in the binary.
