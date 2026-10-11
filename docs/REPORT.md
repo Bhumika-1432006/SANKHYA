@@ -106,7 +106,7 @@ the one stamped in the file's rows, the build that produced it.
 | Head-to-head, Netlib LP, 92 instances: SGM10 0.575 s against HiGHS 0.163 s; against HiGHS faster on 3, tie on 72, slower on 17 | `bench/results/head-to-head-netlib-5e490ef.csv` | `5e490ef` |
 | Head-to-head, Kennington LP, 16 instances: SGM10 9.430 s against HiGHS 1.855 s; against HiGHS faster on 3, tie on 2, slower on 11 | `bench/results/head-to-head-kennington-1860864.csv` | `1860864` |
 | Head-to-head, Maros-Meszaros QP, 138 instances: SGM10 6.437 s against HiGHS 35.781 s; against HiGHS faster on 82, tie on 22, slower on 5 | `bench/results/head-to-head-maros-meszaros-1860864.csv` | `1860864` |
-| Safe bounds on Netlib: 73 of 93 optimal answers certified to 1e-6 by a rigorous bound, 18 with no finite bound | `bench/results/certified-gap-netlib-full-0134c92.csv` | `0134c92` |
+| Safe bounds on Netlib: 90 of 94 optimal answers certified to 1e-6 by a rigorous bound, 3 with no finite bound | `bench/results/certified-gap-netlib-full-44418e2b.csv` | `44418e2b` |
 | Netlib infeasible set, verdict with a verified Farkas certificate: 28 of 29 | `bench/results/netlib-infeasible-5a39fb2.csv` | `5a39fb2` |
 | Exact sensitivity: 69 of 96 LPs with every dual, reduced cost and range re-derived in rational arithmetic; 4,479 of 431,730 floating-point values corrected | `bench/results/exact-sensitivity-60455ce.csv` | `60455ce` |
 | Kennington LP, matched and verified: 16 of 16 | `bench/results/kennington-full-9463fd7.csv` | `9463fd7` |
@@ -219,9 +219,9 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 - **Certificates of infeasibility.** 28 of 29 of Netlib's
   infeasible LPs end with a Farkas certificate the verifier accepts (`bench/results/netlib-infeasible-5a39fb2.csv`,
   section 3a). A verdict with no certificate is not counted.
-- **Safe bounds.** 73 of 93 optimal Netlib answers carry a
+- **Safe bounds.** 90 of 94 optimal Netlib answers carry a
   Neumaier-Shcherbina bound within 1e-6 of the objective, re-derived exactly by the
-  verifier; 18 have no finite bound and say so (`bench/results/certified-gap-netlib-full-0134c92.csv`,
+  verifier; 3 have no finite bound and say so (`bench/results/certified-gap-netlib-full-44418e2b.csv`,
   section 1c.2).
 - **Exact sensitivity.** On 69 of 96 LPs every dual, reduced cost and range
   was re-derived in rational arithmetic, correcting 4,479 of 431,730
@@ -242,8 +242,8 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
   at the published optimum (`bench/results/miplib-ad57c03.csv`, section 2).
 - **Declined instances.** Stress set: 15 of 126 declined,
   0 wrong (`bench/results/stress-d32b3847.csv`, section 5b). Maros-Meszaros: 106
-  of 138 optimal (`bench/results/maros-meszaros-9094e1c.csv`, section 2b). Safe bounds: 18 of
-  93 with no finite bound (`bench/results/certified-gap-netlib-full-0134c92.csv`).
+  of 138 optimal (`bench/results/maros-meszaros-9094e1c.csv`, section 2b). Safe bounds: 3 of
+  94 with no finite bound (`bench/results/certified-gap-netlib-full-44418e2b.csv`).
 - **No real industrial model.** Every refinery number is from a generated model.
 - **The GPU, against the faster CPU arm of the same engine** (`bench/results/gpu-real-a100-fdd1f35.csv`, commit
   `fdd1f35`, NVIDIA A100-SXM4-40GB; `docs/BENCHMARKS.md` section 1g.3, where the small-model losses
@@ -397,9 +397,9 @@ A Farkas certificate, written to the solution file and checked by the verifier: 
 
 **Q14. What is a "safe bound", and why does it matter to a planner?**
 
-A lower bound on the true optimum computed from the reported duals with outward rounding (Neumaier and Shcherbina), so it holds despite floating-point error, and re-derived exactly by the verifier. Of 93 optimal Netlib answers, 73 are certified within 1e-6 of the true optimum this way, 2 have a looser finite bound and 18 have none, and the file then claims nothing.
+A lower bound on the true optimum computed from the reported duals with outward rounding (Neumaier and Shcherbina), so it holds despite floating-point error, and re-derived exactly by the verifier. Of 94 optimal Netlib answers, 90 are certified within 1e-6 of the true optimum this way, 1 have a looser finite bound and 3 have none, and the file then claims nothing.
 
-*Evidence: `bench/results/certified-gap-netlib-full-0134c92.csv` at `0134c92`; `docs/BENCHMARKS.md` section 1c.2.*
+*Evidence: `bench/results/certified-gap-netlib-full-44418e2b.csv` at `44418e2b`; `docs/BENCHMARKS.md` section 1c.2.*
 
 **Q15. Can the shadow prices be trusted for pricing decisions?**
 
