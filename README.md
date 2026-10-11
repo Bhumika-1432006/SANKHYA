@@ -31,12 +31,11 @@ Petrochemicals Limited.
 Project site: [sankhya-solver.vercel.app](https://sankhya-solver.vercel.app) — the problem
 statement, what is different, the evidence, how to use it, and the team, on one page.
 
-For the jury, three files generated from the same CSVs as this readme and attached to every
-release: [`docs/REPORT.pdf`](docs/REPORT.pdf), the report with a 25-question Q&A whose every
-answer names its file (`docs/REPORT.md` is the same text); [`docs/SANKHYA-deck.pptx`](docs/SANKHYA-deck.pptx),
-14 slides with the CSV named on each; and [`docs/VIDEO.md`](docs/VIDEO.md), the four-minute
-walkthrough, shot by shot and command by command. `tools/make_report.py` writes the report
-and the deck, and CI fails if a committed copy differs from a fresh render.
+For the jury, [`docs/REPORT.pdf`](docs/REPORT.pdf), the report generated from the same CSVs as
+this readme and attached to every release, with a 25-question Q&A whose every answer names its
+file (`docs/REPORT.md` is the same text). `tools/make_report.py` writes it, and CI fails if the
+committed copy differs from a fresh render. A generated deck and a video script live in `docs/`
+as regenerable backups.
 
 > Not built on top of any open-source solver. See [`docs/PROVENANCE.md`](docs/PROVENANCE.md)
 > for the dependency table, the full link line, the linked-library dump, and the CI job that
@@ -128,6 +127,21 @@ on 72 (within 10%, or both under 0.1 s) and HiGHS faster on 17; on the 16 Kennin
 (`head-to-head-kennington-1860864.csv`) 9.430 s against 1.855 s, faster on 3, tied on 2, slower
 on 11. The per-instance split is stated the way rivals state theirs, and the SGM is the number
 to read: most Netlib pairs are ties because most instances finish in milliseconds.
+
+**The refinery suite (#1004, `docs/BENCHMARKS.md` section 4c).** Ten models of known structure
+from published formulations - crude and product blending, Haverly's pooling problem as its
+McCormick relaxation and as a discrete-set-point MILP, the Lee, Pinto, Grossmann and Park (1996)
+crude unloading schedule, unit modes with semi-continuous throughputs, a 30-day plan, a
+price-scenario plan, product distribution and cargo lot sizing - at three sizes each, generated
+by `bench/refinery/generate.py`, every one of the 30 with a reference optimum (24 exact by
+construction, rational simplex, enumeration or the Wagner-Whitin recursion; 6 by a HiGHS = SCIP
+cross-check at a zero gap). Against HiGHS and SCIP at `8d4b07b3`
+(`bench/results/head-to-head-refinery-8d4b07b3.csv`; 600 s, one thread, a shared laptop, so the
+times are indicative): SANKHYA returns `optimal` on **26 of 30**, every one at the reference and
+independently verified, and no wrong answer; HiGHS and SCIP solve all 30. The four misses are
+time limits: `unloading_large` (the optimum found, not proved), `unit_modes_large` (0.16% above),
+`lot_sizing_medium` and `lot_sizing_large` (5.5% and 12.5% above: the big-M lot-sizing relaxation
+is where the branch and cut is weakest, and the cuts that close it are not in yet).
 
 The second is the number Phase 6's ">= 95% of Netlib" criterion is measured against, and it
 grades us against Netlib's own readme table. The third says how often the solver finishes
@@ -283,9 +297,12 @@ at `60455ce`, after #559's certificates, **28 of 29** carry a Farkas certificate
 accepts; `cplex2` stays a `numerical_error`, since its elastic optimum is zero at the 1e-7
 tolerance and no certificate exists there (`bench/results/netlib-infeasible-60455ce.csv`, a
 laptop with desktop apps open; every instance ends in under 14 s of its 60 s limit). At `5a39fb2`, with `--iis` (#871), the 28 stay certified, and **12 of 29** also name an irreducible infeasible subsystem the verifier proves on its own arithmetic, infeasible using nothing outside the set and irreducible by one witness per member; 18 name one (`bench/results/netlib-infeasible-5a39fb2.csv`). Infeasibility repair (#523, `tools/repair_infeasibility.py`, elastic programming over rows and column bounds) on the same 29: the repair applied, the repaired model re-solved as a pure feasibility problem by the CLI and checked by `tools/verify_solution.py`, **28 of 29** accepted; `gran`'s elastic LP itself ends `numerical_error` (`bench/results/netlib-repair-5a39fb2.csv`, `bench/runners/netlib_repair.py`). Maros-Meszaros, all 138 convex QPs at 60 s with the proximal interior point the
-default QP engine (#740): **`optimal` on 106, within 1e-6 of the reference on 106,
-verifier-accepted on 120, and no `optimal` the verifier rejects** (`bench/results/maros-meszaros-9094e1c.csv`,
-`docs/BENCHMARKS.md` section 2b). The run before it, Condat-Vu at 300 s, read 45, 44 and 39 with
+default QP engine (#740): **`optimal` on 109, within 1e-6 of the reference on 108,
+verifier-accepted on 119, and no `optimal` the verifier rejects** (`bench/results/maros-meszaros-847042e3.csv`,
+`docs/BENCHMARKS.md` section 2b; a laptop with other builds running, so the two largest models,
+`boyd2` and `cont-300`, hit the 60 s limit at 0 and 11 iterations where the quiet `9094e1c` run
+solved them in 36 s and 31 s - the gains since that run, with the Newton step refined against the
+unregularized KKT matrix (#1010), are `powell20`, `primalc1`, `qcapri` and `qshare1b`). The run before it, Condat-Vu at 300 s, read 45, 44 and 39 with
 six `optimal` answers the verifier rejected (`maros-meszaros-65eecbc.csv`, #590). QPLIB's convex continuous QPs, all 17 fetched (19 selected, 2 over the size cap, 16 with a
 published value), on `main` at `5a39fb2` at the runner's default 1000 s on the laptop with no other jobs
 (`bench/results/qplib-5a39fb2.csv`, `docs/BENCHMARKS.md` section 2d): the default QP engine and the
@@ -303,7 +320,14 @@ adding Halpern restarts passes 16, and both legs lose `hs76`, which the plain en
 same engine with its operator on the device, one A100 (`qp_gpu=true`, #830, `maros-meszaros-493-gpu-{host,device}-3f70a78.csv`) passes 18 of 138 against the host's 19: on these small QPs launches and synchronisation cost more than the arithmetic, so it stays off. The PID weight is on by default since the PID A/B, with its gains left at their untuned defaults
 (kp 0.5, ki = kd = 0, PDLP's smoothed update); Halpern restarts stay off. The engine race (#476) on the same binary:
 3 of 8 Mittelmann against `auto`'s 2, the same 89 of 89 on Netlib as the plain run but 182.9 s of
-solver time against 108.0 s, which is why it stays off by default.
+solver time against 108.0 s, which is why it stays off by default. Re-measured interleaved against
+the rule table on the Netlib medium tier at `8d4b07b3`, one thread per engine, three repeats
+(`bench/results/ab-netlib-medium-race-8d4b07b3-summary.csv`, `docs/BENCHMARKS.md` section 1b.2): 51 of 51
+verified under both arms, the race faster on 3 instances (`grow22`, `grow15`, `forplan`) and slower on
+46, shifted geomean 1.59x the rule table's - on models this size the dual simplex alone finishes before
+the other two engines have set up, so the default stays off; three threads for three engines is a fair
+default on any modern CPU, and the option is for the Mittelmann-sized models where the right engine is
+not known in advance.
 
 **Four more sets and three checks, run on `main` between 30 September and 4 October.**
 MIPLIB 3, the classic 1998 set, kept beside MIPLIB 2017 and never merged into its tables

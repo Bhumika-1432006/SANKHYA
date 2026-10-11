@@ -191,13 +191,28 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
     // count 1. Sweeping the buckets in increasing count finds those first, which is the
     // singleton/triangular pre-pass falling out of the general rule rather than being
     // special-cased alongside it.
-    for (Index count = 1; count <= m && examined < kCandidateBudget && best_cost > 0; ++count) {
+    //
+    // THE BUDGET COUNTS CANDIDATES EXAMINED WITH A PIVOT IN HAND (Suhl & Suhl 1990, sec. 3:
+    // the search over the count buckets stops a few candidates after it has an admissible
+    // one, and keeps going while it has none). It used to count every candidate looked at,
+    // admissible or not, and stop at kCandidateBudget; on a badly scaled basis the sparsest
+    // rows and columns are often exactly the ones whose entries fail the threshold test -
+    // a row singleton that is tiny against its column's maximum stays in the count-1
+    // bucket for as long as its column does - so the same four inadmissible candidates
+    // exhausted the budget at step after step, and every such step ran the exhaustive scan
+    // below over the whole active submatrix (issue #1006). On pilot87 that was 255 of the
+    // 1,987 steps of every factorization and 22 s of a 55 s solve. Now a candidate is
+    // counted once it or an earlier one supplied a pivot (the finding candidate included),
+    // so a step whose first candidate is admissible examines the same four as before, and
+    // one whose first candidates are not walks on until it has a pivot and three more to
+    // weigh it against. Counting from the first admissible candidate rather than taking it
+    // outright matters: taking it outright sent pilot87 from 20,102 to 59,062 iterations.
+    const auto keep_looking = [&] { return best_row < 0 || examined < kCandidateBudget; };
+    for (Index count = 1; count <= m && keep_looking() && best_cost > 0; ++count) {
       // -- candidate columns of this count
-      for (Index j = col_lists.first(count); j >= 0 && examined < kCandidateBudget;
-           j = col_lists.after(j)) {
+      for (Index j = col_lists.first(count); j >= 0 && keep_looking(); j = col_lists.after(j)) {
         const auto uj = static_cast<std::size_t>(j);
         assert(w.col_active[uj] != 0 && w.col_count[uj] == count && "a stale list entry");
-        ++examined;
 
         const double column_max = active_column_max(j);
         if (column_max < pivot_tolerance) continue;
@@ -218,15 +233,14 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
             if (cost == 0) break;
           }
         }
+        if (best_row >= 0) ++examined;
       }
 
       // -- candidate rows of this count, which the column sweep can miss entirely when a
       //    row singleton sits in a dense column
-      for (Index i = row_lists.first(count); i >= 0 && examined < kCandidateBudget;
-           i = row_lists.after(i)) {
+      for (Index i = row_lists.first(count); i >= 0 && keep_looking(); i = row_lists.after(i)) {
         const auto ui = static_cast<std::size_t>(i);
         assert(w.row_active[ui] != 0 && w.row_count[ui] == count && "a stale list entry");
-        ++examined;
 
         for (std::size_t p = 0; p < w.row_cols[ui].size(); ++p) {
           const Index j = w.row_cols[ui][p];
@@ -271,6 +285,7 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
           best_value = value;
           if (cost == 0) break;
         }
+        if (best_row >= 0) ++examined;
       }
     }
 
@@ -287,6 +302,8 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
     // So before concluding anything, fall back to an EXHAUSTIVE scan of every active column
     // still standing, unbounded by the budget. If that finds an admissible pivot, the
     // budgeted search merely got unlucky with bucket order and this step proceeds normally.
+    // (Since the walk above continues until it has a pivot, this is reached only when no
+    // bucket held one - a stale list is the only way the scan can still find something.)
     // Only when the exhaustive scan ALSO finds nothing is the active submatrix genuinely
     // singular to working precision - every remaining entry is below pivot_tolerance or
     // below threshold * its column's max, which is the asserted condition below, not an

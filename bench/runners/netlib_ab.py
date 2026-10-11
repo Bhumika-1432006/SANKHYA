@@ -21,9 +21,17 @@ so the SGM is comparable with the HiGHS column of the head-to-head CSV.
 The independent verifier (tools/verify_solution.py) runs on the first repeat of each arm; the
 later repeats are timing only and are marked `verified` empty.
 
+The same binary can be its own base when the change is an option rather than a build:
+`--base-option` and `--new-option` go to one arm only, `--solver-option` to both, and the
+options each arm ran with are in its rows' solver_options column. `--reference` names the
+manifest to run (default data/netlib/reference.json, whatever tier was last fetched).
+
 Usage:
     python bench/runners/netlib_ab.py --base /path/main/build/sankhya \\
         --new /path/pr/build/sankhya --repeats 3 --out-prefix bench/results/ab-netlib-pr825
+    python bench/runners/netlib_ab.py --base build/sankhya --new build/sankhya \\
+        --new-option engine_race=true --reference /tmp/reference-medium.json \\
+        --out-prefix bench/results/ab-netlib-medium-race-<sha>
 """
 from __future__ import annotations
 
@@ -45,7 +53,7 @@ GENERATED = ("truss", "stocfor3")  # Fortran generators on netlib.org, not EMPS 
 RUN_FIELDS = ["arm", "repeat", "instance", "instance_sha256", "status", "our_objective",
               "published_objective", "absolute_gap", "relative_gap", "matches_published",
               "exact_objective", "exact_relative_gap", "matches_exact", "independently_verified",
-              "wall_seconds", "solver_seconds", "iterations",
+              "wall_seconds", "solver_seconds", "iterations", "algorithm",
               "time_limit", "solver_options", "git_commit", "machine", "timestamp_utc"]
 SUMMARY_FIELDS = ["instance", "instance_sha256", "status_base", "status_new", "counted_base",
                   "counted_new", "iterations_base", "iterations_new",
@@ -58,9 +66,9 @@ def sgm(values: list[float], shift: float = SHIFT_SECONDS) -> float:
 
 
 def solve(binary: Path, name: str, published: float, exact: str | None, args,
-          verify: bool) -> dict:
+          verify: bool, arm_options: list[str]) -> dict:
     mps = netlib.DATA_DIR / f"{name}.mps"
-    options = [f"threads={args.threads}", *args.solver_option]
+    options = [f"threads={args.threads}", *args.solver_option, *arm_options]
     blob = netlib.run_one(binary, mps, args.time_limit, verify, options)
     ours = blob.get("objective")
     gap = None if ours is None else abs(ours - published) / max(1.0, abs(published))
@@ -87,6 +95,7 @@ def solve(binary: Path, name: str, published: float, exact: str | None, args,
         "wall_seconds": round(blob.get("wall_seconds", 0.0), 6),
         "solver_seconds": blob.get("solver_seconds", ""),
         "iterations": blob.get("iterations", ""),
+        "algorithm": blob.get("algorithm", ""),
         "time_limit": args.time_limit, "solver_options": " ".join(options),
     }
 
@@ -100,18 +109,26 @@ def main() -> int:
     parser.add_argument("--threads", type=int, default=1)
     parser.add_argument("--time-limit", type=float, default=120.0)
     parser.add_argument("--instances", nargs="*")
-    parser.add_argument("--solver-option", action="append", default=[])
+    parser.add_argument("--solver-option", action="append", default=[],
+                        help="KEY=VALUE for both arms")
+    parser.add_argument("--base-option", action="append", default=[],
+                        help="KEY=VALUE for the base arm only")
+    parser.add_argument("--new-option", action="append", default=[],
+                        help="KEY=VALUE for the new arm only")
+    parser.add_argument("--reference", type=Path, default=netlib.DATA_DIR / "reference.json",
+                        help="the Netlib manifest to run (fetch_data.py writes one per tier)")
     parser.add_argument("--machine", default=netlib.machine_tag())
     parser.add_argument("--out-prefix", required=True,
                         help="writes <prefix>-runs.csv and <prefix>-summary.csv")
     args = parser.parse_args()
 
-    blob = json.loads((netlib.DATA_DIR / "reference.json").read_text())
+    blob = json.loads(args.reference.read_text())
     reference = blob["instances"]
     exact_path = netlib.DATA_DIR / "koch_exact.json"
     exact = json.loads(exact_path.read_text())["instances"] if exact_path.exists() else {}
     names = sorted(args.instances or [n for n in reference if n not in GENERATED])
     arms = {"base": args.base, "new": args.new}
+    arm_options = {"base": args.base_option, "new": args.new_option}
     commits = {arm: stamp.binary_commit(path) or "unknown" for arm, path in arms.items()}
     shas = {n: netlib.sha256_file(netlib.DATA_DIR / f"{n}.mps") for n in names}
     print(f"base {commits['base']}  new {commits['new']}  {len(names)} instances, "
@@ -124,7 +141,7 @@ def main() -> int:
             for arm in order:
                 row = solve(arms[arm], name, reference[name]["published_optimal"],
                             exact.get(name, {}).get("exact_objective"), args,
-                            verify=repeat == 1)
+                            verify=repeat == 1, arm_options=arm_options[arm])
                 row.update(arm=arm, repeat=repeat, instance_sha256=shas[name],
                            git_commit=commits[arm], machine=args.machine,
                            timestamp_utc=datetime.datetime.now(datetime.timezone.utc)

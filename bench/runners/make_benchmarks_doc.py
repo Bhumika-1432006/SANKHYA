@@ -47,6 +47,7 @@ import gpu_plot  # the speedup-against-nonzeros figure of 1g.3 (#488)
 import head_to_head_doc  # section 4a, the five-solver head-to-head (#766)
 import refinery_doc  # section 4c, the refinery suite against HiGHS and SCIP (#1004)
 import pricing_ab_doc  # 1b.1, dual pricing: Devex against dual steepest edge (#411)
+import race_ab_doc  # 1b.2, the engine race against the rule table (#476)
 from gpu_doc import gpu_datacenter_table, gpu_real_section, ipm_cudss_section, multi_gpu_section
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -3041,6 +3042,16 @@ norm of the row of the basis inverse, through the Forrest-Goldfarb update (Math.
 for that solve.
 
 {pricing_ab_doc.section(latest_result.RESULTS_DIR)}
+#### 1b.2 The engine race against the rule table (#476)
+
+`algorithm=auto` picks one LP engine by a rule on the model's size. With `engine_race=true`
+it runs the dual simplex, the interior point with crossover and PDHG at once, one thread
+each, and takes the first answer that passes the in-process KKT check against the original
+model; a rejected answer neither wins nor stops the others. Three threads for three engines
+is a fair default on any modern CPU; whether it pays here is this A/B, both arms on one
+binary, interleaved instance by instance.
+
+{race_ab_doc.section(latest_result.RESULTS_DIR)}
 ### 1c. The full set — the honest headline
 
 Every instance in Netlib's summary table. Both tiers above are defined by a row cap, which

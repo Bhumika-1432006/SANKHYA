@@ -121,6 +121,8 @@ check(planning.wagner_whitin(demand, fixed, unit, hold) == best, "recursion = en
 
 print("the doc section")
 import refinery_doc  # noqa: E402
+# The section draws docs/img/profile-refinery.svg; a test must not rewrite a tracked figure.
+refinery_doc.perf_profile.write_figure = lambda *args, **kwargs: None
 with tempfile.TemporaryDirectory() as tmp:
     path = Path(tmp) / "head-to-head-refinery-abc1234.csv"
     import compare_suite  # noqa: E402

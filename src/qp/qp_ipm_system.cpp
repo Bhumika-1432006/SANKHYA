@@ -6,8 +6,10 @@
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <utility>
 
+#include "sankhya/tolerances.hpp"
 #include "sankhya/types.hpp"
 
 namespace sankhya::qp::ipm_detail {
@@ -203,6 +205,59 @@ void solve_refined(const SparseLdl& ldl, const SparseMatrix& k, const std::vecto
     for (std::size_t i = 0; i < rhs.size(); ++i) correction[i] = rhs[i] - kx[i];
     ldl.solve(correction.data());
     for (std::size_t i = 0; i < rhs.size(); ++i) (*x)[i] += correction[i];
+  }
+}
+
+// Reference: Altman & Gondzio, "Regularized symmetric indefinite systems in interior point
+// methods for linear and quadratic optimization", Optim. Methods Softw. 11 (1999): the
+// primal-dual regularization makes the factorization safe, and iterative refinement against the
+// unregularized system takes its perturbation back out, so the step solved is the Newton step
+// of the problem and not of its proximal subproblem. Without it the second block row reads
+// M dv + delta dy = b - M v, so a full step leaves a primal residual of delta * dy, and on a
+// badly scaled model that error compounds until the iterate stops being finite: cvxqp3m and
+// powell20 ended that way at 8d4b07b3 and reach the reference with the refinement, qship12l
+// and qpilotno stay finite (measured, bench/results). The refinement does not cure the
+// degenerate LISWET family (its correction gains under 10% a step once the active rows lose
+// rank, so the loop stops where it started); that stays an open class.
+void refine_unregularized(const SparseLdl& ldl, const SparseMatrix& k0,
+                          const std::vector<double>& rhs, std::vector<double>* x) {
+  const std::size_t n = rhs.size();
+  // Each row's residual is judged against its own diagonal, max(1, |K0_ii|): a column whose
+  // Theta^{-1} is 1e+8 carries a residual of 1e-8 |dv| from rounding alone, and measured
+  // unscaled that row would end the refinement while the row block (diagonal 0, the primal
+  // residual it exists to close) is still improving.
+  std::vector<double> scale(n, 1.0);
+  for (Index j = 0; j < k0.num_cols(); ++j) {
+    const ColumnView column = k0.column(j);
+    for (Index p = 0; p < column.size; ++p) {
+      if (column.rows[p] == j) {
+        scale[static_cast<std::size_t>(j)] = std::max(1.0, std::fabs(column.values[p]));
+      }
+    }
+  }
+  std::vector<double> kx(n), r(n), trial(n), trial_r(n);
+  const auto residual = [&](const std::vector<double>& v, std::vector<double>* out) {
+    KktMatrix::multiply(k0, v, &kx);
+    double norm = 0.0;
+    for (std::size_t i = 0; i < n; ++i) {
+      (*out)[i] = rhs[i] - kx[i];
+      norm = std::max(norm, std::fabs((*out)[i]) / scale[i]);
+    }
+    return norm;
+  };
+  double best = residual(*x, &r);
+  const double floor = std::numeric_limits<double>::epsilon() * std::max(1.0, inf_norm(rhs));
+  for (int step = 0; step < tol::kQpIpmRefinementSteps && best > floor; ++step) {
+    trial = r;
+    ldl.solve(trial.data());
+    for (std::size_t i = 0; i < n; ++i) trial[i] += (*x)[i];
+    const double next = residual(trial, &trial_r);
+    if (!(next < best)) break;  // no better, or not finite: keep what is in hand
+    std::swap(*x, trial);
+    std::swap(r, trial_r);
+    const bool stalled = !(next < tol::kQpIpmRefinementProgress * best);
+    best = next;
+    if (stalled) break;
   }
 }
 
