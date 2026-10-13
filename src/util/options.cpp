@@ -623,15 +623,19 @@ const std::vector<OptionSpec>& Options::registry() {
                  {"auto", "on", "off"}});
     s.push_back({"mip_heur_parity",
                  OptionType::String,
-                 std::string("auto"),
+                 std::string("on"),
                  "The parity heuristic (#841): the equality rows whose odd-coefficient "
                  "columns are all binary are read modulo 2 and solved by Gaussian "
                  "elimination over GF(2), once before the root LP; each 0/1 fixing it "
                  "allows (at most 16, from a null space enumerated lowest column first) is "
                  "completed by a sub-MIP of at most 1000 nodes, and what that finds is "
                  "checked against the original model before it can become the incumbent. "
-                 "Generic: a model with no such row costs one pass over its rows. auto "
-                 "follows mip_heuristics.",
+                 "Generic: a model with no such row costs one pass over its rows. on by "
+                 "default after its A/B on main fa9e8b4d (MIPLIB tier 1 x 3 seeds, one "
+                 "thread: proved 28->28 and matched 35->41 at node_limit 2000, proved "
+                 "29->29 and matched 40->47 at 60 s; bench/results/miplib-841-parity-"
+                 "default-{n2000,60s}-{off,on}-seeds3-fa9e8b4d.csv), so it runs whatever "
+                 "mip_heuristics says; auto follows mip_heuristics.",
                  0.0,
                  0.0,
                  {"auto", "on", "off"}});

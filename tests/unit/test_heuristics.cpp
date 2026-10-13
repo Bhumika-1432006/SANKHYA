@@ -363,7 +363,8 @@ TEST(Heuristics, RensFixesTheIntegralColumnsAndBoxesTheRest) {
 }
 
 TEST(Heuristics, EverySwitchResolvesAgainstTheMasterSwitch) {
-  // Defaults: rounding and the fractional dive only, exactly what the benchmark CSVs ran.
+  // Defaults: rounding, the fractional dive and parity (on since its A/B, #841:
+  // bench/results/miplib-841-parity-default-*-seeds3-fa9e8b4d.csv).
   Options defaults;
   HeuristicSchedule s = HeuristicSchedule::from(defaults);
   EXPECT_TRUE(s.dive[rule_index(DiveRule::kFractional)]);
@@ -376,11 +377,11 @@ TEST(Heuristics, EverySwitchResolvesAgainstTheMasterSwitch) {
   EXPECT_FALSE(s.dive[rule_index(DiveRule::kVectorLength)]);
   EXPECT_FALSE(s.dive[rule_index(DiveRule::kGuided)]);
   EXPECT_FALSE(s.dive_backtrack);
-  EXPECT_FALSE(s.parity);  // #841: off until its A/B
+  EXPECT_TRUE(s.parity);  // #841: on, whatever mip_heuristics says
   EXPECT_FALSE(s.prop_dive);
   EXPECT_FALSE(s.local_branching);
-  EXPECT_FALSE(s.any_optional());
-  EXPECT_EQ(s.names(), "rounding, fractional diving");
+  EXPECT_TRUE(s.any_optional());
+  EXPECT_EQ(s.names(), "rounding, parity, fractional diving");
   EXPECT_TRUE(s.seconds_budgets);
 
   // The master switch turns every auto on; an explicit off wins over it.
@@ -403,11 +404,11 @@ TEST(Heuristics, EverySwitchResolvesAgainstTheMasterSwitch) {
   EXPECT_TRUE(s.rens);
   EXPECT_FALSE(s.rins);
   EXPECT_TRUE(s.any_optional());
-  EXPECT_EQ(s.names(), "rounding, fractional diving, RENS");
+  EXPECT_EQ(s.names(), "rounding, parity, fractional diving, RENS");
   one.set_string("mip_heur_dive_fractional", "off");
   s = HeuristicSchedule::from(one);
   EXPECT_FALSE(s.dive[rule_index(DiveRule::kFractional)]);
-  EXPECT_EQ(s.names(), "rounding, RENS");
+  EXPECT_EQ(s.names(), "rounding, parity, RENS");
 
   // Deterministic drops the budgets in seconds and keeps the counted ones.
   one.set_bool("deterministic", true);

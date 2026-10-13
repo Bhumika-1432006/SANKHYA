@@ -24,9 +24,11 @@ TEST(MilpComponents, DefaultsMatchWhatBranchAndBoundActuallyDefaultsTo) {
   // 10 of 30 where no cuts prove 9, at 1.015x the nodes. This line is the record of
   // that decision; a run that reverses it must change this expectation on purpose.
   EXPECT_TRUE(parts.cuts_enabled);
-  EXPECT_FALSE(parts.heuristics_enabled);
-  EXPECT_EQ(parts.heuristics, "rounding, fractional diving")
-      << "the two every benchmark CSV was measured with, and nothing else";
+  // Parity on by default since its A/B (#841,
+  // bench/results/miplib-841-parity-default-*-seeds3-fa9e8b4d.csv).
+  EXPECT_TRUE(parts.heuristics_enabled);
+  EXPECT_EQ(parts.heuristics, "rounding, parity, fractional diving")
+      << "the three the defaults run, and nothing else";
   EXPECT_FALSE(parts.conflict_analysis_enabled);
 }
 
@@ -37,7 +39,7 @@ TEST(MilpComponents, OneHeuristicOnByNameReadsAsHeuristicsOn) {
   options.set_string("mip_heur_rens", "on");
   const MilpComponents parts = describe_components(options);
   EXPECT_TRUE(parts.heuristics_enabled);
-  EXPECT_EQ(parts.heuristics, "rounding, fractional diving, RENS");
+  EXPECT_EQ(parts.heuristics, "rounding, parity, fractional diving, RENS");
 }
 
 TEST(MilpComponents, ReportsExactlyWhatWasSetNotAGuess) {
