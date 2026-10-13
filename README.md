@@ -49,6 +49,7 @@ as regenerable backups.
 | set | instances | our count, under the set's stated grading | reference solver on the same host | CSV | commit | date |
 |---|---:|---|---|---|---|---|
 | Netlib | 92 | **82 of 92** (exact optimum and verified, `passed`) | - | `bench/results/netlib-full-9094e1c.csv` | `9094e1c` | 2026-09-29 |
+| Netlib certified bounds | 93 | **73 of 93** (optimal answer within 1e-6 of a rigorous bound the verifier re-derives) | - | `bench/results/certified-gap-netlib-full-0134c92.csv` | `0134c92` | 2026-09-30 |
 | Netlib infeasible | 29 | **28 of 29** (certified infeasible, `passed`) | - | `bench/results/netlib-infeasible-5a39fb2.csv` | `5a39fb2` | 2026-10-01 |
 | Kennington | 16 | **16 of 16** (matches published optimum and verified, `passed`) | - | `bench/results/kennington-full-9463fd7.csv` | `9463fd7` | 2026-10-02 |
 | Mittelmann | 12 | **5 of 12** (matches HiGHS's objective and verified, `passed`) | HiGHS (objective check) | `bench/results/mittelmann-72123ff.csv` | `72123ff` | 2026-09-24 |

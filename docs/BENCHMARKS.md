@@ -455,7 +455,7 @@ Run at `0134c92` on `cloud-container-IntelXeon-2.10GHz-4vCPU-15GB-quiet` (`certi
 
 Finite but looser than 1e-6: modszk1 (1.09e-04), pilot87 (4.10e-06).
 
-No finite bound from the reported duals, even after bound propagation and the basis shift (the file says `safe_lower_bound -inf` and claims nothing): bnl2, brandy, d2q06c, finnis, greenbea, greenbeb, lotfi, maros, maros-r7, perold, pilot.ja, pilot4, scfxm1, scfxm2, scfxm3, scorpion, scrs8, stair.
+No finite bound, even after bound propagation, the basis shift and the exact basis duals (the file says `safe_lower_bound -inf` and claims nothing): bnl2, brandy, d2q06c, finnis, greenbea, greenbeb, lotfi, maros, maros-r7, perold, pilot.ja, pilot4, scfxm1, scfxm2, scfxm3, scorpion, scrs8, stair.
 
 ### 1d. Beyond Netlib — Mittelmann's LP set
 

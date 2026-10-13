@@ -51,6 +51,7 @@
 #include <fmt/format.h>
 
 #include "exact/bigint.hpp"
+#include "exact/exact_basis.hpp"
 #include "exact/rational.hpp"
 #include "la/lu.hpp"
 #include "sankhya/tolerances.hpp"
@@ -322,7 +323,7 @@ ExactDualBound exact_dual_bound(const Model& model, std::span<const double> dual
         for (const double v : work) z_max = std::max(z_max, std::fabs(v));
         if (!(z_max > 0.0) || !std::isfinite(z_max)) {
           out.message = "the floating-point solve broke down";
-          return out;
+          break;
         }
         int ez = 0;
         (void)std::frexp(z_max, &ez);
@@ -406,7 +407,7 @@ ExactDualBound exact_dual_bound(const Model& model, std::span<const double> dual
         if (progress < tol::kExactDualMinProgress) {
           if (++stalls >= tol::kExactDualMaxStalls) {
             out.message = "the refinement stopped converging";
-            return out;
+            break;
           }
         } else {
           stalls = 0;
@@ -441,8 +442,29 @@ ExactDualBound exact_dual_bound(const Model& model, std::span<const double> dual
       }
     }
     if (!y) {
-      out.message = "the refinement did not reach the exact duals within its iteration cap";
-      return out;
+      // The refinement removes about as many bits per step as the basis's conditioning
+      // allows, and on a basis conditioned near 1/eps (stair, the scfxm family) it removes
+      // none. The exact rational LU in the float pivot order (exact/exact_lu.hpp, #855) then
+      // solves B'y = c_B outright, as the exact repair does: slower, but a Netlib basis's
+      // fill is affordable, and the result is exact by construction.
+      if (out.message.empty()) {
+        out.message = "the refinement did not reach the exact duals within its iteration cap";
+      }
+      exact::Problem problem(model);
+      for (Index j = 0; j < n; ++j) {
+        problem.cost[static_cast<Sz>(j)] = Rational::from_double(dual_cost[static_cast<Sz>(j)]);
+      }
+      exact::Basis exact_basis;
+      const exact::LoadResult loaded =
+          exact::load_basis(model, basis, problem, deadline, &exact_basis);
+      if (!loaded.message.empty()) {
+        out.message += "; the exact factorisation: " + loaded.message;
+        return out;
+      }
+      RationalVector solved;
+      solved.q = exact::common_denominator(exact_basis.y, &solved.p);
+      y = std::move(solved);
+      out.message.clear();
     }
 
     // ---- The bound, exactly, times q: sum_i p_i side_i + sum_j S_j bound_j, with

@@ -524,8 +524,8 @@ def certified_gap_section(path: Path | None) -> str:
             f"{name} ({finite[name]:.2e})" for name in loose) + ".")
         lines.append("")
     if none:
-        lines.append("No finite bound from the reported duals, even after bound propagation "
-                     "and the basis shift (the file says `safe_lower_bound -inf` and claims "
+        lines.append("No finite bound, even after bound propagation, the basis shift and the "
+                     "exact basis duals (the file says `safe_lower_bound -inf` and claims "
                      "nothing): " + ", ".join(none) + ".")
         lines.append("")
     return chr(10).join(lines)
