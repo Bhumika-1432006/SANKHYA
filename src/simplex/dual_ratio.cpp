@@ -39,6 +39,7 @@
 #include "simplex_core.hpp"
 
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 #include <limits>
 #include <vector>
@@ -172,10 +173,22 @@ void Simplex::collect_dual_breakpoints(bool leaving_to_upper) const {
                             std::max(g + tol::kDualHarrisRelaxation, 0.0) / alpha_abs,
                             alpha_abs, range});
   };
+  //
+  // AND A DENSE ROW OVER THE NONBASIC COLUMNS ONLY (#1006). The loop used to visit all n + m
+  // columns and reject the m basic ones one at a time - on dfl001 a third of the 18,301 it
+  // visited, and the rejecting test was the hottest line of this function. The nonbasic
+  // list is the same set in another order, which, as above, the tests do not see.
   if (pivot_row_held_sparse_) {
     for (const Index k : pivot_row_touched_) consider(k);
   } else {
-    for (Index k = 0; k < total_; ++k) consider(k);
+    // A square basis leaves exactly total_ - m_ columns nonbasic, and the list holds each
+    // column once (nonbasic_position_), so this size and every entry nonbasic make it the
+    // whole nonbasic set - the check that the pivot's swap and the rebuilds kept it so.
+    assert(static_cast<Index>(nonbasic_list_.size()) == total_ - m_);
+    for (const Index k : nonbasic_list_) {
+      assert(basis_position_[static_cast<std::size_t>(k)] < 0);
+      consider(k);
+    }
   }
   const double pivot_floor =
       std::max(tol::kPivotTolerance, tol::kDualPivotRelativeFloor * alpha_max);
@@ -183,6 +196,24 @@ void Simplex::collect_dual_breakpoints(bool leaving_to_upper) const {
     std::erase_if(breakpoints_,
                   [&](const DualBreakpoint& b) { return b.alpha_abs <= pivot_floor; });
   }
+}
+
+void Simplex::rebuild_nonbasic_list() {
+  nonbasic_list_.clear();
+  nonbasic_position_.assign(static_cast<std::size_t>(total_), -1);
+  for (Index k = 0; k < total_; ++k) {
+    if (basis_position_[static_cast<std::size_t>(k)] >= 0) continue;
+    nonbasic_position_[static_cast<std::size_t>(k)] = static_cast<Index>(nonbasic_list_.size());
+    nonbasic_list_.push_back(k);
+  }
+}
+
+void Simplex::swap_nonbasic(Index entering, Index leaving) {
+  const Index at = nonbasic_position_[static_cast<std::size_t>(entering)];
+  assert(at >= 0 && "the entering column was nonbasic, so it is on the list");
+  nonbasic_list_[static_cast<std::size_t>(at)] = leaving;
+  nonbasic_position_[static_cast<std::size_t>(leaving)] = at;
+  nonbasic_position_[static_cast<std::size_t>(entering)] = -1;
 }
 
 DualRatioResult Simplex::dual_ratio_test_textbook(Index leaving_slot,
