@@ -106,13 +106,13 @@ the one stamped in the file's rows, the build that produced it.
 | Head-to-head, Netlib LP, 92 instances: SGM10 0.575 s against HiGHS 0.163 s; against HiGHS faster on 3, tie on 72, slower on 17 | `bench/results/head-to-head-netlib-5e490ef.csv` | `5e490ef` |
 | Head-to-head, Kennington LP, 16 instances: SGM10 9.430 s against HiGHS 1.855 s; against HiGHS faster on 3, tie on 2, slower on 11 | `bench/results/head-to-head-kennington-1860864.csv` | `1860864` |
 | Head-to-head, Maros-Meszaros QP, 138 instances: SGM10 6.437 s against HiGHS 35.781 s; against HiGHS faster on 82, tie on 22, slower on 5 | `bench/results/head-to-head-maros-meszaros-1860864.csv` | `1860864` |
-| Safe bounds on Netlib: 90 of 94 optimal answers certified to 1e-6 by a rigorous bound, 3 with no finite bound | `bench/results/certified-gap-netlib-full-736a1106.csv` | `736a1106` |
+| Safe bounds on Netlib: 73 of 93 optimal answers certified to 1e-6 by a rigorous bound, 18 with no finite bound | `bench/results/certified-gap-netlib-full-0134c92.csv` | `0134c92` |
 | Netlib infeasible set, verdict with a verified Farkas certificate: 28 of 29 | `bench/results/netlib-infeasible-5a39fb2.csv` | `5a39fb2` |
 | Exact sensitivity: 69 of 96 LPs with every dual, reduced cost and range re-derived in rational arithmetic; 4,479 of 431,730 floating-point values corrected | `bench/results/exact-sensitivity-60455ce.csv` | `60455ce` |
 | Kennington LP, matched and verified: 16 of 16 | `bench/results/kennington-full-9463fd7.csv` | `9463fd7` |
 | Mittelmann LP, solved and verified inside the limit: 5 of 12 | `bench/results/mittelmann-72123ff.csv` | `72123ff` |
 | MIPLIB 2017 easy set: 14 of 30 reach the published optimum, 11 prove it | `bench/results/miplib-ad57c03.csv` | `ad57c03` |
-| Maros-Meszaros convex QP: 108 of 138 at the published objective, 119 verifier-accepted, 0 optimal answers rejected | `bench/results/maros-meszaros-847042e3.csv` | `847042e3` |
+| Maros-Meszaros convex QP: 112 of 138 at the published objective, 124 verifier-accepted, 0 optimal answers rejected | `bench/results/maros-meszaros-2a3e303d.csv` | `2a3e303d` |
 | Hock-Schittkowski NLP: 64 of 70 at the published objective, 70 accepted by the checker | `bench/results/nlp-hs-ad57c03.csv` | `ad57c03` |
 | Convex MINLPLib: 14 of 17 at the published objective, 16 accepted by the checker | `bench/results/nlp-minlplib-ad57c03.csv` | `ad57c03` |
 | Stress set, 126 badly scaled and adversarial LPs: SANKHYA 111 correct / 0 wrong / 15 declined; HiGHS on its defaults 29 / 90 / 7 | `bench/results/stress-d32b3847.csv` | `d32b3847` |
@@ -219,9 +219,9 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 - **Certificates of infeasibility.** 28 of 29 of Netlib's
   infeasible LPs end with a Farkas certificate the verifier accepts (`bench/results/netlib-infeasible-5a39fb2.csv`,
   section 3a). A verdict with no certificate is not counted.
-- **Safe bounds.** 90 of 94 optimal Netlib answers carry a
+- **Safe bounds.** 73 of 93 optimal Netlib answers carry a
   Neumaier-Shcherbina bound within 1e-6 of the objective, re-derived exactly by the
-  verifier; 3 have no finite bound and say so (`bench/results/certified-gap-netlib-full-736a1106.csv`,
+  verifier; 18 have no finite bound and say so (`bench/results/certified-gap-netlib-full-0134c92.csv`,
   section 1c.2).
 - **Exact sensitivity.** On 69 of 96 LPs every dual, reduced cost and range
   was re-derived in rational arithmetic, correcting 4,479 of 431,730
@@ -241,9 +241,9 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 - **MILP proofs.** 11 of 30 MIPLIB instances proved, 14
   at the published optimum (`bench/results/miplib-ad57c03.csv`, section 2).
 - **Declined instances.** Stress set: 15 of 126 declined,
-  0 wrong (`bench/results/stress-d32b3847.csv`, section 5b). Maros-Meszaros: 109
-  of 138 optimal (`bench/results/maros-meszaros-847042e3.csv`, section 2b). Safe bounds: 3 of
-  94 with no finite bound (`bench/results/certified-gap-netlib-full-736a1106.csv`).
+  0 wrong (`bench/results/stress-d32b3847.csv`, section 5b). Maros-Meszaros: 114
+  of 138 optimal (`bench/results/maros-meszaros-2a3e303d.csv`, section 2b). Safe bounds: 18 of
+  93 with no finite bound (`bench/results/certified-gap-netlib-full-0134c92.csv`).
 - **No real industrial model.** Every refinery number is from a generated model.
 - **The GPU, against the faster CPU arm of the same engine** (`bench/results/gpu-real-a100-fdd1f35.csv`, commit
   `fdd1f35`, NVIDIA A100-SXM4-40GB; `docs/BENCHMARKS.md` section 1g.3, where the small-model losses
@@ -355,9 +355,9 @@ On the Kennington set HiGHS is clearly ahead: SGM 9.430 s against 1.855 s, SANKH
 
 **Q7. How does the QP engine compare?**
 
-On the Maros-Meszaros convex QPs in the head-to-head run SANKHYA reports optimal on 107 of 138, at the published objective on 106, and the verifier accepts 106 of those; HiGHS reports optimal on 105, at the published objective on 99, and the verifier accepts 32, the rest failing its 1e-7 dual feasibility or 1e-6 gap conditions by small margins (each named in section 4a.3), so the SGM of 6.437 s against 35.781 s rests on the verifier's tolerances as much as on speed. In SANKHYA's own run 108 of 138 reach the published objective and 0 `optimal` answers are rejected by the verifier.
+On the Maros-Meszaros convex QPs in the head-to-head run SANKHYA reports optimal on 107 of 138, at the published objective on 106, and the verifier accepts 106 of those; HiGHS reports optimal on 105, at the published objective on 99, and the verifier accepts 32, the rest failing its 1e-7 dual feasibility or 1e-6 gap conditions by small margins (each named in section 4a.3), so the SGM of 6.437 s against 35.781 s rests on the verifier's tolerances as much as on speed. In SANKHYA's own run 112 of 138 reach the published objective and 0 `optimal` answers are rejected by the verifier.
 
-*Evidence: `bench/results/head-to-head-maros-meszaros-1860864.csv`, `docs/BENCHMARKS.md` section 4a.3; `bench/results/maros-meszaros-847042e3.csv`, section 2b.*
+*Evidence: `bench/results/head-to-head-maros-meszaros-1860864.csv`, `docs/BENCHMARKS.md` section 4a.3; `bench/results/maros-meszaros-2a3e303d.csv`, section 2b.*
 
 **Q8. What does the GPU actually buy?**
 
@@ -397,9 +397,9 @@ A Farkas certificate, written to the solution file and checked by the verifier: 
 
 **Q14. What is a "safe bound", and why does it matter to a planner?**
 
-A lower bound on the true optimum computed from the reported duals with outward rounding (Neumaier and Shcherbina), so it holds despite floating-point error, and re-derived exactly by the verifier. Of 94 optimal Netlib answers, 90 are certified within 1e-6 of the true optimum this way, 1 have a looser finite bound and 3 have none, and the file then claims nothing.
+A lower bound on the true optimum computed from the reported duals with outward rounding (Neumaier and Shcherbina), so it holds despite floating-point error, and re-derived exactly by the verifier. Of 93 optimal Netlib answers, 73 are certified within 1e-6 of the true optimum this way, 2 have a looser finite bound and 18 have none, and the file then claims nothing.
 
-*Evidence: `bench/results/certified-gap-netlib-full-736a1106.csv` at `736a1106`; `docs/BENCHMARKS.md` section 1c.2.*
+*Evidence: `bench/results/certified-gap-netlib-full-0134c92.csv` at `0134c92`; `docs/BENCHMARKS.md` section 1c.2.*
 
 **Q15. Can the shadow prices be trusted for pricing decisions?**
 
@@ -415,9 +415,9 @@ On 126 scaled-Netlib and adversarial LPs SANKHYA is correct on 111, wrong on 0 a
 
 **Q17. What does the solver do when it cannot solve a model?**
 
-It declines: the status is a limit, `numerical_error` or `feasible`, never `optimal`. The 15 stress-set runs above and the Maros-Meszaros runs short of `optimal` (109 of 138 are optimal) are named instance by instance.
+It declines: the status is a limit, `numerical_error` or `feasible`, never `optimal`. The 15 stress-set runs above and the Maros-Meszaros runs short of `optimal` (114 of 138 are optimal) are named instance by instance.
 
-*Evidence: `bench/results/stress-d32b3847.csv`; `bench/results/maros-meszaros-847042e3.csv`; `docs/ARCHITECTURE.md` section 8 (resource limits and what each one means).*
+*Evidence: `bench/results/stress-d32b3847.csv`; `bench/results/maros-meszaros-2a3e303d.csv`; `docs/ARCHITECTURE.md` section 8 (resource limits and what each one means).*
 
 **Q18. Does it handle non-convex QP?**
 

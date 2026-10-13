@@ -782,10 +782,21 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
     }
     if (!ratio.flips.empty()) {
       lu_.solve(flip_rhs_.data(), &flip_history_);
+      // ONE PASS, ON THE SLOTS THE FLIPS MOVED. This used to add the whole vector to x_B
+      // and then rebuild the infeasibility list from every slot - m calls of
+      // slot_infeasibility() per flipping iteration, 10-13% of stocfor3 and fit2p in the
+      // profile of #1006. A slot the FTRAN left at zero has not moved, so it is neither
+      // more nor less infeasible than the list already says; only the moved slots can
+      // have left their bounds, and note_slot() files those, as the pivot's own update of
+      // x_B does below (simplex_core.hpp). The set of infeasible slots on the list is the
+      // one the rebuild produced, and choose_leaving_row() does not read the list's order,
+      // so the leaving row is the same.
       for (Index i = 0; i < m_; ++i) {
-        x_basic_[static_cast<std::size_t>(i)] += flip_rhs_[static_cast<std::size_t>(i)];
+        const auto s = static_cast<std::size_t>(i);
+        if (flip_rhs_[s] == 0.0) continue;
+        x_basic_[s] += flip_rhs_[s];
+        note_slot(i);
       }
-      rebuild_infeasible_list();
       charge(6);
     }
 
