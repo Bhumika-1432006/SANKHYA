@@ -1026,7 +1026,10 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
     // The same update-or-refactorize policy as the primal loop, for the same reasons; see
     // the primal loop for the evidence behind each trigger.
     const bool trust_update = !basis_needed_stricter_threshold_;
-    const bool updated = trust_update && lu_.update(leaving_slot, alpha_.data());
+    // Over alpha's support, which collect_alpha_support() has in hand: the same eta,
+    // without two passes over all m slots of a vector that is mostly zeros (#1006).
+    const bool updated =
+        trust_update && lu_.update(leaving_slot, alpha_.data(), alpha_support_);
     charge(4);
     if (trust_update && !updated) ++rejected_updates_;
     eta_work_since_refactor_ += static_cast<double>(lu_.eta_nonzeros());

@@ -206,6 +206,58 @@ TEST(SparseLuHyper, SolvesAreTheFullLoopsToTheBitOnFreshAndUpdatedFactors) {
   EXPECT_GT(hyper_btrans, 500);
 }
 
+TEST(SparseLuHyper, UpdateOverTheSupportIsTheFullUpdateToTheBit) {
+  // The dual loop hands update() alpha's support (#1006, finding 4). The eta it records
+  // must be the one the pass over all m positions records, so the solves through the two
+  // factorizations agree to the bit, update after update, and so does the refusal of an
+  // unsafe pivot.
+  std::mt19937 rng(1006);
+  int updates = 0;
+  int refusals = 0;
+  for (int trial = 0; trial < 40; ++trial) {
+    const Index m = 20 + 7 * (trial % 11);
+    const Basis basis = random_basis(&rng, m, 2);
+    SparseLu full;
+    SparseLu over_support;
+    ASSERT_TRUE(full.factorize(basis.columns(), m, tol::kPivotTolerance, 0.01));
+    ASSERT_TRUE(over_support.factorize(basis.columns(), m, tol::kPivotTolerance, 0.01));
+    for (int step = 0; step < 12; ++step) {
+      std::vector<double> alpha = sparse_vector(&rng, m, 3);
+      full.solve(alpha.data());  // B^-1 a, as the simplex has it; the same through either
+      std::vector<Index> support;
+      Index largest = 0;
+      Index a_zero = -1;
+      for (Index i = 0; i < m; ++i) {
+        const double a = alpha[static_cast<std::size_t>(i)];
+        if (a != 0.0) {
+          support.push_back(i);
+          if (std::fabs(a) > std::fabs(alpha[static_cast<std::size_t>(largest)])) largest = i;
+        } else {
+          a_zero = i;
+        }
+      }
+      // The pivot a ratio test would take, and every fourth step a slot alpha does not
+      // reach - a zero pivot, which both forms must refuse and leave the factors as they are.
+      const Index leaving = (step % 4 == 3 && a_zero >= 0) ? a_zero : largest;
+      const bool accepted_full = full.update(leaving, alpha.data());
+      const bool accepted_support = over_support.update(leaving, alpha.data(), support);
+      ASSERT_EQ(accepted_full, accepted_support) << "trial " << trial << " step " << step;
+      ASSERT_EQ(full.eta_count(), over_support.eta_count());
+      ASSERT_EQ(full.eta_nonzeros(), over_support.eta_nonzeros());
+      if (!accepted_full) {
+        ++refusals;
+        continue;
+      }
+      ++updates;
+      expect_same_solves(full, over_support, sparse_vector(&rng, m, 2), nullptr,
+                         "trial " + std::to_string(trial) + " step " + std::to_string(step));
+    }
+  }
+  EXPECT_GT(updates, 300) << "too few accepted updates for the comparison to mean anything";
+  EXPECT_GT(refusals, 50)
+      << "too few refused pivots for the refusal path to have been compared";
+}
+
 TEST(SparseLuHyper, ADensityHistorySkipsTheSearchWhileItsResultsAreDenseAndReturnsToIt) {
   // The automatic switch: a solve kind whose recent results were dense goes straight to the
   // full loops, and one whose results turn sparse again goes back to the symbolic reach.
