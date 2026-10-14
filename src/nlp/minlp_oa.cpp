@@ -208,6 +208,9 @@ Solution solve_minlp_oa(const NonlinearModel& model, const Options& options,
   quiet.set_bool("log_to_console", false);
   Options master_options = quiet;
   master_options.set_int("node_limit", -1);  // the MINLP's node limit is counted below
+  // The master is re-solved every round, so the parity heuristic's pre-root sub-MIPs (#841)
+  // would run every round too: synthes3 took 9.6-10.6 s with them against 1.5-2.0 s without.
+  master_options.set_string("mip_heur_parity", "off");
 
   std::vector<Index> integers;
   for (Index j = 0; j < n; ++j) {

@@ -344,6 +344,9 @@ Options searching(bool conflicts, const std::string& out) {
   // cut away all but one point of each orbit, so a conflict re-proved from them holds only
   // on that smaller set, and the test below asks for validity over every feasible point.
   options.set_bool("mip_symmetry", false);
+  // Equality rows over binaries are parity rows (#841), whose sub-MIPs run before the root;
+  // pinned off, so an interrupt lands in the tree this file tests.
+  options.set_string("mip_heur_parity", "off");
   options.set_bool("conflict_analysis", conflicts);
   if (!out.empty()) options.set_string("conflict_out", out);
   return options;
