@@ -567,6 +567,20 @@ inline constexpr double kQpIpmRefinementProgress = 0.9;
 /// answer; chosen by hand, not tuned on a benchmark.
 inline constexpr double kQpIpmFinishActiveDistance = 1e-4;
 
+/// The finish's rank decision (#980): an active row of the reduced system is dropped as
+/// dependent when the QR with column pivoting of the active rows (restricted to the free
+/// columns) finds its remaining norm at or below this share of the first pivot's. 1e-10 is
+/// the prototype's value on the Maros-Meszaros holdouts (qseba: 68 of 972 rows dependent,
+/// the first dropped norm 13 orders below the first pivot); chosen by hand, a row kept that
+/// should have been dropped only costs a rejected finish.
+inline constexpr double kQpIpmFinishRankTolerance = 1e-10;
+
+/// At most this many re-solves of the finish, each after one change to the active set - a
+/// free column moved onto the bound it violates or whose reduced cost it cannot zero, or a
+/// pinned bound whose multiplier came out with the wrong sign released (the primal
+/// active-set rule, one change per step). 10 covers qgrow15 (one release), chosen by hand.
+inline constexpr int kQpIpmFinishRounds = 10;
+
 /// #893: a certificate candidate read off the QP interior point's iterates is offered to the
 /// checker first with every entry at or below this share of its largest set to zero, then
 /// as it came. The step that runs away along a ray still carries the part of the iterate
