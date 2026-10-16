@@ -57,6 +57,9 @@ Model ej() {
 Options quiet() {
   Options options;
   options.set_bool("log_to_console", false);
+  // Feasibility Jump is on by default and solves models this small before any LP; pinned
+  // off, since the tree is what is tested.
+  options.set_string("mip_heur_fj", "off");
   return options;
 }
 

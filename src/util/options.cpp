@@ -584,9 +584,10 @@ const std::vector<OptionSpec>& Options::registry() {
                  "at every node, a repair search and RENS at the root, the feasibility pump "
                  "at the root when nothing else found an incumbent, RINS on "
                  "mip_rins_frequency, and the coefficient, vector length and guided dives "
-                 "beside the fractional one. Rounding at every node and the fractional root "
-                 "dive run either way. Every candidate is checked against the original model "
-                 "before it can become the incumbent. OFF until the per-heuristic MIPLIB A/B "
+                 "beside the fractional one. Rounding at every node, the fractional root "
+                 "dive and Feasibility Jump (mip_heur_fj=on) run either way. Every candidate "
+                 "is checked against the original model before it can become the incumbent. "
+                 "OFF until the per-heuristic MIPLIB A/B "
                  "on main, alone on the machine, says which earn their place; a default is a "
                  "measurement here.",
                  0.0,
@@ -610,14 +611,16 @@ const std::vector<OptionSpec>& Options::registry() {
                  {}});
     s.push_back({"mip_heur_fj",
                  OptionType::String,
-                 std::string("auto"),
+                 std::string("on"),
                  "Feasibility Jump (#506; Luteberget and Sartor, Math. Programming "
                  "Computation 15, 2023): weighted local search over the original rows, no LP, "
                  "once before the root LP from the box point closest to zero and once from "
                  "the rounded root relaxation, each for mip_fj_work nonzero visits. Every "
                  "point it finds is checked against the original model before it can become "
-                 "the incumbent. auto (the default since the #506 A/B, PR #930) follows "
-                 "mip_heuristics.",
+                 "the incumbent. ON by default since the #506 A/B (PR #930: proved 32 to "
+                 "32, reached 40 to 41, first feasible point 1.76x sooner over 90 runs); "
+                 "#931 set auto, which follows mip_heuristics and so left it off. auto "
+                 "follows mip_heuristics; off disables it.",
                  0.0,
                  0.0,
                  {"auto", "on", "off"}});

@@ -363,11 +363,13 @@ TEST(Heuristics, RensFixesTheIntegralColumnsAndBoxesTheRest) {
 }
 
 TEST(Heuristics, EverySwitchResolvesAgainstTheMasterSwitch) {
-  // Defaults: rounding, the fractional dive and parity (on since its A/B, #841:
-  // bench/results/miplib-841-parity-default-*-seeds3-fa9e8b4d.csv).
+  // Defaults: rounding, the fractional dive, parity (on since its A/B, #841:
+  // bench/results/miplib-841-parity-default-*-seeds3-fa9e8b4d.csv) and Feasibility Jump
+  // (on since the #506 A/B, #930); nothing else.
   Options defaults;
   HeuristicSchedule s = HeuristicSchedule::from(defaults);
   EXPECT_TRUE(s.dive[rule_index(DiveRule::kFractional)]);
+  EXPECT_TRUE(s.fj);
   EXPECT_FALSE(s.lock_rounding);
   EXPECT_FALSE(s.repair);
   EXPECT_FALSE(s.pump);
@@ -381,7 +383,9 @@ TEST(Heuristics, EverySwitchResolvesAgainstTheMasterSwitch) {
   EXPECT_FALSE(s.prop_dive);
   EXPECT_FALSE(s.local_branching);
   EXPECT_TRUE(s.any_optional());
-  EXPECT_EQ(s.names(), "rounding, parity, fractional diving");
+  EXPECT_EQ(s.names(), "rounding, feasibility jump, parity, fractional diving");
+  defaults.set_string("mip_heur_fj", "auto");
+  EXPECT_FALSE(HeuristicSchedule::from(defaults).fj) << "auto follows the master switch";
   EXPECT_TRUE(s.seconds_budgets);
 
   // The master switch turns every auto on; an explicit off wins over it.
@@ -404,11 +408,11 @@ TEST(Heuristics, EverySwitchResolvesAgainstTheMasterSwitch) {
   EXPECT_TRUE(s.rens);
   EXPECT_FALSE(s.rins);
   EXPECT_TRUE(s.any_optional());
-  EXPECT_EQ(s.names(), "rounding, parity, fractional diving, RENS");
+  EXPECT_EQ(s.names(), "rounding, feasibility jump, parity, fractional diving, RENS");
   one.set_string("mip_heur_dive_fractional", "off");
   s = HeuristicSchedule::from(one);
   EXPECT_FALSE(s.dive[rule_index(DiveRule::kFractional)]);
-  EXPECT_EQ(s.names(), "rounding, parity, RENS");
+  EXPECT_EQ(s.names(), "rounding, feasibility jump, parity, RENS");
 
   // Deterministic drops the budgets in seconds and keeps the counted ones.
   one.set_bool("deterministic", true);

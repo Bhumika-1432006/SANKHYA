@@ -316,9 +316,10 @@ TEST(FeasibilityJump, TheSearchWithItOnAgreesWithTheExactOracle) {
     const Solution got = solve(model, options);
     std::fflush(stdout);
     const std::string log = testing::internal::GetCapturedStdout();
-    // The search prints its heuristic table right after "Nodes pruned"; a model the solve
-    // settles before branch and bound (an infeasible or integral LP) never gets there.
-    if (log.find("Nodes pruned") != std::string::npos) ++searched;
+    // The search announces itself with "Branch and bound:" and prints its heuristic table on
+    // every exit, with or without an incumbent; a model the solve settles before branch and
+    // bound (an infeasible or integral LP) never gets there.
+    if (log.find("Branch and bound:") != std::string::npos) ++searched;
     std::smatch calls;
     if (std::regex_search(log, calls, std::regex(R"(feasibility jump\s+calls\s+(\d+))")) &&
         std::stoi(calls[1].str()) > 0) {

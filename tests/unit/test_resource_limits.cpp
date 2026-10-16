@@ -43,6 +43,9 @@ Options quiet() {
   options.set_int("cut_dense_max", 0);
   options.set_bool("root_cut_loop", false);  // one root round, as the tree was measured (#495)
   options.set_int("cut_support_floor", 0);   // the density cap as the tree was measured (#496)
+  // Feasibility Jump is on by default and solves models this small before any LP; pinned
+  // off, since the tree is what is tested.
+  options.set_string("mip_heur_fj", "off");
   return options;
 }
 

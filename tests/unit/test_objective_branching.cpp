@@ -124,6 +124,9 @@ Options quiet() {
   options.set_bool("log_to_console", false);
   options.set_bool("presolve", false);
   options.set_bool("mip_objective_branching", true);
+  // Feasibility Jump is on by default and solves models this small before any LP; pinned
+  // off, since the tree is what is tested.
+  options.set_string("mip_heur_fj", "off");
   return options;
 }
 

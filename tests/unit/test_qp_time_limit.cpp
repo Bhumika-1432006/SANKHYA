@@ -211,6 +211,9 @@ TEST(QpTimeLimit, AnMiqpNodeQpRunsOnTheTimeThatIsLeft) {
     options.set_bool("mip_symmetry", false);
     options.set_bool("miqp_node_ipm", ipm);
     options.set_double("time_limit", kLimit);
+    // The node QPs are what is timed; Feasibility Jump before the root would spend part of
+    // the budget first.
+    options.set_string("mip_heur_fj", "off");
     Logger logger(nullptr);
     start = Clock::now();
     const Solution solution = mip::solve_branch_and_bound(model, options, logger, &control);

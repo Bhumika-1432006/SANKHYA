@@ -340,6 +340,7 @@ TEST(PdhgHeuristics, TheSearchWithBothOnAgreesWithTheExactOracle) {
   options.set_bool("root_cut_loop", false);  // one root round, as the tree was measured (#495)
   options.set_int("cut_support_floor", 0);   // the density cap as the tree was measured (#496)
   options.set_string("mip_heur_dive_fractional", "off");
+  options.set_string("mip_heur_fj", "off");  // on by default; an incumbent before the root
   options.set_bool("presolve", false);
   options.set_bool("log_to_console", true);
   options.set_double("mip_relative_gap", 0.0);
