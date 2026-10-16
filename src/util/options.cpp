@@ -585,8 +585,9 @@ const std::vector<OptionSpec>& Options::registry() {
                  "at the root when nothing else found an incumbent, RINS on "
                  "mip_rins_frequency, and the coefficient, vector length and guided dives "
                  "beside the fractional one. Rounding at every node, the fractional root "
-                 "dive and Feasibility Jump (mip_heur_fj=on) run either way. Every candidate "
-                 "is checked against the original model before it can become the incumbent. "
+                 "dive, Feasibility Jump (mip_heur_fj=on) and parity (mip_heur_parity=on) run "
+                 "either way. Every candidate is checked against the original model before "
+                 "it can become the incumbent. "
                  "OFF until the per-heuristic MIPLIB A/B "
                  "on main, alone on the machine, says which earn their place; a default is a "
                  "measurement here.",
