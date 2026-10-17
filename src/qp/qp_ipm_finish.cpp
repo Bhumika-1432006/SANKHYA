@@ -104,7 +104,8 @@ struct Candidate {
 /// will not factor.
 bool solve_reduced(const Standard& s, const std::vector<Pin>& pin,
                    const std::vector<double>& v0, const std::vector<double>& y0,
-                   double regularization_floor, Candidate* out) {
+                   double regularization_floor, const std::function<bool()>& should_stop,
+                   Candidate* out) {
   const auto nc = static_cast<std::size_t>(s.cols);
   const auto nr = static_cast<std::size_t>(s.rows);
   std::vector<Index> new_col(nc, -1);
@@ -225,8 +226,9 @@ bool solve_reduced(const Standard& s, const std::vector<Pin>& pin,
     std::vector<signed char> signs(udim, 1);
     for (Index j = 0; j < nf; ++j) signs[static_cast<std::size_t>(j)] = -1;
     SparseLdl ldl;
-    if (!ldl.analyze(k) ||
-        !ldl.factorize_quasidefinite(k, signs, tol::kQpIpmPivotShare * regularization_floor)) {
+    if (!ldl.analyze(k, should_stop) ||
+        !ldl.factorize_quasidefinite(k, signs, tol::kQpIpmPivotShare * regularization_floor,
+                                     should_stop)) {
       return false;
     }
     solve_refined(ldl, k, rhs, &d);
@@ -300,11 +302,13 @@ bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
   bool settled = false;
   std::vector<int> changes(nc, 0);
   for (int round = 0; round < tol::kQpIpmFinishRounds && !settled; ++round) {
-    // On the solve's own clock: boyd1 (93,261 columns) spent 55 s in these rounds past a
-    // 60 s limit the interior point had already used 30 s of; a finish that runs out of time
-    // declines, and the interior point's point stands.
+    // On the solve's own clock, between rounds and inside the sparse factorization (the
+    // dense path is bounded by kDenseKktLimit): boyd1 (93,261 columns) spent 55 s in these
+    // rounds past a 60 s limit the interior point had already used 30 s of, and with the
+    // check between rounds alone still 14 s past it inside one factorization. A finish that
+    // runs out of time declines, and the interior point's point stands.
     if (should_stop && should_stop()) return false;
-    if (!solve_reduced(s, pin, *v, *y, regularization_floor, &c)) return false;
+    if (!solve_reduced(s, pin, *v, *y, regularization_floor, should_stop, &c)) return false;
     // One change per round, the worst offender first: a free column outside its bounds goes
     // onto the bound it violates; else a pinned bound with a wrong-signed multiplier is
     // released; else a free column whose reduced cost the active rows cannot zero goes onto
