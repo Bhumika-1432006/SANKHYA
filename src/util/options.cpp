@@ -2090,6 +2090,22 @@ const std::vector<OptionSpec>& Options::registry() {
          0.0,
          {}});
     s.push_back(
+        {"qp_ipm_neighbourhood",
+         OptionType::Bool,
+         false,
+         "qp_algorithm=ipm (#981): keep the complementarity mu from falling faster than the "
+         "infeasibility, the neighbourhood of the interior point-proximal method of "
+         "multipliers (Pougkakiotis and Gondzio, Comput. Optim. Appl. 78 (2021); Wright 1997, "
+         "ch. 6, N_-inf): the starting ratio mu / r is recorded, and whenever mu falls below "
+         "tol::kQpIpmNeighbourhoodShare times that ratio times the relative infeasibility r "
+         "left, the centring parameter sigma is raised until the target sigma * mu is not, so "
+         "the step closes infeasibility instead of collapsing the barrier onto bounds it then "
+         "cannot leave (Maros-Meszaros liswet1: primal residual 1e-7, mu 1e-33). Inside the "
+         "neighbourhood the iteration is unchanged. Off by default until an A/B on main.",
+         0.0,
+         0.0,
+         {}});
+    s.push_back(
         {"qp_ipm_finish",
          OptionType::Bool,
          true,

@@ -88,6 +88,7 @@
 
 #include "convexity.hpp"
 #include "qp_ipm_finish.hpp"
+#include "qp_ipm_neighbourhood.hpp"
 #include "qp_ipm_system.hpp"
 #include "qp_ipm_warm.hpp"
 
@@ -348,6 +349,8 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
   // the first-order engine for whatever time is left. See the file header and the comment at
   // the stall test below.
   const bool stall_handoff = options.get_bool("qp_ipm_stall_handoff");
+  const bool neighbourhood_on = options.get_bool("qp_ipm_neighbourhood");  // #981
+  ipm_detail::InfeasibilityNeighbourhood neighbourhood;
   const double primal_tolerance = options.get_double("primal_feasibility_tolerance");
   StopController stop(control, timer, limits);
 
@@ -786,6 +789,11 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
       const double mu_aff = affine / static_cast<double>(bound_count);
       sigma = mu > 0.0 ? std::pow(mu_aff / mu, 3.0) : 0.0;
       sigma = std::min(1.0, std::max(0.0, sigma));
+      // #981, qp_ipm_neighbourhood: mu may not run ahead of the infeasibility (IP-PMM's
+      // neighbourhood, Pougkakiotis & Gondzio 2021; see qp_ipm_neighbourhood.cpp).
+      if (neighbourhood_on) {
+        sigma = std::max(sigma, neighbourhood.sigma_floor(mu, std::max(primal_rel, dual_rel)));
+      }
 
       // ---- corrector: the centring target and Mehrotra's second-order term ---------------
       dv_aff = dv;

@@ -581,6 +581,13 @@ inline constexpr double kQpIpmFinishRankTolerance = 1e-10;
 /// active-set rule, one change per step). 10 covers qgrow15 (one release), chosen by hand.
 inline constexpr int kQpIpmFinishRounds = 10;
 
+/// #981, qp_ipm_neighbourhood (off by default): the share of its starting ratio mu / r below
+/// which mu may not fall for the infeasibility r that is left, enforced through the centring
+/// parameter (src/qp/qp_ipm_neighbourhood.cpp). The beta of Wright's N_-inf(gamma, beta) read
+/// the other way round; 0.1 lets mu run an order of magnitude ahead of the infeasibility and
+/// no further. Chosen by hand, the A/B on main decides whether it stays.
+inline constexpr double kQpIpmNeighbourhoodShare = 0.1;
+
 /// #893: a certificate candidate read off the QP interior point's iterates is offered to the
 /// checker first with every entry at or below this share of its largest set to zero, then
 /// as it came. The step that runs away along a ray still carries the part of the iterate

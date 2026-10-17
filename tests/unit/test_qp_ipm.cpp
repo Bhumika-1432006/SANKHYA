@@ -14,6 +14,7 @@
 
 #include "core/kkt_check.hpp"
 #include "la/ldl.hpp"
+#include "qp/qp_ipm_neighbourhood.hpp"
 #include "qp/qp_ipm_system.hpp"
 #include "qp/qp_ipm_warm.hpp"
 #include "sankhya/model.hpp"
@@ -442,6 +443,42 @@ TEST(QpIpmRefinement, CorrectionsAgainstTheUnregularizedMatrixRemoveTheProximalP
   qp::ipm_detail::refine_unregularized(ldl, k0, rhs, &x);
   EXPECT_NEAR(x[0], 7.0, 1e-10);
   EXPECT_NEAR(x[1], 14.0, 1e-10);
+}
+
+// ---- #981: the infeasibility neighbourhood -----------------------------------------------
+
+TEST(QpIpmNeighbourhood, InsideItTheCentringIsMehrotrasAndOutsideItRises) {
+  qp::ipm_detail::InfeasibilityNeighbourhood n;
+  // The first call records kappa0 = mu / r = 1 / 0.1 = 10 and asks for nothing.
+  EXPECT_EQ(n.sigma_floor(1.0, 0.1), 0.0);
+  // Both fell a hundredfold: wanted = share * 10 * 1e-3 = share * 1e-2 against mu = 1e-2,
+  // a floor of share itself, well under 1.
+  EXPECT_NEAR(n.sigma_floor(1e-2, 1e-3), tol::kQpIpmNeighbourhoodShare, 1e-15);
+  // mu ran ahead (1e-12) while the infeasibility stayed at 1e-7 (liswet1's shape): the
+  // target sigma * mu has to rise all the way, sigma capped at 1.
+  EXPECT_EQ(n.sigma_floor(1e-12, 1e-7), 1.0);
+  // Feasible: no floor.
+  EXPECT_EQ(n.sigma_floor(1e-12, 0.0), 0.0);
+}
+
+TEST(QpIpmNeighbourhood, AStartThatIsAlreadyFeasibleNeverRaisesTheCentring) {
+  qp::ipm_detail::InfeasibilityNeighbourhood n;
+  EXPECT_EQ(n.sigma_floor(1.0, 0.0), 0.0);  // kappa0 = 0
+  EXPECT_EQ(n.sigma_floor(1e-20, 1e-3), 0.0);
+}
+
+TEST(QpIpmNeighbourhood, OnItSolvesTheSameQpToTheSameOptimum) {
+  // The option changes the path, not the answer: inequality_qp at its known optimum, backed
+  // by the in-process KKT check, with the neighbourhood on.
+  const Model model = inequality_qp();
+  Logger logger(nullptr);
+  Options options = quiet();
+  options.set_bool("qp_ipm_neighbourhood", true);
+  const Solution on = qp::solve_convex_qp_ipm(model, options, logger);
+  const Solution off = qp::solve_convex_qp_ipm(model, quiet(), logger);
+  ASSERT_EQ(on.status, SolveStatus::kOptimal) << on.message;
+  EXPECT_NEAR(on.objective, off.objective, 1e-7 * std::max(1.0, std::fabs(off.objective)));
+  expect_backed(model, on);
 }
 
 TEST(SparseLdlQuasidefinite, TheWrongNumberOfSignsIsRefused) {
