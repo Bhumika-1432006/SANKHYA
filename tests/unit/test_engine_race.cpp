@@ -278,6 +278,25 @@ TEST(EngineRace, AnEngineThatRunsOutOfMemoryLosesAndTheRaceGoesOn) {
   EXPECT_TRUE(check_lp_optimality(model, s).passed);
 }
 
+TEST(EngineRace, TheLosersAreCancelledOnceTheWinnerIsAccepted) {
+  // The cancellation path (#535): PDHG is held back until the dual simplex has been
+  // accepted, so it starts with the race's control already interrupted and must come back
+  // interrupted, logged as cancelled, with the winner's answer untouched. The race is in
+  // order on one core and then has no losers to cancel.
+  if (std::thread::hardware_concurrency() <= 1) GTEST_SKIP() << "one core: the race is in order";
+  const Model model = netlib("afiro");
+  HooksGuard guard;
+  engine_race_hooks_for_testing().before_engine = [](const std::string& engine) {
+    if (engine.rfind("pdhg", 0) == 0) std::this_thread::sleep_for(std::chrono::seconds(1));
+  };
+  const Solution s = solve(model, racing());
+  ASSERT_EQ(s.status, SolveStatus::kOptimal) << s.message;
+  EXPECT_NEAR(s.objective, kAfiroOptimum, 1e-6 * std::fabs(kAfiroOptimum));
+  EXPECT_NE(s.message.find("cancelled at"), std::string::npos) << s.message;
+  EXPECT_NE(s.message.find("the winner"), std::string::npos) << s.message;
+  EXPECT_TRUE(check_lp_optimality(model, s).passed);
+}
+
 TEST(EngineRace, IsOffByDefault) {
   const Model model = netlib("afiro");
   const Solution s = solve(model, quiet("auto"));
