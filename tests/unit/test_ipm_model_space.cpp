@@ -11,14 +11,19 @@
 
 #include <algorithm>
 #include <cmath>
+#include <filesystem>
 #include <random>
+#include <string>
 #include <vector>
 
 #include <gtest/gtest.h>
 
 #include "ipm/model_space.hpp"
 #include "la/scaling.hpp"
+#include "sankhya/io.hpp"
+#include "sankhya/ipm.hpp"
 #include "sankhya/model.hpp"
+#include "sankhya/options.hpp"
 #include "sankhya/tolerances.hpp"
 
 namespace sankhya::ipm {
@@ -294,6 +299,36 @@ TEST(InteriorPointModelSpace, AResidualInsideTheLoopsToleranceIsFourDecadesOutIn
   EXPECT_EQ(std::max_element(ours.row_violation.begin(), ours.row_violation.end()) -
                 ours.row_violation.begin(),
             1);
+}
+
+// The instance #582 was filed on: data/mittelmann/irish-electricity.mps (104,259 rows,
+// bench/runners/fetch_mittelmann.py --set small; skipped when it is not fetched). The
+// engine's own stop is called directly, before the status guard in solve() can downgrade
+// anything, and held to the rule #586 and #611 put in: a point reported optimal passes the
+// guard's primal and dual measurement in the model's units, and a point that does not is
+// reported with both figures in its message, never as optimal on the scaled numbers alone.
+TEST(InteriorPointModelSpace, IrishElectricityIsNeverOptimalOnTheScaledResidualAlone) {
+  const std::filesystem::path path =
+      std::filesystem::path(__FILE__).parent_path().parent_path().parent_path() /
+      "data/mittelmann/irish-electricity.mps";
+  if (!std::filesystem::exists(path)) GTEST_SKIP() << path.string() << " is not fetched";
+  Model model;
+  const io::ReadResult read = io::read_model(path.string(), &model);
+  ASSERT_TRUE(read.ok) << read.error;
+  Options options;
+  options.set_string("algorithm", "ipm");
+  options.set_bool("crossover", false);
+  options.set_double("time_limit", 120.0);  // the stop of #582 came at 94 s on the laptop
+  Logger quiet(stdout, LogLevel::kOff);
+  const Solution answer = ipm::solve_ipm(model, options, quiet);
+  // recompute_quality(model) ran inside the engine on the point as reported.
+  if (answer.status == SolveStatus::kOptimal) {
+    EXPECT_LE(answer.primal_infeasibility_scaled, tol::kPrimalFeasibility) << answer.message;
+    EXPECT_LE(answer.dual_infeasibility_scaled, tol::kDualFeasibility) << answer.message;
+  } else if (answer.status == SolveStatus::kFeasible ||
+             answer.status == SolveStatus::kNumericalError) {
+    EXPECT_NE(answer.message.find("model"), std::string::npos) << answer.message;
+  }
 }
 
 }  // namespace
