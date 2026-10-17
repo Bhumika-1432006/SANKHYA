@@ -235,17 +235,18 @@ TEST(QpIpmFinish, ActiveSetFinishSnapsANearlyActiveBoundExactlyOntoIt) {
   ASSERT_TRUE(qp::ipm_detail::active_set_finish(
       s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
       options.get_double("primal_feasibility_tolerance"),
-      options.get_double("qp_ipm_regularization"), &v, &y, &zl, &zu));
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
   EXPECT_EQ(v[0], 1.0);  // on the bound to the bit, which is what closes the product
   EXPECT_NEAR(v[1], 1.0, 1e-7);
   EXPECT_NEAR(v[2], 2.0, 1e-7);
   EXPECT_GE(zl[0], -1e-7);
 }
 
-TEST(QpIpmFinish, ActiveSetFinishRefusesAPinWhoseMultiplierHasTheWrongSign) {
+TEST(QpIpmFinish, ActiveSetFinishReleasesAPinWhoseMultiplierHasTheWrongSign) {
   // min 0.5 x1^2 - 10 x1 + 0.5 x2^2, x1 >= 1, x2 free: the optimum is (10, 0). Offered the
-  // point (1, 0), the finish pins x1 at 1, where stationarity needs z = x1 - 10 = -9 on a
-  // LOWER bound: the wrong sign. The guard must refuse and leave every argument untouched.
+  // point (1, 0), the finish first pins x1 at 1, where stationarity needs z = x1 - 10 = -9 on
+  // a LOWER bound: the wrong sign. One round later the bound is released (the primal
+  // active-set rule) and the reduced solve lands on the optimum itself.
   Model model;
   model.sense = ObjSense::kMinimize;
   model.col_cost = {-10.0, 0.0};
@@ -261,14 +262,89 @@ TEST(QpIpmFinish, ActiveSetFinishRefusesAPinWhoseMultiplierHasTheWrongSign) {
   const qp::ipm_detail::Standard s = qp::ipm_detail::standardize(model);
   const Bounds b = finite_bounds(s);
   std::vector<double> v = {1.0, 0.0}, y, zl(2, 0.0), zu(2, 0.0);
-  const std::vector<double> v_before = v;
+  const Options options;
+  ASSERT_TRUE(qp::ipm_detail::active_set_finish(
+      s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
+      options.get_double("primal_feasibility_tolerance"),
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
+  EXPECT_NEAR(v[0], 10.0, 1e-9);
+  EXPECT_NEAR(v[1], 0.0, 1e-9);
+  EXPECT_NEAR(zl[0], 0.0, 1e-9);
+}
+
+TEST(QpIpmFinish, ActiveSetFinishRefusesAndLeavesEveryArgumentUntouched) {
+  // x1 + x2 = 5 with both columns in [0, 1]: infeasible. Offered (1, 1), the finish pins both
+  // columns at their upper bounds, has no free column left to solve for, and must refuse
+  // without touching the point it was given.
+  Model model;
+  model.sense = ObjSense::kMinimize;
+  model.col_cost = {1.0, 1.0};
+  model.col_lower = {0.0, 0.0};
+  model.col_upper = {1.0, 1.0};
+  model.col_type = {VarType::kContinuous, VarType::kContinuous};
+  model.row_lower = {5.0};
+  model.row_upper = {5.0};
+  model.matrix.reset(1, 2);
+  model.matrix.add_entry(0, 0, 1.0);
+  model.matrix.add_entry(0, 1, 1.0);
+  model.matrix.finalize();
+  model.hessian.reset(2, 2);
+  model.hessian.add_entry(0, 0, 1.0);
+  model.hessian.add_entry(1, 1, 1.0);
+  model.hessian.finalize();
+  const qp::ipm_detail::Standard s = qp::ipm_detail::standardize(model);
+  const Bounds b = finite_bounds(s);
+  std::vector<double> v = {1.0, 1.0}, y = {0.5}, zl(2, 0.0), zu(2, 0.25);
+  const std::vector<double> v_before = v, y_before = y, zu_before = zu;
   const Options options;
   EXPECT_FALSE(qp::ipm_detail::active_set_finish(
       s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
       options.get_double("primal_feasibility_tolerance"),
-      options.get_double("qp_ipm_regularization"), &v, &y, &zl, &zu));
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
   EXPECT_EQ(v, v_before);
-  EXPECT_EQ(zl, std::vector<double>(2, 0.0));
+  EXPECT_EQ(y, y_before);
+  EXPECT_EQ(zu, zu_before);
+}
+
+TEST(QpIpmFinish, ActiveSetFinishIsExactWhenTheActiveRowsAreDependent) {
+  // min 0.5 (x1^2 + x2^2) - x1 - 3 x2  s.t.  x1 + x2 = 2 written TWICE, x1 >= 0.5.
+  // On the row x2 = 2 - x1, the objective's slope in x1 is 2 x1 > 0 at the bound, so the
+  // optimum is (0.5, 1.5) with z1 = 1; stationarity in x2 gives y1 + y2 = x2 - 3 = -1.5, the
+  // split between the duplicate rows being free. The duplicate makes the reduced KKT system
+  // singular: the finish must choose one of the two rows, meet it exactly, and still return
+  // multipliers that satisfy stationarity.
+  Model model;
+  model.sense = ObjSense::kMinimize;
+  model.col_cost = {-1.0, -3.0};
+  model.col_lower = {0.5, -kInfinity};
+  model.col_upper = {kInfinity, kInfinity};
+  model.col_type = {VarType::kContinuous, VarType::kContinuous};
+  model.row_lower = {2.0, 2.0};
+  model.row_upper = {2.0, 2.0};
+  model.matrix.reset(2, 2);
+  model.matrix.add_entry(0, 0, 1.0);
+  model.matrix.add_entry(1, 0, 1.0);
+  model.matrix.add_entry(0, 1, 1.0);
+  model.matrix.add_entry(1, 1, 1.0);
+  model.matrix.finalize();
+  model.hessian.reset(2, 2);
+  model.hessian.add_entry(0, 0, 1.0);
+  model.hessian.add_entry(1, 1, 1.0);
+  model.hessian.finalize();
+  const qp::ipm_detail::Standard s = qp::ipm_detail::standardize(model);
+  const Bounds b = finite_bounds(s);
+  // As an interior point leaves it: x1 a hair above its bound, the dual split evenly.
+  std::vector<double> v = {0.5 + 1e-9, 1.5 - 1e-9}, y = {-0.75, -0.75}, zl = {1.0, 0.0},
+                      zu(2, 0.0);
+  const Options options;
+  ASSERT_TRUE(qp::ipm_detail::active_set_finish(
+      s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
+      options.get_double("primal_feasibility_tolerance"),
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
+  EXPECT_EQ(v[0], 0.5);
+  EXPECT_NEAR(v[1], 1.5, 1e-14);
+  EXPECT_NEAR(y[0] + y[1], -1.5, 1e-12);
+  EXPECT_NEAR(zl[0], 1.0, 1e-12);
 }
 
 }  // namespace

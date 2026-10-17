@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
-// SANKHYA - the active-set finish after the QP interior point (#980, qp_ipm_finish, off by
-// default). Called from src/qp/qp_ipm.cpp once its own loop reports optimal with a
+// SANKHYA - the active-set finish after the QP interior point (#980, qp_ipm_finish, on by
+// default since #1016). Called from src/qp/qp_ipm.cpp once its own loop reports optimal with a
 // complementarity product still above the in-process KKT gate's share.
 
 #include "qp_ipm_finish.hpp"
@@ -10,6 +10,7 @@
 #include <utility>
 #include <vector>
 
+#include "la/dense_qr.hpp"
 #include "la/ldl.hpp"
 #include "sankhya/tolerances.hpp"
 
@@ -24,6 +25,21 @@ double largest_complementarity_product(
   for (std::size_t j = 0; j < nc; ++j) {
     if (has_lower[j]) largest = std::max(largest, std::fabs((v[j] - s.lower[j]) * zl[j]));
     if (has_upper[j]) largest = std::max(largest, std::fabs((s.upper[j] - v[j]) * zu[j]));
+  }
+  // ...and as the gate prices a column: the DERIVED reduced cost H v + g - M^T y (which
+  // carries the stationarity residual, not only z_l - z_u) times the distance to the nearer
+  // finite bound. On qgrow15, qgfrdxpn and qshell every z-product was under the share and this
+  // one was not, so the finish was never tried and the gate withdrew the claim.
+  std::vector<double> d(nc, 0.0), mty(nc, 0.0);
+  hessian_times(s.h, v, &d);
+  if (s.rows > 0) s.m.transpose_multiply_add(y.data(), mty.data());
+  for (std::size_t j = 0; j < nc; ++j) {
+    const double below = has_lower[j] ? v[j] - s.lower[j] : kInfinity;
+    const double above = has_upper[j] ? s.upper[j] - v[j] : kInfinity;
+    const double slack = std::min(below, above);
+    if (std::isfinite(slack)) {
+      largest = std::max(largest, std::fabs(d[j] + s.g[j] - mty[j]) * std::fabs(slack));
+    }
   }
   // A slack's row: the row's multiplier against the activity's distance to its nearer side.
   for (Index slack = 0; slack < s.slacks; ++slack) {
@@ -40,173 +56,330 @@ double largest_complementarity_product(
 
 // ---- #980: an active-set finish after the interior point ---------------------------------
 //
-// Reference: Stellato, Banjac, Goulart, Bemporad & Boyd, "OSQP: an operator splitting solver
-// for quadratic programs", Math. Prog. Comp. 12 (2020), sec. 5.3 - solution polishing: fix
-// the active set an ADMM iterate has found, and solve the reduced equality-constrained KKT
-// system on what is left exactly. This is the same idea after this engine's interior point
-// instead of after ADMM, built entirely from pieces this engine already has (the same
-// Standard, the project's own sparse LDL^T and the solve_refined helper above), so it is
-// orchestration of the existing IPM output rather than a new primal algorithm; no separate
-// numerical-method justification is added beyond this citation.
+// References
+//   Stellato, Banjac, Goulart, Bemporad & Boyd, "OSQP: an operator splitting solver for
+//     quadratic programs", Math. Prog. Comp. 12 (2020), sec. 5.3 - solution polishing: fix the
+//     active set an iterate has found and solve the reduced equality-constrained KKT system.
+//   Businger & Golub, Numer. Math. 7 (1965) - QR with column pivoting (src/la/dense_qr.cpp),
+//     here choosing an independent subset of the active rows.
+//   El-Bakry, Tapia & Zhang, "A study of indicators for identifying zero variables in
+//     interior-point methods", SIAM Review 36 (1994) - a bound whose slack is below its
+//     multiplier is active.
+//   Nocedal & Wright, Numerical Optimization, 2nd ed. (2006), sec. 16.5 - the primal active-set
+//     rule of one change to the working set per step.
 //
-// ACTIVE-SET TEST. A bound is called active when the point already sits on it to a loose,
-// scale-aware distance (tol::kQpIpmFinishActiveDistance), independent of its multiplier: at
-// convergence of the central path essentially every bound's complementarity product is
-// small (that is what "the relative measures are met" means in aggregate), so the product
-// alone cannot tell an active bound from an interior one whose multiplier merely happens to
-// be small; the distance to the bound can. Calling a bound active when it should have stayed
-// interior only costs a rejected finish below, never a wrong answer - see the acceptance
-// test, which is the property this function exists to protect.
-bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
-                       const std::vector<bool>& has_upper, double tolerance,
-                       double primal_tolerance, double regularization_floor,
-                       std::vector<double>* v, std::vector<double>* y, std::vector<double>* zl,
-                       std::vector<double>* zu) {
+// WHY RANK-REVEALING. On a degenerate optimum (qseba: 68 of 972 active rows dependent) the
+// reduced KKT system is singular, its right-hand side consistent only to the 1e-9 the data is
+// printed to, and any minimum-norm or regularized solve spreads multipliers of 1e+5 over
+// rows it leaves 1e-10 off their bounds: a product of 1e-5 the gate refuses. A BASIC solution
+// does not: the independent rows QR with column pivoting picks are met exactly, the dependent
+// ones are met to the data's own consistency. The primal point is solved as a correction to
+// the interior point's (so a direction the reduced system leaves free keeps the interior
+// point's value), and the multipliers are the interior point's own, moved the least on the
+// chosen rows to satisfy stationarity exactly: on a degenerate dual the basic multipliers can
+// differ from the interior point's in sign (qship12s, 396 columns), its own do not.
+//
+// Every candidate answers to the acceptance test at the end, so a wrong guess of the active
+// set costs a rejected finish, never a wrong answer.
+namespace {
+
+enum class Pin : signed char { kFree, kLower, kUpper };
+
+/// The dense product of the reduced system is at most this many entries (one QR of the
+/// active rows restricted to the free columns); above it the finish declines.
+/// ponytail: dense QR caps the finish at 2e7 entries (160 MB); a sparse rank-revealing QR
+/// would lift it, and no Maros-Meszaros holdout needs it.
+constexpr double kDenseLimit = 2e7;
+/// ...and the reduced KKT system itself is solved densely up to this many entries (dimension
+/// 2000, about 5e9 flops for its QR); above it the regularized sparse LDL^T and refinement.
+/// ponytail: dense COD caps the least-norm solve at dimension 2000; above it the sparse path
+/// can drift along a singular direction and the finish is refused, never wrong.
+constexpr double kDenseKktLimit = 4e6;
+
+struct Candidate {
+  std::vector<double> v, y, zl, zu, residual;  // residual = H v + g - M^T y
+};
+
+/// One reduced solve for a fixed working set. Returns false when the system is too large or
+/// will not factor.
+bool solve_reduced(const Standard& s, const std::vector<Pin>& pin,
+                   const std::vector<double>& v0, const std::vector<double>& y0,
+                   double regularization_floor, Candidate* out) {
   const auto nc = static_cast<std::size_t>(s.cols);
   const auto nr = static_cast<std::size_t>(s.rows);
-
-  std::vector<bool> active_lower(nc, false), active_upper(nc, false);
-  std::vector<double> fixed(nc, 0.0);
-  Index active_count = 0;
-  for (std::size_t j = 0; j < nc; ++j) {
-    if (!has_lower[j] && !has_upper[j]) continue;
-    const double distance_lower = has_lower[j] ? (*v)[j] - s.lower[j] : kInfinity;
-    const double distance_upper = has_upper[j] ? s.upper[j] - (*v)[j] : kInfinity;
-    const double scale = std::max({1.0, has_lower[j] ? std::fabs(s.lower[j]) : 0.0,
-                                   has_upper[j] ? std::fabs(s.upper[j]) : 0.0});
-    if (distance_lower <= distance_upper && has_lower[j] &&
-        distance_lower <= tol::kQpIpmFinishActiveDistance * scale) {
-      active_lower[j] = true;
-      fixed[j] = s.lower[j];
-      ++active_count;
-    } else if (has_upper[j] && distance_upper <= tol::kQpIpmFinishActiveDistance * scale) {
-      active_upper[j] = true;
-      fixed[j] = s.upper[j];
-      ++active_count;
-    }
-  }
-  if (active_count == 0) return false;  // nothing identified to pin: leave the IPM's point
-
   std::vector<Index> new_col(nc, -1);
+  std::vector<double> fixed(nc, 0.0);
   Index nf = 0;
   for (std::size_t j = 0; j < nc; ++j) {
-    if (!active_lower[j] && !active_upper[j]) new_col[static_cast<std::size_t>(j)] = nf++;
+    if (pin[j] == Pin::kFree) {
+      new_col[j] = nf++;
+    } else {
+      fixed[j] = pin[j] == Pin::kLower ? s.lower[j] : s.upper[j];
+    }
   }
-  if (nf == 0) return false;  // every column pinned: no reduced system to solve
+  if (nf == 0 || static_cast<double>(nf) * static_cast<double>(nr) > kDenseLimit) return false;
 
-  // ---- build the reduced KKT system: free columns and all rows, active columns folded ------
-  // into the right-hand side - the same lower-triangle layout as KktMatrix::build (the
-  // variable block negative definite, M attached once and symmetrized by KktMatrix::multiply
-  // inside solve_refined, the row block delta I), assembled with add_entry/finalize instead
-  // of a fixed pattern because the reduction changes the pattern every time it runs.
-  const Index dim = nf + s.rows;
-  // `k` carries the regularization the factorization needs (quasi-definite); `exact` is the
-  // same reduced system without it, and the refinement below is against `exact`, so the answer
-  // is the reduced system's and not one biased by reg * v (a free slack's row dual would
-  // otherwise come back as -reg * activity, and the product guard would refuse the finish).
+  // B = M restricted to the free columns, transposed: nf x rows, column r is row r.
+  const auto unf = static_cast<std::size_t>(nf);
+  std::vector<double> b(unf * nr, 0.0);
+  for (std::size_t j = 0; j < nc; ++j) {
+    if (new_col[j] < 0) continue;
+    const ColumnView a = s.m.column(static_cast<Index>(j));
+    for (Index p = 0; p < a.size; ++p) {
+      b[static_cast<std::size_t>(a.rows[p]) * unf + static_cast<std::size_t>(new_col[j])] =
+          a.values[p];
+    }
+  }
+  DenseQr qr;
+  qr.factor(b, nf, s.rows, tol::kQpIpmFinishRankTolerance);
+  std::vector<Index> row_sel(nr, -1);
+  const Index rank = qr.rank();
+  for (Index k = 0; k < rank; ++k)
+    row_sel[static_cast<std::size_t>(qr.pivots()[static_cast<std::size_t>(k)])] = k;
+
+  // The reduced KKT system over the free columns and the chosen rows, in KktMatrix's lower
+  // layout; `k` regularized for the factorization, `exact` without, refined against.
+  const Index dim = nf + rank;
   SparseMatrix k(dim, dim), exact(dim, dim);
   const auto both = [&](Index r, Index c, double value) {
     k.add_entry(r, c, value);
     exact.add_entry(r, c, value);
   };
-  std::vector<double> rhs(static_cast<std::size_t>(dim), 0.0);
+  std::vector<double> rhs(static_cast<std::size_t>(dim), 0.0), base(rhs.size(), 0.0);
   for (Index oj = 0; oj < s.free_n; ++oj) {
-    const auto uoj = static_cast<std::size_t>(oj);
     const ColumnView q = s.h.column(oj);
     for (Index p = 0; p < q.size; ++p) {
-      const Index row = q.rows[p];
-      const double value = q.values[p];
-      if (row == oj) {
-        if (new_col[uoj] >= 0) both(new_col[uoj], new_col[uoj], -value);
-        continue;
-      }
-      const auto urow = static_cast<std::size_t>(row);
-      const bool row_free = new_col[urow] >= 0, col_free = new_col[uoj] >= 0;
+      const auto urow = static_cast<std::size_t>(q.rows[p]);
+      const auto ucol = static_cast<std::size_t>(oj);
+      const bool row_free = new_col[urow] >= 0, col_free = new_col[ucol] >= 0;
       if (row_free && col_free) {
-        both(new_col[urow], new_col[uoj], -value);
-      } else if (row_free && !col_free) {
-        rhs[static_cast<std::size_t>(new_col[urow])] += value * fixed[uoj];
-      } else if (!row_free && col_free) {
-        rhs[static_cast<std::size_t>(new_col[uoj])] += value * fixed[urow];
+        both(new_col[urow], new_col[ucol], -q.values[p]);
+      } else if (row_free) {
+        rhs[static_cast<std::size_t>(new_col[urow])] += q.values[p] * fixed[ucol];
+      } else if (col_free && urow != ucol) {
+        rhs[static_cast<std::size_t>(new_col[ucol])] += q.values[p] * fixed[urow];
       }
     }
   }
   std::vector<double> b_adj = s.b;
   for (std::size_t j = 0; j < nc; ++j) {
     const ColumnView a = s.m.column(static_cast<Index>(j));
-    if (new_col[j] >= 0) {
-      const auto nj = static_cast<std::size_t>(new_col[j]);
-      k.add_entry(new_col[j], new_col[j], -regularization_floor);
-      rhs[nj] += s.g[j];
-      for (Index p = 0; p < a.size; ++p) both(nf + a.rows[p], new_col[j], a.values[p]);
-    } else {
+    if (new_col[j] < 0) {
       for (Index p = 0; p < a.size; ++p) {
         b_adj[static_cast<std::size_t>(a.rows[p])] -= a.values[p] * fixed[j];
       }
+      continue;
+    }
+    const auto nj = static_cast<std::size_t>(new_col[j]);
+    k.add_entry(new_col[j], new_col[j], -regularization_floor);
+    rhs[nj] += s.g[j];
+    base[nj] = v0[j];
+    for (Index p = 0; p < a.size; ++p) {
+      const Index r = row_sel[static_cast<std::size_t>(a.rows[p])];
+      if (r >= 0) both(nf + r, new_col[j], a.values[p]);
     }
   }
-  for (Index r = 0; r < s.rows; ++r) {
-    k.add_entry(nf + r, nf + r, regularization_floor);
-    rhs[static_cast<std::size_t>(nf + r)] += b_adj[static_cast<std::size_t>(r)];
+  for (std::size_t r = 0; r < nr; ++r) {
+    const Index sel = row_sel[r];
+    if (sel < 0) continue;
+    k.add_entry(nf + sel, nf + sel, regularization_floor);
+    rhs[static_cast<std::size_t>(nf + sel)] = b_adj[r];
+    base[static_cast<std::size_t>(nf + sel)] = y0[r];
   }
   k.finalize();
   exact.finalize();
 
-  std::vector<signed char> signs(static_cast<std::size_t>(dim), 1);
-  for (Index j = 0; j < nf; ++j) signs[static_cast<std::size_t>(j)] = -1;
-  SparseLdl ldl;
-  if (!ldl.analyze(k) ||
-      !ldl.factorize_quasidefinite(k, signs, tol::kQpIpmPivotShare * regularization_floor)) {
-    return false;  // the reduced system refuses to factor: keep the IPM's own point
+  // Solve for the correction to the interior point's own point (base).
+  std::vector<double> kb(rhs.size());
+  KktMatrix::multiply(exact, base, &kb);
+  for (std::size_t i = 0; i < rhs.size(); ++i) rhs[i] -= kb[i];
+  std::vector<double> d;
+  const auto udim = static_cast<std::size_t>(dim);
+  if (static_cast<double>(dim) * static_cast<double>(dim) <= kDenseKktLimit) {
+    // Small enough to be dense: the LEAST-NORM correction by the complete orthogonal
+    // decomposition. The system stays singular after the row selection when free columns
+    // carry no curvature (qgrow15: rank 600 of 814), and the least-norm correction leaves
+    // those directions at the interior point's values; a regularized solve refined against
+    // the singular system drifts along them instead.
+    std::vector<double> dense(udim * udim, 0.0);
+    for (Index col = 0; col < dim; ++col) {
+      const ColumnView e = exact.column(col);
+      for (Index p = 0; p < e.size; ++p) {
+        const auto r = static_cast<std::size_t>(e.rows[p]);
+        const auto c = static_cast<std::size_t>(col);
+        dense[c * udim + r] = e.values[p];
+        dense[r * udim + c] = e.values[p];
+      }
+    }
+    DenseQr kqr;
+    kqr.factor(dense, dim, dim, tol::kQpIpmFinishRankTolerance);
+    d = kqr.min_norm_least_squares(rhs);
+    std::vector<double> kd(udim), r(udim);
+    for (int pass = 0; pass < 2; ++pass) {  // refinement in working precision
+      KktMatrix::multiply(exact, d, &kd);
+      for (std::size_t i = 0; i < udim; ++i) r[i] = rhs[i] - kd[i];
+      const std::vector<double> dd = kqr.min_norm_least_squares(r);
+      for (std::size_t i = 0; i < udim; ++i) d[i] += dd[i];
+    }
+  } else {
+    std::vector<signed char> signs(udim, 1);
+    for (Index j = 0; j < nf; ++j) signs[static_cast<std::size_t>(j)] = -1;
+    SparseLdl ldl;
+    if (!ldl.analyze(k) ||
+        !ldl.factorize_quasidefinite(k, signs, tol::kQpIpmPivotShare * regularization_floor)) {
+      return false;
+    }
+    solve_refined(ldl, k, rhs, &d);
+    refine_unregularized(ldl, exact, rhs, &d);
   }
-  std::vector<double> solved;
-  solve_refined(ldl, exact, rhs, &solved);
-  if (!std::all_of(solved.begin(), solved.end(), [](double x) { return std::isfinite(x); })) {
-    return false;
-  }
+  if (!std::all_of(d.begin(), d.end(), [](double x) { return std::isfinite(x); })) return false;
 
-  std::vector<double> new_v(nc), new_y(nr, 0.0);
+  out->v.assign(nc, 0.0);
   for (std::size_t j = 0; j < nc; ++j) {
-    new_v[j] = new_col[j] >= 0 ? solved[static_cast<std::size_t>(new_col[j])] : fixed[j];
+    out->v[j] = new_col[j] >= 0 ? v0[j] + d[static_cast<std::size_t>(new_col[j])] : fixed[j];
   }
-  for (std::size_t r = 0; r < nr; ++r) new_y[r] = solved[static_cast<std::size_t>(nf) + r];
-
-  // The multipliers on the pinned columns, from the same stationarity residual the cold
-  // start above derives z from: z = 0 everywhere, then split by sign on the columns that are
-  // pinned (both signs, for a column fixed at equal lower and upper bounds).
+  // Multipliers: the interior point's, moved the least (in norm, over all rows) to make the
+  // free columns' stationarity exact (B dy = residual_F, least-norm least squares, twice).
+  out->y = y0;
   std::vector<double> hv(nc, 0.0), mty(nc, 0.0);
-  hessian_times(s.h, new_v, &hv);
-  if (s.rows > 0) s.m.transpose_multiply_add(new_y.data(), mty.data());
-  std::vector<double> new_zl(nc, 0.0), new_zu(nc, 0.0);
-  for (std::size_t j = 0; j < nc; ++j) {
-    if (!active_lower[j] && !active_upper[j]) continue;
-    const double residual = hv[j] + s.g[j] - mty[j];
-    if (active_lower[j]) new_zl[j] = active_upper[j] ? std::max(residual, 0.0) : residual;
-    if (active_upper[j]) new_zu[j] = active_lower[j] ? std::max(-residual, 0.0) : -residual;
+  hessian_times(s.h, out->v, &hv);
+  out->residual.assign(nc, 0.0);
+  for (int pass = 0; pass < 2; ++pass) {
+    std::fill(mty.begin(), mty.end(), 0.0);
+    if (s.rows > 0) s.m.transpose_multiply_add(out->y.data(), mty.data());
+    std::vector<double> rf(unf, 0.0);
+    for (std::size_t j = 0; j < nc; ++j) {
+      out->residual[j] = hv[j] + s.g[j] - mty[j];
+      if (new_col[j] >= 0) rf[static_cast<std::size_t>(new_col[j])] = out->residual[j];
+    }
+    if (pass == 1 || rank == 0) break;
+    // The least-norm correction over every row, dependent ones included: on a degenerate dual
+    // the correction on the chosen rows alone is larger and flips signs (qgrow15).
+    const std::vector<double> dy = qr.min_norm_least_squares(rf);
+    for (std::size_t r = 0; r < nr; ++r) out->y[r] += dy[r];
   }
+  out->zl.assign(nc, 0.0);
+  out->zu.assign(nc, 0.0);
+  for (std::size_t j = 0; j < nc; ++j) {
+    if (pin[j] == Pin::kLower) out->zl[j] = out->residual[j];
+    if (pin[j] == Pin::kUpper) out->zu[j] = -out->residual[j];
+  }
+  return true;
+}
+
+}  // namespace
+
+bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
+                       const std::vector<bool>& has_upper, double tolerance,
+                       double primal_tolerance, double regularization_floor,
+                       const std::function<bool()>& should_stop, std::vector<double>* v,
+                       std::vector<double>* y, std::vector<double>* zl,
+                       std::vector<double>* zu) {
+  const auto nc = static_cast<std::size_t>(s.cols);
+  const auto nr = static_cast<std::size_t>(s.rows);
+
+  // The working set: a bound is active when the point sits within the scaled distance of it,
+  // or when its slack is below its own (right-signed) multiplier.
+  std::vector<Pin> pin(nc, Pin::kFree);
+  for (std::size_t j = 0; j < nc; ++j) {
+    const double dl = has_lower[j] ? (*v)[j] - s.lower[j] : kInfinity;
+    const double du = has_upper[j] ? s.upper[j] - (*v)[j] : kInfinity;
+    // Each bound against its own size: a column on [0, 1000] is not at 0 when it is 0.05.
+    const double near_lower = tol::kQpIpmFinishActiveDistance *
+                              (has_lower[j] ? std::max(1.0, std::fabs(s.lower[j])) : 1.0);
+    const double near_upper = tol::kQpIpmFinishActiveDistance *
+                              (has_upper[j] ? std::max(1.0, std::fabs(s.upper[j])) : 1.0);
+    if (has_lower[j] && dl <= du && (dl <= near_lower)) {
+      pin[j] = Pin::kLower;
+    } else if (has_upper[j] && (du <= near_upper)) {
+      pin[j] = Pin::kUpper;
+    }
+  }
+
+  Candidate c;
+  bool settled = false;
+  std::vector<int> changes(nc, 0);
+  for (int round = 0; round < tol::kQpIpmFinishRounds && !settled; ++round) {
+    // On the solve's own clock: boyd1 (93,261 columns) spent 55 s in these rounds past a
+    // 60 s limit the interior point had already used 30 s of; a finish that runs out of time
+    // declines, and the interior point's point stands.
+    if (should_stop && should_stop()) return false;
+    if (!solve_reduced(s, pin, *v, *y, regularization_floor, &c)) return false;
+    // One change per round, the worst offender first: a free column outside its bounds goes
+    // onto the bound it violates; else a pinned bound with a wrong-signed multiplier is
+    // released; else a free column whose reduced cost the active rows cannot zero goes onto
+    // the bound that sign calls for.
+    std::size_t worst = nc;
+    double worst_size = 0.0;
+    Pin to = Pin::kFree;
+    const auto consider = [&](std::size_t j, double size, Pin target) {
+      if (size > worst_size) {
+        worst_size = size;
+        worst = j;
+        to = target;
+      }
+    };
+    for (std::size_t j = 0; j < nc; ++j) {
+      if (pin[j] != Pin::kFree) continue;
+      if (has_lower[j] && c.v[j] < s.lower[j] - primal_tolerance)
+        consider(j, s.lower[j] - c.v[j], Pin::kLower);
+      if (has_upper[j] && c.v[j] > s.upper[j] + primal_tolerance)
+        consider(j, c.v[j] - s.upper[j], Pin::kUpper);
+    }
+    if (worst == nc) {
+      for (std::size_t j = 0; j < nc; ++j) {
+        if (pin[j] == Pin::kLower && c.zl[j] < -primal_tolerance)
+          consider(j, -c.zl[j], Pin::kFree);
+        if (pin[j] == Pin::kUpper && c.zu[j] < -primal_tolerance)
+          consider(j, -c.zu[j], Pin::kFree);
+      }
+    }
+    if (worst == nc) {
+      double dual_scale = 1.0;
+      for (std::size_t j = 0; j < nc; ++j) dual_scale = std::max(dual_scale, std::fabs(s.g[j]));
+      for (std::size_t j = 0; j < nc; ++j) {
+        if (pin[j] != Pin::kFree) continue;
+        const double r = c.residual[j];
+        if (std::fabs(r) <= tolerance * dual_scale) continue;
+        if (r > 0.0 && has_lower[j]) consider(j, r, Pin::kLower);
+        if (r < 0.0 && has_upper[j]) consider(j, -r, Pin::kUpper);
+      }
+    }
+    if (worst == nc) {
+      settled = true;
+    } else {
+      // A column asked to change a third time is cycling (huestis: pinned, released, pinned
+      // again on the same column): the working set is not converging, so stop.
+      if (++changes[worst] > 2) return false;
+      pin[worst] = to;
+    }
+  }
+  if (!settled) return false;
 
   // ---- acceptance: never worse than the point the interior point already found -------------
-  std::vector<double> mv(nr, 0.0), rp(nr, 0.0), rd(nc, 0.0);
-  s.m.multiply_add(new_v.data(), mv.data());
+  std::vector<double> hv(nc, 0.0), mty(nc, 0.0), mv(nr, 0.0), rp(nr, 0.0), rd(nc, 0.0);
+  hessian_times(s.h, c.v, &hv);
+  if (s.rows > 0) s.m.transpose_multiply_add(c.y.data(), mty.data());
+  s.m.multiply_add(c.v.data(), mv.data());
   for (std::size_t r = 0; r < nr; ++r) rp[r] = s.b[r] - mv[r];
-  for (std::size_t j = 0; j < nc; ++j) rd[j] = hv[j] + s.g[j] - mty[j] - new_zl[j] + new_zu[j];
+  for (std::size_t j = 0; j < nc; ++j) rd[j] = hv[j] + s.g[j] - mty[j] - c.zl[j] + c.zu[j];
   const double primal_rel = inf_norm(rp) / (1.0 + std::max(inf_norm(mv), inf_norm(s.b)));
   const double dual_rel =
       inf_norm(rd) / (1.0 + std::max({inf_norm(hv), inf_norm(s.g), inf_norm(mty)}));
   if (!(primal_rel <= tolerance) || !(dual_rel <= tolerance)) return false;
   for (std::size_t j = 0; j < nc; ++j) {
-    if (has_lower[j] && new_v[j] < s.lower[j] - primal_tolerance) return false;
-    if (has_upper[j] && new_v[j] > s.upper[j] + primal_tolerance) return false;
-    if (new_zl[j] < -primal_tolerance || new_zu[j] < -primal_tolerance) return false;
+    if (has_lower[j] && c.v[j] < s.lower[j] - primal_tolerance) return false;
+    if (has_upper[j] && c.v[j] > s.upper[j] + primal_tolerance) return false;
+    if (c.zl[j] < -primal_tolerance || c.zu[j] < -primal_tolerance) return false;
   }
-  const double largest_product = largest_complementarity_product(s, has_lower, has_upper, new_v,
-                                                                 new_y, new_zl, new_zu, rp);
+  const double largest_product =
+      largest_complementarity_product(s, has_lower, has_upper, c.v, c.y, c.zl, c.zu, rp);
   if (largest_product > tol::kQpIpmComplementarityShare * tol::kComplementarity) return false;
 
-  *v = std::move(new_v);
-  *y = std::move(new_y);
-  *zl = std::move(new_zl);
-  *zu = std::move(new_zu);
+  *v = std::move(c.v);
+  *y = std::move(c.y);
+  *zl = std::move(c.zl);
+  *zu = std::move(c.zu);
   return true;
 }
 

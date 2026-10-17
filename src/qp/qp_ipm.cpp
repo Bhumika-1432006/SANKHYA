@@ -848,7 +848,7 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
     if (largest_product_at_exit > tol::kQpIpmComplementarityShare * tol::kComplementarity) {
       const bool finished =
           active_set_finish(s, has_lower, has_upper, tolerance, primal_tolerance,
-                            regularization_floor, &v, &y, &zl, &zu);
+                            regularization_floor, should_stop, &v, &y, &zl, &zu);
       logger.verbose(
           "QP interior point: active-set finish (#980) on a product of {:.1e} against the "
           "gate's {:.1e} - {}",
