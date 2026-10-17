@@ -302,6 +302,7 @@ set(SANKHYA_CORE_SOURCES
   src/la/ldl_supernodal.cpp
   src/la/ldl_amd.cpp
   src/la/lu.cpp
+  src/la/lu_accuracy.cpp
   src/la/lu_eliminate.cpp
   src/la/lu_hyper.cpp
   src/la/normal_pattern.cpp
