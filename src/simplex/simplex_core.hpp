@@ -294,6 +294,11 @@ class Simplex {
                                                 bool leaving_to_upper) const;
   /// Every column that could enter, with its breakpoints, into breakpoints_ (unordered).
   void collect_dual_breakpoints(bool leaving_to_upper) const;
+  /// nonbasic_list_ from basis_position_, after anything that may have changed the basis
+  /// wholesale (the loop's start, every refactorization and the repair it may make).
+  void rebuild_nonbasic_list();
+  /// The pivot's change to nonbasic_list_: `entering` leaves it, `leaving` takes its place.
+  void swap_nonbasic(Index entering, Index leaving);
   [[nodiscard]] DualRatioResult dual_ratio_test_textbook(Index leaving_slot,
                                                          bool leaving_to_upper) const;
   /// Harris's two passes inside the bound-flipping test (#465; Harris 1973, Koberstein
@@ -697,6 +702,10 @@ class Simplex {
   mutable std::vector<DualBreakpoint> breakpoint_group_;  ///< the Harris test's first group
   std::vector<char> pivot_row_marked_;
   bool pivot_row_held_sparse_ = false;  ///< the last pass left zeros everywhere but touched
+  /// The nonbasic columns in no particular order, for the breakpoint scan of a dense pivot
+  /// row (#1006), and each column's place on it (-1 when basic).
+  std::vector<Index> nonbasic_list_;
+  std::vector<Index> nonbasic_position_;
   /// Where the pivot row's time goes, and how sparse rho is, for the verbose report.
   double pivot_row_btran_seconds_ = 0.0;
   double pivot_row_gather_seconds_ = 0.0;

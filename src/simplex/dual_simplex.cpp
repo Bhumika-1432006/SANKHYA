@@ -547,6 +547,7 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
   make_dual_feasible();
   rebuild_infeasible_list();
   reset_dual_weights();
+  rebuild_nonbasic_list();
   // #465: the Harris ratio test is the LP default since its A/B ("auto"; branch and bound
   // resolves "auto" to textbook for its own LPs, mip::with_node_lp_defaults); the start
   // perturbation is still off by default until its own.
@@ -586,6 +587,7 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
   const auto refresh = [&]() {
     if (!refactorize()) return false;
     ++refactorizations_;
+    rebuild_nonbasic_list();  // a repair inside refactorize() may have swapped columns
     compute_basic_values();
     rebuild_infeasible_list();
     compute_reduced_costs(false);
@@ -988,6 +990,7 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
     basis_position_[e] = leaving_slot;
     status_[e] = BasisStatus::kBasic;
     nonbasic_value_[e] += delta;
+    swap_nonbasic(entering, leaving);
 
     // UPDATE, DO NOT RECOMPUTE (#210). Every iteration used to end with a fresh FTRAN and a
     // pass over the nonzeros for x_B, and a fresh BTRAN and a pass over every column for d
@@ -1050,6 +1053,7 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
     if (!updated || past_break_even || lu_.should_refactorize()) {
       if (!refactorize()) return singular();
       ++refactorizations_;
+      rebuild_nonbasic_list();  // a repair inside refactorize() may have swapped columns
       charge(5);
       // Fresh factors: whatever the updates above accumulated is replaced by the truth.
       compute_basic_values();
