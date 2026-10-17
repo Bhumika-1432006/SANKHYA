@@ -19,6 +19,7 @@
 #
 # `options` is appended to the runner's command line, split on spaces, e.g.
 # `--solver-option presolve=off` or, for ab-netlib, `--new-option engine_race=true --repeats 5`.
+# ab-supernodal (#470) runs bench/runners/supernodal_ab.py's four IPM arms over base_ref and ref.
 
 name: bench
 
@@ -36,13 +37,14 @@ on:
           - miplib-tier1
           - refinery
           - ab-netlib
+          - ab-supernodal
         required: true
       ref:
-        description: commit, branch or tag to build and run (ab-netlib - the new arm)
+        description: commit, branch or tag to build and run (ab-* - the new arm)
         default: main
         required: true
       base_ref:
-        description: ab-netlib only - the base arm
+        description: ab-* only - the base arm
         default: main
         required: false
       time_limit:
@@ -73,7 +75,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check out the base arm
-        if: inputs.suite == 'ab-netlib'
+        if: startsWith(inputs.suite, 'ab-')
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.base_ref }}
@@ -98,7 +100,7 @@ jobs:
           build/sankhya version
 
       - name: Build the base arm
-        if: inputs.suite == 'ab-netlib'
+        if: startsWith(inputs.suite, 'ab-')
         working-directory: .base
         run: |
           scripts/configure.sh build Release -DSANKHYA_BUILD_TESTS=OFF
@@ -126,6 +128,7 @@ jobs:
             maros-meszaros) python3 bench/runners/fetch_maros_meszaros.py ;;
             kennington) python3 bench/runners/fetch_kennington.py ;;
             miplib-tier1) python3 bench/runners/fetch_miplib.py ;;
+            ab-supernodal) python3 bench/runners/fetch_kennington.py cre-a cre-c ken-07 pds-02 ;;
           esac
           # The stamp marks a modified tracked file -dirty; say so before the run, not after.
           git status --porcelain --untracked-files=no
@@ -158,6 +161,9 @@ jobs:
                   --new build/sankhya --machine "$machine" \
                   --out-prefix "bench/results/ab-netlib-${base_sha}-vs-${sha}" \
                   ${limit[@]+"${limit[@]}"} "$@" ;;
+              # #470: scalar and supernodal IPM factorization, 1 and 4 threads, over two refs.
+              ab-supernodal)
+                python3 bench/runners/supernodal_ab.py --base .base/build/sankhya                   --new build/sankhya --machine "$machine" ${limit[@]+"${limit[@]}"} "$@" ;;
             esac
           } 2>&1 | tee "$out/run.log" || status=$?
           # Every result file the run wrote or rewrote goes into the artifact.
