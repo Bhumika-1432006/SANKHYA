@@ -28,6 +28,9 @@ namespace {
 Options quiet() {
   Options options;
   options.set_bool("log_to_console", false);
+  // Feasibility Jump (on by default) searches its whole work budget on every one of the
+  // hundreds of small instances here; pinned off, since the branching is what is tested.
+  options.set_string("mip_heur_fj", "off");
   return options;
 }
 

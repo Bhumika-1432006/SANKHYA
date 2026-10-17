@@ -273,6 +273,10 @@ TEST(ParallelTree, SubtreesAreGivenAwayOnATreeThatOutlastsThreadStartup) {
     const Model model = market_split(3, 24, seed);
     Options options = on_threads(4);
     options.set_double("time_limit", 2.0);
+    // Feasibility Jump (on by default) runs before the root LP and, on a market split, searches
+    // its whole work budget without a point - under a sanitizer that is the two seconds, and
+    // the tree never starts. Pinned off: donation is the claim.
+    options.set_string("mip_heur_fj", "off");
     const Solution solved = solve(model, options);
     ASSERT_NE(solved.status, SolveStatus::kNumericalError) << solved.message;
     EXPECT_GT(given_away(solved), 0) << "seed " << seed << ": " << solved.message;

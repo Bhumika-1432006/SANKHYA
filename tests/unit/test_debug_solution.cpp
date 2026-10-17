@@ -511,6 +511,7 @@ TEST(DebugSolution, FuzzTheCutPoolAgainstTheUniqueExactOptimum) {
   options.set_int("cut_max_per_round", 2);
   options.set_int("tree_cut_rows_per_round", 2);
   options.set_bool("mip_heuristics", false);
+  options.set_string("mip_heur_fj", "off");  // on by default, so the master switch leaves it
   for (const bool pooling : {true, false}) {
     options.set_bool("mip_cut_pooling", pooling);
     std::mt19937_64 rng(20260925);
