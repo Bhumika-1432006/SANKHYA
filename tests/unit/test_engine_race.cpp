@@ -283,7 +283,8 @@ TEST(EngineRace, TheLosersAreCancelledOnceTheWinnerIsAccepted) {
   // accepted, so it starts with the race's control already interrupted and must come back
   // interrupted, logged as cancelled, with the winner's answer untouched. The race is in
   // order on one core and then has no losers to cancel.
-  if (std::thread::hardware_concurrency() <= 1) GTEST_SKIP() << "one core: the race is in order";
+  if (std::thread::hardware_concurrency() <= 1)
+    GTEST_SKIP() << "one core: the race is in order";
   const Model model = netlib("afiro");
   HooksGuard guard;
   engine_race_hooks_for_testing().before_engine = [](const std::string& engine) {
