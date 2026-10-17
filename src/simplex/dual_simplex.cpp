@@ -72,6 +72,7 @@
 #include "simplex_core.hpp"
 
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 #include <limits>
 #include <optional>
@@ -289,12 +290,22 @@ double Simplex::slot_infeasibility(Index slot) const {
 void Simplex::rebuild_infeasible_list() {
   infeasible_slots_.clear();
   slot_listed_.assign(static_cast<std::size_t>(m_), 0);
+  slot_infeasibility_.assign(static_cast<std::size_t>(m_), 0.0);
   for (Index slot = 0; slot < m_; ++slot) note_slot(slot);
 }
 
 void Simplex::note_slot(Index slot) {
+  // THE INFEASIBILITY IS KEPT, NOT RECOMPUTED (Koberstein 2005, sec. 6.3: the vector of
+  // primal infeasibilities is updated where x_B moves and read by the pricing). Every
+  // change to x_B, to a slot's basic variable or to the bounds the dual loop prices
+  // against reaches this function or rebuild_infeasible_list() (simplex_core.hpp), so the
+  // value stored here is the one slot_infeasibility() would return at pricing time, to the
+  // bit; choose_leaving_row() used to call it again for every listed slot every iteration,
+  // 9% of stocfor3's and fit2p's self time in the profile of #1006.
   const auto s = static_cast<std::size_t>(slot);
-  if (slot_listed_[s] != 0 || slot_infeasibility(slot) == 0.0) return;
+  const double infeasibility = slot_infeasibility(slot);
+  slot_infeasibility_[s] = infeasibility;
+  if (slot_listed_[s] != 0 || infeasibility == 0.0) return;
   slot_listed_[s] = 1;
   infeasible_slots_.push_back(slot);
 }
@@ -322,7 +333,10 @@ Index Simplex::choose_leaving_row() {
   for (std::size_t at = 0; at < infeasible_slots_.size(); ++at) {
     const Index slot = infeasible_slots_[at];
     const auto s = static_cast<std::size_t>(slot);
-    const double infeasibility = slot_infeasibility(slot);
+    const double infeasibility = slot_infeasibility_[s];
+    // The debug builds (the ASan/UBSan CI jobs) check the kept value against a fresh one on
+    // every slot priced: a missed note_slot() shows up here, not as a different pivot.
+    assert(infeasibility == slot_infeasibility(slot) && "stale slot_infeasibility_");
     if (infeasibility == 0.0) {
       slot_listed_[s] = 0;
       continue;

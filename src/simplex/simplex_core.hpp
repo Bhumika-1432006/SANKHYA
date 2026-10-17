@@ -282,7 +282,10 @@ class Simplex {
   [[nodiscard]] double slot_infeasibility(Index slot) const;
   /// infeasible_slots_ from every slot's current value (after a dense change to x_basic_).
   void rebuild_infeasible_list();
-  /// Put slot on infeasible_slots_ if it is outside its bounds and not listed already.
+  /// Record slot's current infeasibility in slot_infeasibility_ and put it on
+  /// infeasible_slots_ if it is outside its bounds and not listed already. MUST be called
+  /// (or rebuild_infeasible_list()) after every change to x_basic_[slot], to basis_[slot]
+  /// or to the bounds, or the pricing reads a stale value.
   void note_slot(Index slot);
   /// alpha_support_ = the nonzero slots of alpha_, ascending.
   void collect_alpha_support();
@@ -689,8 +692,16 @@ class Simplex {
   /// and extended from alpha's support after a pivot, since x_B moves only there. Pricing
   /// then reads the list instead of every slot: on stocfor3 (15,929 rows) the full scan was
   /// a fifth of the dual's time.
+  /// slot_infeasibility(slot) as of the last note_slot() or rebuild (Koberstein 2005, sec.
+  /// 6.3): the pricing reads this instead of recomputing it for every listed slot. The
+  /// dual loop moves x_B in four places - the flip FTRAN, the pivot's step along alpha, the
+  /// leaving slot's new occupant, and compute_basic_values() on fresh factors - and each is
+  /// followed by note_slot() on the moved slots or by rebuild_infeasible_list(); the bounds
+  /// change only before the first rebuild (make_dual_feasible) and on the way out
+  /// (remove_artificial_bounds), after which nothing is priced.
   std::vector<Index> infeasible_slots_;
   std::vector<char> slot_listed_;
+  std::vector<double> slot_infeasibility_;
   std::vector<Index> alpha_support_;  ///< nonzero slots of alpha_ (collect_alpha_support)
   std::vector<double> dual_weight_;   ///< dual devex weight per basic slot, or the exact
                                       ///< steepest-edge norm under pricing=dual-steepest-edge
