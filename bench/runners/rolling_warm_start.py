@@ -25,9 +25,16 @@ object rather than two is deliberate: solving does not mutate the model, so both
 identical bounds/costs/rows at every step, and the only thing that differs between them is
 which basis (if any) the simplex started from.
 
+THE ENGINE. `--algorithm auto` (the default) is the simplex basis restart above. With
+`--algorithm pdhg` the same loop measures #913 part 2: the warm arm starts the first-order
+engine from the previous week's primal-dual pair (carried by `Model.solve(start=...)`), and
+`iterations` is then PDHG's count, not a pivot count. The CSV names the engine so the two
+are never read as one.
+
 Usage:
     python bench/runners/rolling_warm_start.py --periods 52 --seed 11
     python bench/runners/rolling_warm_start.py --periods 52 --seed 11 --delta 0.05 --out out.csv
+    python bench/runners/rolling_warm_start.py --periods 52 --seed 11 --algorithm pdhg
 """
 
 from __future__ import annotations
@@ -68,6 +75,9 @@ def main() -> int:
     parser.add_argument("--delta", type=float, default=0.10,
                         help="fractional price perturbation per step")
     parser.add_argument("--rng-seed", type=int, default=7)
+    parser.add_argument("--algorithm", default="auto",
+                        help="the solver's algorithm option: auto (simplex basis restart) "
+                             "or pdhg (the previous iterate as the start)")
     parser.add_argument("--out", type=Path, default=None)
     args = parser.parse_args()
 
@@ -131,8 +141,9 @@ def main() -> int:
             factor = 1.0 + rng.uniform(-args.delta, args.delta)
             model.set_cost(column, base_costs[column] * factor)
 
-            cold = model.solve(log_to_console=False)
-            warm = model.solve(log_to_console=False, start=warm_previous)
+            cold = model.solve(log_to_console=False, algorithm=args.algorithm)
+            warm = model.solve(log_to_console=False, algorithm=args.algorithm,
+                               start=warm_previous)
             warm_previous = warm
 
             check_match = cold.status == warm.status and (
@@ -140,6 +151,7 @@ def main() -> int:
                 <= 1e-6 * max(1.0, abs(cold.objective)))
             rows.append({
                 "week": week + 1,
+                "algorithm": args.algorithm,
                 "column": target_name[week],
                 "cost_factor": f"{factor:.6f}",
                 "cold_status": cold.status,
@@ -164,7 +176,8 @@ def main() -> int:
         total_warm_s = sum(float(r["warm_seconds"]) for r in rows)
         disagreements = sum(1 for r in rows if not r["answers_agree"])
 
-        print(f"{args.periods} weeks, crude {args.crude}, delta +/-{args.delta:.0%}:")
+        print(f"{args.periods} weeks, crude {args.crude}, delta +/-{args.delta:.0%}, "
+              f"algorithm {args.algorithm}:")
         print(f"  iterations: cold {total_cold_iter}, warm {total_warm_iter} "
              f"({total_warm_iter / max(1, total_cold_iter):.3f}x)")
         print(f"  seconds:    cold {total_cold_s:.4f}, warm {total_warm_s:.4f} "
@@ -175,7 +188,8 @@ def main() -> int:
         # library the bindings load - the library itself reports no commit. HEAD would
         # name whatever branch is checked out, which is how a branch sha reached a CSV.
         commit = stamp.stamp(sankhya.locate_executable())
-        out = args.out or (RESULTS_DIR / f"rolling-warm-start-{commit}.csv")
+        tag = "" if args.algorithm == "auto" else f"{args.algorithm}-"
+        out = args.out or (RESULTS_DIR / f"rolling-warm-start-{tag}{commit}.csv")
         out.parent.mkdir(parents=True, exist_ok=True)
         machine = f"{platform.system()}-{platform.machine()}"
         with open(out, "w", newline="", encoding="utf-8") as handle:

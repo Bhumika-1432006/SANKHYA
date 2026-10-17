@@ -9,7 +9,9 @@
 // The answers are hand-derived rather than taken from a previous run, so a wrong wiring
 // fails here instead of being frozen in as expected output.
 
+#include <algorithm>
 #include <cmath>
+#include <filesystem>
 #include <string>
 #include <vector>
 
@@ -438,6 +440,46 @@ TEST(CApi, EditsABoundAndResolvesFromThePreviousBasis) {
   sankhya_solution_free(warm);
   sankhya_solution_free(cold);
   sankhya_solution_free(first);
+}
+
+TEST(CApi, APdhgSolveFromThePreviousSolutionResolvesInFewerIterationsThanCold) {
+  // #913 part 2 through the C surface: the iterate a PDHG solve ended at is carried by
+  // sankhya_solve_from into the next solve of the same model after a cost edit. The warm run
+  // reaches the cold answer in fewer iterations, and its log says presolve was bypassed.
+  const std::string path =
+      (std::filesystem::path(__FILE__).parent_path().parent_path().parent_path() /
+       "data/netlib/afiro.mps")
+          .string();
+  ModelHandle model;
+  ASSERT_EQ(sankhya_model_read(model, path.c_str()), SANKHYA_OK) << sankhya_last_error();
+  sankhya_options* options = sankhya_options_create();
+  ASSERT_EQ(sankhya_options_set_string(options, "algorithm", "pdhg"), SANKHYA_OK);
+  ASSERT_EQ(sankhya_options_set_bool(options, "pdhg_polish", 0), SANKHYA_OK);
+  ASSERT_EQ(sankhya_options_set_bool(options, "log_to_console", 0), SANKHYA_OK);
+
+  SolutionHandle first;
+  ASSERT_EQ(sankhya_solve(model, options, &first.handle), SANKHYA_OK);
+  ASSERT_EQ(sankhya_solution_status(first.handle), SANKHYA_OPTIMAL)
+      << sankhya_solution_message(first.handle);
+
+  // The edit: a cost of the first column (X01, free of charge in the file) that moves the
+  // optimum a little; the C surface has no cost getter, so the edit is absolute.
+  ASSERT_EQ(sankhya_model_set_objective_coefficient(model, 0, 0.01), SANKHYA_OK);
+  SolutionHandle cold;
+  SolutionHandle warm;
+  ASSERT_EQ(sankhya_solve(model, options, &cold.handle), SANKHYA_OK);
+  ASSERT_EQ(sankhya_solve_from(model, options, first.handle, &warm.handle), SANKHYA_OK);
+  sankhya_options_free(options);
+  ASSERT_EQ(sankhya_solution_status(cold.handle), SANKHYA_OPTIMAL)
+      << sankhya_solution_message(cold.handle);
+  ASSERT_EQ(sankhya_solution_status(warm.handle), SANKHYA_OPTIMAL)
+      << sankhya_solution_message(warm.handle);
+  const double reference = sankhya_solution_objective(cold.handle);
+  EXPECT_NEAR(sankhya_solution_objective(warm.handle), reference,
+              1e-6 * std::max(1.0, std::fabs(reference)));
+  EXPECT_LT(sankhya_solution_iterations(warm.handle), sankhya_solution_iterations(cold.handle))
+      << "warm " << sankhya_solution_iterations(warm.handle) << " vs cold "
+      << sankhya_solution_iterations(cold.handle);
 }
 
 }  // namespace

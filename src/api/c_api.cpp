@@ -538,6 +538,10 @@ sankhya_status sankhya_solve_from(sankhya_model* model, const sankhya_options* o
     }
     if (start != nullptr && !start->solution.col_value.empty()) {
       control->start_solution = start->solution.col_value;
+      // The PDHG iterate (#913 part 2): the point and the duals a first-order solve ended
+      // at. Only pdhg reads them; solve() checks the sizes against the model.
+      control->start_col_value = start->solution.col_value;
+      control->start_row_dual = start->solution.row_dual;
     }
 
     struct ControlClearer {

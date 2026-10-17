@@ -681,6 +681,18 @@ Solution solve(const Model& model, const Options& requested_options, SolveContro
         "Starting solution given: presolve skipped so it applies to the model's own "
         "columns (#753)");
   }
+  // A PDHG iterate (#913 part 2) is likewise in the model's own columns, and the engine runs
+  // cold on a reduced model whose size it does not match. When PDHG is the engine asked for,
+  // the model is handed to it as given; under `auto` the engine is not known here and the
+  // iterate only helps if the reduction happens to keep every column.
+  if (control != nullptr && control->has_pdhg_warm_start() &&
+      static_cast<Index>(control->start_col_value.size()) == model.num_cols() &&
+      options.get_string("algorithm") == "pdhg" && options.get_bool("presolve")) {
+    options.set_bool("presolve", false);
+    logger.info(
+        "Starting PDHG iterate given: presolve skipped so it applies to the model's own "
+        "columns (#913)");
+  }
   if (options.get_bool("deterministic")) {
     logger.info("Deterministic mode: no decision depends on the clock");
     // The reproducibility fingerprint (#288): what a second run has to match for the same

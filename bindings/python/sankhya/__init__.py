@@ -628,6 +628,8 @@ class Model(NonlinearModelMixin):
         ``start`` is a previous Result of THIS model to restart from (#218): after editing a
         bound or a cost the simplex resumes from that basis and finishes in a handful of
         pivots, reported as ``result.iterations``. Presolve is bypassed on a warm solve.
+        With ``algorithm="pdhg"`` the first-order engine starts from the previous point and
+        row duals instead (#913), and ``result.iterations`` is its iteration count.
 
         Options may be passed as an Options object, as keyword arguments, or both - keywords
         are applied on top. The return value describes what the SOLVER concluded; a failure
