@@ -52,10 +52,15 @@ struct SparseLu::Workspace {
   std::vector<Index> pivot_row_columns;
   std::vector<char> column_seen;
 
-  /// The active rows of the column being updated, recorded as it is scattered, so that the
-  /// gather afterwards visits those rows and the multiplier rows and nothing else. It used
-  /// to sweep all m rows for every column of every step - the other half of #210.
+  /// The live entries of the column being updated that are NOT on a multiplier row, in the
+  /// column's order: they do not change, so the update copies them straight through
+  /// (eliminate()). Only the multiplier rows pass through acc; is_mult_row marks them for
+  /// the duration of a step. The gather used to visit every live row of every column of
+  /// every step through acc - the other half of #210, and then half of eliminate() on
+  /// pilot87 (#1006).
   std::vector<Index> old_rows;
+  std::vector<double> old_values;
+  std::vector<char> is_mult_row;
 
   // ---- the singleton fast path (#463) ---------------------------------------------------
   // Suhl & Suhl (1990) keep the active submatrix both row-wise and column-wise so that a
@@ -110,6 +115,7 @@ struct SparseLu::Workspace {
     acc.assign(u, 0.0);
     acc_present.assign(u, 0);
     column_seen.assign(u, 0);
+    is_mult_row.assign(u, 0);
     row_values_valid.assign(u, 1);
     col_max.assign(u, 0.0);
     col_max_valid.assign(u, 0);
