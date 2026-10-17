@@ -495,17 +495,32 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
       for (const Index i : w.mult_rows) w.row_values_valid[static_cast<std::size_t>(i)] = 0;
     }
 
+    // ONLY THE MULTIPLIER ROWS' ENTRIES MOVE (Suhl & Suhl 1990, sec. 4: the update of the
+    // active submatrix is confined to the rows that hold a multiplier). Every other live
+    // entry of a column the pivot row crosses comes out exactly as it went in, so it is
+    // copied straight through in one pass rather than scattered into the dense accumulator,
+    // read back out of it and cleared again: on pilot87 that scatter and gather were half
+    // of eliminate(), which was 31% of the solve (#1006). The multiplier rows are marked
+    // once per step so the pass can tell them apart; they alone go through the
+    // accumulator. The column that comes out is the one the scatter-and-gather produced,
+    // entry for entry and in the same order - the multiplier rows first, in multiplier
+    // order, then the rest in their old order - with the same arithmetic on each, so the
+    // factors are identical to the bit and every later pivot's tie breaks the same way.
+    for (const Index i : w.mult_rows) w.is_mult_row[static_cast<std::size_t>(i)] = 1;
+
     for (const Index j : w.pivot_row_columns) {
       const auto uj = static_cast<std::size_t>(j);
 
       std::vector<Index>& rows = w.col_rows[uj];
       std::vector<double>& values = w.col_values[uj];
 
-      // Scatter the column, keeping only rows that are still active. The pivot row's own
-      // entry is what becomes the U coefficient.
+      // One pass: the pivot row's entry is the U coefficient, a multiplier row's entry goes
+      // into the accumulator, every other live entry is kept as it is (dead ones are
+      // dropped here, as the gather dropped them).
       double pivot_row_value = 0.0;
       bool pivot_row_present = false;
       w.old_rows.clear();
+      w.old_values.clear();
       for (std::size_t t = 0; t < rows.size(); ++t) {
         const Index i = rows[t];
         const auto ui = static_cast<std::size_t>(i);
@@ -515,15 +530,19 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
           continue;
         }
         if (w.row_active[ui] == 0) continue;
-        w.acc[ui] = values[t];
-        w.acc_present[ui] = 1;
+        if (w.is_mult_row[ui] != 0) {
+          w.acc[ui] = values[t];
+          w.acc_present[ui] = 1;
+          continue;
+        }
         w.old_rows.push_back(i);
+        w.old_values.push_back(values[t]);
       }
 
       if (!pivot_row_present || pivot_row_value == 0.0) {
-        // A stale row-pattern entry: nothing to eliminate against in this column. Undo the
-        // scatter and move on.
-        for (const Index i : w.old_rows) {
+        // A stale row-pattern entry: nothing to eliminate against in this column. The
+        // column is left as it was; only the multiplier rows reached the accumulator.
+        for (const Index i : w.mult_rows) {
           const auto ui = static_cast<std::size_t>(i);
           w.acc[ui] = 0.0;
           w.acc_present[ui] = 0;
@@ -573,17 +592,11 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
         values.push_back(value);
         column_max = std::max(column_max, std::fabs(value));
       }
-      // Whatever remains in the accumulator belongs to rows the pivot column did not touch:
-      // rows of the column's old pattern, which the scatter recorded.
-      for (const Index i : w.old_rows) {
-        const auto ui = static_cast<std::size_t>(i);
-        if (w.acc_present[ui] == 0) continue;
-        rows.push_back(i);
-        values.push_back(w.acc[ui]);
-        column_max = std::max(column_max, std::fabs(w.acc[ui]));
-        w.acc[ui] = 0.0;
-        w.acc_present[ui] = 0;
-      }
+      // Then the rows the pivot column did not touch, unchanged and in their old order.
+      rows.insert(rows.end(), w.old_rows.begin(), w.old_rows.end());
+      values.insert(values.end(), w.old_values.begin(), w.old_values.end());
+      for (const double value : w.old_values)
+        column_max = std::max(column_max, std::fabs(value));
       if (w.fast) {
         w.col_max[uj] = column_max;
         w.col_max_valid[uj] = 1;
@@ -592,6 +605,7 @@ bool SparseLu::eliminate(Workspace& w, double pivot_tolerance, double threshold,
       rebucket_column(j);
     }
 
+    for (const Index i : w.mult_rows) w.is_mult_row[static_cast<std::size_t>(i)] = 0;
     for (const Index i : w.mult_rows) rebucket_row(i);
 
     commit_step();
