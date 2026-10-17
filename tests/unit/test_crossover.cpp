@@ -318,5 +318,25 @@ TEST(Crossover, NetlibInstancesReachAVertexAtThePublishedObjective) {
   }
 }
 
+TEST(Crossover, MarosR7EndsAtAVertex) {
+  // #1023: the interior point's answer on maros-r7 is optimal and its basis guess right
+  // (3,136 interior entries for 3,136 rows, none evicted for rank), but factorized at
+  // Markowitz threshold 0.01 it solved to nothing: x_B came out 2.9e3 from the point, the
+  // push declined it after 0 pivots, and the answer kept no basis - so no certified bound,
+  // no ranging, no warm start. Refactorized one rung stricter it is at a vertex at once.
+  Model model;
+  const std::string path =
+      (std::filesystem::path(__FILE__).parent_path().parent_path().parent_path() /
+       "data/netlib/maros-r7.mps")
+          .string();
+  const io::ReadResult read = io::read_model(path, &model);
+  ASSERT_TRUE(read.ok) << path << ": " << read.error;
+  const Solution s = solve(model, ipm_options(true));
+  ASSERT_EQ(s.status, SolveStatus::kOptimal) << s.message;
+  EXPECT_NEAR(s.objective, 1497185.1665, 1e-6 * 1497185.1665);
+  EXPECT_NE(s.algorithm.find("crossover"), std::string::npos) << s.message;
+  expect_a_vertex(model, s);
+}
+
 }  // namespace
 }  // namespace sankhya

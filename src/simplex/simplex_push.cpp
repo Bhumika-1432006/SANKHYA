@@ -84,6 +84,28 @@ Solution Simplex::run_push(const WarmStart& warm, const std::vector<double>& int
   // feasible to a loose multiple of the tolerance is handed back as "not solved", and the
   // caller keeps the interior point's answer.
   const double loose = 1e3 * primal_tolerance_;
+  // FACTORS THAT FACTORIZED ARE NOT YET FACTORS THAT SOLVE (#1023). Threshold pivoting
+  // bounds the growth of U only by (1 + 1/tau) per step, so a basis can factorize at
+  // tau = 0.01 with every pivot above the tolerance and still solve to nothing: on
+  // maros-r7 the guess above (3,136 interior entries for 3,136 rows, none evicted, smallest
+  // pivot 9.5e-3) gave x_B 2.9e3 from a point snapped to its bounds by 1e-7, and the decline
+  // below kept the interior point's answer with no basis at all. The same basis at
+  // tau = 0.1 reproduced the point to 6e-7. Duff, Erisman & Reid, "Direct Methods for
+  // Sparse Matrices" (2nd ed., 2017), sec. 5.4: check the result, raise tau when it fails.
+  // The result checked is the one the push needs, x_B against the point, and the stricter
+  // rung stays for the rest of this crossover, whose pivots refactorize the same kind of
+  // basis. The simplex loops elsewhere are untouched: a check on every fresh factorization
+  // fired on 1,389 of pilot87's 1,835 and the dual simplex took 158.6 s against 22.4 s on
+  // the same box, where the loops' own accuracy check had been coping all along.
+  while (max_infeasibility() > loose) {
+    const double before = max_infeasibility();
+    if (!refactorize_stricter()) break;
+    compute_basic_values();
+    logger_.info(
+        "Crossover push: the basis guess reproduced the interior point to {:.3e}; "
+        "refactorized at a stricter Markowitz threshold, now {:.3e}",
+        before, max_infeasibility());
+  }
   if (max_infeasibility() > loose) {
     return finish(SolveStatus::kNotSolved,
                   fmt::format("crossover push declined: the basis guess reproduces the "

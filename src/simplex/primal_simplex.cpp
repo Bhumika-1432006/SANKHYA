@@ -332,6 +332,15 @@ double Simplex::unbounded_ray_residual(Index entering, int direction) const {
   return worst / std::max(1.0, scale);
 }
 
+/// The Markowitz thresholds refactorize() tries in turn; see the comment at its loop.
+constexpr double kThresholdLadder[] = {tol::kMarkowitzThreshold, 0.1, 0.5, 1.0};
+
+bool Simplex::refactorize_stricter() {
+  if (markowitz_rung_ + 1 >= std::size(kThresholdLadder)) return false;
+  ++markowitz_rung_;
+  return refactorize();
+}
+
 bool Simplex::refactorize() {
   // Reset at entry rather than at the successful return, so every exit path - the ladder,
   // a repair, a failure - leaves the counter consistent with whatever factors are in use.
@@ -380,8 +389,8 @@ bool Simplex::refactorize() {
   // retried with progressively more stability, ending at full partial pivoting - more fill,
   // slower, and still enormously better than a dense refactorization. Only a basis that is
   // singular under partial pivoting is genuinely singular.
-  static constexpr double kThresholdLadder[] = {tol::kMarkowitzThreshold, 0.1, 0.5, 1.0};
-  for (std::size_t attempt = 0; attempt < std::size(kThresholdLadder); ++attempt) {
+  for (std::size_t attempt = markowitz_rung_; attempt < std::size(kThresholdLadder);
+       ++attempt) {
     if (lu_.factorize(basis_columns_, m_, tol::kPivotTolerance, kThresholdLadder[attempt],
                       deadline_)) {
       // PER FACTORIZATION, NOT A LATCH. This used to latch true for the rest of the solve,
