@@ -235,7 +235,7 @@ TEST(QpIpmFinish, ActiveSetFinishSnapsANearlyActiveBoundExactlyOntoIt) {
   ASSERT_TRUE(qp::ipm_detail::active_set_finish(
       s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
       options.get_double("primal_feasibility_tolerance"),
-      options.get_double("qp_ipm_regularization"), &v, &y, &zl, &zu));
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
   EXPECT_EQ(v[0], 1.0);  // on the bound to the bit, which is what closes the product
   EXPECT_NEAR(v[1], 1.0, 1e-7);
   EXPECT_NEAR(v[2], 2.0, 1e-7);
@@ -266,7 +266,7 @@ TEST(QpIpmFinish, ActiveSetFinishReleasesAPinWhoseMultiplierHasTheWrongSign) {
   ASSERT_TRUE(qp::ipm_detail::active_set_finish(
       s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
       options.get_double("primal_feasibility_tolerance"),
-      options.get_double("qp_ipm_regularization"), &v, &y, &zl, &zu));
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
   EXPECT_NEAR(v[0], 10.0, 1e-9);
   EXPECT_NEAR(v[1], 0.0, 1e-9);
   EXPECT_NEAR(zl[0], 0.0, 1e-9);
@@ -300,7 +300,7 @@ TEST(QpIpmFinish, ActiveSetFinishRefusesAndLeavesEveryArgumentUntouched) {
   EXPECT_FALSE(qp::ipm_detail::active_set_finish(
       s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
       options.get_double("primal_feasibility_tolerance"),
-      options.get_double("qp_ipm_regularization"), &v, &y, &zl, &zu));
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
   EXPECT_EQ(v, v_before);
   EXPECT_EQ(y, y_before);
   EXPECT_EQ(zu, zu_before);
@@ -340,7 +340,7 @@ TEST(QpIpmFinish, ActiveSetFinishIsExactWhenTheActiveRowsAreDependent) {
   ASSERT_TRUE(qp::ipm_detail::active_set_finish(
       s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
       options.get_double("primal_feasibility_tolerance"),
-      options.get_double("qp_ipm_regularization"), &v, &y, &zl, &zu));
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
   EXPECT_EQ(v[0], 0.5);
   EXPECT_NEAR(v[1], 1.5, 1e-14);
   EXPECT_NEAR(y[0] + y[1], -1.5, 1e-12);

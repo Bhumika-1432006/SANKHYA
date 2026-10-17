@@ -272,7 +272,8 @@ bool solve_reduced(const Standard& s, const std::vector<Pin>& pin,
 bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
                        const std::vector<bool>& has_upper, double tolerance,
                        double primal_tolerance, double regularization_floor,
-                       std::vector<double>* v, std::vector<double>* y, std::vector<double>* zl,
+                       const std::function<bool()>& should_stop, std::vector<double>* v,
+                       std::vector<double>* y, std::vector<double>* zl,
                        std::vector<double>* zu) {
   const auto nc = static_cast<std::size_t>(s.cols);
   const auto nr = static_cast<std::size_t>(s.rows);
@@ -299,6 +300,10 @@ bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
   bool settled = false;
   std::vector<int> changes(nc, 0);
   for (int round = 0; round < tol::kQpIpmFinishRounds && !settled; ++round) {
+    // On the solve's own clock: boyd1 (93,261 columns) spent 55 s in these rounds past a
+    // 60 s limit the interior point had already used 30 s of; a finish that runs out of time
+    // declines, and the interior point's point stands.
+    if (should_stop && should_stop()) return false;
     if (!solve_reduced(s, pin, *v, *y, regularization_floor, &c)) return false;
     // One change per round, the worst offender first: a free column outside its bounds goes
     // onto the bound it violates; else a pinned bound with a wrong-signed multiplier is
