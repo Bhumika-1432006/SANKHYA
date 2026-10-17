@@ -31,9 +31,15 @@ jobs:
     # The parallel tree search (#222), the engine race (#476), the row-parallel SpMV (#487),
     # and the KKT check (#476) under ThreadSanitizer: a data race in concurrent code shows up
     # as a wrong bound or a wrong winner once a month, not as a crash. OpenMP is off because
-    # libgomp is not instrumented and TSan cannot see its synchronisation (#535).
+    # libgomp is not instrumented and TSan cannot see its synchronisation (#535). The filter
+    # also takes every test that sets mip_threads above one outside ParallelTree, so the
+    # parallel tree's restart, symmetry, objective-row and limit paths run instrumented too.
+    # The race's cancellation path (EngineRace.TheLosersAreCancelled*) and the SpMV's
+    # reductions at four threads (PdhgParallelSpmv.TheVectorUpdates*) are in it. About 26
+    # minutes at d09dd057; shard it before it passes 40.
     name: TSan (MILP tree)
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,7 +66,7 @@ jobs:
           TSAN_OPTIONS: halt_on_error=1:second_deadlock_stack=1
         run: >-
           ./build/tests/sankhya_tests
-          --gtest_filter='ParallelTree.*:BranchAndBound*.*:SolutionPool*.*:NodeSelection*.*:ResourceLimits.*:EngineConcurrency.*:EngineRace.*:KktCheck.*:PdhgParallelSpmv.*:Decomposition.TheThreadCount*:Decomposition.AProgressCallback*'
+          --gtest_filter='ParallelTree.*:BranchAndBound*.*:SolutionPool*.*:NodeSelection*.*:ResourceLimits.*:EngineConcurrency.*:EngineRace.*:KktCheck.*:PdhgParallelSpmv.*:Decomposition.TheThreadCount*:Decomposition.AProgressCallback*:MipLimitReporting.EjStoppedInTheParallelSearch*:ObjectiveBranching.TheParallelTreeDeclinesTheRow:Restarts.AParallelTreeDoesNotRestart:Symmetry.TheParallelSearch*'
 
   fuzz-readers:
     # #534: a libFuzzer target per reader (MPS fixed, MPS free, LP, QPS' QUADOBJ extension),
