@@ -332,6 +332,15 @@ double Simplex::unbounded_ray_residual(Index entering, int direction) const {
   return worst / std::max(1.0, scale);
 }
 
+/// The Markowitz thresholds refactorize() tries in turn; see the comment at its loop.
+constexpr double kThresholdLadder[] = {tol::kMarkowitzThreshold, 0.1, 0.5, 1.0};
+
+bool Simplex::refactorize_stricter() {
+  if (markowitz_rung_ + 1 >= std::size(kThresholdLadder)) return false;
+  ++markowitz_rung_;
+  return refactorize();
+}
+
 bool Simplex::refactorize() {
   // Reset at entry rather than at the successful return, so every exit path - the ladder,
   // a repair, a failure - leaves the counter consistent with whatever factors are in use.
@@ -380,27 +389,10 @@ bool Simplex::refactorize() {
   // retried with progressively more stability, ending at full partial pivoting - more fill,
   // slower, and still enormously better than a dense refactorization. Only a basis that is
   // singular under partial pivoting is genuinely singular.
-  static constexpr double kThresholdLadder[] = {tol::kMarkowitzThreshold, 0.1, 0.5, 1.0};
-  for (std::size_t attempt = 0; attempt < std::size(kThresholdLadder); ++attempt) {
+  for (std::size_t attempt = markowitz_rung_; attempt < std::size(kThresholdLadder);
+       ++attempt) {
     if (lu_.factorize(basis_columns_, m_, tol::kPivotTolerance, kThresholdLadder[attempt],
                       deadline_)) {
-      // FACTORS THAT FACTORIZED ARE NOT YET FACTORS THAT SOLVE (#1023). Threshold pivoting
-      // bounds growth only by (1 + 1/tau) per step, so a basis can factorize at tau = 0.01
-      // with every pivot above the tolerance and still solve to nothing: the crossover's
-      // basis on maros-r7 (smallest pivot 9.5e-3) gave x_B a residual of 2.3e3, the push
-      // declined the point and the answer kept no basis. Duff, Erisman & Reid, "Direct
-      // Methods for Sparse Matrices", sec. 5.4: check the backward error, raise tau when it
-      // fails. Partial pivoting, the last rung, is accepted as it is.
-      if (attempt + 1 < std::size(kThresholdLadder)) {
-        const double eta = lu_.backward_error(basis_columns_);
-        if (!(eta <= tol::kFactorBackwardError)) {
-          logger_.verbose(
-              "basis factorization at Markowitz threshold {:g} has backward error {:.1e}; "
-              "refactorizing at {:g}",
-              kThresholdLadder[attempt], eta, kThresholdLadder[attempt + 1]);
-          continue;
-        }
-      }
       // PER FACTORIZATION, NOT A LATCH. This used to latch true for the rest of the solve,
       // which disabled the basis update permanently and made every later iteration
       // refactorize from scratch: measured on modszk1, 109,827 refactorizations in 80

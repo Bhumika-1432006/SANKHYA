@@ -317,6 +317,11 @@ class Simplex {
   /// Rebuild and refactorize the basis matrix from scratch. Returns false when singular.
   [[nodiscard]] bool refactorize();
 
+  /// refactorize() again with the Markowitz ladder starting one rung higher, for the rest
+  /// of this solve (#1023). False, with nothing refactorized, when the ladder is already at
+  /// partial pivoting; otherwise what refactorize() returns.
+  [[nodiscard]] bool refactorize_stricter();
+
   /// Whether the direction the ratio test called unbounded is a genuine ray of the feasible
   /// region: [A | -I] d must vanish. Returns the worst residual relative to its terms.
   [[nodiscard]] double unbounded_ray_residual(Index entering, int direction) const;
@@ -522,6 +527,9 @@ class Simplex {
 
   /// Reported once per solve, not once per refactorization.
   bool warned_about_threshold_ = false;
+  /// The rung of the Markowitz ladder every factorization starts from (#1023): 0 unless
+  /// refactorize_stricter() raised it.
+  std::size_t markowitz_rung_ = 0;
 
   /// Latched by refactorize() when the Markowitz ladder climbed past its default.
   bool basis_needed_stricter_threshold_ = false;

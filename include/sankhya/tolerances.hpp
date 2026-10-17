@@ -264,13 +264,6 @@ inline constexpr double kHyperSparseHistoryWeight = 0.1;
 /// Below this, a computed pivot element is treated as a singular basis rather than a pivot.
 inline constexpr double kPivotTolerance = 1e-9;
 
-/// A fresh simplex basis factorization whose normwise backward error (SparseLu::
-/// backward_error) exceeds this is refactorized at the next, stricter Markowitz threshold
-/// (#1023). Stable factors measure near the unit roundoff, 1.1e-16; this allows element
-/// growth of some 1e6 before acting. On maros-r7 the crossover's basis factorized at
-/// tau = 0.01 solved to a residual of 2.3e3, and the same basis at tau = 0.1 to 4e-7.
-inline constexpr double kFactorBackwardError = 1e-10;
-
 /// A floating-point dual, reduced cost or range is reported as CERTIFIED (#757) when it is
 /// within this relative distance, max(1, |exact|), of the value the basis gives in exact
 /// rational arithmetic, and as corrected otherwise. The float values come from one LU solve

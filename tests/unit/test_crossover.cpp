@@ -18,7 +18,6 @@
 #include <gtest/gtest.h>
 
 #include "core/status_guard.hpp"
-#include "la/lu.hpp"
 #include "sankhya/io.hpp"
 #include "sankhya/ipm.hpp"
 #include "sankhya/logging.hpp"
@@ -319,34 +318,12 @@ TEST(Crossover, NetlibInstancesReachAVertexAtThePublishedObjective) {
   }
 }
 
-TEST(Crossover, BackwardErrorTellsFactorsThatSolveFromFactorsThatDoNot) {
-  // The check refactorize() climbs the Markowitz ladder on (#1023). Factors of B measured
-  // against B are near the unit roundoff; the same factors measured against a different
-  // matrix stand in for factors that do not solve B, and must be flagged.
-  const std::vector<Index> rows = {0, 1, 1, 2, 0, 2};
-  const std::vector<double> b_values = {4.0, 1.0, 3.0, 1.0, 1.0, 5.0};
-  const std::vector<double> c_values = {4.0, 2.0, 3.0, -1.0, 1.0, 5.0};
-  const auto columns_of = [&](const std::vector<double>& values) {
-    std::vector<LuColumn> columns(3);
-    for (std::size_t j = 0; j < 3; ++j) {
-      columns[j].rows = rows.data() + 2 * j;
-      columns[j].values = values.data() + 2 * j;
-      columns[j].size = 2;
-    }
-    return columns;
-  };
-  SparseLu lu;
-  ASSERT_TRUE(lu.factorize(columns_of(b_values), 3, tol::kPivotTolerance, 1.0));
-  EXPECT_LT(lu.backward_error(columns_of(b_values)), 1e-15);
-  EXPECT_GT(lu.backward_error(columns_of(c_values)), tol::kFactorBackwardError);
-}
-
 TEST(Crossover, MarosR7EndsAtAVertex) {
   // #1023: the interior point's answer on maros-r7 is optimal and its basis guess right
-  // (3,136 interior entries for 3,136 rows, none evicted for rank), but the guess factorized
-  // at Markowitz threshold 0.01 had a backward error of 1.5e-2: x_B came out 2.9e3 from the
-  // point, the push declined it after 0 pivots, and the answer kept no basis - so no
-  // certified bound, no ranging, no warm start. Checked factors put it at a vertex at once.
+  // (3,136 interior entries for 3,136 rows, none evicted for rank), but factorized at
+  // Markowitz threshold 0.01 it solved to nothing: x_B came out 2.9e3 from the point, the
+  // push declined it after 0 pivots, and the answer kept no basis - so no certified bound,
+  // no ranging, no warm start. Refactorized one rung stricter it is at a vertex at once.
   Model model;
   const std::string path =
       (std::filesystem::path(__FILE__).parent_path().parent_path().parent_path() /

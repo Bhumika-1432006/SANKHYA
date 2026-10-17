@@ -320,12 +320,6 @@ class SparseLu {
   [[nodiscard]] double smallest_pivot() const noexcept { return smallest_pivot_; }
   [[nodiscard]] double largest_pivot() const noexcept { return largest_pivot_; }
 
-  /// Normwise backward error of one solve with the fresh factors of `columns` (the array
-  /// factorize() was given), right-hand side B e (#1023; lu_accuracy.cpp). Of the order of
-  /// the unit roundoff for stable factors, of order one when threshold pivoting let the
-  /// entries of U grow. Call it before any update.
-  [[nodiscard]] double backward_error(const std::vector<LuColumn>& columns) const;
-
   /// Factorize with the elimination as it was before the singleton fast path (#463): every
   /// pivot opens every column its row crosses, every threshold test rescans its column. The
   /// fast path is built to choose the same pivots in the same order and do the same
