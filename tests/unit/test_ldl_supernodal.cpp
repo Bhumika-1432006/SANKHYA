@@ -264,7 +264,8 @@ TEST(SupernodalLdl, TheFactorIsTheSameUnderOneAndFourThreads) {
 }
 
 TEST(SupernodalLdl, ADeadlineStopsEveryThread) {
-  const SparseMatrix lower = netlib_normal_equations("25fv47");
+  // pilot87: 4e5 factor nonzeros, so every thread's work passes the deadline's interval.
+  const SparseMatrix lower = netlib_normal_equations("pilot87");
   SparseLdl ldl;
   ldl.set_supernodal(true);
   ldl.set_threads(4);

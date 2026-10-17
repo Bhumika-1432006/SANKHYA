@@ -2218,8 +2218,10 @@ const std::vector<OptionSpec>& Options::registry() {
          false,
          "Factor the interior point's normal equations by supernodes (#470): the same "
          "analysis, pivot rule and factor as the scalar LDL^T, computed column block by "
-         "column block with dense kernels written here (no vendor BLAS), sequential. "
-         "Default OFF; the scalar path is the oracle it is tested against.",
+         "column block with dense kernels written here (no vendor BLAS), independent "
+         "subtrees of the elimination tree on the `threads` workers at once; the factor "
+         "does not depend on the thread count. Default OFF; the scalar path is the oracle "
+         "it is tested against.",
          0.0,
          0.0,
          {}});

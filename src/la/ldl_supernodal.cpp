@@ -144,10 +144,11 @@ void SparseLdl::build_supernodes() {
       const Index* shared = l_rows_.data() + l_starts_[static_cast<std::size_t>(f)] + (w - 1);
       const Index below = count(f) - (w - 1);
       for (Index r = 0; r < below;) {
-        const auto target = static_cast<std::size_t>(super_of_[static_cast<std::size_t>(shared[r])]);
+        const auto target =
+            static_cast<std::size_t>(super_of_[static_cast<std::size_t>(shared[r])]);
         Index e = r;
-        while (e < below &&
-               static_cast<std::size_t>(super_of_[static_cast<std::size_t>(shared[e])]) == target)
+        while (e < below && static_cast<std::size_t>(
+                                super_of_[static_cast<std::size_t>(shared[e])]) == target)
           ++e;
         if (pass == 0) {
           ++update_starts_[target + 1];
@@ -174,8 +175,8 @@ void SparseLdl::factor_supernode(Index s, double regularization, SupernodeWorksp
   const Index f = super_start_[us];
   const Index w = super_start_[us + 1] - f;
   const Index* shared = l_rows_.data() + l_starts_[static_cast<std::size_t>(f)] + (w - 1);
-  const Index below =
-      l_starts_[static_cast<std::size_t>(f) + 1] - l_starts_[static_cast<std::size_t>(f)] - (w - 1);
+  const Index below = l_starts_[static_cast<std::size_t>(f) + 1] -
+                      l_starts_[static_cast<std::size_t>(f)] - (w - 1);
   const Index ld = w + below;
   double* block = blocks_.data() + block_start_[us];
   std::fill(block, block + (block_start_[us + 1] - block_start_[us]), 0.0);
