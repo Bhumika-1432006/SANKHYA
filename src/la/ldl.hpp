@@ -179,6 +179,13 @@ class SparseLdl {
   /// is the oracle it is tested against.
   void set_supernodal(bool on) noexcept { supernodal_ = on; }
   [[nodiscard]] bool supernodal() const noexcept { return supernodal_; }
+  /// Worker threads for the supernodal factorization (#470): independent subtrees of the
+  /// supernodal elimination tree are factored at once. 0 (the default) takes the OpenMP
+  /// runtime's count, which the `threads` option sets, or 1 in a build without OpenMP. Every
+  /// supernode is computed by one thread in one fixed order of operations, so the factor
+  /// does not depend on this number.
+  void set_threads(int threads) noexcept { threads_ = threads; }
+  [[nodiscard]] int threads() const noexcept { return threads_; }
   /// Supervariables and mass elimination in the ordering (#471, ldl_amd.cpp): variables whose
   /// quotient-graph neighbourhoods are identical are merged and eliminated as one, and a
   /// variable left with no neighbour but the pivot's clique leaves with it. Off by default;
@@ -259,12 +266,25 @@ class SparseLdl {
   std::vector<double> d_;  ///< the diagonal of D
 
   // The supernodal path (#470, ldl_supernodal.cpp). Built from the analysis on first use.
+  struct SupernodeWorkspace;
   void build_supernodes();
   [[nodiscard]] bool factorize_supernodal(double regularization, const ShouldStop& should_stop);
+  void factor_supernode(Index s, double regularization, SupernodeWorkspace& ws);
   bool supernodal_ = false;
+  int threads_ = 0;
   bool supernodes_built_ = false;
   std::vector<Index> super_start_;   ///< supernode s is columns [super_start_[s], [s + 1])
   std::vector<Index> super_of_;      ///< column -> its supernode
+  std::vector<Index> super_parent_;  ///< the supernodal elimination tree, -1 at a root
+  /// The updates each supernode receives, by target: the source supernode and the run
+  /// [begin, end) of its shared rows that fall in the target, sources ascending.
+  struct SupernodeUpdate {
+    Index source;
+    Index begin;
+    Index end;
+  };
+  std::vector<Index> update_starts_;
+  std::vector<SupernodeUpdate> updates_;
   std::vector<Index> lower_starts_;  ///< permuted lower triangle by column: rows ...
   std::vector<Index> lower_rows_;
   std::vector<Index> lower_slots_;        ///< ... and each value's slot in a_values_

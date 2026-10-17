@@ -9,6 +9,7 @@
 // the dense LU (simplex/dense_lu.hpp) is the independent reference instead.
 
 #include <algorithm>
+#include <atomic>
 #include <chrono>
 #include <cmath>
 #include <cstdint>
@@ -234,6 +235,48 @@ TEST(SupernodalLdl, PrintsTheFactorizationTimesOfBothPathsOnLargerNetlibModels) 
                 << " s\n";
     }
   }
+}
+
+// The threads walk disjoint subtrees of the supernodal elimination tree, and every supernode
+// is computed by one thread from the same operations in the same order, so the factor under
+// four threads is the one under one thread, bit for bit - not to a tolerance.
+TEST(SupernodalLdl, TheFactorIsTheSameUnderOneAndFourThreads) {
+  for (const char* name : {"adlittle", "bandm", "ship04s", "25fv47"}) {
+    const SparseMatrix lower = netlib_normal_equations(name);
+    SparseLdl one;
+    one.set_supernodal(true);
+    one.set_threads(1);
+    ASSERT_TRUE(one.analyze(lower)) << name;
+    ASSERT_TRUE(one.factorize(lower, 1e-10)) << name;
+    for (const int threads : {2, 4}) {
+      SparseLdl many;
+      many.set_supernodal(true);
+      many.set_threads(threads);
+      ASSERT_TRUE(many.analyze(lower)) << name;
+      ASSERT_TRUE(many.factorize(lower, 1e-10)) << name;
+      EXPECT_EQ(many.pivots(), one.pivots()) << name << " " << threads;
+      EXPECT_EQ(many.factor_values(), one.factor_values()) << name << " " << threads;
+      EXPECT_EQ(many.regularized_pivots(), one.regularized_pivots()) << name;
+      EXPECT_EQ(many.smallest_pivot(), one.smallest_pivot()) << name;
+      EXPECT_EQ(many.largest_pivot(), one.largest_pivot()) << name;
+    }
+  }
+}
+
+TEST(SupernodalLdl, ADeadlineStopsEveryThread) {
+  // pilot87: 4e5 factor nonzeros, so every thread's work passes the deadline's interval.
+  const SparseMatrix lower = netlib_normal_equations("pilot87");
+  SparseLdl ldl;
+  ldl.set_supernodal(true);
+  ldl.set_threads(4);
+  ASSERT_TRUE(ldl.analyze(lower));
+  std::atomic<int> asked{0};  // the deadline is asked from every thread
+  EXPECT_FALSE(ldl.factorize(lower, 1e-10, [&] { return ++asked > 0; }));
+  EXPECT_TRUE(ldl.stopped_early());
+  EXPECT_GT(asked.load(), 0);
+  // And the same object factors in full once the deadline is lifted.
+  ASSERT_TRUE(ldl.factorize(lower, 1e-10));
+  EXPECT_FALSE(ldl.stopped_early());
 }
 
 TEST(SupernodalLdl, AQuasidefiniteFactorizationKeepsItsNegativePivots) {
