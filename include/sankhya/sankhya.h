@@ -271,8 +271,10 @@ sankhya_status sankhya_solve(sankhya_model* model, const sankhya_options* option
  * bypassed on a warm solve, since the basis names the caller's rows and columns, and the
  * message says so. A `start` whose basis does not fit the model (columns or rows added or
  * removed since) is ignored with a warning in the log and the solve runs cold; a `start` from
- * the interior point or PDHG carries no basis and is likewise ignored. `start` may be NULL,
- * which is sankhya_solve().
+ * the interior point carries no basis and is likewise ignored. With option algorithm=pdhg
+ * the first-order engine starts from the point and the row duals of `start` instead (#913),
+ * presolve bypassed so they apply to the caller's columns; sankhya_solution_iterations()
+ * is then the PDHG iteration count. `start` may be NULL, which is sankhya_solve().
  */
 sankhya_status sankhya_solve_from(sankhya_model* model, const sankhya_options* options,
                                   const sankhya_solution* start, sankhya_solution** solution);
