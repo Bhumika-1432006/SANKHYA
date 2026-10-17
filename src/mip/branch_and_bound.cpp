@@ -1092,6 +1092,9 @@ Solution BranchAndBound::run() {
     record_miqp_ipm(&solution);
     solution.solve_seconds = timer_.elapsed_seconds();
     report_root(&solution);
+    // The heuristics ran and found nothing: say so, or the log of a search that found no
+    // point cannot be told from one that never ran them.
+    report_heuristics();
     return solution;
   }
 

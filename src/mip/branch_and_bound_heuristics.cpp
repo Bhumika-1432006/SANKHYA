@@ -450,6 +450,38 @@ void BranchAndBound::run_pdhg_heuristics(const Solution& relaxation) {
   if (schedule_.fix_and_propagate && !have_incumbent_) run(kFixAndPropagate, false);
 }
 
+namespace {
+/// `x` with its continuous columns re-solved by an LP that fixes every integer column at its
+/// (rounded) value in `x`, solved with the search's node options; empty unless the LP ended
+/// optimal. `seconds_left` below zero sets no time limit.
+std::vector<double> complete_continuous_columns(const Model& model,
+                                                const std::vector<Index>& integer_columns,
+                                                const std::vector<double>& x, Options options,
+                                                double seconds_left) {
+  Model lp = model;
+  for (const Index j : integer_columns) {
+    const auto u = static_cast<std::size_t>(j);
+    lp.col_lower[u] = std::round(x[u]);
+    lp.col_upper[u] = lp.col_lower[u];
+  }
+  std::fill(lp.col_type.begin(), lp.col_type.end(), VarType::kContinuous);
+  options.set_bool("log_to_console", false);
+  options.set_bool("presolve", false);
+  if (seconds_left >= 0.0) options.set_double("time_limit", seconds_left);
+  const Solution completed = solve(lp, options);
+  if (completed.status != SolveStatus::kOptimal ||
+      completed.col_value.size() != static_cast<std::size_t>(model.num_cols())) {
+    return {};
+  }
+  std::vector<double> point = completed.col_value;
+  for (const Index j : integer_columns) {
+    const auto u = static_cast<std::size_t>(j);
+    point[u] = lp.col_lower[u];
+  }
+  return point;
+}
+}  // namespace
+
 // Feasibility Jump (#506; Luteberget and Sartor, Math. Programming Computation 15, 2023),
 // the search in feasibility_jump.cpp: before the root LP from the box point closest to zero
 // (`from` null), and from the rounded root relaxation. It reads original_ and nothing else
@@ -468,7 +500,29 @@ void BranchAndBound::run_feasibility_jump(const std::vector<double>* from) {
   settings.integrality_tolerance = integrality_tolerance_;
   settings.use_objective = !quadratic_;
   // Offered as found, not after the budget: the time to the first incumbent is the point.
-  settings.on_point = [this](const std::vector<double>& point) {
+  //
+  // On a mixed model the point's continuous columns are first re-solved by an LP with the
+  // integer columns fixed, as the pump and fix-and-propagate complete theirs
+  // (pdhg_heuristics.cpp): the jumps set a continuous column where a row becomes satisfied
+  // to the tolerance, so the raw point can sit outside the model by up to kPrimalFeasibility
+  // - and by that much past the bound the tree later proves, which the exact certificate
+  // (#518) then refuses to call optimal. The LP's vertex is feasible to rounding and at least
+  // as good. The raw point is offered only when the LP did not end optimal.
+  const bool mixed = integer_columns_.size() < static_cast<std::size_t>(original_.num_cols());
+  Count completions = 0;
+  settings.on_point = [this, mixed, &completions](const std::vector<double>& point) {
+    if (mixed) {
+      ++completions;
+      const double seconds_left = schedule_.seconds_budgets && limits_.has_time_limit()
+                                      ? limits_.remaining_seconds(timer_.elapsed_seconds())
+                                      : -1.0;
+      const std::vector<double> completed = complete_continuous_columns(
+          original_, integer_columns_, point, node_options_, seconds_left);
+      if (!completed.empty()) {
+        (void)offer_from(kFeasibilityJump, completed);
+        return;
+      }
+    }
     (void)offer_from(kFeasibilityJump, point);
   };
   // An interrupt always stops it; the time limit only when the schedule counts seconds, so
@@ -510,9 +564,11 @@ void BranchAndBound::run_feasibility_jump(const std::vector<double>* from) {
   const FeasibilityJumpResult found = feasibility_jump(original_, start, settings);
   s.work += found.work;
   s.seconds += clock.elapsed_seconds();
-  logger_.verbose("Feasibility jump ({}): {} point(s), {} move(s), {} weight update(s)",
-                  from != nullptr ? "from the root relaxation" : "before the root LP",
-                  found.points.size(), found.moves, found.weight_updates);
+  logger_.verbose(
+      "Feasibility jump ({}): {} point(s), {} move(s), {} weight update(s), {} completion "
+      "LP(s)",
+      from != nullptr ? "from the root relaxation" : "before the root LP", found.points.size(),
+      found.moves, found.weight_updates, completions);
 }
 
 void BranchAndBound::run_parity() {

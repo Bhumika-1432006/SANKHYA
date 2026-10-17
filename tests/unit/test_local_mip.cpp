@@ -186,6 +186,7 @@ TEST(LocalMip, InTheSearchItRunsPerIncumbentAndKeepsTheOptimum) {
     // the bound closes the tree at node 1, before any node could run Local-MIP. Without the
     // dive the tree reaches nodes with an incumbent in hand, which is what this tests.
     options.set_string("mip_heur_dive_fractional", "off");
+    options.set_string("mip_heur_fj", "off");  // same reason: it hands the root the optimum
     ::testing::internal::CaptureStdout();
     const Solution s = solve(model, options);
     std::fflush(stdout);

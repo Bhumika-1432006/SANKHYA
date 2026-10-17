@@ -137,6 +137,10 @@ Options searching(bool cutoff, const std::string& out) {
   options.set_bool("root_cut_loop", false);  // one root round, as the tree was measured (#495)
   options.set_int("cut_support_floor", 0);   // the density cap as the tree was measured (#496)
   options.set_bool("presolve", false);       // conflict indices are then the model's own
+  // Feasibility Jump (on by default) hands the root the optimum of models this small before
+  // any LP, and searches its whole work budget on each of the hundreds of trials here; pinned
+  // off, since the tree is what is tested.
+  options.set_string("mip_heur_fj", "off");
   options.set_bool("conflict_analysis", true);
   options.set_bool("conflict_cutoff", cutoff);
   if (!out.empty()) options.set_string("conflict_out", out);

@@ -211,6 +211,11 @@ Solution solve_minlp_oa(const NonlinearModel& model, const Options& options,
   // The master is re-solved every round, so the parity heuristic's pre-root sub-MIPs (#841)
   // would run every round too: synthes3 took 9.6-10.6 s with them against 1.5-2.0 s without.
   master_options.set_string("mip_heur_parity", "off");
+  // The same for Feasibility Jump (#506, on by default): two work-budgeted searches on every
+  // round's master. The 17-instance MINLPLib set of test_minlp_oa_minlplib.cpp took 60.3 s
+  // with it against 33.0 s pinned off and 30.3 s on main before the default (same box, same
+  // load), and under ASan the budget took synthes3, ex1223 and ex1223b past their 10 s limit.
+  master_options.set_string("mip_heur_fj", "off");
 
   std::vector<Index> integers;
   for (Index j = 0; j < n; ++j) {

@@ -40,6 +40,9 @@ Options mip_options() {
   options.set_bool("root_cut_loop", false);
   options.set_bool("log_to_console", false);
   options.set_int("node_limit", 20000);
+  // Feasibility Jump is on by default and solves models this small before any LP; pinned
+  // off, since the tree is what is tested.
+  options.set_string("mip_heur_fj", "off");
   return options;
 }
 

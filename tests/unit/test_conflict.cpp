@@ -347,6 +347,10 @@ Options searching(bool conflicts, const std::string& out) {
   // Equality rows over binaries are parity rows (#841), whose sub-MIPs run before the root;
   // pinned off, so an interrupt lands in the tree this file tests.
   options.set_string("mip_heur_parity", "off");
+  // Feasibility Jump (on by default) hands the root the optimum of models this small before
+  // any LP, and searches its whole work budget on each of the hundreds of trials here; pinned
+  // off, since the tree is what is tested.
+  options.set_string("mip_heur_fj", "off");
   options.set_bool("conflict_analysis", conflicts);
   if (!out.empty()) options.set_string("conflict_out", out);
   return options;

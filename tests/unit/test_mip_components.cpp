@@ -25,10 +25,11 @@ TEST(MilpComponents, DefaultsMatchWhatBranchAndBoundActuallyDefaultsTo) {
   // that decision; a run that reverses it must change this expectation on purpose.
   EXPECT_TRUE(parts.cuts_enabled);
   // Parity on by default since its A/B (#841,
-  // bench/results/miplib-841-parity-default-*-seeds3-fa9e8b4d.csv).
+  // bench/results/miplib-841-parity-default-*-seeds3-fa9e8b4d.csv); Feasibility Jump
+  // since the #506 A/B (#930).
   EXPECT_TRUE(parts.heuristics_enabled);
-  EXPECT_EQ(parts.heuristics, "rounding, parity, fractional diving")
-      << "the three the defaults run, and nothing else";
+  EXPECT_EQ(parts.heuristics, "rounding, feasibility jump, parity, fractional diving")
+      << "the four the defaults run, and nothing else";
   EXPECT_FALSE(parts.conflict_analysis_enabled);
 }
 
@@ -39,7 +40,7 @@ TEST(MilpComponents, OneHeuristicOnByNameReadsAsHeuristicsOn) {
   options.set_string("mip_heur_rens", "on");
   const MilpComponents parts = describe_components(options);
   EXPECT_TRUE(parts.heuristics_enabled);
-  EXPECT_EQ(parts.heuristics, "rounding, parity, fractional diving, RENS");
+  EXPECT_EQ(parts.heuristics, "rounding, feasibility jump, parity, fractional diving, RENS");
 }
 
 TEST(MilpComponents, ReportsExactlyWhatWasSetNotAGuess) {

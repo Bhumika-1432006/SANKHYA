@@ -97,6 +97,7 @@ Options pool_options(bool pooling) {
   options.set_int("tree_cut_rows_per_round", 2);
   options.set_int("cut_support_floor", 100);
   options.set_bool("mip_heuristics", false);
+  options.set_string("mip_heur_fj", "off");  // on by default, so the master switch leaves it
   options.set_int("mip_threads", 1);
   options.set_bool("mip_cut_pooling", pooling);
   options.set_int("mip_cut_age_limit", 1);

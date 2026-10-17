@@ -190,6 +190,10 @@ Options every_root_family() {
     options.set_bool(name, true);
   }
   options.set_int("tree_cut_depth", 4);
+  // Feasibility Jump (on by default) hands the root the optimum of models this small before
+  // any LP, and searches its whole work budget on each of the hundreds of trials here; pinned
+  // off, since the cuts that reach the LP are what is compared.
+  options.set_string("mip_heur_fj", "off");
   return options;
 }
 
