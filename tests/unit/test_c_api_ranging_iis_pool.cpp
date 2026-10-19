@@ -206,9 +206,8 @@ TEST(CApiIis, CrossesTheBoundaryAndTheWitnessesProveEachRowNecessary) {
   OptionsHandle options;
   ASSERT_EQ(sankhya_options_set_bool(options, "log_to_console", 0), SANKHYA_OK);
   ASSERT_EQ(sankhya_options_set_bool(options, "compute_iis", 1), SANKHYA_OK);
-  // Presolve off, so the dual simplex runs and produces the Farkas dual compute_iis needs
-  // (test_iis.cpp: when presolve detects the infeasibility instead, compute_iis returns
-  // early - a known limitation, not what this file is testing).
+  // Presolve off, so the engine itself proves the infeasibility; the presolve-proved path
+  // is test_iis.cpp's IIS.PresolveProvedInfeasibility.
   ASSERT_EQ(sankhya_options_set_bool(options, "presolve", 0), SANKHYA_OK);
 
   SolutionHandle solution;
@@ -259,6 +258,9 @@ TEST(CApiIis, IsAbsentAndLengthZeroWhenTheOptionIsOff) {
   build_contradictory_pair(model);
   OptionsHandle options;
   ASSERT_EQ(sankhya_options_set_bool(options, "log_to_console", 0), SANKHYA_OK);
+  // compute_iis is on by default; this test passed without saying so only while the
+  // presolve-proved path skipped the filter (#1038).
+  ASSERT_EQ(sankhya_options_set_bool(options, "compute_iis", 0), SANKHYA_OK);
 
   SolutionHandle solution;
   ASSERT_EQ(sankhya_solve(model, options, &solution.handle), SANKHYA_OK)
