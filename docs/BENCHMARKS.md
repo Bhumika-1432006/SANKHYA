@@ -1839,7 +1839,34 @@ towards the restart. Both legs set `conflict_analysis=true conflict_cutoff=true`
 `node_limit=2000` over three seeds and differ in `mip_restarts` only; the node limit, not the
 clock, ends the unproved runs, so a shared machine moves the time columns and nothing else.
 
-Not yet run at a commit on `main`.
+Source CSVs: `bench/results/restarts-conflicts-ab-miplib-n2000-seeds3-off-85400285.csv` and `bench/results/restarts-conflicts-ab-miplib-n2000-seeds3-on-85400285.csv`, `mip_restarts` off and on, 3 seeds each (the published file and row and column permutations of it), 600 s per run, one thread.
+
+| leg | runs | matched | proved | sgm time (s, shift 10) | first feasible found | sgm first feasible (s, shift 1) | mean primal integral (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| off | 90 | 44 | 28 | 162.22 | 85 | 0.504 | 0.22 |
+| on | 90 | 44 | 28 | 162.77 | 85 | 0.518 | 0.28 |
+
+Instances whose matched or proved seed count moved between the legs: none.
+
+Runs in the on leg that restarted at least once: **3 of 90**; that split a node on the objective row: **0 of 90**.
+
+| instance | seed | status off | status on | bound off | bound on | bound moved | nodes off | nodes on | restarts on | objective branches on |
+|---|---:|---|---|---:|---:|---|---:|---:|---:|---:|
+| `b-ball` | 0 | optimal | optimal | -1.5 | -1.5 | no | 149 | 149 | 0 | 0 |
+| `b-ball` | 1 | feasible | feasible | -1.76923 | -1.76923 | no | 2000 | 2000 | 0 | 0 |
+| `b-ball` | 2 | feasible | feasible | -1.71429 | -1.71429 | no | 2000 | 2000 | 0 | 0 |
+| `opt1217` | 0 | feasible | feasible | -19 | -19 | no | 2000 | 2000 | 0 | 0 |
+| `opt1217` | 1 | feasible | feasible | -19 | -19 | no | 2000 | 2000 | 0 | 0 |
+| `opt1217` | 2 | feasible | feasible | -19 | -19 | no | 2000 | 2000 | 0 | 0 |
+| `rlp1` | 0 | feasible | feasible | 14 | 14 | no | 2000 | 2000 | 0 | 0 |
+| `rlp1` | 1 | feasible | feasible | 14 | 14 | no | 2000 | 2000 | 0 | 0 |
+| `rlp1` | 2 | feasible | feasible | 14 | 14 | no | 2000 | 2000 | 0 | 0 |
+| `noswot` | 0 | feasible | feasible | -43 | -43 | no | 2000 | 2000 | 0 | 0 |
+| `noswot` | 1 | feasible | feasible | -43 | -43 | no | 2000 | 2000 | 0 | 0 |
+| `noswot` | 2 | feasible | feasible | -43 | -43 | no | 2000 | 2000 | 0 | 0 |
+
+Bound moved towards the published optimum: none. Moved away: none. #418's acceptance, bound movement on at least one of `b-ball`, `opt1217`, `rlp1`, `noswot`, is **not met** by this run.
+
 
 #### A/B: objective branching on the plateau instances (#418)
 
