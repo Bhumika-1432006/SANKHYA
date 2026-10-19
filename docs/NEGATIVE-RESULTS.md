@@ -112,7 +112,14 @@ Each optional heuristic behind its own `mip_heur_*` switch, measured on alone ag
 | `mip_heur_rens` | 43 | 28 | `neos-3611689-kaihu` one matched seed lost |
 | `mip_heur_local_branching` | 43 | 28 | `neos-3611689-kaihu` one matched seed lost |
 
-No leg moves the proved count, every leg finds a point on the same 84 of 90 runs, and the node ratio is 1.000x for every leg but local branching (0.998x). The tenth leg, `mip_heur_rins`, matched 45 and proved 28 (`kaihu` one seed gained); whether that one seed is worth its sub-MIPs' wall clock is #1076's 60 s A/B, not this table.
+No leg moves the proved count, every leg finds a point on the same 84 of 90 runs, and the node ratio is 1.000x for every leg but local branching (0.998x). The tenth leg, `mip_heur_rins`, matched 45 and proved 28 (`kaihu` one seed gained), so #1076 proposed it as a default and gated it on a 60 s A/B at `main` `f6740af` (bench.yml, MIPLIB tier 1, 3 seeds, one thread, `mip_heur_rins=off` against `on`):
+
+| leg | matched / 90 | proved / 90 | sgm time (s, shift 10) |
+|---|---:|---:|---:|
+| `mip_heur_rins=off` | 55 | 35 | 27.36 |
+| `mip_heur_rins=on` | 57 | 29 | 28.45 |
+
+RINS gains two matches (`neos-5140963-mincio`, `noswot`, `ran12x21` one seed each, `markshare_4_0` one lost) and loses six proofs: `enlight8` on all three seeds (proved in 35 to 60 s off, at the limit on), `neos-3611689-kaihu` seeds 0 and 1, `markshare_4_0` seed 1. #1076 was closed on that. The two legs landed on different runner CPUs (AMD EPYC 9V45 off, EPYC 7763 on), so part of the lost node throughput (`enlight8` seed 0: 692,437 against 408,841 nodes in the same 60 s) is the machine, not RINS; a same-machine re-run is what would reopen it. Files: `bench/results/rins-ab-miplib-60s-seeds3-{off,on}-f6740af9.csv` and their `summary-` files.
 
 Files: `bench/results/miplib-414-n2000-<leg>-seeds3-729112d8.csv` and their `summary-` files, rendered under "every optional heuristic alone" in `docs/BENCHMARKS.md`.
 What would earn a default: a leg that gains a matched or proved seed and loses neither, on this harness and again under a time limit.
