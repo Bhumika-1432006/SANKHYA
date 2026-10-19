@@ -1340,6 +1340,9 @@ Solution solve_unguarded(const Model& model, const Options& options, SolveContro
             "against the original model and this is that retry's result");
       }
       certify_by_elastic();
+      // The certificate the two lines above recovered is what the IIS filter starts from;
+      // returning here without it gave an empty IIS whenever presolve was on (#1038).
+      compute_iis(model, &solution, options, logger);
       logger.info("Result: {} (proved during presolve)  {:.3f}s", to_string(solution.status),
                   solution.solve_seconds);
       return solution;

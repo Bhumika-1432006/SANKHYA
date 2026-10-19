@@ -59,11 +59,35 @@ Options silent_options() {
   Options opts;
   opts.set_bool("log_to_console", false);
   opts.set_bool("compute_iis", true);
-  // Disable presolve so the dual simplex runs and produces a Farkas dual.
-  // When presolve detects infeasibility it does not produce a Farkas certificate,
-  // and compute_iis returns early. That is a known limitation, not tested here.
+  // Presolve off so the engine itself proves infeasibility; the presolve path has its own
+  // test below (IIS.PresolveProvedInfeasibility).
   opts.set_bool("presolve", false);
   return opts;
+}
+
+// =========================================================================================
+// IIS::PresolveProvedInfeasibility
+//
+// x <= 1 as a row against x >= 2 as a bound, under default options: presolve proves it, and
+// the IIS must still name both (#1038 - solve() returned before the filter ran). Negative
+// control: the feasible twin (bound x >= 0) is optimal and has no IIS.
+// =========================================================================================
+
+TEST(IIS, PresolveProvedInfeasibility) {
+  Options opts;
+  opts.set_bool("log_to_console", false);
+  opts.set_bool("compute_iis", true);
+
+  const Solution sol = solve(make_lp({{1}}, {-kInfinity}, {1.0}, {2.0}, {kInfinity}), opts);
+  ASSERT_EQ(sol.status, SolveStatus::kInfeasible);
+  EXPECT_EQ(sol.iis_rows, std::vector<Index>{0});
+  EXPECT_EQ(sol.iis_col_lo, std::vector<Index>{0});
+  EXPECT_TRUE(sol.iis_col_hi.empty());
+
+  const Solution ok = solve(make_lp({{1}}, {-kInfinity}, {1.0}, {0.0}, {kInfinity}), opts);
+  EXPECT_EQ(ok.status, SolveStatus::kOptimal);
+  EXPECT_TRUE(ok.iis_rows.empty());
+  EXPECT_TRUE(ok.iis_col_lo.empty());
 }
 
 // =========================================================================================
