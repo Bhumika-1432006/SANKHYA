@@ -338,6 +338,14 @@ bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
           consider(j, -c.zu[j], Pin::kFree);
       }
     }
+    // Free columns whose reduced cost the rows cannot zero all go onto the bound their sign
+    // calls for in ONE round, when nothing is violated and no multiplier has the wrong sign:
+    // they are the nonbasic columns of an LP-like degenerate block that the interior point
+    // left a little off zero (qforplan: about 40 of them, 1e-6 to 6e-4 above their bound with
+    // reduced costs near 1e-2), and pinning one per round ran out of rounds before the set
+    // settled. Pinning them together cannot make an answer wrong: the acceptance test below
+    // still decides.
+    std::vector<std::pair<std::size_t, Pin>> stuck;
     if (worst == nc) {
       double dual_scale = 1.0;
       for (std::size_t j = 0; j < nc; ++j) dual_scale = std::max(dual_scale, std::fabs(s.g[j]));
@@ -345,9 +353,16 @@ bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
         if (pin[j] != Pin::kFree) continue;
         const double r = c.residual[j];
         if (std::fabs(r) <= tolerance * dual_scale) continue;
-        if (r > 0.0 && has_lower[j]) consider(j, r, Pin::kLower);
-        if (r < 0.0 && has_upper[j]) consider(j, -r, Pin::kUpper);
+        if (r > 0.0 && has_lower[j]) stuck.emplace_back(j, Pin::kLower);
+        if (r < 0.0 && has_upper[j]) stuck.emplace_back(j, Pin::kUpper);
       }
+    }
+    if (!stuck.empty()) {
+      for (const auto& [j, target] : stuck) {
+        if (++changes[j] > 2) return false;
+        pin[j] = target;
+      }
+      continue;
     }
     if (worst == nc) {
       settled = true;
