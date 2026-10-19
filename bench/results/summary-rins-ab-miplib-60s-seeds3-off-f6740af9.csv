@@ -1,0 +1,31 @@
+instance,seeds,seeds_matched,seeds_proved,matched_seeds,proved_seeds,sgm_seconds,sgm_first_feasible_seconds,mean_primal_integral,time_limit,git_commit,machine
+b-ball,3,3,1,0 1 2,0,26.9823,0.0196,0.0197,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ej,3,3,0,0 1 2,,60.0000,5.6708,6.5365,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+enlight8,3,3,3,0 1 2,0 1 2,44.6155,0.0029,0.0029,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+enlight_hard,3,3,0,0 1 2,,60.0000,0.0033,0.0033,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+f2gap40400,3,3,3,0 1 2,0 1 2,0.6675,0.0072,0.0072,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+flugpl,3,3,3,0 1 2,0 1 2,0.0196,0.0153,0.0153,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gen-ip016,3,0,0,,,60.0000,0.0002,0.1846,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gen-ip054,3,0,0,,,60.0000,0.0002,0.1404,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gr4x6,3,3,3,0 1 2,0 1 2,0.0181,0.0004,0.0010,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gt2,3,3,3,0 1 2,0 1 2,0.1051,0.0004,0.0138,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+k16x240b,3,0,0,,,60.0000,0.0016,4.2633,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare1,3,0,0,,,60.0000,0.0061,57.8371,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare_4_0,3,2,1,0 1,1,59.8803,0.0003,28.7379,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare_5_0,3,0,0,,,60.0000,0.0004,54.1824,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-1425699,3,3,3,0 1 2,0 1 2,0.0115,0.0031,0.0031,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-3072252-nete,3,0,0,,,60.0000,0.1132,1.1801,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-3611689-kaihu,3,3,3,0 1 2,0 1 2,27.7824,0.0010,0.1002,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-5140963-mincio,3,0,0,,,60.0000,0.0028,2.0229,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-5192052-neckar,3,3,3,0 1 2,0 1 2,0.0130,0.0017,0.0058,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos5,3,3,0,0 1 2,,60.0000,0.0014,1.1439,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+noswot,3,2,0,0 2,,60.0000,0.0011,0.6893,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+opt1217,3,3,0,0 1 2,,60.0000,0.0014,0.0023,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+p0201,3,3,3,0 1 2,0 1 2,0.7519,0.0029,0.0529,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+pk1,3,0,0,,,60.0000,0.0010,24.7544,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ran12x21,3,0,0,,,60.0000,0.0024,2.5266,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ran13x13,3,0,0,,,60.0000,0.0015,1.5058,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+rlp1,3,3,0,0 1 2,,60.0000,0.0788,0.0789,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+supportcase14,3,3,3,0 1 2,0 1 2,0.1185,0.0433,0.0435,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+supportcase16,3,3,3,0 1 2,0 1 2,0.1342,0.0419,0.0442,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+timtab1,3,0,0,,,60.0000,1.5215,20.6682,60,f6740af,github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
