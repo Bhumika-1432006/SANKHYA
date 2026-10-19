@@ -105,7 +105,7 @@ the one stamped in the file's rows, the build that produced it.
 | Netlib LP, full set: 94 of 94 within 1e-6 of Koch's exact optimum and verified; 83 match the readme; 94 accepted by the independent verifier | `bench/results/netlib-full-945cb4f.csv` | `945cb4f` |
 | Head-to-head, Netlib LP, 92 instances: SGM10 0.575 s against HiGHS 0.163 s; against HiGHS faster on 3, tie on 72, slower on 17 | `bench/results/head-to-head-netlib-5e490ef.csv` | `5e490ef` |
 | Head-to-head, Kennington LP, 16 instances: SGM10 9.430 s against HiGHS 1.855 s; against HiGHS faster on 3, tie on 2, slower on 11 | `bench/results/head-to-head-kennington-1860864.csv` | `1860864` |
-| Head-to-head, Maros-Meszaros QP, 138 instances: SGM10 6.437 s against HiGHS 35.781 s; against HiGHS faster on 82, tie on 22, slower on 5 | `bench/results/head-to-head-maros-meszaros-1860864.csv` | `1860864` |
+| Head-to-head, Maros-Meszaros QP, 138 instances: SGM10 4.066 s against HiGHS 35.808 s; against HiGHS faster on 91, tie on 26, slower on 3 | `bench/results/head-to-head-maros-meszaros-d0eb672.csv` | `d0eb672` |
 | Safe bounds on Netlib: 91 of 94 optimal answers certified to 1e-6 by a rigorous bound, 2 with no finite bound | `bench/results/certified-gap-netlib-full-945cb4f.csv` | `945cb4f` |
 | Netlib infeasible set, verdict with a verified Farkas certificate: 28 of 29 | `bench/results/netlib-infeasible-5a39fb2.csv` | `5a39fb2` |
 | Exact sensitivity: 69 of 96 LPs with every dual, reduced cost and range re-derived in rational arithmetic; 4,479 of 431,730 floating-point values corrected | `bench/results/exact-sensitivity-60455ce.csv` | `60455ce` |
@@ -184,24 +184,32 @@ machine `cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores
 
 ### Maros-Meszaros QP
 
-`bench/results/head-to-head-maros-meszaros-1860864.csv`, commit `1860864`, 60 s limit, machine
-`cloud container (docker); Intel(R) Xeon(R) Processor @ 2.10GHz; 4 cores; 16 GiB RAM; Linux-x86_64`.
+`bench/results/head-to-head-maros-meszaros-d0eb672.csv`, commit `d0eb672`, 60 s limit, machine
+`github-actions ubuntu-latest; AMD EPYC 9V45 96-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64`.
 
 | solver | version | runs | solved | matched | verified | checked on | SGM time, shift 10 s |
 |---|---|---:|---:|---:|---:|---|---:|
-| SANKHYA | 1860864 | 138 | 107 | 106 | 107 | primal+dual | 6.437 s |
-| HiGHS | 1.15.1 | 138 | 105 | 99 | 32 | primal+dual | 35.781 s |
-| SCIP | 10.0.2 | 138 | 78 | 76 | 53 | primal-only | 27.436 s |
-| CBC/Clp | 1.17.9 | 138 | 127 | 113 | 62 | primal+dual | 20.974 s |
+| SANKHYA | d0eb672 | 138 | 119 | 117 | 119 | primal+dual | 4.066 s |
+| HiGHS | 1.15.1 | 138 | 102 | 96 | 31 | primal+dual | 35.808 s |
+| SCIP | 10.0.2 | 138 | 78 | 76 | 53 | primal-only | 26.584 s |
+| CBC/Clp | 1.17.9 | 138 | 129 | 115 | 64 | primal+dual | 20.001 s |
 | GLPK | - | 138 | unsupported | - | - | - | - |
+| OSQP | 1.1.3 | 138 | 65 | 61 | 48 | primal-only | 26.650 s |
+| Clarabel | 0.11.1 | 138 | 132 | 105 | 107 | primal-only | 10.062 s |
+| PIQP | 0.6.4 | 138 | 137 | 130 | 135 | primal-only | 1.905 s |
+| SCS | 3.3.1 | 138 | 125 | 105 | 72 | primal-only | 16.235 s |
 
 **Instance by instance, SANKHYA against each rival:**
 
 | against | instances compared | SANKHYA faster | tie | rival faster | median of SANKHYA's time over the rival's, floored | the same, clocks as recorded |
 |---|---:|---:|---:|---:|---:|---:|
-| HiGHS | 109 | 82 | 22 | 5 | 1.00x | 0.26x |
-| SCIP | 114 | 87 | 19 | 8 | 0.52x | 0.03x |
-| CBC/Clp | 118 | 75 | 28 | 15 | 1.00x | 0.24x |
+| HiGHS | 120 | 91 | 26 | 3 | 1.00x | 0.34x |
+| SCIP | 120 | 93 | 22 | 5 | 0.93x | 0.04x |
+| CBC/Clp | 126 | 76 | 36 | 14 | 1.00x | 0.26x |
+| OSQP | 118 | 76 | 40 | 2 | 1.00x | 1.48x |
+| Clarabel | 123 | 41 | 66 | 16 | 1.00x | 1.38x |
+| PIQP | 133 | 5 | 89 | 39 | 1.00x | 2.73x |
+| SCS | 118 | 54 | 59 | 5 | 1.00x | 0.67x |
 
 *A tie is two times within 10% of each other, or both under 0.1 s (the coarsest clock here cannot tell those apart). A run that did not count loses to one that did, and an instance on which neither counted is left out. Both medians are over the instances both solvers counted on, and above 1x SANKHYA is the slower one: the first floors each time at 0.1 s as the profile below does, the second takes each solver's clock as recorded, which on instances of a few milliseconds is a ratio of start-up costs and, for a solver that prints 0.0, is left out.*
 
@@ -355,9 +363,9 @@ On the Kennington set HiGHS is clearly ahead: SGM 9.430 s against 1.855 s, SANKH
 
 **Q7. How does the QP engine compare?**
 
-On the Maros-Meszaros convex QPs in the head-to-head run SANKHYA reports optimal on 107 of 138, at the published objective on 106, and the verifier accepts 106 of those; HiGHS reports optimal on 105, at the published objective on 99, and the verifier accepts 32, the rest failing its 1e-7 dual feasibility or 1e-6 gap conditions by small margins (each named in section 4a.3), so the SGM of 6.437 s against 35.781 s rests on the verifier's tolerances as much as on speed. In SANKHYA's own run 117 of 138 reach the published objective and 0 `optimal` answers are rejected by the verifier.
+On the Maros-Meszaros convex QPs in the head-to-head run SANKHYA reports optimal on 119 of 138, at the published objective on 117, and the verifier accepts 117 of those; HiGHS reports optimal on 102, at the published objective on 96, and the verifier accepts 31, the rest failing its 1e-7 dual feasibility or 1e-6 gap conditions by small margins (each named in section 4a.3), so the SGM of 4.066 s against 35.808 s rests on the verifier's tolerances as much as on speed. In SANKHYA's own run 117 of 138 reach the published objective and 0 `optimal` answers are rejected by the verifier.
 
-*Evidence: `bench/results/head-to-head-maros-meszaros-1860864.csv`, `docs/BENCHMARKS.md` section 4a.3; `bench/results/maros-meszaros-cad720c.csv`, section 2b.*
+*Evidence: `bench/results/head-to-head-maros-meszaros-d0eb672.csv`, `docs/BENCHMARKS.md` section 4a.3; `bench/results/maros-meszaros-cad720c.csv`, section 2b.*
 
 **Q8. What does the GPU actually buy?**
 
