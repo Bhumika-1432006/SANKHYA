@@ -1,0 +1,31 @@
+instance,seeds,seeds_matched,seeds_proved,matched_seeds,proved_seeds,sgm_seconds,sgm_first_feasible_seconds,mean_primal_integral,time_limit,git_commit,machine
+b-ball,3,3,1,0 1 2,0,147.9731,0.0248,0.0250,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ej,3,0,0,,,600.0000,600.0000,0.3010,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+enlight8,3,3,0,0 1 2,,600.0000,0.0986,0.0986,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+enlight_hard,3,3,0,0 1 2,,600.0000,0.1024,0.1024,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+f2gap40400,3,3,3,0 1 2,0 1 2,1.3128,0.1043,0.1043,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+flugpl,3,3,3,0 1 2,0 1 2,0.2053,0.1968,0.1968,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gen-ip016,3,0,0,,,600.0000,0.0002,0.0329,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gen-ip054,3,0,0,,,600.0000,0.0002,0.0190,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gr4x6,3,3,3,0 1 2,0 1 2,0.2065,0.0005,0.0116,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gt2,3,3,3,0 1 2,0 1 2,0.2401,0.0005,0.0400,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+k16x240b,3,0,0,,,600.0000,0.0021,0.2673,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare1,3,0,0,,,600.0000,0.0581,0.4801,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare_4_0,3,0,0,,,600.0000,0.0003,0.3692,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare_5_0,3,0,0,,,600.0000,0.0004,0.4324,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-1425699,3,3,3,0 1 2,0 1 2,0.2040,0.0195,0.0650,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-3072252-nete,3,0,0,,,600.0000,0.3636,0.4834,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-3611689-kaihu,3,1,0,2,,600.0000,0.0013,0.0472,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-5140963-mincio,3,0,0,,,600.0000,0.0035,0.3612,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-5192052-neckar,3,3,3,0 1 2,0 1 2,0.1632,0.0020,0.0621,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos5,3,0,0,,,600.0000,0.0017,0.1639,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+noswot,3,1,0,0,,600.0000,0.0013,0.0220,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+opt1217,3,3,0,0 1 2,,600.0000,0.0018,0.0032,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+p0201,3,3,3,0 1 2,0 1 2,1.0397,0.0037,0.0238,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+pk1,3,0,0,,,600.0000,0.0011,0.4873,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ran12x21,3,0,0,,,600.0000,0.0031,0.4024,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ran13x13,3,0,0,,,600.0000,0.0019,0.2271,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+rlp1,3,3,0,0 1 2,,600.0000,0.0979,0.0981,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+supportcase14,3,3,3,0 1 2,0 1 2,0.4216,0.2049,0.2203,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+supportcase16,3,3,3,0 1 2,0 1 2,0.4562,0.1657,0.1876,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+timtab1,3,0,0,,,600.0000,89.4004,1.3243,600,8540028,github-actions ubuntu-latest; AMD EPYC 9V74 80-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
