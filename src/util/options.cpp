@@ -2090,6 +2090,22 @@ const std::vector<OptionSpec>& Options::registry() {
          0.0,
          {}});
     s.push_back(
+        {"qp_ipm_outer_pmm",
+         OptionType::Bool,
+         false,
+         "qp_algorithm=ipm (#981): an outer proximal method of multipliers around the interior "
+         "point (Rockafellar, Math. Oper. Res. 1 (1976); Pougkakiotis and Gondzio, Comput. "
+         "Optim. Appl. 78 (2021)). The dual centre is held across inner iterations instead of "
+         "moving with y every iteration; each Newton step is the proximal subproblem's, "
+         "M dv + delta dy = b - M v - delta (y - y_centre), refined against the matrix with "
+         "delta kept and rho removed; and the centre moves to y once the subproblem's residual "
+         "is tol::kQpIpmOuterPmmShare of the true one. delta is held at least "
+         "tol::kQpIpmOuterPmmDelta. The stopping test is on the true residual, unchanged. "
+         "Aimed at the LISWET stalls. Off by default until an A/B on main.",
+         0.0,
+         0.0,
+         {}});
+    s.push_back(
         {"qp_ipm_finish",
          OptionType::Bool,
          true,

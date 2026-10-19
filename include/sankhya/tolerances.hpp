@@ -581,6 +581,14 @@ inline constexpr double kQpIpmFinishRankTolerance = 1e-10;
 /// active-set rule, one change per step). 10 covers qgrow15 (one release), chosen by hand.
 inline constexpr int kQpIpmFinishRounds = 10;
 
+/// #981, qp_ipm_outer_pmm (off by default): the dual proximal parameter of the outer
+/// proximal method of multipliers is held at least this large, so the subproblem's
+/// M dv + delta dy = b - M v - delta (y - y_centre) has a dual term to hold; and the dual
+/// centre moves to y once the subproblem's residual is this share of the true one. Chosen by
+/// hand for the A/B that decides whether the option stays.
+inline constexpr double kQpIpmOuterPmmDelta = 1e-6;
+inline constexpr double kQpIpmOuterPmmShare = 0.1;
+
 /// #893: a certificate candidate read off the QP interior point's iterates is offered to the
 /// checker first with every entry at or below this share of its largest set to zero, then
 /// as it came. The step that runs away along a ray still carries the part of the iterate

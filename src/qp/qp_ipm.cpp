@@ -348,6 +348,15 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
   // the first-order engine for whatever time is left. See the file header and the comment at
   // the stall test below.
   const bool stall_handoff = options.get_bool("qp_ipm_stall_handoff");
+  // #981, qp_ipm_outer_pmm: an outer proximal method of multipliers. The dual centre y_centre
+  // is HELD across inner iterations instead of moving with y every iteration, the Newton
+  // system is the proximal subproblem's, M dv + delta dy = b - M v - delta (y - y_centre), and
+  // the centre moves to y only once that subproblem's residual is a kQpIpmOuterPmmShare of the
+  // true one (Rockafellar, "Augmented Lagrangians and applications of the proximal point
+  // algorithm in convex programming", Math. Oper. Res. 1 (1976); Pougkakiotis & Gondzio,
+  // Comput. Optim. Appl. 78 (2021)). The stopping test is on the true residual, unchanged.
+  const bool outer_pmm = options.get_bool("qp_ipm_outer_pmm");
+  std::vector<double> y_centre;
   const double primal_tolerance = options.get_double("primal_feasibility_tolerance");
   StopController stop(control, timer, limits);
 
@@ -434,7 +443,9 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
       if (has_upper[j]) r += rcu[j] / (s.upper[j] - v[j]);
       rhs[j] = r;
     }
-    for (std::size_t i = 0; i < nr; ++i) rhs[nc + i] = rp[i];
+    for (std::size_t i = 0; i < nr; ++i) {
+      rhs[nc + i] = outer_pmm ? rp[i] - delta * (y[i] - y_centre[i]) : rp[i];
+    }
     solve_refined(ldl, k, rhs, &step);
     refine_unregularized(ldl, k0, rhs, &step);
     for (std::size_t j = 0; j < nc; ++j) {
@@ -562,8 +573,20 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
     }
   }
 
+  if (outer_pmm) delta = std::max(delta, tol::kQpIpmOuterPmmDelta);
   while (true) {
     residuals();
+    // The outer step: move the dual centre once the proximal subproblem's residual,
+    // b - M v - delta (y - y_centre), is a small share of the true one.
+    if (outer_pmm) {
+      if (y_centre.empty()) y_centre = y;
+      double inner = 0.0, outer = 0.0;
+      for (std::size_t i = 0; i < nr; ++i) {
+        inner = std::max(inner, std::fabs(rp[i] - delta * (y[i] - y_centre[i])));
+        outer = std::max(outer, std::fabs(rp[i]));
+      }
+      if (inner <= tol::kQpIpmOuterPmmShare * outer) y_centre = y;
+    }
     double complementarity = 0.0;
     double largest_product = 0.0;
     for (std::size_t j = 0; j < nc; ++j) {
@@ -747,7 +770,9 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
       }
       if (ldl.regularized_pivots() == 0) {
         factored = true;
-        k0 = kkt.build(theta_inverse, 0.0, 0.0);
+        // With the outer PMM the dual proximal term is the subproblem's own, so the
+        // refinement keeps delta and removes only rho.
+        k0 = kkt.build(theta_inverse, 0.0, outer_pmm ? delta : 0.0);
       } else {
         rho *= tol::kQpIpmRegularizationRaise;
         delta *= tol::kQpIpmRegularizationRaise;
@@ -835,7 +860,7 @@ Solution iterate(const Model& model, const Standard& s, const Options& options, 
     // The proximal parameters follow mu down, never below the configured floor (the
     // centres move with the iterate, so a large rho slows the method and never biases it).
     rho = std::max(regularization_floor, std::min(rho, 0.1 * mu));
-    delta = rho;
+    delta = outer_pmm ? std::max(rho, tol::kQpIpmOuterPmmDelta) : rho;
   }
 
   // #980: the active-set finish, only once the IPM itself claims optimal and only when its
