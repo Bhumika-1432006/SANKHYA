@@ -15,8 +15,9 @@
 // RESTARTS. Achterberg 2007, ch. 10, and Achterberg and Wunderling, "Mixed integer
 // programming: analyzing 12 years of progress" (2013): after the root has been processed the
 // search learns things the root never saw - here, columns fixed by the reduced costs once
-// the heuristics found an incumbent. Rather than carry a tree built on the looser bounds, the
-// search throws it away and re-solves the root on the tightened ones: the root bound itself
+// the heuristics found an incumbent, and columns fixed by the conflicts the analysis (#292)
+// learned, read against the global bounds. Rather than carry a tree built on the looser bounds,
+// the search throws it away and re-solves the root on the tightened ones: the root bound itself
 // moves, and the tree that follows is built on a better branching order. Pseudocosts, cut
 // rows, learned conflicts and the incumbent are kept; only the node list goes. The trigger
 // is the standard one: enough of the integer columns fixed since the root was last
@@ -116,6 +117,54 @@ Count BranchAndBound::fix_by_reduced_cost() {
   return moved;
 }
 
+Count BranchAndBound::fix_by_conflicts() {
+  // A learned conflict is proved from the global bounds (conflict.hpp), so a conflict with
+  // every literal but one already true at the global bounds says that literal's negation
+  // holds everywhere: a global bound, not a node's. propagate_conflicts() finds the same
+  // bound at every node that visits it, but through tighten_*(), which leave() undoes, so
+  // until here nothing learned by the analysis ever reached global_lower_/global_upper_ or
+  // counted towards a restart (#418's follow-up: a trigger that counts fixings other than
+  // the reduced-cost ones). Same soundness as fix_by_reduced_cost(): a cutoff conflict
+  // (#503) excludes only points no better than the incumbent, which is what the pool wants
+  // kept, so the pool guard is the same.
+  if (!conflicts_enabled_ || conflict_use_ == ConflictUse::kNone || !saved_.empty()) return 0;
+  if (pool_complete_ || pool_gap_ < kNoPoolGap) return 0;
+  if (conflict_stats_.learned == conflicts_fixed_from_) return 0;  // nothing new to read
+  conflicts_fixed_from_ = conflict_stats_.learned;
+  Count moved = 0;
+  for (ConflictStore::Entry& entry : conflicts_.entries()) {
+    const ConflictVerdict verdict = check_conflict(entry.literals, working_.col_lower,
+                                                   working_.col_upper, integrality_tolerance_);
+    // Infeasible at the global bounds is left to the nodes, every one of which prunes on it.
+    if (verdict.infeasible || verdict.implied < 0) continue;
+    const ConflictLiteral bound =
+        negation(entry.literals[static_cast<std::size_t>(verdict.implied)]);
+    const auto u = static_cast<std::size_t>(bound.column);
+    if (bound.is_upper) {
+      if (bound.value >= global_upper_[u]) continue;
+      global_upper_[u] = bound.value;
+      working_.col_upper[u] = bound.value;
+    } else {
+      if (bound.value <= global_lower_[u]) continue;
+      global_lower_[u] = bound.value;
+      working_.col_lower[u] = bound.value;
+    }
+    ++moved;
+    ++entry.uses;
+    entry.last_used = static_cast<std::int64_t>(nodes_explored_);
+    if (global_lower_[u] == global_upper_[u]) ++fixed_since_root_;
+  }
+  conflict_stats_.tightenings += moved;
+  if (moved > 0) {
+    debug_after_global_tightening();  // #500
+    logger_.verbose(
+        "conflicts: {} global bound(s) tightened from the {} learned, {} integer column(s) "
+        "fixed since the root",
+        moved, conflict_stats_.learned, fixed_since_root_);
+  }
+  return moved;
+}
+
 bool BranchAndBound::restart_due() const {
   // One search only: a parallel worker's tree belongs to the shared search (#222), and a
   // subtree planted by another worker has no root of its own to re-solve.
@@ -128,8 +177,8 @@ bool BranchAndBound::restart_due() const {
 void BranchAndBound::restart_search() {
   ++restarts_;
   logger_.info(
-      "Restart {}: {} of {} integer columns fixed by reduced cost since the root; the {} open "
-      "node(s) are discarded and the root re-solved on the tightened bounds",
+      "Restart {}: {} of {} integer columns fixed by reduced cost or conflicts since the "
+      "root; the {} open node(s) are discarded and the root re-solved on the tightened bounds",
       restarts_, fixed_since_root_, integer_columns_.size(), open_.size());
   // The tree goes; the search's learning stays: pseudocosts, cut rows, conflicts, the
   // incumbent and the heuristics' statistics are all untouched here.

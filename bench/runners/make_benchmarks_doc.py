@@ -2868,6 +2868,11 @@ def main() -> int:
     # plateau instances. `<topic>-ab-` names, so no MIPLIB tier glob above can pick them up.
     restarts_ab = (newest_option_run("restarts-ab-miplib-seeds*-off-*.csv", "mip_restarts=0"),
                    newest_option_run("restarts-ab-miplib-seeds*-on-*.csv", "mip_restarts=2"))
+    # The restart's second trigger, global fixings from the learned conflicts, on the
+    # node-limited seed harness: both legs with conflict analysis on, mip_restarts apart.
+    restarts_conflicts_ab = (
+        newest_option_run("restarts-conflicts-ab-miplib-n2000-seeds*-off-*.csv", "mip_restarts=0"),
+        newest_option_run("restarts-conflicts-ab-miplib-n2000-seeds*-on-*.csv", "mip_restarts=2"))
     objective_branching_ab = (
         newest_option_run("objbranch-ab-miplib-seeds*-off-*.csv", "mip_objective_branching=false"),
         newest_option_run("objbranch-ab-miplib-seeds*-on-*.csv", "mip_objective_branching=true"))
@@ -3313,6 +3318,16 @@ favour. A restart is triggered only by columns reduced-cost fixing fixed, so the
 restart column below says whether the option did anything at all.
 
 {miplib_ab_doc.plateau_ab(*restarts_ab, "mip_restarts") or RESTARTS_AB_NOT_RUN}
+
+**The second trigger: global fixings from the learned conflicts.** rlp1 and noswot are dual
+degenerate at the root, so reduced-cost fixing has nothing to fix and the restart above never
+fires on them. Since this A/B a conflict the analysis (#292) learned is also read between
+nodes against the global bounds, and the bound it implies there is a global fixing that counts
+towards the restart. Both legs set `conflict_analysis=true conflict_cutoff=true` at
+`node_limit=2000` over three seeds and differ in `mip_restarts` only; the node limit, not the
+clock, ends the unproved runs, so a shared machine moves the time columns and nothing else.
+
+{miplib_ab_doc.plateau_ab(*restarts_conflicts_ab, "mip_restarts") or "Not yet run at a commit on `main`."}
 
 #### A/B: objective branching on the plateau instances (#418)
 
