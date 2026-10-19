@@ -5,7 +5,9 @@ from pathlib import Path
 
 binary = sys.argv[1]
 extra = sys.argv[2:]
-names = "stocfor3 dfl001 pilot87 pilot greenbea greenbeb d2q06c stocfor2 woodw ganges bnl2 fit2p bnl1 pilot.we 25fv47 degen3 cycle".split()
+import os
+names = os.environ.get("A527_NAMES") or "stocfor3 dfl001 pilot87 pilot greenbea greenbeb d2q06c stocfor2 woodw ganges bnl2 fit2p bnl1 pilot.we 25fv47 degen3 cycle"
+names = names.split()
 try:
     import highspy
 except ImportError:
@@ -36,11 +38,20 @@ for name in names:
         print(f"  HANDOVER at {h[1]}: {h[0][:200]}")
     for x in pre[:1]:
         print(f"  {x[:240]}")
+    for x in re.findall(r"presolve: .*", log):
+        print(f"  OURPRE {x}")
     if highspy is not None:
         h = highspy.Highs(); h.setOptionValue("output_flag", False); h.setOptionValue("threads", 1)
         h.readModel(str(mps))
         lp = h.getLp()
+        h.setOptionValue("output_flag", True); h.setOptionValue("presolve_rule_logging", True)
+        h.setOptionValue("log_file", "/tmp/hp.log"); h.setOptionValue("log_to_console", False)
         h.presolve()
+        try:
+            for line in open("/tmp/hp.log"):
+                print("  HPRE " + line.rstrip())
+        except OSError:
+            pass
         try:
             plp = h.getPresolvedLp()
             pdims = f"{plp.num_row_} x {plp.num_col_} nnz {plp.a_matrix_.value_.__len__()}"
