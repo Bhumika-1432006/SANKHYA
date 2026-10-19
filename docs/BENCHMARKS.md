@@ -3313,7 +3313,7 @@ The two are **within noise of each other** here, at 1.00x. A narrow claim: eight
 
 ---
 
-## 4a. Head-to-head: HiGHS, SCIP, CBC/Clp and GLPK (#766)
+## 4a. Head-to-head: HiGHS, SCIP, CBC/Clp and GLPK (#766), and on QP OSQP, Clarabel, PIQP and SCS (#983)
 
 **The instance counts first, because they differ between reports.** netlib.org's `lp/data`
 ships **92** feasible LPs as EMPS files, and those 92 are the headline row below. Two more,
@@ -3326,9 +3326,11 @@ Kennington is reported separately here (4a.2), and so is the 138-problem Maros-M
 
 Every solver runs as a SEPARATE PROCESS on the same machine, with the same time limit and one
 thread: HiGHS through `highspy`, SCIP through `pyscipopt`, Clp (CBC's LP engine) and GLPK as
-the distribution's binaries. No rival code is linked into or read by SANKHYA; see judgement
-call 35 in `docs/PROVENANCE.md`. Every answer, a rival's included, is converted into the
-`.sol` layout and checked by `tools/verify_solution.py`: on primal and dual conditions where
+the distribution's binaries; on Maros-Meszaros also the convex QP solvers OSQP, Clarabel,
+PIQP and SCS through their pip packages, each run at a 1e-6 tolerance with the settings in
+the CSV's `solver_options` column, and judged on the primal point only. No rival code is
+linked into or read by SANKHYA; see judgement calls 35 and 40 in `docs/PROVENANCE.md`.
+Every answer, a rival's included, is converted into the `.sol` layout and checked by `tools/verify_solution.py`: on primal and dual conditions where
 the solver gives usable duals, on primal feasibility and the objective only where it does not
 (SCIP; the `checked on` column says which). `solved` is the solver's own optimal status;
 `matched` is the objective recomputed at its point within a relative 1e-6 of the published
