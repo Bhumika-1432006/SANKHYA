@@ -118,12 +118,17 @@ Recomputed recompute(const Model& model, const Solution& s) {
 /// the polish. Limits differ because the polish starts from wherever the limit left the run:
 /// adlittle and blend from 300 are further out than one main-run budget can bring back.
 ///
-/// share2b is not in the list (#1000). From the point a 2000-iteration limit leaves, the
-/// primal phase reaches 1e-8 under GCC 13 and 16 and stalls at 5.5e-2 under MSVC 19.44 and
-/// 19.51; at the neighbouring limits GCC itself reaches at 1500 and not at 1900, 2100, 2500,
-/// 3000 or 4000, and MSVC reaches at 1900 only (the table is in the issue). A case that
-/// passes by the luck of one trajectory is not a promise, so it gates nothing until the
-/// polish holds on share2b from every stopped point.
+/// share2b at 2000 and 2500 is the regression test for #1000. Before it, the polish's phases
+/// restarted on max(primal, dual, gap) and re-derived the primal weight; on a feasibility
+/// problem that max follows y's drift, not feasibility, and the primal phase stalled at
+/// 1e-3 to 6e-2 from most stopped points, reaching only by the luck of one trajectory (the
+/// issue's table: GCC at 2000, MSVC at 1900, neither at 2500). Now each phase restarts on its
+/// own residual at the main run's weight, and the last polish gets
+/// kPdhgFinalPolishBudgetMultiplier steps per phase per main-run iteration: from a point far
+/// out the phase converges, but can need more steps than the main run took. MSVC stopped at
+/// 2500 leaves such a point (relative primal 3.5e-2, where g++ 11.4 leaves 1.5e-3), and with
+/// one step per iteration it did not reach; g++ 11.4 at 16 limits from 1000 to 5000 reaches
+/// from all 16 with two, taking 1,083 to 3,921 polish iterations.
 struct Case {
   const char* name;
   std::int64_t iteration_limit;
@@ -199,9 +204,11 @@ TEST_P(PdhgFeasibilityPolish, OffIsTheEngineAsItWas) {
 
 INSTANTIATE_TEST_SUITE_P(Netlib, PdhgFeasibilityPolish,
                          ::testing::Values(Case{"afiro", 300}, Case{"sc50a", 300},
-                                           Case{"adlittle", 1000}, Case{"blend", 1000}),
+                                           Case{"adlittle", 1000}, Case{"blend", 1000},
+                                           Case{"share2b", 2000}, Case{"share2b", 2500}),
                          [](const ::testing::TestParamInfo<Case>& param_info) {
-                           return std::string(param_info.param.name);
+                           return std::string(param_info.param.name) + "_" +
+                                  std::to_string(param_info.param.iteration_limit);
                          });
 
 }  // namespace
