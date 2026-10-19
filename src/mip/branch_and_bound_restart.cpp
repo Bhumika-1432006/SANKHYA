@@ -127,7 +127,10 @@ Count BranchAndBound::fix_by_conflicts() {
   // the reduced-cost ones). Same soundness as fix_by_reduced_cost(): a cutoff conflict
   // (#503) excludes only points no better than the incumbent, which is what the pool wants
   // kept, so the pool guard is the same.
-  if (!conflicts_enabled_ || conflict_use_ == ConflictUse::kNone || !saved_.empty()) return 0;
+  // Only under conflict_use=propagate: prune and none promise never to move a bound (#292).
+  if (!conflicts_enabled_ || conflict_use_ != ConflictUse::kPropagate || !saved_.empty()) {
+    return 0;
+  }
   if (pool_complete_ || pool_gap_ < kNoPoolGap) return 0;
   if (conflict_stats_.learned == conflicts_fixed_from_) return 0;  // nothing new to read
   conflicts_fixed_from_ = conflict_stats_.learned;
