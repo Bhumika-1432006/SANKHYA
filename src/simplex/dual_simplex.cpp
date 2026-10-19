@@ -84,6 +84,7 @@
 #include "../util/profiler.hpp"
 #include "sankhya/timer.hpp"
 #include "sankhya/tolerances.hpp"
+#include "util/threads.hpp"
 
 namespace sankhya::detail {
 
@@ -460,9 +461,11 @@ void Simplex::compute_pivot_row(Index leaving_slot) {
     return;
   }
 
-  // Otherwise a gather per column, deterministic at any thread count (#57).
+  // Otherwise a gather per column, deterministic at any thread count (#57), on a team only
+  // when the loop is worth one (#514).
 #ifdef SANKHYA_HAVE_OPENMP
-#pragma omp parallel for schedule(static)
+  const bool team = omp_worth_it(model_.num_nonzeros() + total_);
+#pragma omp parallel for schedule(static) if (team)
 #endif
   for (Index k = 0; k < total_; ++k) {
     const auto u = static_cast<std::size_t>(k);
