@@ -55,6 +55,8 @@ def main() -> int:
     parser.add_argument("--instances", nargs="*")
     parser.add_argument("--time-limit", type=float, default=None)
     parser.add_argument("--repeats", type=int, default=1)
+    parser.add_argument("--seeds", type=int, default=None,
+                        help="miplib.py only: its --seeds, the seeds each arm runs per instance")
     parser.add_argument("--machine", required=True)
     parser.add_argument("--out-prefix", required=True)
     args = parser.parse_args()
@@ -76,6 +78,8 @@ def main() -> int:
                         else ["--machine", args.machine])
                 if args.time_limit is not None:
                     cmd += ["--time-limit", f"{args.time_limit:g}"]
+                if args.seeds is not None and args.runner == "miplib.py":
+                    cmd += ["--seeds", str(args.seeds)]
                 for option in arms[arm]:
                     cmd += ["--solver-option", option]
                 print(f"== r{repeat} {name} {arm}", flush=True)
