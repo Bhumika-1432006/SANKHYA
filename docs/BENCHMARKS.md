@@ -1831,6 +1831,16 @@ Runs in the on leg that restarted at least once: **6 of 90**; that split a node 
 Bound moved towards the published optimum: none. Moved away: none. #418's acceptance, bound movement on at least one of `b-ball`, `opt1217`, `rlp1`, `noswot`, is **not met** by this run.
 
 
+**The second trigger: global fixings from the learned conflicts.** rlp1 and noswot are dual
+degenerate at the root, so reduced-cost fixing has nothing to fix and the restart above never
+fires on them. Since this A/B a conflict the analysis (#292) learned is also read between
+nodes against the global bounds, and the bound it implies there is a global fixing that counts
+towards the restart. Both legs set `conflict_analysis=true conflict_cutoff=true` at
+`node_limit=2000` over three seeds and differ in `mip_restarts` only; the node limit, not the
+clock, ends the unproved runs, so a shared machine moves the time columns and nothing else.
+
+Not yet run at a commit on `main`.
+
 #### A/B: objective branching on the plateau instances (#418)
 
 Source CSVs: `bench/results/objbranch-ab-miplib-seeds3-off-3e4acc9.csv` and `bench/results/objbranch-ab-miplib-seeds3-on-3e4acc9.csv`, `mip_objective_branching` off and on, 3 seeds each (the published file and row and column permutations of it), 60 s per run, one thread.
@@ -3303,7 +3313,7 @@ The two are **within noise of each other** here, at 1.00x. A narrow claim: eight
 
 ---
 
-## 4a. Head-to-head: HiGHS, SCIP, CBC/Clp and GLPK (#766)
+## 4a. Head-to-head: HiGHS, SCIP, CBC/Clp and GLPK (#766), and on QP OSQP, Clarabel, PIQP and SCS (#983)
 
 **The instance counts first, because they differ between reports.** netlib.org's `lp/data`
 ships **92** feasible LPs as EMPS files, and those 92 are the headline row below. Two more,
@@ -3316,9 +3326,11 @@ Kennington is reported separately here (4a.2), and so is the 138-problem Maros-M
 
 Every solver runs as a SEPARATE PROCESS on the same machine, with the same time limit and one
 thread: HiGHS through `highspy`, SCIP through `pyscipopt`, Clp (CBC's LP engine) and GLPK as
-the distribution's binaries. No rival code is linked into or read by SANKHYA; see judgement
-call 35 in `docs/PROVENANCE.md`. Every answer, a rival's included, is converted into the
-`.sol` layout and checked by `tools/verify_solution.py`: on primal and dual conditions where
+the distribution's binaries; on Maros-Meszaros also the convex QP solvers OSQP, Clarabel,
+PIQP and SCS through their pip packages, each run at a 1e-6 tolerance with the settings in
+the CSV's `solver_options` column, and judged on the primal point only. No rival code is
+linked into or read by SANKHYA; see judgement calls 35 and 40 in `docs/PROVENANCE.md`.
+Every answer, a rival's included, is converted into the `.sol` layout and checked by `tools/verify_solution.py`: on primal and dual conditions where
 the solver gives usable duals, on primal feasibility and the objective only where it does not
 (SCIP; the `checked on` column says which). `solved` is the solver's own optimal status;
 `matched` is the objective recomputed at its point within a relative 1e-6 of the published

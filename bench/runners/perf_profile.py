@@ -29,9 +29,10 @@ TIME_FLOOR_SECONDS = 0.1  # GLPK's clock resolution, the coarsest in the compari
 
 # Colour-blind-safe (Okabe-Ito); SANKHYA first and drawn thickest.
 COLOURS = {"sankhya": "#D55E00", "highs": "#0072B2", "scip": "#009E73",
-           "cbc-clp": "#CC79A7", "glpk": "#E69F00"}
+           "cbc-clp": "#CC79A7", "glpk": "#E69F00", "osqp": "#56B4E9", "clarabel": "#000000",
+           "piqp": "#F0E442", "scs": "#999999"}
 LABELS = {"sankhya": "SANKHYA", "highs": "HiGHS", "scip": "SCIP", "cbc-clp": "CBC/Clp",
-          "glpk": "GLPK"}
+          "glpk": "GLPK", "osqp": "OSQP", "clarabel": "Clarabel", "piqp": "PIQP", "scs": "SCS"}
 
 
 def ratios(rows: list[dict], solvers: list[str]) -> dict[str, list[float]]:
