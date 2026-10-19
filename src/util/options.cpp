@@ -841,12 +841,14 @@ const std::vector<OptionSpec>& Options::registry() {
                  OptionType::Int,
                  std::int64_t{0},
                  "Most times the search may throw its tree away and re-solve the root on the "
-                 "bounds reduced-cost fixing tightened (#418; Achterberg 2007, ch. 10; "
+                 "bounds reduced-cost fixing tightened, or the learned conflicts implied at "
+                 "the global bounds (#418; Achterberg 2007, ch. 10; "
                  "Achterberg and Wunderling 2013). A restart happens when at least "
                  "mip_restart_fraction of the integer columns have been fixed since the root "
                  "was last processed and at most mip_restart_node_limit nodes have been "
                  "explored; pseudocosts, cut rows, conflicts and the incumbent are kept. Needs "
-                 "mip_reduced_cost_fixing, and one search: a parallel tree does not restart. "
+                 "mip_reduced_cost_fixing or conflict_analysis, and one search: a parallel "
+                 "tree does not restart. "
                  "0 is off, which is the default until the MIPLIB A/B on main.",
                  0.0,
                  kNoLimit,

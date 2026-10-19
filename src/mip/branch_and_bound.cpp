@@ -230,8 +230,11 @@ Solution BranchAndBound::run() {
   // Reduced-cost fixing and restarts (#418), both off unless asked for.
   reduced_cost_fixing_ = options_.get_bool("mip_reduced_cost_fixing");
   // A restart re-roots the search on the relaxation (#754 keeps it to the plain case).
-  restarts_allowed_ =
-      reduced_cost_fixing_ && sc_sos_ == nullptr ? options_.get_int("mip_restarts") : 0;
+  // A restart is triggered by global fixings, which come from reduced-cost fixing or from
+  // the learned conflicts (#292); with neither on there is nothing to trigger it.
+  restarts_allowed_ = (reduced_cost_fixing_ || conflicts_enabled_) && sc_sos_ == nullptr
+                          ? options_.get_int("mip_restarts")
+                          : 0;
   restart_fraction_ = options_.get_double("mip_restart_fraction");
   restart_node_limit_ = options_.get_int("mip_restart_node_limit");
   // Objective branching (#418): only with a known step, and only in a search that owns its
@@ -578,9 +581,10 @@ Solution BranchAndBound::run() {
 
     // Reduced-cost fixing and restarts (#418), between nodes, where working_'s bounds are the
     // global bounds: whenever the incumbent has improved, tighten what the root's reduced
-    // costs now rule out; and if that fixed enough of the integer columns, throw the tree
-    // away and re-solve the root on the tightened bounds.
-    if (fix_by_reduced_cost() > 0 && restart_due()) {
+    // costs now rule out, and what the learned conflicts imply at the global bounds; and if
+    // that fixed enough of the integer columns, throw the tree away and re-solve the root on
+    // the tightened bounds.
+    if (fix_by_reduced_cost() + fix_by_conflicts() > 0 && restart_due()) {
       certificate_refuse("the search restarted and discarded its tree");
       restart_search();
       continue;

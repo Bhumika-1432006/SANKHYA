@@ -503,6 +503,10 @@ class BranchAndBound {
   /// incumbent rule out. Between nodes only (no node entered); a no-op until the incumbent
   /// has improved since the last pass. Returns the bounds moved.
   Count fix_by_reduced_cost();
+  /// Tighten, for the whole tree, the bounds the learned conflicts (#292) imply at the
+  /// global bounds. Between nodes only; a no-op until a conflict has been learned since the
+  /// last pass. Returns the bounds moved; a column it closes counts towards a restart.
+  Count fix_by_conflicts();
   /// Enough fixed since the root was last processed, within the restart budget.
   [[nodiscard]] bool restart_due() const;
   /// Discard the tree and start again from the root on the tightened bounds.
@@ -1062,6 +1066,8 @@ class BranchAndBound {
   Count symmetry_generators_ = 0;   ///< #413: verified generators the detection found
   Count symmetry_rows_ = 0;         ///< #413: ordering rows appended for them
   Count fixed_since_root_ = 0;      ///< integer columns fixed since the root was processed
+  std::int64_t conflicts_fixed_from_ =
+      0;  ///< conflicts learned when fix_by_conflicts() last ran
   Count restarts_ = 0;
   Count restarts_allowed_ = 0;
   double restart_fraction_ = 0.0;

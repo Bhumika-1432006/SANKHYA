@@ -176,6 +176,29 @@ TEST(Restarts, ARestartedSearchReachesTheEnumeratedOptimum) {
   EXPECT_GT(restarts, 0) << "no model restarted, so the restart path was not exercised";
 }
 
+TEST(Restarts, ASearchRestartedOnConflictFixingsReachesTheEnumeratedOptimum) {
+  // The other trigger: no reduced-cost fixing, so every global fixing a restart counts came
+  // from a learned conflict read against the global bounds (fix_by_conflicts). Cutoff
+  // conflicts too, so the small models here learn enough to fix something.
+  std::mt19937 rng(4181);
+  Count restarts = 0;
+  for (int trial = 0; trial < 150; ++trial) {
+    const Model m = random_model(rng, trial);
+    Options options = quiet();
+    options.set_bool("mip_heuristics", true);
+    options.set_bool("conflict_analysis", true);
+    options.set_bool("conflict_cutoff", true);
+    options.set_int("mip_restarts", 2);
+    options.set_double("mip_restart_fraction", 0.05);
+    const Solution solved = solve(m, options);
+    expect_enumerated(m, solved, trial, "conflict restarts");
+    restarts += solved.restarts;
+    EXPECT_LE(solved.restarts, 2) << "trial " << trial;
+  }
+  EXPECT_GT(restarts, 0) << "no model restarted on conflict fixings, so the path was not "
+                            "exercised";
+}
+
 TEST(Restarts, DeterministicRunsRepeatWithRestartsOn) {
   std::mt19937 rng(41800);
   const Model m = random_model(rng, 3);
