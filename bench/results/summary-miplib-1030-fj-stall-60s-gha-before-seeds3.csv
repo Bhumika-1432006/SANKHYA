@@ -1,0 +1,31 @@
+instance,seeds,seeds_matched,seeds_proved,matched_seeds,proved_seeds,sgm_seconds,sgm_first_feasible_seconds,mean_primal_integral,time_limit,git_commit,machine
+b-ball,3,3,1,0 1 2,0,27.4944,0.0296,0.0299,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ej,3,3,0,0 1 2,,60.0000,10.0020,11.5608,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+enlight8,3,3,0,0 1 2,,60.0000,0.1232,0.1232,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+enlight_hard,3,3,0,0 1 2,,60.0000,0.1274,0.1274,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+f2gap40400,3,3,3,0 1 2,0 1 2,1.4483,0.1238,0.1238,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+flugpl,3,3,3,0 1 2,0 1 2,0.2345,0.2274,0.2274,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gen-ip016,3,0,0,,,60.0000,0.0002,0.2466,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gen-ip054,3,0,0,,,60.0000,0.0003,0.1691,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gr4x6,3,3,3,0 1 2,0 1 2,0.2483,0.0005,0.0138,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+gt2,3,3,3,0 1 2,0 1 2,0.2781,0.0005,0.0456,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+k16x240b,3,0,0,,,60.0000,0.0024,5.1856,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare1,3,0,0,,,60.0000,0.0724,58.0476,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare_4_0,3,1,0,1,,60.0000,0.0004,38.1583,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+markshare_5_0,3,0,0,,,60.0000,0.0005,54.5775,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-1425699,3,3,3,0 1 2,0 1 2,0.2445,0.0242,0.0784,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-3072252-nete,3,0,0,,,60.0000,0.4335,1.5605,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-3611689-kaihu,3,3,2,0 1 2,0 2,50.2900,0.0015,0.3253,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-5140963-mincio,3,0,0,,,60.0000,0.0041,2.3890,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos-5192052-neckar,3,3,3,0 1 2,0 1 2,0.2139,0.0024,0.0809,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+neos5,3,2,0,0 1,,60.0000,0.0020,1.4741,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+noswot,3,2,0,0 2,,60.0000,0.0016,0.8994,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+opt1217,3,3,0,0 1 2,,60.0000,0.0021,0.0038,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+p0201,3,3,3,0 1 2,0 1 2,1.1601,0.0044,0.0274,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+pk1,3,0,0,,,60.0000,0.0013,25.7073,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ran12x21,3,0,0,,,60.0000,0.0036,3.2141,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+ran13x13,3,0,0,,,60.0000,0.0021,1.7419,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+rlp1,3,3,0,0 1 2,,60.0000,0.1180,0.1183,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+supportcase14,3,3,3,0 1 2,0 1 2,0.5045,0.2420,0.2617,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+supportcase16,3,3,3,0 1 2,0 1 2,0.5379,0.1943,0.2214,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64
+timtab1,3,0,0,,,60.0000,3.1659,22.1969,60,fc75d94,github-actions ubuntu-latest; AMD EPYC 7763 64-Core Processor; 4 cores; 16 GiB RAM; Linux-x86_64

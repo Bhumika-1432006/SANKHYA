@@ -1,0 +1,31 @@
+instance,seeds,seeds_matched,seeds_proved,matched_seeds,proved_seeds,sgm_seconds,sgm_first_feasible_seconds,mean_primal_integral,time_limit,git_commit,machine
+b-ball,3,3,1,0 1 2,0,182.4862,0.3462,0.3587,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+ej,3,0,0,,,600.0000,600.0000,7.5203,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+enlight8,3,3,0,0 1 2,,600.0000,1.8304,1.8390,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+enlight_hard,3,3,0,0 1 2,,600.0000,2.1567,2.2058,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+f2gap40400,3,3,3,0 1 2,0 1 2,22.4384,1.9863,1.9908,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+flugpl,3,3,3,0 1 2,0 1 2,3.1687,2.9988,3.0119,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+gen-ip016,3,0,0,,,600.0000,0.0026,0.7511,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+gen-ip054,3,0,0,,,600.0000,0.0172,0.3544,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+gr4x6,3,3,3,0 1 2,0 1 2,3.5936,0.0095,0.1972,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+gt2,3,3,3,0 1 2,0 1 2,4.0040,0.0092,0.6459,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+k16x240b,3,0,0,,,600.0000,0.1165,4.0034,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+markshare1,3,0,0,,,600.0000,0.6022,6.6045,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+markshare_4_0,3,0,0,,,600.0000,0.0064,5.1862,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+markshare_5_0,3,0,0,,,600.0000,0.0176,6.2803,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+neos-1425699,3,3,3,0 1 2,0 1 2,3.3919,0.3062,0.9562,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+neos-3072252-nete,3,0,0,,,600.0000,6.7267,9.0658,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+neos-3611689-kaihu,3,1,0,2,,600.0000,0.1021,1.2042,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+neos-5140963-mincio,3,0,0,,,600.0000,0.2653,14.6115,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+neos-5192052-neckar,3,3,3,0 1 2,0 1 2,7.3580,0.2087,2.8249,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+neos5,3,0,0,,,600.0000,0.1366,5.2373,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+noswot,3,1,0,0,,600.0000,0.3693,1.1662,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+opt1217,3,3,0,0 1 2,,600.0000,0.5949,0.7052,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+p0201,3,3,3,0 1 2,0 1 2,32.8908,0.5907,1.2407,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+pk1,3,0,0,,,600.0000,0.0944,9.5884,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+ran12x21,3,0,0,,,600.0000,0.2741,9.9764,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+ran13x13,3,0,0,,,600.0000,0.1998,6.3373,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+rlp1,3,3,0,0 1 2,,600.0000,2.7141,2.7257,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+supportcase14,3,3,3,0 1 2,0 1 2,13.1928,5.4078,7.5214,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+supportcase16,3,3,3,0 1 2,0 1 2,6.8986,2.0572,2.6872,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
+timtab1,3,0,0,,,600.0000,600.0000,27.7647,600,8862d60,container (wsl); 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz; 4 cores; 5 GiB RAM; Linux-x86_64
