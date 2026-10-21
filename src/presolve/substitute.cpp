@@ -286,8 +286,8 @@ SubstitutionResult substitute(const Model& model, const Options& options, Logger
   reduced.resize_rows(mm);
   const bool col_names = model.col_names.size() == static_cast<std::size_t>(n);
   const bool row_names = model.row_names.size() == static_cast<std::size_t>(m);
-  if (!col_names) reduced.col_names.clear();
-  if (!row_names) reduced.row_names.clear();
+  if (col_names) reduced.col_names.resize(static_cast<std::size_t>(nn));
+  if (row_names) reduced.row_names.resize(static_cast<std::size_t>(mm));
   for (Index j = 0; j < nn; ++j) {
     const auto u = static_cast<std::size_t>(j);
     const auto from = static_cast<std::size_t>(out.col_to_input[u]);
