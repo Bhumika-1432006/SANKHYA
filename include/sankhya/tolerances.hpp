@@ -259,6 +259,28 @@ inline constexpr double kFillInCancellation = 1e-11;
 /// 0.01 is the standard simplex compromise between sparsity and stability (Suhl & Suhl).
 inline constexpr double kMarkowitzThreshold = 0.01;
 
+/// Column substitution from equality rows (presolve_substitution, src/presolve/
+/// substitute.cpp). The eliminated column's coefficient must be at least this fraction of
+/// the largest entry of its row and of its column: the same stability argument as a
+/// Markowitz pivot, since the substitution IS one elimination step, and it bounds the
+/// multipliers a_ie / a_re that fill-in applies by 1 / threshold.
+inline constexpr double kSubstitutionPivotThreshold = kMarkowitzThreshold;
+/// Fill-in limits on one substitution (Gondzio 1997): the row may hold at most this many
+/// entries and the column at most this many, and their Markowitz count (len - 1)(count - 1),
+/// the most entries the elimination can create, at most kSubstitutionMaxFill.
+inline constexpr Index kSubstitutionMaxRowLength = 16;
+inline constexpr Index kSubstitutionMaxColumnCount = 16;
+inline constexpr Index kSubstitutionMaxFill = 32;
+/// The stage is applied only when it removes at least this fraction of the rows. Below it
+/// the gain in iterations is small and the dual simplex takes a different path for it,
+/// which on the pilot family cost more than it saved in every arm measured: pilot87
+/// (2.8% of rows removable) went from 14.3 s to 46.7 s through a numerical_error and the
+/// unscaled retry at the 0.01 pivot threshold, to 64.6 s at 0.1 and to the 600 s limit at
+/// 0.5; pilot (4.7%) took 3,720 to 4,569 iterations against 3,487. Every Netlib instance
+/// with a larger reduction measured gained (perold 7.7%, 25fv47 7.5%, d2q06c 9.6% up to
+/// ganges 50%); bench.yml a527-measure runs 39558248485, 39579347698, 39579359625.
+inline constexpr double kSubstitutionMinRowFraction = 0.05;
+
 /// Hyper-sparse FTRAN and BTRAN (#464, lu_hyper_sparse): the symbolic reach is tried when
 /// the right-hand side has at most this fraction of m nonzeros, and abandoned for the full
 /// loops once the steps it reaches pass the same fraction. Hall & McKinnon, "Hyper-sparsity
