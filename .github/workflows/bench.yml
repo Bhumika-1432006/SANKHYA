@@ -109,6 +109,15 @@ jobs:
             echo "base_ref $BASE_REF -> $base"
           fi
 
+      # MIPLIB tier 1 from the runner cache, keyed on the committed manifest: fetch_miplib.py
+      # then checks each file's sha256 and downloads nothing, so a miplib.zib.de outage only
+      # matters to a cold cache.
+      - name: Cache the MIPLIB tier-1 instances
+        uses: actions/cache@v4
+        with:
+          path: data/miplib/*.mps.gz
+          key: miplib-tier1-${{ hashFiles('bench/runners/miplib_tier1.json') }}
+
       - name: Install toolchain
         run: |
           sudo apt-get update

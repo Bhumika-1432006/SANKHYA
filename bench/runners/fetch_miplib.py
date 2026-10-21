@@ -22,8 +22,11 @@ THREE THINGS THIS IS DELIBERATE ABOUT.
     no endpoint beyond the instance URL itself, it is identical for everyone, and the exact
     list ends up recorded in the manifest either way.
 
-3.  NOTHING IS COMMITTED. `data/miplib/` is gitignored. The manifest records the sha256 of
-    every instance downloaded, so a later run can prove it solved the same bytes.
+3.  NO INSTANCE IS COMMITTED. `data/miplib/` is gitignored. The manifest records the sha256
+    of every instance downloaded, so a later run can prove it solved the same bytes. The
+    tier-1 manifest itself is committed (bench/runners/miplib_tier1.json): the default fetch
+    reads names, URLs, hashes and published optima from it instead of from miplib.zib.de,
+    and downloads only what is missing on disk, so a ZIB outage cannot stop a warm run.
 
     python bench/runners/fetch_miplib.py                 # 30 smallest easy instances
     python bench/runners/fetch_miplib.py --count 10
@@ -59,6 +62,11 @@ SOLUTION_FILE = f"{MIPLIB}/downloads/miplib2017-v28.solu"
 EASY_LIST = f"{MIPLIB}/downloads/easy-v15.test"
 BENCHMARK_LIST = f"{MIPLIB}/downloads/benchmark-v2.test"
 TIER2_FILE = REPO_ROOT / "bench" / "runners" / "miplib_tier2.json"
+# The tier-1 manifest as it was fetched (smallest-30-easy): names, URLs, sha256 of every
+# .mps.gz and the published optimum read from SOLUTION_FILE. Committed so the default fetch
+# needs neither the solution file nor the HEAD sizing, and re-downloads nothing it already
+# has with the right sha256: a miplib.zib.de outage then blocks only a cold cache.
+TIER1_FILE = REPO_ROOT / "bench" / "runners" / "miplib_tier1.json"
 TIER2_DIR = REPO_ROOT / "data" / "miplib-tier2"
 TIER2_COUNT = 60
 TIER2_RULE = (
@@ -196,6 +204,35 @@ def choose(count: int) -> list[tuple[str, int]]:
     return sized[:count]
 
 
+def fetch_tier1_from_manifest() -> int:
+    """The default tier 1 from TIER1_FILE: an instance on disk with the recorded sha256 is
+    kept, any other is downloaded from its recorded URL and must match the recorded sha256."""
+    manifest = json.loads(TIER1_FILE.read_text(encoding="utf-8"))
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    fetched = 0
+    for name, entry in manifest["instances"].items():
+        destination = DATA_DIR / f"{name}.mps.gz"
+        on_disk = destination.read_bytes() if destination.exists() else b""
+        if on_disk and hashlib.sha256(on_disk).hexdigest() == entry["gz_sha256"]:
+            continue
+        blob = get(entry["url"])
+        if hashlib.sha256(blob).hexdigest() != entry["gz_sha256"]:
+            print(f"{name}: downloaded bytes do not match the recorded sha256", file=sys.stderr)
+            return 1
+        scratch = destination.with_suffix(destination.suffix + ".partial")
+        try:
+            scratch.write_bytes(blob)
+            scratch.replace(destination)
+        finally:
+            scratch.unlink(missing_ok=True)
+        fetched += 1
+    text = json.dumps(manifest, indent=2, sort_keys=True) + chr(10)
+    (DATA_DIR / "reference.json").write_text(text, encoding="utf-8", newline=chr(10))
+    print(f"tier 1 from {TIER1_FILE.relative_to(REPO_ROOT)}: {len(manifest['instances'])} "
+          f"instance(s), {fetched} downloaded, the rest already on disk with their sha256")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -213,6 +250,8 @@ def main() -> int:
 
     if args.select_tier2:
         return select_tier2()
+    if args.tier == 1 and not args.instances and args.count == 30 and TIER1_FILE.exists():
+        return fetch_tier1_from_manifest()
     data_dir = DATA_DIR if args.tier == 1 else TIER2_DIR
     data_dir.mkdir(parents=True, exist_ok=True)
     optima = published_optima()
