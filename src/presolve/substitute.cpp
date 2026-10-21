@@ -218,8 +218,8 @@ SubstitutionResult substitute(const Model& model, const Options& options, Logger
   const double feasibility = options.get_double("primal_feasibility_tolerance");
 
   Work w;
-  w.rows.assign(static_cast<std::size_t>(m), {});
-  w.cols.assign(static_cast<std::size_t>(n), {});
+  w.rows.resize(static_cast<std::size_t>(m));
+  w.cols.resize(static_cast<std::size_t>(n));
   w.count.assign(static_cast<std::size_t>(n), 0);
   w.col_lower = model.col_lower;
   w.col_upper = model.col_upper;
