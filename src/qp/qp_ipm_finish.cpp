@@ -7,6 +7,8 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cstddef>
+#include <cstdio>
 #include <utility>
 #include <vector>
 
@@ -398,14 +400,33 @@ bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
         if (r < 0.0 && has_upper[j]) consider(j, -r, Pin::kUpper);
       }
     }
+    if (FILE* f = std::fopen("bench/results/finish-rounds.txt", "a")) {  // DIAGNOSTIC ONLY
+      int pinned = 0;
+      for (const Pin p : pin) pinned += p != Pin::kFree;
+      std::fprintf(f, "n=%zu m=%zu round=%d pinned=%d worst=%zd from=%d to=%d size=%.3e v=%.6e\n",
+                   nc, nr, round, pinned, worst == nc ? std::ptrdiff_t{-1} : std::ptrdiff_t(worst),
+                   worst == nc ? -9 : int(pin[worst]), int(to), worst_size,
+                   worst == nc ? 0.0 : c.v[worst]);
+      std::fclose(f);
+    }
     if (worst == nc) {
       settled = true;
     } else {
       // A column asked to change a third time is cycling (huestis: pinned, released, pinned
       // again on the same column): the working set is not converging, so stop.
-      if (++changes[worst] > 2) return false;
+      if (++changes[worst] > 2) {
+        if (FILE* f = std::fopen("bench/results/finish-rounds.txt", "a")) {
+          std::fprintf(f, "n=%zu CYCLE on %zu\n", nc, worst);
+          std::fclose(f);
+        }
+        return false;
+      }
       pin[worst] = to;
     }
+  }
+  if (FILE* f = std::fopen("bench/results/finish-rounds.txt", "a")) {
+    std::fprintf(f, "n=%zu settled=%d\n", nc, int(settled));
+    std::fclose(f);
   }
   if (!settled) return false;
 
@@ -419,6 +440,11 @@ bool active_set_finish(const Standard& s, const std::vector<bool>& has_lower,
   const double primal_rel = inf_norm(rp) / (1.0 + std::max(inf_norm(mv), inf_norm(s.b)));
   const double dual_rel =
       inf_norm(rd) / (1.0 + std::max({inf_norm(hv), inf_norm(s.g), inf_norm(mty)}));
+  if (FILE* f = std::fopen("bench/results/finish-rounds.txt", "a")) {
+    std::fprintf(f, "n=%zu accept? primal_rel=%.3e dual_rel=%.3e tol=%.1e\n", nc, primal_rel,
+                 dual_rel, tolerance);
+    std::fclose(f);
+  }
   if (!(primal_rel <= tolerance) || !(dual_rel <= tolerance)) return false;
   for (std::size_t j = 0; j < nc; ++j) {
     if (has_lower[j] && c.v[j] < s.lower[j] - primal_tolerance) return false;
