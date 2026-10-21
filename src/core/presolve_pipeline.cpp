@@ -152,6 +152,43 @@ PresolveOutcome run_with_presolve(const Model& model, const Options& options, Lo
     }();
     ProfileScope timed(logger.profiler(), "postsolve");
     inner = presolve::undo_substitution(substituted, reduced.model, deeper);
+    {
+      Solution probe = deeper;
+      probe.recompute_quality(substituted.model);
+      logger.info("MEASURE-SUB M2 status {} dinf {:.3e} pinf {:.3e} cs {:.3e} | M1 dinf {:.3e} pinf {:.3e} cs {:.3e} obj2 {:.10e} obj1 {:.10e}",
+                  to_string(deeper.status), probe.dual_infeasibility, probe.primal_infeasibility,
+                  probe.complementarity_violation, inner.dual_infeasibility,
+                  inner.primal_infeasibility, inner.complementarity_violation, probe.objective,
+                  inner.objective);
+      // the worst column of M1 by sign violation
+      const Model& m1 = reduced.model;
+      double worst = 0.0; Index wj = -1;
+      for (Index j = 0; j < m1.num_cols(); ++j) {
+        const auto u = static_cast<std::size_t>(j);
+        if (inner.col_dual.size() != static_cast<std::size_t>(m1.num_cols())) break;
+        const double d = inner.col_dual[u] * m1.sense_multiplier();
+        const double x = inner.col_value[u];
+        double v = 0.0;
+        const bool at_lo = is_finite_bound(m1.col_lower[u]) && std::fabs(x - m1.col_lower[u]) <= 1e-7 * std::max(1.0, std::fabs(x));
+        const bool at_hi = is_finite_bound(m1.col_upper[u]) && std::fabs(x - m1.col_upper[u]) <= 1e-7 * std::max(1.0, std::fabs(x));
+        if (!at_lo && d > 0) v = d;
+        if (!at_hi && d < 0) v = std::max(v, -d);
+        if (v > worst) { worst = v; wj = j; }
+      }
+      if (wj >= 0) {
+        bool eliminated = true;
+        for (const Index c : substituted.col_to_input) if (c == wj) eliminated = false;
+        int rec_kind = -1;
+        for (const auto& rec : substituted.records) {
+          if (rec.column == wj) rec_kind = rec.carried ? 1 : 0;
+          if (rec.carried && rec.partner == wj) rec_kind = 2;
+        }
+        logger.info("MEASURE-SUB worst col {} d {:.3e} x {:.6e} lo {:.6e} hi {:.6e} eliminated {} kind {} status {}",
+                    wj, inner.col_dual[static_cast<std::size_t>(wj)], inner.col_value[static_cast<std::size_t>(wj)],
+                    m1.col_lower[static_cast<std::size_t>(wj)], m1.col_upper[static_cast<std::size_t>(wj)], eliminated, rec_kind,
+                    inner.col_status.empty() ? -1 : static_cast<int>(inner.col_status[static_cast<std::size_t>(wj)]));
+      }
+    }
   } else {
     ProfileScope timed(logger.profiler(), "engine");
     inner = run_engine(reduced.model);

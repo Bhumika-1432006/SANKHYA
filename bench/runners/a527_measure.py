@@ -39,7 +39,7 @@ for name in names:
         print(f"  MEASURE {m}")
     for h in hand:
         print(f"  HANDOVER at {h[1]}: {h[0][:200]}")
-    for x in re.findall(r".*(?:Substitution|route|unscaled|guard|violat|refut|withdr|numerical|retry|postsolve|Status|status).*", log)[:40]:
+    for x in re.findall(r".*(?:MEASURE-SUB|Substitution|route|unscaled|guard|violat|refut|withdr|numerical|retry|postsolve|Status|status).*", log)[:40]:
         print("  LOG " + x[:300])
     for x in pre[:1]:
         print(f"  {x[:240]}")
