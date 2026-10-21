@@ -457,8 +457,8 @@ const std::vector<OptionSpec>& Options::registry() {
                  "recovered exactly. Fill-in is limited per substitution. Only read when "
                  "presolve is on, and to the simplex only, never the interior point or PDHG. "
                  "ON since its A/B on "
-                 "4bb93e7 (bench/results/option-ab-*-"
-                 "substitution-4bb93e7.csv): nothing lost, SGM iterations -11% Netlib, -12% "
+                 "b4bfb56 (bench/results/option-ab-*-"
+                 "substitution-off-b4bfb56.csv): nothing lost, SGM iterations -11% Netlib, -7% "
                  "Kennington, -9% refinery.",
                  0.0,
                  0.0,
