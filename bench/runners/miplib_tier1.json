@@ -1,0 +1,219 @@
+{
+  "available_with_proven_optimum": 775,
+  "easy_list": "https://miplib.zib.de/downloads/easy-v15.test",
+  "instances": {
+    "b-ball": {
+      "gz_bytes": 1381,
+      "gz_sha256": "67c5cb2dc43704d11f456537f6a951cb8d5bfb6d74c90fb1827a3bc34abf3586",
+      "name": "b-ball",
+      "published_optimal": -1.50000000000001,
+      "url": "https://miplib.zib.de/WebData/instances/b-ball.mps.gz"
+    },
+    "ej": {
+      "gz_bytes": 197,
+      "gz_sha256": "8a427d75008db853496fc29759c11bb77fddd5e0a0934601710f95a0a1935b00",
+      "name": "ej",
+      "published_optimal": 25508.0,
+      "url": "https://miplib.zib.de/WebData/instances/ej.mps.gz"
+    },
+    "enlight8": {
+      "gz_bytes": 2382,
+      "gz_sha256": "012d661241f3ef70a7ae28d89408a030ed0b7c538ccbd1e0d820af49fd7397a3",
+      "name": "enlight8",
+      "published_optimal": 27.0,
+      "url": "https://miplib.zib.de/WebData/instances/enlight8.mps.gz"
+    },
+    "enlight_hard": {
+      "gz_bytes": 3872,
+      "gz_sha256": "942168c2126a2a91ae3ec1ededea59bc1af0cad55f94223edf4c03d20e831f66",
+      "name": "enlight_hard",
+      "published_optimal": 37.0,
+      "url": "https://miplib.zib.de/WebData/instances/enlight_hard.mps.gz"
+    },
+    "f2gap40400": {
+      "gz_bytes": 8082,
+      "gz_sha256": "f592e8d127e1f3c5d36d65b05ddcb88ad5bf34d23de7e22941fd050221314a74",
+      "name": "f2gap40400",
+      "published_optimal": 20771.99999999983,
+      "url": "https://miplib.zib.de/WebData/instances/f2gap40400.mps.gz"
+    },
+    "flugpl": {
+      "gz_bytes": 889,
+      "gz_sha256": "d0b817caf496c95336f64815a740d6a54db1e37924785fcfd3c5da3ee6a15640",
+      "name": "flugpl",
+      "published_optimal": 1201500.0,
+      "url": "https://miplib.zib.de/WebData/instances/flugpl.mps.gz"
+    },
+    "gen-ip016": {
+      "gz_bytes": 7444,
+      "gz_sha256": "ba1599099bccf0cf78cbc7e4c181f03a3af877b1ba596dac67ad296c81220bee",
+      "name": "gen-ip016",
+      "published_optimal": -9476.155197,
+      "url": "https://miplib.zib.de/WebData/instances/gen-ip016.mps.gz"
+    },
+    "gen-ip054": {
+      "gz_bytes": 5884,
+      "gz_sha256": "b5089ebc97c43bd583fcadf30955b8800861044d632d747c0b7ac73f19b9e6f3",
+      "name": "gen-ip054",
+      "published_optimal": 6840.96564179,
+      "url": "https://miplib.zib.de/WebData/instances/gen-ip054.mps.gz"
+    },
+    "gr4x6": {
+      "gz_bytes": 925,
+      "gz_sha256": "ecb539938284a6453b8b94f47dfdd88d635e47cfd2977365f7246bb62ed562c7",
+      "name": "gr4x6",
+      "published_optimal": 202.3499999999979,
+      "url": "https://miplib.zib.de/WebData/instances/gr4x6.mps.gz"
+    },
+    "gt2": {
+      "gz_bytes": 2810,
+      "gz_sha256": "67e1ac3d5504e6b033cecd78b66091e3b64952a90147613d7c87e9652422a005",
+      "name": "gt2",
+      "published_optimal": 21165.99999999978,
+      "url": "https://miplib.zib.de/WebData/instances/gt2.mps.gz"
+    },
+    "k16x240b": {
+      "gz_bytes": 7284,
+      "gz_sha256": "9419777aed4f6f709363418843c01d447253f8545ab886dda1834c98f82bed71",
+      "name": "k16x240b",
+      "published_optimal": 11392.99999884458,
+      "url": "https://miplib.zib.de/WebData/instances/k16x240b.mps.gz"
+    },
+    "markshare1": {
+      "gz_bytes": 1607,
+      "gz_sha256": "83516aa1a1d503f01fcea273586406486623370158a119164bd2ffa3594d4752",
+      "name": "markshare1",
+      "published_optimal": 0.9999999999990905,
+      "url": "https://miplib.zib.de/WebData/instances/markshare1.mps.gz"
+    },
+    "markshare_4_0": {
+      "gz_bytes": 797,
+      "gz_sha256": "1a1feb04f5637db9f69be53bd6224fcd9fe5b8d750870d9b2002b535d25f4353",
+      "name": "markshare_4_0",
+      "published_optimal": 1.0,
+      "url": "https://miplib.zib.de/WebData/instances/markshare_4_0.mps.gz"
+    },
+    "markshare_5_0": {
+      "gz_bytes": 1174,
+      "gz_sha256": "5309e16f917ec25e9f70402a8c039d4595a91c9499f682b1483babfff5f55b4a",
+      "name": "markshare_5_0",
+      "published_optimal": 1.0,
+      "url": "https://miplib.zib.de/WebData/instances/markshare_5_0.mps.gz"
+    },
+    "neos-1425699": {
+      "gz_bytes": 3021,
+      "gz_sha256": "66f7ae93f5715a025ebc2d2ff9b90abdd62b7bd1edefc48307ec38c19d9e722e",
+      "name": "neos-1425699",
+      "published_optimal": 3179698976.996124,
+      "url": "https://miplib.zib.de/WebData/instances/neos-1425699.mps.gz"
+    },
+    "neos-3072252-nete": {
+      "gz_bytes": 8254,
+      "gz_sha256": "91c4f0c863a0597d78ae6ad67a22d711f522319eb4365f7d4b9ec6b3102c01d2",
+      "name": "neos-3072252-nete",
+      "published_optimal": 11807698.0,
+      "url": "https://miplib.zib.de/WebData/instances/neos-3072252-nete.mps.gz"
+    },
+    "neos-3611689-kaihu": {
+      "gz_bytes": 8086,
+      "gz_sha256": "60004f4ee9cef8f8e7e9d811d5de63e75e6e96b577a54c923ef1971b89a87039",
+      "name": "neos-3611689-kaihu",
+      "published_optimal": 119.0,
+      "url": "https://miplib.zib.de/WebData/instances/neos-3611689-kaihu.mps.gz"
+    },
+    "neos-5140963-mincio": {
+      "gz_bytes": 5460,
+      "gz_sha256": "cf5cafaab453d0d450f7e654dfc85e0492a1a20d9229c0371158a6cc88b1de4b",
+      "name": "neos-5140963-mincio",
+      "published_optimal": 14393.0,
+      "url": "https://miplib.zib.de/WebData/instances/neos-5140963-mincio.mps.gz"
+    },
+    "neos-5192052-neckar": {
+      "gz_bytes": 3257,
+      "gz_sha256": "a683554818c078fca80fe21c0f452463d5d6a051f6898d9da641d5d9f9575906",
+      "name": "neos-5192052-neckar",
+      "published_optimal": -11670000.0,
+      "url": "https://miplib.zib.de/WebData/instances/neos-5192052-neckar.mps.gz"
+    },
+    "neos5": {
+      "gz_bytes": 5686,
+      "gz_sha256": "2888e9aeb10a4cf16d3b9ad221302fd3de815ce1454b31e660ebd060589c1072",
+      "name": "neos5",
+      "published_optimal": 15.0,
+      "url": "https://miplib.zib.de/WebData/instances/neos5.mps.gz"
+    },
+    "noswot": {
+      "gz_bytes": 4492,
+      "gz_sha256": "f4ac4805801d06bd12e7f67204101928413f7df27fa347bfca1c918e29bca86b",
+      "name": "noswot",
+      "published_optimal": -41.00000885,
+      "url": "https://miplib.zib.de/WebData/instances/noswot.mps.gz"
+    },
+    "opt1217": {
+      "gz_bytes": 7467,
+      "gz_sha256": "21f16d1bd1d917a2b17af6b7b40f6899d75ae4dbf0621f14da71ed2471280124",
+      "name": "opt1217",
+      "published_optimal": -16.00000000000012,
+      "url": "https://miplib.zib.de/WebData/instances/opt1217.mps.gz"
+    },
+    "p0201": {
+      "gz_bytes": 7665,
+      "gz_sha256": "2ecd7f035c546453ffd5e4fe12cf41c111be192411c4cb7e268b3c8ba81e5335",
+      "name": "p0201",
+      "published_optimal": 7614.999999999997,
+      "url": "https://miplib.zib.de/WebData/instances/p0201.mps.gz"
+    },
+    "pk1": {
+      "gz_bytes": 4005,
+      "gz_sha256": "6c64530538b254a8ae648f8f8f188847366ae52da560fdec0ad290c642973ba0",
+      "name": "pk1",
+      "published_optimal": 11.0,
+      "url": "https://miplib.zib.de/WebData/instances/pk1.mps.gz"
+    },
+    "ran12x21": {
+      "gz_bytes": 8159,
+      "gz_sha256": "15ad9b8724f5ba4f6ac958e442040a68abab37943e6a0a4cdf59f8a24e03e2b6",
+      "name": "ran12x21",
+      "published_optimal": 3663.999999980964,
+      "url": "https://miplib.zib.de/WebData/instances/ran12x21.mps.gz"
+    },
+    "ran13x13": {
+      "gz_bytes": 5403,
+      "gz_sha256": "ddf6f7b055f8cc7442c39a5f3853c3813a8b1f18ae66378d752938337b9cc579",
+      "name": "ran13x13",
+      "published_optimal": 3252.0,
+      "url": "https://miplib.zib.de/WebData/instances/ran13x13.mps.gz"
+    },
+    "rlp1": {
+      "gz_bytes": 3895,
+      "gz_sha256": "edd6f521c7abe8b2de7425601d1739599b44d27bc192e8c757fe9b5ba03fa2c3",
+      "name": "rlp1",
+      "published_optimal": 14.99999999990919,
+      "url": "https://miplib.zib.de/WebData/instances/rlp1.mps.gz"
+    },
+    "supportcase14": {
+      "gz_bytes": 7112,
+      "gz_sha256": "a8cb263fed392f55c3a506274e69b5172ae82d308cf05240bde0c8070df7c5f5",
+      "name": "supportcase14",
+      "published_optimal": 288.0,
+      "url": "https://miplib.zib.de/WebData/instances/supportcase14.mps.gz"
+    },
+    "supportcase16": {
+      "gz_bytes": 6393,
+      "gz_sha256": "2063fbcfb893abb2c80662ba88e473b13cbc89402aeae2c2f2b7d4c19647b663",
+      "name": "supportcase16",
+      "published_optimal": 288.0,
+      "url": "https://miplib.zib.de/WebData/instances/supportcase16.mps.gz"
+    },
+    "timtab1": {
+      "gz_bytes": 7077,
+      "gz_sha256": "5867d1a9c1067a849211c1a61bdb8839fb0025255dde09989d0ed333e0674d7a",
+      "name": "timtab1",
+      "published_optimal": 764771.99999978,
+      "url": "https://miplib.zib.de/WebData/instances/timtab1.mps.gz"
+    }
+  },
+  "selection": "smallest-30-easy",
+  "solution_file": "https://miplib.zib.de/downloads/miplib2017-v28.solu",
+  "source": "https://miplib.zib.de"
+}
