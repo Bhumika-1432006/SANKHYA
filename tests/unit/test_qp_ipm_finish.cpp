@@ -347,5 +347,49 @@ TEST(QpIpmFinish, ActiveSetFinishIsExactWhenTheActiveRowsAreDependent) {
   EXPECT_NEAR(zl[0], 1.0, 1e-12);
 }
 
+TEST(QpIpmFinish, ActiveSetFinishKeepsCoefficientsBelowTheStructuralZeroThreshold) {
+  // #1079, the shape of huestis: a row whose every coefficient is under tol::kZeroDrop, a
+  // moderate x and a row dual near 1e11, beside an ordinary row.
+  //   min 0.5 (x1^2 + x2^2 + x3^2)  s.t.  1e-12 x1 + 2e-12 x2 = 1e-12,  x3 = 1,  x >= 0.
+  // The optimum is x = (0.2, 0.4, 1) with y = (x1 / 1e-12, x3) = (2e11, 1). Dropped as
+  // structural zeros the first row is empty, and no y meets stationarity on x1 and x2; judged
+  // dependent beside the second row (its norm is 2e-12 of that row's, under the rank
+  // tolerance), it gets no multiplier of its own either.
+  Model model;
+  model.sense = ObjSense::kMinimize;
+  model.col_cost = {0.0, 0.0, 0.0};
+  model.col_lower = {0.0, 0.0, 0.0};
+  model.col_upper = {kInfinity, kInfinity, kInfinity};
+  model.col_type = {VarType::kContinuous, VarType::kContinuous, VarType::kContinuous};
+  model.row_lower = {1e-12, 1.0};
+  model.row_upper = {1e-12, 1.0};
+  model.matrix.reset(2, 3);
+  model.matrix.add_entry(0, 0, 1e-12);
+  model.matrix.add_entry(0, 1, 2e-12);
+  model.matrix.add_entry(1, 2, 1.0);
+  model.matrix.finalize(0.0);
+  model.hessian.reset(3, 3);
+  for (Index j = 0; j < 3; ++j) model.hessian.add_entry(j, j, 1.0);
+  model.hessian.finalize();
+  const qp::ipm_detail::Standard s = qp::ipm_detail::standardize(model);
+  ASSERT_EQ(s.m.num_nonzeros(), 3);  // the premise: standardize keeps them
+  const Bounds b = finite_bounds(s);
+  // As an interior point leaves it: a little off the optimum in both x and y.
+  std::vector<double> v = {0.2 * (1.0 + 1e-6), 0.4 * (1.0 - 1e-6), 1.0 + 1e-6};
+  std::vector<double> y = {2e11 * (1.0 + 1e-6), 1.0 - 1e-6};
+  std::vector<double> zl(3, 0.0), zu(3, 0.0);
+  const Options options;
+  ASSERT_TRUE(qp::ipm_detail::active_set_finish(
+      s, b.lower, b.upper, options.get_double("qp_ipm_tolerance"),
+      options.get_double("primal_feasibility_tolerance"),
+      options.get_double("qp_ipm_regularization"), [] { return false; }, &v, &y, &zl, &zu));
+  // To the relative accuracy the gate asks, not exact arithmetic.
+  EXPECT_NEAR(v[0] / 0.2, 1.0, 1e-7);
+  EXPECT_NEAR(v[1] / 0.4, 1.0, 1e-7);
+  EXPECT_NEAR(v[2], 1.0, 1e-7);
+  EXPECT_NEAR(y[0] / 2e11, 1.0, 1e-7);
+  EXPECT_NEAR(y[1], 1.0, 1e-7);
+}
+
 }  // namespace
 }  // namespace sankhya

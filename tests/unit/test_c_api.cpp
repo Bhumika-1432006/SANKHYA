@@ -136,6 +136,24 @@ TEST(CApi, SettingACoefficientTwiceReplacesItRatherThanSummingIt) {
   EXPECT_EQ(sankhya_model_num_nonzeros(model), 0);
 }
 
+TEST(CApi, KeepsACoefficientBelowTheStructuralZeroThreshold) {
+  //   minimise -x  s.t.  1e-12 x <= 1,  x >= 0   ->   x = 1e12.
+  // A coefficient the caller set is model data however small it is (#1079). Dropped at the
+  // 1e-11 fill threshold, the row is empty and the problem is unbounded.
+  ModelHandle model;
+  int x = -1;
+  int row = -1;
+  ASSERT_EQ(sankhya_model_add_column(model, -1.0, 0.0, sankhya_infinity(), 0, "x", &x),
+            SANKHYA_OK);
+  ASSERT_EQ(sankhya_model_add_row(model, -sankhya_infinity(), 1.0, "c", &row), SANKHYA_OK);
+  ASSERT_EQ(sankhya_model_set_coefficient(model, row, x, 1e-12), SANKHYA_OK);
+
+  SolutionHandle solution;
+  ASSERT_EQ(sankhya_solve(model, nullptr, &solution.handle), SANKHYA_OK);
+  ASSERT_EQ(sankhya_solution_status(solution.handle), SANKHYA_OPTIMAL);
+  EXPECT_NEAR(sankhya_solution_objective(solution.handle) / -1e12, 1.0, 1e-9);
+}
+
 TEST(CApi, SolvesAQpAndTakesTheHessianInEitherTriangle) {
   // minimise 0.5 * (2x^2 + 2y^2) - 2x - 6y  subject to x + y <= 3, x, y >= 0.
   // Unconstrained stationary point is (1, 3), which violates the row, so the optimum sits on

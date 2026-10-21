@@ -369,7 +369,7 @@ void materialise(const sankhya_model& handle, sankhya::Model* out) {
       out->matrix.add_entry(static_cast<sankhya::Index>(entry.first.first),
                             static_cast<sankhya::Index>(entry.first.second), entry.second);
     }
-    out->matrix.finalize();
+    out->matrix.finalize(0.0);
   }
 
   if (!handle.quadratic.empty()) {
@@ -379,7 +379,7 @@ void materialise(const sankhya_model& handle, sankhya::Model* out) {
       out->hessian.add_entry(static_cast<sankhya::Index>(entry.first.first),
                              static_cast<sankhya::Index>(entry.first.second), entry.second);
     }
-    out->hessian.finalize();
+    out->hessian.finalize(0.0);
   }
 }
 
