@@ -448,14 +448,16 @@ const std::vector<OptionSpec>& Options::registry() {
                  {}});
     s.push_back({"presolve_substitution",
                  OptionType::Bool,
-                 false,
+                 true,
                  "LP only: after presolve, substitute columns out of equality rows "
                  "(src/presolve/substitute.cpp; Andersen and Andersen 1995, sec. 5-6): a "
                  "column implied free by an equality row, or either column of a doubleton "
                  "equation with its box carried onto the other, is eliminated with the row, "
                  "chains included, and the records are undone in reverse with the duals "
                  "recovered exactly. Fill-in is limited per substitution. Only read when "
-                 "presolve is on. OFF until its A/B on main.",
+                 "presolve is on. ON since its A/B on 4bb93e7 (bench/results/option-ab-*-"
+                 "substitution-4bb93e7.csv): nothing lost, SGM iterations -11% Netlib, -12% "
+                 "Kennington, -9% refinery.",
                  0.0,
                  0.0,
                  {}});
