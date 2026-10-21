@@ -556,7 +556,10 @@ std::optional<Solution> Simplex::dual_loop(Timer& timer, Count* iterations_io) {
   dual_row_rejected_.assign(static_cast<std::size_t>(m_), 0);
   dual_rows_rejected_now_ = 0;
   by_row_.build(model_.matrix);  // once per solve; the pattern never changes (#243)
-  pivot_row_single_thread_ = options_.get_int("threads") == 1;
+  // Serial also when the gather would not get a team (#514): at threads > 1 a small model
+  // otherwise kept the column gather, which reads all of A, for a team it never forks.
+  pivot_row_single_thread_ = options_.get_int("threads") == 1 ||
+                             !omp_worth_it(model_.num_nonzeros() + total_);
 #ifndef SANKHYA_HAVE_OPENMP
   pivot_row_single_thread_ = true;  // no thread pool: the gather is serial whatever was asked
 #endif
