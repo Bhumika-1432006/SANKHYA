@@ -4,10 +4,11 @@ import json, re, subprocess, sys, tempfile, time
 from pathlib import Path
 
 binary = sys.argv[1]
-extra = sys.argv[2:]
+extra = [a for a in sys.argv[2:] if not a.startswith("names=")]
+namearg = [a[6:] for a in sys.argv[2:] if a.startswith("names=")]
 import os
 names = os.environ.get("A527_NAMES") or "stocfor3 dfl001 pilot87 pilot greenbea greenbeb d2q06c stocfor2 woodw ganges bnl2 fit2p bnl1 pilot.we 25fv47 degen3 cycle"
-names = names.split()
+names = (namearg[0].replace(",", " ") if namearg else names).split()
 try:
     import highspy
 except ImportError:
@@ -38,6 +39,8 @@ for name in names:
         print(f"  MEASURE {m}")
     for h in hand:
         print(f"  HANDOVER at {h[1]}: {h[0][:200]}")
+    for x in re.findall(r".*(?:Substitution|route|unscaled|guard|violat|refut|withdr|numerical|retry|postsolve|Status|status).*", log)[:40]:
+        print("  LOG " + x[:300])
     for x in pre[:1]:
         print(f"  {x[:240]}")
     for x in re.findall(r"presolve: .*", log):
