@@ -1660,6 +1660,17 @@ const std::vector<OptionSpec>& Options::registry() {
                  0.0,
                  1024.0,
                  {}});
+    s.push_back({"omp_min_work",
+                 OptionType::Int,
+                 std::int64_t{tol::kOmpMinParallelWork},
+                 "The least work (nonzeros plus columns read) for which one of the column "
+                 "loops `threads` sizes forks an OpenMP team (#514); a smaller loop runs on "
+                 "the calling thread, where the team's fork and join would cost more than the "
+                 "loop. The loop computes the same numbers either way. 0 forks a team on "
+                 "every loop, the behaviour before this option.",
+                 0.0,
+                 1e12,
+                 {}});
     // Registered as planned since Phase 7 and implemented in #288. Its default was `true`
     // while nothing read it; it is `false` now that something does, because the mode REFUSES
     // a wall-clock time_limit and a caller who asked for one must keep getting it.

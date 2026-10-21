@@ -872,6 +872,15 @@ inline constexpr double kRootCutRowShare = 1.0;
 /// and the evaluation stride less often; 32 is under the evaluation interval of 40.
 inline constexpr Count kPdhgDeviceLoopBlock = 32;
 
+/// The least work, in nonzeros plus columns read, for which a column loop of the simplex
+/// (reduced costs, the dual's pivot row), the sparse transpose product or a PDHG vector update
+/// forks an OpenMP team (#514). Below it the loop runs on the calling thread: the fork and
+/// join of a team cost microseconds on an idle machine and far more on a loaded one, where
+/// every barrier waits for the scheduler, and a node LP of a few hundred nonzeros does its
+/// whole loop in less. Default of the `omp_min_work` option; 0 restores a team on every loop.
+/// A choice, set by the A/B in the PR that introduced it, not a measured crossover.
+inline constexpr Count kOmpMinParallelWork = 50'000;
+
 /// CPU PDHG parallel vector updates (#487): the fixed chunk the movement and interaction
 /// sums are taken in. A constant, not a function of the thread count, which is what makes
 /// the sums the same bits at any thread count. The chunk is also the unit of work a thread
