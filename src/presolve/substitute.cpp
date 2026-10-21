@@ -21,7 +21,9 @@ using Entry = std::pair<Index, double>;
 /// Passes over the rows; each pass that substitutes nothing ends the stage first.
 constexpr int kMaxPasses = 8;
 
-bool finite(double v) { return is_finite_bound(v); }
+bool finite(double v) {
+  return is_finite_bound(v);
+}
 
 struct Work {
   std::vector<std::vector<Entry>> rows;  ///< live entries, by row (authoritative)
@@ -51,7 +53,9 @@ struct Work {
       const std::ptrdiff_t p = find(i, col);
       if (p < 0) continue;
       list[kept++] = i;
-      if (i != skip_row) out.emplace_back(i, rows[static_cast<std::size_t>(i)][static_cast<std::size_t>(p)].second);
+      if (i != skip_row)
+        out.emplace_back(i,
+                         rows[static_cast<std::size_t>(i)][static_cast<std::size_t>(p)].second);
     }
     list.resize(kept);
     return out;
@@ -69,8 +73,14 @@ std::pair<double, double> activity_without(const Work& w, Index row, Index skip)
     const double u = w.col_upper[static_cast<std::size_t>(k)];
     const double at_lo = a > 0.0 ? l : u;  // the bound that gives the least activity
     const double at_hi = a > 0.0 ? u : l;
-    if (finite(at_lo)) lo += a * at_lo; else lo_inf = true;
-    if (finite(at_hi)) hi += a * at_hi; else hi_inf = true;
+    if (finite(at_lo))
+      lo += a * at_lo;
+    else
+      lo_inf = true;
+    if (finite(at_hi))
+      hi += a * at_hi;
+    else
+      hi_inf = true;
   }
   return {lo_inf ? -kInfinity : lo, hi_inf ? kInfinity : hi};
 }
@@ -110,7 +120,8 @@ void eliminate(Work* w, Index r, Index e, Substitution* rec) {
         v += added;
         // Cancellation is rounding, not data (#792): the same relative test presolve.cpp
         // applies to its own fill-in.
-        if (std::fabs(v) <= tol::kFillInCancellation * std::max(std::fabs(before), std::fabs(added))) {
+        if (std::fabs(v) <=
+            tol::kFillInCancellation * std::max(std::fabs(before), std::fabs(added))) {
           row.erase(row.begin() + p);
           --w->count[static_cast<std::size_t>(k)];
         }
@@ -143,7 +154,8 @@ bool try_row(Work* w, Index r, SubstitutionResult* out) {
   // Fewest entries first: the least fill-in.
   std::vector<Entry> order(row.begin(), row.end());
   std::stable_sort(order.begin(), order.end(), [&](const Entry& x, const Entry& y) {
-    return w->count[static_cast<std::size_t>(x.first)] < w->count[static_cast<std::size_t>(y.first)];
+    return w->count[static_cast<std::size_t>(x.first)] <
+           w->count[static_cast<std::size_t>(y.first)];
   });
   for (const auto& [e, a] : order) {
     const auto ue = static_cast<std::size_t>(e);
@@ -157,8 +169,9 @@ bool try_row(Work* w, Index r, SubstitutionResult* out) {
     if (std::fabs(a) < tol::kSubstitutionPivotThreshold * col_max) continue;
 
     const auto implied = implied_range(a, rhs, activity_without(*w, r, e));
-    const bool implied_free = (!finite(w->col_lower[ue]) || implied.first >= w->col_lower[ue]) &&
-                              (!finite(w->col_upper[ue]) || implied.second <= w->col_upper[ue]);
+    const bool implied_free =
+        (!finite(w->col_lower[ue]) || implied.first >= w->col_lower[ue]) &&
+        (!finite(w->col_upper[ue]) || implied.second <= w->col_upper[ue]);
     Substitution rec;
     if (!implied_free) {
       if (len != 2) continue;
@@ -169,8 +182,10 @@ bool try_row(Work* w, Index r, SubstitutionResult* out) {
       if (std::fabs(b) < tol::kSubstitutionPivotThreshold * row_max) continue;
       const double le = w->col_lower[ue], he = w->col_upper[ue];
       // x_k = (rhs - a x_e) / b, monotone in x_e with slope -a / b.
-      const double at_le = finite(le) ? (rhs - a * le) / b : (-a / b > 0 ? -kInfinity : kInfinity);
-      const double at_he = finite(he) ? (rhs - a * he) / b : (-a / b > 0 ? kInfinity : -kInfinity);
+      const double at_le =
+          finite(le) ? (rhs - a * le) / b : (-a / b > 0 ? -kInfinity : kInfinity);
+      const double at_he =
+          finite(he) ? (rhs - a * he) / b : (-a / b > 0 ? kInfinity : -kInfinity);
       const double lo = std::max(w->col_lower[uk], std::min(at_le, at_he));
       const double hi = std::min(w->col_upper[uk], std::max(at_le, at_he));
       if (finite(lo) && finite(hi) && lo > hi) continue;  // infeasible: the engine says so

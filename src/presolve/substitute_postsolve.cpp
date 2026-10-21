@@ -70,7 +70,8 @@ void undo_farkas(const SubstitutionResult& result, std::vector<double>* y) {
   for (auto it = result.records.rbegin(); it != result.records.rend(); ++it) {
     double sum = 0.0;
     if (it->column >= 0) {
-      for (const auto& [i, a] : it->column_entries) sum += a * (*y)[static_cast<std::size_t>(i)];
+      for (const auto& [i, a] : it->column_entries)
+        sum += a * (*y)[static_cast<std::size_t>(i)];
       sum = -sum / it->coefficient;
     }
     (*y)[static_cast<std::size_t>(it->row)] = sum;
@@ -143,9 +144,11 @@ Solution undo_substitution(const SubstitutionResult& result, const Model& input,
         // (substitute.hpp): its sign says which of the partner's bounds it presses on. A
         // bound its own box has as well keeps x_e basic; only a carried one moves the dual.
         double d_k = rec.partner_cost - rec.partner_coefficient * y_r;
-        for (const auto& [i, a] : rec.partner_entries) d_k -= a * y[static_cast<std::size_t>(i)];
+        for (const auto& [i, a] : rec.partner_entries)
+          d_k -= a * y[static_cast<std::size_t>(i)];
         const double pressing = input.sense_multiplier() * d_k;
-        partner_carries = (pressing > 0.0 && carried_lower()) || (pressing < 0.0 && carried_upper());
+        partner_carries =
+            (pressing > 0.0 && carried_lower()) || (pressing < 0.0 && carried_upper());
         if (partner_carries) y_r += d_k / rec.partner_coefficient;
       }
       y[ur] = y_r;

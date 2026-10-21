@@ -54,7 +54,7 @@ struct Substitution {
   Index column = -1;       ///< the column eliminated
   double coefficient = 0;  ///< a_re
   double rhs = 0;
-  double cost = 0;  ///< c_e at the time
+  double cost = 0;   ///< c_e at the time
   double lower = 0;  ///< x_e's bounds at the time
   double upper = 0;
   /// Row r's other entries at the time (column, a_rk).
