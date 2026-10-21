@@ -9,7 +9,6 @@
 
 #include "mip/debug_solution.hpp"
 #include "presolve/presolve.hpp"
-#include "presolve/substitute.hpp"
 #include "sankhya/certificate.hpp"
 #include "sankhya/io.hpp"
 #include "util/profiler.hpp"
@@ -137,30 +136,10 @@ PresolveOutcome run_with_presolve(const Model& model, const Options& options, Lo
     }
   }
 
-  // Column substitution from equality rows (presolve_substitution, LP only): a stage of its
-  // own on presolve's reduced model, undone before presolve's own postsolve.
-  Solution inner;
-  presolve::SubstitutionResult substituted;
-  // Not under an explicitly chosen interior point or PDHG: its A/B ran the default engine
-  // choice, and on the explicit interior point the crossover on cycle stopped short of a
-  // vertex and capri's dense-column directions lost their accuracy with it on.
-  const std::string algorithm = options.get_string("algorithm");
-  if (options.get_bool("presolve_substitution") && problem_class == engine::ProblemClass::kLp &&
-      algorithm != "ipm" && algorithm != "pdhg") {
-    ProfileScope timed(logger.profiler(), "presolve");
-    substituted = presolve::substitute(reduced.model, options, logger);
-  }
-  if (substituted.reduced_anything()) {
-    const Solution deeper = [&] {
-      ProfileScope timed(logger.profiler(), "engine");
-      return run_engine(substituted.model);
-    }();
-    ProfileScope timed(logger.profiler(), "postsolve");
-    inner = presolve::undo_substitution(substituted, reduced.model, deeper);
-  } else {
+  Solution inner = [&] {
     ProfileScope timed(logger.profiler(), "engine");
-    inner = run_engine(reduced.model);
-  }
+    return run_engine(reduced.model);
+  }();
   ProfileScope timed(logger.profiler(), "postsolve");
   outcome.solution = presolve::postsolve(reduced, model, inner);
   return outcome;
