@@ -570,9 +570,10 @@ const std::vector<OptionSpec>& Options::registry() {
                  OptionType::Bool,
                  false,
                  "Root cuts (#495): after the first round, separate again at the new LP "
-                 "point, add, re-solve warm, and repeat until the bound stalls (3 rounds "
+                 "point, add, re-solve warm, and repeat until a round gains at most a tenth "
+                 "of round 1's gain (tailing off), the bound stalls (3 rounds "
                  "moving it by at most 1e-3 of the gap, or of max(1, |bound|) with no "
-                 "incumbent), 20 rounds, 20 percent of time_limit, a round that takes "
+                 "incumbent), 20 rounds, 5 percent of time_limit, a round that takes "
                  "nothing, or max(100, m) cut rows added in all, m the rows before the first "
                  "cut. Logs one line per round. Only read when enable_root_cuts is set. Off by "
                  "default again after the 60 s A/B on main f7cfd57 (MIPLIB tier 1, 3 seeds: "

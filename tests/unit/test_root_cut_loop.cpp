@@ -239,6 +239,62 @@ TEST(RootCutLoop, ARoundCutShortKeepsItsBestAndTheRestWaitFirst) {
   EXPECT_EQ(many.front().rhs, -2.0);
 }
 
+/// The root bound after each round, from the "Root cut round k: bound X" lines; rounds whose
+/// line has no bound (a round that took nothing, or a rolled-back one) are not in it.
+std::vector<double> round_bounds(const std::string& log) {
+  std::vector<double> bounds;
+  std::size_t at = 0;
+  while ((at = log.find("Root cut round ", at)) != std::string::npos) {
+    int round = 0;
+    double bound = 0.0;
+    if (std::sscanf(log.c_str() + at, "Root cut round %d: bound %lf", &round, &bound) == 2) {
+      bounds.push_back(bound);
+    }
+    at += 15;
+  }
+  return bounds;
+}
+
+TEST(RootCutLoop, ARoundIsOnlyTakenAfterOneThatGainedMoreThanTheTailingOffShare) {
+  // Tailing off (tolerances.hpp): round k+1 runs only when round k gained more than
+  // kRootCutTailingOffFraction of round 1's gain, and a loop that says it stopped on
+  // tailing off has a last round at or under that share. Round 1's gain is measured from
+  // the root LP bound, which the solution reports beside the bound after cuts.
+  std::mt19937_64 rng(20261021);
+  int tailed = 0;
+  int checked = 0;
+  for (int trial = 0; trial < 120; ++trial) {
+    const Model model = integer_model(binary_instance(rng, 14));
+    Solution on;
+    const std::string log = solve_logged(model, root_cuts(true), &on);
+    const std::vector<double> after = round_bounds(log);
+    if (after.empty() || std::isnan(on.root_bound)) continue;
+    std::vector<double> bounds{on.root_bound};
+    bounds.insert(bounds.end(), after.begin(), after.end());
+    ++checked;
+    // Minimisation (the profits enter as negative costs): a tighter bound is a larger one.
+    const double first_gain = bounds[1] - bounds[0];
+    const double scale = 1e-9 * std::max(1.0, std::fabs(bounds[0]));
+    for (std::size_t k = 2; k + 1 < bounds.size(); ++k) {
+      const double gain = bounds[k] - bounds[k - 1];
+      EXPECT_GT(gain, tol::kRootCutTailingOffFraction * std::max(first_gain, 0.0) - scale)
+          << "round " << k + 1 << " ran after a round that had tailed off\n"
+          << log;
+    }
+    if (log.find("stopped on tailing off") != std::string::npos) {
+      ++tailed;
+      ASSERT_GE(bounds.size(), 3u) << log;
+      const double last = bounds.back() - bounds[bounds.size() - 2];
+      EXPECT_LE(last, tol::kRootCutTailingOffFraction * std::max(first_gain, 0.0) + scale)
+          << log;
+    }
+  }
+  EXPECT_GE(checked, 40);
+  EXPECT_GT(tailed, 0) << "no loop stopped on tailing off, so the rule was not exercised";
+  std::printf("[  INFO    ] root cut loop: %d loops checked, %d stopped on tailing off\n",
+              checked, tailed);
+}
+
 TEST(RootCutLoop, ASearchWithTheLoopOnReachesTheExactOptimum) {
   // Pure-binary instances of 8 to 12 columns and random mixed-integer ones of 3 to 6: the
   // later rounds' Gomory cuts come from tableau rows that contain earlier cut rows, which is
