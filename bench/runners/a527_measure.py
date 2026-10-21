@@ -32,6 +32,8 @@ for name in names:
     hand = re.findall(r"Dual simplex: (.*?) at iteration (\d+); the primal", log)
     print(f"OURS {name} status={res.get('status')} obj={res.get('objective')} iters={eff.get('iterations')} "
           f"alg={res.get('algorithm')} wall={wall:.2f}")
+    if not blob:
+        print("  NOBLOB rc=%s %s" % (p.returncode, " | ".join(log[-800:].splitlines())))
     for m in meas:
         print(f"  MEASURE {m}")
     for h in hand:
