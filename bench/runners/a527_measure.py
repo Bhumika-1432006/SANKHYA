@@ -4,7 +4,11 @@ import json, re, subprocess, sys, tempfile, time
 from pathlib import Path
 
 binary = sys.argv[1]
-extra = [a for a in sys.argv[2:] if not a.startswith("names=")]
+import os
+for a in sys.argv[2:]:
+    if a.startswith("thr="):
+        os.environ["A527_THR"] = a[4:]
+extra = [a for a in sys.argv[2:] if not a.startswith(("names=", "thr="))]
 namearg = [a[6:] for a in sys.argv[2:] if a.startswith("names=")]
 import os
 names = os.environ.get("A527_NAMES") or "stocfor3 dfl001 pilot87 pilot greenbea greenbeb d2q06c stocfor2 woodw ganges bnl2 fit2p bnl1 pilot.we 25fv47 degen3 cycle"

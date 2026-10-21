@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cstdlib>
 #include <utility>
 #include <vector>
 
@@ -20,6 +21,7 @@ using Entry = std::pair<Index, double>;
 
 /// Passes over the rows; each pass that substitutes nothing ends the stage first.
 constexpr int kMaxPasses = 8;
+double a527_thr() { const char* v = std::getenv("A527_THR"); return v ? std::atof(v) : tol::kSubstitutionPivotThreshold; }
 
 bool finite(double v) {
   return is_finite_bound(v);
@@ -162,11 +164,11 @@ bool try_row(Work* w, Index r, SubstitutionResult* out) {
     const Index count = w->count[ue];
     if (count > tol::kSubstitutionMaxColumnCount) continue;
     if ((len - 1) * (count - 1) > tol::kSubstitutionMaxFill) continue;
-    if (std::fabs(a) < tol::kSubstitutionPivotThreshold * row_max) continue;
+    if (std::fabs(a) < a527_thr() * row_max) continue;
     std::vector<Entry> column = w->column(e, r);
     double col_max = std::fabs(a);
     for (const auto& entry : column) col_max = std::max(col_max, std::fabs(entry.second));
-    if (std::fabs(a) < tol::kSubstitutionPivotThreshold * col_max) continue;
+    if (std::fabs(a) < a527_thr() * col_max) continue;
 
     const auto implied = implied_range(a, rhs, activity_without(*w, r, e));
     const bool implied_free =
@@ -179,7 +181,7 @@ bool try_row(Work* w, Index r, SubstitutionResult* out) {
       const Entry partner = row[0].first == e ? row[1] : row[0];
       const auto uk = static_cast<std::size_t>(partner.first);
       const double b = partner.second;
-      if (std::fabs(b) < tol::kSubstitutionPivotThreshold * row_max) continue;
+      if (std::fabs(b) < a527_thr() * row_max) continue;
       const double le = w->col_lower[ue], he = w->col_upper[ue];
       // x_k = (rhs - a x_e) / b, monotone in x_e with slope -a / b.
       const double at_le =
