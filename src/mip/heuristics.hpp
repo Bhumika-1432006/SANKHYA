@@ -161,6 +161,7 @@ struct HeuristicSchedule {
   int dive_lp_resolves = 0;
   int pump_rounds = 0;
   Count fj_work = 0;
+  Count fj_stall_steps = 0;            ///< 0 turns the stall stop off (#1030)
   Count fj_completion_iterations = 0;  ///< per model row; 0 is no limit (#1030)
   bool seconds_budgets = true;         ///< false under deterministic=true (#288's rule)
 

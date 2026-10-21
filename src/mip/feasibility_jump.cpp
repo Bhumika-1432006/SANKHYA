@@ -289,9 +289,12 @@ FeasibilityJumpResult Search::run(const std::vector<double>& start) {
   // The number of violated rows, not the weighted violation, is the progress measure: the
   // weights grow at every local minimum, so the weighted sum is not comparable across steps.
   // Counted in steps, not seconds, so a run stays reproducible for a seed.
+  // settings.stall_steps (mip_fj_stall_steps) sets the step count; 0 turns the stop off.
   const Count stall_limit =
-      std::max<Count>(tol::kFeasibilityJumpStallSteps,
-                      tol::kFeasibilityJumpStallSweeps * static_cast<Count>(x_.size()));
+      settings_.stall_steps <= 0
+          ? std::numeric_limits<Count>::max()
+          : std::max<Count>(settings_.stall_steps,
+                            tol::kFeasibilityJumpStallSweeps * static_cast<Count>(x_.size()));
   Count stalled = 0;
   std::size_t fewest_violated = violated_.size();
   while (!out_of_work()) {

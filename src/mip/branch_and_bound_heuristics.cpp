@@ -497,6 +497,7 @@ void BranchAndBound::run_feasibility_jump(const std::vector<double>* from) {
   ++s.calls;
   FeasibilityJumpSettings settings;
   settings.work_limit = schedule_.fj_work;
+  settings.stall_steps = schedule_.fj_stall_steps;
   settings.seed = static_cast<std::uint64_t>(options_.get_int("random_seed")) +
                   static_cast<std::uint64_t>(s.calls);
   settings.integrality_tolerance = integrality_tolerance_;

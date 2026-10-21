@@ -684,6 +684,17 @@ const std::vector<OptionSpec>& Options::registry() {
                  1.0,
                  kNoLimit,
                  {}});
+    s.push_back(
+        {"mip_fj_stall_steps",
+         OptionType::Int,
+         std::int64_t{tol::kFeasibilityJumpStallSteps},
+         "Feasibility Jump's stall stop (#1030): a run ends after this many steps (moves "
+         "or weight updates), or two per column on a larger model, without fewer "
+         "violated rows or a better point. Counted, not timed. 0 turns the stop off and "
+         "leaves only mip_fj_work.",
+         0.0,
+         kNoLimit,
+         {}});
     s.push_back({"mip_fj_completion_iterations",
                  OptionType::Int,
                  std::int64_t{tol::kFeasibilityJumpCompletionIterationsPerRow},

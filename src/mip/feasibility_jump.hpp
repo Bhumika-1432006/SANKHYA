@@ -50,6 +50,9 @@ namespace sankhya::mip {
 
 struct FeasibilityJumpSettings {
   Count work_limit = tol::kFeasibilityJumpWork;  ///< nonzero visits
+  /// The stall stop (#1030): steps without progress before the run ends, or
+  /// kFeasibilityJumpStallSweeps per column when that is more; 0 turns it off.
+  Count stall_steps = tol::kFeasibilityJumpStallSteps;
   std::uint64_t seed = 0;
   double feasibility_tolerance = tol::kPrimalFeasibility;  ///< absolute, on a row activity
   double integrality_tolerance = tol::kIntegrality;
