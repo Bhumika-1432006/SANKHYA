@@ -455,7 +455,8 @@ const std::vector<OptionSpec>& Options::registry() {
                  "equation with its box carried onto the other, is eliminated with the row, "
                  "chains included, and the records are undone in reverse with the duals "
                  "recovered exactly. Fill-in is limited per substitution. Only read when "
-                 "presolve is on. ON since its A/B on 4bb93e7 (bench/results/option-ab-*-"
+                 "presolve is on, and not under algorithm=ipm or pdhg. ON since its A/B on "
+                 "4bb93e7 (bench/results/option-ab-*-"
                  "substitution-4bb93e7.csv): nothing lost, SGM iterations -11% Netlib, -12% "
                  "Kennington, -9% refinery.",
                  0.0,

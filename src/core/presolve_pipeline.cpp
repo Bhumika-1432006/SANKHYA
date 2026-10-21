@@ -141,7 +141,12 @@ PresolveOutcome run_with_presolve(const Model& model, const Options& options, Lo
   // own on presolve's reduced model, undone before presolve's own postsolve.
   Solution inner;
   presolve::SubstitutionResult substituted;
-  if (options.get_bool("presolve_substitution") && problem_class == engine::ProblemClass::kLp) {
+  // Not under an explicitly chosen interior point or PDHG: its A/B ran the default engine
+  // choice, and on the explicit interior point the crossover on cycle stopped short of a
+  // vertex and capri's dense-column directions lost their accuracy with it on.
+  const std::string algorithm = options.get_string("algorithm");
+  if (options.get_bool("presolve_substitution") && problem_class == engine::ProblemClass::kLp &&
+      algorithm != "ipm" && algorithm != "pdhg") {
     ProfileScope timed(logger.profiler(), "presolve");
     substituted = presolve::substitute(reduced.model, options, logger);
   }
