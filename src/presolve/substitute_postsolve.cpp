@@ -122,21 +122,35 @@ Solution undo_substitution(const SubstitutionResult& result, const Model& input,
     }
     const auto ue = static_cast<std::size_t>(rec.column);
     if (has_x) x[ue] = row_value(rec, x);
-    // Did the partner end on the bound only x_e's box gave it? Then x_e is on its own bound.
+    // Does the partner press on a bound only x_e's box gave it? Then x_e is the column on its
+    // bound, and the row's dual moves to zero the partner's reduced cost instead.
     bool partner_carries = false;
-    if (rec.carried && has_x) {
-      const auto uk = static_cast<std::size_t>(rec.partner);
-      const bool nonbasic = !has_basis || cs[uk] != BasisStatus::kBasic;
-      partner_carries =
-          nonbasic && (on_carried(x[uk], rec.partner_new_lower, rec.partner_lower, true) ||
-                       on_carried(x[uk], rec.partner_new_upper, rec.partner_upper, false));
-    }
+    const auto uk = static_cast<std::size_t>(rec.carried ? rec.partner : 0);
+    const bool partner_nonbasic = rec.carried && (!has_basis || cs[uk] != BasisStatus::kBasic);
+    const auto carried_lower = [&] {
+      return has_x && on_carried(x[uk], rec.partner_new_lower, rec.partner_lower, true);
+    };
+    const auto carried_upper = [&] {
+      return has_x && on_carried(x[uk], rec.partner_new_upper, rec.partner_upper, false);
+    };
     if (has_y) {
-      // d = c - A^T y on the model before the record: zero for x_e, or for the partner.
-      const auto& entries = partner_carries ? rec.partner_entries : rec.column_entries;
-      double sum = partner_carries ? rec.partner_cost : rec.cost;
-      for (const auto& [i, a] : entries) sum -= a * y[static_cast<std::size_t>(i)];
-      y[ur] = sum / (partner_carries ? rec.partner_coefficient : rec.coefficient);
+      // d = c - A^T y on the model before the record: zero for x_e first.
+      double sum = rec.cost;
+      for (const auto& [i, a] : rec.column_entries) sum -= a * y[static_cast<std::size_t>(i)];
+      double y_r = sum / rec.coefficient;
+      if (partner_nonbasic) {
+        // The partner's reduced cost then, which is the one the reduced model reported
+        // (substitute.hpp): its sign says which of the partner's bounds it presses on. A
+        // bound its own box has as well keeps x_e basic; only a carried one moves the dual.
+        double d_k = rec.partner_cost - rec.partner_coefficient * y_r;
+        for (const auto& [i, a] : rec.partner_entries) d_k -= a * y[static_cast<std::size_t>(i)];
+        const double pressing = input.sense_multiplier() * d_k;
+        partner_carries = (pressing > 0.0 && carried_lower()) || (pressing < 0.0 && carried_upper());
+        if (partner_carries) y_r += d_k / rec.partner_coefficient;
+      }
+      y[ur] = y_r;
+    } else if (partner_nonbasic) {
+      partner_carries = carried_lower() || carried_upper();
     }
     if (has_basis) {
       rs[ur] = BasisStatus::kFixed;  // an equality row
