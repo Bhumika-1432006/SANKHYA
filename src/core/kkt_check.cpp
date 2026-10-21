@@ -228,7 +228,7 @@ KktVerdict check_optimality(const Model& model, const Solution& s,
   }
   // Q x from the stored lower triangle (each off-diagonal entry stands for two of the
   // symmetric matrix), and x'Qx/2 into the objective, the convention of Model::hessian.
-  std::vector<double> qx(un, 0.0);
+  std::vector<double> qx(un, 0.0), qx_terms(un, 0.0);  // Q x and |Q| |x|
   if (quadratic) {
     for (Index j = 0; j < n; ++j) {
       const ColumnView c = model.hessian.column(j);
@@ -236,7 +236,11 @@ KktVerdict check_optimality(const Model& model, const Solution& s,
         const auto i = static_cast<std::size_t>(c.rows[k]);
         const auto uj = static_cast<std::size_t>(j);
         qx[i] += c.values[k] * x[uj];
-        if (i != uj) qx[uj] += c.values[k] * x[i];
+        qx_terms[i] += std::fabs(c.values[k] * x[uj]);
+        if (i != uj) {
+          qx[uj] += c.values[k] * x[i];
+          qx_terms[uj] += std::fabs(c.values[k] * x[i]);
+        }
       }
     }
     double half_xqx = 0.0;
@@ -275,15 +279,22 @@ KktVerdict check_optimality(const Model& model, const Solution& s,
     const ColumnView column = model.matrix.column(j);
     double expected = cost;
     double scale = std::max(dual_floor, std::fabs(cost));
+    double terms = std::fabs(model.col_cost[u]) + qx_terms[u];
     for (Index p = 0; p < column.size; ++p) {
       const double term = column.values[p] * y[static_cast<std::size_t>(column.rows[p])];
       expected -= term;
       scale = std::max(scale, std::fabs(term));
+      terms += std::fabs(term);
     }
     column_scale[u] = scale;
     // The QP engine carries no basis and reports no reduced costs, so for a QP d is DERIVED
     // from (model, x, y), the stronger test: the sign and complementarity checks then price
-    // against a vector the solver never chose (the verifier does the same).
+    // against a vector the solver never chose (the verifier does the same). A derived value
+    // within the rounding of its own sum is zero (tol::kReducedCostRounding, #1079).
+    if (quadratic && std::fabs(expected) <=
+                         tol::kReducedCostRounding * std::numeric_limits<double>::epsilon() * terms) {
+      expected = 0.0;
+    }
     const double d = quadratic ? expected : sigma * s.col_dual[u];
     if (quadratic) derived_dual[u] = d;
     const double difference = std::fabs(expected - d);

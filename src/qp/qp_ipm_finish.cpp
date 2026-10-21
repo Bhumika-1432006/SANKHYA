@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <utility>
 #include <vector>
 
@@ -30,15 +31,36 @@ double largest_complementarity_product(
   // carries the stationarity residual, not only z_l - z_u) times the distance to the nearer
   // finite bound. On qgrow15, qgfrdxpn and qshell every z-product was under the share and this
   // one was not, so the finish was never tried and the gate withdrew the claim.
-  std::vector<double> d(nc, 0.0), mty(nc, 0.0);
+  std::vector<double> d(nc, 0.0), mty(nc, 0.0), terms(nc, 0.0);
   hessian_times(s.h, v, &d);
   if (s.rows > 0) s.m.transpose_multiply_add(y.data(), mty.data());
+  // sum |terms| of H v + g - M^T y per column: a derived reduced cost within the rounding of
+  // its own sum is zero, as the gate reads it (tol::kReducedCostRounding, #1079).
+  for (Index j = 0; j < s.h.num_cols(); ++j) {
+    const ColumnView column = s.h.column(j);
+    const auto uj = static_cast<std::size_t>(j);
+    for (Index p = 0; p < column.size; ++p) {
+      const auto ui = static_cast<std::size_t>(column.rows[p]);
+      terms[ui] += std::fabs(column.values[p] * v[uj]);
+      if (ui != uj) terms[uj] += std::fabs(column.values[p] * v[ui]);
+    }
+  }
+  for (std::size_t j = 0; j < nc; ++j) {
+    const ColumnView column = s.m.column(static_cast<Index>(j));
+    terms[j] += std::fabs(s.g[j]);
+    for (Index p = 0; p < column.size; ++p) {
+      terms[j] += std::fabs(column.values[p] * y[static_cast<std::size_t>(column.rows[p])]);
+    }
+  }
+  constexpr double kRounding =
+      tol::kReducedCostRounding * std::numeric_limits<double>::epsilon();
   for (std::size_t j = 0; j < nc; ++j) {
     const double below = has_lower[j] ? v[j] - s.lower[j] : kInfinity;
     const double above = has_upper[j] ? s.upper[j] - v[j] : kInfinity;
     const double slack = std::min(below, above);
-    if (std::isfinite(slack)) {
-      largest = std::max(largest, std::fabs(d[j] + s.g[j] - mty[j]) * std::fabs(slack));
+    const double reduced = d[j] + s.g[j] - mty[j];
+    if (std::isfinite(slack) && std::fabs(reduced) > kRounding * terms[j]) {
+      largest = std::max(largest, std::fabs(reduced) * std::fabs(slack));
     }
   }
   // A slack's row: the row's multiplier against the activity's distance to its nearer side.

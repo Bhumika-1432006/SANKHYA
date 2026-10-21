@@ -63,6 +63,41 @@ TEST(KktCheckQp, TheExactAnswerPasses) {
   EXPECT_TRUE(verdict.passed) << verdict.check << ": " << verdict.detail;
 }
 
+TEST(KktCheckQp, AReducedCostWithinTheRoundingOfItsTermsIsZero) {
+  // #1079 (qgfrdxpn, qshell): min 0.5 x1^2 + c x1 + 0.1 x2  s.t.  3 x1 + x2 >= 3e6, x >= 0,
+  // c = -1e6 + 0.3. At x = (1e6, 0), y = 0.1 the derived reduced cost of x1 is exactly 0, and
+  // computed it is 4.7e-11: the rounding of c (stored as -999999.7 to 1e-10). Times x1's
+  // slack of 1e6 that is a product of 4.7e-5, which the gate refused although the point is
+  // the optimum. It is 0.1 of eps * sum |terms|, well inside tol::kReducedCostRounding.
+  Model model;
+  model.sense = ObjSense::kMinimize;
+  const double c = -1e6 + 0.3;
+  model.col_cost = {c, 0.1};
+  model.col_lower = {0.0, 0.0};
+  model.col_upper = {kInfinity, kInfinity};
+  model.col_type = {VarType::kContinuous, VarType::kContinuous};
+  model.row_lower = {3e6};
+  model.row_upper = {kInfinity};
+  model.matrix.reset(1, 2);
+  model.matrix.add_entry(0, 0, 3.0);
+  model.matrix.add_entry(0, 1, 1.0);
+  model.matrix.finalize();
+  model.hessian.reset(2, 2);
+  model.hessian.add_entry(0, 0, 1.0);
+  model.hessian.finalize();
+  Solution s;
+  s.allocate_for(model);
+  s.status = SolveStatus::kOptimal;
+  s.col_value = {1e6, 0.0};
+  s.row_activity = {3e6};
+  s.row_dual = {0.1};
+  s.col_dual = {0.0, 0.0};
+  s.objective = 0.5 * 1e12 + c * 1e6;
+  ASSERT_GT(std::fabs((c + 1e6) - 3.0 * 0.1) * 1e6, 1e-6);  // the premise: noise times slack
+  const KktVerdict verdict = check_qp_optimality(model, s);
+  EXPECT_TRUE(verdict.passed) << verdict.check << ": " << verdict.detail;
+}
+
 TEST(KktCheckQp, TheLpCheckStillRefusesAHessian) {
   const Model model = small_qp();
   const KktVerdict verdict = check_lp_optimality(model, exact_answer(model));

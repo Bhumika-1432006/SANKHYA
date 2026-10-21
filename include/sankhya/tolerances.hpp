@@ -234,6 +234,16 @@ inline constexpr double kComplementarityRounding = 1e-12;
 /// match the recomputed one to kVerifierObjective relative. Copied, not tuned: an answer the
 /// race accepts has to be one the verifier would accept.
 inline constexpr double kVerifierConsistency = 1e-6;
+
+/// A QP's DERIVED reduced cost c + Qx - A'y is a sum whose computed value carries rounding of
+/// up to gamma_n * sum |terms|, gamma_n = n u / (1 - n u) with u = eps / 2 (Higham, Accuracy
+/// and Stability of Numerical Algorithms, 2nd ed., 2002, eq. 3.5). A derived reduced cost at
+/// or below kReducedCostRounding * eps * sum |terms| is that rounding, not a price, and is
+/// read as zero by the complementarity tests of the in-process gate (src/core/kkt_check.cpp)
+/// and the QP finish (src/qp/qp_ipm_finish.cpp) (#1079: qgfrdxpn and qshell were refused on
+/// such a reduced cost times a slack of thousands). 1000 covers columns of up to about 2000
+/// terms at the worst-case bound; chosen from that arithmetic, not tuned on a benchmark.
+inline constexpr double kReducedCostRounding = 1000.0;
 inline constexpr double kVerifierObjective = 1e-9;
 
 // ---------------------------------------------------------------------------------------
