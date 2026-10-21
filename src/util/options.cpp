@@ -441,6 +441,19 @@ const std::vector<OptionSpec>& Options::registry() {
                  0.0,
                  0.0,
                  {}});
+    s.push_back({"presolve_substitution",
+                 OptionType::Bool,
+                 false,
+                 "LP only: after presolve, substitute columns out of equality rows "
+                 "(src/presolve/substitute.cpp; Andersen and Andersen 1995, sec. 5-6): a "
+                 "column implied free by an equality row, or either column of a doubleton "
+                 "equation with its box carried onto the other, is eliminated with the row, "
+                 "chains included, and the records are undone in reverse with the duals "
+                 "recovered exactly. Fill-in is limited per substitution. Only read when "
+                 "presolve is on. OFF until its A/B on main.",
+                 0.0,
+                 0.0,
+                 {}});
     s.push_back({"presolve_bound_propagation",
                  OptionType::Bool,
                  false,
@@ -1628,6 +1641,18 @@ const std::vector<OptionSpec>& Options::registry() {
          1.0,
          1e7,
          {}});
+    s.push_back({"decomposition_predict",
+                 OptionType::Bool,
+                 true,
+                 "Decomposition (#1048): before Benders starts, forecast its work from the "
+                 "block sizes and the number of linking columns - the linking columns plus "
+                 "one rounds, each costing the largest block's rows x nonzeros as if every "
+                 "block had its own core - against the monolithic rows x nonzeros, and solve "
+                 "monolithically at once when it does not pay. The answer is the same either "
+                 "way; only the time differs. false always tries the decomposition.",
+                 0.0,
+                 0.0,
+                 {}});
     s.push_back({"decomposition_threads",
                  OptionType::Int,
                  std::int64_t{0},

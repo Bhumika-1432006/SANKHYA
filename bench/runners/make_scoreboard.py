@@ -23,7 +23,7 @@ fabricated one. For each row:
 *   `reference solver on the same host` - the external solver named in the CSV, when the
     CSV records one (HiGHS for MIPLIB 3's comparison run, the `reference_source` a GPU run
     checks its objective against); `-` when the CSV carries no second solver, as the LP,
-    QP and stress CSVs do not (#766's five-solver head-to-head is reported separately, in
+    QP and stress CSVs do not (#766's LP head-to-heads are reported separately, in
     docs/BENCHMARKS.md section 4a, not duplicated here).
 *   `CSV`, `commit`, `date` - exactly what the newest matching CSV says, so every cell is
     one click from the file that produced it.
@@ -173,6 +173,30 @@ def maros_meszaros_row() -> Row | None:
                "within relative 1e-6 of the reference and verified, `passed`", "-")
 
 
+def maros_meszaros_head_to_head_row() -> Row | None:
+    """#983: the Maros-Meszaros head-to-head, every solver graded the same way. Our count
+    and each convex QP rival's, matched within 1e-6 and verifier-accepted, from one CSV."""
+    path = latest_result.latest("head-to-head-maros-meszaros-*.csv",
+                                prefix="head-to-head-maros-meszaros")
+    if path is None:
+        return None
+    rows = read_csv(path)
+
+    def graded(solver: str) -> tuple[int, int]:
+        return passed_predicate(
+            [r for r in rows if r.get("solver") == solver],
+            lambda r: r.get("matches_reference") == "1"
+            and r.get("independently_verified") == "1")
+
+    passed, total = graded("sankhya")
+    rivals = [(label, graded(solver)) for solver, label in
+              (("piqp", "PIQP"), ("clarabel", "Clarabel"), ("scs", "SCS"), ("osqp", "OSQP"))]
+    reference = ", ".join(f"{label} {n} of {m}" for label, (n, m) in rivals if m)
+    return Row("Maros-Meszaros head-to-head (QP)", path, passed, total,
+               "matched within 1e-6 and verified, every solver graded the same, 60 s",
+               reference or "-")
+
+
 def qplib_row() -> Row | None:
     path = (latest_result.latest("qplib-*.csv", prefix="qplib")
             or latest_result.latest("qplib-small-*.csv", prefix="qplib-small"))
@@ -272,7 +296,8 @@ def gpu_rows() -> list[Row]:
 def all_rows() -> list[Row]:
     rows = [netlib_row(), netlib_certified_row(), netlib_infeasible_row(), kennington_row(),
             mittelmann_row(),
-            miplib3_row(), miplib_row(), maros_meszaros_row(), qplib_row(), stress_row()]
+            miplib3_row(), miplib_row(), maros_meszaros_row(), maros_meszaros_head_to_head_row(),
+            qplib_row(), stress_row()]
     rows = [r for r in rows if r is not None]
     rows += gpu_rows()
     return rows
