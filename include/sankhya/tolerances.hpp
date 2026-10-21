@@ -859,9 +859,18 @@ inline constexpr int kRootCutMaxRounds = 20;
 /// max(1, |bound|) when there is not.
 inline constexpr int kRootCutStallRounds = 3;
 inline constexpr double kRootCutStallFraction = 1e-3;
+/// Tailing off (Padberg and Rinaldi, "A branch-and-cut algorithm for the resolution of
+/// large-scale symmetric traveling salesman problems", SIAM Review 33, 1991; Achterberg 2007,
+/// ch. 8): the loop also stops after a round whose bound gain is at most this share of round
+/// 1's. #956 measured the loop without it: the rounds that only crept added rows that every
+/// node LP then paid for (enlight8 14 -> 100 rows, 0.45x the nodes in 60 s), while the
+/// proofs it won came from rounds that moved the bound a lot (kaihu, b-ball). A round 1 that
+/// moved nothing makes this "stop at the next round that moves nothing".
+inline constexpr double kRootCutTailingOffFraction = 0.1;
 /// And the loop stops once the solve has used this share of time_limit, so a root whose
-/// every round is slow leaves the tree most of the time it was given.
-inline constexpr double kRootCutTimeShare = 0.2;
+/// every round is slow leaves the tree most of the time it was given. 0.2 until the
+/// tailing-off rule above; 0.05 since (3 s of a 60 s limit).
+inline constexpr double kRootCutTimeShare = 0.05;
 /// And the loop adds at most max(kRootCutRowFloor, kRootCutRowShare * m) cut rows in all,
 /// round 1 included, m the rows of the LP the root separates on before its first cut.
 inline constexpr int kRootCutRowFloor = 100;

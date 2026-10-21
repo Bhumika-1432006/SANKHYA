@@ -22,10 +22,11 @@
 // feasible, so each round re-solves with the dual simplex from the last round's basis, as
 // the tree rounds do (branch_and_bound_cuts.cpp).
 //
-// STOPPING, whichever comes first: the bound stalls (tolerances.hpp, kRootCutStall*), the
-// round cap, the time share, the row budget, a point already integral, a round whose filter
-// and selection take nothing, or a re-solve that does not come back optimal (that round is
-// rolled back).
+// STOPPING, whichever comes first: a round that gains at most a share of round 1's gain
+// (tailing off, kRootCutTailingOffFraction; Padberg and Rinaldi 1991), the bound stalls
+// (tolerances.hpp, kRootCutStall*), the round cap, the time share, the row budget, a point
+// already integral, a round whose filter and selection take nothing, or a re-solve that does
+// not come back optimal (that round is rolled back).
 //
 // THE ROW BUDGET. A cut row is paid for at every node LP of the tree, not at the root, so
 // neither the stall rule nor the time share sees its cost: rounds that are each fast and
@@ -82,6 +83,16 @@ void BranchAndBound::root_cut_loop(Solution* relaxation, Index model_rows,
       break;
     }
     const auto rounds_done = static_cast<int>(bounds.size()) - 1;
+    // Tailing off (tolerances.hpp): the last round gained at most a fixed share of what
+    // round 1 gained, so the rounds after it would add rows for little bound.
+    if (rounds_done >= 2) {
+      const double first_gain = bounds[1] - bounds[0];
+      const double last_gain = bounds.back() - bounds[bounds.size() - 2];
+      if (last_gain <= tol::kRootCutTailingOffFraction * std::max(first_gain, 0.0)) {
+        why = "tailing off";
+        break;
+      }
+    }
     if (rounds_done >= tol::kRootCutStallRounds) {
       const double now = bounds.back();
       const double moved = now - bounds[bounds.size() - 1 - tol::kRootCutStallRounds];
